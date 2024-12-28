@@ -1,0 +1,178 @@
+[
+	{
+		"name": "Snake's Remains",
+		"chest_unopened_img": "images/labels/chest.png",
+		"chest_opened_img": "images/labels/chestopen.png",
+		"access_rules": ["^$CanReach|SnakeFoyer", "^$CanReach|SnakeAltEntrance"],
+		"children": [	
+			{
+				"name": "Chest Left from Entrance",
+				"sections": [
+					{
+                        "access_rules": ["^$CanReach|SnakeFoyer"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "snakes_remains1",
+						"x": 186,
+						"y": 401
+					}
+				]
+			},
+			{
+				"name": "Drop in Left Rope Room",
+				"sections": [
+					{
+						"access_rules": ["^$CanReach|SnakeLeftRopeDrop"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "snakes_remains1",
+						"x": 239,
+						"y": 295
+					}
+				]
+			},
+			{
+				"name": "Chest in Right Rope Room",
+				"sections": [
+					{
+						"access_rules": ["^$CanReach|SnakeRightRopeChest"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "snakes_remains1",
+						"x": 560,
+						"y": 294
+					}
+				]
+			},
+			{
+				"name": "Chest Behind Pots in Hardhat Room",
+				"sections": [
+					{
+						"access_rules": ["^$CanReach|SnakeHardhatChest"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "snakes_remains1",
+						"x": 399,
+						"y": 28
+					}
+				]
+			},
+			{
+				"name": "Chest in Distant Moblins Room",
+				"sections": [
+					{
+						"access_rules": ["^$CanReach|SnakeBombMoblins"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "snakes_remains1",
+						"x": 282,
+						"y": 60
+					}
+				]
+			},
+			{
+				"name": "Chest in Moving Blades Room",
+				"sections": [
+					{
+						"access_rules": ["^$CanReach|SnakeBladeTraps"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "snakes_remains1",
+						"x": 688,
+						"y": 166
+					}
+				]
+			},
+			{
+				"name": "Chest in Bomb Spiral Maze Room",
+				"sections": [
+					{
+						"access_rules": ["^$CanReach|SnakeBombPuzzle"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "snakes_remains1",
+						"x": 80,
+						"y": 176
+					}
+				]
+			},
+			{
+				"name": "Chest in Rollers Section",
+				"sections": [
+					{
+						"access_rules": ["^$CanReach|FacadeDoorstep"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "snakes_remains2",
+						"x": 144,
+						"y": 80
+					}
+				]
+			},
+			{
+				"name": "Chest on Terrace",
+				"sections": [
+					{
+						"access_rules": ["^$CanReach|SnakeTerrace"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "snakes_remains2",
+						"x": 805,
+						"y": 186
+					}
+				]
+			},
+			{
+				"name": "Boss Reward",
+				"sections": [
+					{
+                        "name": "King Dodongo",
+						"access_rules": ["^$CanReach|KingDodongo"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "snakes_remains2",
+						"x": 741,
+						"y": 410
+					}
+				]
+			},
+			{
+				"name": "Gift of Time",
+				"sections": [
+					{
+                        "name": "Essence",
+						"access_rules": ["^$CanReach|KingDodongo"],
+						"hosted_item": "d2"
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "snakes_remains2",
+						"x": 731,
+						"y": 511
+					}
+				]
+			}
+		]
+	}
+]

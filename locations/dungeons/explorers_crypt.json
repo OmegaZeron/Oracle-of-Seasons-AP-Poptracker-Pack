@@ -1,0 +1,229 @@
+[
+	{
+		"name": "Explorer's Crypt",
+		"chest_unopened_img": "images/labels/chest.png",
+		"chest_opened_img": "images/labels/chestopen.png",
+		"color": "#00ff08",
+		"children": [
+			{
+				"name": "Chest Behind Cracked Wall",
+				"sections": [
+					{
+						"name": "1F",
+						"access_rules": ["^$CanReach|Crypt1FLeftOfPoeChest"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "explorers_crypt1",
+						"x": 147,
+						"y": 466
+					}
+				]
+			},
+			{
+				"name": "Chest in Wizzrobe Room",
+				"sections": [
+					{
+						"name": "1F",
+						"access_rules": ["^$CanReach|Crypt1FWizzrobeChest"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "explorers_crypt1",
+						"x": 466,
+						"y": 479
+					}
+				]
+			},
+			{
+				"name": "Chest Right of Entrance",
+				"sections": [
+					{
+						"name": "1F",
+						"access_rules": ["^$CanReach|Crypt1FKeyRoomChest"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "explorers_crypt1",
+						"x": 531,
+						"y": 735
+					}
+				]
+			},
+			{
+				"name": "Zol Button Drop",
+				"access_rules": ["^$CanReach|CryptSurroundedByArmos"], // poe skip check
+				"sections": [
+					{
+						"name": "B1F",
+						"access_rules": ["^$CanReach|CryptZolTrampoline"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "explorers_crypt1",
+						"x": 56,
+						"y": 31
+					}
+				]
+			},
+			{
+				"name": "Armos Puzzle Drop",
+				"access_rules": ["^$CanReach|CryptSurroundedByArmos"],
+				"sections": [
+					{
+						"name": "B2F",
+						"access_rules": ["^$CanReach|CryptArmosPuzzleReward"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "explorers_crypt2",
+						"x": 285,
+						"y": 320
+					}
+				]
+			},
+			{
+				"name": "Chest Connected to Magnet Ball Button",
+				"sections": 
+				[
+					{
+						"name": "B1F",
+						"access_rules": ["^$CanReach|CryptMagunesuReward"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "explorers_crypt1",
+						"x": 402,
+						"y": 83
+					}
+				]
+			},
+			{
+				"name": "Quicksand Chest Near Second Poe",
+				"access_rules": ["^$CanReach|CryptSurroundedByArmos"],
+				"sections": [
+					{
+						"name": "1F",
+						"access_rules": ["^$CanReach|CryptQuicksandChest"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "explorers_crypt1",
+						"x": 95,
+						"y": 774
+					}
+				]
+			},
+			{
+				"name": "Fast Moving Platform Chest",
+				"access_rules": ["^$CanReach|CryptSurroundedByArmos"],
+				"sections": [
+					{
+						"name": "B1F",
+						"access_rules": ["^$CanReach|CryptFastPlatform"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "explorers_crypt2",
+						"x": 94,
+						"y": 56
+					}
+				]
+			},
+			{
+				"name": "Stair Maze Chest",
+				"access_rules": ["^$CanReach|CryptSurroundedByArmos"],
+				"sections": [
+					{
+						"name": "B2F",
+						"access_rules": ["^$CanReach|CryptStairMazeChest"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "explorers_crypt2",
+						"x": 669,
+						"y": 809
+					}
+				]
+			},
+			{
+				"name": "Drop in Room North of Stair Maze",
+				"access_rules": ["^$CanReach|CryptSurroundedByArmos"],
+				"sections": [
+					{
+						"name": "B2F",
+						"access_rules": ["^$CanReach|CryptWizzrobeStalfosChest"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "explorers_crypt2",
+						"x": 669,
+						"y": 504
+					}
+				]
+			},
+			{
+				"name": "Jumping Stalfos Room Chest",
+				"access_rules": ["^$CanReach|CryptSurroundedByArmos"],
+				"sections": [
+					{
+						"name": "B1F",
+						"access_rules": ["^$CanReach|CryptJumpingStalfosChest"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "explorers_crypt2",
+						"x": 861,
+						"y": 81
+					}
+				]
+			},
+			{
+				"name": "Boss Reward",
+				"access_rules": ["^$CanReach|CryptSurroundedByArmos"],
+				"sections": [
+					{
+						"name": "Gleeok",
+						"access_rules": ["^$CanReach|CryptEssence"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "explorers_crypt2",
+						"x": 477,
+						"y": 927
+					}
+				]
+			},
+			{
+				"name": "Seed of Life",
+				"access_rules": ["^$CanReach|CryptSurroundedByArmos"],
+				"sections": [
+					{
+						"name": "Essence",
+						"access_rules": ["^$CanReach|CryptEssence"],
+						"hosted_item": "d7"
+					}
+				],
+				"map_locations": [
+					{
+						"map": "explorers_crypt2",
+						"x": 298,
+						"y": 924
+					}
+				]
+			}
+		]
+	}
+]

@@ -1,0 +1,61 @@
+[
+	{
+		"name": "Temple Remains",
+		"chest_unopened_img": "images/labels/chest.png",
+		"chest_opened_img": "images/labels/chestopen.png",
+		"color": "#00ff08",
+		"children": [
+			{
+				"name": "Temple Remains Heart Piece",
+				"sections": [
+					{
+						"name": "Temple Remains: Item in Cave Behind Rockslide",
+						// "access_rules": ["^$CanReach|LowerTempleRemains, ^$Has|hidden_fireworks"]
+						"access_rules": ["^$CanReach|TempleRemainsBombCave"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 280,
+						"y": 42
+					}
+				]
+			},
+			{
+				"name": "Temple Remains Lower Portal",
+				"chest_unopened_img": "images/labels/portal.png",
+				"chest_opened_img": "images/labels/portalgray.png",
+				"sections": [
+					{
+						"access_rules": ["^$CanReach|TempleRemainsLowerPortal"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 228,
+						"y": 100
+					}
+				]
+			},
+			{
+				"name": "Temple Remains Upper Portal",
+				"chest_unopened_img": "images/labels/portal.png",
+				"chest_opened_img": "images/labels/portalgray.png",
+				"sections": [
+					{
+						"access_rules": ["^$CanReach|TempleRemainsUpperPortal"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 205,
+						"y": 10
+					}
+				]
+			}
+		]
+	}
+]

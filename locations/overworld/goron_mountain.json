@@ -1,0 +1,123 @@
+[
+	{
+		"name": "Goron Mountain",
+		"chest_unopened_img": "images/labels/chest.png",
+		"chest_opened_img": "images/labels/chestopen.png",
+		"color": "#00ff08",
+		"children": [
+			{
+				"name": "Goron Mountain West Gasha Spot",
+				"sections": [
+					{
+						"name": "Dig It Up",
+						"access_rules": ["^$CanReach|GoronGashaWest"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 365,
+						"y": 140
+					}
+				]
+			},
+			{
+				"name": "Goron Mountain East Gasha Spot",
+				"sections": [
+					{
+						"name": "Under Rocks",
+						"access_rules": ["^$CanReach|GoronGashaEast"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 485,
+						"y": 155
+					}
+				]
+			},
+			{
+				"name": "Goron Mountain Old Man",
+				"visibility_rules": ["old_men_locations"],
+				"sections": [
+					{
+						"name": "Goron Mountain: Old Man",
+						"access_rules": ["^$CanReach|GoronMountainOldMan"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 353,
+						"y": 114
+					}
+				]
+			},
+			{
+				"name": "East Goron Mountain",
+				"sections": [
+					{
+						"name": "Goron Mountain: Item Across Pits",
+						"access_rules": ["^$CanReach|GoronPitsItem"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 449,
+						"y": 68
+					}
+				]
+			},
+			{
+				"name": "Goron's Gift",
+				"sections": [
+					{
+						"name": "Goron Mountain: Lonely Goron's Gift",
+						"access_rules": ["^$CanReach|LonelyGoron"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 396,
+						"y": 58
+					}
+				]
+			},
+			{
+				"name": "Goron Caves",
+				"sections": [
+					{
+						"name": "Goron Mountain: Chest Across Lava",
+						"access_rules": ["^$CanReach|GoronLavaChest"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 361,
+						"y": 88
+					}
+				]
+			},
+			{
+				"name": "Biggoron Trade",
+				"sections": [
+					{
+						"name": "Goron Mountain: Biggoron Trade",
+						"access_rules": ["^$CanReach|Biggoron"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 364,
+						"y": 38
+					}
+				]
+			}
+		]
+	}
+]

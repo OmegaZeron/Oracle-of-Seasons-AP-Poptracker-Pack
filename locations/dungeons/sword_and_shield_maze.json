@@ -1,0 +1,251 @@
+﻿[
+	{
+		"name": "Sword and Shield Maze",
+		"chest_unopened_img": "images/labels/chest.png",
+		"chest_opened_img": "images/labels/chestopen.png",
+		"access_rules": ["^$CanReach|MazeFoyer"],
+		"children": [	
+			{
+				"name": "Eye Drop Near Entrance",
+				"sections": [
+					{
+                        "name": "1F",
+                        "access_rules": ["^$CanReach|MazeEyeDrop"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "sword_and_shield_maze1",
+						"x": 228,
+						"y": 400
+					}
+				]
+			},
+			{
+				"name": "Three Eyes Chest",
+				"sections": [
+					{
+                        "name": "1F",
+                        "access_rules": ["^$CanReach|MazeThreeEyeChest"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "sword_and_shield_maze1",
+						"x": 79,
+						"y": 281
+					}
+				]
+			},
+			{
+				"name": "Drop in Hardhat & Magnet Ball Room",
+				"sections": [
+					{
+                        "name": "1F",
+                        "access_rules": ["^$CanReach|MazeHardhatDrop"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "sword_and_shield_maze1",
+						"x": 58,
+						"y": 69
+					}
+				]
+			},
+			{
+				"name": "U-shaped Spiky Freezer Chest",
+				"sections": [
+					{
+                        "name": "1F",
+                        "access_rules": ["^$CanReach|MazeBigBladeTrap"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "sword_and_shield_maze1",
+						"x": 282,
+						"y": 624
+					}
+				]
+			},
+			{
+				"name": "Bottom Chest in Lava Bridge Room",
+				"sections": [
+					{
+                        "name": "1F",
+                        "access_rules": ["^$CanReach|MazeSpinner"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "sword_and_shield_maze1",
+						"x": 559,
+						"y": 794
+					}
+				]
+			},
+			{
+				"name": "Top Chest in Lava Bridge Room",
+				"sections": [
+					{
+                        "name": "1F",
+                        "access_rules": ["^$CanReach|MazeArmosChest"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "sword_and_shield_maze1",
+						"x": 368,
+						"y": 741
+					}
+				]
+			},
+			{
+				"name": "Chest Right of Spinner",
+				"sections": [
+					{
+                        "name": "B1F",
+                        "access_rules": ["^$CanReach|MazeArmosChest"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "sword_and_shield_maze2",
+						"x": 527,
+						"y": 667
+					}
+				]
+			},
+			{
+				"name": "Chest in Bombable Blocks Room",
+				"sections": [
+					{
+                        "name": "1F",
+                        "access_rules": ["^$CanReach|MazeThreeEyeBombChest"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "sword_and_shield_maze1",
+						"x": 677,
+						"y": 623
+					}
+				]
+			},
+			{
+				"name": "Chest on Terrace After Pols Voice Room",
+				"sections": [
+					{
+                        "name": "1F",
+                        "access_rules": ["^$CanReach|MazeTerrace"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "sword_and_shield_maze1",
+						"x": 837,
+						"y": 281
+					}
+				]
+			},
+			{
+				"name": "Ghost Armos Puzzle Drop",
+				"sections": [
+					{
+                        "name": "1F",
+                        "access_rules": ["^$CanReach|MazeGhostArmos"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "sword_and_shield_maze1",
+						"x": 602,
+						"y": 293
+					}
+				]
+			},
+			{
+				"name": "Southeast Lava Chest",
+				"sections": [
+					{
+                        "name": "B1F",
+                        "access_rules": ["^$CanReach|MazeSELavaChest"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "sword_and_shield_maze2",
+						"x": 613,
+						"y": 528
+					}
+				]
+			},
+			{
+				"name": "Chest in Sparks & Pots Room",
+				"sections": [
+					{
+                        "name": "1F",
+                        "access_rules": ["^$CanReach|MazeSparkPots"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "sword_and_shield_maze1",
+						"x": 837,
+						"y": 549
+					}
+				]
+			},
+			{
+				"name": "Southwest Lava Chest",
+				"sections": [
+					{
+                        "name": "B1F",
+                        "access_rules": ["^$CanReach|MazeNevermeltIce"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "sword_and_shield_maze2",
+						"x": 378,
+						"y": 548
+					}
+				]
+			},
+			{
+				"name": "Boss Reward",
+				"sections": [
+					{
+                        "name": "Medusa Head",
+                        "access_rules": ["^$CanReach|MedusaHead"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "sword_and_shield_maze2",
+						"x": 559,
+						"y": 195
+					}
+				]
+			},
+			{
+				"name": "Changing Seasons",
+				"sections": [
+					{
+                        "name": "Essence",
+                        "access_rules": ["^$CanReach|MedusaHead"],
+						"hosted_item": "d8"
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "sword_and_shield_maze2",
+						"x": 559,
+						"y": 59
+					}
+				]
+			}
+		]
+	}
+]

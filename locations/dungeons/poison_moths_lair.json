@@ -1,0 +1,187 @@
+[
+	{
+		"name": "Poison Moth's Lair",
+		"chest_unopened_img": "images/labels/chest.png",
+		"chest_opened_img": "images/labels/chestopen.png",
+		"access_rules": ["^$CanReach|PoisonFoyer"],
+		"children": [	
+			{
+				"name": "Chest in Watery Room",
+				"sections": [
+					{
+						"name": "B1F",
+						"access_rules": ["^$CanReach|PoisonWaterChest"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "poison_moths_lair1",
+						"x": 108,
+						"y": 192
+					}
+				]
+			},
+			{
+				"name": "Chest Above West Trampoline & Owl",
+				"sections": [
+					{
+						"name": "1F",
+						"access_rules": ["^$CanReach|PoisonTrampolineOwlChest"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "poison_moths_lair2",
+						"x": 287,
+						"y": 70
+					}
+				]
+			},
+			{
+				"name": "Chest Above East Trampoline",
+				"sections": [
+					{
+                        "name": "1F",
+						"access_rules": ["^$CanReach|PoisonZolChest"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "poison_moths_lair2",
+						"x": 697,
+						"y": 32
+					}
+				]
+			},
+			{
+				"name": "Chest in Roller Room",
+				"sections": [
+					{
+                        "name": "B1F",
+						"access_rules": ["^$CanReach|PoisonRollerChest"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "poison_moths_lair1",
+						"x": 684,
+						"y": 537
+					}
+				]
+			},
+			{
+				"name": "Chest in Moldorm Room",
+				"sections": [
+					{
+                        "name": "1F",
+						"access_rules": ["^$CanReach|PoisonMoldormChest"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "poison_moths_lair2",
+						"x": 838,
+						"y": 352
+					}
+				]
+			},
+			{
+				"name": "Chest in Room Behind Hidden Cracked Wall",
+				"sections": [
+					{
+                        "name": "1F",
+						"access_rules": ["^$CanReach|PoisonBombWallChest"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "poison_moths_lair2",
+						"x": 825,
+						"y": 211
+					}
+				]
+			},
+			{
+				"name": "Chest in Mimics Room",
+				"sections": [
+					{
+                        "name": "1F",
+						"access_rules": ["^$CanReach|PoisonMimicChest"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "poison_moths_lair2",
+						"x": 96,
+						"y": 211
+					}
+				]
+			},
+			{
+				"name": "Chest on Quicksand Terrace",
+				"sections": [
+					{
+                        "name": "B1F",
+						"access_rules": ["^$CanReach|PoisonTerraceChest"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "poison_moths_lair1",
+						"x": 659,
+						"y": 282
+					}
+				]
+			},
+			{
+				"name": "Chest in Moving Blade Room",
+				"sections": [
+					{
+                        "name": "B1F",
+						"access_rules": ["^$CanReach|PoisonBladeTrapChest"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "poison_moths_lair1",
+						"x": 108,
+						"y": 346
+					}
+				]
+			},
+			{
+				"name": "Boss Reward",
+				"sections": [
+					{
+                        "name": "Mothula",
+						"access_rules": ["^$CanReach|Mothula"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "poison_moths_lair2",
+						"x": 479,
+						"y": 307
+					}
+				]
+			},
+			{
+				"name": "Bright Sun",
+				"sections": [
+					{
+                        "name": "Essence",
+						"access_rules": ["^$CanReach|PoisonEssence"],
+						"hosted_item": "d3"
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "poison_moths_lair1",
+						"x": 479,
+						"y": 127
+					}
+				]
+			}
+		]
+	}
+]

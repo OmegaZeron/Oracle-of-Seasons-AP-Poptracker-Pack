@@ -1,11 +1,13 @@
-ScriptHost:LoadScript("scripts/logic.lua")
+ScriptHost:LoadScript("scripts/logic/definition_helper.lua")
 ScriptHost:LoadScript("scripts/logic/logic.lua")
+ScriptHost:LoadScript("scripts/logic/location_definitions.lua")
+ScriptHost:LoadScript("scripts/logic/logic_helper.lua")
 ScriptHost:LoadScript("scripts/utils.lua")
-ScriptHost:LoadScript("scripts/portal_logic.lua")
 ScriptHost:LoadScript("scripts/autotracking.lua")
 ScriptHost:LoadScript("scripts/locations.lua")
 
 Tracker:AddItems("items/items.json")
+Tracker:AddItems("items/hints.json")
 
 Tracker:AddItems("items/settings.json")
 Tracker:AddItems("items/labels.json")
@@ -15,3 +17,11 @@ Tracker:AddLayouts("layouts/item_grids.json")
 Tracker:AddLayouts("layouts/tracker_layouts.json")
 Tracker:AddLayouts("layouts/broadcast.json")
 
+StartLocation = OoSLocation.New("StartLocation")
+StartLocation:connect_one_way_entrance(LowerNorthHoron)
+-- StartLocation:discover(AccessibilityLevel.Normal)
+
+for _, location in pairs(NamedLocations) do
+	location.accessibility_level = 0
+end
+StateChange()

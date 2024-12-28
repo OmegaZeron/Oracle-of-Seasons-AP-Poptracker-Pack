@@ -1,0 +1,366 @@
+[
+	{
+		"name": "Eastern Suburbs",
+		"chest_unopened_img": "images/labels/chest.png",
+		"chest_opened_img": "images/labels/chestopen.png",
+		"color": "#00ff08",
+		"children": [
+			{
+				"name": "Samasa Desert: Skull Pit",
+				"sections": [
+					{
+						"name": "One of Four Pits",
+						"access_rules": ["^$CanReach|SamasaDesertPit"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 528,
+						"y": 578
+					},
+					{
+						"map": "holodrum",
+						"x": 568,
+						"y": 583
+					},
+					{
+						"map": "holodrum",
+						"x": 658,
+						"y": 583
+					},
+					{
+						"map": "holodrum",
+						"x": 570,
+						"y": 505
+					}
+				]
+			},
+			{
+				"name": "Samasa Desert: Cliff Chest",
+				"sections": [
+					{
+						"name": "Bottom Left Pit",
+						"access_rules": ["^$CanReach|SamasaDesertChest"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 670,
+						"y": 660
+					},
+					{
+						"map": "holodrum",
+						"x": 580,
+						"y": 670
+					}
+				]
+			},
+			{
+				"name": "Samasa Desert Gasha Spot",
+				"sections": [
+					{
+						"name": "Surrounded by Cacti",
+						"access_rules": ["^$CanReach|SamasaDesertGasha"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 670,
+						"y": 635
+					}
+				]
+			},
+			{
+				"name": "Windmill",
+				"sections": [
+					{
+						"name": "Guru-Guru Trade",
+						"access_rules": ["^$CanReach|WindmillTrade"]
+					},
+					{
+						"name": "Winter Side Entrance",
+						"access_rules": ["^$CanReach|WindmillHP"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 460,
+						"y": 584
+					}
+				]
+			},
+			{
+				"name": "Eastern Suburbs: Chest in Spring Cave",
+				"sections": [
+					{
+						"access_rules": ["^$CanReach|SuburbsSpringCave"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 534,
+						"y": 534
+					}
+				]
+			},
+			{
+				"name": "Eastern Suburbs Gasha Spot",
+				"sections": [
+					{
+						"name": "Under Bushes",
+						"access_rules": ["^$CanReach|SuburbsGasha"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 540,
+						"y": 430
+					}
+				]
+			},
+			{
+				"name": "Woods of Winter Tree",
+				"sections": [
+					{
+						"access_rules": ["$CanReach|WoodsOfWinterTree"],
+						"hosted_item": "tree_wow"
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 621,
+						"y": 407
+					}
+				]
+			},
+			{
+				"name": "Woods of Winter: Chest on D2 Roof",
+				"sections": [
+					{
+						"access_rules": ["^$CanReach|UpperSnakesRemains"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 610,
+						"y": 355
+					}
+				]
+			},
+			{
+				"name": "Woods of Winter: Mushroom Cave",
+				"sections": [
+					{
+						"access_rules": ["^$CanReach|WoodsOfWinterMushroomCaveChest"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 631,
+						"y": 364
+					}
+				]
+			},
+			{
+				"name": "Golden Moblin",
+				"sections": [
+					{
+						"name": "Autumn",
+						"access_rules": ["^$CanReach|GoldenMoblinKill"],
+						"hosted_item": "golden_moblin"
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 578,
+						"y": 372
+					}
+				]
+			},
+			{
+				"name": "Moblin Road Bomb Cave",
+				"sections": [
+					{
+						"access_rules": ["^$CanReach|MoblinRoadBombCaveChest"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 578,
+						"y": 322
+					}
+				]
+			},
+			{
+				"name": "Woods of Winter Heart Piece",
+				"sections": [
+					{
+						"access_rules": ["^$CanReach|SuburbsHP"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 673,
+						"y": 462
+					}
+				]
+			},
+			{
+				"name": "Holly's House",
+				"sections": [
+					{
+						"name": "Woods of Winter: Holly's Gift",
+						"access_rules": ["^$CanReach|Holly"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 663,
+						"y": 322
+					}
+				]
+			},
+			{
+				"name": "Waterfall Cave",
+				"sections": [
+					{
+						"name": "Woods of Winter: Chest in Waterfall Cave",
+						"access_rules": ["^$CanReach|MoblinRoadWaterfallCaveChest"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 621,
+						"y": 300
+					}
+				]
+			},
+			{
+				"name": "Woods of Winter Old Man",
+				"visibility_rules": ["old_men_locations"],
+				"sections": [
+					{
+						"access_rules": ["^$CanReach|SuburbsOldMan"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 658,
+						"y": 360
+					}
+				]
+			},
+			{
+				"name": "Eastern Suburbs Portal",
+				"chest_unopened_img": "images/labels/portal.png",
+				"chest_opened_img": "images/labels/portalgray.png",
+				// "visibility_rules": [
+				// 	"portalshuffleon",
+				// 	"portalshuffleoutward"
+				// ],
+				"sections": [
+					{
+						"name": "Enter Eastern Suburbs Portal",
+						"access_rules": ["^$CanReach|SuburbsPortal"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 444,
+						"y": 404
+					}
+				]
+			},
+			{
+				"name": "Enter D2",
+				"visibility_rules": ["ShuffleDungeonOn"],
+				"sections": [
+					{
+						"name": "Snake's Remains",
+						"access_rules": ["^$CanReach|SnakesRemains"]
+					}
+				],
+				"map_locations": [
+					{
+					"map": "holodrum",
+					"x": 558,
+					"y": 364
+					}
+				]
+			},
+			{
+				"name": "Snake's Remains",
+				"access_rules": ["^$CanReach|SnakeFoyer", "^$CanReach|SnakeAltEntrance"],
+				"sections": [
+					{
+						"name": "Snake's Remains: Chest Left from Entrance",
+						"ref": "Snake's Remains/Chest Left from Entrance/"
+					},
+					{
+						"name": "Snake's Remains: Drop in Left Rope Room",
+						"ref": "Snake's Remains/Drop in Left Rope Room/"
+					},
+					{
+						"name": "Snake's Remains: Chest in Right Rope Room",
+						"ref": "Snake's Remains/Chest in Right Rope Room/"
+					},
+					{
+						"name": "Snake's Remains: Chest Behind Pots in Hardhat Room",
+						"ref": "Snake's Remains/Chest Behind Pots in Hardhat Room/"
+					},
+					{
+						"name": "Snake's Remains: Chest in Distant Moblins Room",
+						"ref": "Snake's Remains/Chest in Distant Moblins Room/"
+					},
+					{
+						"name": "Snake's Remains: Chest in Moving Blades Room",
+						"ref": "Snake's Remains/Chest in Moving Blades Room/"
+					},
+					{
+						"name": "Snake's Remains: Chest in Bomb Spiral Maze Room",
+						"ref": "Snake's Remains/Chest in Bomb Spiral Maze Room/"
+					},
+					{
+						"name": "Snake's Remains: Chest in Rollers Section",
+						"ref": "Snake's Remains/Chest in Rollers Section/"
+					},
+					{
+						"name": "Snake's Remains: Chest on Terrace",
+						"ref": "Snake's Remains/Chest on Terrace/"
+					},
+					{
+						"name": "Snake's Remains: Boss Reward",
+						"ref": "Snake's Remains/Boss Reward/King Dodongo"
+					},
+					{
+						"name": "Gift of Time",
+						"ref": "Snake's Remains/Gift of Time/Essence"
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 578,
+						"y": 352
+					}
+				]
+			}
+		]
+	}
+]

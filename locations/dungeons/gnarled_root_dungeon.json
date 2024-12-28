@@ -1,0 +1,178 @@
+[
+	{
+		"name": "Gnarled Root Dungeon",
+		"chest_unopened_img": "images/labels/chest.png",
+		"chest_opened_img": "images/labels/chestopen.png",
+		"access_rules": ["^$CanReach|GnarledFoyer"],
+		"children": [	
+			{
+				"name": "Drop in Right Stalfos Room",
+				"sections":  [
+					{
+						"access_rules": ["^$CanReach|GnarledRightStalfosChest"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "gnarled_root_dungeon",
+						"x": 617,
+						"y": 452
+					}
+				]
+			},
+			{
+				"name": "Chest in Left Stalfos Room",
+				"sections": [
+					{
+						"access_rules": ["^$CanReach|GnarledLeftStalfosChest"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "gnarled_root_dungeon",
+						"x": 342,
+						"y": 452
+					}
+				]
+			},
+			{
+				"name": "Chest in Goriya Room",
+				"sections": [
+					{
+						"access_rules": ["^$CanReach|GnarledGoriyaChest"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "gnarled_root_dungeon",
+						"x": 205,
+						"y": 351
+					}
+				]
+			},
+			{
+				"name": "Chest in Block-pushing Room",
+				"sections": [
+					{
+						"access_rules": ["^$CanReach|GnarledPushBlocks"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "gnarled_root_dungeon",
+						"x": 13,
+						"y": 214
+					}
+				]
+			},
+			{
+				"name": "Chest Near Railway Lever",
+				"sections": [
+					{
+						"access_rules": ["^$CanReach|GnarledLeverChest"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "gnarled_root_dungeon",
+						"x": 379,
+						"y": 233
+					}
+				]
+			},
+			{
+				"name": "Chest Near Railway",
+				"sections": [
+					{
+						"access_rules": ["^$CanReach|GnarledMinecartChest"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "gnarled_root_dungeon",
+						"x": 479,
+						"y": 260
+					}
+				]
+			},
+			{
+				"name": "Hidden Chest Revealed by Button",
+				"sections": [
+					{
+						"access_rules": ["^$CanReach|GnarledSpinningBladeChest"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "gnarled_root_dungeon",
+						"x": 662,
+						"y": 224
+					}
+				]
+			},
+			{
+				"name": "Item in Basement",
+				"sections": [
+					{
+						"access_rules": ["^$CanReach|GnarledPostGoriyaBros"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "gnarled_root_dungeon",
+						"x": 203,
+						"y": 149
+					}
+				]
+			},
+			{
+				"name": "Chest in Floormaster Room",
+				"sections": [
+					{
+						"access_rules": ["^$CanReach|GnarledFloormasterChest"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "gnarled_root_dungeon",
+						"x": 580,
+						"y": 324
+					}
+				]
+			},
+			{
+				"name": "Boss Reward",
+				"sections": [
+					{
+						"name": "Aquamentus",
+						"access_rules": ["^$CanReach|GnarledEssence"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "gnarled_root_dungeon",
+						"x": 750,
+						"y": 252
+					}
+				]
+			},
+			{
+				"name": "Fertile Soil",
+				"sections": [
+					{
+						// "name": "Fertile Soil",
+						"access_rules": ["^$CanReach|GnarledEssence"],
+						"hosted_item": "d1"
+					}
+				],
+				"map_locations": [
+					{
+						"map": "gnarled_root_dungeon",
+						"x": 891,
+						"y": 252
+					}
+				]
+			}
+		]
+	}
+]

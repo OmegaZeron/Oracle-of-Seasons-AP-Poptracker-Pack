@@ -1,0 +1,139 @@
+[
+	{
+		"name": "Sunken City",
+		"chest_unopened_img": "images/labels/chest.png",
+		"chest_opened_img": "images/labels/chestopen.png",
+		"color": "#00ff08",
+		"children": [
+			{
+				"name": "Sunken City tree",
+				"sections": [
+					{
+						"name": "Sunken City: Seed Tree",
+						"access_rules": ["^$CanReach|SunkenTree"],
+						"hosted_item": "tree_sunken"
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 661,
+						"y": 235
+					}
+				]
+			},
+			{
+				"name": "Ingo's House",
+				"sections": [
+					{
+						"name": "Sunken City: Vase Trade",
+						"access_rules": ["^$CanReach|SunkenVaseTrade"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 570,
+						"y": 187
+					}
+				]
+			},
+			{
+				"name": "Syrup's Hut",
+				"access_rules": ["^$CanReach|Syrup"],
+				"sections": [
+					{
+						"name": "Sunken City: Syrup Trade"
+					},
+					{
+						"name": "Sunken City: Syrup Shop #1",
+						"access_rules": ["^$CanFarmRupees"]
+					},
+					{
+						"name": "Sunken City: Syrup Shop #2",
+						"access_rules": ["^$CanFarmRupees"]
+					},
+					{
+						"name": "Sunken City: Syrup Shop #3",
+						"access_rules": ["^$CanFarmRupees"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 620,
+						"y": 237
+					}
+				]
+			},
+			{
+				"name": "Waterfall Challenge",
+				"sections": [
+					{
+						"name": "Sunken City: Master Diver's Challenge Chest",
+						"access_rules": ["^$CanReach|MasterChallenge"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 605,
+						"y": 120
+					}
+				]
+			},
+			{
+				"name": "Waterfall",
+				"sections": [
+					{
+						"name": "Sunken City: Master's Plaque Trade",
+						"access_rules": ["^$CanReach|MasterDiver"]
+					},
+					{
+						"name": "Sunken City: Chest in Master Diver's Cave",
+						"access_rules": ["^$CanReach|SunkenMasterDiverChest"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 625,
+						"y": 120
+					}
+				]
+			},
+			{
+				"name": "Sunken City Gasha Spot",
+				"sections": [
+					{
+						"name": "Near Master Diver",
+						"access_rules": ["^$CanReach|SunkenGashaSpot"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 660,
+						"y": 155
+					}
+				]
+			},
+			{
+				"name": "Sunken City Cliffs",
+				"sections": [
+					{
+						"name": "Sunken City: Chest in Summer Cave",
+						"access_rules": ["^$CanReach|SunkenSummerCave"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 652,
+						"y": 185
+					}
+				]
+			}
+		]
+	}
+]

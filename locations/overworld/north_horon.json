@@ -1,0 +1,333 @@
+[
+	{
+		"name": "North Horon",
+		"chest_unopened_img": "images/labels/chest.png",
+		"chest_opened_img": "images/labels/chestopen.png",
+		"color": "#00ff08",
+		"children": [
+			{
+				"name": "Cat in Tree",
+				"access_rules": ["^$CanReach|GnarledRootDoorstep"],
+				"visibility_rules": ["ShuffleDungeonOn"],
+				"sections": [
+					{
+						"name": "North Horon: Yelling Old Man Trade",
+						"access_rules": ["^$CanReach|CatInTree"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 320,
+						"y": 500
+					}
+				]
+			},
+			{
+				"name": "Eyeglass Lake",
+				"sections": [
+					{
+						"name": "Eyeglass Lake: Chest Across Bridge",
+						"access_rules": ["^$CanReach|EyeglassPitsChest"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 366,
+						"y": 492
+					}
+				]
+			},
+			{
+				"name": "North Horon Gasha Spot",
+				"sections": [
+					{
+						"name": "Near Impa",
+						"access_rules": ["^$CanReach|NorthHoronGasha"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 274,
+						"y": 458
+					}
+				]
+			},
+			{
+				"name": "Malon's House",
+				"sections": [
+					{
+						"name": "North Horon: Malon Trade",
+						"access_rules": ["^$CanReach|MalonTrade"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 360,
+						"y": 352
+					}
+				]
+			},
+			{
+				"name": "Old Man Near D1",
+				"visibility_rules": ["old_men_locations"],
+				"sections": [
+					{
+						"name": "North Horon: Old Man Near D1",
+						"access_rules": ["^$CanReach|NorthHoronOldMan"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 315,
+						"y": 399
+					}
+				]
+			},
+			{
+				"name": "Golden Beasts Reward",
+				"sections": [
+					{
+						"name": "North Horon: Golden Beasts Old Man",
+						"access_rules": ["^$CanReach|RedRingOldManReward"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 289,
+						"y": 438
+					}
+				]
+			},
+			{
+				"name": "West Eyeglass Lake",
+				"sections": [
+					{
+						"name": "Eyeglass Lake: Chest in Dried Lake West Cave",
+						"access_rules": ["^$CanReach|DryEyeglassBombCaveChest"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 338,
+						"y": 440
+					}
+				]
+			},
+			{
+				"name": "Eyeglass Lake Gasha Spot",
+				"sections": [
+					{
+						"name": "Near D5",
+						"access_rules": ["^$CanReach|EyeglassGasha"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 405,
+						"y": 357
+					}
+				]
+			},
+			{
+				"name": "East Eyeglass Lake",
+				"sections": [
+					{
+						"name": "Eyeglass Lake: Chest in Dried Lake East Cave",
+						"access_rules": ["^$CanReach|DryEyeglassHiddenStairs"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 449,
+						"y": 448
+					}
+				]
+			},
+			{
+				"name": "Eyeglass Lake Portal",
+				"chest_unopened_img": "images/labels/portal.png",
+				"chest_opened_img": "images/labels/portalgray.png",
+				// "visibility_rules": [
+				// 	"PortalShuffleOn",
+				// 	"PortalShuffleOutward"
+				// ],
+				"sections": [
+					{
+						"name": "Eyeglass Lake Portal",
+						"access_rules": ["^$CanReach|EyeglassPortal"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 400,
+						"y": 490
+					}
+				]
+			},
+			{
+				"name": "Enter D1",
+				"access_rules": ["^$CanReach|GnarledRootDoorstep"],
+				"visibility_rules": ["ShuffleDungeonOn"],
+				"sections": [
+					{
+						"name": "Gnarled Root Dungeon",
+						"access_rules": ["^$CanReach|GnarledRootDungeon"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 261,
+						"y": 407
+					}
+				]
+			},
+			{
+				"name": "Enter D5",
+				"visibility_rules": ["ShuffleDungeonOn"],
+				"sections": [
+					{
+						"name": "Unicorn's Cave",
+						"access_rules": ["^$CanReach|UnicornCave"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 437,
+						"y": 358
+					}
+				]
+			},
+
+			{
+				"name": "Gnarled Root Dungeon",
+				"access_rules": ["^$CanReach|GnarledFoyer"],
+				"sections": [	
+					{
+						"name": "Gnarled Root Dungeon: Drop in Right Stalfos Room",
+						"ref": "Gnarled Root Dungeon/Drop in Right Stalfos Room/"
+					},
+					{
+						"name": "Gnarled Root Dungeon: Chest in Left Stalfos Room",
+						"ref": "Gnarled Root Dungeon/Chest in Left Stalfos Room/"
+					},
+					{
+						"name": "Gnarled Root Dungeon: Chest in Goriya Room",
+						"ref": "Gnarled Root Dungeon/Chest in Goriya Room/"
+					},
+					{
+						"name": "Gnarled Root Dungeon: Chest in Block-pushing Room",
+						"ref": "Gnarled Root Dungeon/Chest in Block-pushing Room/"
+					},
+					{
+						"name": "Gnarled Root Dungeon: Chest Near Railway Lever",
+						"ref": "Gnarled Root Dungeon/Chest Near Railway Lever/"
+					},
+					{
+						"name": "Gnarled Root Dungeon: Chest Near Railway",
+						"ref": "Gnarled Root Dungeon/Chest Near Railway/"
+					},
+					{
+						"name": "Gnarled Root Dungeon: Hidden Chest Revealed by Button",
+						"ref": "Gnarled Root Dungeon/Hidden Chest Revealed by Button/"
+					},
+					{
+						"name": "Gnarled Root Dungeon: Item in Basement",
+						"ref": "Gnarled Root Dungeon/Item in Basement/"
+					},
+					{
+						"name": "Gnarled Root Dungeon: Chest in Floormaster Room",
+						"ref": "Gnarled Root Dungeon/Chest in Floormaster Room/"
+					},
+					{
+						"name": "Gnarled Root Dungeon: Boss Reward",
+						"ref": "Gnarled Root Dungeon/Boss Reward/Aquamentus"
+					},
+					{
+						"name": "Fertile Soil",
+						"ref": "Gnarled Root Dungeon/Fertile Soil/"
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 281,
+						"y": 407
+					}
+				]
+			},
+			{
+				"name": "Unicorn's Cave",
+				"access_rules": ["^$CanReach|UnicornFoyer"],
+				"sections": [
+					{
+						"name": "Unicorn's Cave: Right Cart Chest",
+						"ref": "Unicorn's Cave/Right Cart Chest/"
+					},
+					{
+						"name": "Unicorn's Cave: Gibdo Room Chest",
+						"ref": "Unicorn's Cave/Gibdo Room Chest/"
+					},
+					{
+						"name": "Unicorn's Cave: Magnet Gloves Chest",
+						"ref": "Unicorn's Cave/Magnet Gloves Chest/"
+					},
+					{
+						"name": "Unicorn's Cave: Chest Left from Entrance",
+						"ref": "Unicorn's Cave/Chest Left from Entrance/"
+					},
+					{
+						"name": "Unicorn's Cave: Quicksand Spiral Chest",
+						"ref": "Unicorn's Cave/Quicksand Spiral Chest/"
+					},
+					{
+						"name": "Unicorn's Cave: Terrace Chest",
+						"ref": "Unicorn's Cave/Terrace Chest/"
+					},
+					{
+						"name": "Unicorn's Cave: Armos Puzzle Room Chest",
+						"ref": "Unicorn's Cave/Armos Puzzle Room Chest/"
+					},
+					{
+						"name": "Unicorn's Cave: Magnet Spinner Chest",
+						"ref": "Unicorn's Cave/Magnet Spinner Chest/"
+					},
+					{
+						"name": "Unicorn's Cave: Chest in Right Half of Minecart Bay Room",
+						"ref": "Unicorn's Cave/Chest in Right Half of Minecart Bay Room/"
+					},
+					{
+						"name": "Unicorn's Cave: Treadmills Basement Item",
+						"ref": "Unicorn's Cave/Treadmills Basement Item/"
+					},
+					{
+						"name": "Unicorn's Cave: Boss Reward",
+						"ref": "Unicorn's Cave/Boss Reward/Aquamentus"
+					},
+					{
+						"name": "Nurturing Warmth",
+						"ref": "Unicorn's Cave/Nurturing Warmth/Essence"
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 457,
+						"y": 358
+					}
+				]
+			}
+		]
+	}
+]

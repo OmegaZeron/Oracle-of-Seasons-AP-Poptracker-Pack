@@ -1,0 +1,17 @@
+[
+	{
+		"name": "holodrum_horon_shop_horon_village_shop_1",
+		"type": "toggle",
+		"codes": "holodrum_horon_shop_horon_village_shop_1"
+	},
+	{
+		"name": "holodrum_horon_shop_horon_village_shop_2",
+		"type": "toggle",
+		"codes": "holodrum_horon_shop_horon_village_shop_2"
+	},
+	{
+		"name": "holodrum_horon_shop_horon_village_shop_3",
+		"type": "toggle",
+		"codes": "holodrum_horon_shop_horon_village_shop_3"
+	}
+]

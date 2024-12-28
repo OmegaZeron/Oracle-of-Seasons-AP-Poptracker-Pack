@@ -1,0 +1,191 @@
+[
+	{
+		"name": "Tarm Ruins",
+		"chest_unopened_img": "images/labels/chest.png",
+		"chest_opened_img": "images/labels/chestopen.png",
+		"color": "#00ff08",
+		"children": [
+			{
+				"name": "Tarm Ruins tree",
+				"sections": [
+					{
+						"name": "Tarm Ruins: Seed Tree",
+						"access_rules": ["^$CanReach|TarmTree, ^$CanHarvestSeeds"],
+						"hosted_item": "tree_tarm"
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 22,
+						"y": 57
+					}
+				]
+			},
+			{
+				"name": "Tarm Ruins Gasha Spot",
+				"sections": [
+					{
+						"name": "Dig It Up",
+						"access_rules": ["^$CanReach|TarmGasha"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 110,
+						"y": 110
+					}
+				]
+			},
+			{
+				"name": "Tarm Ruins Old Man",
+				"sections": [
+					{
+						"access_rules": ["^$CanReach|TarmOldMan"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 120,
+						"y": 10
+					}
+				]
+			},
+			{
+				"name": "Golden Lynel",
+				"chest_unopened_img": "images/items/golden_lynel.png",
+				"chest_opened_img": "images/items/golden_lynel_defeated.png",
+				"sections": [
+					{
+						"name": "Winter",
+						"access_rules": ["^$CanReach|GoldenLynelKill"],
+						"hosted_item": "golden_lynel"
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 148,
+						"y": 192
+					}
+				]
+			},
+			{
+				"name": "Lost Woods",
+				"sections": [
+					{
+						"name": "Lost Woods: Pedestal Item",
+						"access_rules": ["^$CanReach|Pedestal"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 22,
+						"y": 192
+					}
+				]
+			},
+			{
+				"name": "Tree Behind Mushrooms",
+				"sections": [
+					{
+						"name": "Tarm Ruins: Chest in Rabbit Hole Under Tree",
+						"access_rules": ["^$CanReach|TarmMushroomTreeChest"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 15,
+						"y": 85
+					}
+				]
+			},
+			{
+				"name": "Enter D6",
+				"visibility_rules": ["shuffledungeonon"],
+				"sections": [
+					{
+						"name": "Ancient Ruins",
+						"access_rules": ["^$CanReach|AncientRuins"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 40,
+						"y": 25
+					}
+				]
+			},
+			{
+				"name": "Ancient Ruins",
+				"access_rules": ["^$CanReach|AncientFoyer"],
+				"sections": [
+					{
+						"name": "Ancient Ruins (1F): Crumbling Ground Room Chest",
+						"ref": "Ancient Ruins/Crumbling Ground Room Chest/1F"
+					},
+					{
+						"name": "Ancient Ruins (1F): Magnet Ball Puzzle Drop",
+						"ref": "Ancient Ruins/Magnet Ball Puzzle Drop/1F"
+					},
+					{
+						"name": "Ancient Ruins (1F): Chest in Beamos Room",
+						"ref": "Ancient Ruins/Chest in Beamos Room/1F"
+					},
+					{
+						"name": "Ancient Ruins (2F): Chest in Gibdo Room",
+						"ref": "Ancient Ruins/Chest in Gibdo Room/2F"
+					},
+					{
+						"name": "Ancient Ruins (2F): Chest Between 4 Armos",
+						"ref": "Ancient Ruins/Chest Between 4 Armos/2F"
+					},
+					{
+						"name": "Ancient Ruins (3F): Armos Hall Chest",
+						"ref": "Ancient Ruins/Armos Hall Chest/3F"
+					},
+					{
+						"name": "Ancient Ruins (2F): Chest North of Main Spinner",
+						"ref": "Ancient Ruins/Chest North of Main Spinner/2F"
+					},
+					{
+						"name": "Ancient Ruins (1F): Chest on Terrace Left of Entrance",
+						"ref": "Ancient Ruins/Chest on Terrace Left of Entrance/1F"
+					},
+					{
+						"name": "Ancient Ruins (1F): Crystal Maze Room Chest",
+						"ref": "Ancient Ruins/Crystal Maze Room Chest/1F"
+					},
+					{
+						"name": "Ancient Ruins (2F): Chest After Time Trial",
+						"ref": "Ancient Ruins/Chest After Time Trial/2F"
+					},
+					{
+						"name": "Ancient Ruins (2F): Chest on Red Terrace Before Vire",
+						"ref": "Ancient Ruins/Chest on Red Terrace Before Vire/2F"
+					},
+					{
+						"name": "Ancient Ruins (5F): Boss Reward",
+						"ref": "Ancient Ruins/Boss Reward/Manhandla"
+					},
+					{
+						"name": "Blowing Wind",
+						"ref": "Ancient Ruins/Blowing Wind/Essence"
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 20,
+						"y": 25
+					}
+				]
+			}
+		]
+	}
+]

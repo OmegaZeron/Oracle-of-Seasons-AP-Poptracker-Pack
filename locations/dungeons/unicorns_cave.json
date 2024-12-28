@@ -1,0 +1,198 @@
+[
+	{
+		"name": "Unicorn's Cave",
+		"chest_unopened_img": "images/labels/chest.png",
+		"chest_opened_img": "images/labels/chestopen.png",
+		"access_rules": ["^$CanReach|UnicornFoyer"],
+		"children": [	
+			{
+				"name": "Right Cart Chest",
+				"sections": [
+					{
+						"access_rules": ["^$CanReach|UnicornMiddleMinecartChest"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "unicorns_cave",
+						"x": 823,
+						"y": 776
+					}
+				]
+			},
+			{
+				"name": "Gibdo Room Chest",
+				"sections": [
+					{
+						"access_rules": ["^$CanReach|UnicornGibdoZolChest"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "unicorns_cave",
+						"x": 839,
+						"y": 439
+					}
+				]
+			},
+			{
+				"name": "Magnet Gloves Chest",
+				"sections": [
+					{
+						"access_rules": ["^$CanReach|UnicornMagnetGloveChest"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "unicorns_cave",
+						"x": 87,
+						"y": 216
+					}
+				]
+			},
+			{
+				"name": "Chest Left from Entrance",
+				"sections": [
+					{
+						"access_rules": ["^$CanReach|UnicornChestLeftOfEntrance"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "unicorns_cave",
+						"x": 311,
+						"y": 1112
+					}
+				]
+			},
+			{
+				"name": "Quicksand Spiral Chest",
+				"sections": [
+					{
+						"access_rules": ["^$CanReach|UnicornSpiralChest"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "unicorns_cave",
+						"x": 119,
+						"y": 968
+					}
+				]
+			},
+			{
+				"name": "Terrace Chest",
+				"sections": [
+					{
+						"access_rules": ["^$CanReach|UnicornTerrace"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "unicorns_cave",
+						"x": 263,
+						"y": 728
+					}
+				]
+			},
+			{
+				"name": "Armos Puzzle Room Chest",
+				"sections": [
+					{
+						"access_rules": ["^$CanReach|UnicornArmosPuzzle"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "unicorns_cave",
+						"x": 151,
+						"y": 615
+					}
+				]
+			},
+			{
+				"name": "Magnet Spinner Chest",
+				"sections": [
+					{
+						"access_rules": ["^$CanReach|UnicornSpinnerChest"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "unicorns_cave",
+						"x": 520,
+						"y": 952
+					}
+				]
+			},
+			{
+				"name": "Chest in Right Half of Minecart Bay Room",
+				"sections": [
+					{
+						"access_rules": ["^$CanReach|UnicornRightMinecartChest"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "unicorns_cave",
+						"x": 903,
+						"y": 1176
+					}
+				]
+			},
+			{
+				"name": "Treadmills Basement Item",
+				"sections": [
+					{
+						"access_rules": ["^$CanReach|UnicornTreadmillBasement"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "unicorns_cave",
+						"x": 1434,
+						"y": 422
+					},
+					{
+						"map": "unicorns_cave",
+						"x": 1176,
+						"y": 503
+					}
+				]
+			},
+			{
+				"name": "Boss Reward",
+				"sections": [
+					{
+						"name": "Digdogger",
+						"access_rules": ["^$CanReach|UnicornEssence"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "unicorns_cave",
+						"x": 1079,
+						"y": 296
+					}
+				]
+			},
+			{
+				"name": "Nurturing Warmth",
+				"sections": [
+					{
+						"name": "Essence",
+						"access_rules": ["^$CanReach|UnicornEssence"],
+						"hosted_item": "d5"
+					}
+				],
+				"map_locations": [
+					{
+						"map": "unicorns_cave",
+						"x": 1079,
+						"y": 62
+					}
+				]
+			}
+		]
+	}
+]

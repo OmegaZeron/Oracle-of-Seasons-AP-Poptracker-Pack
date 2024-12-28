@@ -1,0 +1,367 @@
+[
+	{
+		"name": "Horon Village",
+		"chest_unopened_img": "images/labels/chest.png",
+		"chest_opened_img": "images/labels/chestopen.png",
+		"color": "#00ff08",
+		"children": [
+			{
+				"name": "Mushroom Chest",
+				"sections": [
+					{
+						"name": "Horon Village: Chest Behind Mushrooms",
+						"access_rules": ["^$CanReach|HoronMushroomChest"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 237,
+						"y": 662
+					}
+				]
+			},
+			{
+				"name": "Horon Tree",
+				"sections": [
+					{
+						"name": "Horon Village: Seed Tree",
+						"access_rules": ["^$CanReach|HoronTree"],
+						"hosted_item": "tree_village"
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 364,
+						"y": 654
+					}
+				]
+			},
+			{
+				"name": "Maku Tree",
+				"sections": [
+					{
+						"name": "Maku Tree Gift",
+						"access_rules": ["^$CanReach|MakuTreeGift"]
+					},
+					{
+						"name": "Item Inside Maku Tree (3+ Essences)",
+						"access_rules": ["^$CanReach|MakuTreeReward1"]
+					},
+					{
+						"name": "Item Inside Maku Tree (5+ Essences)",
+						"access_rules": ["^$CanReach|MakuTreeReward2"]
+					},
+					{
+						"name": "Item Inside Maku Tree (7+ Essences)",
+						"access_rules": ["^$CanReach|MakuTreeReward3"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 407,
+						"y": 534
+					}
+				]
+			},
+			{
+				"name": "Mayor's House",
+				"sections": [
+					{
+						"name": "Mayor's Gift",
+						"access_rules": ["^$CanReach|MayorsGift"]
+					},
+					{
+						"name": "Item Behind Cracked Wall in Mayor's House",
+						"access_rules": ["^$CanReach|MayorBombWall"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 367,
+						"y": 530
+					}
+				]
+			},
+			{
+				"name": "Gasha Spots",
+				"sections": [
+					{
+						"name": "Gasha Spot #1",
+						"visibility_rules": ["^$CanSeeGasha|1"],
+						"access_rules": ["^$CanHarvestGasha|1"]
+					},
+					{
+						"name": "Gasha Spot #2",
+						"visibility_rules": ["^$CanSeeGasha|2"],
+						"access_rules": ["^$CanHarvestGasha|2"]
+					},
+					{
+						"name": "Gasha Spot #3",
+						"visibility_rules": ["^$CanSeeGasha|3"],
+						"access_rules": ["^$CanHarvestGasha|3"]
+					},
+					{
+						"name": "Gasha Spot #4",
+						"visibility_rules": ["^$CanSeeGasha|4"],
+						"access_rules": ["^$CanHarvestGasha|4"]
+					},
+					{
+						"name": "Gasha Spot #5",
+						"visibility_rules": ["^$CanSeeGasha|5"],
+						"access_rules": ["^$CanHarvestGasha|5"]
+					},
+					{
+						"name": "Gasha Spot #6",
+						"visibility_rules": ["^$CanSeeGasha|6"],
+						"access_rules": ["^$CanHarvestGasha|6"]
+					},
+					{
+						"name": "Gasha Spot #7",
+						"visibility_rules": ["^$CanSeeGasha|7"],
+						"access_rules": ["^$CanHarvestGasha|7"]
+					},
+					{
+						"name": "Gasha Spot #8",
+						"visibility_rules": ["^$CanSeeGasha|8"],
+						"access_rules": ["^$CanHarvestGasha|8"]
+					},
+					{
+						"name": "Gasha Spot #9",
+						"visibility_rules": ["^$CanSeeGasha|9"],
+						"access_rules": ["^$CanHarvestGasha|9"]
+					},
+					{
+						"name": "Gasha Spot #10",
+						"visibility_rules": ["^$CanSeeGasha|10"],
+						"access_rules": ["^$CanHarvestGasha|10"]
+					},
+					{
+						"name": "Gasha Spot #11",
+						"visibility_rules": ["^$CanSeeGasha|11"],
+						"access_rules": ["^$CanHarvestGasha|11"]
+					},
+					{
+						"name": "Gasha Spot #12",
+						"visibility_rules": ["^$CanSeeGasha|12"],
+						"access_rules": ["^$CanHarvestGasha|12"]
+					},
+					{
+						"name": "Gasha Spot #13",
+						"visibility_rules": ["^$CanSeeGasha|13"],
+						"access_rules": ["^$CanHarvestGasha|13"]
+					},
+					{
+						"name": "Gasha Spot #14",
+						"visibility_rules": ["^$CanSeeGasha|14"],
+						"access_rules": ["^$CanHarvestGasha|14"]
+					},
+					{
+						"name": "Gasha Spot #15",
+						"visibility_rules": ["^$CanSeeGasha|15"],
+						"access_rules": ["^$CanHarvestGasha|15"]
+					},
+					{
+						"name": "Gasha Spot #16",
+						"visibility_rules": ["^$CanSeeGasha|16"],
+						"access_rules": ["^$CanHarvestGasha|16"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 347,
+						"y": 530
+					}
+				]
+			},
+			{
+				"name": "Vasu",
+				"sections": [
+					{
+						"name": "Horon Village: Vasu's Gift",
+						"access_rules": ["^$CanReach|Vasu"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 367,
+						"y": 614
+					}
+				]
+			},
+			{
+				"name": "Horon Village Gasha Spot",
+				"sections": [
+					{
+						"name": "Near Mayor",
+						"access_rules": ["^$CanReach|HoronGasha"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 375,
+						"y": 552
+					}
+				]
+			},
+			{
+				"name": "Horon Heart Piece",
+				"sections": [
+					{
+						"name": "Horon Village: Item Behind Small Tree",
+						"access_rules": ["^$CanReach|HoronTreeHP"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 375,
+						"y": 574
+					}
+				]
+			},
+			{
+				"name": "Dr. Left's House",
+				"sections": [
+					{
+						"name": "Horon Village: Dr. Left Reward",
+						"access_rules": ["^$CanReach|DrLeftReward"]
+					},
+					{
+						"name": "Horon Village: Chest in Dr. Left's Backyard",
+						"access_rules": ["^$CanReach|DrLeftBackyardChest"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 407,
+						"y": 652
+					}
+				]
+			},
+			{
+				"name": "Horon Old Man",
+				"visibility_rules": ["old_men_locations"],
+				"sections": [
+					{
+						"name": "Horon Village: Old Man",
+						"access_rules": ["^$CanReach|HoronOldMan"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 392,
+						"y": 672
+					}
+				]
+			},
+			{
+				"name": "Horon Shop",
+				"access_rules": ["^$CanFarmRupees"],
+				"sections": [
+					{
+						"name": "Horon Village: Shop #1",
+						"access_rules": ["^$CanReach|HoronShop"]
+					},
+					{
+						"name": "Horon Village: Shop #2",
+						"access_rules": ["^$CanReach|HoronShop"]
+					},
+					{
+						"name": "Horon Village: Shop #3",
+						"access_rules": ["^$CanReach|HoronShop"],
+						"visibility_rules": ["horon_potion_off"]
+					},
+					{
+						"name": "Horon Village: Member's Shop #1",
+						"access_rules": ["^$CanReach|MemberShop"]
+					},
+					{
+						"name": "Horon Village: Member's Shop #2",
+						"access_rules": ["^$CanReach|MemberShop"]
+					},
+					{
+						"name": "Horon Village: Member's Shop #3",
+						"access_rules": ["^$CanReach|MemberShop"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 281,
+						"y": 620
+					}
+				]
+			},
+			{
+				"name": "Advance Shop",
+				"visibility_rules": ["advanceshopon"],
+				"access_rules": ["^$CanReach|AdvanceShop, ^$CanFarmRupees"],
+				"sections": [
+					{
+						"name": "Horon Village: Advance Shop #1"
+					},
+					{
+						"name": "Horon Village: Advance Shop #2"
+					},
+					{
+						"name": "Horon Village: Advance Shop #3"
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 234,
+						"y": 523
+					}
+				]
+			},
+			{
+				"name": "Clock Shop",
+				"sections": [
+					{
+						"name": "Horon Village: Tick Tock Trade",
+						"access_rules": ["^$CanReach|ClockShopTrade"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 315,
+						"y": 575
+					}
+				]
+			},
+			{
+				"name": "Horon Portal",
+				"chest_unopened_img": "images/labels/portal.png",
+				"chest_opened_img": "images/labels/portalgray.png",
+				// "visibility_rules": [
+				// 	"PortalShuffleOn",
+				// 	"PortalShuffleOutward"
+				// ],
+				"sections": [
+					{
+						"name": "Horon Village: Subrosia Portal",
+						"access_rules": ["^$CanReach|HoronPortal"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 315,
+						"y": 660
+					}
+				]
+			}
+		]
+	}
+]

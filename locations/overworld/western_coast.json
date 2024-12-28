@@ -1,0 +1,265 @@
+[
+	{
+		"name": "Western Coast",
+		"chest_unopened_img": "images/labels/chest.png",
+		"chest_opened_img": "images/labels/chestopen.png",
+		"color": "#00ff08",
+		"children": [
+			{
+				"name": "Enter D0",
+				"visibility_rules": ["ShuffleDungeonOn"],
+				"access_rules": ["^$CanReach|HerosCave"],
+				"sections": [
+					{
+						"name": "Hero's Cave"
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 172,
+						"y": 578
+					}
+				]
+			},
+			{
+				"name": "Hero's Cave",
+				"access_rules": ["^$CanReach|HerosCaveFoyer"],
+				"sections": [
+					{
+						"name": "Topmost Chest",
+						"access_rules": ["^$CanReach|HerosCaveFoyer"]
+					},
+					{
+						"name": "Item in Basement Under Keese Room",
+						"access_rules": ["^$CanReach|HerosCaveUnderground"]
+					},
+					{
+						"name": "Final Chest",
+						"access_rules": ["^$CanReach|HerosCavePostKey"]
+					},
+					{
+						"name": "Alternative Entrance Chest",
+						"access_rules": ["^$CanReach|HerosCaveLedge"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 194,
+						"y": 578
+					}
+				]
+			},
+			{
+				"name": "Maple",
+				"sections": [
+					{
+						"name": "Lon Lon Egg Trade",
+						"access_rules": ["^$CanFarmMaple, ^$Has|LonLonEgg"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 194,
+						"y": 537
+					}
+				]
+			},
+			{
+				"name": "The Black Beast",
+				"sections": [
+					{
+						"access_rules": ["^$CanReach|BlackBeast"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 194,
+						"y": 662
+					}
+				]
+			},
+			{
+				"name": "Golden Darknut",
+				"chest_unopened_img": "images/items/golden_darknut.png",
+				"chest_opened_img": "images/items/golden_darknut_defeated.png",
+				"sections": [
+					{
+						"name": "Spring",
+						"access_rules": ["^$CanReach|GoldenDarknutKill"],
+						"hosted_item": "golden_darknut"
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 234,
+						"y": 578
+					}
+				]
+			},
+			{
+				"name": "Western Coast: Chest on Beach",
+				"sections": [
+					{
+						"access_rules": ["^$CanReach|WesternCoastChest"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 138,
+						"y": 610
+					}
+				]
+			},
+			{
+				"name": "Western Coast Gasha Spot",
+				"sections": [
+					{
+						"name": "Near Graveyard",
+						"access_rules": ["^$CanReach|WesternCoastGasha"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 12,
+						"y": 658
+					}
+				]
+			},
+			{
+				"name": "Western Coast: Chest in House",
+				"sections": [
+					{
+						"access_rules": ["^$CanReach|WesternCoastHouseChest"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 100,
+						"y": 568
+					}
+				]
+			},
+			{
+				"name": "Western Coast Old Man",
+				"sections": [
+					{
+						"name": "Western Coast: Old Man",
+						"access_rules": ["^$CanReach|WesternCoastOldMan"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 100,
+						"y": 568
+					}
+				]
+			},
+			{
+				"name": "Graveyard Mushroom Item",
+				"sections": [
+					{
+						"access_rules": ["^$CanReach|GraveyardHP"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 50,
+						"y": 568
+					}
+				]
+			},
+			{
+				"name": "Enter D7",
+				"visibility_rules": ["ShuffleDungeonOn"],
+				"sections": [
+					{
+						"name": "Explorer's Crypt",
+						"access_rules": ["^$CanReach|ExplorersCrypt"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 20,
+						"y": 593
+					}
+				]
+			},
+			{
+				"name": "Explorer's Crypt",
+				"access_rules": ["^$CanReach|CryptFoyer"],
+				"sections": [
+					{
+						"name": "Chest Behind Cracked Wall (1F)",
+						"ref": "Explorer's Crypt/Chest Behind Cracked Wall/1F"
+					},
+					{
+						"name": "Chest in Wizzrobe Room (1F)",
+						"ref": "Explorer's Crypt/Wizzrobe Room/1F"
+					},
+					{
+						"name": "Chest Right of Entrance (1F)",
+						"ref": "Explorer's Crypt/Chest Right of Entrance/1F"
+					},
+					{
+						"name": "Zol Button Drop (B1F)",
+						"ref": "Explorer's Crypt/Zol Button Drop/B1F"
+					},
+					{
+						"name": "Armos Puzzle Drop (B2F)",
+						"ref": "Explorer's Crypt/Armos Puzzle Drop/B2F"
+					},
+					{
+						"name": "Chest Connected to Magnet Ball Button (B1F)",
+						"ref": "Explorer's Crypt/Chest Connected to Magnet Ball Button/B1F"
+					},
+					{
+						"name": "Quicksand Chest Near Second Poe (1F)",
+						"ref": "Explorer's Crypt/Quicksand Chest Near Second Poe/1F"
+					},
+					{
+						"name": "Fast Moving Platform Chest (B1F)",
+						"ref": "Explorer's Crypt/Fast Moving Platform Chest/B1F"
+					},
+					{
+						"name": "Stair Maze Chest (B2F)",
+						"ref": "Explorer's Crypt/Stair Maze Chest/B2F"
+					},
+					{
+						"name": "Drop in Room North of Stair Maze (B2F)",
+						"ref": "Explorer's Crypt/Drop in Room North of Stair Maze/B2F"
+					},
+					{
+						"name": "Jumping Stalfos Room Chest (B1F)",
+						"ref": "Explorer's Crypt/Jumping Stalfos Room Chest/B1F"
+					},
+					{
+						"name": "Boss Reward (B1F)",
+						"ref": "Explorer's Crypt/Boss Reward/Gleeok"
+					},
+					{
+						"name": "Seed of Life",
+						"ref": "Explorer's Crypt/Seed of Life/Essence"
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 20,
+						"y": 573
+					}
+				]
+			}
+		]
+	}
+]

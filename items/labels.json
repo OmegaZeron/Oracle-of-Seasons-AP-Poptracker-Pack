@@ -212,7 +212,7 @@
 		"name": "Tarm Ruins label",
 		"type": "toggle",
 		"allow_disabled": false,
-		"img": "images/labels/temple_label.png",
+		"img": "images/labels/tarm_label.png",
 		"codes": "tarm_ruins_label"
 	},
 	{

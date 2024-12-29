@@ -80,18 +80,8 @@
 					["suburbs_label", "suburbs_season", "sunken_label", "sunken_season"],
 					["wow_label", "wow_season", "coast_label", "coast_season"],
 					["plain_label", "plain_season", "temple_label", "remains_season"],
-					["entrance_label2", "", "entrance_label2", "fill_portals"],
-					
-					// ["suburbs_label_sub", "suburbs_sub", "village_label_sub", "horon_sub"],
-					// ["swamp_label_sub", "swamp_sub", "remains_label_sub", "remains_sub"],
-					// ["lake_label_sub", "lake_sub", "d8_label_sub", "d8_sub"],
-					// ["mtcucco_label_sub", "mtcucco_sub", "", ""],
-					// ["", "", "", ""],
-					// ["mountain_label_sub", "mountain_sub", "pirates_label_sub", "pirates_sub"],
-					// ["market_label_sub", "market_sub", "volcano_label_sub", "volcano_sub"],
-					// ["furnace_label_sub", "furnace_sub", "subd8_label_sub", "subd8_sub"],
-					// ["subvillage_label_sub", "subvillage_sub", "", ""]
 
+					["entrance_label2", "", "entrance_label2", "fill_portals"],
 					["suburbs_label_sub", "suburbs_portal", "village_label_sub", "horon_portal"],
 					["swamp_label_sub", "swamp_portal", "remains_label_sub", "remains_portal"],
 					["lake_label_sub", "lake_portal", "d8_label_sub", "upremains_portal"],
@@ -101,24 +91,14 @@
 					["market_label_sub", "market_portal", "volcano_label_sub", "volcano_portal"],
 					["furnace_label_sub", "furnace_portal", "d8_label_sub", "d8_portal"],
 					["village_label_sub", "village_portal", "", ""]
-
-					// ["suburbs_label_sub", "suburbs_sub", "mountain_label_sub", "mountain_sub"],
-					// ["swamp_label_sub", "swamp_sub", "market_label_sub", "market_sub"],
-					// ["lake_label_sub", "lake_sub", "furnace_label_sub", "furnace_sub"],
-					// ["mtcucco_label_sub", "mtcucco_sub", "subvillage_label_sub", "subvillage_sub"],
-					// ["village_label_sub", "horon_sub", "pirates_label_sub", "pirates_sub"],
-					// ["remains_label_sub", "remains_sub", "volcano_label_sub", "volcano_sub"],
-					// ["d8_label_sub", "d8_sub", "subd8_label_sub", "subd8_sub"]
 				]
 			},
 			{
 				"type": "itemgrid",
 				"h_alignment": "left",
-				"v_alignment": "left",
-				"item_size": 132	,
+				"item_size": 132,
 				"item_margin": "-3,-42",
 				"rows": [
-					[""],
 					["d0_label"],
 					["d1_label"],
 					["d2_label"],

@@ -146,8 +146,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 280,
-						"y": 286
+						"x": 195,
+						"y": 455
 					}
 				]
 			},
@@ -194,8 +194,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 490,
-						"y": 230
+						"x": 420,
+						"y": 180
 					}
 				]
 			},

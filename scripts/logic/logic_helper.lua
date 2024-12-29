@@ -202,6 +202,9 @@ function CanHarvestGasha(count)
 	local gashasRemaining = 0
 	for i = 1, 16 do
 		local section = Tracker:FindObjectForCode("@Horon Village/Gasha Spots/Gasha Spot #"..i)
+		if (section == nil) then
+			return false
+		end
 		local total = section.ChestCount
 		local uncollected = section.AvailableChestCount
 		gashasRemaining = total - uncollected

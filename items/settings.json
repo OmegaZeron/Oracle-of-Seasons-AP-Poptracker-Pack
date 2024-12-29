@@ -1530,7 +1530,7 @@
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
-		"initial_stage_idx": 7,
+		"initial_stage_idx": 1,
 		"codes": "suburbs_portal_selector_hidden",
 		"stages": [
 			{
@@ -1690,7 +1690,7 @@
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
-		"initial_stage_idx": 7,
+		"initial_stage_idx": 2,
 		"codes": "swamp_portal_selector_hidden",
 		"stages": [
 			{
@@ -1850,7 +1850,7 @@
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
-		"initial_stage_idx": 7,
+		"initial_stage_idx": 3,
 		"codes": "lake_portal_selector_hidden",
 		"stages": [
 			{
@@ -2010,7 +2010,7 @@
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
-		"initial_stage_idx": 7,
+		"initial_stage_idx": 4,
 		"codes": "mtcucco_portal_selector_hidden",
 		"stages": [
 			{
@@ -2170,7 +2170,7 @@
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
-		"initial_stage_idx": 7,
+		"initial_stage_idx": 5,
 		"codes": "horon_portal_selector_hidden",
 		"stages": [
 			{
@@ -2330,7 +2330,7 @@
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
-		"initial_stage_idx": 7,
+		"initial_stage_idx": 6,
 		"codes": "remains_portal_selector_hidden",
 		"stages": [
 			{

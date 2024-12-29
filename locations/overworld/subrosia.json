@@ -89,11 +89,11 @@
 				"sections": [
 					{
 						"name": "Subrosia: Smithy Hard Ore Reforge",
-						"access_rules": ["CanReach|SmithyHardOre"]
+						"access_rules": ["^$CanReach|SmithyHardOre"]
 					},
 					{
 						"name": "Subrosia: Smithy Rusty Bell Reforge",
-						"access_rules": ["CanReach|SmithyBell"]
+						"access_rules": ["^$CanReach|SmithyBell"]
 					}
 				],
 				"map_locations": [
@@ -105,11 +105,43 @@
 				]
 			},
 			{
+				"name": "Subrosian Mountain Portal",
+				"sections": [
+					{
+						"name": "Subrosia: Mountain Portal",
+						"access_rules": ["^$CanReach|SubrosiaMountainEast"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "subrosia",
+						"x": 872,
+						"y": 40
+					}
+				]
+			},
+			{
+				"name": "Subrosian Volcano Portal",
+				"sections": [
+					{
+						"name": "Subrosia: Volcano Portal",
+						"access_rules": ["^$CanReach|Volcano"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "subrosia",
+						"x": 600,
+						"y": 170
+					}
+				]
+			},
+			{
 				"name": "Subrosian Dance Hall",
 				"sections": [
 					{
 						"name": "Subrosia: Dance Hall Reward",
-						"access_rules": ["CanReach|SubrosiaMountainEast"]
+						"access_rules": ["^$CanReach|SubrosiaMountainEast"]
 					}
 				],
 				"map_locations": [
@@ -164,6 +196,22 @@
 						"map": "subrosia",
 						"x": 919,
 						"y": 857
+					}
+				]
+			},
+			{
+				"name": "Subrosian Market Portal",
+				"sections": [
+					{
+						"name": "Subrosia: Market Portal",
+						"access_rules": ["^$CanReach|SubrosiaMarket"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "subrosia",
+						"x": 1160,
+						"y": 680
 					}
 				]
 			},
@@ -232,6 +280,22 @@
 				]
 			},
 			{
+				"name": "Furnace Portal",
+				"sections": [
+					{
+						"name": "Subrosia: Furnace Portal",
+						"access_rules": ["^$CanReach|EastFurnace"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "subrosia",
+						"x": 1673,
+						"y": 570
+					}
+				]
+			},
+			{
 				"name": "Furnace Area",
 				"sections": [
 					{
@@ -296,6 +360,22 @@
 				]
 			},
 			{
+				"name": "Subrosian Village Portal",
+				"sections": [
+					{
+					"name": "Subrosia: Village Portal",
+					"access_rules": ["^$CanReach|SubrosiaVillagePortal"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "subrosia",
+						"x": 538,
+						"y": 745
+					}
+				]
+			},
+			{
 				"name": "Subrosian Village",
 				"sections": [
 					{
@@ -356,6 +436,38 @@
 						"map": "subrosia",
 						"x": 184,
 						"y": 537
+					}
+				]
+			},
+			{
+				"name": "Pirate Portal",
+				"sections": [
+					{
+					"name": "Subrosia: Pirate Portal",
+					"access_rules": ["^$CanReach|Pirates"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "subrosia",
+						"x": 390,
+						"y": 940
+					}
+				]
+			},
+			{
+				"name": "D8 Portal",
+				"sections": [
+					{
+					"name": "Subrosia: D8 Portal",
+					"access_rules": ["^$CanReach|SwordAndShieldMaze"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "subrosia",
+						"x": 40,
+						"y": 315
 					}
 				]
 			},

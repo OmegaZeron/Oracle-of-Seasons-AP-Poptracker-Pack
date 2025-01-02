@@ -172,7 +172,7 @@
 			{
 				"type": "itemgrid",
 				"h_alignment": "left",
-				"item_size": "100",
+				"item_size": 100,
 				"item_margin": "1,2",
 				"rows": [
 					["logic_label", "logiclevel", "goal_label", "goal", "dungeon_shuffle_label", "shuffledungeonoff", "portal_shuffle_label", "portalshuffleoff"],

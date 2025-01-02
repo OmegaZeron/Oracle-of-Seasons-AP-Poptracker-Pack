@@ -116,8 +116,8 @@
 										["gnarledkey", "bombflower"],
 										["floodkey", "ribbon"],
 										["dragonkey", "starore"],
-										["memberscard", "blueore"],
-										["plaque", "redore"],
+										["memberscard", "gashaseeds"],
+										["plaque", "blueredore"],
 										["banana", "hardore"],
 										["rustybell", "polishedbell"]
 									]
@@ -176,32 +176,33 @@
 							"type": "itemgrid",
 							"h_alignment": "left",
 							"item_size": 45,
-							"item_margin": "10,-12,10,0",
+							"item_margin": "10,-10,10,0",
 							"rows": [
 								["", ""],
-								["", "horon_village_label", "horon_village_season", "", "" ],
+								["horon_village_label", "horon_village_season", "tarm_ruins_label", "tarm_ruins_season", ""],
 								["north_label", "north_horon_season", "swamp_label", "swamp_season", ""],
 								["suburbs_label", "suburbs_season", "sunken_label", "sunken_season", ""],
 								["wow_label", "wow_season", "coast_label", "coast_season", ""],
 								["plain_label", "plain_season", "temple_label", "remains_season", ""],
+								[""],
 								["entrance_label2", "", "entrance_label2", ""],
 								["suburbs_label_sub", "suburbs_portal", "village_label_sub", "horon_portal", ""],
 								["swamp_label_sub", "swamp_portal", "remains_label_sub", "remains_portal", ""],
-								["lake_label_sub", "lake_portal", "d8_label_sub", "d8_portal", ""],
+								["lake_label_sub", "lake_portal", "d8_label_sub", "upremains_portal", ""],
 								["mtcucco_label_sub", "mtcucco_portal", "", "", ""],
 								[""],
 								["mountain_label_sub", "mountain_portal", "pirates_label_sub", "pirates_portal", ""],
 								["market_label_sub", "market_portal", "volcano_label_sub", "volcano_portal", ""],
-								["furnace_label_sub", "furnace_portal", "subd8_label_sub", "subd8_portal", ""],
-								["subvillage_label_sub", "subvillage_portal", "", "", ""]
+								["furnace_label_sub", "furnace_portal", "d8_label_sub", "d8_portal", ""],
+								["village_label_sub", "village_portal", "", "", ""]
 							]
 						},
 						{
 							"type": "itemgrid",
 							"h_alignment": "left",
 							"v_alignment": "left",
-							"item_size": 130,
-							"item_margin": "-3,-48",
+							"item_size": 129,
+							"item_margin": "-3,-42",
 							"rows": [
 								["d0_label"],
 								["d1_label"],
@@ -217,8 +218,8 @@
 						{
 							"type": "itemgrid",
 							"h_alignment": "left",
-							"item_size": 27,
-							"item_margin": "14,4",
+							"item_size": 44,
+							"item_margin": "14,1",
 							"rows": [
 								["d0_ent"],
 								["d1_ent"],
@@ -234,25 +235,25 @@
 						{
 							"type": "itemgrid",
 							"h_alignment": "left",
-							"item_size": 31,
-							"item_margin": "-14,2",
+							"item_size": 44,
+							"item_margin": "-14,1",
 							"rows": [
-								["", "", "d0_map", "", "", "", "", "", "", "", "", "d0_compass", "", ""],
-								["", "", "d1_map", "", "", "", "", "", "", "", "", "d1_compass", "", ""],
-								["", "", "d2_map", "", "", "", "", "", "", "", "", "d2_compass", "", ""],
-								["", "", "d3_map", "", "", "", "", "", "", "", "", "d3_compass", "", ""],
-								["", "", "d4_map", "", "", "", "", "", "", "", "", "d4_compass", "", ""],
-								["", "", "d5_map", "", "", "", "", "", "", "", "", "d5_compass", "", ""],
-								["", "", "d6_map", "", "", "", "", "", "", "", "", "d6_compass", "", ""],
-								["", "", "d7_map", "", "", "", "", "", "", "", "", "d7_compass", "", ""],
-								["", "", "d8_map", "", "", "", "", "", "", "", "", "d8_compass", "", ""]
+								["", "", "", "", ""],
+								["d1_map", "", "", "d1_compass", ""],
+								["d2_map", "", "", "d2_compass", ""],
+								["d3_map", "", "", "d3_compass", ""],
+								["d4_map", "", "", "d4_compass", ""],
+								["d5_map", "", "", "d5_compass", ""],
+								["d6_map", "", "", "d6_compass", ""],
+								["d7_map", "", "", "d7_compass", ""],
+								["d8_map", "", "", "d8_compass", ""]
 							]
 						},
 						{
 							"type": "itemgrid",
 							"h_alignment": "left",
-							"item_size": 31,
-							"item_margin": "-4,2",
+							"item_size": 44,
+							"item_margin": "-4,1",
 							"rows": [
 								["d0_master_key", "d0sk", ""],
 								["d1_master_key", "d1sk", "d1bk"],

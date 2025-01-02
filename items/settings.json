@@ -2450,7 +2450,7 @@
 			},
 			{
 				"img": "images/labels/d8_label_sub.png",
-				"codes": "upremains_upremains",
+				"codes": "upremains_d8",
 				"inherit_codes": false
 			},
 			{
@@ -2530,7 +2530,7 @@
 			},
 			{
 				"img": "images/labels/d8_label_sub.png",
-				"codes": "upremains_upremains_hidden",
+				"codes": "upremains_d8_hidden",
 				"inherit_codes": false
 			},
 			{

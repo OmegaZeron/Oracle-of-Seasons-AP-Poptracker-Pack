@@ -116,7 +116,6 @@ GoldenMoblinKill = OoSLocation.New("GoldenMoblinKill")
 -- locations
 MoblinRoad = OoSLocation.New("MoblinRoad")
 MoblinRoadBombCave = OoSLocation.New("MoblinRoadBombCave")
-MoblinRoadWaterfallCave = OoSLocation.New("MoblinRoadWaterfallCave")
 Holly = OoSLocation.New("Holly")
 WoodsOfWinter = OoSLocation.New("WoodsOfWinter")
 WoodsOfWinterMushroomCave = OoSLocation.New("WoodsOfWinterMushroomCave")

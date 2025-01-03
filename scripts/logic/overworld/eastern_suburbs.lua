@@ -117,8 +117,7 @@ MoblinRoad:connect_one_way_entrance(MoblinRoadBombCave, function()
 	)
 end)
 MoblinRoadBombCave:connect_one_way(MoblinRoadBombCaveChest, CanDestroyBush)
-MoblinRoad:connect_one_way_entrance(MoblinRoadWaterfallCave)
-MoblinRoadWaterfallCave:connect_one_way(MoblinRoadWaterfallCaveChest, function()
+MoblinRoad:connect_two_ways_entrance(MoblinRoadWaterfallCaveChest, function()
 	return Any(
 		Has(Flippers),
 		JumpLiquid3()

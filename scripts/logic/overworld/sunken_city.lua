@@ -75,7 +75,7 @@ SunkenCity:connect_one_way_entrance(LowerMtCucco, function()
 		)
 	)
 end)
-SunkenCity:connect_one_way_entrance(MoblinRoadWaterfallCave, function()
+SunkenCity:connect_one_way_entrance(MoblinRoadWaterfallCaveChest, function()
 	return All(
 		Has(Flippers),
 		Any(

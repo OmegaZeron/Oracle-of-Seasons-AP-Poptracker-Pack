@@ -3,7 +3,7 @@
 		{
 			"package_version": "1.5.0.2",
 			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/archive/refs/tags/v.1.5.0.2.zip",
-			"sha256": "3eec765fe4a5b819d965fd052f68076fa15336e3ab11c25e7c0532a08fc9ed77",
+			"sha256": "bc0a2dceabab76ba7478980ac3d48f139ab5a39688f5bcf50dbf38c804aff960",
 			"changelog": ["Full logic rewrite"]
 		}
 	]

@@ -59,22 +59,28 @@ function BombPunchWall()
 end
 
 function CanFarmOreChunks()
-	if (Has(Shovel)) then
-		return true
-	end
-	if (CanReach(SubrosiaMountainEast)) then
-		if (Has(Hard)) then
-			return true
-		end
-		return AccessibilityLevel.SequenceBreak
-	end
-	if (HasSword() or Has(Bracelet) or Has(MagicBoomerang)) then
-		if (IsMediumPlus()) then
-			return true
-		end
-		return AccessibilityLevel.SequenceBreak
-	end
-	return AccessibilityLevel.Inspect
+	return Any(
+		Has(Shovel),
+		All(
+			CanReach(SubrosiaMountainEast),
+			Any(
+				Has(Hard),
+				AccessibilityLevel.SequenceBreak
+			)
+		),
+		All(
+			Any(
+				HasSword(),
+				Has(Bracelet),
+				Has(MagicBoomerang)
+			),
+			Any(
+				IsMediumPlus(),
+				AccessibilityLevel.SequenceBreak
+			)
+		),
+		AccessibilityLevel.Inspect
+	)
 end
 
 function AnyFlute()

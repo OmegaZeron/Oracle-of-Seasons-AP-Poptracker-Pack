@@ -195,7 +195,7 @@ WinterSpoolSwamp:connect_one_way(SwampBombCave, function()
 end)
 
 -- dungeon shuffle
-PoisonMothLair:connect_two_ways_entrance(HerosCaveFoyer, function()
+PoisonMothLair:connect_one_way_entrance(HerosCaveFoyer, function()
 	return All(
 		Has(ShuffleDungeonOn),
 		Has(D3LeadsToD0),

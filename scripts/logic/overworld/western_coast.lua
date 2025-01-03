@@ -200,7 +200,7 @@ EastWesternCoast:connect_one_way_entrance(MazeFoyer, function()
 end)
 
 -- d7
-ExplorersCrypt:connect_two_ways_entrance(HerosCaveFoyer, function()
+ExplorersCrypt:connect_one_way_entrance(HerosCaveFoyer, function()
 	return All(
 		Has(ShuffleDungeonOn),
 		Has(D7LeadsToD0)

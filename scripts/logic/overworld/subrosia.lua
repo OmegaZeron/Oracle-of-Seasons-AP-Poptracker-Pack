@@ -45,12 +45,13 @@ TempleOfSeasons:connect_one_way(TempleSummerFairy, function()
         CanReach(RosaDate)
     )
 end, RosaDate)
-TempleOfSeasons:connect_one_way(TempleAutumnFairy, function()
+TempleOfSeasons:connect_one_way_entrance(TempleAutumnEntrance, function()
     return All(
-        Has(Feather),
-        Has(BombFlower)
-    )
+		Has(Feather),
+		Has(BombFlower)
+	)
 end)
+TempleAutumnEntrance:connect_one_way(TempleAutumnFairy, function() return Has(Feather) end)
 TempleOfSeasons:connect_two_ways_entrance(SubrosiaMarket, function() return Has(Feather) end)
 
 -- market
@@ -63,7 +64,12 @@ SubrosiaMarket:connect_one_way_entrance(SpoolPortal, function()
 		)
 	)
 end)
-SubrosiaMarket:connect_one_way(SubrosiaMarket1, function() return Has(StarOre) end)
+SubrosiaMarket:connect_one_way(SubrosiaMarket1, function()
+	return Any(
+		Has(StarOre),
+		AccessibilityLevel.Inspect
+	)
+end)
 SubrosiaMarket:connect_one_way(SubrosiaMarket2, CanFarmOreChunks, SubrosiaMountainEast)
 SubrosiaMarket:connect_one_way(SubrosiaMarket3, CanFarmOreChunks, SubrosiaMountainEast)
 SubrosiaMarket:connect_one_way(SubrosiaMarket4, CanFarmOreChunks, SubrosiaMountainEast)
@@ -125,9 +131,10 @@ end)
 EastFurnace:connect_one_way(GreatFurnace, function()
     return All(
         Has(RedOre),
-        Has(BlueOre)
+        Has(BlueOre),
+		CanReach(TempleAutumnEntrance)
     )
-end)
+end, TempleAutumnEntrance)
 EastFurnace:connect_one_way(SignGuy, DestroySigns)
 EastFurnace:connect_one_way(BombFlowerPickup, function()
     return All(

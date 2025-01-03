@@ -270,6 +270,7 @@ TempleOfSeasons = OoSLocation.New("TempleOfSeasons")
 TempleDigSpot = OoSLocation.New("TempleDigSpot")
 TempleWinterFairy = OoSLocation.New("TempleWinterFairy")
 TempleSummerFairy = OoSLocation.New("TempleSummerFairy")
+TempleAutumnEntrance = OoSLocation.New("TempleAutumnEntrance")
 TempleAutumnFairy = OoSLocation.New("TempleAutumnFairy")
 
 -- Market

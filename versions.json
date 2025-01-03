@@ -1,6 +1,12 @@
 {
 	"versions": [
 		{
+			"package_version": "1.5.0.6",
+			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/v.1.5.0.6/Oracle-of-Seasons-AP-Poptracker-Pack-v1.5.0.6.zip",
+			"sha256": "341f171bf004144c2d3af800d9fc1265808599d3172c74e85b5bbeb4c019457b",
+			"changelog": ["Fixed Great Furnace logic issue"]
+		},
+		{
 			"package_version": "1.5.0.5",
 			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/v.1.5.0.5/Oracle-of-Seasons-AP-Poptracker-Pack-v1.5.0.5.zip",
 			"sha256": "ec8e6c92872d22e99dbbb93c2350937a58b331eee55e941a9e3b9b73dacbd65d",

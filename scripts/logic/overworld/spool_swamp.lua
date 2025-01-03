@@ -136,7 +136,12 @@ WinterSpoolSwamp:connect_one_way_entrance(SwampSouthGashaArea, function()
 		AnyFlute()
 	)
 end)
-SwampSouthGashaArea:connect_one_way(SwampSouthGashaSpot, CanPlantGasha)
+SwampSouthGashaArea:connect_one_way(SwampSouthGashaSpot, function()
+	return All(
+		CanPlantGasha(),
+		Has(Bracelet)
+	)
+end)
 SwampSouthGashaArea:connect_one_way_entrance(SpringSpoolSwamp, function()
 	return All(
 		Has(SpoolSwampSpring),

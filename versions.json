@@ -1,6 +1,12 @@
 {
 	"versions": [
 		{
+			"package_version": "1.5.0.5",
+			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/v.1.5.0.5/Oracle-of-Seasons-AP-Poptracker-Pack-v1.5.0.5.zip",
+			"sha256": "ec8e6c92872d22e99dbbb93c2350937a58b331eee55e941a9e3b9b73dacbd65d",
+			"changelog": ["Fixed Subrosia Market logic issue"]
+		},
+		{
 			"package_version": "1.5.0.4",
 			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/v.1.5.0.4/Oracle-of-Seasons-AP-Poptracker-Pack-v1.5.0.4.zip",
 			"sha256": "6456b77392ccec55f17a013f7f81599d8cf2510f81068d7f065d838aac467a66",

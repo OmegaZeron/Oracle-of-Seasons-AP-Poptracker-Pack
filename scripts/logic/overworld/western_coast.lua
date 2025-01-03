@@ -55,7 +55,7 @@ HerosCaveFoyer:connect_one_way_entrance(HerosCavePostKey, function()
 end)
 
 EastWesternCoast:connect_one_way_entrance(HoronVillage)
-EastWesternCoast:connect_two_ways_entrance(WestWesternCoast, function()
+EastWesternCoast:connect_one_way_entrance(WestWesternCoast, function()
 	return All(
 		CanReach(Pirates),
 		Has(PolishedBell)

@@ -49,7 +49,7 @@ GnarledRootDoorstep:connect_one_way_entrance(GnarledRootDungeon, function() retu
 GnarledRootDungeon:connect_two_ways_entrance(GnarledFoyer, function()
 	return Any(
 		Has(ShuffleDungeonOff),
-		Has(D0LeadsToD0)
+		Has(D1LeadsToD1)
 	)
 end)
 

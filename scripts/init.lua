@@ -21,7 +21,4 @@ StartLocation = OoSLocation.New("StartLocation")
 StartLocation:connect_one_way_entrance(LowerNorthHoron)
 -- StartLocation:discover(AccessibilityLevel.Normal)
 
-for _, location in pairs(NamedLocations) do
-	location.accessibility_level = 0
-end
 StateChange()

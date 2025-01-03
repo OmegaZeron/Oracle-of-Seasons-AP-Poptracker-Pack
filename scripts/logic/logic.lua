@@ -97,7 +97,7 @@ function OoSLocation:discover(accessibility)
 	if change then
 		for _, recheck in ipairs(self.exits_to_recheck) do
 			for _, exit in pairs(recheck.exits) do
-				local location, access = CheckAccess(self, exit)
+				local location, access = CheckAccess(recheck, exit)
 				location:discover(access)
 			end
 		end
@@ -135,6 +135,11 @@ function StateChange()
 	-- if (not IsStale) then
 	-- 	return
 	-- end
+	
+	-- fixes certain CanReach calls permanently marking locs as green, even after removing items
+	for _, location in pairs(NamedLocations) do
+		location.accessibility_level = 0
+	end
 	IsStale = false
 	Staleness = Staleness + 1
 	StartLocation:discover(AccessibilityLevel.Normal)

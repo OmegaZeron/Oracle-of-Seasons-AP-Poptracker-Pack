@@ -100,7 +100,7 @@ SubrosiaWilds:connect_one_way_entrance(SubrosiaWildsMagnet, function()
         Has(MagnetGlove)
     )
 end)
-SubrosiaWildsMagnet:connect_one_way(WildsDigSpot)
+SubrosiaWildsMagnet:connect_one_way(WildsDigSpot, function() return Has(Shovel) end)
 StrangeBrothers:connect_two_ways_entrance(Pirates, function() return Has(Feather) end)
 StrangeBrothers:connect_one_way_entrance(SubrosiaMarket, function()
     return All(

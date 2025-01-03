@@ -74,7 +74,7 @@ function CanFarmOreChunks()
 		end
 		return AccessibilityLevel.SequenceBreak
 	end
-	return false
+	return AccessibilityLevel.Inspect
 end
 
 function AnyFlute()

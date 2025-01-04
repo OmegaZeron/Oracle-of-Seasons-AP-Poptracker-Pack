@@ -415,13 +415,6 @@
 		"codes": "d0_icon"
 	},
 	{
-		"name": "D0 Icon",
-		"type": "toggle",
-		"allow_disabled": false,
-		"img": "images/labels/D0_entrance.png",
-		"codes": "d0_icon"
-	},
-	{
 		"name": "D1 Icon",
 		"type": "toggle",
 		"allow_disabled": false,

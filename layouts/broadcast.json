@@ -201,6 +201,7 @@
 							"type": "itemgrid",
 							"h_alignment": "left",
 							"v_alignment": "left",
+							"margin": "-60,0,0,0",
 							"item_size": 129,
 							"item_margin": "-3,-42",
 							"rows": [

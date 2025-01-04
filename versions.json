@@ -1,6 +1,12 @@
 {
 	"versions": [
 		{
+			"package_version": "1.5.0.7",
+			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/v.1.5.0.7/Oracle-of-Seasons-AP-Poptracker-Pack-v1.5.0.7.zip",
+			"sha256": "25be350610e8852822ff154b44e9e0a08a9fc08ad7e53cd70ee662085f8ee506",
+			"changelog": ["Updated layouts for better dungeon clarity"]
+		},
+		{
 			"package_version": "1.5.0.6",
 			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/v.1.5.0.6/Oracle-of-Seasons-AP-Poptracker-Pack-v1.5.0.6.zip",
 			"sha256": "341f171bf004144c2d3af800d9fc1265808599d3172c74e85b5bbeb4c019457b",

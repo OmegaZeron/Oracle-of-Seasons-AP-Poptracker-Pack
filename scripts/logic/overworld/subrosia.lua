@@ -1,11 +1,9 @@
 -- mountain
 SubrosiaMountainEast:connect_one_way_entrance(SuburbsPortal, function()
-	return All(
-		Any(
-			Has(ShufflePortalsOff),
-            Has(MountainLeadsToSuburbs),
-            Has(SuburbsLeadsToMountain)
-		)
+	return Any(
+		Has(ShufflePortalsOff),
+		Has(MountainLeadsToSuburbs),
+		Has(SuburbsLeadsToMountain)
 	)
 end)
 SubrosiaMountainEast:connect_two_ways_entrance(TempleOfSeasons)
@@ -22,12 +20,10 @@ SubrosiaMountainWest:connect_one_way(SubrosiaMountainWestDigSpot, function() ret
 SubrosiaMountainWest:connect_one_way(SubrosiaMountainSouthDigSpot, function() return Has(Shovel) end)
 Volcano:connect_one_way_entrance(Fireworks, function() return Has(Bombs) end)
 Volcano:connect_one_way_entrance(TempleRemainsLowerPortal, function()
-	return All(
-		Any(
-			Has(ShufflePortalsOff),
-            Has(VolcanoLeadsToRemains),
-            Has(RemainsLeadsToVolcano)
-		)
+	return Any(
+		Has(ShufflePortalsOff),
+		Has(VolcanoLeadsToRemains),
+		Has(RemainsLeadsToVolcano)
 	)
 end)
 
@@ -56,12 +52,10 @@ TempleOfSeasons:connect_two_ways_entrance(SubrosiaMarket, function() return Has(
 
 -- market
 SubrosiaMarket:connect_one_way_entrance(SpoolPortal, function()
-	return All(
-		Any(
-			Has(ShufflePortalsOff),
-            Has(MarketLeadsToSwamp),
-            Has(SwampLeadsToMarket)
-		)
+	return Any(
+		Has(ShufflePortalsOff),
+		Has(MarketLeadsToSwamp),
+		Has(SwampLeadsToMarket)
 	)
 end)
 SubrosiaMarket:connect_one_way(SubrosiaMarket1, function()
@@ -120,12 +114,10 @@ end)
 
 -- furnace
 EastFurnace:connect_one_way_entrance(EyeglassPortal, function()
-	return All(
-		Any(
-			Has(ShufflePortalsOff),
-            Has(FurnaceLeadsToLake),
-            Has(LakeLeadsToFurnace)
-		)
+	return Any(
+		Has(ShufflePortalsOff),
+		Has(FurnaceLeadsToLake),
+		Has(LakeLeadsToFurnace)
 	)
 end)
 EastFurnace:connect_one_way(GreatFurnace, function()
@@ -161,13 +153,67 @@ WestFurnace:connect_one_way_entrance(SubrosiaMarket, function()
 end)
 
 -- d8
+SwordAndShieldMaze:connect_one_way_entrance(MazeFoyer, function()
+	return Any(
+		Has(ShuffleDungeonOff),
+		Has(D8LeadsToD8)
+	)
+end)
 SwordAndShieldMaze:connect_one_way_entrance(TempleRemainsUpperPortal, function()
+	return Any(
+		Has(ShufflePortalsOff),
+		Has(D8LeadsToUpperRemains),
+		Has(UpperRemainsLeadsToD8)
+	)
+end)
+
+-- dungeon shuffle
+SwordAndShieldMaze:connect_one_way_entrance(HerosCaveFoyer, function()
 	return All(
-		Any(
-			Has(ShufflePortalsOff),
-            Has(D8LeadsToUpperRemains),
-            Has(UpperRemainsLeadsToD8)
-		)
+		Has(ShuffleDungeonOn),
+		Has(D8LeadsToD0)
+	)
+end)
+SwordAndShieldMaze:connect_one_way_entrance(GnarledFoyer, function()
+	return All(
+		Has(ShuffleDungeonOn),
+		Has(D8LeadsToD1)
+	)
+end)
+SwordAndShieldMaze:connect_two_ways_entrance(SnakeFoyer, function()
+	return All(
+		Has(ShuffleDungeonOn),
+		Has(D8LeadsToD2)
+	)
+end)
+SwordAndShieldMaze:connect_one_way_entrance(PoisonFoyer, function()
+	return All(
+		Has(ShuffleDungeonOn),
+		Has(D8LeadsToD3)
+	)
+end)
+SwordAndShieldMaze:connect_one_way_entrance(DancingFoyer, function()
+	return All(
+		Has(ShuffleDungeonOn),
+		Has(D8LeadsToD4)
+	)
+end)
+SwordAndShieldMaze:connect_one_way_entrance(UnicornFoyer, function()
+	return All(
+		Has(ShuffleDungeonOn),
+		Has(D8LeadsToD5)
+	)
+end)
+SwordAndShieldMaze:connect_one_way_entrance(AncientFoyer, function()
+	return All(
+		Has(ShuffleDungeonOn),
+		Has(D8LeadsToD6)
+	)
+end)
+SwordAndShieldMaze:connect_one_way_entrance(CryptFoyer, function()
+	return All(
+		Has(ShuffleDungeonOn),
+		Has(D8LeadsToD7)
 	)
 end)
 

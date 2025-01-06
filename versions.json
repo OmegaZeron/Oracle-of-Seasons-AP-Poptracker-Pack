@@ -1,6 +1,12 @@
 {
 	"versions": [
 		{
+			"package_version": "1.5.0.10",
+			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/v.1.5.0.10/Oracle-of-Seasons-AP-Poptracker-Pack-v1.5.0.10.zip",
+			"sha256": "a960bc592def2afa20be62e81dc1de11c191947149ce74cf018a89adc04f88ea",
+			"changelog": ["Added missing layout changes from last update, Golden Darknut fix"]
+		},
+		{
 			"package_version": "1.5.0.9",
 			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/v.1.5.0.9/Oracle-of-Seasons-AP-Poptracker-Pack-v1.5.0.9.zip",
 			"sha256": "58fff7d9006ffeee6ac5228bb7912e315c236596be9a66a00ba8ff78a6782e86",

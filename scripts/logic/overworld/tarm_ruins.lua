@@ -36,11 +36,9 @@ TarmTreeStump:connect_one_way_entrance(LostWoods, function()
 	)
 end)
 LostWoods:connect_one_way(Pedestal, function()
+	print("Pedestal", CanPedestal(), Has(PedestalVanilla))
 	return All(
-		Has(Spring),
-		Has(Summer),
-		Has(Autumn),
-		Has(Winter),
+		CanPedestal(),
 		Any(
 			All(
 				CanBurnTrees(),
@@ -48,7 +46,7 @@ LostWoods:connect_one_way(Pedestal, function()
 			),
 			All(
 				-- know the sequence
-				-- only possible with sequence not shuffled
+				Has(PedestalVanilla),
 				Any(
 					IsMediumPlus(),
 					AccessibilityLevel.SequenceBreak
@@ -58,11 +56,9 @@ LostWoods:connect_one_way(Pedestal, function()
 	)
 end)
 LostWoods:connect_one_way(TarmTree, function()
+	print("Lost Woods", CanLostWoods(), Has(LostWoodsVanilla))
 	return All(
-		Has(Spring),
-		Has(Summer),
-		Has(Autumn),
-		Has(Winter),
+		CanLostWoods(),
 		Any(
 			All(
 				Any(
@@ -73,7 +69,7 @@ LostWoods:connect_one_way(TarmTree, function()
 			),
 			All(
 				-- know the sequence
-				-- only possible with sequence not shuffled
+				Has(LostWoodsVanilla),
 				Any(
 					IsMediumPlus(),
 					AccessibilityLevel.SequenceBreak

@@ -127,7 +127,12 @@ EastFurnace:connect_one_way(GreatFurnace, function()
 		CanReach(TempleAutumnEntrance)
     )
 end, TempleAutumnEntrance)
-EastFurnace:connect_one_way(SignGuy, DestroySigns)
+EastFurnace:connect_one_way(SignGuy, function()
+	return Any(
+		DestroySigns(),
+		Has(SignGuyNone)
+	)
+end)
 EastFurnace:connect_one_way(BombFlowerPickup, function()
     return All(
         Has(Feather),

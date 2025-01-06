@@ -36,7 +36,6 @@ TarmTreeStump:connect_one_way_entrance(LostWoods, function()
 	)
 end)
 LostWoods:connect_one_way(Pedestal, function()
-	print("Pedestal", CanPedestal(), Has(PedestalVanilla))
 	return All(
 		CanPedestal(),
 		Any(
@@ -56,7 +55,6 @@ LostWoods:connect_one_way(Pedestal, function()
 	)
 end)
 LostWoods:connect_one_way(TarmTree, function()
-	print("Lost Woods", CanLostWoods(), Has(LostWoodsVanilla))
 	return All(
 		CanLostWoods(),
 		Any(

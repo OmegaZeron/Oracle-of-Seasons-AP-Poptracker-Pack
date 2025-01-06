@@ -1469,7 +1469,7 @@
 		"name": "Lost Woods Main Sequence 1",
 		"type": "progressive",
 		"allow_disabled": false,
-		"initial_stage_idx": 4,
+		"initial_stage_idx": 3,
 		"loop": true,
 		"codes": "lost_woods_1",
 		"stages": [
@@ -1504,7 +1504,7 @@
 		"name": "Lost Woods Main Sequence 2",
 		"type": "progressive",
 		"allow_disabled": false,
-		"initial_stage_idx": 4,
+		"initial_stage_idx": 2,
 		"loop": true,
 		"codes": "lost_woods_2",
 		"stages": [
@@ -1539,7 +1539,7 @@
 		"name": "Lost Woods Main Sequence 3",
 		"type": "progressive",
 		"allow_disabled": false,
-		"initial_stage_idx": 4,
+		"initial_stage_idx": 0,
 		"loop": true,
 		"codes": "lost_woods_3",
 		"stages": [
@@ -1574,7 +1574,7 @@
 		"name": "Lost Woods Main Sequence 4",
 		"type": "progressive",
 		"allow_disabled": false,
-		"initial_stage_idx": 4,
+		"initial_stage_idx": 1,
 		"loop": true,
 		"codes": "lost_woods_4",
 		"stages": [
@@ -1609,7 +1609,7 @@
 		"name": "Pedestal Sequence 1",
 		"type": "progressive",
 		"allow_disabled": false,
-		"initial_stage_idx": 4,
+		"initial_stage_idx": 3,
 		"loop": true,
 		"codes": "pedestal_1",
 		"stages": [
@@ -1644,7 +1644,7 @@
 		"name": "Pedestal Sequence 2",
 		"type": "progressive",
 		"allow_disabled": false,
-		"initial_stage_idx": 4,
+		"initial_stage_idx": 2,
 		"loop": true,
 		"codes": "pedestal_2",
 		"stages": [
@@ -1679,7 +1679,7 @@
 		"name": "Pedestal Sequence 3",
 		"type": "progressive",
 		"allow_disabled": false,
-		"initial_stage_idx": 4,
+		"initial_stage_idx": 0,
 		"loop": true,
 		"codes": "pedestal_3",
 		"stages": [
@@ -1714,7 +1714,7 @@
 		"name": "Pedestal Sequence 4",
 		"type": "progressive",
 		"allow_disabled": false,
-		"initial_stage_idx": 4,
+		"initial_stage_idx": 1,
 		"loop": true,
 		"codes": "pedestal_4",
 		"stages": [

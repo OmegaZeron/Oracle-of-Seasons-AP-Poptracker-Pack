@@ -173,28 +173,81 @@
 					"orientation": "horizontal",
 					"content": [
 						{
-							"type": "itemgrid",
+							"type": "array",
+							"orientation": "vertical",
 							"h_alignment": "left",
-							"item_size": 45,
-							"item_margin": "10,-10,10,0",
-							"rows": [
-								["", ""],
-								["horon_village_label", "horon_village_season", "tarm_ruins_label", "tarm_ruins_season", ""],
-								["north_label", "north_horon_season", "swamp_label", "swamp_season", ""],
-								["suburbs_label", "suburbs_season", "sunken_label", "sunken_season", ""],
-								["wow_label", "wow_season", "coast_label", "coast_season", ""],
-								["plain_label", "plain_season", "temple_label", "remains_season", ""],
-								[""],
-								["entrance_label2", "", "entrance_label2", ""],
-								["suburbs_label_sub", "suburbs_portal", "village_label_sub", "horon_portal", ""],
-								["swamp_label_sub", "swamp_portal", "remains_label_sub", "remains_portal", ""],
-								["lake_label_sub", "lake_portal", "d8_label_sub", "upremains_portal", ""],
-								["mtcucco_label_sub", "mtcucco_portal", "", "", ""],
-								[""],
-								["mountain_label_sub", "mountain_portal", "pirates_label_sub", "pirates_portal", ""],
-								["market_label_sub", "market_portal", "volcano_label_sub", "volcano_portal", ""],
-								["furnace_label_sub", "furnace_portal", "d8_label_sub", "d8_portal", ""],
-								["village_label_sub", "village_portal", "", "", ""]
+							"margin": "10,-10,70,0",
+							"content": [
+								{
+									"type": "itemgrid",
+									"h_alignment": "center",
+									"item_size": 50,
+									"item_margin": "0,-11",
+									"rows": [
+										["", "", "", "fill_seasons"],
+										["horon_village_label", "horon_village_season", "tarm_ruins_label", "tarm_ruins_season"],
+										["north_label", "north_horon_season", "swamp_label", "swamp_season"],
+										["suburbs_label", "suburbs_season", "sunken_label", "sunken_season"],
+										["wow_label", "wow_season", "coast_label", "coast_season"],
+										["plain_label", "plain_season", "temple_label", "remains_season"]
+									]
+								},
+								{
+									"type": "itemgrid",
+									"h_alignment": "center",
+									"margin": "0,-20,0,-175",
+									"item_size": 200,
+									"rows": [
+										["lost_woods_main"]
+									]
+								},
+								{
+									"type": "itemgrid",
+									"h_alignment": "center",
+									"item_size": 50,
+									"item_margin": "0,-11",
+									"rows": [
+										["lost_woods_1", "lost_woods_2", "lost_woods_3", "lost_woods_4"]
+									]
+								},
+								{
+									"type": "itemgrid",
+									"h_alignment": "center",
+									"margin": "0,-20,0,-175",
+									"item_size": 200,
+									"rows": [
+										["pedestal_sequence"]
+									]
+								},
+								{
+									"type": "itemgrid",
+									"h_alignment": "center",
+									"item_size": 50,
+									"item_margin": "0,-11",
+									"rows": [
+										["pedestal_1", "pedestal_2", "pedestal_3", "pedestal_4"]
+									]
+								},
+								{
+									"type": "itemgrid",
+									"h_alignment": "center",
+									"margin": "0,-2,0,0",
+									"item_size": 50,
+									"item_margin": "0,-14",
+									"rows": [
+										// [""],
+										["entrance_label2", "", "entrance_label2", "fill_portals"],
+										["suburbs_label_sub", "suburbs_portal", "horon_label_sub", "horon_portal"],
+										["swamp_label_sub", "swamp_portal", "remains_label_sub", "remains_portal"],
+										["lake_label_sub", "lake_portal", "upremains_label_sub", "upremains_portal"],
+										["mtcucco_label_sub", "mtcucco_portal", "", ""],
+										// ["", "", "", ""],
+										["mountain_label_sub", "mountain_portal", "pirates_label_sub", "pirates_portal"],
+										["market_label_sub", "market_portal", "volcano_label_sub", "volcano_portal"],
+										["furnace_label_sub", "furnace_portal", "d8_label_sub", "d8_portal"],
+										["village_label_sub", "village_portal", "", ""]
+									]
+								}
 							]
 						},
 						{

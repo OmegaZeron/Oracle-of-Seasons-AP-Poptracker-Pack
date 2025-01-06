@@ -38,7 +38,11 @@ function OoSLocation:connect_one_way(exit, rule, requiredExit)
 	end
 	self.exits[#self.exits + 1] = { exit, rule }
 	if (requiredExit ~= nil) then
-		requiredExit.exits_to_recheck[#requiredExit.exits_to_recheck + 1] = self
+		for _, recheck in pairs(requiredExit) do
+			if (not TableContains(recheck.exits_to_recheck, self)) then
+				recheck.exits_to_recheck[#recheck.exits_to_recheck + 1] = self
+			end
+		end
 	end
 end
 
@@ -56,7 +60,11 @@ function OoSLocation:connect_one_way_entrance(exit, rule, requiredExit)
 	end
 	self.exits[#self.exits + 1] = { exit, rule }
 	if (requiredExit ~= nil) then
-		requiredExit.exits_to_recheck[#requiredExit.exits_to_recheck + 1] = self
+		for _, recheck in pairs(requiredExit) do
+			if (not TableContains(recheck.exits_to_recheck, self)) then
+				recheck.exits_to_recheck[#recheck.exits_to_recheck + 1] = self
+			end
+		end
 	end
 end
 

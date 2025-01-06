@@ -105,7 +105,7 @@ UnicornPostSyger:connect_one_way(UnicornTreadmillBasement, function()
 			)
 		)
 	)
-end, UnicornMinecartPushBlock)
+end, {UnicornMinecartPushBlock})
 UnicornPostSyger:connect_one_way_entrance(Digdogger, function()
 	return All(
 		Has(MagnetGlove),

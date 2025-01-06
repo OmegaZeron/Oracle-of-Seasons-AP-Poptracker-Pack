@@ -1,6 +1,6 @@
 -- items
 NorthHolodrumPlain:connect_one_way(HolodrumPlainTree, function() return CanHarvestSeeds(true) end)
-NorthHolodrumPlain:connect_one_way(Blaino, function() return CanFarmRupees(true) end, SubrosiaMountainEast)
+NorthHolodrumPlain:connect_one_way(Blaino, function() return CanFarmRupees(true) end, {SubrosiaMountainEast})
 NorthHolodrumPlain:connect_one_way(HolodrumPlainMushroomCave, function()
 	return All(
 		Has(Flippers),
@@ -13,7 +13,7 @@ NorthHolodrumPlain:connect_one_way(HolodrumPlainMushroomCave, function()
 			)
 		)
 	)
-end, SouthHolodrumPlain)
+end, {SouthHolodrumPlain})
 NorthHolodrumPlain:connect_one_way(NorthHolodrumPlainOldMan, function()
 	return All(
 		CanBurnTrees(),
@@ -30,7 +30,7 @@ NorthHolodrumPlain:connect_one_way(NorthHolodrumPlainOldMan, function()
 			)
 		)
 	)
-end, SouthHolodrumPlain)
+end, {SouthHolodrumPlain})
 NorthHolodrumPlain:connect_one_way(TreehouseOldMan, function()
 	return All(
 		Any(

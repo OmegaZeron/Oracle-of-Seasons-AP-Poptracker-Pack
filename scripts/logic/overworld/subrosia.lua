@@ -15,7 +15,7 @@ SubrosiaMountainEast:connect_one_way(SmithyHardOre, function() return Has(HardOr
 SubrosiaMountainEast:connect_one_way(SmithyBell, function() return Has(RustyBell) end)
 SubrosiaMountainWest:connect_one_way(SubrosiaChef, function() return Has(IronPot) end)
 SubrosiaMountainWest:connect_two_ways_entrance(SubrosiaWilds, JumpLiquid5)
-SubrosiaMountainWest:connect_one_way(SubrosiaMountainLockedChest, function() return CanReach(RosaDate) end, RosaDate)
+SubrosiaMountainWest:connect_one_way(SubrosiaMountainLockedChest, function() return CanReach(RosaDate) end, {RosaDate})
 SubrosiaMountainWest:connect_one_way(SubrosiaMountainWestDigSpot, function() return Has(Shovel) end)
 SubrosiaMountainWest:connect_one_way(SubrosiaMountainSouthDigSpot, function() return Has(Shovel) end)
 Volcano:connect_one_way_entrance(Fireworks, function() return Has(Bombs) end)
@@ -40,7 +40,7 @@ TempleOfSeasons:connect_one_way(TempleSummerFairy, function()
         Has(Bracelet),
         CanReach(RosaDate)
     )
-end, RosaDate)
+end, {RosaDate})
 TempleOfSeasons:connect_one_way_entrance(TempleAutumnEntrance, function()
     return All(
 		Has(Feather),
@@ -126,7 +126,7 @@ EastFurnace:connect_one_way(GreatFurnace, function()
         Has(BlueOre),
 		CanReach(TempleAutumnEntrance)
     )
-end, TempleAutumnEntrance)
+end, {TempleAutumnEntrance})
 EastFurnace:connect_one_way(SignGuy, function()
 	return Any(
 		DestroySigns(),

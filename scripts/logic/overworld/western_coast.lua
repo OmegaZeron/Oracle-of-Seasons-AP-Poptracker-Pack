@@ -11,12 +11,14 @@ EastWesternCoast:connect_one_way(GoldenDarknutKill, function()
 			Has(WesternCoastSpring),
 			All(
 				CanReach(WesternCoastStump),
-				Has(Spring)
+				Has(Spring),
+				Has(PolishedBell),
+				CanReach(Pirates)
 			)
 		),
 		CanArmorKill()
 	)
-end, WesternCoastStump)
+end, {WesternCoastStump, Pirates})
 EastWesternCoast:connect_one_way_entrance(HerosCave)
 HerosCave:connect_two_ways_entrance(HerosCaveFoyer, function()
 	return Any(
@@ -60,7 +62,7 @@ EastWesternCoast:connect_one_way_entrance(WestWesternCoast, function()
 		CanReach(Pirates),
 		Has(PolishedBell)
 	)
-end, Pirates)
+end, {Pirates})
 WestWesternCoast:connect_one_way(WesternCoastChest)
 WestWesternCoast:connect_one_way(WesternCoastGasha, CanPlantGasha)
 WestWesternCoast:connect_one_way_entrance(WesternCoastOldMan, CanBurnTrees)
@@ -96,7 +98,7 @@ WestWesternCoast:connect_one_way_entrance(Graveyard, function()
 			)
 		)
 	)
-end, WesternCoastStump)
+end, {WesternCoastStump})
 WestWesternCoast:connect_one_way_entrance(GraveyardWinter, function()
 	return All(
 		Jump3(),
@@ -108,7 +110,7 @@ WestWesternCoast:connect_one_way_entrance(GraveyardWinter, function()
 			)
 		)
 	)
-end, WesternCoastStump)
+end, {WesternCoastStump})
 WestWesternCoast:connect_one_way_entrance(GraveyardAutumn, function()
 	return All(
 		Jump3(),
@@ -120,7 +122,7 @@ WestWesternCoast:connect_one_way_entrance(GraveyardAutumn, function()
 			)
 		)
 	)
-end, WesternCoastStump)
+end, {WesternCoastStump})
 Graveyard:connect_one_way_entrance(ExplorersCrypt)
 GraveyardAutumn:connect_one_way_entrance(ExplorersCrypt)
 GraveyardAutumn:connect_one_way(GraveyardHP, CanDestroyMushroom)

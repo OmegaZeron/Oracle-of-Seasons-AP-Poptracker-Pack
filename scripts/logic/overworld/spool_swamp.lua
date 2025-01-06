@@ -94,7 +94,7 @@ SouthSpoolSwamp:connect_one_way_entrance(SpringSpoolSwamp, function()
 			CanReach(SpoolSwampStump)
 		)
 	)
-end, SpoolSwampStump)
+end, {SpoolSwampStump})
 SouthSpoolSwamp:connect_one_way_entrance(SummerSpoolSwamp, function()
 	return Any(
 		Has(Summer),
@@ -103,7 +103,7 @@ SouthSpoolSwamp:connect_one_way_entrance(SummerSpoolSwamp, function()
 			CanReach(SpoolSwampStump)
 		)
 	)
-end, SpoolSwampStump)
+end, {SpoolSwampStump})
 SummerSpoolSwamp:connect_one_way(GoldenOctorokKill, CanSwordKill)
 SouthSpoolSwamp:connect_one_way_entrance(AutumnSpoolSwamp, function()
 	return Any(
@@ -113,7 +113,7 @@ SouthSpoolSwamp:connect_one_way_entrance(AutumnSpoolSwamp, function()
 			CanReach(SpoolSwampStump)
 		)
 	)
-end, SpoolSwampStump)
+end, {SpoolSwampStump})
 SouthSpoolSwamp:connect_one_way_entrance(WinterSpoolSwamp, function()
 	return Any(
 		Has(SpoolSwampWinter),
@@ -122,7 +122,7 @@ SouthSpoolSwamp:connect_one_way_entrance(WinterSpoolSwamp, function()
 			CanReach(SpoolSwampStump)
 		)
 	)
-end, SpoolSwampStump)
+end, {SpoolSwampStump})
 SpringSpoolSwamp:connect_one_way_entrance(SouthSpoolSwamp)
 SummerSpoolSwamp:connect_one_way_entrance(SouthSpoolSwamp)
 AutumnSpoolSwamp:connect_one_way_entrance(SouthSpoolSwamp)
@@ -151,7 +151,7 @@ SwampSouthGashaArea:connect_one_way_entrance(SpringSpoolSwamp, function()
 		),
 		CanDestroyFlower()
 	)
-end, SpoolSwampStump)
+end, {SpoolSwampStump})
 SwampSouthGashaArea:connect_one_way_entrance(SummerSpoolSwamp, function()
 	return All(
 		Has(SpoolSwampSummer),
@@ -160,7 +160,7 @@ SwampSouthGashaArea:connect_one_way_entrance(SummerSpoolSwamp, function()
 			CanReach(SpoolSwampStump)
 		)
 	)
-end, SpoolSwampStump)
+end, {SpoolSwampStump})
 SwampSouthGashaArea:connect_one_way_entrance(AutumnSpoolSwamp, function()
 	return All(
 		Has(SpoolSwampAutumn),
@@ -169,7 +169,7 @@ SwampSouthGashaArea:connect_one_way_entrance(AutumnSpoolSwamp, function()
 			CanReach(SpoolSwampStump)
 		)
 	)
-end, SpoolSwampStump)
+end, {SpoolSwampStump})
 SwampSouthGashaArea:connect_one_way_entrance(WinterSpoolSwamp, function()
 	return All(
 	Has(SpoolSwampWinter),
@@ -182,7 +182,7 @@ SwampSouthGashaArea:connect_one_way_entrance(WinterSpoolSwamp, function()
 		Has(Shovel),
 		AnyFlute()
 	)
-end, SpoolSwampStump)
+end, {SpoolSwampStump})
 SpringSpoolSwamp:connect_one_way(SwampFloodedHP, function()
 	return Any(
 		Has(Flippers),

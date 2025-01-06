@@ -36,7 +36,7 @@ LowerEasternSuburbs:connect_one_way_entrance(HoronVillage, function()
 		Has(EmberSeeds)
 	)
 end)
-LowerEasternSuburbs:connect_one_way_entrance(SamasaDesert, function() return CanReach(Pirates) end, Pirates)
+LowerEasternSuburbs:connect_one_way_entrance(SamasaDesert, function() return CanReach(Pirates) end, {Pirates})
 LowerEasternSuburbs:connect_two_ways_entrance(UpperEasternSuburbs, function()
 	return Any(
 		Has(Feather),

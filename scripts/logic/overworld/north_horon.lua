@@ -17,7 +17,7 @@ LowerNorthHoron:connect_one_way(EyeglassPitsChest, function()
 			)
 		)
 	)
-end, UpperNorthHoron)
+end, {UpperNorthHoron})
 LowerNorthHoron:connect_one_way(NorthHoronGasha, CanPlantGasha)
 
 -- exits
@@ -137,7 +137,7 @@ FrozenEyeglassLake:connect_one_way_entrance(EyeglassPortal, function()
 			)
 		)
 	)
-end, EasternNorthHoron)
+end, {EasternNorthHoron})
 
 -- dry
 DryEyeglassLake:connect_one_way_entrance(DryEyeglassBombCave, BombPunchWall)

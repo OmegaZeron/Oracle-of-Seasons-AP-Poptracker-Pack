@@ -102,14 +102,14 @@ TempleRemainsLowerPortal:connect_one_way_entrance(TempleRemainsStump, function()
 			CanReach(Fireworks)
 		)
 	)
-end, Fireworks)
+end, {Fireworks})
 TempleRemainsLowerPortal:connect_one_way_entrance(LowerTempleRemains, CanWarp)
 LowerTempleRemains:connect_one_way(TempleRemainsBombCave, function()
 	return All(
 		CanReach(Fireworks),
 		JumpLiquid2()
 	)
-end, Fireworks)
+end, {Fireworks})
 LowerTempleRemains:connect_one_way_entrance(TempleRemainsUpperPortal, function()
 	return All(
 		CanReach(Fireworks),
@@ -123,13 +123,13 @@ LowerTempleRemains:connect_one_way_entrance(TempleRemainsUpperPortal, function()
 			Has(MagnetGlove)
 		)
 	)
-end, Fireworks)
+end, {Fireworks})
 TempleRemainsUpperPortal:connect_one_way_entrance(LowerTempleRemains, function()
 	return All(
 		CanReach(Fireworks),
 		Has(Feather)
 	)
-end, Fireworks)
+end, {Fireworks})
 TempleRemainsUpperPortal:connect_one_way_entrance(TempleRemainsStump, function() return Has(Feather) end)
 TempleRemainsUpperPortal:connect_one_way_entrance(TempleRemainsLowerPortal, function() return Has(TempleRemainsWinter) end)
 TempleRemainsUpperPortal:connect_two_ways_entrance(SwordAndShieldMaze, function()

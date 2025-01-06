@@ -65,7 +65,7 @@ SunkenCity:connect_one_way_entrance(Syrup, function()
 			)
 		)
 	)
-end, SunkenDimitri)
+end, {SunkenDimitri})
 SunkenCity:connect_one_way_entrance(LowerMtCucco, function()
 	return All(
 		Has(Flippers),

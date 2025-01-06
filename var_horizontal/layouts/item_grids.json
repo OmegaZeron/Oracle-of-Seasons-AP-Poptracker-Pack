@@ -54,7 +54,7 @@
 				"type": "itemgrid",
 				"h_alignment": "center",
 				"item_size": 50,
-				"item_margin": "10,-13",
+				"item_margin": "10,-14",
 				"rows": [
 					[""],
 					["entrance_label2", "", "entrance_label2", "fill_portals"],
@@ -124,7 +124,6 @@
 				"item_margin": "0,2",
 				"rows": [
 					["d0_master_key", "d0sk", "", "d1_master_key", "d1sk", "", "d2_master_key", "d2sk", "", "d3_master_key", "d3sk", "", "d4_master_key", "d4sk", "", "d5_master_key", "d5sk", "", "d6_master_key", "d6sk", "", "d7_master_key", "d7sk", "", "d8_master_key", "d8sk", ""],
-					// ["d0sk", "d1sk", "d2sk", "d3sk", "d4sk", "d5sk", "d6sk", "d7sk", "d8sk"],
 					["", "", "", "d1bk", "", "", "d2bk", "", "", "d3bk", "", "", "d4bk", "", "", "d5bk", "", "", "d6bk", "", "", "d7bk", "", "", "d8bk"]
 				]
 			},
@@ -136,6 +135,61 @@
 				"item_margin": "31,10",
 				"rows": [
 					["", "d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8"]
+				]
+			},
+			{
+				"type": "array",
+				"orientation": "vertical",
+				"margin": "0,50,0,0",
+				"content": [
+					{
+						"type": "array",
+						"orientation": "horizontal",
+						"content": [
+							{
+								"type": "itemgrid",
+								"h_alignment": "center",
+								"margin": "0,-10,0,-175",
+								"item_size": 200,
+								"rows": [
+									["lost_woods_main"]
+								]
+							},
+							{
+								"type": "itemgrid",
+								"h_alignment": "center",
+								"item_size": 50,
+								"item_margin": "0,-11",
+								"rows": [
+									["lost_woods_1", "lost_woods_2", "lost_woods_3", "lost_woods_4"]
+								]
+							}
+						]
+					},
+					{
+						"type": "array",
+						"orientation": "horizontal",
+						"content": [
+							{
+								"type": "itemgrid",
+								"h_alignment": "center",
+								"margin": "0,-10,0,-175",
+								"item_size": 200,
+								"rows": [
+									["pedestal_sequence"]
+								]
+							},
+							{
+								"type": "itemgrid",
+								"h_alignment": "center",
+								"item_size": 50,
+								"item_margin": "0,-11",
+								"rows": [
+									["pedestal_1", "pedestal_2", "pedestal_3", "pedestal_4"]
+								]
+							}
+						]
+					}
 				]
 			}
 		]
@@ -151,10 +205,11 @@
 				"item_margin": "1,2",
 				"rows": [
 					["logic_label", "logiclevel", "goal_label", "goal", "dungeon_shuffle_label", "shuffledungeonoff", "portal_shuffle_label", "portalshuffleoff"],
-					["onox_essences_label", "onox_essences", "old_man_essences_label", "oldmanessences", "golden_beasts_label", "goldenbeastsrequired", "tarm_jewels_label", "jewelreq"],
+					["onox_essences_label", "onox_essences", "old_man_essences_label", "oldmanessences", "sign_guy_requirement", "goldenbeastsrequired", "tarm_jewels_label", "jewelreq"],
 					["small_keysanity_label", "small_keysanity", "boss_keysanity_label", "boss_keysanity", "map_compass_label", "map_compass", "master_keys_label", "master_keys"],
 					["advance_shop_label", "advance_shop", "shuffle_old_men_label", "shuffle_old_men", "gold_ore_label", "shuffle_gold_ores", "treewarp_label", "notreewarp"],
-					["default_seasons_label", "defaultseasonsoff", "horon_village_season_label", "horon_village_season_shuffle", "d0_alt_entrance_label", "d0_alt_entrance", "d2_alt_entrance_label", "d2_alt_entrance"]
+					["default_seasons_label", "defaultseasonsoff", "horon_village_season_label", "horon_village_season_shuffle", "d0_alt_entrance_label", "d0_alt_entrance", "d2_alt_entrance_label", "d2_alt_entrance"],
+					["lost_woods_label", "shuffle_lost_woods", "pedestal_label", "shuffle_pedestal"]
 				]
 			}
 		]

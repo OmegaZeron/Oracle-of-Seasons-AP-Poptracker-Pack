@@ -648,26 +648,6 @@
 		]
 	},
 	{
-		"name": "Lost Woods Sequence",
-		"type": "progressive",
-		"allow_disabled": false,
-		"loop": true,
-		"initial_stage_idx":0,
-		"codes": "lost_woods_item_sequence",
-		"stages": [
-			{
-			"img": "images/labels/vanilla_label.png",
-			"codes": "lost_woods_vanilla",
-			"inherit_codes": false
-			},
-			{
-			"img": "images/labels/shuffled_label.png",
-			"codes": "lost_woods_shuffled",
-			"inherit_codes": false
-			}
-		]
-	},
-	{
 		"name": "Tree Warp selector",
 		"type": "progressive",
 		"allow_disabled": false,
@@ -1446,6 +1426,346 @@
 		]
 	},
 	{
+		"name": "Randomize Lost Woods Sequence",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 0,
+		"codes": "shuffle_lost_woods",
+		"stages": [
+			{
+				"img": "images/labels/vanilla_label.png",
+				"codes": "lost_woods_vanilla",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/shuffled_label.png",
+				"codes": "lost_woods_randomized",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Randomize Pedestal Sequence",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 0,
+		"codes": "shuffle_pedestal",
+		"stages": [
+			{
+				"img": "images/labels/vanilla_label.png",
+				"codes": "pedestal_vanilla",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/shuffled_label.png",
+				"codes": "pedestal_randomized",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Lost Woods Main Sequence 1",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 4,
+		"loop": true,
+		"codes": "lost_woods_1",
+		"stages": [
+			{
+				"img": "images/labels/selector_spring.png",
+				"codes": "lost_woods_1_spring",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_summer.png",
+				"codes": "lost_woods_1_summer",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_fall.png",
+				"codes": "lost_woods_1_fall",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_winter.png",
+				"codes": "lost_woods_1_winter",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_neutral.png",
+				"codes": "lost_woods_1_unknown",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Lost Woods Main Sequence 2",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 4,
+		"loop": true,
+		"codes": "lost_woods_2",
+		"stages": [
+			{
+				"img": "images/labels/selector_spring.png",
+				"codes": "lost_woods_2_spring",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_summer.png",
+				"codes": "lost_woods_2_summer",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_fall.png",
+				"codes": "lost_woods_2_fall",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_winter.png",
+				"codes": "lost_woods_2_winter",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_neutral.png",
+				"codes": "lost_woods_2_unknown",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Lost Woods Main Sequence 3",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 4,
+		"loop": true,
+		"codes": "lost_woods_3",
+		"stages": [
+			{
+				"img": "images/labels/selector_spring.png",
+				"codes": "lost_woods_3_spring",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_summer.png",
+				"codes": "lost_woods_3_summer",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_fall.png",
+				"codes": "lost_woods_3_fall",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_winter.png",
+				"codes": "lost_woods_3_winter",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_neutral.png",
+				"codes": "lost_woods_3_unknown",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Lost Woods Main Sequence 4",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 4,
+		"loop": true,
+		"codes": "lost_woods_4",
+		"stages": [
+			{
+				"img": "images/labels/selector_spring.png",
+				"codes": "lost_woods_4_spring",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_summer.png",
+				"codes": "lost_woods_4_summer",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_fall.png",
+				"codes": "lost_woods_4_fall",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_winter.png",
+				"codes": "lost_woods_4_winter",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_neutral.png",
+				"codes": "lost_woods_4_unknown",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Pedestal Sequence 1",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 4,
+		"loop": true,
+		"codes": "pedestal_1",
+		"stages": [
+			{
+				"img": "images/labels/selector_spring.png",
+				"codes": "pedestal_1_spring",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_summer.png",
+				"codes": "pedestal_1_summer",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_fall.png",
+				"codes": "pedestal_1_fall",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_winter.png",
+				"codes": "pedestal_1_winter",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_neutral.png",
+				"codes": "pedestal_1_unknown",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Pedestal Sequence 2",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 4,
+		"loop": true,
+		"codes": "pedestal_2",
+		"stages": [
+			{
+				"img": "images/labels/selector_spring.png",
+				"codes": "pedestal_2_spring",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_summer.png",
+				"codes": "pedestal_2_summer",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_fall.png",
+				"codes": "pedestal_2_fall",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_winter.png",
+				"codes": "pedestal_2_winter",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_neutral.png",
+				"codes": "pedestal_2_unknown",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Pedestal Sequence 3",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 4,
+		"loop": true,
+		"codes": "pedestal_3",
+		"stages": [
+			{
+				"img": "images/labels/selector_spring.png",
+				"codes": "pedestal_3_spring",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_summer.png",
+				"codes": "pedestal_3_summer",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_fall.png",
+				"codes": "pedestal_3_fall",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_winter.png",
+				"codes": "pedestal_3_winter",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_neutral.png",
+				"codes": "pedestal_3_unknown",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Pedestal Sequence 4",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 4,
+		"loop": true,
+		"codes": "pedestal_4",
+		"stages": [
+			{
+				"img": "images/labels/selector_spring.png",
+				"codes": "pedestal_4_spring",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_summer.png",
+				"codes": "pedestal_4_summer",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_fall.png",
+				"codes": "pedestal_4_fall",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_winter.png",
+				"codes": "pedestal_4_winter",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_neutral.png",
+				"codes": "pedestal_4_unknown",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Sign Guy Requirement",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 1,
+		"codes": "sign_guy_requirement",
+		"stages": [
+			{
+				"img": "images/labels/sign_0.png",
+				"codes": "sign_0",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/sign_1.png",
+				"codes": "sign_1",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
 		"name": "Suburbs Portal Selector",
 		"type": "progressive",
 		"allow_disabled": false,
@@ -1509,7 +1829,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/village_label_sub1.png",
+				"img": "images/labels/horon_label_sub.png",
 				"codes": "suburbs_horon",
 				"inherit_codes": false
 			},
@@ -1519,7 +1839,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/d8_label_sub1.png",
+				"img": "images/labels/upremains_label_sub.png",
 				"codes": "suburbs_upremains",
 				"inherit_codes": false
 			}
@@ -1589,7 +1909,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/village_label_sub1.png",
+				"img": "images/labels/horon_label_sub.png",
 				"codes": "suburbs_horon_hidden",
 				"inherit_codes": false
 			},
@@ -1599,7 +1919,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/d8_label_sub1.png",
+				"img": "images/labels/upremains_label_sub.png",
 				"codes": "suburbs_upremains_hidden",
 				"inherit_codes": false
 			}
@@ -1669,7 +1989,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/village_label_sub1.png",
+				"img": "images/labels/horon_label_sub.png",
 				"codes": "swamp_horon",
 				"inherit_codes": false
 			},
@@ -1679,7 +1999,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/d8_label_sub1.png",
+				"img": "images/labels/upremains_label_sub.png",
 				"codes": "swamp_upremains",
 				"inherit_codes": false
 			}
@@ -1749,7 +2069,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/village_label_sub1.png",
+				"img": "images/labels/horon_label_sub.png",
 				"codes": "swamp_horon_hidden",
 				"inherit_codes": false
 			},
@@ -1759,7 +2079,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/d8_label_sub1.png",
+				"img": "images/labels/upremains_label_sub.png",
 				"codes": "swamp_upremains_hidden",
 				"inherit_codes": false
 			}
@@ -1829,7 +2149,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/village_label_sub1.png",
+				"img": "images/labels/horon_label_sub.png",
 				"codes": "lake_horon",
 				"inherit_codes": false
 			},
@@ -1839,7 +2159,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/d8_label_sub1.png",
+				"img": "images/labels/upremains_label_sub.png",
 				"codes": "lake_upremains",
 				"inherit_codes": false
 			}
@@ -1909,7 +2229,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/village_label_sub1.png",
+				"img": "images/labels/horon_label_sub.png",
 				"codes": "lake_horon_hidden",
 				"inherit_codes": false
 			},
@@ -1919,7 +2239,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/d8_label_sub1.png",
+				"img": "images/labels/upremains_label_sub.png",
 				"codes": "lake_upremains_hidden",
 				"inherit_codes": false
 			}
@@ -1989,7 +2309,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/village_label_sub1.png",
+				"img": "images/labels/horon_label_sub.png",
 				"codes": "mtcucco_horon",
 				"inherit_codes": false
 			},
@@ -1999,7 +2319,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/d8_label_sub1.png",
+				"img": "images/labels/upremains_label_sub.png",
 				"codes": "mtcucco_upremains",
 				"inherit_codes": false
 			}
@@ -2069,7 +2389,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/village_label_sub1.png",
+				"img": "images/labels/horon_label_sub.png",
 				"codes": "mtcucco_horon_hidden",
 				"inherit_codes": false
 			},
@@ -2079,7 +2399,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/d8_label_sub1.png",
+				"img": "images/labels/upremains_label_sub.png",
 				"codes": "mtcucco_upremains_hidden",
 				"inherit_codes": false
 			}
@@ -2159,7 +2479,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/d8_label_sub1.png",
+				"img": "images/labels/upremains_label_sub.png",
 				"codes": "horon_upremains",
 				"inherit_codes": false
 			}
@@ -2239,7 +2559,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/d8_label_sub1.png",
+				"img": "images/labels/upremains_label_sub.png",
 				"codes": "horon_upremains_hidden",
 				"inherit_codes": false
 			}
@@ -2314,12 +2634,12 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/village_label_sub1.png",
+				"img": "images/labels/horon_label_sub.png",
 				"codes": "remains_horon",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/d8_label_sub1.png",
+				"img": "images/labels/upremains_label_sub.png",
 				"codes": "remains_upremains",
 				"inherit_codes": false
 			}
@@ -2394,12 +2714,12 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/village_label_sub1.png",
+				"img": "images/labels/horon_label_sub.png",
 				"codes": "remains_horon_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/d8_label_sub1.png",
+				"img": "images/labels/upremains_label_sub.png",
 				"codes": "remains_upremains_hidden",
 				"inherit_codes": false
 			}
@@ -2474,7 +2794,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/village_label_sub1.png",
+				"img": "images/labels/horon_label_sub.png",
 				"codes": "upremains_horon",
 				"inherit_codes": false
 			},
@@ -2554,7 +2874,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/village_label_sub1.png",
+				"img": "images/labels/horon_label_sub.png",
 				"codes": "upremains_horon_hidden",
 				"inherit_codes": false
 			},
@@ -2629,7 +2949,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/village_label_sub1.png",
+				"img": "images/labels/horon_label_sub.png",
 				"codes": "mountain_horon",
 				"inherit_codes": false
 			},
@@ -2639,7 +2959,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/d8_label_sub1.png",
+				"img": "images/labels/upremains_label_sub.png",
 				"codes": "mountain_upremains",
 				"inherit_codes": false
 			}
@@ -2709,7 +3029,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/village_label_sub1.png",
+				"img": "images/labels/horon_label_sub.png",
 				"codes": "mountain_horon_hidden",
 				"inherit_codes": false
 			},
@@ -2719,7 +3039,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/d8_label_sub1.png",
+				"img": "images/labels/upremains_label_sub.png",
 				"codes": "mountain_upremains_hidden",
 				"inherit_codes": false
 			}
@@ -2789,7 +3109,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/village_label_sub1.png",
+				"img": "images/labels/horon_label_sub.png",
 				"codes": "market_horon",
 				"inherit_codes": false
 			},
@@ -2799,7 +3119,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/d8_label_sub1.png",
+				"img": "images/labels/upremains_label_sub.png",
 				"codes": "market_upremains",
 				"inherit_codes": false
 			},
@@ -2869,7 +3189,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/village_label_sub1.png",
+				"img": "images/labels/horon_label_sub.png",
 				"codes": "market_horon_hidden",
 				"inherit_codes": false
 			},
@@ -2879,7 +3199,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/d8_label_sub1.png",
+				"img": "images/labels/upremains_label_sub.png",
 				"codes": "market_upremains_hidden",
 				"inherit_codes": false
 			}
@@ -2949,7 +3269,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/village_label_sub1.png",
+				"img": "images/labels/horon_label_sub.png",
 				"codes": "furnace_horon",
 				"inherit_codes": false
 			},
@@ -2959,7 +3279,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/d8_label_sub1.png",
+				"img": "images/labels/upremains_label_sub.png",
 				"codes": "furnace_upremains",
 				"inherit_codes": false
 			}
@@ -3029,7 +3349,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/village_label_sub1.png",
+				"img": "images/labels/horon_label_sub.png",
 				"codes": "furnace_horon_hidden",
 				"inherit_codes": false
 			},
@@ -3039,7 +3359,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/d8_label_sub1.png",
+				"img": "images/labels/upremains_label_sub.png",
 				"codes": "furnace_upremains_hidden",
 				"inherit_codes": false
 			}
@@ -3109,7 +3429,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/village_label_sub1.png",
+				"img": "images/labels/horon_label_sub.png",
 				"codes": "village_horon",
 				"inherit_codes": false
 			},
@@ -3119,7 +3439,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/d8_label_sub1.png",
+				"img": "images/labels/upremains_label_sub.png",
 				"codes": "village_upremains",
 				"inherit_codes": false
 			}
@@ -3189,7 +3509,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/village_label_sub1.png",
+				"img": "images/labels/horon_label_sub.png",
 				"codes": "village_horon_hidden",
 				"inherit_codes": false
 			},
@@ -3199,7 +3519,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/d8_label_sub1.png",
+				"img": "images/labels/upremains_label_sub.png",
 				"codes": "village_upremains_hidden",
 				"inherit_codes": false
 			}
@@ -3269,7 +3589,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/village_label_sub1.png",
+				"img": "images/labels/horon_label_sub.png",
 				"codes": "pirates_horon",
 				"inherit_codes": false
 			},
@@ -3279,7 +3599,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/d8_label_sub1.png",
+				"img": "images/labels/upremains_label_sub.png",
 				"codes": "pirates_upremains",
 				"inherit_codes": false
 			}
@@ -3354,7 +3674,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/village_label_sub1.png",
+				"img": "images/labels/horon_label_sub.png",
 				"codes": "pirates_horon_hidden",
 				"inherit_codes": false
 			},
@@ -3364,7 +3684,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/d8_label_sub1.png",
+				"img": "images/labels/upremains_label_sub.png",
 				"codes": "pirates_upremains_hidden",
 				"inherit_codes": false
 			}
@@ -3434,7 +3754,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/village_label_sub1.png",
+				"img": "images/labels/horon_label_sub.png",
 				"codes": "volcano_horon",
 				"inherit_codes": false
 			},
@@ -3444,7 +3764,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/d8_label_sub1.png",
+				"img": "images/labels/upremains_label_sub.png",
 				"codes": "volcano_upremains",
 				"inherit_codes": false
 			}
@@ -3514,7 +3834,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/village_label_sub1.png",
+				"img": "images/labels/horon_label_sub.png",
 				"codes": "volcano_horon_hidden",
 				"inherit_codes": false
 			},
@@ -3524,7 +3844,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/d8_label_sub1.png",
+				"img": "images/labels/upremains_label_sub.png",
 				"codes": "volcano_upremains_hidden",
 				"inherit_codes": false
 			}
@@ -3594,7 +3914,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/village_label_sub1.png",
+				"img": "images/labels/horon_label_sub.png",
 				"codes": "d8_horon",
 				"inherit_codes": false
 			},
@@ -3604,7 +3924,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/d8_label_sub1.png",
+				"img": "images/labels/upremains_label_sub.png",
 				"codes": "d8_upremains",
 				"inherit_codes": false
 			}
@@ -3674,7 +3994,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/village_label_sub1.png",
+				"img": "images/labels/horon_label_sub.png",
 				"codes": "d8_horon_hidden",
 				"inherit_codes": false
 			},
@@ -3684,7 +4004,7 @@
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/d8_label_sub1.png",
+				"img": "images/labels/upremains_label_sub.png",
 				"codes": "d8_upremains_hidden",
 				"inherit_codes": false
 			}

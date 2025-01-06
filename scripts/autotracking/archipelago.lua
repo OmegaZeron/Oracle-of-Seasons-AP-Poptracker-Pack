@@ -100,15 +100,17 @@ function onClear(slot_data)
 	if slot_data["normalize_horon_village_season"] then
 		Tracker:FindObjectForCode("horon_village_season_shuffle").CurrentStage = tonumber(slot_data["normalize_horon_village_season"])
 	end
-	
 	if slot_data["shuffle_old_men"] then
 		Tracker:FindObjectForCode("shuffle_old_men").CurrentStage = tonumber(slot_data["shuffle_old_men"])
 	end
 	if slot_data["shuffle_golden_ore_spots"] then
 		Tracker:FindObjectForCode("shuffle_gold_ores").CurrentStage = tonumber(slot_data["shuffle_golden_ore_spots"])
 	end
-	if slot_data["lost_woods_item_sequence"] then
-		Tracker:FindObjectForCode("lost_woods_item_sequence").CurrentStage = tonumber(slot_data["lost_woods_item_sequence"])
+	if slot_data["randomize_lost_woods_main_sequence"] then
+		Tracker:FindObjectForCode("shuffle_lost_woods").CurrentStage = tonumber(slot_data["randomize_lost_woods_main_sequence"])
+	end
+	if slot_data["randomize_lost_woods_item_sequence"] then
+		Tracker:FindObjectForCode("shuffle_pedestal").CurrentStage = tonumber(slot_data["randomize_lost_woods_item_sequence"])
 	end
 	if slot_data["advance_shop"] then
 		Tracker:FindObjectForCode("advance_shop").CurrentStage = tonumber(slot_data["advance_shop"])
@@ -130,6 +132,9 @@ function onClear(slot_data)
 	end
 	if slot_data["enforce_potion_in_shop"] then
 		Tracker:FindObjectForCode("horon_shop_potion").CurrentStage = tonumber(slot_data["enforce_potion_in_shop"])
+	end
+	if slot_data["sign_guy_requirement"] then
+		Tracker:FindObjectForCode("sign_guy_requirement").CurrentStage = tonumber(slot_data["sign_guy_requirement"])
 	end
 	
 	if slot_data["animal_companion"] == "Ricky" then
@@ -442,50 +447,19 @@ function onClear(slot_data)
 		['enter d7'] = 8,
 		['enter d8'] = 9
 	}
+	dungeon_mapping = {
+		["d0 entrance"] = "d0_ent_selector_hidden",
+		["d1 entrance"] = "d1_ent_selector_hidden",
+		["d2 entrance"] = "d2_ent_selector_hidden",
+		["d3 entrance"] = "d3_ent_selector_hidden",
+		["d4 entrance"] = "d4_ent_selector_hidden",
+		["d5 entrance"] = "d5_ent_selector_hidden",
+		["d6 entrance"] = "d6_ent_selector_hidden",
+		["d7 entrance"] = "d7_ent_selector_hidden",
+		["d8 entrance"] = "d8_ent_selector_hidden"
+	}
 	for region_name, dungeon_entrance in pairs(slot_data["dungeon_entrances"]) do
-		if  region_name == "d0 entrance" then
-		Tracker:FindObjectForCode("d0_ent_selector_hidden").CurrentStage = dungeon_dictionary[dungeon_entrance]
-		end
-	end
-	for region_name, dungeon_entrance in pairs(slot_data["dungeon_entrances"]) do
-		if  region_name == "d1 entrance" then
-		Tracker:FindObjectForCode("d1_ent_selector_hidden").CurrentStage = dungeon_dictionary[dungeon_entrance]
-		end
-	end
-	for region_name, dungeon_entrance in pairs(slot_data["dungeon_entrances"]) do
-		if  region_name == "d2 entrance" then
-		Tracker:FindObjectForCode("d2_ent_selector_hidden").CurrentStage = dungeon_dictionary[dungeon_entrance]
-	end
-		end
-	for region_name, dungeon_entrance in pairs(slot_data["dungeon_entrances"]) do
-		if  region_name == "d3 entrance" then
-		Tracker:FindObjectForCode("d3_ent_selector_hidden").CurrentStage = dungeon_dictionary[dungeon_entrance]
-		end
-	end
-	for region_name, dungeon_entrance in pairs(slot_data["dungeon_entrances"]) do
-		if  region_name == "d4 entrance" then
-		Tracker:FindObjectForCode("d4_ent_selector_hidden").CurrentStage = dungeon_dictionary[dungeon_entrance]
-		end
-	end
-	for region_name, dungeon_entrance in pairs(slot_data["dungeon_entrances"]) do
-		if  region_name == "d5 entrance" then
-		Tracker:FindObjectForCode("d5_ent_selector_hidden").CurrentStage = dungeon_dictionary[dungeon_entrance]
-		end
-	end
-	for region_name, dungeon_entrance in pairs(slot_data["dungeon_entrances"]) do
-		if  region_name == "d6 entrance" then
-		Tracker:FindObjectForCode("d6_ent_selector_hidden").CurrentStage = dungeon_dictionary[dungeon_entrance]
-		end
-	end
-	for region_name, dungeon_entrance in pairs(slot_data["dungeon_entrances"]) do
-		if  region_name == "d7 entrance" then
-		Tracker:FindObjectForCode("d7_ent_selector_hidden").CurrentStage = dungeon_dictionary[dungeon_entrance]
-		end
-	end
-	for region_name, dungeon_entrance in pairs(slot_data["dungeon_entrances"]) do
-		if  region_name == "d8 entrance" then
-		Tracker:FindObjectForCode("d8_ent_selector_hidden").CurrentStage = dungeon_dictionary[dungeon_entrance]
-		end
+		Tracker:FindObjectForCode(dungeon_mapping[region_name]).CurrentStage = dungeon_dictionary[dungeon_entrance]
 	end
 
 	-- deterministic gasha locations

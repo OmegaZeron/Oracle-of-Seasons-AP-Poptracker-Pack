@@ -130,6 +130,12 @@ GoldenBeastsSetting = "goldenbeastsrequired"
 Treewarp = "treewarp"
 OnoxGoal = "onox_goal"
 GanonGoal = "ganon_goal"
+LostWoodsShuffled = "lost_woods_randomized"
+LostWoodsVanilla = "lost_woods_vanilla"
+PedestalShuffled = "pedestal_randomized"
+PedestalVanilla = "pedestal_vanilla"
+SignGuyNone = "sign_0"
+SignGuyOnePlus = "sign_1"
 
 -- Helpers
 HiddenGasha = "hidden_gasha"

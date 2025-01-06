@@ -556,7 +556,7 @@
 		"max_quantity": 1
 	},
 	{
-		"name": "Gnarled Root Dungeon",
+		"name": "Fertile Soil",
 		"type": "toggle",
 		"img": "images/items/D1.png",
 		"codes": "d1, gnarledroot, essences"
@@ -575,7 +575,7 @@
 		"max_quantity": 2
 	},
 	{
-		"name": "Snake's Remains",
+		"name": "Gift of Time",
 		"type": "toggle",
 		"img": "images/items/D2.png",
 		"codes": "d2, snakeremains, essences"
@@ -594,7 +594,7 @@
 		"max_quantity": 3
 	},
 	{
-		"name": "Poison Moth's Lair",
+		"name": "Bright Sun",
 		"type": "toggle",
 		"img": "images/items/D3.png",
 		"codes": "d3, poisonmoth, essences"
@@ -613,7 +613,7 @@
 		"max_quantity": 2
 	},
 	{
-		"name": "Dancing Dragon Dungeon",
+		"name": "Soothing Rain",
 		"type": "toggle",
 		"img": "images/items/D4.png",
 		"codes": "d4, dancingdragon, essences"
@@ -632,7 +632,7 @@
 		"max_quantity": 5
 	},
 	{
-		"name": "Unicorn's Cave",
+		"name": "Nurturing Warmth",
 		"type": "toggle",
 		"img": "images/items/D5.png",
 		"codes": "d5, unicorncave, essences"
@@ -651,7 +651,7 @@
 		"max_quantity": 5
 	},
 	{
-		"name": "Ancient Ruins",
+		"name": "Blowing Wind",
 		"type": "toggle",
 		"img": "images/items/D6.png",
 		"codes": "d6, ancientruins, essences"
@@ -670,7 +670,7 @@
 		"max_quantity": 3
 	},
 	{
-		"name": "Explorer's Crypt",
+		"name": "Seed of Life",
 		"type": "toggle",
 		"img": "images/items/D7.png",
 		"codes": "d7, explorercrypt, essences"
@@ -689,7 +689,7 @@
 		"max_quantity": 5
 	},
 	{
-		"name": "Sword & Shield Maze",
+		"name": "Changing Seasons",
 		"type": "toggle",
 		"img": "images/items/D8.png",
 		"codes": "d8, swordandshield, essences"

@@ -803,6 +803,48 @@ function CanEnterTarm()
 	return n >= required
 end
 
+local indexToSeason = {
+	[0] = Spring,
+	[1] = Summer,
+	[2] = Autumn,
+	[3] = Winter,
+	[4] = "unknown"
+}
+function CanLostWoods()
+	if (Has(LostWoodsVanilla)) then
+		return All(
+			Has(Spring),
+			Has(Summer),
+			Has(Autumn),
+			Has(Winter)
+		)
+	end
+	for i=1, 4 do
+		local season = indexToSeason[Tracker:FindObjectForCode("lost_woods_"..i).CurrentStage]
+		if (season == "unknown" or not Has(season)) then
+			return false
+		end
+	end
+	return true
+end
+function CanPedestal()
+	if (Has(PedestalVanilla)) then
+		return All(
+			Has(Spring),
+			Has(Summer),
+			Has(Autumn),
+			Has(Winter)
+		)
+	end
+	for i=1, 4 do
+		local season = indexToSeason[Tracker:FindObjectForCode("pedestal_"..i).CurrentStage]
+		if (season == "unknown" or not Has(season)) then
+			return false
+		end
+	end
+	return true
+end
+
 function D1KeyCount(count)
 	return Tracker:ProviderCountForCode(D1SmallKey) >= count or Has(D1MasterKey)
 end
@@ -1052,10 +1094,36 @@ function display_portals()
 	end
 end
 
+local lostWoodsDefault = {3, 2, 0, 1}
+function display_lost_woods()
+	if (Has(LostWoodsVanilla)) then
+		for i=1, 4 do
+			Tracker:FindObjectForCode("lost_woods_"..i).CurrentStage = lostWoodsDefault[i]
+		end
+	else
+		for i=1, 4 do
+			Tracker:FindObjectForCode("lost_woods_"..i).CurrentStage = 4
+		end
+	end
+end
+function display_pedestal()
+	if (Has(PedestalVanilla)) then
+		for i=1, 4 do
+			Tracker:FindObjectForCode("pedestal_"..i).CurrentStage = lostWoodsDefault[i]
+		end
+	else
+		for i=1, 4 do
+			Tracker:FindObjectForCode("pedestal_"..i).CurrentStage = 4
+		end
+	end
+end
+
 ScriptHost:AddWatchForCode("dungeon settings handler", "dungeonshuffle", dungeon_settings)
 ScriptHost:AddWatchForCode("dungeons handler", "fill_dungeons", display_dungeons)
 ScriptHost:AddWatchForCode("seasons settings handler", "default_seasons", seasons_settings)
 ScriptHost:AddWatchForCode("seasons handler", "fill_seasons", display_seasons)
 ScriptHost:AddWatchForCode("portal settings handler", "portalshuffle", vanilla_portals)
 ScriptHost:AddWatchForCode("portal handler", "fill_portals", display_portals)
+ScriptHost:AddWatchForCode("lost woods handler", "shuffle_lost_woods", display_lost_woods)
+ScriptHost:AddWatchForCode("pedestal handler", "shuffle_pedestal", display_pedestal)
 ScriptHost:AddOnLocationSectionChangedHandler("gashachanged", OnSectionChanged)

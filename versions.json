@@ -1,6 +1,12 @@
 {
 	"versions": [
 		{
+			"package_version": "1.5.0.9",
+			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/v.1.5.0.9/Oracle-of-Seasons-AP-Poptracker-Pack-v1.5.0.9.zip",
+			"sha256": "58fff7d9006ffeee6ac5228bb7912e315c236596be9a66a00ba8ff78a6782e86",
+			"changelog": ["Added Lost Woods and Sign Guy settings"]
+		},
+		{
 			"package_version": "1.5.0.8",
 			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/v.1.5.0.8/Oracle-of-Seasons-AP-Poptracker-Pack-v1.5.0.8.zip",
 			"sha256": "f8fdaa409d97eba1d04c359e4c4e47890b4e4650704f523b7d0bdc7dc0b65d55",

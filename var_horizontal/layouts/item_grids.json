@@ -6,7 +6,8 @@
 			{
 				"type": "itemgrid",
 				"h_alignment": "left",
-				"item_margin": "3,2",
+				"margin": "-2,6,0,0",
+				"item_margin": "1,1",
 				"item_size": 35,
 				"rows": [
 					["sword1", "biggoron_sword", "bestweapon", "shield", "bombs", "feather"],
@@ -20,7 +21,7 @@
 				"type": "itemgrid",
 				"h_alignment": "center",
 				"item_size": 50,
-				"item_margin": "0,-7",
+				"item_margin": "0,-9",
 				"rows": [
 					[""],
 					["", "", "", "fill_seasons"],
@@ -40,7 +41,8 @@
 			{
 				"type": "itemgrid",
 				"h_alignment": "left",
-				"item_margin": "3,2",
+				"margin": "-5,6,0,0",
+				"item_margin": "1,1",
 				"item_size": 35,
 				"rows": [
 					["gnarledkey", "floodkey", "dragonkey", "memberscard", "plaque", "banana", "roundjewel"],
@@ -53,6 +55,7 @@
 			{
 				"type": "itemgrid",
 				"h_alignment": "center",
+				"margin": "-10,0,0,0",
 				"item_size": 50,
 				"item_margin": "10,-14",
 				"rows": [
@@ -74,6 +77,7 @@
 	"dungeon_grid": {
 		"type": "array",
 		"orientation": "vertical",
+		"margin": "-20,0,0,0",
 		// "v_alignment": "center",
 		"content": [
 			{
@@ -81,8 +85,8 @@
 				"h_alignment": "left",
 				// "v_alignment": "stretch",
 				"margin": "5,-5",
-				"item_size": 108,
-				"item_margin": "-5,-27",
+				"item_size": 92,
+				"item_margin": "-4,-27",
 				"rows": [
 					["d0_label", "d1_label", "d2_label", "d3_label", "d4_label", "d5_label", "d6_label", "d7_label", "d8_label"]
 				]
@@ -91,7 +95,7 @@
 				"type": "itemgrid",
 				"h_alignment": "left",
 				"item_size": 70,
-				"item_margin": "14,1",
+				"item_margin": "7,1",
 				"rows": [
 					["d0_ent", "d1_ent", "d2_ent", "d3_ent", "d4_ent", "d5_ent", "d6_ent", "d7_ent", "d8_ent"]
 				]
@@ -100,7 +104,7 @@
 				"type": "itemgrid",
 				"h_alignment": "left",
 				"margin": "20,0",
-				"item_size": 33,
+				"item_size": 28,
 				"item_margin": "0,10",
 				"rows": [
 					[
@@ -120,7 +124,7 @@
 				"type": "itemgrid",
 				"h_alignment": "left",
 				"margin": "20,0",
-				"item_size": 33,
+				"item_size": 28,
 				"item_margin": "0,2",
 				"rows": [
 					["d0_master_key", "d0sk", "", "d1_master_key", "d1sk", "", "d2_master_key", "d2sk", "", "d3_master_key", "d3sk", "", "d4_master_key", "d4sk", "", "d5_master_key", "d5sk", "", "d6_master_key", "d6sk", "", "d7_master_key", "d7sk", "", "d8_master_key", "d8sk", ""],
@@ -131,8 +135,8 @@
 				"type": "itemgrid",
 				"h_alignment": "left",
 				"margin": "0,0",
-				"item_size": 37,
-				"item_margin": "31,10",
+				"item_size": 28,
+				"item_margin": "28,10",
 				"rows": [
 					["", "d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8"]
 				]
@@ -140,7 +144,7 @@
 			{
 				"type": "array",
 				"orientation": "vertical",
-				"margin": "0,50,0,0",
+				"margin": "0,70,0,0",
 				"content": [
 					{
 						"type": "array",

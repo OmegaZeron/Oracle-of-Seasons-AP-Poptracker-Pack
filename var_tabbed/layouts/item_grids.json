@@ -26,39 +26,7 @@
 					["starore", "ribbon", "bombflower", "gashaseeds", "blueredore", "hardore", "squarejewel"],
 					["cuccodex", "lonlonegg", "ghastlydoll", "ironpot", "lavasoup", "goronvase", "pyramidjewel"],
 					["fish", "megaphone", "mushroom", "woodenbird", "enginegrease", "phonograph", "xjewel"],
-					["ring_red", "ring_blue", "ring_pegasus", "ring_fist", "ring_expert", "ring_energy", "ring_swimmer"]
-				]
-			}
-		]
-	},
-	"item_grid2": {
-		"type": "array",
-		"orientation": "horizontal",
-		"content": [
-			{
-				"type": "itemgrid",
-				"h_alignment": "left",
-				"item_margin": "3,2",
-				"item_size": 38,
-				"rows": [
-					["sword1", "biggoron_sword", "bestweapon", "shield", "bombs", "feather"],
-					["strength", "boomerang1", "slingshot1", "glove", "shovel", "flute_generic"],
-					["satchel1", "emberseeds", "mysteryseeds", "scentseeds", "pegasusseeds", "galeseeds"],
-					["flippers", "rustybell", "spring", "summer", "fall", "winter"],
-					["natzu_animal", "polishedbell", "golden_darknut", "golden_octorok", "golden_moblin", "golden_lynel"]
-				]
-			},		 
-			{
-				"type": "itemgrid",
-				"h_alignment": "left",
-				"item_margin": "3,2",
-				"item_size": 38,
-				"rows": [
-					["gnarledkey", "floodkey", "dragonkey", "memberscard", "plaque", "banana", "roundjewel"],
-					["starore", "ribbon", "bombflower", "blueore", "redore", "hardore", "squarejewel"],
-					["cuccodex", "lonlonegg", "ghastlydoll", "ironpot", "lavasoup", "goronvase", "pyramidjewel"],
-					["fish", "megaphone", "mushroom", "woodenbird", "enginegrease", "phonograph", "xjewel"],
-					["ring_red", "ring_blue", "ring_pegasus", "ring_fist", "ring_expert", "ring_energy", "ring_swimmer"]
+					["somaria", "bombchus", "ring_pegasus", "ring_fist", "ring_expert", "ring_energy", "ring_swimmer"]
 				]
 			}
 		]
@@ -75,10 +43,11 @@
 					{
 						"type": "itemgrid",
 						"h_alignment": "center",
+						"margin": "5,10,5,5",
 						"item_size": 50,
 						"item_margin": "0,-11",
 						"rows": [
-							["", "", "", "fill_seasons"],
+							["fill_seasons", "", "lost_woods_season_label", "lost_woods_season"],
 							["horon_village_label", "horon_village_season", "tarm_ruins_label", "tarm_ruins_season"],
 							["north_label", "north_horon_season", "swamp_label", "swamp_season"],
 							["suburbs_label", "suburbs_season", "sunken_label", "sunken_season"],

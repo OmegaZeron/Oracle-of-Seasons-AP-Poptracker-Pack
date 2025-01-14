@@ -16,12 +16,23 @@ SnakeBladeTraps:connect_one_way_entrance(SnakeMoblinRopeFight)
 SnakeBladeTraps:connect_two_ways_entrance(SnakeAltEntrance, function() return Has(Bracelet) end)
 SnakeAltEntrance:connect_one_way(SnakeBombPuzzle, function()
 	return All(
-		Has(D2AltRemoved),
 		CanDestroyBush(),
-		Has(Bombs)
+		Any(
+			Has(Bombs),
+			All(
+				Has(Bombchus50),
+				Has(SeedSatchel),
+				Has(PegasusSeeds),
+				Any(
+					IsMediumPlus(),
+					AccessibilityLevel.SequenceBreak
+				)
+			)
+
+		)
 	)
 end)
-SnakeBladeTraps:connect_one_way_entrance(SnakeBombBlockStairs, function() return Has(Bombs) end)
+SnakeBladeTraps:connect_one_way_entrance(SnakeBombBlockStairs, CanBombWall)
 SnakeBombBlockStairs:connect_one_way_entrance(FacadeDoorstep, function() return Has(Bracelet) end)
 --two keys
 FacadeDoorstep:connect_one_way_entrance(Facade, function()

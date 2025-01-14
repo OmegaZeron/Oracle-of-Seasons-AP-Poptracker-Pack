@@ -8,7 +8,8 @@ end)
 UnicornFoyer:connect_one_way(UnicornSpiralChest, function()
 	return Any(
 		CanArmorKill(),
-		Has(Shield)
+		Has(Shield),
+		Has(Bombchus20)
 	)
 end)
 UnicornFoyer:connect_one_way_entrance(UnicornTerrace, function() return Has(MagnetGlove) end)
@@ -43,10 +44,15 @@ UnicornPreSyger:connect_one_way(UnicornRightMinecartChest)
 UnicornPotRoom:connect_two_ways_entrance(UnicornTerrace, function()
 	return All(
 		Has(Feather),
-		Has(Bombs)
+		CanBombWall()
 	)
 end)
-UnicornTerrace:connect_one_way(UnicornArmosPuzzle, CanArmorKill)
+UnicornTerrace:connect_one_way(UnicornArmosPuzzle, function()
+	return Any(
+		CanArmorKill(),
+		Has(Bombchus20)
+	)
+end)
 UnicornMinecarts:connect_one_way(UnicornMiddleMinecartChest, CanHitLeverFromMinecart)
 UnicornMinecarts:connect_one_way(UnicornSpinnerChest, function()
 	return Any(
@@ -65,7 +71,8 @@ UnicornMinecarts:connect_one_way_entrance(UnicornMinecartPushBlock, function()
 					IsMediumPlus(),
 					AccessibilityLevel.SequenceBreak
 				)
-			)
+			),
+			Has(Bombchus20)
 		)
 	)
 end)
@@ -75,11 +82,10 @@ UnicornPotRoom:connect_one_way(UnicornMagnetGloveChest, function()
 		D5KeyCount(5),
 		Any(
 			Has(Flippers),
-			JumpLiquid5(),
 			All(
-				JumpLiquid3(),
+				Jump4(), -- is liquid, but diagonal makes this effectively a 4 pit for rules
 				Any(
-					IsMediumPlus(),
+					IsMediumPlus(), -- force medium for lower path
 					AccessibilityLevel.SequenceBreak
 				)
 			)
@@ -102,6 +108,12 @@ UnicornPostSyger:connect_one_way(UnicornTreadmillBasement, function()
 					IsMediumPlus(),
 					AccessibilityLevel.SequenceBreak
 				)
+			),
+			All(
+				Has(CaneOfSomaria),
+				Has(Feather),
+				Has(SeedSatchel),
+				Has(PegasusSeeds)
 			)
 		)
 	)

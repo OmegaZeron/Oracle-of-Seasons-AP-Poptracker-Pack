@@ -212,6 +212,60 @@
 		]
 	},
 	{
+		"name": "Bombchus",
+		"type": "progressive",
+		"codes": "bombchus",
+		"stages": [
+			{
+				"disabled_img": "images/items/bombchu.png",
+				"img": "images/items/bombchu10.png",
+				"codes": "bombchus"
+			},
+			{
+				"img": "images/items/bombchu20.png",
+				"codes": "bombchus20"
+			},
+			{
+				"img": "images/items/bombchu30.png",
+				"codes": "bombchus30"
+			},
+			{
+				"img": "images/items/bombchu40.png",
+				"codes": "bombchus40"
+			},
+			{
+				"img": "images/items/bombchu50.png",
+				"codes": "bombchus50"
+			},
+			{
+				"img": "images/items/bombchu60.png",
+				"codes": "bombchus60"
+			},
+			{
+				"img": "images/items/bombchu70.png",
+				"codes": "bombchus70"
+			},
+			{
+				"img": "images/items/bombchu80.png",
+				"codes": "bombchus80"
+			},
+			{
+				"img": "images/items/bombchu90.png",
+				"codes": "bombchus90"
+			},
+			{
+				"img": "images/items/bombchu99.png",
+				"codes": "bombchus99"
+			}
+		]
+	},
+	{
+		"name": "Cane of Somaria",
+		"type": "toggle",
+		"img": "images/items/somaria.png",
+		"codes": "somaria"
+	},
+	{
 		"name": "Season's Rod",
 		"type": "static",
 		"img": "images/items/rod.png",

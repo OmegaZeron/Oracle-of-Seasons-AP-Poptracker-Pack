@@ -9,7 +9,16 @@ end)
 SubrosiaMountainEast:connect_two_ways_entrance(TempleOfSeasons)
 SubrosiaMountainEast:connect_two_ways_entrance(SubrosiaMountainWest, function() return Has(Feather) end)
 SubrosiaMountainEast:connect_two_ways_entrance(StrangeBrothers, JumpLiquid5)
-SubrosiaMountainEast:connect_one_way(SubrosiaMountainMagnetDigSpot, function() return Has(Shovel) end)
+SubrosiaMountainEast:connect_one_way(SubrosiaMountainMagnetDigSpot, function()
+	return All(
+		Has(Feather),
+		Has(Shovel),
+		Any(
+			Has(MagnetGlove),
+			JumpLiquid3()
+		)
+	)
+end)
 SubrosiaMountainEast:connect_one_way(SubrosiaMountainTempleDigSpot, function() return Has(Shovel) end)
 SubrosiaMountainEast:connect_one_way(SmithyHardOre, function() return Has(HardOre) end)
 SubrosiaMountainEast:connect_one_way(SmithyBell, function() return Has(RustyBell) end)
@@ -19,6 +28,12 @@ SubrosiaMountainWest:connect_one_way(SubrosiaMountainLockedChest, function() ret
 SubrosiaMountainWest:connect_one_way(SubrosiaMountainWestDigSpot, function() return Has(Shovel) end)
 SubrosiaMountainWest:connect_one_way(SubrosiaMountainSouthDigSpot, function() return Has(Shovel) end)
 Volcano:connect_one_way_entrance(Fireworks, function() return Has(Bombs) end)
+Volcano:connect_one_way_entrance(SubrosiaMountainWest, function()
+	return All(
+		Has(Bracelet),
+		JumpLiquid3()
+	)
+end)
 Volcano:connect_one_way_entrance(TempleRemainsLowerPortal, function()
 	return Any(
 		Has(ShufflePortalsOff),

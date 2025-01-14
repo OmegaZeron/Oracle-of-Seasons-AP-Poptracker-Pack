@@ -7,10 +7,15 @@
 		"children": [
 			{
 				"name": "Goron Mountain West Gasha Spot",
+				"visibility_rules": ["^$CanSeeGasha|1"],
+				"access_rules": ["^$CanReach|GoronGashaWest"],
 				"sections": [
 					{
-						"name": "Dig It Up",
-						"access_rules": ["^$CanReach|GoronGashaWest"]
+						"name": "Dig It Up"
+					},
+					{
+						"name": "Harvested",
+						"access_rules": ["^$HasPlanted|@Goron Mountain/Goron Mountain West Gasha Spot/Dig It Up"]
 					}
 				],
 				"map_locations": [
@@ -23,10 +28,15 @@
 			},
 			{
 				"name": "Goron Mountain East Gasha Spot",
+				"visibility_rules": ["^$CanSeeGasha|1"],
+				"access_rules": ["^$CanReach|GoronGashaEast"],
 				"sections": [
 					{
-						"name": "Under Rocks",
-						"access_rules": ["^$CanReach|GoronGashaEast"]
+						"name": "Under Rocks"
+					},
+					{
+						"name": "Harvested",
+						"access_rules": ["^$HasPlanted|@Goron Mountain/Goron Mountain East Gasha Spot/Under Rocks"]
 					}
 				],
 				"map_locations": [

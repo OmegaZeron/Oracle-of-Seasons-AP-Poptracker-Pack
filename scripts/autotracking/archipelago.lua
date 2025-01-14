@@ -6,20 +6,10 @@ CUR_INDEX = -1
 SLOT_DATA = nil
 LOCAL_ITEMS = {}
 GLOBAL_ITEMS = {}
+COLLECTED_HINTS = {}
 
 function onClear(slot_data)
-
-		-- print(string.format("called onClear, slot_data:\n%s", dump_table(slot_data)))
-		-- function dump_table(tbl)
-		--	 for key, value in pairs(tbl) do
-		--		 print(key, value)
-		--	 end
-		-- end
-		-- print("test")
-		
-		-- print("Called onClear, slot_data:")
-		-- dump_table(slot_data)
-
+	print(string.format("called onClear, slot_data:\n%s", dump_table(slot_data)))
 	SLOT_DATA = slot_data
 	CUR_INDEX = -1
 	-- reset locations
@@ -38,7 +28,7 @@ function onClear(slot_data)
 		end
 	end
 	-- reset items
-	for _, v in pairs(ITEM_MAPPING) do
+	for _, v in pairs(ITEM_DISPLAY_MAPPING) do
 		if v[1] and v[2] then
 			if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
 				print(string.format("onClear: clearing item %s of type %s", v[1], v[2]))
@@ -71,70 +61,70 @@ function onClear(slot_data)
 	end
 
 	if slot_data["required_essences"] then
-		Tracker:FindObjectForCode("onox_essences").CurrentStage = tonumber(slot_data["required_essences"])
+		Tracker:FindObjectForCode("onox_essences").CurrentStage = slot_data["required_essences"]
 	end
 	if slot_data["treehouse_old_man_requirement"] then
-		Tracker:FindObjectForCode("oldmanessences").CurrentStage = tonumber(slot_data["treehouse_old_man_requirement"])
+		Tracker:FindObjectForCode("oldmanessences").CurrentStage = slot_data["treehouse_old_man_requirement"]
 	end
 	if slot_data["golden_beasts_requirement"] then
-		Tracker:FindObjectForCode("goldenbeastsrequired").CurrentStage = tonumber(slot_data["golden_beasts_requirement"])
+		Tracker:FindObjectForCode("goldenbeastsrequired").CurrentStage = slot_data["golden_beasts_requirement"]
 	end
 	if slot_data["tarm_gate_required_jewels"] then
-		Tracker:FindObjectForCode("jewelreq").CurrentStage = tonumber(slot_data["tarm_gate_required_jewels"])
+		Tracker:FindObjectForCode("jewelreq").CurrentStage = slot_data["tarm_gate_required_jewels"]
 	end
 	if slot_data["logic_difficulty"] then
-		Tracker:FindObjectForCode("logiclevel").CurrentStage = tonumber(slot_data["logic_difficulty"])
+		Tracker:FindObjectForCode("logiclevel").CurrentStage = slot_data["logic_difficulty"]
 	end
 	if slot_data["shuffle_dungeons"] then
-		Tracker:FindObjectForCode("dungeonshuffle").CurrentStage = tonumber(slot_data["shuffle_dungeons"])
+		Tracker:FindObjectForCode("dungeonshuffle").CurrentStage = slot_data["shuffle_dungeons"]
 	end
 	if slot_data["warp_to_start"] then
-		Tracker:FindObjectForCode("treewarp").CurrentStage = tonumber(slot_data["warp_to_start"])
+		Tracker:FindObjectForCode("treewarp").CurrentStage = slot_data["warp_to_start"]
 	end
 	if slot_data["shuffle_portals"] then
-		Tracker:FindObjectForCode("portalshuffle").CurrentStage = tonumber(slot_data["shuffle_portals"])
+		Tracker:FindObjectForCode("portalshuffle").CurrentStage = slot_data["shuffle_portals"]
 	end
 	if slot_data["goal"] then
-		Tracker:FindObjectForCode("goal").CurrentStage = tonumber(slot_data["goal"])
+		Tracker:FindObjectForCode("goal").CurrentStage = slot_data["goal"]
 	end
 	if slot_data["normalize_horon_village_season"] then
-		Tracker:FindObjectForCode("horon_village_season_shuffle").CurrentStage = tonumber(slot_data["normalize_horon_village_season"])
+		Tracker:FindObjectForCode("horon_village_season_shuffle").CurrentStage = slot_data["normalize_horon_village_season"]
 	end
 	if slot_data["shuffle_old_men"] then
-		Tracker:FindObjectForCode("shuffle_old_men").CurrentStage = tonumber(slot_data["shuffle_old_men"])
+		Tracker:FindObjectForCode("shuffle_old_men").CurrentStage = slot_data["shuffle_old_men"]
 	end
 	if slot_data["shuffle_golden_ore_spots"] then
-		Tracker:FindObjectForCode("shuffle_gold_ores").CurrentStage = tonumber(slot_data["shuffle_golden_ore_spots"])
+		Tracker:FindObjectForCode("shuffle_gold_ores").CurrentStage = slot_data["shuffle_golden_ore_spots"]
 	end
 	if slot_data["randomize_lost_woods_main_sequence"] then
-		Tracker:FindObjectForCode("shuffle_lost_woods").CurrentStage = tonumber(slot_data["randomize_lost_woods_main_sequence"])
+		Tracker:FindObjectForCode("shuffle_lost_woods").CurrentStage = slot_data["randomize_lost_woods_main_sequence"]
 	end
 	if slot_data["randomize_lost_woods_item_sequence"] then
-		Tracker:FindObjectForCode("shuffle_pedestal").CurrentStage = tonumber(slot_data["randomize_lost_woods_item_sequence"])
+		Tracker:FindObjectForCode("shuffle_pedestal").CurrentStage = slot_data["randomize_lost_woods_item_sequence"]
 	end
 	if slot_data["advance_shop"] then
-		Tracker:FindObjectForCode("advance_shop").CurrentStage = tonumber(slot_data["advance_shop"])
+		Tracker:FindObjectForCode("advance_shop").CurrentStage = slot_data["advance_shop"]
 	end
 	if slot_data["master_keys"] then
-		Tracker:FindObjectForCode("master_keys").CurrentStage = tonumber(slot_data["master_keys"])
+		Tracker:FindObjectForCode("master_keys").CurrentStage = slot_data["master_keys"]
 	end
 	if slot_data["remove_d0_alt_entrance"] then
-		Tracker:FindObjectForCode("d0_alt_entrance").CurrentStage = tonumber(slot_data["remove_d0_alt_entrance"])
+		Tracker:FindObjectForCode("d0_alt_entrance").CurrentStage = slot_data["remove_d0_alt_entrance"]
 	end
 	if slot_data["remove_d2_alt_entrance"] then
-		Tracker:FindObjectForCode("d2_alt_entrance").CurrentStage = tonumber(slot_data["remove_d2_alt_entrance"])
+		Tracker:FindObjectForCode("d2_alt_entrance").CurrentStage = slot_data["remove_d2_alt_entrance"]
 	end
 	if slot_data["keysanity_small_keys"] then
-		Tracker:FindObjectForCode("small_keysanity").CurrentStage = tonumber(slot_data["keysanity_small_keys"])
+		Tracker:FindObjectForCode("small_keysanity").CurrentStage = slot_data["keysanity_small_keys"]
 	end
 	if slot_data["keysanity_boss_keys"] then
-		Tracker:FindObjectForCode("boss_keysanity").CurrentStage = tonumber(slot_data["keysanity_boss_keys"])
+		Tracker:FindObjectForCode("boss_keysanity").CurrentStage = slot_data["keysanity_boss_keys"]
 	end
 	if slot_data["enforce_potion_in_shop"] then
-		Tracker:FindObjectForCode("horon_shop_potion").CurrentStage = tonumber(slot_data["enforce_potion_in_shop"])
+		Tracker:FindObjectForCode("horon_shop_potion").CurrentStage = slot_data["enforce_potion_in_shop"]
 	end
 	if slot_data["sign_guy_requirement"] then
-		Tracker:FindObjectForCode("sign_guy_requirement").CurrentStage = tonumber(slot_data["sign_guy_requirement"])
+		Tracker:FindObjectForCode("sign_guy_requirement").CurrentStage = slot_data["sign_guy_requirement"]
 	end
 	
 	if slot_data["animal_companion"] == "Ricky" then
@@ -161,49 +151,44 @@ function onClear(slot_data)
 		Tracker:FindObjectForCode("default_seasons").CurrentStage = 6
 	end
 
-	-- season_dictionary = {
-		-- spring = 0,
-		-- summer = 1,
-		-- autumn = 2,
-		-- winter = 3
-	  -- }
 	for region_name, season_id in pairs(slot_data["default_seasons"]) do
 
-		if  region_name == "EYEGLASS_LAKE" then
-		Tracker:FindObjectForCode("north_horon_season_hidden").CurrentStage = season_id
+		if (region_name == "EYEGLASS_LAKE") then
+			Tracker:FindObjectForCode("north_horon_season_hidden").CurrentStage = season_id
 		end
-		if  region_name == "EASTERN_SUBURBS" then
-		Tracker:FindObjectForCode("suburbs_season_hidden").CurrentStage = season_id
+		if (region_name == "EASTERN_SUBURBS") then
+			Tracker:FindObjectForCode("suburbs_season_hidden").CurrentStage = season_id
 		end
-		if  region_name == "WOODS_OF_WINTER" then
-		Tracker:FindObjectForCode("wow_season_hidden").CurrentStage = season_id
+		if (region_name == "WOODS_OF_WINTER") then
+			Tracker:FindObjectForCode("wow_season_hidden").CurrentStage = season_id
 		end
-		if  region_name == "HOLODRUM_PLAIN" then
-		Tracker:FindObjectForCode("plain_season_hidden").CurrentStage = season_id
+		if (region_name == "HOLODRUM_PLAIN") then
+			Tracker:FindObjectForCode("plain_season_hidden").CurrentStage = season_id
 		end
-		if  region_name == "SPOOL_SWAMP" then
-		Tracker:FindObjectForCode("swamp_season_hidden").CurrentStage = season_id
+		if (region_name == "SPOOL_SWAMP") then
+			Tracker:FindObjectForCode("swamp_season_hidden").CurrentStage = season_id
 		end
-		if  region_name == "SUNKEN_CITY" then
+		if (region_name == "SUNKEN_CITY") then
 			Tracker:FindObjectForCode("sunken_season_hidden").CurrentStage = season_id
 		end
-		if  region_name == "TARM_RUINS" then
+		if (region_name == "LOST_WOODS") then
+			Tracker:FindObjectForCode("lost_woods_season_hidden").CurrentStage = season_id
+		end
+		if (region_name == "TARM_RUINS") then
 			Tracker:FindObjectForCode("tarm_ruins_season_hidden").CurrentStage = season_id
 		end
-		if  region_name == "WESTERN_COAST" then
+		if (region_name == "WESTERN_COAST") then
 			Tracker:FindObjectForCode("coast_season_hidden").CurrentStage = season_id
 		end
-		if  region_name == "TEMPLE_REMAINS" then
+		if (region_name == "TEMPLE_REMAINS") then
 			Tracker:FindObjectForCode("remains_season_hidden").CurrentStage = season_id
 		end
-		if Tracker:FindObjectForCode("horon_village_season_shuffle").CurrentStage == 1 then
-			if  region_name == "HORON_VILLAGE" then
-				Tracker:FindObjectForCode("horon_village_season_hidden").CurrentStage = season_id
-			end
+		if (Tracker:FindObjectForCode("horon_village_season_shuffle").CurrentStage == 1 and region_name == "HORON_VILLAGE") then
+			Tracker:FindObjectForCode("horon_village_season_hidden").CurrentStage = season_id
 		end
 	end
 
-	portal_dictionary = {
+	local portal_dictionary = {
 		['eastern suburbs portal'] = {
 			['volcanoes east portal'] = 1,
 			['subrosia market portal'] = 2,
@@ -415,7 +400,7 @@ function onClear(slot_data)
 			['temple remains upper portal'] = 13
 		}
 	}
-	portal_mapping = {
+	local portal_mapping = {
 		["eastern suburbs portal"] = "suburbs_portal_selector_hidden",
 		["spool swamp portal"] = "swamp_portal_selector_hidden",
 		["eyeglass lake portal"] = "lake_portal_selector_hidden",
@@ -436,7 +421,7 @@ function onClear(slot_data)
 		Tracker:FindObjectForCode(portal_mapping[portal_name]).CurrentStage = portal_dictionary[portal_name][region_name]
 	end
 
-	dungeon_dictionary = {
+	local dungeon_dictionary = {
 		['enter d0'] = 1,
 		['enter d1'] = 2,
 		['enter d2'] = 3,
@@ -447,7 +432,7 @@ function onClear(slot_data)
 		['enter d7'] = 8,
 		['enter d8'] = 9
 	}
-	dungeon_mapping = {
+	local dungeon_mapping = {
 		["d0 entrance"] = "d0_ent_selector_hidden",
 		["d1 entrance"] = "d1_ent_selector_hidden",
 		["d2 entrance"] = "d2_ent_selector_hidden",
@@ -463,8 +448,9 @@ function onClear(slot_data)
 	end
 
 	-- deterministic gasha locations
-	-- needs to be implemented in slot data
-	-- Tracker:FindObjectForCode("gashareq").CurrentStage = slot_data["gasha_setting"]
+	if (slot_data["deterministic_gasha_locations"]) then
+		Tracker:FindObjectForCode("gashareq").CurrentStage = slot_data["deterministic_gasha_locations"]
+	end
 
 	if (slot_data["starting_maps_compasses"] == 1) then
 		for i=1, 8 do
@@ -488,7 +474,7 @@ function onItem(index, item_id, item_name, player_number)
 	SetAsStale()
 	local is_local = player_number == Archipelago.PlayerNumber
 	CUR_INDEX = index;
-	local v = ITEM_MAPPING[item_id]
+	local v = ITEM_DISPLAY_MAPPING[item_name]
 	if not v then
 		if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
 			print(string.format("onItem: could not find item mapping for id %s", item_id))
@@ -513,6 +499,9 @@ function onItem(index, item_id, item_name, player_number)
 			end
 		elseif v[2] == "consumable" then
 			obj.AcquiredCount = obj.AcquiredCount + obj.Increment
+			if (obj.AcquiredCount > obj.MaxCount) then
+				obj.AcquiredCount = obj.MaxCount
+			end
 		elseif AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
 			print(string.format("onItem: unknown item type %s for code %s", v[2], v[1]))
 		end
@@ -534,6 +523,11 @@ function onLocation(location_id, location_name)
 		local obj = Tracker:FindObjectForCode(location)
 		-- print(location, obj)
 		if obj then
+			local hintID = COLLECTED_HINTS[HINT_MAPPING[location_id]]
+			if (hintID) then
+				Tracker:FindObjectForCode(hintID).Active = false
+				COLLECTED_HINTS[hintID] = nil
+			end
 			if location:sub(1, 1) == "@" then
 				obj.AvailableChestCount = obj.AvailableChestCount - 1
 			else
@@ -554,27 +548,30 @@ function onScout(location_id, location_name, item_id, item_name, item_player)
 end
 
 function onNotify(key, value, old_value)
-	print(string.format("called onNotify: %s, %s, %s", key, value, old_value))
+	-- print(string.format("called onNotify: %s, %s, %s", key, dump(value), old_value))
 	if value ~= old_value and key == HINTS_ID then
+		COLLECTED_HINTS = {}
 		for _, hint in ipairs(value) do
 			if not hint.found and hint.finding_player == Archipelago.PlayerNumber then
-				updateHints(hint.location)
+				updateHints(hint.location, hint.item_flags)
 			end
 		end
+		Tracker:FindObjectForCode(HiddenGasha).Active = not Tracker:FindObjectForCode(HiddenGasha).Active
 	end
 end
 
 function onNotifyLaunch(key, value)
 	-- print(string.format("Hint: %s", dump(value)))
-
 	if key == HINTS_ID then
+		COLLECTED_HINTS = {}
 		for _, hint in ipairs(value) do
 			if not hint.found and hint.finding_player == Archipelago.PlayerNumber then
-				updateHints(hint.location)
+				updateHints(hint.location, hint.item_flags)
 			elseif hint.found then
 				clearHints(hint.location)
 			end
 		end
+		Tracker:FindObjectForCode(HiddenGasha).Active = not Tracker:FindObjectForCode(HiddenGasha).Active
 	end
 end
 
@@ -598,23 +595,29 @@ function dump(o, depth)
 	end
 end
 
+QUALITY_TO_ACCESS = {
+	[0] = 5, -- normal
+	[1] = 6, -- progression
+	[2] = 3, -- useful
+	-- [3] = 0 -- trap?
+}
 -- called when a location is hinted
-function updateHints(locationID)
+function updateHints(locationID, quality)
 	local item_codes = HINT_MAPPING[locationID]
-
+	-- print("Hint", dump(item_codes), quality)
 	for _, item_code in ipairs(item_codes) do
+		if (QUALITY_TO_ACCESS[quality]) then
+			COLLECTED_HINTS[item_code] = QUALITY_TO_ACCESS[quality]
+		end
 		local obj = Tracker:FindObjectForCode(item_code)
 		if obj then
 			obj.Active = true
-			-- is it possible to rename the location node here?
 		else
 			print(string.format("No object found for code: %s", item_code))
 		end
 	end
 end
 
--- consolidate this function if I can't rename nodes
--- called when a location is hinted
 function clearHints(locationID)
 	local item_codes = HINT_MAPPING[locationID]
 
@@ -626,6 +629,17 @@ function clearHints(locationID)
 			print(string.format("No object found for code: %s", item_code))
 		end
 	end
+end
+
+function HasHint(code)
+	if (COLLECTED_HINTS[code]) then
+		return COLLECTED_HINTS[code]
+	end
+	local hintLoc = Tracker:FindObjectForCode(code)
+	if (hintLoc and hintLoc.Active) then
+		hintLoc.Active = false
+	end
+	return AccessibilityLevel.None
 end
 
 -- called when a bounce message is received 

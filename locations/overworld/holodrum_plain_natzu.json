@@ -153,10 +153,15 @@
 			},
 			{
 				"name": "Lower Holodrum Plain Gasha Spot",
+				"visibility_rules": ["^$CanSeeGasha|1"],
+				"access_rules": ["^$CanReach|SouthHolodrumPlainGasha"],
 				"sections": [
 					{
-						"name": "Dig It Up",
-						"access_rules": ["^$CanReach|SouthHolodrumPlainGasha"]
+						"name": "Dig It Up"
+					},
+					{
+						"name": "Harvested",
+						"access_rules": ["^$HasPlanted|@Holodrum Plain/Lower Holodrum Plain Gasha Spot/Dig It Up"]
 					}
 				],
 				"map_locations": [
@@ -169,10 +174,15 @@
 			},
 			{
 				"name": "Holodrum Plain Island Gasha Spot",
+				"visibility_rules": ["^$CanSeeGasha|1"],
+				"access_rules": ["^$CanReach|HolodrumPlainIsland"],
 				"sections": [
 					{
-						"name": "Under Bushes",
-						"access_rules": ["^$CanReach|HolodrumPlainIsland"]
+						"name": "Under Bushes"
+					},
+					{
+						"name": "Harvested",
+						"access_rules": ["^$HasPlanted|@Holodrum Plain/Holodrum Plain Island Gasha Spot/Under Bushes"]
 					}
 				],
 				"map_locations": [
@@ -217,10 +227,15 @@
 			},
 			{
 				"name": "Onox Gasha Spot",
+				"visibility_rules": ["^$CanSeeGasha|1"],
+				"access_rules": ["^$CanReach|OnoxGasha"],
 				"sections": [
 					{
-						"name": "Dig It Up",
-						"access_rules": ["^$CanReach|OnoxGasha"]
+						"name": "Dig It Up"
+					},
+					{
+						"name": "Harvested",
+						"access_rules": ["^$HasPlanted|@Holodrum Plain/Onox Gasha Spot/Dig It Up"]
 					}
 				],
 				"map_locations": [

@@ -1,6 +1,6 @@
 -- 0 keys
-CryptFoyer:connect_one_way(Crypt1FWizzrobeChest, CanNormalKill)
-CryptFoyer:connect_one_way_entrance(Crypt1FLeftOfPoe, function() return Has(Bombs) end)
+CryptFoyer:connect_one_way(Crypt1FWizzrobeChest, function() return CanNormalKill(false, true) end)
+CryptFoyer:connect_one_way_entrance(Crypt1FLeftOfPoe, CanBombWall)
 Crypt1FLeftOfPoe:connect_one_way(Crypt1FLeftOfPoeChest)
 -- 1 key
 -- foyer directly to poe because of possible poe skip messing up keys
@@ -41,6 +41,7 @@ CryptSurroundedByArmos:connect_one_way_entrance(CryptArmosPuzzle, function()
 		Jump3()
 	)
 end)
+CryptSurroundedByArmos:connect_one_way(CryptMagunesuReward, function() return Has(CaneOfSomaria) end)
 CryptArmosPuzzle:connect_one_way(CryptArmosPuzzleReward)
 CryptArmosPuzzle:connect_one_way_entrance(CryptMagunesu, Jump3)
 CryptMagunesu:connect_one_way(CryptMagunesuReward, function()
@@ -96,11 +97,10 @@ CryptDarknutBridge:connect_one_way_entrance(CryptPastDarknutBridge, function()
 		All(
 			Has(MagnetGlove),
 			Any(
-				Any(
-					CanArmorKill(),
-					Has(Shield),
-					IsMediumPlus()
-				),
+				CanArmorKill(),
+				Has(Shield),
+				Has(Bombchus20),
+				IsMediumPlus(),
 				AccessibilityLevel.SequenceBreak
 			)
 		)
@@ -115,7 +115,8 @@ CryptPastDarknutBridge:connect_one_way_entrance(CryptDarknutBridgeTrampolines, f
 			Any(
 				CanSwordKill(),
 				HasRod(),
-				Has(Bombs)
+				Has(Bombs),
+				Has(Bombchus)
 			)
 		)
 	)

@@ -37,7 +37,7 @@ MazeHardhats:connect_one_way(MazeHardhatDrop, function()
 	return Any(
 		CanGaleKill(),
 		All(
-			Has(Bombs),
+			CanBombWall(),
 			Has(MagnetGlove)
 		)
 	)
@@ -66,7 +66,7 @@ MazeSpinner:connect_one_way_entrance(MazeArmosChest, function() return Has(Magne
 MazeArmosChest:connect_one_way_entrance(MazeThreeEyeOwl, function() return Has(MagnetGlove) end)
 MazeThreeEyeOwl:connect_one_way(MazeThreeEyeBombChest, function()
 	return All(
-		Has(Bombs),
+		CanBombWall(),
 		Any(
 			Has(HyperSlingshot),
 			All(
@@ -120,7 +120,7 @@ MazeIcePuzzle:connect_one_way_entrance(MazeTerrace, function()
 end)
 -- 4 keys
 MazeIcePuzzle:connect_one_way_entrance(MazeNevermeltIce, function() return D8KeyCount(4) end)
-MazeNevermeltIce:connect_one_way(MazeGhostArmos, function() return Has(Bombs) end)
+MazeNevermeltIce:connect_one_way(MazeGhostArmos, CanBombWall)
 MazeNevermeltIce:connect_one_way(MazeSELavaChest, function() return Has(Bracelet) end)
 MazeNevermeltIce:connect_one_way(MazeSparkPots, function()
 	return All(

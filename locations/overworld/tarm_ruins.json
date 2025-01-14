@@ -24,10 +24,15 @@
 			},
 			{
 				"name": "Tarm Ruins Gasha Spot",
+				"visibility_rules": ["^$CanSeeGasha|1"],
+				"access_rules": ["^$CanReach|TarmGasha"],
 				"sections": [
 					{
-						"name": "Dig It Up",
-						"access_rules": ["^$CanReach|TarmGasha"]
+						"name": "Dig It Up"
+					},
+					{
+						"name": "Harvested",
+						"access_rules": ["^$HasPlanted|@Tarm Ruins/Tarm Ruins Gasha Spot/Dig It Up"]
 					}
 				],
 				"map_locations": [

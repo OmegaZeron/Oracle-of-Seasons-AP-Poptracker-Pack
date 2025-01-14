@@ -26,7 +26,8 @@ FloodgateLever:connect_one_way_entrance(FloodgateKeyhole, function()
 			All(
 				CanUseSeeds(),
 				Has(PegasusSeeds)
-			)
+			),
+			Has(CaneOfSomaria)
 		)
 	)
 end)
@@ -97,7 +98,7 @@ SouthSpoolSwamp:connect_one_way_entrance(SpringSpoolSwamp, function()
 end, {SpoolSwampStump})
 SouthSpoolSwamp:connect_one_way_entrance(SummerSpoolSwamp, function()
 	return Any(
-		Has(Summer),
+		Has(SpoolSwampSummer),
 		All(
 			Has(Summer),
 			CanReach(SpoolSwampStump)

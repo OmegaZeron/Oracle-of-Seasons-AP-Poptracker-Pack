@@ -7,7 +7,7 @@ DancingFoyer:connect_one_way_entrance(DancingMinecart, function()
 end)
 DancingMinecart:connect_one_way(DancingPotPush, function()
 	return All(
-		Has(Bombs),
+		CanBombWall(),
 		Has(Bracelet)
 	)
 end)
@@ -39,7 +39,7 @@ DancingFoyer:connect_one_way_entrance(DancingSpikeTrap, function()
 end)
 DancingSpikeTrap:connect_one_way(DancingWaterRing, function()
 	return All(
-		Has(Bombs),
+		CanBombWall(),
 		Any(
 			CanNormalKill(),
 			All(

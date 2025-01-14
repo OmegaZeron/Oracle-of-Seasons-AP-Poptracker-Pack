@@ -59,10 +59,15 @@
 			},
 			{
 				"name": "Samasa Desert Gasha Spot",
+				"visibility_rules": ["^$CanSeeGasha|1"],
+				"access_rules": ["^$CanReach|SamasaDesertGasha"],
 				"sections": [
 					{
-						"name": "Surrounded by Cacti",
-						"access_rules": ["^$CanReach|SamasaDesertGasha"]
+						"name": "Surrounded by Cacti"
+					},
+					{
+						"name": "Harvested",
+						"access_rules": ["^$HasPlanted|@Eastern Suburbs/Samasa Desert Gasha Spot/Surrounded by Cacti"]
 					}
 				],
 				"map_locations": [
@@ -110,10 +115,15 @@
 			},
 			{
 				"name": "Eastern Suburbs Gasha Spot",
+				"visibility_rules": ["^$CanSeeGasha|1"],
+				"access_rules": ["^$CanReach|SuburbsGasha"],
 				"sections": [
 					{
-						"name": "Under Bushes",
-						"access_rules": ["^$CanReach|SuburbsGasha"]
+						"name": "Under Bushes"
+					},
+					{
+						"name": "Harvested",
+						"access_rules": ["^$HasPlanted|@Eastern Suburbs/Eastern Suburbs Gasha Spot/Under Bushes"]
 					}
 				],
 				"map_locations": [

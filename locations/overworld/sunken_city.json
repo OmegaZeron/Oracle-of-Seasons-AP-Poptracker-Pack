@@ -104,10 +104,15 @@
 			},
 			{
 				"name": "Sunken City Gasha Spot",
+				"visibility_rules": ["^$CanSeeGasha|1"],
+				"access_rules": ["^$CanReach|SunkenGashaSpot"],
 				"sections": [
 					{
-						"name": "Near Master Diver",
-						"access_rules": ["^$CanReach|SunkenGashaSpot"]
+						"name": "Near Master Diver"
+					},
+					{
+						"name": "Harvested",
+						"access_rules": ["^$HasPlanted|@Sunken City/Sunken City Gasha Spot/Near Master Diver"]
 					}
 				],
 				"map_locations": [

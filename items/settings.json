@@ -1146,6 +1146,76 @@
 		]
 	},
 	{
+		"name": "Lost Woods Season",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 0,
+		"loop": true,
+		"codes": "lost_woods_season",
+		"stages": [
+			{
+				"img": "images/labels/selector_spring.png",
+				"codes": "lost_woods_spring",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_summer.png",
+				"codes": "lost_woods_summer",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_fall.png",
+				"codes": "lost_woods_fall",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_winter.png",
+				"codes": "lost_woods_winter",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_neutral.png",
+				"codes": "season_lost_woods",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Lost Woods Season Hidden",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 4,
+		"loop": true,
+		"codes": "lost_woods_season_hidden",
+		"stages": [
+			{
+				"img": "images/labels/selector_spring.png",
+				"codes": "lost_woods_spring_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_summer.png",
+				"codes": "lost_woods_summer_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_fall.png",
+				"codes": "lost_woods_fall_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_winter.png",
+				"codes": "lost_woods_winter_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_neutral.png",
+				"codes": "season_lost_woods_hidden",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
 		"name": "Spool Swamp Season",
 		"type": "progressive",
 		"allow_disabled": false,

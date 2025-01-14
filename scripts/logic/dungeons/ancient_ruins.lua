@@ -17,6 +17,13 @@ AncientRopeSpinnerWest:connect_one_way(AncientMagnetBallDrop, function()
 		All(
 			Has(Feather),
 			Has(MagnetGlove)
+		),
+		All(
+			Has(CaneOfSomaria),
+			Any(
+				IsMediumPlus(),
+				AccessibilityLevel.SequenceBreak
+			)
 		)
 	)
 end)
@@ -44,24 +51,27 @@ AncientIndyJones:connect_one_way_entrance(AncientVireDoorstep, CanKillStalfos)
 AncientFoyer:connect_one_way_entrance(AncientRopeSpinnerWest, function()
 	return All(
 		D6KeyCount(2),
-		Has(MagnetGlove)
+		Any(
+			Has(MagnetGlove),
+			Has(CaneOfSomaria)
+		)
 	)
 end)
 -- 3 keys
 AncientFoyer:connect_one_way_entrance(AncientBeamosPlatforms, function() return D6KeyCount(3) end)
 AncientBeamosPlatforms:connect_one_way_entrance(Ancient2FGibdo)
-Ancient2FGibdo:connect_one_way_entrance(AncientTrappedChest, function() return Has(Bombs) end)
+Ancient2FGibdo:connect_one_way_entrance(AncientTrappedChest, CanBombWall)
 AncientTrappedChest:connect_one_way_entrance(AncientArmosDarknutDrop, function() return Has(Feather) end)
 AncientFoyer:connect_one_way(AncientNorthOfSpinnerChest, function()
 	return All(
 		CanDestroyCrystal(),
 		Has(MagnetGlove),
+		Has(Feather),
 		Any(
 			D6KeyCount(3),
 			All(
 				D6KeyCount(2),
-				Has(Feather),
-				Has(Bombs)
+				CanBombWall()
 			)
 		)
 	)

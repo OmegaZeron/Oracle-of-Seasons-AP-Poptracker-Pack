@@ -56,10 +56,15 @@
 			},
 			{
 				"name": "Mount Cucco Gasha Spot",
+				"visibility_rules": ["^$CanSeeGasha|1"],
+				"access_rules": ["^$CanReach|MtCuccoGasha"],
 				"sections": [
 					{
-						"name": "Behind Mushrooms",
-						"access_rules": ["^$CanReach|MtCuccoGasha"]
+						"name": "Behind Mushrooms"
+					},
+					{
+						"name": "Harvested",
+						"access_rules": ["^$HasPlanted|@Mount Cucco/Mount Cucco Gasha Spot/Behind Mushrooms"]
 					}
 				],
 				"map_locations": [

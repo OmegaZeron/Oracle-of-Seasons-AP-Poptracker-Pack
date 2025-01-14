@@ -70,7 +70,10 @@ WestWesternCoast:connect_one_way_entrance(WesternCoastHouse)
 WesternCoastHouse:connect_one_way(WesternCoastHouseChest)
 WesternCoastHouse:connect_one_way_entrance(WesternCoastStump, function()
 	return All(
-		Has(Bombs),
+		Any(
+			Has(Bombs),
+			Has(Bombchus)
+		),
 		Any(
 			Has(Feather),
 			Any(

@@ -26,7 +26,7 @@
 					["starore", "ribbon", "bombflower", "gashaseeds", "blueredore", "hardore", "squarejewel"],
 					["cuccodex", "lonlonegg", "ghastlydoll", "ironpot", "lavasoup", "goronvase", "pyramidjewel"],
 					["fish", "megaphone", "mushroom", "woodenbird", "enginegrease", "phonograph", "xjewel"],
-					["ring_red", "ring_blue", "ring_pegasus", "ring_fist", "ring_expert", "ring_energy", "ring_swimmer"]
+					["somaria", "bombchus", "ring_pegasus", "ring_fist", "ring_expert", "ring_energy", "ring_swimmer"]
 				]
 			}
 		]
@@ -75,10 +75,11 @@
 					{
 						"type": "itemgrid",
 						"h_alignment": "center",
+						"margin": "5,15,0,5",
 						"item_size": 50,
 						"item_margin": "0,-11",
 						"rows": [
-							["", "", "", "fill_seasons"],
+							["fill_seasons", "", "lost_woods_season_label", "lost_woods_season"],
 							["horon_village_label", "horon_village_season", "tarm_ruins_label", "tarm_ruins_season"],
 							["north_label", "north_horon_season", "swamp_label", "swamp_season"],
 							["suburbs_label", "suburbs_season", "sunken_label", "sunken_season"],

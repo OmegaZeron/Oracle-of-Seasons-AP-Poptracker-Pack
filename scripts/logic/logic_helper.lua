@@ -14,10 +14,11 @@ GashaIDToLocation = {
 	["Mount Cucco/Mount Cucco Gasha Spot/Behind Mushrooms"] = MtCuccoGasha,
 	["Goron Mountain/Goron Mountain West Gasha Spot/Dig It Up"] = GoronGashaWest,
 	["Goron Mountain/Goron Mountain East Gasha Spot/Under Rocks"] = GoronGashaEast,
-	["Samasa Desert/Samasa Desert Gasha Spot/Surrounded by Cacti"] = SamasaDesertGasha,
+	["Eastern Suburbs/Samasa Desert Gasha Spot/Surrounded by Cacti"] = SamasaDesertGasha,
 	["Tarm Ruins/Tarm Ruins Gasha Spot/Dig It Up"] = TarmGasha
 }
 JewelKeys = {RoundJewel, SquareJewel, PyramidJewel, XJewel}
+local lostWoodsDefault = {3, 2, 0, 1}
 
 function IsMediumPlus()
 	return Has(Medium) or
@@ -54,8 +55,23 @@ function CanBurnTrees()
 	return CanUseSeeds() and Has(EmberSeeds)
 end
 
+function CanBombWall()
+	return Any(
+		Has(Bombs),
+		All(
+			Has(Bombchus50),
+			Any(
+				IsMediumPlus(),
+				AccessibilityLevel.SequenceBreak
+			)
+		)
+	)
+end
 function BombPunchWall()
-	return Ricky() or Has(Bombs)
+	return Any(
+		Ricky(),
+		CanBombWall()
+	)
 end
 
 function CanFarmOreChunks()
@@ -226,6 +242,16 @@ function CanHarvestGasha(count)
 	return gashasPlanted > gashasRemaining
 end
 
+function HasPlanted(code)
+	local section = Tracker:FindObjectForCode(code)
+	if (section == nil) then
+		return false
+	end
+	---@cast section LocationSection
+	-- print("Gasha", section.ChestCount, section.AvailableChestCount)
+	return section.ChestCount - section.AvailableChestCount ~= 0
+end
+
 function CanSeeGasha(count)
 	local gashaSetting = Tracker:FindObjectForCode(GashaSetting)
 	return gashaSetting ~= nil and gashaSetting.CurrentStage >= tonumber(count)
@@ -234,16 +260,13 @@ end
 function OnSectionChanged(section)
 	---@cast section LocationSection
 	if (GashaIDToLocation[section.FullID]) then
-		if (section.AccessibilityLevel == AccessibilityLevel.Cleared) then
-			GashaIDToLocation[section.FullID].cleared = true
-		else
-			GashaIDToLocation[section.FullID].cleared = false
-		end
+		GashaIDToLocation[section.FullID].cleared = section.AccessibilityLevel == AccessibilityLevel.Cleared
+		
+		local hiddenGasha = Tracker:FindObjectForCode(HiddenGasha)
+		---@cast hiddenGasha JsonItem
+		hiddenGasha.Active = not hiddenGasha.Active
 	end
 	
-	local hiddenGasha = Tracker:FindObjectForCode(HiddenGasha)
-	---@cast hiddenGasha JsonItem
-	hiddenGasha.Active = not hiddenGasha.Active
 end
 
 function GashasPlanted()
@@ -256,16 +279,6 @@ function GashasPlanted()
 	return n
 end
 
-function harvest_cucco_tree()
-	return HasSword() or
-	(
-		Has(FoolsOre) and (
-			CanDestroyFlower() or
-			CanWarp() and (Has(SpringBanana) or Has(Hard))
-		)
-	)
-end
-
 function CanWarp()
 	return Has(Treewarp) or
 	Has(SeedSatchel) and Has(GaleSeeds)
@@ -275,11 +288,6 @@ end
 
 function CanUseSeeds()
 	return Has(SeedSatchel) or
-	Has(Slingshot)
-end
-
-function use_seeds_combat()
-	return Has(UpgradedSatchel) or
 	Has(Slingshot)
 end
 
@@ -336,7 +344,7 @@ function CanShootLongTorches()
 	)
 end
 
-function CanDestroyBush()
+function CanDestroyBush(allowBombchus)
 	return Any(
 		HasSword(),
 		Has(MagicBoomerang),
@@ -345,16 +353,21 @@ function CanDestroyBush()
 			Has(Slingshot),
 			Has(GaleSeeds)
 		),
-		Has(Bombs),
 		All(
-			Any(
-				Has(SeedSatchel),
-				Has(Slingshot)
-			),
-			Has(EmberSeeds),
 			Any(
 				IsMediumPlus(),
 				AccessibilityLevel.SequenceBreak
+			),
+			Any(
+				Has(Bombs20),
+				allowBombchus == true and Has(Bombchus50),
+				All(
+					Any(
+						Has(SeedSatchel),
+						Has(Slingshot)
+					),
+					Has(EmberSeeds)
+				)
 			)
 		)
 	)
@@ -376,14 +389,41 @@ end
 function CanDestroyFlower()
 	return Any(
 		HasSword(),
-		Has(MagicBoomerang)
+		Has(MagicBoomerang),
+		All(
+			Any(
+				IsMediumPlus(),
+				AccessibilityLevel.SequenceBreak
+			),
+			Any(
+				Has(Bombs20),
+				All(
+					CanUseSeeds(),
+					Has(EmberSeeds)
+				),
+				All(
+					Has(Slingshot),
+					Has(GaleSeeds)
+				),
+				Has(Bombchus50)
+			)
+		)
 	)
 end
 
 function CanDestroyCrystal()
-	return HasSword() or
-	Has(Bracelet) or
-	Has(ExpertsRing)
+	return Any(
+		HasSword(),
+		CanBombWall(),
+		Has(Bracelet),
+		All(
+			Has(ExpertsRing),
+			Any(
+				Has(Hard),
+				AccessibilityLevel.SequenceBreak
+			)
+		)
+	)
 end
 
 function CanDestroyRespawningBush()
@@ -400,22 +440,23 @@ function CanDestroyRespawningBush()
 end
 
 function CanTriggerLever()
-	if (
-		CanSwordPunchKill() or
-		HasRod() or
-		Has(Shovel) or
-		Has(Boomerang) or
-		CanUseSeeds() and HasContactSeeds()
-	) then
-		return true
-	end
-	if (Has(Shovel)) then
-		if (Has(Casual)) then
-			return AccessibilityLevel.SequenceBreak
-		end
-		return true
-	end
-	return false
+	return Any(
+		CanSwordPunchKill(),
+		HasRod(),
+		Has(Shovel),
+		Has(Boomerang),
+		All(
+			CanUseSeeds(),
+			HasContactSeeds()
+		),
+		All(
+			Has(Shovel),
+			Any(
+				Has(Casual),
+				AccessibilityLevel.SequenceBreak
+			)
+		)
+	)
 end
 
 function CanHitLeverFromMinecart()
@@ -609,15 +650,25 @@ function CanKillWithPit()
 	return Has(Shield) or HasRod()
 end
 
-function CanNormalKill(pitAvailable)
+function CanNormalKill(pitAvailable, noCane)
 	return Any(
-		pitAvailable ~= nil and pitAvailable and CanKillWithPit(),
+		pitAvailable == true and CanKillWithPit(),
 		CanSwordPunchKill(),
 		CanNormalSatchelKill(),
 		CanNormalSlingshotKill(),
 		CanGaleKill(),
 		All(
-			Has(Bombs),
+			Any(
+				Has(Bombs40),
+				Has(Bombchus20)
+			),
+			Any(
+				IsMediumPlus(),
+				AccessibilityLevel.SequenceBreak
+			)
+		),
+		All(
+			noCane ~= true and Has(CaneOfSomaria),
 			Any(
 				IsMediumPlus(),
 				AccessibilityLevel.SequenceBreak
@@ -690,6 +741,13 @@ function CanArmorKill()
 					AccessibilityLevel.SequenceBreak
 				)
 			)
+		),
+		All(
+			Has(CaneOfSomaria),
+			Any(
+				IsMediumPlus(),
+				AccessibilityLevel.SequenceBreak
+			)
 		)
 	)
 end
@@ -732,7 +790,7 @@ function CanKillSpinyBeetle()
 		All(
 			CanFlipBeetle(),
 			Any(
-				CanSwordKill(), -- no punch?
+				CanSwordKill(),
 				CanNormalSatchelKill(),
 				CanNormalSlingshotKill()
 			)
@@ -978,7 +1036,7 @@ function display_dungeons()
 end
 
 function seasons_settings()
-	local region_list = {"north_horon", "suburbs", "wow", "plain", "swamp", "sunken", "tarm_ruins", "coast", "remains"}
+	local region_list = {"north_horon", "suburbs", "wow", "plain", "swamp", "sunken", "lost_woods", "tarm_ruins", "coast", "remains"}
 	if Tracker:FindObjectForCode("default_seasons").CurrentStage == 0 then
 		Tracker:FindObjectForCode("north_horon_season").CurrentStage = 3
 		Tracker:FindObjectForCode("suburbs_season").CurrentStage = 2
@@ -986,44 +1044,45 @@ function seasons_settings()
 		Tracker:FindObjectForCode("plain_season").CurrentStage = 0
 		Tracker:FindObjectForCode("swamp_season").CurrentStage = 2
 		Tracker:FindObjectForCode("sunken_season").CurrentStage = 1
-		Tracker:FindObjectForCode("tarm_ruins_season").CurrentStage = 2
+		Tracker:FindObjectForCode("lost_woods_season").CurrentStage = 2
+		Tracker:FindObjectForCode("tarm_ruins_season").CurrentStage = 0
 		Tracker:FindObjectForCode("coast_season").CurrentStage = 3
 		Tracker:FindObjectForCode("remains_season").CurrentStage = 3
 		Tracker:FindObjectForCode("horon_village_season").CurrentStage = 4
 	end
 	if Tracker:FindObjectForCode("default_seasons").CurrentStage == 1 then
-		for index, region in pairs(region_list) do
+		for _, region in pairs(region_list) do
 			Tracker:FindObjectForCode(region.."_season").CurrentStage = 4
 			Tracker:FindObjectForCode("horon_village_season").CurrentStage = 4
 		end
 	elseif Tracker:FindObjectForCode("default_seasons").CurrentStage == 2 then
-		for index, region in pairs(region_list) do
+		for _, region in pairs(region_list) do
 			Tracker:FindObjectForCode(region.."_season").CurrentStage = 4
 			Tracker:FindObjectForCode("horon_village_season").CurrentStage = 4
 		end
 	elseif Tracker:FindObjectForCode("default_seasons").CurrentStage == 3 then
-		for index, region in pairs(region_list) do
+		for _, region in pairs(region_list) do
 			Tracker:FindObjectForCode(region.."_season").CurrentStage = 0
 			if Tracker:FindObjectForCode("horon_village_season_shuffle").CurrentStage == 1 then
 				Tracker:FindObjectForCode("horon_village_season").CurrentStage = 0
 			end
 		end
 	elseif Tracker:FindObjectForCode("default_seasons").CurrentStage == 4 then
-		for index, region in pairs(region_list) do
+		for _, region in pairs(region_list) do
 			Tracker:FindObjectForCode(region.."_season").CurrentStage = 1
 			if Tracker:FindObjectForCode("horon_village_season_shuffle").CurrentStage == 1 then
 				Tracker:FindObjectForCode("horon_village_season").CurrentStage = 1
 			end
 		end
 	elseif Tracker:FindObjectForCode("default_seasons").CurrentStage == 5 then
-		for index, region in pairs(region_list) do
+		for _, region in pairs(region_list) do
 			Tracker:FindObjectForCode(region.."_season").CurrentStage = 2
 			if Tracker:FindObjectForCode("horon_village_season_shuffle").CurrentStage == 1 then
 				Tracker:FindObjectForCode("horon_village_season").CurrentStage = 2
 			end
 		end
 	elseif Tracker:FindObjectForCode("default_seasons").CurrentStage == 6 then
-		for index, region in pairs(region_list) do
+		for _, region in pairs(region_list) do
 			Tracker:FindObjectForCode(region.."_season").CurrentStage = 3
 			if Tracker:FindObjectForCode("horon_village_season_shuffle").CurrentStage == 1 then
 				Tracker:FindObjectForCode("horon_village_season").CurrentStage = 3
@@ -1033,7 +1092,7 @@ function seasons_settings()
 end
 
 function display_seasons()
-	if Tracker:FindObjectForCode("default_seasons").CurrentStage == 1 then
+	if Tracker:FindObjectForCode("default_seasons").CurrentStage == 1 or Tracker:FindObjectForCode("default_seasons").CurrentStage == 2 then
 		if Tracker:FindObjectForCode("fill_seasons").CurrentStage == 1 then
 			Tracker:FindObjectForCode("north_horon_season").CurrentStage = Tracker:FindObjectForCode("north_horon_season_hidden").CurrentStage
 			Tracker:FindObjectForCode("horon_village_season").CurrentStage = Tracker:FindObjectForCode("horon_village_season_hidden").CurrentStage
@@ -1042,25 +1101,27 @@ function display_seasons()
 			Tracker:FindObjectForCode("plain_season").CurrentStage = Tracker:FindObjectForCode("plain_season_hidden").CurrentStage
 			Tracker:FindObjectForCode("swamp_season").CurrentStage = Tracker:FindObjectForCode("swamp_season_hidden").CurrentStage
 			Tracker:FindObjectForCode("sunken_season").CurrentStage = Tracker:FindObjectForCode("sunken_season_hidden").CurrentStage
+			Tracker:FindObjectForCode("lost_woods_season").CurrentStage = Tracker:FindObjectForCode("lost_woods_season_hidden").CurrentStage
 			Tracker:FindObjectForCode("tarm_ruins_season").CurrentStage = Tracker:FindObjectForCode("tarm_ruins_season_hidden").CurrentStage
 			Tracker:FindObjectForCode("coast_season").CurrentStage = Tracker:FindObjectForCode("coast_season_hidden").CurrentStage
 			Tracker:FindObjectForCode("remains_season").CurrentStage = Tracker:FindObjectForCode("remains_season_hidden").CurrentStage
 		end
 	end
-	if Tracker:FindObjectForCode("default_seasons").CurrentStage == 2 then
-		if Tracker:FindObjectForCode("fill_seasons").CurrentStage == 1 then
-			Tracker:FindObjectForCode("north_horon_season").CurrentStage = Tracker:FindObjectForCode("north_horon_season_hidden").CurrentStage
-			Tracker:FindObjectForCode("horon_village_season").CurrentStage = Tracker:FindObjectForCode("horon_village_season_hidden").CurrentStage
-			Tracker:FindObjectForCode("suburbs_season").CurrentStage = Tracker:FindObjectForCode("suburbs_season_hidden").CurrentStage
-			Tracker:FindObjectForCode("wow_season").CurrentStage = Tracker:FindObjectForCode("wow_season_hidden").CurrentStage
-			Tracker:FindObjectForCode("plain_season").CurrentStage = Tracker:FindObjectForCode("plain_season_hidden").CurrentStage
-			Tracker:FindObjectForCode("swamp_season").CurrentStage = Tracker:FindObjectForCode("swamp_season_hidden").CurrentStage
-			Tracker:FindObjectForCode("sunken_season").CurrentStage = Tracker:FindObjectForCode("sunken_season_hidden").CurrentStage
-			Tracker:FindObjectForCode("tarm_ruins_season").CurrentStage = Tracker:FindObjectForCode("tarm_ruins_season_hidden").CurrentStage
-			Tracker:FindObjectForCode("coast_season").CurrentStage = Tracker:FindObjectForCode("coast_season_hidden").CurrentStage
-			Tracker:FindObjectForCode("remains_season").CurrentStage = Tracker:FindObjectForCode("remains_season_hidden").CurrentStage
-		end
-	end
+	-- if Tracker:FindObjectForCode("default_seasons").CurrentStage == 2 then
+	-- 	if Tracker:FindObjectForCode("fill_seasons").CurrentStage == 1 then
+	-- 		Tracker:FindObjectForCode("north_horon_season").CurrentStage = Tracker:FindObjectForCode("north_horon_season_hidden").CurrentStage
+	-- 		Tracker:FindObjectForCode("horon_village_season").CurrentStage = Tracker:FindObjectForCode("horon_village_season_hidden").CurrentStage
+	-- 		Tracker:FindObjectForCode("suburbs_season").CurrentStage = Tracker:FindObjectForCode("suburbs_season_hidden").CurrentStage
+	-- 		Tracker:FindObjectForCode("wow_season").CurrentStage = Tracker:FindObjectForCode("wow_season_hidden").CurrentStage
+	-- 		Tracker:FindObjectForCode("plain_season").CurrentStage = Tracker:FindObjectForCode("plain_season_hidden").CurrentStage
+	-- 		Tracker:FindObjectForCode("swamp_season").CurrentStage = Tracker:FindObjectForCode("swamp_season_hidden").CurrentStage
+	-- 		Tracker:FindObjectForCode("sunken_season").CurrentStage = Tracker:FindObjectForCode("sunken_season_hidden").CurrentStage
+	-- 		Tracker:FindObjectForCode("lost_woods_season").CurrentStage = Tracker:FindObjectForCode("lost_woods_season_hidden").CurrentStage
+	-- 		Tracker:FindObjectForCode("tarm_ruins_season").CurrentStage = Tracker:FindObjectForCode("tarm_ruins_season_hidden").CurrentStage
+	-- 		Tracker:FindObjectForCode("coast_season").CurrentStage = Tracker:FindObjectForCode("coast_season_hidden").CurrentStage
+	-- 		Tracker:FindObjectForCode("remains_season").CurrentStage = Tracker:FindObjectForCode("remains_season_hidden").CurrentStage
+	-- 	end
+	-- end
 end
 
 function vanilla_portals()
@@ -1094,7 +1155,6 @@ function display_portals()
 	end
 end
 
-local lostWoodsDefault = {3, 2, 0, 1}
 function display_lost_woods()
 	if (Has(LostWoodsVanilla)) then
 		for i=1, 4 do

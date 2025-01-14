@@ -216,6 +216,13 @@
 		"codes": "tarm_ruins_label"
 	},
 	{
+		"name": "Lost Woods label",
+		"type": "toggle",
+		"allow_disabled": false,
+		"img": "images/labels/lost_woods_season_label.png",
+		"codes": "lost_woods_season_label"
+	},
+	{
 		"name": "Spool Swamp label",
 		"type": "toggle",
 		"allow_disabled": false,

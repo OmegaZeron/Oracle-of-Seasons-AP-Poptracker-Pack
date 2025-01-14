@@ -56,10 +56,15 @@
 			},
 			{
 				"name": "Spool Swamp North Gasha Spot",
+				"visibility_rules": ["^$CanSeeGasha|1"],
+				"access_rules": ["^$CanReach|SwampNorthGashaSpot"],
 				"sections": [
 					{
-						"name": "Near Keyhole",
-						"access_rules": ["^$CanReach|SwampNorthGashaSpot"]
+						"name": "Near Keyhole"
+					},
+					{
+						"name": "Harvested",
+						"access_rules": ["^$HasPlanted|@Spool Swamp/Spool Swamp North Gasha Spot/Near Keyhole"]
 					}
 				],
 				"map_locations": [
@@ -72,10 +77,15 @@
 			},
 			{
 				"name": "Spool Swamp South Gasha Spot",
+				"visibility_rules": ["^$CanSeeGasha|1"],
+				"access_rules": ["^$CanReach|SwampSouthGashaSpot"],
 				"sections": [
 					{
-						"name": "Near Portal",
-						"access_rules": ["^$CanReach|SwampSouthGashaSpot"]
+						"name": "Near Portal"
+					},
+					{
+						"name": "Harvested",
+						"access_rules": ["^$HasPlanted|@Spool Swamp/Spool Swamp South Gasha Spot/Near Portal"]
 					}
 				],
 				"map_locations": [

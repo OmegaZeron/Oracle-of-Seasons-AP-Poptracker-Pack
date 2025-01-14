@@ -41,10 +41,15 @@
 			},
 			{
 				"name": "North Horon Gasha Spot",
+				"visibility_rules": ["^$CanSeeGasha|1"],
+				"access_rules": ["^$CanReach|NorthHoronGasha"],
 				"sections": [
 					{
-						"name": "Near Impa",
-						"access_rules": ["^$CanReach|NorthHoronGasha"]
+						"name": "Near Impa"
+					},
+					{
+						"name": "Harvested",
+						"access_rules": ["^$HasPlanted|@North Horon/North Horon Gasha Spot/Near Impa"]
 					}
 				],
 				"map_locations": [
@@ -122,10 +127,15 @@
 			},
 			{
 				"name": "Eyeglass Lake Gasha Spot",
+				"visibility_rules": ["^$CanSeeGasha|1"],
+				"access_rules": ["^$CanReach|EyeglassGasha"],
 				"sections": [
 					{
-						"name": "Near D5",
-						"access_rules": ["^$CanReach|EyeglassGasha"]
+						"name": "Near D5"
+					},
+					{
+						"name": "Harvested",
+						"access_rules": ["^$HasPlanted|@North Horon/Eyeglass Lake Gasha Spot/Near D5"]
 					}
 				],
 				"map_locations": [

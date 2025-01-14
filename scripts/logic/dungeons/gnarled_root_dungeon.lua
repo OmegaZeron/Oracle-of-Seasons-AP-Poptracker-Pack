@@ -2,10 +2,19 @@
 GnarledFoyer:connect_one_way(GnarledRightStalfosChest, CanKillStalfos)
 GnarledRightStalfosChest:connect_one_way_entrance(GnarledFloormasters, CanLightTorches)
 GnarledFloormasters:connect_one_way(GnarledFloormasterChest)
-GnarledFloormasters:connect_one_way_entrance(Aquamentus, function()
-	return Has(D1BossKey)
+GnarledFloormasters:connect_one_way_entrance(Aquamentus, function() return Has(D1BossKey) end)
+Aquamentus:connect_one_way(GnarledEssence, function()
+	return Any(
+		CanArmorKill(),
+		All(
+			Has(Bombs40),
+			Any(
+				IsMediumPlus(),
+				AccessibilityLevel.SequenceBreak
+			)
+		)
+	)
 end)
-Aquamentus:connect_one_way(GnarledEssence, CanArmorKill) -- no bombs?
 -- 1 key
 GnarledFoyer:connect_one_way_entrance(GnarledLeftStalfos, function()
 	return D1KeyCount(1)
@@ -43,7 +52,7 @@ GnarledMinecartChest:connect_one_way(GnarledSpinningBladeChest)
 -- 2 keys
 GnarledMinecartChest:connect_one_way_entrance(GoriyaBros, function()
 	return All(
-		Has(Bombs),
+		CanBombWall(),
 		D1KeyCount(2)
 	)
 end)

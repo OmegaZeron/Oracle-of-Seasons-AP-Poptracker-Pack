@@ -178,7 +178,6 @@ SnakesRemains:connect_two_ways_entrance(SnakeFoyer, function()
 end)
 WoodsOfWinter:connect_two_ways_entrance(UpperSnakesRemains, function() return Has(Bracelet) end)
 UpperSnakesRemains:connect_two_ways_entrance(SnakeAltEntrance, function() return Has(D2AltVanilla) end)
-UpperSnakesRemains:connect_one_way_entrance(SnakeBombPuzzle, function() return Has(D2AltVanilla) end)
 WoodsOfWinter:connect_one_way_entrance(WoodsOfWinterMushroomCave, function()
 	return All(
 		Any(

@@ -10,14 +10,13 @@
 				"sections": [
 					{
 						"name": "Temple Remains: Item in Cave Behind Rockslide",
-						// "access_rules": ["^$CanReach|LowerTempleRemains, ^$Has|hidden_fireworks"]
 						"access_rules": ["^$CanReach|TempleRemainsBombCave"]
 					}
 				],
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 280,
+						"x": 240,
 						"y": 42
 					}
 				]

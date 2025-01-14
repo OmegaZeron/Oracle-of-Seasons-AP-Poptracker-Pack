@@ -21,7 +21,12 @@ HoronVillage:connect_one_way(HoronGasha, CanPlantGasha)
 -- mayor
 HoronVillage:connect_two_ways_entrance(MayorHouse)
 MayorHouse:connect_one_way(MayorsGift)
-MayorHouse:connect_one_way(MayorBombWall, function() return Has(Bombs) end)
+MayorHouse:connect_one_way(MayorBombWall, function()
+	return Any(
+		Has(Bombs),
+		Has(Bombchus)
+	)
+end)
 
 -- vasu
 HoronVillage:connect_two_ways_entrance(Vasu)
@@ -63,7 +68,12 @@ ClockShop:connect_one_way(ClockShopTrade, function() return Has(WoodenBird) end)
 -- dr left
 HoronVillage:connect_two_ways_entrance(DrLeft)
 DrLeft:connect_one_way(DrLeftReward, CanLightTorches)
-DrLeft:connect_one_way_entrance(DrLeftBackyard, function() return Has(Bombs) end)
+DrLeft:connect_one_way_entrance(DrLeftBackyard, function()
+	return Any(
+		Has(Bombs),
+		Has(Bombchus)
+	)
+end)
 DrLeftBackyard:connect_one_way(DrLeftBackyardChest, function()
 	return Any(
 		Has(Flippers),

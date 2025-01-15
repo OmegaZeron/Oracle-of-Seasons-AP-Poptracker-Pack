@@ -34,10 +34,16 @@ SnakeAltEntrance:connect_one_way(SnakeBombPuzzle, function()
 end)
 SnakeBladeTraps:connect_one_way_entrance(SnakeBombBlockStairs, CanBombWall)
 SnakeBombBlockStairs:connect_one_way_entrance(FacadeDoorstep, function() return Has(Bracelet) end)
---two keys
+-- 2 keys
 FacadeDoorstep:connect_one_way_entrance(Facade, function()
 	return All(
-		D2KeyCount(2),
+		Any(
+			D2KeyCount(2),
+			All(
+				D2KeyCount(1),
+				AccessibilityLevel.SequenceBreak
+			)
+		),
 		Has(Bombs)
 	)
 end)
@@ -51,8 +57,12 @@ end)
 
 -- 3 keys
 SnakeMoblinRopeFight:connect_one_way_entrance(SnakeHardhats, function()
-	return All(
-		D2KeyCount(3)
+	return Any(
+		D2KeyCount(3),
+		All(
+			D2KeyCount(1),
+			AccessibilityLevel.SequenceBreak
+		)
 	)
 end)
 SnakeHardhats:connect_one_way(SnakeHardhatChest, CanDestroyPot)
@@ -113,4 +123,12 @@ SnakeHardhats:connect_one_way_entrance(SnakeBombMoblins, function()
 		)
 	)
 end)
-Facade:connect_one_way(SnakeTerrace, function() return D2KeyCount(3) end)
+Facade:connect_one_way(SnakeTerrace, function()
+	return Any(
+		D2KeyCount(3),
+		All(
+			D2KeyCount(2),
+			AccessibilityLevel.SequenceBreak
+		)
+	)
+end)

@@ -79,7 +79,13 @@ end)
 -- 5 keys
 UnicornPotRoom:connect_one_way(UnicornMagnetGloveChest, function()
 	return All(
-		D5KeyCount(5),
+		Any(
+			D5KeyCount(5),
+			All(
+				D5KeyCount(1),
+				AccessibilityLevel.SequenceBreak
+			)
+		),
 		Any(
 			Has(Flippers),
 			All(
@@ -93,11 +99,24 @@ UnicornPotRoom:connect_one_way(UnicornMagnetGloveChest, function()
 	)
 end)
 UnicornPreSyger:connect_one_way_entrance(Syger, function()
-	return D5KeyCount(5)
+	return Any(
+		D5KeyCount(5),
+		All(
+			D5KeyCount(1),
+			AccessibilityLevel.SequenceBreak
+		)
+	)
 end)
 Syger:connect_one_way_entrance(UnicornPostSyger, CanArmorKill)
 UnicornPostSyger:connect_one_way(UnicornTreadmillBasement, function()
 	return All(
+		Any(
+			D5KeyCount(5),
+			All(
+				D5KeyCount(3),
+				AccessibilityLevel.SequenceBreak
+			)
+		),
 		Has(MagnetGlove),
 		CanReach(UnicornMinecartPushBlock),
 		Any(
@@ -120,6 +139,13 @@ UnicornPostSyger:connect_one_way(UnicornTreadmillBasement, function()
 end, {UnicornMinecartPushBlock})
 UnicornPostSyger:connect_one_way_entrance(Digdogger, function()
 	return All(
+		Any(
+			D5KeyCount(5),
+			All(
+				D5KeyCount(2),
+				AccessibilityLevel.SequenceBreak
+			)
+		),
 		Has(MagnetGlove),
 		Has(D5BossKey),
 		Any(

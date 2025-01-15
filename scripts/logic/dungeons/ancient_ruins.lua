@@ -50,7 +50,13 @@ AncientIndyJones:connect_one_way_entrance(AncientVireDoorstep, CanKillStalfos)
 -- 2 keys
 AncientFoyer:connect_one_way_entrance(AncientRopeSpinnerWest, function()
 	return All(
-		D6KeyCount(2),
+		Any(
+			D6KeyCount(2),
+			All(
+				D6KeyCount(1),
+				AccessibilityLevel.SequenceBreak
+			)
+		),
 		Any(
 			Has(MagnetGlove),
 			Has(CaneOfSomaria)
@@ -58,7 +64,15 @@ AncientFoyer:connect_one_way_entrance(AncientRopeSpinnerWest, function()
 	)
 end)
 -- 3 keys
-AncientFoyer:connect_one_way_entrance(AncientBeamosPlatforms, function() return D6KeyCount(3) end)
+AncientFoyer:connect_one_way_entrance(AncientBeamosPlatforms, function()
+	return Any(
+		D6KeyCount(3),
+		All(
+			D6KeyCount(1),
+			AccessibilityLevel.SequenceBreak
+		)
+	)
+end)
 AncientBeamosPlatforms:connect_one_way_entrance(Ancient2FGibdo)
 Ancient2FGibdo:connect_one_way_entrance(AncientTrappedChest, CanBombWall)
 AncientTrappedChest:connect_one_way_entrance(AncientArmosDarknutDrop, function() return Has(Feather) end)
@@ -72,13 +86,23 @@ AncientFoyer:connect_one_way(AncientNorthOfSpinnerChest, function()
 			All(
 				D6KeyCount(2),
 				CanBombWall()
+			),
+			All(
+				D6KeyCount(1),
+				AccessibilityLevel.SequenceBreak
 			)
 		)
 	)
 end)
 AncientVireDoorstep:connect_one_way_entrance(Vire, function()
 	return All(
-		D6KeyCount(3),
+		Any(
+			D6KeyCount(3),
+			All(
+				D6KeyCount(1),
+				AccessibilityLevel.SequenceBreak
+			)
+		),
 		Any(
 			Has(WoodSword),
 			Has(FoolsOre)

@@ -2,6 +2,19 @@
 CryptFoyer:connect_one_way(Crypt1FWizzrobeChest, function() return CanNormalKill(false, true) end)
 CryptFoyer:connect_one_way_entrance(Crypt1FLeftOfPoe, CanBombWall)
 Crypt1FLeftOfPoe:connect_one_way(Crypt1FLeftOfPoeChest)
+-- poe skip method
+Crypt1FLeftOfPoe:connect_one_way_entrance(CryptSurroundedByArmos, function()
+	return All(
+		Has(Feather),
+		Has(Bracelet),
+		Has(SeedSatchel),
+		Has(PegasusSeeds),
+		Any(
+			Has(Hard),
+			AccessibilityLevel.SequenceBreak
+		)
+	)
+end)
 -- 1 key
 -- foyer directly to poe because of possible poe skip messing up keys
 CryptFoyer:connect_one_way_entrance(CryptFirstPoe, function()
@@ -18,19 +31,6 @@ CryptFirstPoe:connect_one_way_entrance(CryptSurroundedByArmos, function()
 			CanArmorKill(),
 			HasRod(),
 			CanShootLongTorches()
-		)
-	)
-end)
--- poe skip method
-Crypt1FLeftOfPoe:connect_one_way_entrance(CryptSurroundedByArmos, function()
-	return All(
-		Has(Feather),
-		Has(Bracelet),
-		Has(SeedSatchel),
-		Has(PegasusSeeds),
-		Any(
-			Has(Hard),
-			AccessibilityLevel.SequenceBreak
 		)
 	)
 end)
@@ -51,12 +51,26 @@ CryptMagunesu:connect_one_way(CryptMagunesuReward, function()
 	)
 end)
 -- 2 keys
-CryptSurroundedByArmos:connect_one_way_entrance(CryptPoeTrampoline, function() return D7KeyCount(2) end)
+CryptSurroundedByArmos:connect_one_way_entrance(CryptPoeTrampoline, function()
+	return Any(
+		D7KeyCount(2),
+		All(
+			D7KeyCount(1),
+			AccessibilityLevel.SequenceBreak
+		)
+	)
+end)
 CryptPoeTrampoline:connect_one_way(CryptQuicksandChest, function() return Has(Feather) end)
 -- 3 keys
 CryptPoeTrampoline:connect_one_way_entrance(CryptPoe2, function()
 	return All(
-		D7KeyCount(3),
+		Any(
+			D7KeyCount(3),
+			All(
+				D7KeyCount(2),
+				AccessibilityLevel.SequenceBreak
+			)
+		),
 		CanUseSeeds(),
 		Has(EmberSeeds),
 		Any(
@@ -126,7 +140,13 @@ CryptFastPlatform:connect_one_way(CryptFastPlatformChest, function() return Has(
 -- 4 keys
 CryptDarknutBridge:connect_one_way_entrance(CryptPrePoeSisters, function()
 	return All(
-		D7KeyCount(4),
+		Any(
+			D7KeyCount(4),
+			All(
+				D7KeyCount(3),
+				AccessibilityLevel.SequenceBreak
+			)
+		),
 		CanArmorKill(),
 		JumpLiquid3() -- not actually liquid, but diagonal pit
 	)
@@ -148,11 +168,25 @@ CryptStairMaze:connect_one_way_entrance(CryptWizzrobeStalfosRoom, function()
 end)
 CryptWizzrobeStalfosRoom:connect_one_way(CryptWizzrobeStalfosChest) -- no rules since you already require everything by this point
 -- 5 keys
-CryptFoyer:connect_one_way_entrance(Crypt1FKeyRoom, function() return Has(D7SmallKey, 5) or Has(D7MasterKey) end)
+CryptFoyer:connect_one_way_entrance(Crypt1FKeyRoom, function()
+	return Any(
+		D7KeyCount(5),
+		All(
+			D7KeyCount(1),
+			AccessibilityLevel.SequenceBreak
+		)
+	)
+end)
 Crypt1FKeyRoom:connect_one_way(Crypt1FKeyRoomChest, CanNormalKill)
 CryptStairMaze:connect_one_way_entrance(CryptJumpingStalfos, function()
 	return All(
-		D7KeyCount(5),
+		Any(
+			D7KeyCount(5),
+			All(
+				D7KeyCount(4),
+				AccessibilityLevel.SequenceBreak
+			)
+		),
 		Any(
 			Jump5(),
 			All(

@@ -203,6 +203,57 @@ EastWesternCoast:connect_one_way_entrance(MazeFoyer, function()
 		Has(D0LeadsToD8)
 	)
 end)
+-- OoL setup for d0 alt entrance. This is never in logic due to potential softlock
+HerosCaveFoyer:connect_one_way_entrance(GnarledRootDungeon, function()
+	return All(
+		Has(ShuffleDungeonOn),
+		Has(D1LeadsToD0),
+		AccessibilityLevel.SequenceBreak
+	)
+end)
+HerosCaveFoyer:connect_two_ways_entrance(SnakesRemains, function()
+	return All(
+		Has(ShuffleDungeonOn),
+		Has(D2LeadsToD0),
+		AccessibilityLevel.SequenceBreak
+	)
+end)
+-- d3 is never linked because of infinite drowning
+HerosCaveFoyer:connect_one_way_entrance(DancingDragonDungeon, function()
+	return All(
+		Has(ShuffleDungeonOn),
+		Has(D4LeadsToD0),
+		AccessibilityLevel.SequenceBreak
+	)
+end)
+HerosCaveFoyer:connect_one_way_entrance(UnicornCave, function()
+	return All(
+		Has(ShuffleDungeonOn),
+		Has(D5LeadsToD0),
+		AccessibilityLevel.SequenceBreak
+	)
+end)
+HerosCaveFoyer:connect_one_way_entrance(AncientRuins, function()
+	return All(
+		Has(ShuffleDungeonOn),
+		Has(D6LeadsToD0),
+		AccessibilityLevel.SequenceBreak
+	)
+end)
+HerosCaveFoyer:connect_one_way_entrance(ExplorersCrypt, function()
+	return All(
+		Has(ShuffleDungeonOn),
+		Has(D7LeadsToD0),
+		AccessibilityLevel.SequenceBreak
+	)
+end)
+HerosCaveFoyer:connect_one_way_entrance(SwordAndShieldMaze, function()
+	return All(
+		Has(ShuffleDungeonOn),
+		Has(D8LeadsToD0),
+		AccessibilityLevel.SequenceBreak
+	)
+end)
 
 -- d7
 ExplorersCrypt:connect_one_way_entrance(HerosCaveFoyer, function()

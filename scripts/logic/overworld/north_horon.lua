@@ -46,6 +46,7 @@ RedRingOldMan:connect_one_way(RedRingOldManReward, AreEnoughGoldenBeastsSlain)
 
 UpperNorthHoron:connect_two_ways_entrance(GnarledRootDoorstep, CanDestroyBushFlute)
 GnarledRootDoorstep:connect_one_way_entrance(GnarledRootDungeon, function() return Has(GnarledKey) end)
+GnarledRootDungeon:connect_one_way_entrance(GnarledRootDoorstep)
 GnarledRootDungeon:connect_two_ways_entrance(GnarledFoyer, function()
 	return Any(
 		Has(ShuffleDungeonOff),

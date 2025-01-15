@@ -1079,7 +1079,7 @@
 		"name": "Tarm Ruins Season",
 		"type": "progressive",
 		"allow_disabled": false,
-		"initial_stage_idx": 2,
+		"initial_stage_idx": 0,
 		"loop": true,
 		"codes": "tarm_ruins_season",
 		"stages": [
@@ -1149,7 +1149,7 @@
 		"name": "Lost Woods Season",
 		"type": "progressive",
 		"allow_disabled": false,
-		"initial_stage_idx": 0,
+		"initial_stage_idx": 2,
 		"loop": true,
 		"codes": "lost_woods_season",
 		"stages": [

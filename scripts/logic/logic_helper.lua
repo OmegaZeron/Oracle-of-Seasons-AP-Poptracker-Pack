@@ -1159,10 +1159,16 @@ function display_lost_woods()
 	if (Has(LostWoodsVanilla)) then
 		for i=1, 4 do
 			Tracker:FindObjectForCode("lost_woods_"..i).CurrentStage = lostWoodsDefault[i]
+			if (i < 4) then
+				Tracker:FindObjectForCode("lost_woods_d_"..i).CurrentStage = i - 1
+			end
 		end
 	else
 		for i=1, 4 do
 			Tracker:FindObjectForCode("lost_woods_"..i).CurrentStage = 4
+			if (i < 4) then
+				Tracker:FindObjectForCode("lost_woods_d_"..i).CurrentStage = 4
+			end
 		end
 	end
 end
@@ -1170,10 +1176,16 @@ function display_pedestal()
 	if (Has(PedestalVanilla)) then
 		for i=1, 4 do
 			Tracker:FindObjectForCode("pedestal_"..i).CurrentStage = lostWoodsDefault[i]
+			if (i < 4) then
+				Tracker:FindObjectForCode("pedestal_d_"..i).CurrentStage = 0
+			end
 		end
 	else
 		for i=1, 4 do
 			Tracker:FindObjectForCode("pedestal_"..i).CurrentStage = 4
+			if (i < 4) then
+				Tracker:FindObjectForCode("pedestal_d_"..i).CurrentStage = 4
+			end
 		end
 	end
 end

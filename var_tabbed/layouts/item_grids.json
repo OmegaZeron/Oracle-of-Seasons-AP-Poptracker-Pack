@@ -67,6 +67,16 @@
 					{
 						"type": "itemgrid",
 						"h_alignment": "center",
+						"margin": "5,5,5,17",
+						"item_size": 20,
+						"item_margin": "15,-11",
+						"rows": [
+							["lost_woods_d_1", "lost_woods_d_2", "lost_woods_d_3", "lost_woods_d_4"]
+						]
+					},
+					{
+						"type": "itemgrid",
+						"h_alignment": "center",
 						"item_size": 50,
 						"item_margin": "0,-11",
 						"rows": [
@@ -85,6 +95,16 @@
 					{
 						"type": "itemgrid",
 						"h_alignment": "center",
+						"margin": "5,5,5,17",
+						"item_size": 20,
+						"item_margin": "15,-11",
+						"rows": [
+							["pedestal_d_1", "pedestal_d_2", "pedestal_d_3", "pedestal_d_4"]
+						]
+					},
+					{
+						"type": "itemgrid",
+						"h_alignment": "center",
 						"item_size": 50,
 						"item_margin": "0,-11",
 						"rows": [
@@ -95,7 +115,7 @@
 						"type": "itemgrid",
 						"h_alignment": "center",
 						"item_size": 50,
-						"item_margin": "0,-11",
+						"item_margin": "0,-12",
 						"rows": [
 							// [""],
 							["entrance_label2", "", "entrance_label2", "fill_portals"],
@@ -103,7 +123,7 @@
 							["swamp_label_sub", "swamp_portal", "remains_label_sub", "remains_portal"],
 							["lake_label_sub", "lake_portal", "upremains_label_sub", "upremains_portal"],
 							["mtcucco_label_sub", "mtcucco_portal", "", ""],
-							["", "", "", ""],
+							// ["", "", "", ""],
 							["mountain_label_sub", "mountain_portal", "pirates_label_sub", "pirates_portal"],
 							["market_label_sub", "market_portal", "volcano_label_sub", "volcano_portal"],
 							["furnace_label_sub", "furnace_portal", "d8_label_sub", "d8_portal"],

@@ -144,7 +144,7 @@
 			{
 				"type": "array",
 				"orientation": "vertical",
-				"margin": "0,70,0,0",
+				"margin": "0,40,0,0",
 				"content": [
 					{
 						"type": "array",
@@ -160,12 +160,28 @@
 								]
 							},
 							{
-								"type": "itemgrid",
-								"h_alignment": "center",
-								"item_size": 50,
-								"item_margin": "0,-11",
-								"rows": [
-									["lost_woods_1", "lost_woods_2", "lost_woods_3", "lost_woods_4"]
+								"type": "array",
+								"orientation": "vertical",
+								"content": [
+									{
+										"type": "itemgrid",
+										"h_alignment": "center",
+										"margin": "5,5,5,17",
+										"item_size": 20,
+										"item_margin": "15,-11",
+										"rows": [
+											["lost_woods_d_1", "lost_woods_d_2", "lost_woods_d_3", "lost_woods_d_4"]
+										]
+									},
+									{
+										"type": "itemgrid",
+										"h_alignment": "center",
+										"item_size": 50,
+										"item_margin": "0,-11",
+										"rows": [
+											["lost_woods_1", "lost_woods_2", "lost_woods_3", "lost_woods_4"]
+										]
+									}
 								]
 							}
 						]
@@ -184,12 +200,28 @@
 								]
 							},
 							{
-								"type": "itemgrid",
-								"h_alignment": "center",
-								"item_size": 50,
-								"item_margin": "0,-11",
-								"rows": [
-									["pedestal_1", "pedestal_2", "pedestal_3", "pedestal_4"]
+								"type": "array",
+								"orientation": "vertical",
+								"content": [
+									{
+										"type": "itemgrid",
+										"h_alignment": "center",
+										"margin": "5,5,5,17",
+										"item_size": 20,
+										"item_margin": "15,-11",
+										"rows": [
+											["pedestal_d_1", "pedestal_d_2", "pedestal_d_3", "pedestal_d_4"]
+										]
+									},
+									{
+										"type": "itemgrid",
+										"h_alignment": "center",
+										"item_size": 50,
+										"item_margin": "0,-11",
+										"rows": [
+											["pedestal_1", "pedestal_2", "pedestal_3", "pedestal_4"]
+										]
+									}
 								]
 							}
 						]

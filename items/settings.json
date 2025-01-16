@@ -1536,6 +1536,118 @@
 		]
 	},
 	{
+		"name": "Lost Woods Main Direction 1",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 0,
+		"loop": true,
+		"codes": "lost_woods_d_1",
+		"stages": [
+			{
+				"img": "images/labels/dir_left.png",
+				"codes": "lost_woods_1_left",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/dir_down.png",
+				"codes": "lost_woods_1_down",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/dir_right.png",
+				"codes": "lost_woods_1_right",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/dir_up.png",
+				"codes": "lost_woods_1_up",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/DX_unknown.png",
+				"codes": "lost_woods_1_d_unknown",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Lost Woods Main Direction 2",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 1,
+		"loop": true,
+		"codes": "lost_woods_d_2",
+		"stages": [
+			{
+				"img": "images/labels/dir_left.png",
+				"codes": "lost_woods_2_left",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/dir_down.png",
+				"codes": "lost_woods_2_down",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/dir_right.png",
+				"codes": "lost_woods_2_right",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/dir_up.png",
+				"codes": "lost_woods_2_up",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/DX_unknown.png",
+				"codes": "lost_woods_2_d_unknown",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Lost Woods Main Direction 3",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 2,
+		"loop": true,
+		"codes": "lost_woods_d_3",
+		"stages": [
+			{
+				"img": "images/labels/dir_left.png",
+				"codes": "lost_woods_3_left",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/dir_down.png",
+				"codes": "lost_woods_3_down",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/dir_right.png",
+				"codes": "lost_woods_3_right",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/dir_up.png",
+				"codes": "lost_woods_3_up",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/DX_unknown.png",
+				"codes": "lost_woods_3_d_unknown",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Lost Woods Main Direction 4",
+		"type": "static",
+		"allow_disabled": false,
+		"codes": "lost_woods_d_4",
+		"img": "images/labels/dir_up.png"
+	},
+	{
 		"name": "Lost Woods Main Sequence 1",
 		"type": "progressive",
 		"allow_disabled": false,
@@ -1674,6 +1786,118 @@
 				"inherit_codes": false
 			}
 		]
+	},
+	{
+		"name": "Pedestal Direction 1",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 0,
+		"loop": true,
+		"codes": "pedestal_d_1",
+		"stages": [
+			{
+				"img": "images/labels/dir_left.png",
+				"codes": "pedestal_1_left",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/dir_down.png",
+				"codes": "pedestal_1_down",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/dir_right.png",
+				"codes": "pedestal_1_right",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/dir_up.png",
+				"codes": "pedestal_1_up",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/DX_unknown.png",
+				"codes": "pedestal_1_d_unknown",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Pedestal Direction 2",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 0,
+		"loop": true,
+		"codes": "pedestal_d_2",
+		"stages": [
+			{
+				"img": "images/labels/dir_left.png",
+				"codes": "pedestal_2_left",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/dir_down.png",
+				"codes": "pedestal_2_down",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/dir_right.png",
+				"codes": "pedestal_2_right",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/dir_up.png",
+				"codes": "pedestal_2_up",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/DX_unknown.png",
+				"codes": "pedestal_2_d_unknown",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Pedestal Direction 3",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 0,
+		"loop": true,
+		"codes": "pedestal_d_3",
+		"stages": [
+			{
+				"img": "images/labels/dir_left.png",
+				"codes": "pedestal_3_left",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/dir_down.png",
+				"codes": "pedestal_3_down",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/dir_right.png",
+				"codes": "pedestal_3_right",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/dir_up.png",
+				"codes": "pedestal_3_up",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/DX_unknown.png",
+				"codes": "pedestal_3_d_unknown",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Pedestal Direction 4",
+		"type": "static",
+		"allow_disabled": false,
+		"codes": "pedestal_d_4",
+		"img": "images/labels/dir_left.png"
 	},
 	{
 		"name": "Pedestal Sequence 1",

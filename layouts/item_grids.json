@@ -31,38 +31,6 @@
 			}
 		]
 	},
-	"item_grid2": {
-		"type": "array",
-		"orientation": "horizontal",
-		"content": [
-			{
-				"type": "itemgrid",
-				"h_alignment": "left",
-				"item_margin": "3,2",
-				"item_size": 38,
-				"rows": [
-					["sword1", "biggoron_sword", "bestweapon", "shield", "bombs", "feather"],
-					["strength", "boomerang1", "slingshot1", "glove", "shovel", "flute_generic"],
-					["satchel1", "emberseeds", "mysteryseeds", "scentseeds", "pegasusseeds", "galeseeds"],
-					["flippers", "rustybell", "spring", "summer", "fall", "winter"],
-					["natzu_animal", "polishedbell", "golden_darknut", "golden_octorok", "golden_moblin", "golden_lynel"]
-				]
-			},		 
-			{
-				"type": "itemgrid",
-				"h_alignment": "left",
-				"item_margin": "3,2",
-				"item_size": 38,
-				"rows": [
-					["gnarledkey", "floodkey", "dragonkey", "memberscard", "plaque", "banana", "roundjewel"],
-					["starore", "ribbon", "bombflower", "blueore", "redore", "hardore", "squarejewel"],
-					["cuccodex", "lonlonegg", "ghastlydoll", "ironpot", "lavasoup", "goronvase", "pyramidjewel"],
-					["fish", "megaphone", "mushroom", "woodenbird", "enginegrease", "phonograph", "xjewel"],
-					["ring_red", "ring_blue", "ring_pegasus", "ring_fist", "ring_expert", "ring_energy", "ring_swimmer"]
-				]
-			}
-		]
-	},
 	"dungeon_grid": {
 		"type": "array",
 		"orientation": "horizontal",
@@ -99,6 +67,16 @@
 					{
 						"type": "itemgrid",
 						"h_alignment": "center",
+						"margin": "5,5,5,17",
+						"item_size": 20,
+						"item_margin": "15,-11",
+						"rows": [
+							["lost_woods_d_1", "lost_woods_d_2", "lost_woods_d_3", "lost_woods_d_4"]
+						]
+					},
+					{
+						"type": "itemgrid",
+						"h_alignment": "center",
 						"item_size": 50,
 						"item_margin": "0,-11",
 						"rows": [
@@ -117,6 +95,16 @@
 					{
 						"type": "itemgrid",
 						"h_alignment": "center",
+						"margin": "5,5,5,17",
+						"item_size": 20,
+						"item_margin": "15,-11",
+						"rows": [
+							["pedestal_d_1", "pedestal_d_2", "pedestal_d_3", "pedestal_d_4"]
+						]
+					},
+					{
+						"type": "itemgrid",
+						"h_alignment": "center",
 						"item_size": 50,
 						"item_margin": "0,-11",
 						"rows": [
@@ -127,7 +115,7 @@
 						"type": "itemgrid",
 						"h_alignment": "center",
 						"item_size": 50,
-						"item_margin": "0,-11",
+						"item_margin": "0,-12",
 						"rows": [
 							// [""],
 							["entrance_label2", "", "entrance_label2", "fill_portals"],
@@ -135,7 +123,7 @@
 							["swamp_label_sub", "swamp_portal", "remains_label_sub", "remains_portal"],
 							["lake_label_sub", "lake_portal", "upremains_label_sub", "upremains_portal"],
 							["mtcucco_label_sub", "mtcucco_portal", "", ""],
-							["", "", "", ""],
+							// ["", "", "", ""],
 							["mountain_label_sub", "mountain_portal", "pirates_label_sub", "pirates_portal"],
 							["market_label_sub", "market_portal", "volcano_label_sub", "volcano_portal"],
 							["furnace_label_sub", "furnace_portal", "d8_label_sub", "d8_portal"],

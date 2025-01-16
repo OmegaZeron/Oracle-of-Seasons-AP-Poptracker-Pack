@@ -77,13 +77,14 @@
 			},
 			{
 				"name": "Talon's Cave",
-				"access_rules": ["^$CanReach|TalonRewards"],
 				"sections": [
 					{
-						"name": "Mt. Cucco: Talon Trade"
+						"name": "Mt. Cucco: Talon Trade",
+						"access_rules": ["^$CanReach|TalonReward"]
 					},
 					{
-						"name": "Mt. Cucco: Chest Behind Talon"
+						"name": "Mt. Cucco: Chest Behind Talon",
+						"access_rules": ["^$CanReach|TalonChest"]
 					}
 				],
 				"map_locations": [
@@ -115,7 +116,7 @@
 				"sections": [
 					{
 						"name": "Mt. Cucco: Item on Ledge",
-						"access_rules": ["^$CanReach|UpperMtCucco"]
+						"access_rules": ["^$CanReach|MtCuccoLedge"]
 					}
 				],
 				"map_locations": [

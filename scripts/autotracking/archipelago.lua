@@ -460,6 +460,13 @@ function onClear(slot_data)
 	end
 end
 
+local seedMapping = {
+	["Ember Seeds"] = EmberSeeds,
+	["Mystery Seeds"] = MysterySeeds,
+	["Scent Seeds"] = ScentSeeds,
+	["Pegasus Seeds"] = PegasusSeeds,
+	["Gale Seeds"] = GaleSeeds
+}
 -- called when an item gets collected
 function onItem(index, item_id, item_name, player_number)
 	if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
@@ -496,6 +503,12 @@ function onItem(index, item_id, item_name, player_number)
 				obj.CurrentStage = obj.CurrentStage + 1
 			else
 				obj.Active = true
+				if (v[1] == "satchel" or v[1] == "slingshot1") then
+					local defaultSeed = Tracker:FindObjectForCode(seedMapping[SLOT_DATA["default_seed"]])
+					if (defaultSeed) then
+						defaultSeed.Active = true
+					end
+				end
 			end
 		elseif v[2] == "consumable" then
 			obj.AcquiredCount = obj.AcquiredCount + obj.Increment

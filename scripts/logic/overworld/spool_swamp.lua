@@ -187,7 +187,8 @@ end, {SpoolSwampStump})
 SpringSpoolSwamp:connect_one_way(SwampFloodedHP, function()
 	return Any(
 		Has(Flippers),
-		Dimitri()
+		Dimitri(),
+		AccessibilityLevel.Inspect
 	)
 end)
 WinterSpoolSwamp:connect_one_way(SwampBombCave, function()

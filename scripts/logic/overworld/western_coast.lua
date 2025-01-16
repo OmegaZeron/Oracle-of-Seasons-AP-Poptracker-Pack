@@ -128,7 +128,14 @@ WestWesternCoast:connect_one_way_entrance(GraveyardAutumn, function()
 end, {WesternCoastStump})
 Graveyard:connect_one_way_entrance(ExplorersCrypt)
 GraveyardAutumn:connect_one_way_entrance(ExplorersCrypt)
-GraveyardAutumn:connect_one_way(GraveyardHP, CanDestroyMushroom)
+GraveyardAutumn:connect_one_way(GraveyardHP, function()
+	return Any(
+		CanDestroyMushroom(),
+		AccessibilityLevel.Inspect
+	)
+end)
+Graveyard:connect_one_way(GraveyardHP, function() return AccessibilityLevel.Inspect end)
+GraveyardWinter:connect_one_way(GraveyardHP, function() return AccessibilityLevel.Inspect end)
 GraveyardWinter:connect_one_way_entrance(ExplorersCrypt, function() return Has(Shovel) end)
 Graveyard:connect_one_way_entrance(WestWesternCoast)
 GraveyardAutumn:connect_one_way_entrance(WestWesternCoast)

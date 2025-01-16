@@ -5,6 +5,8 @@ LowerMtCucco:connect_two_ways_entrance(SubrosiaVillagePortal, function()
 		Has(VillageLeadsToCucco)
 	)
 end)
+LowerMtCucco:connect_one_way(MtCuccoScrubLeft, function() return Has(Shield) end)
+LowerMtCucco:connect_one_way(MtCuccoScrubRight, function() return Has(Shield) end)
 LowerMtCucco:connect_one_way_entrance(CuccoRightMountain, function()
 	return All(
 		Has(Bracelet),
@@ -36,12 +38,17 @@ LowerMtCucco:connect_one_way_entrance(CuccoRightMountain, function()
 end)
 CuccoRightMountain:connect_one_way(BananaTree, function()
 	return All(
-		Has(Feather),
 		Any(
 			Has(Spring),
 			Has(SunkenCitySpring)
 		),
-		CanSwordKill()
+		Any(
+			All(
+				Has(Feather),
+				CanSwordKill()
+			),
+			AccessibilityLevel.Inspect
+		)
 	)
 end)
 CuccoRightMountain:connect_one_way(MtCuccoPlatformCave)
@@ -64,7 +71,8 @@ end)
 LowerMtCucco:connect_one_way(GoronPitsItem, function()
 	return Any(
 		Has(SpringBanana),
-		Jump4()
+		Jump4(),
+		AccessibilityLevel.Inspect
 	)
 end)
 LowerMtCucco:connect_one_way_entrance(CenterGoronMountain, function()
@@ -73,7 +81,15 @@ LowerMtCucco:connect_one_way_entrance(CenterGoronMountain, function()
 		Has(SpringBanana)
 	)
 end)
-UpperMtCucco:connect_one_way_entrance(TalonRewards, function() return Has(Megaphone) end)
+LowerMtCucco:connect_one_way(MtCuccoLedge, function() return AccessibilityLevel.Inspect end)
+UpperMtCucco:connect_one_way(MtCuccoLedge)
+UpperMtCucco:connect_one_way_entrance(TalonReward, function()
+	return Any(
+		Has(Megaphone),
+		AccessibilityLevel.Inspect
+	)
+end)
+UpperMtCucco:connect_one_way_entrance(TalonChest, function() Has(Megaphone) end)
 UpperMtCucco:connect_one_way(MtCuccoDiveSpot, function() return Has(Flippers) end)
 UpperMtCucco:connect_one_way_entrance(DragonKeyhole, function()
 	return All(

@@ -137,7 +137,8 @@ MoblinRoad:connect_one_way(SuburbsHP, function()
 		Has(Flippers),
 		Dimitri(),
 		Has(Bracelet),
-		Has(Feather)
+		Has(Feather),
+		AccessibilityLevel.Inspect
 	)
 end)
 WoodsOfWinter:connect_one_way_entrance(UpperEasternSuburbs, function()

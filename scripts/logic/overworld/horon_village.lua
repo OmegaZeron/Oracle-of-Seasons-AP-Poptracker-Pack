@@ -9,11 +9,19 @@ HoronVillage:connect_one_way(HoronMushroomChest, function()
 		)
 	)
 end)
-HoronVillage:connect_one_way(HoronTree, function() return CanHarvestSeeds(true) end)
+HoronVillage:connect_one_way(HoronTree, function()
+	return Any(
+		CanHarvestSeeds(true),
+		AccessibilityLevel.Inspect
+	)
+end)
 HoronVillage:connect_one_way(HoronTreeHP, function()
-	return All(
-		CanUseSeeds(),
-		Has(EmberSeeds)
+	return Any(
+		All(
+			CanUseSeeds(),
+			Has(EmberSeeds)
+		),
+		AccessibilityLevel.Inspect
 	)
 end)
 HoronVillage:connect_one_way(HoronGasha, CanPlantGasha)

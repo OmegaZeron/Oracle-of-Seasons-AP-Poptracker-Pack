@@ -57,10 +57,10 @@
 			{
 				"name": "Mount Cucco Gasha Spot",
 				"visibility_rules": ["^$CanSeeGasha|1"],
-				"access_rules": ["^$CanReach|MtCuccoGasha"],
 				"sections": [
 					{
-						"name": "Behind Mushrooms"
+						"name": "Behind Mushrooms",
+						"access_rules": ["^$CanReach|MtCuccoGasha"]
 					},
 					{
 						"name": "Harvested",
@@ -175,6 +175,10 @@
 					{
 						"name": "Dancing Dragon Dungeon (1F): Chest on Small Terrace",
 						"ref": "Dancing Dragon Dungeon/Chest on Small Terrace/1F"
+					},
+					{
+						"name": "Dancing Dragon Dungeon (1F): Business Scrub",
+						"ref": "Dancing Dragon Dungeon/Business Scrub/1F"
 					},
 					{
 						"name": "Dancing Dragon Dungeon (1F): Chest Revealed by Minecart Torches",

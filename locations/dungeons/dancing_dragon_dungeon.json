@@ -118,6 +118,23 @@
 				]
 			},
 			{
+				"name": "Business Scrub",
+				"sections": [
+					{
+                        "name": "1F",
+						"visibility_rules": ["shufflescrubson"],
+						"access_rules": ["^$CanReach|DancingScrub"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "dancing_dragon_dungeon2",
+						"x": 390,
+						"y": 20
+					}
+				]
+			},
+			{
 				"name": "Chest Revealed by Minecart Torches",
 				"sections": [
 					{

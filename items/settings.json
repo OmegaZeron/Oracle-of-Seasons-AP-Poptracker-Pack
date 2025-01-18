@@ -2060,6 +2060,26 @@
 		]
 	},
 	{
+		"name": "Shuffle Business Scrubs",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 0,
+		"codes": "shufflescrubs",
+		"stages": [
+			{
+				"img": "images/labels/off.png",
+				"codes": "shufflescrubsoff",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/shuffled_label.png",
+				"codes": "shufflescrubson",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
 		"name": "Suburbs Portal Selector",
 		"type": "progressive",
 		"allow_disabled": false,

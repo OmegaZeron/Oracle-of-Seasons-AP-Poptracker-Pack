@@ -12,8 +12,8 @@
 					["sword1", "biggoron_sword", "bestweapon", "shield", "bombs", "feather"],
 					["strength", "boomerang1", "slingshot1", "glove", "shovel", "flute_generic"],
 					["satchel1", "emberseeds", "mysteryseeds", "scentseeds", "pegasusseeds", "galeseeds"],
-					["flippers", "rustybell", "spring", "summer", "fall", "winter"],
-					["natzu_animal", "polishedbell", "golden_darknut", "golden_octorok", "golden_moblin", "golden_lynel"]
+					["flippers", "bothbell", "spring", "summer", "fall", "winter"],
+					["natzu_animal", "golden_darknut", "golden_octorok", "golden_moblin", "golden_lynel", "rupees"]
 				]
 			},		 
 			{
@@ -26,7 +26,7 @@
 					["starore", "ribbon", "bombflower", "gashaseeds", "blueredore", "hardore", "squarejewel"],
 					["cuccodex", "lonlonegg", "ghastlydoll", "ironpot", "lavasoup", "goronvase", "pyramidjewel"],
 					["fish", "megaphone", "mushroom", "woodenbird", "enginegrease", "phonograph", "xjewel"],
-					["somaria", "bombchus", "ring_pegasus", "ring_fist", "ring_expert", "ring_energy", "ring_swimmer"]
+					["orechunks", "somaria", "bombchus", "ring_fist", "ring_expert", "ring_energy", "ring_swimmer"]
 				]
 			}
 		]
@@ -237,7 +237,7 @@
 					["small_keysanity_label", "small_keysanity", "boss_keysanity_label", "boss_keysanity", "master_keys_label", "master_keys", "treewarp_label", "notreewarp"],
 					["horon_shop_potion_label", "horon_shop_potion", "advance_shop_label", "advance_shop", "shuffle_old_men_label", "shuffle_old_men", "gold_ore_label", "shuffle_gold_ores"],
 					["default_seasons_label", "defaultseasonsoff", "horon_village_season_label", "horon_village_season_shuffle", "d0_alt_entrance_label", "d0_alt_entrance", "d2_alt_entrance_label", "d2_alt_entrance"],
-					["lost_woods_label", "shuffle_lost_woods", "pedestal_label", "shuffle_pedestal"]
+					["lost_woods_label", "shuffle_lost_woods", "pedestal_label", "shuffle_pedestal", "shuffle_scrub_label", "shufflescrubs"]
 				]
 			}
 		]

@@ -1,5 +1,5 @@
 -- 0 keys
-CryptFoyer:connect_one_way(Crypt1FWizzrobeChest, function() return CanNormalKill(false, true) end)
+CryptFoyer:connect_one_way(Crypt1FWizzrobeChest, function() return CanNormalKill(false, true, false) end)
 CryptFoyer:connect_one_way_entrance(Crypt1FLeftOfPoe, CanBombWall)
 Crypt1FLeftOfPoe:connect_one_way(Crypt1FLeftOfPoeChest)
 -- poe skip method

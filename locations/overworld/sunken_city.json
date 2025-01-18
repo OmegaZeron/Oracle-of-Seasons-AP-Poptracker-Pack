@@ -40,22 +40,22 @@
 			},
 			{
 				"name": "Syrup's Hut",
-				"access_rules": ["^$CanReach|Syrup"],
+				// "access_rules": ["^$CanReach|Syrup"],
 				"sections": [
 					{
 						"name": "Sunken City: Syrup Trade"
 					},
 					{
 						"name": "Sunken City: Syrup Shop #1",
-						"access_rules": ["^$CanFarmRupees"]
+						"access_rules": ["^$CanReach|Syrup1"]
 					},
 					{
 						"name": "Sunken City: Syrup Shop #2",
-						"access_rules": ["^$CanFarmRupees"]
+						"access_rules": ["^$CanReach|Syrup2"]
 					},
 					{
 						"name": "Sunken City: Syrup Shop #3",
-						"access_rules": ["^$CanFarmRupees"]
+						"access_rules": ["^$CanReach|Syrup3"]
 					}
 				],
 				"map_locations": [
@@ -105,10 +105,10 @@
 			{
 				"name": "Sunken City Gasha Spot",
 				"visibility_rules": ["^$CanSeeGasha|1"],
-				"access_rules": ["^$CanReach|SunkenGashaSpot"],
 				"sections": [
 					{
-						"name": "Near Master Diver"
+						"name": "Near Master Diver",
+						"access_rules": ["^$CanReach|SunkenGashaSpot"]
 					},
 					{
 						"name": "Harvested",

@@ -9,6 +9,13 @@ end)
 NatzuWest:connect_two_ways_entrance(NatzuRickyWest, function() return Has(NatzuIsRicky) end)
 NatzuRickyWest:connect_two_ways_entrance(NatzuRickyEast, Ricky)
 NatzuRickyEast:connect_one_way_entrance(MoblinKeepBridge, Ricky)
+-- currently unused
+NatzuRickyEast:connect_one_way(NatzuScrub, function()
+	return All(
+		CanDestroyBush(true),
+		CanUseSeeds() -- required?
+	)
+end)
 NatzuRickyEast:connect_two_ways_entrance(SunkenDoorstep, function() return Has(NatzuIsRicky) end)
 -- dimitri
 NatzuWest:connect_two_ways_entrance(NatzuDimitriWest, function() return Has(NatzuIsDimitri) end)
@@ -28,6 +35,13 @@ NatzuDimitriEast:connect_one_way_entrance(MoblinKeepBridge, function()
 				AccessibilityLevel.SequenceBreak
 			)
 		)
+	)
+end)
+-- currently unused
+NatzuDimitriEast:connect_one_way(NatzuScrub, function()
+	return All(
+		Dimitri(),
+		CanUseSeeds() -- required?
 	)
 end)
 NatzuDimitriEast:connect_two_ways_entrance(SunkenDoorstep, function()
@@ -59,6 +73,23 @@ NatzuMooshEast:connect_one_way_entrance(MoblinKeepBridge, function()
 			CanDestroyBush(),
 			Jump3()
 		)
+	)
+end)
+-- currently unused
+NatzuMooshEast:connect_one_way(NatzuScrub, function()
+	return All(
+		Any(
+			Moosh(),
+			All(
+				CanDestroyBush(),
+				Jump3(),
+				Any(
+					IsMediumPlus(),
+					AccessibilityLevel.SequenceBreak
+				)
+			)
+		),
+		CanUseSeeds() -- required?
 	)
 end)
 NatzuMooshEast:connect_two_ways_entrance(SunkenDoorstep, function()

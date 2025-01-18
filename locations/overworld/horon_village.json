@@ -197,10 +197,10 @@
 			{
 				"name": "Horon Village Gasha Spot",
 				"visibility_rules": ["^$CanSeeGasha|1"],
-				"access_rules": ["^$CanReach|HoronGasha"],
 				"sections": [
 					{
-						"name": "Near Mayor"
+						"name": "Near Mayor",
+						"access_rules": ["^$CanReach|HoronGasha"]
 					},
 					{
 						"name": "Harvested",
@@ -270,32 +270,31 @@
 			},
 			{
 				"name": "Horon Shop",
-				"access_rules": ["^$CanFarmRupees"],
 				"sections": [
 					{
 						"name": "Horon Village: Shop #1",
-						"access_rules": ["^$CanReach|HoronShop"]
+						"access_rules": ["^$CanReach|HoronShop1"]
 					},
 					{
 						"name": "Horon Village: Shop #2",
-						"access_rules": ["^$CanReach|HoronShop"]
+						"access_rules": ["^$CanReach|HoronShop2"]
 					},
 					{
 						"name": "Horon Village: Shop #3",
-						"access_rules": ["^$CanReach|HoronShop"],
+						"access_rules": ["^$CanReach|HoronShop3"],
 						"visibility_rules": ["horon_potion_off"]
 					},
 					{
 						"name": "Horon Village: Member's Shop #1",
-						"access_rules": ["^$CanReach|MemberShop"]
+						"access_rules": ["^$CanReach|MembersShop1"]
 					},
 					{
 						"name": "Horon Village: Member's Shop #2",
-						"access_rules": ["^$CanReach|MemberShop"]
+						"access_rules": ["^$CanReach|MembersShop2"]
 					},
 					{
 						"name": "Horon Village: Member's Shop #3",
-						"access_rules": ["^$CanReach|MemberShop"]
+						"access_rules": ["^$CanReach|MembersShop3"]
 					}
 				],
 				"map_locations": [
@@ -309,16 +308,18 @@
 			{
 				"name": "Advance Shop",
 				"visibility_rules": ["advanceshopon"],
-				"access_rules": ["^$CanReach|AdvanceShop, ^$CanFarmRupees"],
 				"sections": [
 					{
-						"name": "Horon Village: Advance Shop #1"
+						"name": "Horon Village: Advance Shop #1",
+						"access_rules": ["^$CanReach|AdvanceShop1"]
 					},
 					{
-						"name": "Horon Village: Advance Shop #2"
+						"name": "Horon Village: Advance Shop #2",
+						"access_rules": ["^$CanReach|AdvanceShop2"]
 					},
 					{
-						"name": "Horon Village: Advance Shop #3"
+						"name": "Horon Village: Advance Shop #3",
+						"access_rules": ["^$CanReach|AdvanceShop3"]
 					}
 				],
 				"map_locations": [

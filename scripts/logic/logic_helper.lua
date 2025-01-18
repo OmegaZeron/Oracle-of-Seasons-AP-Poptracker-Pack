@@ -74,31 +74,6 @@ function BombPunchWall()
 	)
 end
 
-function CanFarmOreChunks()
-	return Any(
-		Has(Shovel),
-		All(
-			CanReach(SubrosiaMountainEast),
-			Any(
-				Has(Hard),
-				AccessibilityLevel.SequenceBreak
-			)
-		),
-		All(
-			Any(
-				HasSword(),
-				Has(Bracelet),
-				Has(MagicBoomerang)
-			),
-			Any(
-				IsMediumPlus(),
-				AccessibilityLevel.SequenceBreak
-			)
-		),
-		AccessibilityLevel.Inspect
-	)
-end
-
 function AnyFlute()
 	return Moosh() or
 	Ricky() or
@@ -650,12 +625,18 @@ function CanKillWithPit()
 	return Has(Shield) or HasRod()
 end
 
-function CanNormalKill(pitAvailable, noCane)
+function CanNormalKill(pitAvailable, allowGale, allowCane)
+	if (allowGale == nil) then
+		allowGale = true
+	end
+	if (allowCane == nil) then
+		allowCane = true
+	end
 	return Any(
 		pitAvailable == true and CanKillWithPit(),
 		CanSwordPunchKill(),
-		CanNormalSatchelKill(),
-		CanNormalSlingshotKill(),
+		CanNormalSatchelKill(allowGale),
+		CanNormalSlingshotKill(allowGale),
 		CanGaleKill(),
 		All(
 			Any(
@@ -668,7 +649,7 @@ function CanNormalKill(pitAvailable, noCane)
 			)
 		),
 		All(
-			noCane ~= true and Has(CaneOfSomaria),
+			allowCane and Has(CaneOfSomaria),
 			Any(
 				IsMediumPlus(),
 				AccessibilityLevel.SequenceBreak
@@ -677,7 +658,10 @@ function CanNormalKill(pitAvailable, noCane)
 	)
 end
 
-function CanNormalSatchelKill()
+function CanNormalSatchelKill(allowGale)
+	if (allowGale == nil) then
+		allowGale = true
+	end
 	return All(
 		Has(UpgradedSatchel),
 		Any(
@@ -691,12 +675,14 @@ function CanNormalSatchelKill()
 					Has(ScentSeeds),
 					Has(MysterySeeds),
 					All(
+						allowGale,
 						Has(Feather),
 						Has(GaleSeeds)
 					)
 				)
 			),
 			All(
+				allowGale,
 				Any(
 					Has(Hard),
 					AccessibilityLevel.SequenceBreak
@@ -707,7 +693,10 @@ function CanNormalSatchelKill()
 	)
 end
 
-function CanNormalSlingshotKill()
+function CanNormalSlingshotKill(allowGale)
+	if (allowGale == nil) then
+		allowGale = true
+	end
 	return All(
 		Has(UpgradedSatchel),
 		All(
@@ -716,6 +705,7 @@ function CanNormalSlingshotKill()
 				Has(EmberSeeds),
 				Has(ScentSeeds),
 				Any(
+					allowGale,
 					Any(
 						IsMediumPlus(),
 						AccessibilityLevel.SequenceBreak
@@ -811,43 +801,107 @@ function CanKillWizzrobe()
 	return minAccess
 end
 
--- HORON VILLAGE
-function CanFarmRupees(accessOnly)
-	if (Has(Shovel) or HasSword()) then
-		return true
-	end
-	if (accessOnly == true) then
-		return false
-	end
-	return AccessibilityLevel.Inspect
+function CanFarmRupees()
+	return Has(Shovel) or HasSword()
 end
 
-function CanFarmMaple()
+function HasRupees(count)
+	if (not CanFarmRupees()) then
+		return false
+	end
+
+	local rupees = Tracker:FindObjectForCode(RupeeCount).AcquiredCount
+	local bonusRupees = 0
+	local oolRupees = 0
+
+	local snakeRupees = CanReach(SnakeRupeeRoom)
+	local snakeRupeeAmount = 150
+	if (snakeRupees == AccessibilityLevel.SequenceBreak) then
+		oolRupees = oolRupees + snakeRupeeAmount
+	elseif (snakeRupees == AccessibilityLevel.Normal) then
+		bonusRupees = bonusRupees + snakeRupeeAmount
+	end
+
+	local ancientRupees = CanReach(AncientRupeeRoom)
+	local ancientRupeeAmount = 90
+	if (ancientRupees == AccessibilityLevel.SequenceBreak) then
+		oolRupees = oolRupees + ancientRupeeAmount
+	elseif (ancientRupees == AccessibilityLevel.Normal) then
+		bonusRupees = bonusRupees + ancientRupeeAmount
+	end
+
 	return Any(
-		CanSwordPunchKill(),
+		rupees >= count,
 		All(
-			Has(Bombs),
+			Has(Shovel),
 			Any(
-				IsMediumPlus(),
+				Has(Hard),
 				AccessibilityLevel.SequenceBreak
 			)
 		),
 		All(
-			CanShootSeedsCombat(),
-			HasContactSeeds()
+			Any(
+				IsMediumPlus(),
+				AccessibilityLevel.SequenceBreak
+			),
+			rupees + bonusRupees >= count
 		),
-		Has(Bracelet),
-		-- Has(Boomerang),
-		AnyFlute(),
 		All(
-			Has(UpgradedSatchel),
-			HasContactSeeds(),
+			AccessibilityLevel.SequenceBreak,
+			rupees + bonusRupees + oolRupees >= count
+		)
+	)
+end
+
+function CanPayScrub()
+	return HasRupees(150)
+end
+
+function CanFarmOreChunks()
+	return Any(
+		Has(Shovel),
+		All(
+			CanReach(SubrosiaMountainEast),
+			Any(
+				Has(Hard),
+				AccessibilityLevel.SequenceBreak
+			)
+		),
+		All(
+			Any(
+				HasSword(),
+				Has(Bracelet),
+				Has(MagicBoomerang)
+			),
 			Any(
 				IsMediumPlus(),
 				AccessibilityLevel.SequenceBreak
 			)
 		)
 	)
+end
+
+function HasOreChunks(count)
+	if (Has(ShuffleGoldOresVanilla)) then
+		return CanFarmOreChunks()
+	end
+	if (CanFarmOreChunks() < AccessibilityLevel.SequenceBreak) then
+		return false
+	end
+
+	local oreChunks = Tracker:FindObjectForCode(OreChunkCount).AcquiredCount
+	
+	return Any(
+		oreChunks >= count,
+		All(
+			CanFarmOreChunks(),
+			AccessibilityLevel.SequenceBreak
+		)
+	)
+end
+
+function CanFarmMaple()
+	return CanNormalKill(false, false)
 end
 
 function CanEnterTarm()

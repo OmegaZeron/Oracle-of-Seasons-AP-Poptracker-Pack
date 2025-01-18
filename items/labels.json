@@ -161,12 +161,12 @@
 		"img": "images/labels/shuffle_old_men_label.png",
 		"codes": "shuffle_old_men_label"
 	},
-	// {
-	// 	"name": "Lost Woods Item Sequence Label",
-	// 	"type": "static",
-	// 	"img": "images/labels/lost_woods_item_sequence_label.png",
-	// 	"codes": "lost_woods_item_sequence_label"
-	// },
+	{
+		"name": "Shuffle Business Scrubs Label",
+		"type": "static",
+		"img": "images/labels/scrub_shuffle_label.png",
+		"codes": "shuffle_scrub_label"
+	},
 	{
 		"name": "Natzu label",
 		"type": "static",

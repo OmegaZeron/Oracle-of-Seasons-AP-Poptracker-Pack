@@ -57,10 +57,10 @@
 			{
 				"name": "Spool Swamp North Gasha Spot",
 				"visibility_rules": ["^$CanSeeGasha|1"],
-				"access_rules": ["^$CanReach|SwampNorthGashaSpot"],
 				"sections": [
 					{
-						"name": "Near Keyhole"
+						"name": "Near Keyhole",
+						"access_rules": ["^$CanReach|SwampNorthGashaSpot"]
 					},
 					{
 						"name": "Harvested",
@@ -76,12 +76,29 @@
 				]
 			},
 			{
-				"name": "Spool Swamp South Gasha Spot",
-				"visibility_rules": ["^$CanSeeGasha|1"],
-				"access_rules": ["^$CanReach|SwampSouthGashaSpot"],
+				"name": "Spool Swamp Business Scrub",
+				"visibility_rules": ["shufflescrubson"],
 				"sections": [
 					{
-						"name": "Near Portal"
+						"name": "Near Keyhole",
+						"access_rules": ["^$CanReach|SwampScrub"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 35,
+						"y": 350
+					}
+				]
+			},
+			{
+				"name": "Spool Swamp South Gasha Spot",
+				"visibility_rules": ["^$CanSeeGasha|1"],
+				"sections": [
+					{
+						"name": "Near Portal",
+						"access_rules": ["^$CanReach|SwampSouthGashaSpot"]
 					},
 					{
 						"name": "Harvested",

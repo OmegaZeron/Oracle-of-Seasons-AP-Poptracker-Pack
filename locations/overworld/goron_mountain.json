@@ -8,10 +8,10 @@
 			{
 				"name": "Goron Mountain West Gasha Spot",
 				"visibility_rules": ["^$CanSeeGasha|1"],
-				"access_rules": ["^$CanReach|GoronGashaWest"],
 				"sections": [
 					{
-						"name": "Dig It Up"
+						"name": "Dig It Up",
+						"access_rules": ["^$CanReach|GoronGashaWest"]
 					},
 					{
 						"name": "Harvested",
@@ -29,10 +29,10 @@
 			{
 				"name": "Goron Mountain East Gasha Spot",
 				"visibility_rules": ["^$CanSeeGasha|1"],
-				"access_rules": ["^$CanReach|GoronGashaEast"],
 				"sections": [
 					{
-						"name": "Under Rocks"
+						"name": "Under Rocks",
+						"access_rules": ["^$CanReach|GoronGashaEast"]
 					},
 					{
 						"name": "Harvested",

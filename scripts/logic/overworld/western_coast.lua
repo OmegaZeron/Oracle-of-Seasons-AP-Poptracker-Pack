@@ -27,10 +27,25 @@ HerosCave:connect_two_ways_entrance(HerosCaveFoyer, function()
 	)
 end)
 
+HerosCaveFoyer:connect_one_way_entrance(HerosCaveLedge, function()
+	-- connect from foyer to prevent potential softlocks with dungeon shuffle
+	return Any(
+		Has(D0AltRemoved),
+		All(
+			CanDestroyBushFlute(),
+			Any(
+				CanWarp(),
+				Has(ShuffleDungeonOff)
+			)
+		)
+	)
+end)
 EastWesternCoast:connect_one_way_entrance(HerosCaveLedge, function()
+	-- and add the out of logic version of above
 	return All(
 		Has(D0AltVanilla),
-		CanDestroyBushFlute()
+		CanDestroyBushFlute(),
+		AccessibilityLevel.SequenceBreak
 	)
 end)
 HerosCaveLedge:connect_one_way_entrance(HerosCaveFoyer)

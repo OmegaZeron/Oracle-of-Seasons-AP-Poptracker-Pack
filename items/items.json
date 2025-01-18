@@ -272,6 +272,24 @@
 		"codes": "rod, seasonsrod"
 	},
 	{
+		"name": "Rupees",
+		"type": "consumable",
+		"img": "images/items/bigrupee.png",
+		"codes": "rupees",
+		"increment": 50,
+		"decrement": 50,
+		"max_quantity": 999
+	},
+	{
+		"name": "Ore Chunks",
+		"type": "consumable",
+		"img": "images/items/orechunk.png",
+		"codes": "orechunks",
+		"increment": 50,
+		"decrement": 50,
+		"max_quantity": 999
+	},
+	{
 		"name": "Season's Rod",
 		"type": "toggle",
 		"img": "images/items/rod.png",
@@ -348,6 +366,36 @@
 		"type": "toggle",
 		"img": "images/items/bell2.png",
 		"codes": "polishedbell"
+	},
+	{
+		"name": "Rusty/Polished Bell",
+		"type": "composite_toggle",
+		"codes": "bothbell",
+		"item_left": "rustybell",
+		"item_right": "polishedbell",
+		"images": [
+			{
+				"left": false,
+				"right": false,
+				"img": "images/items/bellboth.png",
+				"img_mods": "@disabled"
+			},
+			{
+				"left": true,
+				"right": false,
+				"img": "images/items/bellrusty.png"
+			},
+			{
+				"left": false,
+				"right": true,
+				"img": "images/items/bellpolished.png"
+			},
+			{
+				"left": true,
+				"right": true,
+				"img": "images/items/bellboth.png"
+			}
+		]
 	},
 	{
 		"name": "Member's Card",

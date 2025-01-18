@@ -100,6 +100,7 @@ DancingPostWaterRollers:connect_one_way_entrance(DancingMinecartTorches, functio
 		Jump2()
 	)
 end)
+DancingMinecartTorches:connect_one_way(DancingScrub, CanPayScrub)
 DancingMinecartTorches:connect_one_way(DancingTorchChest, function()
 	return All(
 		Has(Slingshot),

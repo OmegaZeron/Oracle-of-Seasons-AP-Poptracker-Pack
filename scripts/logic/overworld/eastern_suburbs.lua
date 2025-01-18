@@ -69,6 +69,7 @@ SamasaDesert:connect_one_way(SamasaDesertPit, function()
 	return Has(Bracelet)
 end)
 SamasaDesert:connect_one_way(SamasaDesertGasha, CanPlantGasha)
+SamasaDesert:connect_one_way(SamasaScrub, CanPayScrub)
 
 -- upper suburbs
 UpperEasternSuburbs:connect_one_way_entrance(UpperEasternSuburbsWinter, function()

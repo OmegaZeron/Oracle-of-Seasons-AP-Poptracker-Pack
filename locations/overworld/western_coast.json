@@ -119,10 +119,10 @@
 			{
 				"name": "Western Coast Gasha Spot",
 				"visibility_rules": ["^$CanSeeGasha|1"],
-				"access_rules": ["^$CanReach|WesternCoastGasha"],
 				"sections": [
 					{
-						"name": "Near Graveyard"
+						"name": "Near Graveyard",
+						"access_rules": ["^$CanReach|WesternCoastGasha"]
 					},
 					{
 						"name": "Harvested",

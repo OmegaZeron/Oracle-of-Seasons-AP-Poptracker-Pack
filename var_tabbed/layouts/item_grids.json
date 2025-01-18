@@ -12,8 +12,8 @@
 					["sword1", "biggoron_sword", "bestweapon", "shield", "bombs", "feather"],
 					["strength", "boomerang1", "slingshot1", "glove", "shovel", "flute_generic"],
 					["satchel1", "emberseeds", "mysteryseeds", "scentseeds", "pegasusseeds", "galeseeds"],
-					["flippers", "rustybell", "spring", "summer", "fall", "winter"],
-					["natzu_animal", "polishedbell", "golden_darknut", "golden_octorok", "golden_moblin", "golden_lynel"]
+					["flippers", "bothbell", "spring", "summer", "fall", "winter"],
+					["natzu_animal", "golden_darknut", "golden_octorok", "golden_moblin", "golden_lynel", "rupees"]
 				]
 			},		 
 			{
@@ -26,7 +26,7 @@
 					["starore", "ribbon", "bombflower", "gashaseeds", "blueredore", "hardore", "squarejewel"],
 					["cuccodex", "lonlonegg", "ghastlydoll", "ironpot", "lavasoup", "goronvase", "pyramidjewel"],
 					["fish", "megaphone", "mushroom", "woodenbird", "enginegrease", "phonograph", "xjewel"],
-					["somaria", "bombchus", "ring_pegasus", "ring_fist", "ring_expert", "ring_energy", "ring_swimmer"]
+					["orechunks", "somaria", "bombchus", "ring_fist", "ring_expert", "ring_energy", "ring_swimmer"]
 				]
 			}
 		]

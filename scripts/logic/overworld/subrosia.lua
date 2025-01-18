@@ -79,10 +79,30 @@ SubrosiaMarket:connect_one_way(SubrosiaMarket1, function()
 		AccessibilityLevel.Inspect
 	)
 end)
-SubrosiaMarket:connect_one_way(SubrosiaMarket2, CanFarmOreChunks, {SubrosiaMountainEast})
-SubrosiaMarket:connect_one_way(SubrosiaMarket3, CanFarmOreChunks, {SubrosiaMountainEast})
-SubrosiaMarket:connect_one_way(SubrosiaMarket4, CanFarmOreChunks, {SubrosiaMountainEast})
-SubrosiaMarket:connect_one_way(SubrosiaMarket5, CanFarmOreChunks, {SubrosiaMountainEast})
+SubrosiaMarket:connect_one_way(SubrosiaMarket2, function()
+	return Any(
+		HasOreChunks(100),
+		AccessibilityLevel.Inspect
+	)
+end, {SubrosiaMountainEast})
+SubrosiaMarket:connect_one_way(SubrosiaMarket3, function()
+	return Any(
+		HasOreChunks(100),
+		AccessibilityLevel.Inspect
+	)
+end, {SubrosiaMountainEast})
+SubrosiaMarket:connect_one_way(SubrosiaMarket4, function()
+	return Any(
+		HasOreChunks(100),
+		AccessibilityLevel.Inspect
+	)
+end, {SubrosiaMountainEast})
+SubrosiaMarket:connect_one_way(SubrosiaMarket5, function()
+	return Any(
+		HasOreChunks(100),
+		AccessibilityLevel.Inspect
+	)
+end, {SubrosiaMountainEast})
 SubrosiaMarket:connect_one_way(BeachDigSpot, function() return Has(Shovel) end)
 SubrosiaMarket:connect_one_way_entrance(RosaDate, function() return Has(Ribbon) end)
 SubrosiaMarket:connect_one_way(SubrosiaMarketUpperDigSpot, function() return Has(Shovel) end)

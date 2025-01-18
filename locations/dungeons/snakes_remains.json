@@ -96,6 +96,22 @@
 				]
 			},
 			{
+				"name": "Business Scrub",
+				"sections": [
+					{
+						"visibility_rules": ["shufflescrubson"],
+						"access_rules": ["^$CanReach|SnakeScrub"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "snakes_remains1",
+						"x": 15,
+						"y": 270
+					}
+				]
+			},
+			{
 				"name": "Chest in Bomb Spiral Maze Room",
 				"sections": [
 					{

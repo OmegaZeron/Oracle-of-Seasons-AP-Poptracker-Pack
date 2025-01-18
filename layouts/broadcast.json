@@ -132,15 +132,16 @@
 										["lavasoup", "goronvase"],
 										["fish", "megaphone"],
 										["mushroom", "woodenbird"],
-										["enginegrease", "phonograph"]
+										["enginegrease", "phonograph"],
+										["rupees", "orechunks"]
 									]
 								},
 								{
 									"type": "itemgrid",
 									"item_size": 32,"rows": [
-										["ring_red"],
-										["ring_blue"],
-										["ring_pegasus"],
+										["somaria"],
+										["bombchus"],
+										[""],
 										["ring_fist"],
 										["ring_expert"],
 										["ring_energy"],

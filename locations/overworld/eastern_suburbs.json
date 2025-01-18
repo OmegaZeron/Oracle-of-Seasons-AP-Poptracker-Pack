@@ -6,11 +6,16 @@
 		"color": "#00ff08",
 		"children": [
 			{
-				"name": "Samasa Desert: Skull Pit",
+				"name": "Samasa Desert: One of Four Pits",
 				"sections": [
 					{
-						"name": "One of Four Pits",
+						"name": "Rusty Bell (With Skull)",
 						"access_rules": ["^$CanReach|SamasaDesertPit"]
+					},
+					{
+						"name": "Business Scrub (Without Skull)",
+						"visibility_rules": ["shufflescrubson"],
+						"access_rules": ["^$CanReach|SamasaScrub"]
 					}
 				],
 				"map_locations": [
@@ -60,10 +65,10 @@
 			{
 				"name": "Samasa Desert Gasha Spot",
 				"visibility_rules": ["^$CanSeeGasha|1"],
-				"access_rules": ["^$CanReach|SamasaDesertGasha"],
 				"sections": [
 					{
-						"name": "Surrounded by Cacti"
+						"name": "Surrounded by Cacti",
+						"access_rules": ["^$CanReach|SamasaDesertGasha"]
 					},
 					{
 						"name": "Harvested",
@@ -116,10 +121,10 @@
 			{
 				"name": "Eastern Suburbs Gasha Spot",
 				"visibility_rules": ["^$CanSeeGasha|1"],
-				"access_rules": ["^$CanReach|SuburbsGasha"],
 				"sections": [
 					{
-						"name": "Under Bushes"
+						"name": "Under Bushes",
+						"access_rules": ["^$CanReach|SuburbsGasha"]
 					},
 					{
 						"name": "Harvested",
@@ -341,6 +346,10 @@
 					{
 						"name": "Snake's Remains: Chest in Moving Blades Room",
 						"ref": "Snake's Remains/Chest in Moving Blades Room/"
+					},
+					{
+						"name": "Snake's Remains: Business Scrub",
+						"ref": "Snake's Remains/Business Scrub/"
 					},
 					{
 						"name": "Snake's Remains: Chest in Bomb Spiral Maze Room",

@@ -9,7 +9,9 @@ GLOBAL_ITEMS = {}
 COLLECTED_HINTS = {}
 
 function onClear(slot_data)
-	print(string.format("called onClear, slot_data:\n%s", dump_table(slot_data)))
+	if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
+		print(string.format("called onClear, slot_data:\n%s", dump_table(slot_data)))
+	end
 	SLOT_DATA = slot_data
 	CUR_INDEX = -1
 	-- reset locations
@@ -422,34 +424,39 @@ function onClear(slot_data)
 	end
 
 	local dungeon_dictionary = {
-		['enter d0'] = 1,
-		['enter d1'] = 2,
-		['enter d2'] = 3,
-		['enter d3'] = 4,
-		['enter d4'] = 5,
-		['enter d5'] = 6,
-		['enter d6'] = 7,
-		['enter d7'] = 8,
-		['enter d8'] = 9
+		["d0 entrance"] = 1,
+		["d1 entrance"] = 2,
+		["d2 entrance"] = 3,
+		["d3 entrance"] = 4,
+		["d4 entrance"] = 5,
+		["d5 entrance"] = 6,
+		["d6 entrance"] = 7,
+		["d7 entrance"] = 8,
+		["d8 entrance"] = 9
 	}
 	local dungeon_mapping = {
-		["d0 entrance"] = "d0_ent_selector_hidden",
-		["d1 entrance"] = "d1_ent_selector_hidden",
-		["d2 entrance"] = "d2_ent_selector_hidden",
-		["d3 entrance"] = "d3_ent_selector_hidden",
-		["d4 entrance"] = "d4_ent_selector_hidden",
-		["d5 entrance"] = "d5_ent_selector_hidden",
-		["d6 entrance"] = "d6_ent_selector_hidden",
-		["d7 entrance"] = "d7_ent_selector_hidden",
-		["d8 entrance"] = "d8_ent_selector_hidden"
+		["enter d0"] = "d0_ent_selector_hidden",
+		["enter d1"] = "d1_ent_selector_hidden",
+		["enter d2"] = "d2_ent_selector_hidden",
+		["enter d3"] = "d3_ent_selector_hidden",
+		["enter d4"] = "d4_ent_selector_hidden",
+		["enter d5"] = "d5_ent_selector_hidden",
+		["enter d6"] = "d6_ent_selector_hidden",
+		["enter d7"] = "d7_ent_selector_hidden",
+		["enter d8"] = "d8_ent_selector_hidden"
 	}
-	for region_name, dungeon_entrance in pairs(slot_data["dungeon_entrances"]) do
-		Tracker:FindObjectForCode(dungeon_mapping[region_name]).CurrentStage = dungeon_dictionary[dungeon_entrance]
+	for dungeon_entrance, dungeon_interior in pairs(slot_data["dungeon_entrances"]) do
+		Tracker:FindObjectForCode(dungeon_mapping[dungeon_interior]).CurrentStage = dungeon_dictionary[dungeon_entrance]
 	end
 
 	-- deterministic gasha locations
 	if (slot_data["deterministic_gasha_locations"]) then
 		Tracker:FindObjectForCode("gashareq").CurrentStage = slot_data["deterministic_gasha_locations"]
+	end
+
+	-- business scrubs
+	if (slot_data["shuffle_business_scrubs"]) then
+		Tracker:FindObjectForCode("shufflescrubs").CurrentStage = slot_data["shuffle_business_scrubs"]
 	end
 
 	if (slot_data["starting_maps_compasses"] == 1) then
@@ -511,7 +518,11 @@ function onItem(index, item_id, item_name, player_number)
 				end
 			end
 		elseif v[2] == "consumable" then
-			obj.AcquiredCount = obj.AcquiredCount + obj.Increment
+			local mult = 1
+			if (v[3]) then
+				mult = v[3]
+			end
+			obj.AcquiredCount = obj.AcquiredCount + (obj.Increment * mult)
 			if (obj.AcquiredCount > obj.MaxCount) then
 				obj.AcquiredCount = obj.MaxCount
 			end

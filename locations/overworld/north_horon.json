@@ -42,10 +42,10 @@
 			{
 				"name": "North Horon Gasha Spot",
 				"visibility_rules": ["^$CanSeeGasha|1"],
-				"access_rules": ["^$CanReach|NorthHoronGasha"],
 				"sections": [
 					{
-						"name": "Near Impa"
+						"name": "Near Impa",
+						"access_rules": ["^$CanReach|NorthHoronGasha"]
 					},
 					{
 						"name": "Harvested",
@@ -128,10 +128,10 @@
 			{
 				"name": "Eyeglass Lake Gasha Spot",
 				"visibility_rules": ["^$CanSeeGasha|1"],
-				"access_rules": ["^$CanReach|EyeglassGasha"],
 				"sections": [
 					{
-						"name": "Near D5"
+						"name": "Near D5",
+						"access_rules": ["^$CanReach|EyeglassGasha"]
 					},
 					{
 						"name": "Harvested",

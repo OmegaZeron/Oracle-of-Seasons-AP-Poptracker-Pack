@@ -104,7 +104,7 @@
 				]
 			},
 			{
-				"name": "Eastern Suburbs: Chest in Spring Cave",
+				"name": "Chest in Spring Cave",
 				"sections": [
 					{
 						"access_rules": ["^$CanReach|SuburbsSpringCave"]
@@ -156,7 +156,7 @@
 				]
 			},
 			{
-				"name": "Woods of Winter: Chest on D2 Roof",
+				"name": "Chest on D2 Roof",
 				"sections": [
 					{
 						"access_rules": ["^$CanReach|UpperSnakesRemains"]

@@ -1,6 +1,12 @@
 {
 	"versions": [
 		{
+			"package_version": "1.5.1.2",
+			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/v.1.5.1.2/Oracle-of-Seasons-AP-Poptracker-Pack-v1.5.1.2.zip",
+			"sha256": "e20251f47cc264d3582dc904b1e67237053a2e41ba8f78a5a264243afbe2ad0d",
+			"changelog": ["Logic fixes, autotracking fixes, new key OoL and standing item Inspect additions, Rupee and Ore tracking"]
+		},
+		{
 			"package_version": "1.5.1.1",
 			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/v.1.5.1.1/Oracle-of-Seasons-AP-Poptracker-Pack-v1.5.1.1.zip",
 			"sha256": "806328aab7e9a2c4011d8d281275f470f306508645f6ce0953f745567a0d2cbb",

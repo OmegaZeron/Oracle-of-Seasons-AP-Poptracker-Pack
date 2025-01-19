@@ -203,8 +203,7 @@
 				"sections": [
 					{
                         "name": "Essence",
-						"access_rules": ["^$CanReach|Gohma"],
-						"hosted_item": "d4"
+						"access_rules": ["^$CanReach|Gohma"]
                     }
                 ],
 				"map_locations": [

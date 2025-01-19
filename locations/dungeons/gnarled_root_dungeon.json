@@ -160,9 +160,8 @@
 				"name": "Fertile Soil",
 				"sections": [
 					{
-						// "name": "Fertile Soil",
-						"access_rules": ["^$CanReach|GnarledEssence"],
-						"hosted_item": "d1"
+						"name": "Essence",
+						"access_rules": ["^$CanReach|GnarledEssence"]
 					}
 				],
 				"map_locations": [

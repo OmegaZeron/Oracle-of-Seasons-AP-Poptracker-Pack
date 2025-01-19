@@ -181,8 +181,7 @@
 				"sections": [
 					{
 						"name": "Essence",
-						"access_rules": ["^$CanReach|UnicornEssence"],
-						"hosted_item": "d5"
+						"access_rules": ["^$CanReach|UnicornEssence"]
 					}
 				],
 				"map_locations": [

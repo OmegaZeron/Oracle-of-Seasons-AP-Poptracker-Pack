@@ -212,8 +212,7 @@
 				"sections": [
 					{
 						"name": "Essence",
-						"access_rules": ["^$CanReach|CryptEssence"],
-						"hosted_item": "d7"
+						"access_rules": ["^$CanReach|CryptEssence"]
 					}
 				],
 				"map_locations": [

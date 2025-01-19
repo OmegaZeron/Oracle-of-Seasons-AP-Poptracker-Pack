@@ -177,8 +177,7 @@
 				"sections": [
 					{
                         "name": "Essence",
-						"access_rules": ["^$CanReach|KingDodongo"],
-						"hosted_item": "d2"
+						"access_rules": ["^$CanReach|KingDodongo"]
                     }
                 ],
 				"map_locations": [

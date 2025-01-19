@@ -7,8 +7,6 @@
 		"children": [
 			{
 				"name": "Cat in Tree",
-				"access_rules": ["^$CanReach|GnarledRootDoorstep"],
-				"visibility_rules": ["ShuffleDungeonOn"],
 				"sections": [
 					{
 						"name": "North Horon: Yelling Old Man Trade",
@@ -179,8 +177,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 400,
-						"y": 490
+						"x": 395,
+						"y": 485
 					}
 				]
 			},
@@ -266,7 +264,7 @@
 					},
 					{
 						"name": "Fertile Soil",
-						"ref": "Gnarled Root Dungeon/Fertile Soil/"
+						"ref": "Gnarled Root Dungeon/Fertile Soil/Essence"
 					}
 				],
 				"map_locations": [

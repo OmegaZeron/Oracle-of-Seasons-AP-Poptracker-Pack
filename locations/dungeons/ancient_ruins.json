@@ -202,8 +202,7 @@
 				"sections": [
 					{
                         "name": "Essence",
-						"access_rules": ["^$CanReach|Manhandla"],
-						"hosted_item": "d6"
+						"access_rules": ["^$CanReach|Manhandla"]
                     }
                 ],
 				"map_locations": [

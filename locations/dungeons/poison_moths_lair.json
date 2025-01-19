@@ -170,8 +170,7 @@
 				"sections": [
 					{
                         "name": "Essence",
-						"access_rules": ["^$CanReach|PoisonEssence"],
-						"hosted_item": "d3"
+						"access_rules": ["^$CanReach|PoisonEssence"]
                     }
                 ],
 				"map_locations": [

@@ -234,8 +234,7 @@
 				"sections": [
 					{
                         "name": "Essence",
-                        "access_rules": ["^$CanReach|MedusaHead"],
-						"hosted_item": "d8"
+                        "access_rules": ["^$CanReach|MedusaHead"]
                     }
                 ],
 				"map_locations": [

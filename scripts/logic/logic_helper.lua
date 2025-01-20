@@ -202,19 +202,17 @@ function CanHarvestGasha(count)
 		if (section == nil) then
 			return false
 		end
-		local total = section.ChestCount
-		local uncollected = section.AvailableChestCount
-		gashasRemaining = total - uncollected
+		gashasRemaining = gashasRemaining + section.AvailableChestCount
 	end
 	local gashasPlanted = GashasPlanted()
 	if (gashasPlanted < tonumber(count)) then
 		return false
 	end
 	local gashaSetting = Tracker:FindObjectForCode(GashaSetting)
-	if (gashaSetting == nil or gashasPlanted >= gashaSetting.CurrentStage) then
+	if (gashaSetting == nil or (16 - gashasRemaining) >= gashaSetting.CurrentStage) then
 		return false
 	end
-	return gashasPlanted > gashasRemaining
+	return gashasPlanted > (16 - gashasRemaining)
 end
 
 function HasPlanted(code)
@@ -223,7 +221,6 @@ function HasPlanted(code)
 		return false
 	end
 	---@cast section LocationSection
-	-- print("Gasha", section.ChestCount, section.AvailableChestCount)
 	return section.ChestCount - section.AvailableChestCount ~= 0
 end
 

@@ -454,10 +454,6 @@ function CanHitFarSwitch()
 	)
 end
 
-function CanOpenOldManDoor()
-	return CanUseSeeds() and Has(EmberSeeds)
-end
-
 function AreEnoughGoldenBeastsSlain()
 	local goldenBeastsSetting = Tracker:FindObjectForCode(GoldenBeastsSetting)
 	if (goldenBeastsSetting == nil or goldenBeastsSetting.CurrentStage > Tracker:ProviderCountForCode(GoldenBeasts)) then

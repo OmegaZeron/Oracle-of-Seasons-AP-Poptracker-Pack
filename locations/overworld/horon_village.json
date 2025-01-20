@@ -257,7 +257,7 @@
 				"sections": [
 					{
 						"name": "Horon Village: Old Man",
-						"access_rules": ["^$CanReach|HoronOldMan"]
+						"access_rules": ["^$CanReach|HoronVillageOldMan"]
 					}
 				],
 				"map_locations": [

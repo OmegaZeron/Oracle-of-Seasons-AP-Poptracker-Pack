@@ -132,8 +132,7 @@ DrLeftBackyard:connect_one_way(DrLeftBackyardChest, function()
 end)
 
 -- old man
-HoronVillage:connect_one_way_entrance(HoronVillageOldMan, CanOpenOldManDoor)
-HoronVillageOldMan:connect_one_way(HoronVillageOldManGift)
+HoronVillage:connect_one_way(HoronVillageOldMan, CanBurnTrees)
 
 -- maku tree
 HoronVillage:connect_one_way_entrance(MakuTree, function() return Has(WoodSword) end)

@@ -130,9 +130,7 @@ MoblinRoad:connect_one_way_entrance(Holly, function()
 		Has(WoodsOfWinterWinter)
 	)
 end)
-MoblinRoad:connect_one_way(SuburbsOldMan, function()
-	return CanUseSeeds() and Has(EmberSeeds)
-end)
+MoblinRoad:connect_one_way(SuburbsOldMan, CanBurnTrees)
 MoblinRoad:connect_one_way(SuburbsHP, function()
 	return Any(
 		Has(Flippers),

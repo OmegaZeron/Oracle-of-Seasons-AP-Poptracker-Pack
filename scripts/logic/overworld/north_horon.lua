@@ -32,8 +32,7 @@ MalonHouse:connect_one_way(MalonTrade, function()
 end)
 
 -- old man
-UpperNorthHoron:connect_one_way_entrance(NorthHoronOldMan, CanOpenOldManDoor)
-NorthHoronOldMan:connect_one_way(NorthHoronOldManGift)
+UpperNorthHoron:connect_one_way(NorthHoronOldMan, CanBurnTrees)
 
 -- red ring old man
 GnarledRootDoorstep:connect_one_way_entrance(RedRingOldMan, function()

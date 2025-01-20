@@ -89,7 +89,7 @@ UpperMtCucco:connect_one_way_entrance(TalonReward, function()
 		AccessibilityLevel.Inspect
 	)
 end)
-UpperMtCucco:connect_one_way_entrance(TalonChest, function() Has(Megaphone) end)
+UpperMtCucco:connect_one_way_entrance(TalonChest, function() return Has(Megaphone) end)
 UpperMtCucco:connect_one_way(MtCuccoDiveSpot, function() return Has(Flippers) end)
 UpperMtCucco:connect_one_way_entrance(DragonKeyhole, function()
 	return All(

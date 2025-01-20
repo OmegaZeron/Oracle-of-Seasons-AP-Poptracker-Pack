@@ -120,6 +120,10 @@ function CheckAccess(loc, exit)
 	local location = exit[1]
 	local rule = exit[2]
 	local access = rule()
+	if (access == nil) then
+		print("Error in rule for", location.name)
+		access = AccessibilityLevel.None
+	end
 	if access == true then
 		access = AccessibilityLevel.Normal
 	elseif access == false then

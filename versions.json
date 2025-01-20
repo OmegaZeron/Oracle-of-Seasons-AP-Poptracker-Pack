@@ -1,6 +1,12 @@
 {
 	"versions": [
 		{
+			"package_version": "1.5.1.3",
+			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/v.1.5.1.3/Oracle-of-Seasons-AP-Poptracker-Pack-v1.5.1.3.zip",
+			"sha256": "02005f61b26853441ea0c870728ea869a5c12ac53e8d01b7c6d8e4b55af2f50f",
+			"changelog": ["Fix Talon Chest rule error"]
+		},
+		{
 			"package_version": "1.5.1.2",
 			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/v.1.5.1.2/Oracle-of-Seasons-AP-Poptracker-Pack-v1.5.1.2.zip",
 			"sha256": "e20251f47cc264d3582dc904b1e67237053a2e41ba8f78a5a264243afbe2ad0d",

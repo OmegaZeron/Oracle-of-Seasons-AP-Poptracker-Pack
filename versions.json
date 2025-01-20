@@ -1,6 +1,12 @@
 {
 	"versions": [
 		{
+			"package_version": "1.5.1.4",
+			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/v.1.5.1.4/Oracle-of-Seasons-AP-Poptracker-Pack-v1.5.1.4.zip",
+			"sha256": "7765fbbf9d32bfaf9c9b14da23cd50189c885de0de5b5af0c17f6593b613d287",
+			"changelog": ["Fix Horon Village Old Man logic error"]
+		},
+		{
 			"package_version": "1.5.1.3",
 			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/v.1.5.1.3/Oracle-of-Seasons-AP-Poptracker-Pack-v1.5.1.3.zip",
 			"sha256": "02005f61b26853441ea0c870728ea869a5c12ac53e8d01b7c6d8e4b55af2f50f",

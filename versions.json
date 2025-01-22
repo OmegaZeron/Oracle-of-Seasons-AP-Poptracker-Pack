@@ -1,6 +1,12 @@
 {
 	"versions": [
 		{
+			"package_version": "1.5.1.5",
+			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/v.1.5.1.5/Oracle-of-Seasons-AP-Poptracker-Pack-v1.5.1.5.zip",
+			"sha256": "e8cdde154417e7ae6c21dbeb8675880956fde24232e0c68e83ef39ab7241f5f7",
+			"changelog": ["Fix Syrup Trade and Subrosia Mountain Cave logic error"]
+		},
+		{
 			"package_version": "1.5.1.4",
 			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/v.1.5.1.4/Oracle-of-Seasons-AP-Poptracker-Pack-v1.5.1.4.zip",
 			"sha256": "7765fbbf9d32bfaf9c9b14da23cd50189c885de0de5b5af0c17f6593b613d287",

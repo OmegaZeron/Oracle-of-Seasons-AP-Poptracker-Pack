@@ -157,7 +157,7 @@
 				"sections": [
 					{
 						"name": "Subrosia: Northwest Open Cave",
-						"access_rules": ["^$CanReach|SubrosiaMountainEast"]
+						"access_rules": ["^$CanReach|SubrosiaMountainWest"]
 					}
 				],
 				"map_locations": [

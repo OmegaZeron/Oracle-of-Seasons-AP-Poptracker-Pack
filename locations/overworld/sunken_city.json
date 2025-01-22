@@ -40,10 +40,10 @@
 			},
 			{
 				"name": "Syrup's Hut",
-				// "access_rules": ["^$CanReach|Syrup"],
 				"sections": [
 					{
-						"name": "Sunken City: Syrup Trade"
+						"name": "Sunken City: Syrup Trade",
+						"access_rules": ["^$CanReach|Syrup"]
 					},
 					{
 						"name": "Sunken City: Syrup Shop #1",

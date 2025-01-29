@@ -206,6 +206,10 @@
 				"access_rules": ["^$CanReach|CryptFoyer"],
 				"sections": [
 					{
+						"name": "Wild Ember Seeds (1F)",
+						"ref": "Explorer's Crypt/Wild Ember Seeds/1F"
+					},
+					{
 						"name": "Chest Behind Cracked Wall (1F)",
 						"ref": "Explorer's Crypt/Chest Behind Cracked Wall/1F"
 					},

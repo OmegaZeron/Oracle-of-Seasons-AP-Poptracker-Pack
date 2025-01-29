@@ -1,25 +1,3 @@
-EssenceKeys = {D1Essence, D2Essence, D3Essence, D4Essence, D5Essence, D6Essence, D7Essence, D8Essence}
-GashaIDToLocation = {
-	["Horon Village/Horon Village Gasha Spot/Near Mayor"] = HoronGasha,
-	["North Horon/North Horon Gasha Spot/Near Impa"] = NorthHoronGasha,
-	["North Horon/Eyeglass Lake Gasha Spot/Near D5"] = EyeglassGasha,
-	["Western Coast/Western Coast Gasha Spot/Near Graveyard"] = WesternCoastGasha,
-	["Eastern Suburbs/Eastern Suburbs Gasha Spot/Under Bushes"] = SuburbsGasha,
-	["Holodrum Plain/Holodrum Plain Island Gasha Spot/Under Bushes"] = HolodrumPlainIsland,
-	["Holodrum Plain/Lower Holodrum Plain Gasha Spot/Dig It Up"] = SouthHolodrumPlainGasha,
-	["Holodrum Plain/Onox Gasha Spot/Dig It Up"] = OnoxGasha,
-	["Spool Swamp/Spool Swamp North Gasha Spot/Near Keyhole"] = SwampNorthGashaSpot,
-	["Spool Swamp/Spool Swamp South Gasha Spot/Near Portal"] = SwampSouthGashaSpot,
-	["Sunken City/Sunken City Gasha Spot/Near Master Diver"] = SunkenGashaSpot,
-	["Mount Cucco/Mount Cucco Gasha Spot/Behind Mushrooms"] = MtCuccoGasha,
-	["Goron Mountain/Goron Mountain West Gasha Spot/Dig It Up"] = GoronGashaWest,
-	["Goron Mountain/Goron Mountain East Gasha Spot/Under Rocks"] = GoronGashaEast,
-	["Eastern Suburbs/Samasa Desert Gasha Spot/Surrounded by Cacti"] = SamasaDesertGasha,
-	["Tarm Ruins/Tarm Ruins Gasha Spot/Dig It Up"] = TarmGasha
-}
-JewelKeys = {RoundJewel, SquareJewel, PyramidJewel, XJewel}
-local lostWoodsDefault = {3, 2, 0, 1}
-
 function IsMediumPlus()
 	return Has(Medium) or
 	Has(Hard)
@@ -237,8 +215,9 @@ function OnSectionChanged(section)
 		local hiddenGasha = Tracker:FindObjectForCode(HiddenGasha)
 		---@cast hiddenGasha JsonItem
 		hiddenGasha.Active = not hiddenGasha.Active
+	elseif (WildSeeds[section.FullID] and section.AccessibilityLevel == AccessibilityLevel.Cleared) then
+		Tracker:FindObjectForCode(WildSeeds[section.FullID]).Active = true
 	end
-	
 end
 
 function GashasPlanted()
@@ -476,42 +455,42 @@ function MaxJump()
 end
 
 function Jump2()
-	if (MaxJump() >= 2) then
-		return true
-	end
-	if (MaxJump() >= 1) then
-		if (Has(Casual)) then
-			return AccessibilityLevel.SequenceBreak
-		end
-		return true
-	end
-	return false
+	return Any(
+		MaxJump() >= 2,
+		All(
+			MaxJump() >= 1,
+			Any(
+				IsMediumPlus(),
+				AccessibilityLevel.SequenceBreak
+			)
+		)
+	)
 end
 
 function Jump3()
-	if (MaxJump() >= 3) then
-		return true
-	end
-	if (MaxJump() >= 2) then
-		if (Has(Casual)) then
-			return AccessibilityLevel.SequenceBreak
-		end
-		return true
-	end
-	return false
+	return Any(
+		MaxJump() >= 3,
+		All(
+			MaxJump() >= 2,
+			Any(
+				IsMediumPlus(),
+				AccessibilityLevel.SequenceBreak
+			)
+		)
+	)
 end
 
 function Jump4()
-	if (MaxJump() >= 4) then
-		return true
-	end
-	if (MaxJump() >= 3) then
-		if (Has(Casual)) then
-			return AccessibilityLevel.SequenceBreak
-		end
-		return true
-	end
-	return false
+	return Any(
+		MaxJump() >= 4,
+		All(
+			MaxJump() >= 3,
+			Any(
+				IsMediumPlus(),
+				AccessibilityLevel.SequenceBreak
+			)
+		)
+	)
 end
 
 function Jump5()
@@ -519,13 +498,13 @@ function Jump5()
 end
 
 function Jump6()
-	if (MaxJump() < 5) then
-		return false
-	end
-	if (Has(Casual)) then
-		return AccessibilityLevel.SequenceBreak
-	end
-	return true
+	return All(
+		MaxJump() >= 5,
+		Any(
+			IsMediumPlus(),
+			AccessibilityLevel.SequenceBreak
+		)
+	)
 end
 
 function JumpLiquid2()
@@ -781,19 +760,6 @@ function CanKillSpinyBeetle()
 	)
 end
 
-function CanKillWizzrobe()
-	local minAccess = CanNormalKill()
-	if (Has(Bombs40)) then
-		if (IsMediumPlus()) then
-			return true
-		end
-		if (minAccess == 0 or minAccess == false) then
-			minAccess = AccessibilityLevel.SequenceBreak
-		end
-	end
-	return minAccess
-end
-
 function CanFarmRupees()
 	return Has(Shovel) or HasSword()
 end
@@ -807,9 +773,10 @@ function HasRupees(count)
 	local bonusRupees = 0
 	local oolRupees = 0
 
+	-- rupee rooms
 	local snakeRupees = CanReach(SnakeRupeeRoom)
 	local snakeRupeeAmount = 150
-	if (snakeRupees == AccessibilityLevel.SequenceBreak) then
+	if (snakeRupees == AccessibilityLevel.SequenceBreak or (snakeRupees == AccessibilityLevel.Normal and not IsMediumPlus())) then
 		oolRupees = oolRupees + snakeRupeeAmount
 	elseif (snakeRupees == AccessibilityLevel.Normal) then
 		bonusRupees = bonusRupees + snakeRupeeAmount
@@ -817,14 +784,16 @@ function HasRupees(count)
 
 	local ancientRupees = CanReach(AncientRupeeRoom)
 	local ancientRupeeAmount = 90
-	if (ancientRupees == AccessibilityLevel.SequenceBreak) then
+	if (ancientRupees == AccessibilityLevel.SequenceBreak or (ancientRupees == AccessibilityLevel.Normal and not IsMediumPlus())) then
 		oolRupees = oolRupees + ancientRupeeAmount
 	elseif (ancientRupees == AccessibilityLevel.Normal) then
 		bonusRupees = bonusRupees + ancientRupeeAmount
 	end
 
 	return Any(
+		-- already have the right amount of rupees
 		rupees >= count,
+		-- shovel is infinite farm, and expected in hard
 		All(
 			Has(Shovel),
 			Any(
@@ -832,6 +801,7 @@ function HasRupees(count)
 				AccessibilityLevel.SequenceBreak
 			)
 		),
+		-- D2 and D6 rupee rooms are medium+ only
 		All(
 			Any(
 				IsMediumPlus(),
@@ -844,10 +814,6 @@ function HasRupees(count)
 			rupees + bonusRupees + oolRupees >= count
 		)
 	)
-end
-
-function CanPayScrub()
-	return HasRupees(150)
 end
 
 function CanFarmOreChunks()
@@ -913,7 +879,7 @@ local indexToSeason = {
 	[1] = Summer,
 	[2] = Autumn,
 	[3] = Winter,
-	[4] = "unknown"
+	[4] = UnknownSeason
 }
 function CanLostWoods()
 	if (Has(LostWoodsVanilla)) then
@@ -926,7 +892,7 @@ function CanLostWoods()
 	end
 	for i=1, 4 do
 		local season = indexToSeason[Tracker:FindObjectForCode("lost_woods_"..i).CurrentStage]
-		if (season == "unknown" or not Has(season)) then
+		if (season == UnknownSeason or not Has(season)) then
 			return false
 		end
 	end
@@ -943,7 +909,7 @@ function CanPedestal()
 	end
 	for i=1, 4 do
 		local season = indexToSeason[Tracker:FindObjectForCode("pedestal_"..i).CurrentStage]
-		if (season == "unknown" or not Has(season)) then
+		if (season == UnknownSeason or not Has(season)) then
 			return false
 		end
 	end
@@ -982,78 +948,10 @@ function D8KeyCount(count)
 	return Tracker:ProviderCountForCode(D8SmallKey) >= count or Has(D8MasterKey)
 end
 
--- function d1clear()
--- 	return (Has("small_keysanity_off") or (Has("small_keysanity_on") and (ClearD1Keys() or Has("d1_master_key")))) and 
--- 	(Has("boss_keysanity_off") or (Has("boss_keysanity_on") and (Has("d1bk") or (Has("d1_master_key") and Has("master_keys_both")))))
--- 	and CanUseSeeds() and Has(EmberSeeds) and 
--- 	Has("bombs") and kill_goriyabros() and CanArmorKill()
--- end
-
--- function d2clear()
--- 	return ((Has("small_keysanity_off") or (Has("small_keysanity_on") and (ClearD2Keys() or Has("d2_master_key")))) and (Has("boss_keysanity_off") or (Has("boss_keysanity_on") and (Has("d2bk") or (Has("d2_master_key") and Has("master_keys_both"))))))  
--- 	and CanUseSeeds() and Has(EmberSeeds) and 
--- 	Has("bracelet") and Has("bombs")
--- end
-
--- function d3clear()
--- 	return ((Has("small_keysanity_off") or (Has("small_keysanity_on") and (ClearD3Keys() or Has("d3_master_key")))) and (Has("boss_keysanity_off") or (Has("boss_keysanity_on") and (Has("d3bk") or (Has("d3_master_key") and Has("master_keys_both"))))))  
--- 	and CanKillSpinyBeetle() and MaxJump() >= 1 and 
--- 	Has("bombs") and Has("bracelet") and 
--- 	kill_omuai() and kill_mothula()
--- end
-
--- function d4clear()
--- 	return ((Has("small_keysanity_off") or (Has("small_keysanity_on") and (ClearD4Keys() or Has("d4_master_key")))) and (Has("boss_keysanity_off") or (Has("boss_keysanity_on") and (Has("d4bk") or (Has("d4_master_key") and Has("master_keys_both"))))))  
--- 	and Has("flippers") and Has("bracelet") and 
--- 	Has("bombs") and MaxJump() >= 1 and 
--- 	Has(Slingshot) and Has(EmberSeeds) and 
--- 	kill_agunima() and kill_gohma()
--- end
-
--- function d5clear()
--- 	return ((Has("small_keysanity_off") or (Has("small_keysanity_on") and (ClearD5Keys() or Has("d5_master_key")))) and (Has("boss_keysanity_off") or (Has("boss_keysanity_on") and (Has("d5bk") or (Has("d5_master_key") and Has("master_keys_both"))))))  
--- 	and Has("magnet") and kill_syger() and 
--- 	MaxJump() >= 1 and (MaxJump() >= 4 or Has("flippers"))
--- end
-
--- function d6clear()
--- 	return ((Has("small_keysanity_off") or (Has("small_keysanity_on") and (ClearD6Keys() or Has("d6_master_key")))) and (Has("boss_keysanity_off") or (Has("boss_keysanity_on") and (Has("d6bk") or (Has("d6_master_key") and Has("master_keys_both"))))))  
--- 	and Has("magnet") and MaxJump() >= 1 and
--- 	Has("bombs") and Has("magicboomerang") and
--- 	Has(Slingshot) and Has(EmberSeeds) and destroy_crystal() and
--- 	CanSwordPunchKill() and kill_manhandla()
--- end
-
--- function CanClearD7()
--- 	return ((Has("small_keysanity_off") or (Has("small_keysanity_on") and (ClearD7Keys() or Has("d7_master_key")))) and (Has("boss_keysanity_off") or (Has("boss_keysanity_on") and (Has("d7bk") or (Has("d7_master_key") and Has("master_keys_both"))))))  
--- 	and Jump4() and Has("bombs") and Has("bracelet") and
--- 	Has("satchel1") and Has("pegasusseeds") and
--- 	Has(Slingshot) and Has(EmberSeeds) and Has("magnet") and
--- 	Has("flippers") and kill_magunesu() and
--- 	kill_poe() and kill_gleeok()
--- end
-
--- function d8clear()
--- 	return ((Has("small_keysanity_off") or (Has("small_keysanity_on") and (ClearD8Keys() or Has("d8_master_key")))) and (Has("boss_keysanity_off") or (Has("boss_keysanity_on") and (Has("d8bk") or (Has("d8_master_key") and Has("master_keys_both"))))))  
--- 	and Has("slingshot2") and MaxJump() >= 3 and
--- 	Has("magnet") and Has("bombs") and
--- 	Has(EmberSeeds) and Has("bracelet") and kill_magunesu() and
--- 	(Has("magicboomerang") or MaxJump() >= 4) and kill_polsvoice_pit() and 
--- 	torches_d8() and kill_medusahead() 
--- end
-
-function checkRequirements(reference, check_count)
-	local reqCount = Tracker:ProviderCountForCode(reference)
-	local count = Tracker:ProviderCountForCode(check_count)
-  
-	if count >= reqCount then
-		return true
-	else
-		return false
-	end
-end
-
 function dungeon_settings()
+	if (not LOADED) then
+		return
+	end
 	local dungeon_list = {"d0","d1","d2","d3","d4","d5","d6","d7","d8"}
 	if Tracker:FindObjectForCode("dungeonshuffle").CurrentStage == 0 then
 		for index, dungeon in pairs(dungeon_list) do
@@ -1083,6 +981,9 @@ function display_dungeons()
 end
 
 function seasons_settings()
+	if (not LOADED) then
+		return
+	end
 	local region_list = {"north_horon", "suburbs", "wow", "plain", "swamp", "sunken", "lost_woods", "tarm_ruins", "coast", "remains"}
 	if Tracker:FindObjectForCode("default_seasons").CurrentStage == 0 then
 		Tracker:FindObjectForCode("north_horon_season").CurrentStage = 3
@@ -1154,24 +1055,12 @@ function display_seasons()
 			Tracker:FindObjectForCode("remains_season").CurrentStage = Tracker:FindObjectForCode("remains_season_hidden").CurrentStage
 		end
 	end
-	-- if Tracker:FindObjectForCode("default_seasons").CurrentStage == 2 then
-	-- 	if Tracker:FindObjectForCode("fill_seasons").CurrentStage == 1 then
-	-- 		Tracker:FindObjectForCode("north_horon_season").CurrentStage = Tracker:FindObjectForCode("north_horon_season_hidden").CurrentStage
-	-- 		Tracker:FindObjectForCode("horon_village_season").CurrentStage = Tracker:FindObjectForCode("horon_village_season_hidden").CurrentStage
-	-- 		Tracker:FindObjectForCode("suburbs_season").CurrentStage = Tracker:FindObjectForCode("suburbs_season_hidden").CurrentStage
-	-- 		Tracker:FindObjectForCode("wow_season").CurrentStage = Tracker:FindObjectForCode("wow_season_hidden").CurrentStage
-	-- 		Tracker:FindObjectForCode("plain_season").CurrentStage = Tracker:FindObjectForCode("plain_season_hidden").CurrentStage
-	-- 		Tracker:FindObjectForCode("swamp_season").CurrentStage = Tracker:FindObjectForCode("swamp_season_hidden").CurrentStage
-	-- 		Tracker:FindObjectForCode("sunken_season").CurrentStage = Tracker:FindObjectForCode("sunken_season_hidden").CurrentStage
-	-- 		Tracker:FindObjectForCode("lost_woods_season").CurrentStage = Tracker:FindObjectForCode("lost_woods_season_hidden").CurrentStage
-	-- 		Tracker:FindObjectForCode("tarm_ruins_season").CurrentStage = Tracker:FindObjectForCode("tarm_ruins_season_hidden").CurrentStage
-	-- 		Tracker:FindObjectForCode("coast_season").CurrentStage = Tracker:FindObjectForCode("coast_season_hidden").CurrentStage
-	-- 		Tracker:FindObjectForCode("remains_season").CurrentStage = Tracker:FindObjectForCode("remains_season_hidden").CurrentStage
-	-- 	end
-	-- end
 end
 
 function vanilla_portals()
+	if (not LOADED) then
+		return
+	end
 	local hol_portals = {"suburbs","swamp","lake","mtcucco","horon","remains","upremains"}
 	local sub_portals = {"mountain","market","furnace","village","pirates","volcano","d8"}
 	if Tracker:FindObjectForCode("portalshuffle").CurrentStage == 0 then
@@ -1203,9 +1092,12 @@ function display_portals()
 end
 
 function display_lost_woods()
+	if (not LOADED) then
+		return
+	end
 	if (Has(LostWoodsVanilla)) then
 		for i=1, 4 do
-			Tracker:FindObjectForCode("lost_woods_"..i).CurrentStage = lostWoodsDefault[i]
+			Tracker:FindObjectForCode("lost_woods_"..i).CurrentStage = LostWoodsDefault[i]
 			if (i < 4) then
 				Tracker:FindObjectForCode("lost_woods_d_"..i).CurrentStage = i - 1
 			end
@@ -1220,9 +1112,12 @@ function display_lost_woods()
 	end
 end
 function display_pedestal()
+	if (not LOADED) then
+		return
+	end
 	if (Has(PedestalVanilla)) then
 		for i=1, 4 do
-			Tracker:FindObjectForCode("pedestal_"..i).CurrentStage = lostWoodsDefault[i]
+			Tracker:FindObjectForCode("pedestal_"..i).CurrentStage = LostWoodsDefault[i]
 			if (i < 4) then
 				Tracker:FindObjectForCode("pedestal_d_"..i).CurrentStage = 0
 			end
@@ -1237,6 +1132,11 @@ function display_pedestal()
 	end
 end
 
+function OnFrameHandler()
+	ScriptHost:RemoveOnFrameHandler("load handler")
+	LOADED = true
+end
+
 ScriptHost:AddWatchForCode("dungeon settings handler", "dungeonshuffle", dungeon_settings)
 ScriptHost:AddWatchForCode("dungeons handler", "fill_dungeons", display_dungeons)
 ScriptHost:AddWatchForCode("seasons settings handler", "default_seasons", seasons_settings)
@@ -1245,4 +1145,5 @@ ScriptHost:AddWatchForCode("portal settings handler", "portalshuffle", vanilla_p
 ScriptHost:AddWatchForCode("portal handler", "fill_portals", display_portals)
 ScriptHost:AddWatchForCode("lost woods handler", "shuffle_lost_woods", display_lost_woods)
 ScriptHost:AddWatchForCode("pedestal handler", "shuffle_pedestal", display_pedestal)
-ScriptHost:AddOnLocationSectionChangedHandler("gashachanged", OnSectionChanged)
+ScriptHost:AddOnLocationSectionChangedHandler("section changed handler", OnSectionChanged)
+ScriptHost:AddOnFrameHandler("load handler", OnFrameHandler)

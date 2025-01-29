@@ -14,7 +14,12 @@ SnakeMoblinRopeFight:connect_one_way_entrance(SnakeRupeeRoom, function() return 
 SnakeMoblinRopeFight:connect_one_way_entrance(SnakeBladeTraps, CanNormalKill)
 SnakeBladeTraps:connect_one_way_entrance(SnakeMoblinRopeFight)
 SnakeBladeTraps:connect_two_ways_entrance(SnakeAltEntrance, function() return Has(Bracelet) end)
-SnakeAltEntrance:connect_one_way(SnakeScrub, CanPayScrub)
+SnakeAltEntrance:connect_one_way(SnakeScrub, function()
+	return Any(
+		HasRupees(ShopPrices[D2ScrubPrice]),
+		AccessibilityLevel.Inspect
+	)
+end, {SnakeRupeeRoom, AncientRupeeRoom})
 SnakeAltEntrance:connect_one_way(SnakeBombPuzzle, function()
 	return All(
 		CanDestroyBush(),

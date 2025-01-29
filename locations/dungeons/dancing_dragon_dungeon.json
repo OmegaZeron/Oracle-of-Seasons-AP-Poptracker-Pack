@@ -151,6 +151,37 @@
 				]
 			},
 			{
+				"name": "Wild Ember Seeds",
+				"sections": [
+					{
+                        "name": "1F",
+						"access_rules": ["^$CanReach|DancingWildEmbers"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "dancing_dragon_dungeon2",
+						"x": 458,
+						"y": 248
+					},
+					{
+						"map": "dancing_dragon_dungeon2",
+						"x": 340,
+						"y": 248
+					},
+					{
+						"map": "dancing_dragon_dungeon2",
+						"x": 458,
+						"y": 330
+					},
+					{
+						"map": "dancing_dragon_dungeon2",
+						"x": 340,
+						"y": 330
+					}
+				]
+			},
+			{
 				"name": "Crumbling Room Chest",
 				"sections": [
 					{

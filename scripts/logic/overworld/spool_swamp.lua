@@ -31,7 +31,12 @@ FloodgateLever:connect_one_way_entrance(FloodgateKeyhole, function()
 		)
 	)
 end)
-FloodgateKeyhole:connect_one_way(SwampScrub, CanPayScrub)
+FloodgateKeyhole:connect_one_way(SwampScrub, function()
+	return Any(
+		HasRupees(ShopPrices[SpoolSwampScrubPrice]),
+		AccessibilityLevel.Inspect
+	)
+end, {SnakeRupeeRoom, AncientRupeeRoom})
 FloodgateKeyhole:connect_one_way(SwampNorthGashaSpot, CanPlantGasha)
 FloodgateKeyhole:connect_one_way_entrance(SpoolSwampStump, function() return Has(FloodgateKey) end)
 SpoolSwampStump:connect_one_way_entrance(PoisonMothLair, function()

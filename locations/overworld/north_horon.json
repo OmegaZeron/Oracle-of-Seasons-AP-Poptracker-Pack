@@ -304,8 +304,12 @@
 						"ref": "Unicorn's Cave/Terrace Chest/"
 					},
 					{
-						"name": "Unicorn's Cave: Armos Puzzle Room Chest",
-						"ref": "Unicorn's Cave/Armos Puzzle Room Chest/"
+						"name": "Unicorn's Cave: Armos Puzzle Room Item",
+						"ref": "Unicorn's Cave/Armos Puzzle Room/Item"
+					},
+					{
+						"name": "Unicorn's Cave: Armos Puzzle Room Ember Seeds",
+						"ref": "Unicorn's Cave/Armos Puzzle Room/Ember Seeds"
 					},
 					{
 						"name": "Unicorn's Cave: Magnet Spinner Chest",

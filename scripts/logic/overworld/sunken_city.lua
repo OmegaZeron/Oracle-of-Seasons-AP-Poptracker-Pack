@@ -66,9 +66,24 @@ SunkenCity:connect_one_way_entrance(Syrup, function()
 		)
 	)
 end, {SunkenDimitri})
-Syrup:connect_one_way(Syrup1, function() return HasRupees(500) end, {SnakeRupeeRoom, AncientRupeeRoom})
-Syrup:connect_one_way(Syrup2, function() return HasRupees(500) end, {SnakeRupeeRoom, AncientRupeeRoom})
-Syrup:connect_one_way(Syrup3, function() return HasRupees(500) end, {SnakeRupeeRoom, AncientRupeeRoom})
+Syrup:connect_one_way(Syrup1, function()
+	return Any(
+		HasRupees(ShopPrices[SyrupShop1Price]),
+		AccessibilityLevel.Inspect
+	)
+end, {SnakeRupeeRoom, AncientRupeeRoom})
+Syrup:connect_one_way(Syrup2, function()
+	return Any(
+		HasRupees(ShopPrices[SyrupShop2Price]),
+		AccessibilityLevel.Inspect
+	)
+end, {SnakeRupeeRoom, AncientRupeeRoom})
+Syrup:connect_one_way(Syrup3, function()
+	return Any(
+		HasRupees(ShopPrices[SyrupShop3Price]),
+		AccessibilityLevel.Inspect
+	)
+end, {SnakeRupeeRoom, AncientRupeeRoom})
 SunkenCity:connect_one_way_entrance(LowerMtCucco, function()
 	return All(
 		Has(Flippers),

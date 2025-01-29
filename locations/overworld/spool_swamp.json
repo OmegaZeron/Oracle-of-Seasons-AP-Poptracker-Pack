@@ -76,7 +76,7 @@
 				]
 			},
 			{
-				"name": "Spool Swamp Business Scrub",
+				"name": "Business Scrub",
 				"visibility_rules": ["shufflescrubson"],
 				"sections": [
 					{

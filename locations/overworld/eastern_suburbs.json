@@ -171,9 +171,10 @@
 				]
 			},
 			{
-				"name": "Woods of Winter: Mushroom Cave",
+				"name": "Mushroom Cave",
 				"sections": [
 					{
+						"name": "Woods of Winter",
 						"access_rules": ["^$CanReach|WoodsOfWinterMushroomCaveChest"]
 					}
 				],
@@ -236,7 +237,7 @@
 				"name": "Holly's House",
 				"sections": [
 					{
-						"name": "Woods of Winter: Holly's Gift",
+						"name": "Holly's Gift",
 						"access_rules": ["^$CanReach|Holly"]
 					}
 				],
@@ -252,7 +253,6 @@
 				"name": "Waterfall Cave",
 				"sections": [
 					{
-						"name": "Woods of Winter: Chest in Waterfall Cave",
 						"access_rules": ["^$CanReach|MoblinRoadWaterfallCaveChest"]
 					}
 				],

@@ -10,7 +10,7 @@ COLLECTED_HINTS = {}
 
 function onClear(slot_data)
 	if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
-		print(string.format("called onClear, slot_data:\n%s", dump_table(slot_data)))
+		print(string.format("called onClear, slot_data:\n%s", dump(slot_data)))
 	end
 	SLOT_DATA = slot_data
 	CUR_INDEX = -1
@@ -137,343 +137,97 @@ function onClear(slot_data)
 		Tracker:FindObjectForCode("natzu_animal").CurrentStage = 2
 	end
 
-	if slot_data["default_seasons_option"] == "vanilla" then
-		Tracker:FindObjectForCode("default_seasons").CurrentStage = 0
-	elseif slot_data["default_seasons_option"] == "randomized" then
-		Tracker:FindObjectForCode("default_seasons").CurrentStage = 1
-	elseif slot_data["default_seasons_option"] == "random_singularity" then
-		Tracker:FindObjectForCode("default_seasons").CurrentStage = 2
-	elseif slot_data["default_seasons_option"] == "spring_singularity" then
-		Tracker:FindObjectForCode("default_seasons").CurrentStage = 3
-	elseif slot_data["default_seasons_option"] == "summer_singularity" then
-		Tracker:FindObjectForCode("default_seasons").CurrentStage = 4
-	elseif slot_data["default_seasons_option"] == "autumn_singularity" then
-		Tracker:FindObjectForCode("default_seasons").CurrentStage = 5
-	elseif slot_data["default_seasons_option"] == "winter_singularity" then
-		Tracker:FindObjectForCode("default_seasons").CurrentStage = 6
-	end
+	Tracker:FindObjectForCode("default_seasons").CurrentStage = DefaultSeasonOptionMapping[slot_data["default_seasons_option"]]
+	-- if slot_data["default_seasons_option"] == "vanilla" then
+	-- 	Tracker:FindObjectForCode("default_seasons").CurrentStage = 0
+	-- elseif slot_data["default_seasons_option"] == "randomized" then
+	-- 	Tracker:FindObjectForCode("default_seasons").CurrentStage = 1
+	-- elseif slot_data["default_seasons_option"] == "random_singularity" then
+	-- 	Tracker:FindObjectForCode("default_seasons").CurrentStage = 2
+	-- elseif slot_data["default_seasons_option"] == "spring_singularity" then
+	-- 	Tracker:FindObjectForCode("default_seasons").CurrentStage = 3
+	-- elseif slot_data["default_seasons_option"] == "summer_singularity" then
+	-- 	Tracker:FindObjectForCode("default_seasons").CurrentStage = 4
+	-- elseif slot_data["default_seasons_option"] == "autumn_singularity" then
+	-- 	Tracker:FindObjectForCode("default_seasons").CurrentStage = 5
+	-- elseif slot_data["default_seasons_option"] == "winter_singularity" then
+	-- 	Tracker:FindObjectForCode("default_seasons").CurrentStage = 6
+	-- end
 
 	for region_name, season_id in pairs(slot_data["default_seasons"]) do
-
-		if (region_name == "EYEGLASS_LAKE") then
-			Tracker:FindObjectForCode("north_horon_season_hidden").CurrentStage = season_id
+		if (region_name ~= "HORON_VILLAGE" or Tracker:FindObjectForCode("horon_village_season_shuffle").CurrentStage == 1) then
+			Tracker:FindObjectForCode(RegionToSeasonMapping[region_name]).CurrentStage = season_id
 		end
-		if (region_name == "EASTERN_SUBURBS") then
-			Tracker:FindObjectForCode("suburbs_season_hidden").CurrentStage = season_id
-		end
-		if (region_name == "WOODS_OF_WINTER") then
-			Tracker:FindObjectForCode("wow_season_hidden").CurrentStage = season_id
-		end
-		if (region_name == "HOLODRUM_PLAIN") then
-			Tracker:FindObjectForCode("plain_season_hidden").CurrentStage = season_id
-		end
-		if (region_name == "SPOOL_SWAMP") then
-			Tracker:FindObjectForCode("swamp_season_hidden").CurrentStage = season_id
-		end
-		if (region_name == "SUNKEN_CITY") then
-			Tracker:FindObjectForCode("sunken_season_hidden").CurrentStage = season_id
-		end
-		if (region_name == "LOST_WOODS") then
-			Tracker:FindObjectForCode("lost_woods_season_hidden").CurrentStage = season_id
-		end
-		if (region_name == "TARM_RUINS") then
-			Tracker:FindObjectForCode("tarm_ruins_season_hidden").CurrentStage = season_id
-		end
-		if (region_name == "WESTERN_COAST") then
-			Tracker:FindObjectForCode("coast_season_hidden").CurrentStage = season_id
-		end
-		if (region_name == "TEMPLE_REMAINS") then
-			Tracker:FindObjectForCode("remains_season_hidden").CurrentStage = season_id
-		end
-		if (Tracker:FindObjectForCode("horon_village_season_shuffle").CurrentStage == 1 and region_name == "HORON_VILLAGE") then
-			Tracker:FindObjectForCode("horon_village_season_hidden").CurrentStage = season_id
-		end
+		-- if (region_name == "EYEGLASS_LAKE") then
+		-- 	Tracker:FindObjectForCode("north_horon_season_hidden").CurrentStage = season_id
+		-- end
+		-- if (region_name == "EASTERN_SUBURBS") then
+		-- 	Tracker:FindObjectForCode("suburbs_season_hidden").CurrentStage = season_id
+		-- end
+		-- if (region_name == "WOODS_OF_WINTER") then
+		-- 	Tracker:FindObjectForCode("wow_season_hidden").CurrentStage = season_id
+		-- end
+		-- if (region_name == "HOLODRUM_PLAIN") then
+		-- 	Tracker:FindObjectForCode("plain_season_hidden").CurrentStage = season_id
+		-- end
+		-- if (region_name == "SPOOL_SWAMP") then
+		-- 	Tracker:FindObjectForCode("swamp_season_hidden").CurrentStage = season_id
+		-- end
+		-- if (region_name == "SUNKEN_CITY") then
+		-- 	Tracker:FindObjectForCode("sunken_season_hidden").CurrentStage = season_id
+		-- end
+		-- if (region_name == "LOST_WOODS") then
+		-- 	Tracker:FindObjectForCode("lost_woods_season_hidden").CurrentStage = season_id
+		-- end
+		-- if (region_name == "TARM_RUINS") then
+		-- 	Tracker:FindObjectForCode("tarm_ruins_season_hidden").CurrentStage = season_id
+		-- end
+		-- if (region_name == "WESTERN_COAST") then
+		-- 	Tracker:FindObjectForCode("coast_season_hidden").CurrentStage = season_id
+		-- end
+		-- if (region_name == "TEMPLE_REMAINS") then
+		-- 	Tracker:FindObjectForCode("remains_season_hidden").CurrentStage = season_id
+		-- end
+		-- if (Tracker:FindObjectForCode("horon_village_season_shuffle").CurrentStage == 1 and region_name == "HORON_VILLAGE") then
+		-- 	Tracker:FindObjectForCode("horon_village_season_hidden").CurrentStage = season_id
+		-- end
 	end
 
-	local portal_dictionary = {
-		['eastern suburbs portal'] = {
-			['volcanoes east portal'] = 1,
-			['subrosia market portal'] = 2,
-			['great furnace portal'] = 3,
-			['strange brothers portal'] = 4,
-			['house of pirates portal'] = 5,
-			['volcanoes west portal'] = 6,
-			['d8 entrance portal'] = 7,
-			['spool swamp portal'] = 8,
-			['eyeglass lake portal'] = 9,
-			['mt. cucco portal'] = 12,
-			['horon village portal'] = 11,
-			['temple remains lower portal'] = 12,
-			['temple remains upper portal'] = 13
-		},
-		['spool swamp portal'] = {
-			['volcanoes east portal'] = 1,
-			['subrosia market portal'] = 2,
-			['great furnace portal'] = 3,
-			['strange brothers portal'] = 4,
-			['house of pirates portal'] = 5,
-			['volcanoes west portal'] = 6,
-			['d8 entrance portal'] = 7,
-			['eastern suburbs portal'] = 8,
-			['eyeglass lake portal'] = 9,
-			['mt. cucco portal'] = 12,
-			['horon village portal'] = 11,
-			['temple remains lower portal'] = 12,
-			['temple remains upper portal'] = 13
-		},
-		['eyeglass lake portal'] = {
-			['volcanoes east portal'] = 1,
-			['subrosia market portal'] = 2,
-			['great furnace portal'] = 3,
-			['strange brothers portal'] = 4,
-			['house of pirates portal'] = 5,
-			['volcanoes west portal'] = 6,
-			['d8 entrance portal'] = 7,
-			['eastern suburbs portal'] = 8,
-			['spool swamp portal'] = 9,
-			['mt. cucco portal'] = 12,
-			['horon village portal'] = 11,
-			['temple remains lower portal'] = 12,
-			['temple remains upper portal'] = 13
-		},
-		['horon village portal'] = {
-			['volcanoes east portal'] = 1,
-			['subrosia market portal'] = 2,
-			['great furnace portal'] = 3,
-			['strange brothers portal'] = 4,
-			['house of pirates portal'] = 5,
-			['volcanoes west portal'] = 6,
-			['d8 entrance portal'] = 7,
-			['eastern suburbs portal'] = 8,
-			['spool swamp portal'] = 9,
-			['eyeglass lake portal'] = 10,
-			['mt. cucco portal'] = 11,
-			['temple remains lower portal'] = 12,
-			['temple remains upper portal'] = 13
-		},
-		['mt. cucco portal'] = {
-			['volcanoes east portal'] = 1,
-			['subrosia market portal'] = 2,
-			['great furnace portal'] = 3,
-			['strange brothers portal'] = 4,
-			['house of pirates portal'] = 5,
-			['volcanoes west portal'] = 6,
-			['d8 entrance portal'] = 7,
-			['eastern suburbs portal'] = 8,
-			['spool swamp portal'] = 9,
-			['eyeglass lake portal'] = 10,
-			['horon village portal'] = 11,
-			['temple remains lower portal'] = 12,
-			['temple remains upper portal'] = 13
-		},
-		['temple remains lower portal'] = {
-			['volcanoes east portal'] = 1,
-			['subrosia market portal'] = 2,
-			['great furnace portal'] = 3,
-			['strange brothers portal'] = 4,
-			['house of pirates portal'] = 5,
-			['volcanoes west portal'] = 6,
-			['d8 entrance portal'] = 7,
-			['eastern suburbs portal'] = 8,
-			['spool swamp portal'] = 9,
-			['eyeglass lake portal'] = 10,
-			['mt. cucco portal'] = 11,
-			['horon village portal'] = 12,
-			['temple remains upper portal'] = 13
-		},
-		['temple remains upper portal'] = {
-			['volcanoes east portal'] = 1,
-			['subrosia market portal'] = 2,
-			['great furnace portal'] = 3,
-			['strange brothers portal'] = 4,
-			['house of pirates portal'] = 5,
-			['volcanoes west portal'] = 6,
-			['d8 entrance portal'] = 7,
-			['eastern suburbs portal'] = 8,
-			['spool swamp portal'] = 9,
-			['eyeglass lake portal'] = 10,
-			['mt. cucco portal'] = 11,
-			['horon village portal'] = 12,
-			['temple remains lower portal'] = 13
-		},
-		['volcanoes east portal'] = {
-			['subrosia market portal'] = 0,
-			['great furnace portal'] = 1,
-			['strange brothers portal'] = 2,
-			['house of pirates portal'] = 3,
-			['volcanoes west portal'] = 4,
-			['d8 entrance portal'] = 5,
-			['eastern suburbs portal'] = 7,
-			['spool swamp portal'] = 8,
-			['eyeglass lake portal'] = 9,
-			['mt. cucco portal'] = 10,
-			['horon village portal'] = 11,
-			['temple remains lower portal'] = 12,
-			['temple remains upper portal'] = 13
-		},
-		['subrosia market portal'] = {
-			['volcanoes east portal'] = 0,
-			['great furnace portal'] = 1,
-			['strange brothers portal'] = 2,
-			['house of pirates portal'] = 3,
-			['volcanoes west portal'] = 4,
-			['d8 entrance portal'] = 5,
-			['eastern suburbs portal'] = 7,
-			['spool swamp portal'] = 8,
-			['eyeglass lake portal'] = 9,
-			['mt. cucco portal'] = 10,
-			['horon village portal'] = 11,
-			['temple remains lower portal'] = 12,
-			['temple remains upper portal'] = 13
-		},
-		['great furnace portal'] = {
-			['volcanoes east portal'] = 0,
-			['subrosia market portal'] = 1,
-			['strange brothers portal'] = 2,
-			['house of pirates portal'] = 3,
-			['volcanoes west portal'] = 4,
-			['d8 entrance portal'] = 5,
-			['eastern suburbs portal'] = 7,
-			['spool swamp portal'] = 8,
-			['eyeglass lake portal'] = 9,
-			['mt. cucco portal'] = 10,
-			['horon village portal'] = 11,
-			['temple remains lower portal'] = 12,
-			['temple remains upper portal'] = 13
-		},
-		['strange brothers portal'] = {
-			['volcanoes east portal'] = 0,
-			['subrosia market portal'] = 1,
-			['great furnace portal'] = 2,
-			['house of pirates portal'] = 3,
-			['volcanoes west portal'] = 4,
-			['d8 entrance portal'] = 5,
-			['eastern suburbs portal'] = 7,
-			['spool swamp portal'] = 8,
-			['eyeglass lake portal'] = 9,
-			['mt. cucco portal'] = 10,
-			['horon village portal'] = 11,
-			['temple remains lower portal'] = 12,
-			['temple remains upper portal'] = 13
-		},
-		['house of pirates portal'] = {
-			['volcanoes east portal'] = 0,
-			['subrosia market portal'] = 1,
-			['great furnace portal'] = 2,
-			['strange brothers portal'] = 3,
-			['volcanoes west portal'] = 4,
-			['d8 entrance portal'] = 5,
-			['eastern suburbs portal'] = 7,
-			['spool swamp portal'] = 8,
-			['eyeglass lake portal'] = 9,
-			['mt. cucco portal'] = 10,
-			['horon village portal'] = 11,
-			['temple remains lower portal'] = 12,
-			['temple remains upper portal'] = 13
-		},
-		['volcanoes west portal'] = {
-			['volcanoes east portal'] = 0,
-			['subrosia market portal'] = 1,
-			['great furnace portal'] = 2,
-			['strange brothers portal'] = 3,
-			['house of pirates portal'] = 4,
-			['d8 entrance portal'] = 5,
-			['eastern suburbs portal'] = 7,
-			['spool swamp portal'] = 8,
-			['eyeglass lake portal'] = 9,
-			['mt. cucco portal'] = 10,
-			['horon village portal'] = 11,
-			['temple remains lower portal'] = 12,
-			['temple remains upper portal'] = 13
-		},
-		['d8 entrance portal'] = {
-			['volcanoes east portal'] = 0,
-			['subrosia market portal'] = 1,
-			['great furnace portal'] = 2,
-			['strange brothers portal'] = 3,
-			['house of pirates portal'] = 4,
-			['volcanoes west portal'] = 5,
-			['eastern suburbs portal'] = 7,
-			['spool swamp portal'] = 8,
-			['eyeglass lake portal'] = 9,
-			['mt. cucco portal'] = 10,
-			['horon village portal'] = 11,
-			['temple remains lower portal'] = 12,
-			['temple remains upper portal'] = 13
-		}
-	}
-	local portal_mapping = {
-		["eastern suburbs portal"] = "suburbs_portal_selector_hidden",
-		["spool swamp portal"] = "swamp_portal_selector_hidden",
-		["eyeglass lake portal"] = "lake_portal_selector_hidden",
-		["mt. cucco portal"] = "mtcucco_portal_selector_hidden",
-		["horon village portal"] = "horon_portal_selector_hidden",
-		["temple remains lower portal"] = "remains_portal_selector_hidden",
-		["temple remains upper portal"] = "upremains_portal_selector_hidden",
-		["volcanoes east portal"] = "mountain_portal_selector_hidden",
-		["subrosia market portal"] = "market_portal_selector_hidden",
-		["great furnace portal"] = "furnace_portal_selector_hidden",
-		["strange brothers portal"] = "village_portal_selector_hidden",
-		["house of pirates portal"] = "pirates_portal_selector_hidden",
-		["volcanoes west portal"] = "volcano_portal_selector_hidden",
-		["d8 entrance portal"] = "d8_portal_selector_hidden"
-	}
 	for region_name, portal_name in pairs(slot_data["portal_connections"]) do
-		Tracker:FindObjectForCode(portal_mapping[region_name]).CurrentStage = portal_dictionary[region_name][portal_name]
-		Tracker:FindObjectForCode(portal_mapping[portal_name]).CurrentStage = portal_dictionary[portal_name][region_name]
+		Tracker:FindObjectForCode(PortalMapping[region_name]).CurrentStage = PortalDictionary[region_name][portal_name]
+		Tracker:FindObjectForCode(PortalMapping[portal_name]).CurrentStage = PortalDictionary[portal_name][region_name]
 	end
 
-	local dungeon_dictionary = {
-		["d0 entrance"] = 1,
-		["d1 entrance"] = 2,
-		["d2 entrance"] = 3,
-		["d3 entrance"] = 4,
-		["d4 entrance"] = 5,
-		["d5 entrance"] = 6,
-		["d6 entrance"] = 7,
-		["d7 entrance"] = 8,
-		["d8 entrance"] = 9
-	}
-	local dungeon_mapping = {
-		["enter d0"] = "d0_ent_selector_hidden",
-		["enter d1"] = "d1_ent_selector_hidden",
-		["enter d2"] = "d2_ent_selector_hidden",
-		["enter d3"] = "d3_ent_selector_hidden",
-		["enter d4"] = "d4_ent_selector_hidden",
-		["enter d5"] = "d5_ent_selector_hidden",
-		["enter d6"] = "d6_ent_selector_hidden",
-		["enter d7"] = "d7_ent_selector_hidden",
-		["enter d8"] = "d8_ent_selector_hidden"
-	}
 	for dungeon_entrance, dungeon_interior in pairs(slot_data["dungeon_entrances"]) do
-		Tracker:FindObjectForCode(dungeon_mapping[dungeon_interior]).CurrentStage = dungeon_dictionary[dungeon_entrance]
+		Tracker:FindObjectForCode(DungeonMapping[dungeon_interior]).CurrentStage = DungeonDictionary[dungeon_entrance]
 	end
 
-	-- deterministic gasha locations
+	-- deterministic gasha locations setting
 	if (slot_data["deterministic_gasha_locations"]) then
 		Tracker:FindObjectForCode("gashareq").CurrentStage = slot_data["deterministic_gasha_locations"]
 	end
 
-	-- business scrubs
+	-- business scrubs setting
 	if (slot_data["shuffle_business_scrubs"]) then
 		Tracker:FindObjectForCode("shufflescrubs").CurrentStage = slot_data["shuffle_business_scrubs"]
 	end
 
+	-- shop prices
+	if (slot_data["shop_prices"]) then
+		for shop, price in pairs(slot_data["shop_prices"]) do
+			ShopPrices[shop] = price
+		end
+	end
+
+	-- if starting maps/compasses, auto collect
 	if (slot_data["starting_maps_compasses"] == 1) then
-		for i=1, 8 do
+		for i = 1, 8 do
 			Tracker:FindObjectForCode("d"..i.."_map").Active = true
 			Tracker:FindObjectForCode("d"..i.."_compass").Active = true
 		end
 	end
 end
 
-local seedMapping = {
-	["Ember Seeds"] = EmberSeeds,
-	["Mystery Seeds"] = MysterySeeds,
-	["Scent Seeds"] = ScentSeeds,
-	["Pegasus Seeds"] = PegasusSeeds,
-	["Gale Seeds"] = GaleSeeds
-}
 -- called when an item gets collected
 function onItem(index, item_id, item_name, player_number)
 	if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
@@ -510,8 +264,9 @@ function onItem(index, item_id, item_name, player_number)
 				obj.CurrentStage = obj.CurrentStage + 1
 			else
 				obj.Active = true
+				-- if collecting satchel or slingshot, auto-collect default seed
 				if (v[1] == "satchel" or v[1] == "slingshot1") then
-					local defaultSeed = Tracker:FindObjectForCode(seedMapping[SLOT_DATA["default_seed"]])
+					local defaultSeed = Tracker:FindObjectForCode(SeedMapping[SLOT_DATA["default_seed"]])
 					if (defaultSeed) then
 						defaultSeed.Active = true
 					end
@@ -599,39 +354,13 @@ function onNotifyLaunch(key, value)
 	end
 end
 
-function dump(o, depth)
-	if depth == nil then
-		depth = 0
-	end
-	if type(o) == 'table' then
-		local tabs = ('\t'):rep(depth)
-		local tabs2 = ('\t'):rep(depth + 1)
-		local s = '{\n'
-		for k, v in pairs(o) do
-			if type(k) ~= 'number' then
-				k = '"' .. k .. '"'
-			end
-			s = s .. tabs2 .. '[' .. k .. '] = ' .. dump(v, depth + 1) .. ',\n'
-		end
-		return s .. tabs .. '}'
-	else
-		return tostring(o)
-	end
-end
-
-QUALITY_TO_ACCESS = {
-	[0] = 5, -- normal
-	[1] = 6, -- progression
-	[2] = 3, -- useful
-	-- [3] = 0 -- trap?
-}
 -- called when a location is hinted
 function updateHints(locationID, quality)
 	local item_codes = HINT_MAPPING[locationID]
 	-- print("Hint", dump(item_codes), quality)
 	for _, item_code in ipairs(item_codes) do
-		if (QUALITY_TO_ACCESS[quality]) then
-			COLLECTED_HINTS[item_code] = QUALITY_TO_ACCESS[quality]
+		if (QualityToAccess[quality]) then
+			COLLECTED_HINTS[item_code] = QualityToAccess[quality]
 		end
 		local obj = Tracker:FindObjectForCode(item_code)
 		if obj then
@@ -669,7 +398,7 @@ end
 -- called when a bounce message is received 
 function onBounce(json)
 	if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
-		print(string.format("called onBounce: %s", dump_table(json)))
+		print(string.format("called onBounce: %s", dump(json)))
 	end
 end
 

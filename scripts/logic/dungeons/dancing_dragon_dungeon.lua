@@ -100,7 +100,12 @@ DancingPostWaterRollers:connect_one_way_entrance(DancingMinecartTorches, functio
 		Jump2()
 	)
 end)
-DancingMinecartTorches:connect_one_way(DancingScrub, CanPayScrub)
+DancingMinecartTorches:connect_one_way(DancingScrub, function()
+	return Any(
+		HasRupees(ShopPrices[D4ScrubPrice]),
+		AccessibilityLevel.Inspect
+	)
+end, {SnakeRupeeRoom, AncientRupeeRoom})
 DancingMinecartTorches:connect_one_way(DancingTorchChest, function()
 	return All(
 		Has(Slingshot),
@@ -108,11 +113,11 @@ DancingMinecartTorches:connect_one_way(DancingTorchChest, function()
 	)
 end)
 DancingMinecartTorches:connect_one_way_entrance(Agunima)
-Agunima:connect_one_way(DancingRegrowingEmbers, function()
+Agunima:connect_one_way(DancingWildEmbers, function()
 	return All(
 		CanDestroyRespawningBush(),
 		Any(
-			Has(Hard), -- medium?
+			IsMediumPlus(),
 			AccessibilityLevel.SequenceBreak
 		)
 	)

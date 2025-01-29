@@ -44,19 +44,19 @@ Vasu:connect_one_way(VasuGift)
 HoronVillage:connect_two_ways_entrance(HoronShop)
 HoronShop:connect_one_way(HoronShop1, function()
 	return Any(
-		HasRupees(150),
+		HasRupees(ShopPrices[HoronShop1Price]),
 		AccessibilityLevel.Inspect
 	)
 end, {SnakeRupeeRoom, AncientRupeeRoom})
 HoronShop:connect_one_way(HoronShop2, function()
 	return Any(
-		HasRupees(150),
+		HasRupees(ShopPrices[HoronShop2Price]),
 		AccessibilityLevel.Inspect
 	)
 end, {SnakeRupeeRoom, AncientRupeeRoom})
 HoronShop:connect_one_way(HoronShop3, function()
 	return Any(
-		HasRupees(150),
+		HasRupees(ShopPrices[HoronShop3Price]),
 		AccessibilityLevel.Inspect
 	)
 end, {SnakeRupeeRoom, AncientRupeeRoom})
@@ -65,7 +65,7 @@ MemberShop:connect_one_way(MembersShop1, function()
 	return Any(
 		All(
 			Has(MembersCard),
-			HasRupees(450)
+			HasRupees(ShopPrices[MemberShop1Price])
 		),
 		AccessibilityLevel.Inspect
 	)
@@ -74,7 +74,7 @@ MemberShop:connect_one_way(MembersShop2, function()
 	return Any(
 		All(
 			Has(MembersCard),
-			HasRupees(450)
+			HasRupees(ShopPrices[MemberShop2Price])
 		),
 		AccessibilityLevel.Inspect
 	)
@@ -83,7 +83,7 @@ MemberShop:connect_one_way(MembersShop3, function()
 	return Any(
 		All(
 			Has(MembersCard),
-			HasRupees(450)
+			HasRupees(ShopPrices[MemberShop3Price])
 		),
 		AccessibilityLevel.Inspect
 	)
@@ -91,19 +91,19 @@ end, {SnakeRupeeRoom, AncientRupeeRoom})
 HoronShop:connect_one_way_entrance(AdvanceShop)
 AdvanceShop:connect_one_way(AdvanceShop1, function()
 	return Any(
-		HasRupees(300),
+		HasRupees(ShopPrices[AdvanceShop1Price]),
 		AccessibilityLevel.Inspect
 	)
 end, {SnakeRupeeRoom, AncientRupeeRoom})
 AdvanceShop:connect_one_way(AdvanceShop2, function()
 	return Any(
-		HasRupees(300),
+		HasRupees(ShopPrices[AdvanceShop2Price]),
 		AccessibilityLevel.Inspect
 	)
 end, {SnakeRupeeRoom, AncientRupeeRoom})
 AdvanceShop:connect_one_way(AdvanceShop3, function()
 	return Any(
-		HasRupees(300),
+		HasRupees(ShopPrices[AdvanceShop3Price]),
 		AccessibilityLevel.Inspect
 	)
 end, {SnakeRupeeRoom, AncientRupeeRoom})

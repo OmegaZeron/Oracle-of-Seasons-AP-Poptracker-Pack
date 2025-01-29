@@ -1,4 +1,13 @@
 -- 0 keys
+CryptFoyer:connect_one_way(CryptWildEmbers, function()
+	return All(
+		CanDestroyRespawningBush(),
+		Any(
+			IsMediumPlus(),
+			AccessibilityLevel.SequenceBreak
+		)
+	)
+end)
 CryptFoyer:connect_one_way(Crypt1FWizzrobeChest, function() return CanNormalKill(false, true, false) end)
 CryptFoyer:connect_one_way_entrance(Crypt1FLeftOfPoe, CanBombWall)
 Crypt1FLeftOfPoe:connect_one_way(Crypt1FLeftOfPoeChest)

@@ -81,25 +81,25 @@ SubrosiaMarket:connect_one_way(SubrosiaMarket1, function()
 end)
 SubrosiaMarket:connect_one_way(SubrosiaMarket2, function()
 	return Any(
-		HasOreChunks(100),
+		HasOreChunks(ShopPrices[SubrosianMarket2Price]),
 		AccessibilityLevel.Inspect
 	)
 end, {SubrosiaMountainEast})
 SubrosiaMarket:connect_one_way(SubrosiaMarket3, function()
 	return Any(
-		HasOreChunks(100),
+		HasOreChunks(ShopPrices[SubrosianMarket3Price]),
 		AccessibilityLevel.Inspect
 	)
 end, {SubrosiaMountainEast})
 SubrosiaMarket:connect_one_way(SubrosiaMarket4, function()
 	return Any(
-		HasOreChunks(100),
+		HasOreChunks(ShopPrices[SubrosianMarket4Price]),
 		AccessibilityLevel.Inspect
 	)
 end, {SubrosiaMountainEast})
 SubrosiaMarket:connect_one_way(SubrosiaMarket5, function()
 	return Any(
-		HasOreChunks(100),
+		HasOreChunks(ShopPrices[SubrosianMarket5Price]),
 		AccessibilityLevel.Inspect
 	)
 end, {SubrosiaMountainEast})

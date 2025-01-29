@@ -82,6 +82,15 @@ MazeThreeEyeOwl:connect_one_way(MazeThreeEyeBombChest, function()
 end)
 -- 3 keys
 MazeThreeEyeOwl:connect_one_way_entrance(Frypolar, function() return D8KeyCount(3) end)
+Frypolar:connect_one_way(MazeWildMysteries, function()
+	return All(
+		CanDestroyRespawningBush(),
+		Any(
+			IsMediumPlus(),
+			AccessibilityLevel.SequenceBreak
+		)
+	)
+end)
 Frypolar:connect_one_way_entrance(MazeNineTorches, function()
 	return Any(
 		All(

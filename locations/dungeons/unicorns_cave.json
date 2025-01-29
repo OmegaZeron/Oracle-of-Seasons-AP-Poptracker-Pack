@@ -96,10 +96,15 @@
 				]
 			},
 			{
-				"name": "Armos Puzzle Room Chest",
+				"name": "Armos Puzzle Room",
 				"sections": [
 					{
+						"name": "Item",
 						"access_rules": ["^$CanReach|UnicornArmosPuzzle"]
+					},
+					{
+						"name": "Ember Seeds",
+						"access_rules": ["^$CanReach|UnicornArmosPuzzleEmbers"]
 					}
 				],
 				"map_locations": [

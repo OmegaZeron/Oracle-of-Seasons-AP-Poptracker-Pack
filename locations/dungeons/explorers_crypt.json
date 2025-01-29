@@ -6,6 +6,22 @@
 		"color": "#00ff08",
 		"children": [
 			{
+				"name": "Wild Ember Seeds",
+				"sections": [
+					{
+						"name": "1F",
+						"access_rules": ["^$CanReach|CryptWildEmbers"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "explorers_crypt1",
+						"x": 350,
+						"y": 580
+					}
+				]
+			},
+			{
 				"name": "Chest Behind Cracked Wall",
 				"sections": [
 					{

@@ -1,3 +1,4 @@
+LowerMtCucco:connect_one_way(SunkenCityFindSeason)
 LowerMtCucco:connect_two_ways_entrance(SubrosiaVillagePortal, function()
 	return Any(
 		Has(ShufflePortalsOff),
@@ -104,6 +105,7 @@ DragonKeyhole:connect_one_way_entrance(DancingDragonDungeon, function()
 		Has(Summer)
 	)
 end)
+DancingDragonDungeon:connect_one_way(SunkenCityFindSeason)
 DancingDragonDungeon:connect_one_way_entrance(UpperMtCucco, CanWarp)
 DancingDragonDungeon:connect_two_ways_entrance(DancingFoyer, function()
 	return Any(

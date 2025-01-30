@@ -1,10 +1,52 @@
 [
 	{
+		"name": "Lost Woods",
+		"chest_unopened_img": "images/labels/chest.png",
+		"chest_opened_img": "images/labels/chestopen.png",
+		"color": "#00ff08",
+		"children": [
+			{
+				"name": "See the Season",
+				"visibility_rules": ["defaultseasonsoff", "singularity_random"],
+				"sections": [
+					{
+						"name": "Lost Woods",
+						"access_rules": ["^$CanReach|LostWoodsFindSeason"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 148,
+						"y": 242
+					}
+				]
+			}
+		]
+	},
+	{
 		"name": "Tarm Ruins",
 		"chest_unopened_img": "images/labels/chest.png",
 		"chest_opened_img": "images/labels/chestopen.png",
 		"color": "#00ff08",
 		"children": [
+			{
+				"name": "See the Season",
+				"visibility_rules": ["defaultseasonsoff", "singularity_random"],
+				"sections": [
+					{
+						"name": "Tarm Ruins",
+						"access_rules": ["^$CanReach|TarmRuinsFindSeason"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 70,
+						"y": 100
+					}
+				]
+			},
 			{
 				"name": "Tarm Ruins tree",
 				"sections": [

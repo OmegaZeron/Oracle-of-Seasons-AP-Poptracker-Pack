@@ -76,6 +76,8 @@ LostWoods:connect_one_way_entrance(TarmTree, function()
 		)
 	)
 end)
+TarmTree:connect_one_way(LostWoodsFindSeason) -- don't do this? sequence break?
+TarmTree:connect_one_way(TarmRuinsFindSeason)
 TarmTree:connect_one_way(TarmGasha, function()
 	return All(
 		CanPlantGasha(),
@@ -124,6 +126,7 @@ UpperTarm:connect_one_way_entrance(AncientRuins, function()
 		CanDestroyFlower()
 	)
 end)
+AncientRuins:connect_one_way(TarmRuinsFindSeason)
 AncientRuins:connect_one_way_entrance(UpperTarm, function()
 	return All(
 		CanDestroyFlower(),

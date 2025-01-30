@@ -1,3 +1,4 @@
+LowerTempleRemains:connect_one_way(TempleRemainsFindSeason)
 LowerTempleRemains:connect_one_way_entrance(TempleRemainsStump, function()
 	return Any(
 		All(
@@ -84,6 +85,7 @@ TempleRemainsStump:connect_one_way_entrance(TempleRemainsLowerPortal, function()
 		Has(Feather)
 	)
 end)
+TempleRemainsLowerPortal:connect_one_way(TempleRemainsFindSeason)
 TempleRemainsLowerPortal:connect_two_ways_entrance(Volcano, function()
 	return Any(
 		Has(ShufflePortalsOff),
@@ -103,7 +105,12 @@ TempleRemainsLowerPortal:connect_one_way_entrance(TempleRemainsStump, function()
 		)
 	)
 end, {Fireworks})
-TempleRemainsLowerPortal:connect_one_way_entrance(LowerTempleRemains, CanWarp)
+TempleRemainsLowerPortal:connect_one_way_entrance(LowerTempleRemains, function()
+	return Any(
+		CanWarp(),
+		AccessibilityLevel.SequenceBreak
+	)
+end)
 LowerTempleRemains:connect_one_way(TempleRemainsBombCave, function()
 	return All(
 		CanReach(Fireworks),
@@ -124,6 +131,7 @@ LowerTempleRemains:connect_one_way_entrance(TempleRemainsUpperPortal, function()
 		)
 	)
 end, {Fireworks})
+TempleRemainsUpperPortal:connect_one_way(TempleRemainsFindSeason)
 TempleRemainsUpperPortal:connect_one_way_entrance(LowerTempleRemains, function()
 	return All(
 		CanReach(Fireworks),

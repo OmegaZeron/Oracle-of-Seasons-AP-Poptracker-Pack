@@ -1180,3 +1180,17 @@ ScriptHost:AddWatchForCode("wild ember handler", EmberSeeds, OnCollectEmbers)
 ScriptHost:AddWatchForCode("wild mystery handler", MysterySeeds, OnCollectMysteries)
 ScriptHost:AddOnLocationSectionChangedHandler("section changed handler", OnSectionChanged)
 ScriptHost:AddOnFrameHandler("load handler", OnFrameHandler)
+-- "See the Season" locations
+for i = 1, 11 do
+	ScriptHost:AddWatchForCode(SeeSeasonVars[i][1], SeeSeasonVars[i][2], function()
+		local season = Tracker:FindObjectForCode(SeeSeasonVars[i][2])
+		---@cast season JsonItem
+		local location = Tracker:FindObjectForCode(SeeSeasonVars[i][3])
+		---@cast location LocationSection
+		if (season.CurrentStage == 4) then
+			location.AvailableChestCount = 1
+		else
+			location.AvailableChestCount = 0
+		end
+	end)
+end

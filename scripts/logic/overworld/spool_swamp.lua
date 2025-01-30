@@ -1,3 +1,5 @@
+NorthSpoolSwamp:connect_one_way(SpoolSwampFindSeason)
+SouthSpoolSwamp:connect_one_way(SpoolSwampFindSeason)
 -- items
 NorthSpoolSwamp:connect_one_way(SwampTree, function() return CanHarvestSeeds(true) end)
 NorthSpoolSwamp:connect_one_way(SwampVasuDigSpot, function()
@@ -14,6 +16,7 @@ SpoolSwampStump:connect_one_way(SwampVasuDigSpot, function()
 end)
 
 -- exits
+NorthSpoolSwamp:connect_one_way(LostWoodsFindSeason)
 NorthSpoolSwamp:connect_one_way_entrance(TarmEntrance, CanEnterTarm)
 NorthSpoolSwamp:connect_one_way_entrance(FloodgateKeeper)
 FloodgateKeeper:connect_one_way_entrance(FloodgateLever, CanTriggerLever)
@@ -78,6 +81,7 @@ SwampSouthGashaArea:connect_one_way_entrance(MiddleSpoolSwamp, function()
 	)
 end)
 SwampSouthGashaArea:connect_two_ways_entrance(SpoolPortal, function() return Has(Bracelet) end)
+SpoolPortal:connect_one_way(SpoolSwampFindSeason)
 SpoolPortal:connect_two_ways_entrance(SubrosiaMarket, function()
 	return Any(
 		Has(ShufflePortalsOff),

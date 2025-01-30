@@ -1,3 +1,4 @@
+SouthGoronMountain:connect_one_way(SunkenCityFindSeason)
 SouthGoronMountain:connect_one_way(GoronGashaWest, function()
 	return All(
 		CanPlantGasha(),

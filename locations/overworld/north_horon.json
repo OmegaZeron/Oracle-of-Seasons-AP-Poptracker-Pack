@@ -6,6 +6,23 @@
 		"color": "#00ff08",
 		"children": [
 			{
+				"name": "See the Season",
+				"visibility_rules": ["defaultseasonsoff", "singularity_random"],
+				"sections": [
+					{
+						"name": "North Horon",
+						"access_rules": ["^$CanReach|NorthHoronFindSeason"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 363,
+						"y": 408
+					}
+				]
+			},
+			{
 				"name": "Cat in Tree",
 				"sections": [
 					{

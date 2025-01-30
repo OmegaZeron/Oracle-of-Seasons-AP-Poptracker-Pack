@@ -1,8 +1,7 @@
 -- lower
+LowerNorthHoron:connect_one_way(NorthHoronFindSeason)
 -- standing items
-LowerNorthHoron:connect_one_way(CatInTree, function()
-	return Has(Fish)
-end)
+LowerNorthHoron:connect_one_way(CatInTree, function() return Has(Fish) end)
 LowerNorthHoron:connect_one_way(EyeglassPitsChest, function()
 	return Any(
 		Jump4(),
@@ -25,11 +24,10 @@ LowerNorthHoron:connect_two_ways_entrance(UpperNorthHoron, CanDestroyBushFlute)
 LowerNorthHoron:connect_one_way_entrance(HoronVillage)
 
 -- upper
+UpperNorthHoron:connect_one_way(NorthHoronFindSeason)
 -- malon
 UpperNorthHoron:connect_two_ways_entrance(MalonHouse)
-MalonHouse:connect_one_way(MalonTrade, function()
-	return Has(Cuccodex)
-end)
+MalonHouse:connect_one_way(MalonTrade, function() return Has(Cuccodex) end)
 
 -- old man
 UpperNorthHoron:connect_one_way(NorthHoronOldMan, CanBurnTrees)

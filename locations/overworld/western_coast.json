@@ -6,6 +6,23 @@
 		"color": "#00ff08",
 		"children": [
 			{
+				"name": "See the Season",
+				"visibility_rules": ["defaultseasonsoff", "singularity_random"],
+				"sections": [
+					{
+						"name": "Western Coast",
+						"access_rules": ["^$CanReach|WesternCoastFindSeason"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 152,
+						"y": 537
+					}
+				]
+			},
+			{
 				"name": "Enter D0",
 				"visibility_rules": ["ShuffleDungeonOn"],
 				"access_rules": ["^$CanReach|HerosCave"],

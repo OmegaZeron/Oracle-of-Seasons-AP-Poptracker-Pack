@@ -1,3 +1,5 @@
+NorthHolodrumPlain:connect_one_way(HolodrumPlainFindSeason)
+NorthHolodrumPlain:connect_one_way(NorthHoronFindSeason)
 -- items
 NorthHolodrumPlain:connect_one_way(HolodrumPlainTree, function() return CanHarvestSeeds(true) end)
 NorthHolodrumPlain:connect_one_way(Blaino, CanFarmRupees)

@@ -6,6 +6,28 @@
 		"color": "#00ff08",
 		"children": [
 			{
+				"name": "See the Season",
+				"visibility_rules": ["defaultseasonsoff", "singularity_random"],
+				"sections": [
+					{
+						"name": "Sunken City",
+						"access_rules": ["^$CanReach|SunkenCityFindSeason"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 580,
+						"y": 237
+					},
+					{
+						"map": "holodrum",
+						"x": 503,
+						"y": 110
+					}
+				]
+			},
+			{
 				"name": "Sunken City tree",
 				"sections": [
 					{

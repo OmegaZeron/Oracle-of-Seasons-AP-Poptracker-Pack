@@ -361,6 +361,21 @@ WildSeedLocationMapping = {
 	},
 	[MysterySeeds] = {"@Sword and Shield Maze/Wild Mystery Seeds/B1F"}
 }
+
+SeeSeasonVars = {
+	{"see horon village", "horon_village_season", "@Horon Village/See the Season/Horon Village"},
+	{"see north horon", "north_horon_season", "@North Horon/See the Season/North Horon"},
+	{"see eastern suburbs", "suburbs_season", "@Eastern Suburbs/See the Season/Eastern Suburbs"},
+	{"see woods of winter", "wow_season", "@Woods of Winter/See the Season/Woods of Winter"},
+	{"see holodrum plain", "plain_season", "@Holodrum Plain/See the Season/Holodrum Plain"},
+	{"see lost woods", "lost_woods_season", "@Lost Woods/See the Season/Lost Woods"},
+	{"see tarm ruins", "tarm_ruins_season", "@Tarm Ruins/See the Season/Tarm Ruins"},
+	{"see spool swamp", "swamp_season", "@Spool Swamp/See the Season/Spool Swamp"},
+	{"see sunken city", "sunken_season", "@Sunken City/See the Season/Sunken City"},
+	{"see western coast", "coast_season", "@Western Coast/See the Season/Western Coast"},
+	{"see temple remains", "temple_season", "@Temple Remains/See the Season/Temple Remains"}
+}
+
 QualityToAccess = {
 	[0] = 5, -- normal
 	[1] = 6, -- progression

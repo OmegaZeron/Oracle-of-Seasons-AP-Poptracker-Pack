@@ -6,6 +6,23 @@
 		"color": "#00ff08",
 		"children": [
 			{
+				"name": "See the Season",
+				"visibility_rules": ["defaultseasonsoff", "singularity_random"],
+				"sections": [
+					{
+						"name": "Temple Remains",
+						"access_rules": ["^$CanReach|TempleRemainsFindSeason"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 279,
+						"y": 150
+					}
+				]
+			},
+			{
 				"name": "Temple Remains Heart Piece",
 				"sections": [
 					{

@@ -1,4 +1,6 @@
 -- lower suburbs
+LowerEasternSuburbs:connect_one_way(EasternSuburbsFindSeason)
+LowerEasternSuburbs:connect_one_way(HoronVillageFindSeason) -- redundant, but could be relevant with alt starting locations
 --standing items
 LowerEasternSuburbs:connect_one_way(WindmillHP, function()
 	return Any(
@@ -62,12 +64,8 @@ end)
 SuburbsPortal:connect_one_way_entrance(LowerEasternSuburbs, CanDestroyBush)
 
 -- samasa desert
-SamasaDesert:connect_one_way(SamasaDesertChest, function()
-	return Has(Flippers)
-end)
-SamasaDesert:connect_one_way(SamasaDesertPit, function()
-	return Has(Bracelet)
-end)
+SamasaDesert:connect_one_way(SamasaDesertChest, function() return Has(Flippers) end)
+SamasaDesert:connect_one_way(SamasaDesertPit, function() return Has(Bracelet) end)
 SamasaDesert:connect_one_way(SamasaDesertGasha, CanPlantGasha)
 SamasaDesert:connect_one_way(SamasaScrub, function()
 	return Any(
@@ -77,9 +75,9 @@ SamasaDesert:connect_one_way(SamasaScrub, function()
 end, {SnakeRupeeRoom, AncientRupeeRoom})
 
 -- upper suburbs
-UpperEasternSuburbs:connect_one_way_entrance(UpperEasternSuburbsWinter, function()
-	return Has(Winter)
-end)
+UpperEasternSuburbs:connect_one_way(EasternSuburbsFindSeason)
+UpperEasternSuburbs:connect_one_way_entrance(UpperEasternSuburbsWinter, function() return Has(Winter) end)
+UpperEasternSuburbsWinter:connect_one_way(EasternSuburbsFindSeason)
 UpperEasternSuburbsWinter:connect_one_way_entrance(UpperEasternSuburbs, function()
 	return Any(
 		Has(Spring),
@@ -103,6 +101,8 @@ UpperEasternSuburbsWinter:connect_one_way_entrance(WoodsOfWinter, function()
 end)
 
 -- woods of winter
+MoblinRoad:connect_one_way(EasternSuburbsFindSeason)
+MoblinRoad:connect_one_way(WoodsOfWinterFindSeason)
 MoblinRoad:connect_one_way_entrance(UpperEasternSuburbsWinter, function()
 	return Any(
 		Has(Winter),
@@ -145,6 +145,8 @@ MoblinRoad:connect_one_way(SuburbsHP, function()
 		AccessibilityLevel.Inspect
 	)
 end)
+WoodsOfWinter:connect_one_way(EasternSuburbsFindSeason)
+WoodsOfWinter:connect_one_way(WoodsOfWinterFindSeason)
 WoodsOfWinter:connect_one_way_entrance(UpperEasternSuburbs, function()
 	return Any(
 		Has(EasternSuburbsSpring),
@@ -174,6 +176,7 @@ WoodsOfWinter:connect_one_way(GoldenMoblinKill, function()
 	)
 end)
 WoodsOfWinter:connect_one_way_entrance(SnakesRemains, CanDestroyBushFlute)
+SnakesRemains:connect_one_way(WoodsOfWinterFindSeason)
 SnakesRemains:connect_one_way_entrance(WoodsOfWinter, CanDestroyBush)
 SnakesRemains:connect_two_ways_entrance(SnakeFoyer, function()
 	return Any(

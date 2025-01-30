@@ -1,3 +1,4 @@
+HoronVillage:connect_one_way(HoronVillageFindSeason)
 -- standing items
 HoronVillage:connect_one_way(HoronMushroomChest, function()
 	return All(

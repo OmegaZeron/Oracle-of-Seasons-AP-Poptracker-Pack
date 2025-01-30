@@ -1,3 +1,4 @@
+EastWesternCoast:connect_one_way(WesternCoastFindSeason)
 EastWesternCoast:connect_one_way(BlackBeast, function()
 	return All(
 		CanShootLongTorches(),
@@ -156,6 +157,7 @@ Graveyard:connect_one_way_entrance(WestWesternCoast)
 GraveyardAutumn:connect_one_way_entrance(WestWesternCoast)
 GraveyardWinter:connect_one_way_entrance(WestWesternCoast)
 
+ExplorersCrypt:connect_one_way(WesternCoastFindSeason)
 ExplorersCrypt:connect_one_way_entrance(Graveyard, function()
 	return Any(
 		Has(WesternCoastSpring),

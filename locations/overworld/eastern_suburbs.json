@@ -1,10 +1,52 @@
 [
 	{
+		"name": "Woods of Winter",
+		"chest_unopened_img": "images/labels/chest.png",
+		"chest_opened_img": "images/labels/chestopen.png",
+		"color": "#00ff08",
+		"children": [
+			{
+				"name": "See the Season",
+				"visibility_rules": ["defaultseasonsoff", "singularity_random"],
+				"sections": [
+					{
+						"name": "Woods of Winter",
+						"access_rules": ["^$CanReach|WoodsOfWinterFindSeason"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 621,
+						"y": 387
+					}
+				]
+			}
+		]
+	},
+	{
 		"name": "Eastern Suburbs",
 		"chest_unopened_img": "images/labels/chest.png",
 		"chest_opened_img": "images/labels/chestopen.png",
 		"color": "#00ff08",
 		"children": [
+			{
+				"name": "See the Season",
+				"visibility_rules": ["defaultseasonsoff", "singularity_random"],
+				"sections": [
+					{
+						"name": "Eastern Suburbs",
+						"access_rules": ["^$CanReach|EasternSuburbsFindSeason"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 510,
+						"y": 460
+					}
+				]
+			},
 			{
 				"name": "Samasa Desert: One of Four Pits",
 				"sections": [

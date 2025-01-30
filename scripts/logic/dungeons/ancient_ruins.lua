@@ -10,6 +10,7 @@ AncientFoyer:connect_one_way_entrance(AncientRightOfSpinner, function()
 		)
 	)
 end)
+AncientRightOfSpinner:connect_one_way(AncientRupeeRoom, CanBombWall)
 AncientRightOfSpinner:connect_one_way_entrance(AncientRopeSpinnerWest)
 AncientRopeSpinnerWest:connect_one_way(AncientMagnetBallDrop, function()
 	return Any(

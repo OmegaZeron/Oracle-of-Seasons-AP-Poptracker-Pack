@@ -195,7 +195,7 @@ end
 
 function HasPlanted(code)
 	local section = Tracker:FindObjectForCode(code)
-	if (section == nil) then
+	if (not CanSwordKill() or section == nil) then
 		return false
 	end
 	---@cast section LocationSection
@@ -1132,6 +1132,37 @@ function display_pedestal()
 	end
 end
 
+function OnCollectEmbers()
+	local seeds = Tracker:FindObjectForCode(EmberSeeds)
+	if (seeds == nil) then
+		return
+	end
+	for _, loc in pairs(WildSeedLocationMapping[EmberSeeds]) do
+		local wildSection = Tracker:FindObjectForCode(loc)
+		---@cast wildSection LocationSection
+		if (seeds.Active) then
+			wildSection.AvailableChestCount = wildSection.AvailableChestCount - 1
+		else
+			wildSection.AvailableChestCount = wildSection.AvailableChestCount + 1
+		end
+	end
+end
+function OnCollectMysteries()
+	local seeds = Tracker:FindObjectForCode(MysterySeeds)
+	if (seeds == nil) then
+		return
+	end
+	for _, loc in pairs(WildSeedLocationMapping[MysterySeeds]) do
+		local wildSection = Tracker:FindObjectForCode(loc)
+		---@cast wildSection LocationSection
+		if (seeds.Active) then
+			wildSection.AvailableChestCount = wildSection.AvailableChestCount - 1
+		else
+			wildSection.AvailableChestCount = wildSection.AvailableChestCount + 1
+		end
+	end
+end
+
 function OnFrameHandler()
 	ScriptHost:RemoveOnFrameHandler("load handler")
 	LOADED = true
@@ -1145,5 +1176,7 @@ ScriptHost:AddWatchForCode("portal settings handler", "portalshuffle", vanilla_p
 ScriptHost:AddWatchForCode("portal handler", "fill_portals", display_portals)
 ScriptHost:AddWatchForCode("lost woods handler", "shuffle_lost_woods", display_lost_woods)
 ScriptHost:AddWatchForCode("pedestal handler", "shuffle_pedestal", display_pedestal)
+ScriptHost:AddWatchForCode("wild ember handler", EmberSeeds, OnCollectEmbers)
+ScriptHost:AddWatchForCode("wild mystery handler", MysterySeeds, OnCollectMysteries)
 ScriptHost:AddOnLocationSectionChangedHandler("section changed handler", OnSectionChanged)
 ScriptHost:AddOnFrameHandler("load handler", OnFrameHandler)

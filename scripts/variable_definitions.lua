@@ -353,6 +353,14 @@ SeedMapping = {
 	["Pegasus Seeds"] = PegasusSeeds,
 	["Gale Seeds"] = GaleSeeds
 }
+WildSeedLocationMapping = {
+	[EmberSeeds] = {
+		"@Dancing Dragon Dungeon/Wild Ember Seeds/1F",
+		"@Unicorn's Cave/Armos Puzzle Room/Ember Seeds",
+		"@Explorer's Crypt/Wild Ember Seeds/1F"
+	},
+	[MysterySeeds] = {"@Sword and Shield Maze/Wild Mystery Seeds/B1F"}
+}
 QualityToAccess = {
 	[0] = 5, -- normal
 	[1] = 6, -- progression

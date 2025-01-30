@@ -265,7 +265,7 @@ function onItem(index, item_id, item_name, player_number)
 			else
 				obj.Active = true
 				-- if collecting satchel or slingshot, auto-collect default seed
-				if (v[1] == "satchel" or v[1] == "slingshot1") then
+				if (v[1] == SeedSatchel or v[1] == Slingshot) then
 					local defaultSeed = Tracker:FindObjectForCode(SeedMapping[SLOT_DATA["default_seed"]])
 					if (defaultSeed) then
 						defaultSeed.Active = true
@@ -302,16 +302,12 @@ function onLocation(location_id, location_name)
 		local obj = Tracker:FindObjectForCode(location)
 		-- print(location, obj)
 		if obj then
-			local hintID = COLLECTED_HINTS[HINT_MAPPING[location_id]]
-			if (hintID) then
-				Tracker:FindObjectForCode(hintID).Active = false
-				COLLECTED_HINTS[hintID] = nil
-			end
 			if location:sub(1, 1) == "@" then
 				obj.AvailableChestCount = obj.AvailableChestCount - 1
 			else
 				obj.Active = true
 			end
+			clearHints(location_id)
 		else
 			print(string.format("onLocation: could not find object for code %s", location))
 		end
@@ -373,7 +369,9 @@ end
 
 function clearHints(locationID)
 	local item_codes = HINT_MAPPING[locationID]
-
+	if (not item_codes) then
+		return
+	end
 	for _, item_code in ipairs(item_codes) do
 		local obj = Tracker:FindObjectForCode(item_code)
 		if obj then

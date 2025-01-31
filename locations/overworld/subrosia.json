@@ -592,7 +592,6 @@
 			},
 			{
 				"name": "Strange Brothers' Backyard Treasure",
-				"visibility_rules": ["gold_ores_shuffled"],
 				"sections": [
 					{
 						"name": "Subrosia: Strange Brothers' Backyard Treasure",

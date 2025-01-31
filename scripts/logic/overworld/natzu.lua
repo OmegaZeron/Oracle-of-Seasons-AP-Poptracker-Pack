@@ -2,14 +2,15 @@ NatzuWest:connect_one_way(HolodrumPlainFindSeason)
 NatzuWest:connect_one_way_entrance(NorthHolodrumPlain, function()
 	return Any(
 		Has(Flippers),
-		Has(Feather)
+		Has(Feather),
+		Has(AnyCompanion)
 	)
 end)
 
 -- ricky
 NatzuWest:connect_two_ways_entrance(NatzuRickyWest, function() return Has(NatzuIsRicky) end)
 NatzuRickyWest:connect_two_ways_entrance(NatzuRickyEast, Ricky)
-NatzuRickyEast:connect_one_way_entrance(MoblinKeepBridge, Ricky)
+NatzuRickyEast:connect_one_way_entrance(MoblinKeepBridge)
 -- currently unused
 NatzuRickyEast:connect_one_way(NatzuScrub, function()
 	return All(

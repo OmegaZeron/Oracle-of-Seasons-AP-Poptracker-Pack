@@ -121,8 +121,7 @@ NorthHolodrumPlain:connect_one_way_entrance(NatzuWest, function()
 	return Any(
 		Has(Flippers),
 		Has(Feather),
-		Ricky(),
-		Moosh()
+		Has(AnyCompanion)
 	)
 end)
 NorthHolodrumPlain:connect_one_way(OnoxGasha, function()

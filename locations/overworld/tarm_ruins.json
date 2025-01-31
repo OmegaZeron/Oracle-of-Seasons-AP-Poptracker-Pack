@@ -87,6 +87,7 @@
 			},
 			{
 				"name": "Tarm Ruins Old Man",
+				"visibility_rules": ["old_men_locations"],
 				"sections": [
 					{
 						"access_rules": ["^$CanReach|TarmOldMan"]

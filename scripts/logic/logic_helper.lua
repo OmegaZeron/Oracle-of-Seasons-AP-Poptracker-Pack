@@ -231,8 +231,19 @@ function GashasPlanted()
 end
 
 function CanWarp()
-	return Has(Treewarp) or
-	Has(SeedSatchel) and Has(GaleSeeds)
+	return All(
+		Any(
+			IsMediumPlus(),
+			AccessibilityLevel.SequenceBreak
+		),
+		Any(
+			Has(Treewarp),
+			All(
+				Has(SeedSatchel),
+				Has(GaleSeeds)
+			)
+		)
+	)
 end
 
 -- INTERACT RULES

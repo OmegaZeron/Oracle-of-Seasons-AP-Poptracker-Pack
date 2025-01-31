@@ -22,13 +22,19 @@ LowerMtCucco:connect_one_way_entrance(CuccoRightMountain, function()
 					CanDestroyFlower(),
 					All(
 						Has(SpringBanana),
-						CanWarp()
+						Any(
+							CanWarp(),
+							AccessibilityLevel.SequenceBreak
+						)
 					)
 				)
 			),
 			All(
 				-- cucco clip
-				CanWarp(),
+				Any(
+					CanWarp(),
+					AccessibilityLevel.SequenceBreak
+				),
 				Any(
 					Has(Hard),
 					AccessibilityLevel.SequenceBreak
@@ -106,7 +112,12 @@ DragonKeyhole:connect_one_way_entrance(DancingDragonDungeon, function()
 	)
 end)
 DancingDragonDungeon:connect_one_way(SunkenCityFindSeason)
-DancingDragonDungeon:connect_one_way_entrance(UpperMtCucco, CanWarp)
+DancingDragonDungeon:connect_one_way_entrance(UpperMtCucco, function()
+	return Any(
+		CanWarp(),
+		AccessibilityLevel.SequenceBreak
+	)
+end)
 DancingDragonDungeon:connect_two_ways_entrance(DancingFoyer, function()
 	return Any(
 		Has(ShuffleDungeonOff),

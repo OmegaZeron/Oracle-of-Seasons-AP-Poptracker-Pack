@@ -123,7 +123,10 @@ SunkenDoorstep:connect_one_way_entrance(UpperEasternSuburbs, function()
 	return Any(
 		Has(Spring),
 		Has(EasternSuburbsSpring),
-		CanWarp()
+		Any(
+			CanWarp(),
+			AccessibilityLevel.SequenceBreak
+		)
 	)
 end)
 SunkenDoorstep:connect_two_ways_entrance(SunkenCity, function()

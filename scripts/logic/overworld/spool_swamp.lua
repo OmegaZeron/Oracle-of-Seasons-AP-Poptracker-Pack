@@ -58,7 +58,10 @@ PoisonMothLair:connect_one_way_entrance(SpoolSwampStump, function()
 	return Any(
 		Has(SpoolSwampSummer),
 		Has(Summer),
-		CanWarp()
+		Any(
+			CanWarp(),
+			AccessibilityLevel.SequenceBreak
+		)
 	)
 end)
 SpoolSwampStump:connect_one_way_entrance(MiddleSpoolSwamp, function()

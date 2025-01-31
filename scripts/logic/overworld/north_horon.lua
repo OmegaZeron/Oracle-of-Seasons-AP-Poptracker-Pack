@@ -262,7 +262,10 @@ UnicornCave:connect_one_way_entrance(DryEyeglassHiddenStairs, function()
 end)
 UnicornCave:connect_one_way_entrance(EasternNorthHoron, function()
 	return Any(
-		CanWarp(),
+		Any(
+			CanWarp(),
+			AccessibilityLevel.SequenceBreak
+		),
 		All(
 			Has(Feather),
 			Has(Autumn),

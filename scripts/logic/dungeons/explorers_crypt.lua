@@ -160,7 +160,7 @@ CryptDarknutBridge:connect_one_way_entrance(CryptPrePoeSisters, function()
 		JumpLiquid3() -- not actually liquid, but diagonal pit
 	)
 end)
-CryptPrePoeSisters:connect_one_way_entrance(PoeSisters) -- no rules since you already require everything by this point. will change with cross items
+CryptPrePoeSisters:connect_one_way_entrance(PoeSisters) -- no rules since you already require everything by this point
 PoeSisters:connect_one_way_entrance(CryptStairMaze) -- no rules since you already require everything by this point
 CryptStairMaze:connect_one_way(CryptStairMazeChest)
 CryptStairMaze:connect_one_way_entrance(CryptWizzrobeStalfosRoom, function()

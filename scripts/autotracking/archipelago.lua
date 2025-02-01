@@ -265,7 +265,7 @@ function onItem(index, item_id, item_name, player_number)
 			else
 				obj.Active = true
 				-- if collecting satchel or slingshot, auto-collect default seed
-				if (v[1] == SeedSatchel or v[1] == Slingshot) then
+				if (v[1] == Satchel or v[1] == Slingshot) then
 					local defaultSeed = Tracker:FindObjectForCode(SeedMapping[SLOT_DATA["default_seed"]])
 					if (defaultSeed) then
 						defaultSeed.Active = true

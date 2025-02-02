@@ -94,7 +94,10 @@ function CanBeatOnox()
 	return All(
 		Has(WoodSword),
 		CanArmorKill(),
-		Has(Bombs),
+		Any(
+			Has(Bombs),
+			Has(Bombchus20)
+		),
 		Has(Feather),
 		Any(
 			HasRod(),

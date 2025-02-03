@@ -9,9 +9,9 @@
 				"name": "Chest Left from Entrance",
 				"sections": [
 					{
-                        "access_rules": ["^$CanReach|SnakeFoyer"]
-                    }
-                ],
+						"access_rules": ["^$CanReach|SnakeFoyer"]
+					}
+				],
 				"map_locations": [
 					{
 						"map": "snakes_remains1",
@@ -25,8 +25,8 @@
 				"sections": [
 					{
 						"access_rules": ["^$CanReach|SnakeLeftRopeDrop"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "snakes_remains1",
@@ -40,8 +40,8 @@
 				"sections": [
 					{
 						"access_rules": ["^$CanReach|SnakeRightRopeChest"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "snakes_remains1",
@@ -55,8 +55,8 @@
 				"sections": [
 					{
 						"access_rules": ["^$CanReach|SnakeHardhatChest"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "snakes_remains1",
@@ -70,8 +70,8 @@
 				"sections": [
 					{
 						"access_rules": ["^$CanReach|SnakeBombMoblins"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "snakes_remains1",
@@ -85,8 +85,8 @@
 				"sections": [
 					{
 						"access_rules": ["^$CanReach|SnakeBladeTraps"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "snakes_remains1",
@@ -101,8 +101,8 @@
 					{
 						"visibility_rules": ["shufflescrubson"],
 						"access_rules": ["^$CanReach|SnakeScrub"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "snakes_remains1",
@@ -116,8 +116,8 @@
 				"sections": [
 					{
 						"access_rules": ["^$CanReach|SnakeBombPuzzle"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "snakes_remains1",
@@ -131,8 +131,8 @@
 				"sections": [
 					{
 						"access_rules": ["^$CanReach|FacadeDoorstep"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "snakes_remains2",
@@ -146,8 +146,8 @@
 				"sections": [
 					{
 						"access_rules": ["^$CanReach|SnakeTerrace"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "snakes_remains2",
@@ -160,10 +160,10 @@
 				"name": "Boss Reward",
 				"sections": [
 					{
-                        "name": "King Dodongo",
+						"name": "King Dodongo",
 						"access_rules": ["^$CanReach|KingDodongo"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "snakes_remains2",
@@ -176,10 +176,10 @@
 				"name": "Gift of Time",
 				"sections": [
 					{
-                        "name": "Essence",
+						"name": "Essence",
 						"access_rules": ["^$CanReach|KingDodongo"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "snakes_remains2",

@@ -9,11 +9,11 @@
 				"name": "Chest North of Entrance",
 				"sections": [
 					{
-                        "name": "2F",
+						"name": "2F",
 						"visibility_rules": ["Dancing Dragon Dungeon/Chest North of Entrance/2F"],
 						"access_rules": ["^$HasHint|Dancing Dragon Dungeon/Chest North of Entrance/2F"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "dancing_dragon_dungeon1",
@@ -28,11 +28,11 @@
 				"name": "Pots on Buttons Puzzle Drop",
 				"sections": [
 					{
-                        "name": "2F",
+						"name": "2F",
 						"visibility_rules": ["Dancing Dragon Dungeon/Pots on Buttons Puzzle Drop/2F"],
 						"access_rules": ["^$HasHint|Dancing Dragon Dungeon/Pots on Buttons Puzzle Drop/2F"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "dancing_dragon_dungeon1",
@@ -47,11 +47,11 @@
 				"name": "Chest in Southwest Quadrant of Beamos Room",
 				"sections": [
 					{
-                        "name": "1F",
+						"name": "1F",
 						"visibility_rules": ["Dancing Dragon Dungeon/Chest in Southwest Quadrant of Beamos Room/1F"],
 						"access_rules": ["^$HasHint|Dancing Dragon Dungeon/Chest in Southwest Quadrant of Beamos Room/1F"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "dancing_dragon_dungeon2",
@@ -66,11 +66,11 @@
 				"name": "Dark Room Chest",
 				"sections": [
 					{
-                        "name": "1F",
+						"name": "1F",
 						"visibility_rules": ["Dancing Dragon Dungeon/Dark Room Chest/1F"],
 						"access_rules": ["^$HasHint|Dancing Dragon Dungeon/Dark Room Chest/1F"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "dancing_dragon_dungeon2",
@@ -85,11 +85,11 @@
 				"name": "Chest in Water Donut Room",
 				"sections": [
 					{
-                        "name": "2F",
+						"name": "2F",
 						"visibility_rules": ["Dancing Dragon Dungeon/Chest in Water Donut Room/2F"],
 						"access_rules": ["^$HasHint|Dancing Dragon Dungeon/Chest in Water Donut Room/2F"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "dancing_dragon_dungeon1",
@@ -104,11 +104,11 @@
 				"name": "Pool Drop",
 				"sections": [
 					{
-                        "name": "2F",
+						"name": "2F",
 						"visibility_rules": ["Dancing Dragon Dungeon/Pool Drop/2F"],
 						"access_rules": ["^$HasHint|Dancing Dragon Dungeon/Pool Drop/2F"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "dancing_dragon_dungeon1",
@@ -123,11 +123,11 @@
 				"name": "Chest on Small Terrace",
 				"sections": [
 					{
-                        "name": "1F",
+						"name": "1F",
 						"visibility_rules": ["Dancing Dragon Dungeon/Chest on Small Terrace/1F"],
 						"access_rules": ["^$HasHint|Dancing Dragon Dungeon/Chest on Small Terrace/1F"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "dancing_dragon_dungeon2",
@@ -143,11 +143,11 @@
 				"visibility_rules": ["shufflescrubson"],
 				"sections": [
 					{
-                        "name": "1F",
+						"name": "1F",
 						"visibility_rules": ["Dancing Dragon Dungeon/Business Scrub/1F"],
 						"access_rules": ["^$HasHint|Dancing Dragon Dungeon/Business Scrub/1F"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "dancing_dragon_dungeon2",
@@ -162,11 +162,11 @@
 				"name": "Chest Revealed by Minecart Torches",
 				"sections": [
 					{
-                        "name": "1F",
+						"name": "1F",
 						"visibility_rules": ["Dancing Dragon Dungeon/Chest Revealed by Minecart Torches/1F"],
 						"access_rules": ["^$HasHint|Dancing Dragon Dungeon/Chest Revealed by Minecart Torches/1F"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "dancing_dragon_dungeon2",
@@ -181,11 +181,11 @@
 				"name": "Crumbling Room Chest",
 				"sections": [
 					{
-                        "name": "1F",
+						"name": "1F",
 						"visibility_rules": ["Dancing Dragon Dungeon/Crumbling Room Chest/1F"],
 						"access_rules": ["^$HasHint|Dancing Dragon Dungeon/Crumbling Room Chest/1F"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "dancing_dragon_dungeon2",
@@ -200,11 +200,11 @@
 				"name": "Eye Diving Spot Item",
 				"sections": [
 					{
-                        "name": "1F",
+						"name": "1F",
 						"visibility_rules": ["Dancing Dragon Dungeon/Eye Diving Spot Item/1F"],
 						"access_rules": ["^$HasHint|Dancing Dragon Dungeon/Eye Diving Spot Item/1F"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "dancing_dragon_dungeon2",
@@ -219,11 +219,11 @@
 				"name": "Boss Reward",
 				"sections": [
 					{
-                        "name": "Gohma",
+						"name": "Gohma",
 						"visibility_rules": ["Dancing Dragon Dungeon/Boss Reward/Gohma"],
 						"access_rules": ["^$HasHint|Dancing Dragon Dungeon/Boss Reward/Gohma"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "dancing_dragon_dungeon1",
@@ -238,11 +238,11 @@
 				"name": "Soothing Rain",
 				"sections": [
 					{
-                        "name": "Essence",
+						"name": "Essence",
 						"visibility_rules": ["Dancing Dragon Dungeon/Soothing Rain/Essence"],
 						"access_rules": ["^$HasHint|Dancing Dragon Dungeon/Soothing Rain/Essence"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "dancing_dragon_dungeon1",

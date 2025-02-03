@@ -9,10 +9,10 @@
 				"name": "Crumbling Ground Room Chest",
 				"sections": [
 					{
-                        "name": "1F",
+						"name": "1F",
 						"access_rules": ["^$CanReach|AncientRightOfSpinner"]
 					}
-                ],
+				],
 				"map_locations": [
 					{
 						"map": "ancient_ruins1",
@@ -25,10 +25,10 @@
 				"name": "Magnet Ball Puzzle Drop",
 				"sections": [
 					{
-                        "name": "1F",
+						"name": "1F",
 						"access_rules": ["^$CanReach|AncientMagnetBallDrop"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "ancient_ruins1",
@@ -41,10 +41,10 @@
 				"name": "Chest in Beamos Room",
 				"sections": [
 					{
-                        "name": "1F",
+						"name": "1F",
 						"access_rules": ["^$CanReach|AncientBeamosPlatforms"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "ancient_ruins1",
@@ -57,10 +57,10 @@
 				"name": "Chest in Gibdo Room",
 				"sections": [
 					{
-                        "name": "2F",
+						"name": "2F",
 						"access_rules": ["^$CanReach|Ancient2FGibdo"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "ancient_ruins1",
@@ -73,10 +73,10 @@
 				"name": "Chest Between 4 Armos",
 				"sections": [
 					{
-                        "name": "2F",
+						"name": "2F",
 						"access_rules": ["^$CanReach|AncientTrappedChest"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "ancient_ruins1",
@@ -89,10 +89,10 @@
 				"name": "Armos Hall Chest",
 				"sections": [
 					{
-                        "name": "3F",
+						"name": "3F",
 						"access_rules": ["^$CanReach|AncientArmosDarknutDrop"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "ancient_ruins2",
@@ -105,10 +105,10 @@
 				"name": "Chest North of Main Spinner",
 				"sections": [
 					{
-                        "name": "2F",
+						"name": "2F",
 						"access_rules": ["^$CanReach|AncientNorthOfSpinnerChest"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "ancient_ruins1",
@@ -121,10 +121,10 @@
 				"name": "Chest on Terrace Left of Entrance",
 				"sections": [
 					{
-                        "name": "1F",
+						"name": "1F",
 						"access_rules": ["^$CanReach|AncientRopeSpinnerWest"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "ancient_ruins1",
@@ -137,10 +137,10 @@
 				"name": "Crystal Maze Room Chest",
 				"sections": [
 					{
-                        "name": "1F",
+						"name": "1F",
 						"access_rules": ["^$CanReach|AncientRopeSpinnerWest"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "ancient_ruins1",
@@ -153,10 +153,10 @@
 				"name": "Chest After Time Trial",
 				"sections": [
 					{
-                        "name": "2F",
+						"name": "2F",
 						"access_rules": ["^$CanReach|AncientIndyJones"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "ancient_ruins1",
@@ -169,10 +169,10 @@
 				"name": "Chest on Red Terrace Before Vire",
 				"sections": [
 					{
-                        "name": "2F",
+						"name": "2F",
 						"access_rules": ["^$CanReach|AncientVireDoorstep"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "ancient_ruins1",
@@ -185,10 +185,10 @@
 				"name": "Boss Reward",
 				"sections": [
 					{
-                        "name": "Manhandla",
+						"name": "Manhandla",
 						"access_rules": ["^$CanReach|Manhandla"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "ancient_ruins2",
@@ -201,10 +201,10 @@
 				"name": "Blowing Wind",
 				"sections": [
 					{
-                        "name": "Essence",
+						"name": "Essence",
 						"access_rules": ["^$CanReach|Manhandla"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "ancient_ruins2",

@@ -47,11 +47,11 @@
 				"name": "Chest Above East Trampoline",
 				"sections": [
 					{
-                        "name": "1F",
+						"name": "1F",
 						"visibility_rules": ["Poison Moth's Lair/Chest Above East Trampoline/1F"],
 						"access_rules": ["^$HasHint|Poison Moth's Lair/Chest Above East Trampoline/1F"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "poison_moths_lair2",
@@ -66,11 +66,11 @@
 				"name": "Chest in Roller Room",
 				"sections": [
 					{
-                        "name": "B1F",
+						"name": "B1F",
 						"visibility_rules": ["Poison Moth's Lair/Chest in Roller Room/B1F"],
 						"access_rules": ["^$HasHint|Poison Moth's Lair/Chest in Roller Room/B1F"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "poison_moths_lair1",
@@ -85,11 +85,11 @@
 				"name": "Chest in Moldorm Room",
 				"sections": [
 					{
-                        "name": "1F",
+						"name": "1F",
 						"visibility_rules": ["Poison Moth's Lair/Chest in Moldorm Room/1F"],
 						"access_rules": ["^$HasHint|Poison Moth's Lair/Chest in Moldorm Room/1F"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "poison_moths_lair2",
@@ -104,11 +104,11 @@
 				"name": "Chest in Room Behind Hidden Cracked Wall",
 				"sections": [
 					{
-                        "name": "1F",
+						"name": "1F",
 						"visibility_rules": ["Poison Moth's Lair/Chest in Room Behind Hidden Cracked Wall/1F"],
 						"access_rules": ["^$HasHint|Poison Moth's Lair/Chest in Room Behind Hidden Cracked Wall/1F"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "poison_moths_lair2",
@@ -123,11 +123,11 @@
 				"name": "Chest in Mimics Room",
 				"sections": [
 					{
-                        "name": "1F",
+						"name": "1F",
 						"visibility_rules": ["Poison Moth's Lair/Chest in Mimics Room/1F"],
 						"access_rules": ["^$HasHint|Poison Moth's Lair/Chest in Mimics Room/1F"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "poison_moths_lair2",
@@ -142,11 +142,11 @@
 				"name": "Chest on Quicksand Terrace",
 				"sections": [
 					{
-                        "name": "B1F",
+						"name": "B1F",
 						"visibility_rules": ["Poison Moth's Lair/Chest on Quicksand Terrace/B1F"],
 						"access_rules": ["^$HasHint|Poison Moth's Lair/Chest on Quicksand Terrace/B1F"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "poison_moths_lair1",
@@ -161,11 +161,11 @@
 				"name": "Chest in Moving Blade Room",
 				"sections": [
 					{
-                        "name": "B1F",
+						"name": "B1F",
 						"visibility_rules": ["Poison Moth's Lair/Chest in Moving Blade Room/B1F"],
 						"access_rules": ["^$HasHint|Poison Moth's Lair/Chest in Moving Blade Room/B1F"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "poison_moths_lair1",
@@ -180,11 +180,11 @@
 				"name": "Boss Reward",
 				"sections": [
 					{
-                        "name": "Mothula",
+						"name": "Mothula",
 						"visibility_rules": ["Poison Moth's Lair/Boss Reward/Mothula"],
 						"access_rules": ["^$HasHint|Poison Moth's Lair/Boss Reward/Mothula"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "poison_moths_lair2",
@@ -199,11 +199,11 @@
 				"name": "Bright Sun",
 				"sections": [
 					{
-                        "name": "Essence",
+						"name": "Essence",
 						"visibility_rules": ["Poison Moth's Lair/Bright Sun/Essence"],
 						"access_rules": ["^$HasHint|Poison Moth's Lair/Bright Sun/Essence"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "poison_moths_lair1",

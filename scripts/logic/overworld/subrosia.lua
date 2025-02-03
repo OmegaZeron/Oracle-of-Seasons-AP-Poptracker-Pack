@@ -45,19 +45,19 @@ end)
 -- temple
 TempleOfSeasons:connect_one_way(TempleDigSpot, function() return Has(Shovel) end)
 TempleOfSeasons:connect_one_way(TempleWinterFairy, function()
-    return Any(
-        Has(Feather),
-        CanHitFarSwitch()
-    )
+	return Any(
+		Has(Feather),
+		CanHitFarSwitch()
+	)
 end)
 TempleOfSeasons:connect_one_way(TempleSummerFairy, function()
-    return All(
-        Has(Bracelet),
-        CanReach(RosaDate)
-    )
+	return All(
+		Has(Bracelet),
+		CanReach(RosaDate)
+	)
 end, {RosaDate})
 TempleOfSeasons:connect_one_way_entrance(TempleAutumnEntrance, function()
-    return All(
+	return All(
 		Has(Feather),
 		Has(BombFlower)
 	)
@@ -108,10 +108,10 @@ SubrosiaMarket:connect_one_way_entrance(RosaDate, function() return Has(Ribbon) 
 SubrosiaMarket:connect_one_way(SubrosiaMarketUpperDigSpot, function() return Has(Shovel) end)
 SubrosiaMarket:connect_one_way(SubrosiaMarketLowerDigSpot, function() return Has(Shovel) end)
 SubrosiaMarket:connect_one_way_entrance(WestFurnace, function()
-    return Any(
-        JumpLiquid3(),
-        Has(MagnetGlove)
-    )
+	return Any(
+		JumpLiquid3(),
+		Has(MagnetGlove)
+	)
 end)
 
 -- village
@@ -119,8 +119,8 @@ SubrosiaVillagePortal:connect_one_way_entrance(LowerMtCucco, function()
 	return All(
 		Any(
 			Has(ShufflePortalsOff),
-            Has(VillageLeadsToCucco),
-            Has(CuccoLeadsToVillage)
+			Has(VillageLeadsToCucco),
+			Has(CuccoLeadsToVillage)
 		)
 	)
 end)
@@ -130,21 +130,21 @@ StrangeBrothers:connect_one_way(StrangeBrothersTreasure, function() return Has(S
 StrangeBrothers:connect_one_way(TempleSpringFairy, function() return Has(Feather) end)
 StrangeBrothers:connect_two_ways_entrance(SubrosiaWilds)
 SubrosiaWilds:connect_one_way_entrance(SubrosiaWildsMagnet, function()
-    return Any(
-        Jump4(),
-        Has(MagnetGlove)
-    )
+	return Any(
+		Jump4(),
+		Has(MagnetGlove)
+	)
 end)
 SubrosiaWildsMagnet:connect_one_way(WildsDigSpot, function() return Has(Shovel) end)
 StrangeBrothers:connect_two_ways_entrance(Pirates, function() return Has(Feather) end)
 StrangeBrothers:connect_one_way_entrance(SubrosiaMarket, function()
-    return All(
-        Has(Bracelet),
-        Any(
-            Has(MagnetGlove),
-            JumpLiquid2()
-        )
-    )
+	return All(
+		Has(Bracelet),
+		Any(
+			Has(MagnetGlove),
+			JumpLiquid2()
+		)
+	)
 end)
 
 -- furnace
@@ -156,11 +156,11 @@ EastFurnace:connect_one_way_entrance(EyeglassPortal, function()
 	)
 end)
 EastFurnace:connect_one_way(GreatFurnace, function()
-    return All(
-        Has(RedOre),
-        Has(BlueOre),
+	return All(
+		Has(RedOre),
+		Has(BlueOre),
 		CanReach(TempleAutumnEntrance)
-    )
+	)
 end, {TempleAutumnEntrance})
 EastFurnace:connect_one_way(SignGuy, function()
 	return Any(
@@ -169,27 +169,27 @@ EastFurnace:connect_one_way(SignGuy, function()
 	)
 end)
 EastFurnace:connect_one_way(BombFlowerPickup, function()
-    return All(
-        Has(Feather),
-        Has(Bracelet)
-    )
+	return All(
+		Has(Feather),
+		Has(Bracelet)
+	)
 end)
 EastFurnace:connect_two_ways_entrance(WestFurnace, function() return Has(Feather) end)
 WestFurnace:connect_one_way(FurnaceTerrace, function()
-    return Any(
-        Jump4(),
-        Has(MagnetGlove)
-    )
+	return Any(
+		Jump4(),
+		Has(MagnetGlove)
+	)
 end)
 WestFurnace:connect_one_way_entrance(SubrosiaMarket, function()
-    return Any(
-        JumpLiquid3(),
-        Has(MagnetGlove),
-        All(
-            Has(Bracelet),
-            Jump2()
-        )
-    )
+	return Any(
+		JumpLiquid3(),
+		Has(MagnetGlove),
+		All(
+			Has(Bracelet),
+			Jump2()
+		)
+	)
 end)
 
 -- d8
@@ -284,16 +284,16 @@ SubrosiaMountainEast:connect_one_way_entrance(SpoolPortal, function()
 	)
 end)
 SubrosiaMountainEast:connect_one_way_entrance(EyeglassPortal, function()
-    return All(
-        Any(
-            Has(ShufflePortalsOn),
-            Has(ShufflePortalsOutward)
-        ),
-        Any(
-            Has(MountainLeadsToLake),
-            Has(LakeLeadsToMountain)
-        )
-    )
+	return All(
+		Any(
+			Has(ShufflePortalsOn),
+			Has(ShufflePortalsOutward)
+		),
+		Any(
+			Has(MountainLeadsToLake),
+			Has(LakeLeadsToMountain)
+		)
+	)
 end)
 SubrosiaMountainEast:connect_one_way_entrance(LowerMtCucco, function()
 	return All(
@@ -442,16 +442,16 @@ SubrosiaMarket:connect_one_way_entrance(SpoolPortal, function()
 	)
 end)
 SubrosiaMarket:connect_one_way_entrance(EyeglassPortal, function()
-    return All(
-        Any(
-            Has(ShufflePortalsOn),
-            Has(ShufflePortalsOutward)
-        ),
-        Any(
-            Has(MarketLeadsToLake),
-            Has(LakeLeadsToMarket)
-        )
-    )
+	return All(
+		Any(
+			Has(ShufflePortalsOn),
+			Has(ShufflePortalsOutward)
+		),
+		Any(
+			Has(MarketLeadsToLake),
+			Has(LakeLeadsToMarket)
+		)
+	)
 end)
 SubrosiaMarket:connect_one_way_entrance(LowerMtCucco, function()
 	return All(
@@ -600,16 +600,16 @@ EastFurnace:connect_one_way_entrance(SpoolPortal, function()
 	)
 end)
 EastFurnace:connect_one_way_entrance(EyeglassPortal, function()
-    return All(
-        Any(
-            Has(ShufflePortalsOn),
-            Has(ShufflePortalsOutward)
-        ),
-        Any(
-            Has(FurnaceLeadsToLake),
-            Has(LakeLeadsToFurnace)
-        )
-    )
+	return All(
+		Any(
+			Has(ShufflePortalsOn),
+			Has(ShufflePortalsOutward)
+		),
+		Any(
+			Has(FurnaceLeadsToLake),
+			Has(LakeLeadsToFurnace)
+		)
+	)
 end)
 EastFurnace:connect_one_way_entrance(LowerMtCucco, function()
 	return All(
@@ -758,16 +758,16 @@ SubrosiaVillagePortal:connect_one_way_entrance(SpoolPortal, function()
 	)
 end)
 SubrosiaVillagePortal:connect_one_way_entrance(EyeglassPortal, function()
-    return All(
-        Any(
-            Has(ShufflePortalsOn),
-            Has(ShufflePortalsOutward)
-        ),
-        Any(
-            Has(VillageLeadsToLake),
-            Has(LakeLeadsToVillage)
-        )
-    )
+	return All(
+		Any(
+			Has(ShufflePortalsOn),
+			Has(ShufflePortalsOutward)
+		),
+		Any(
+			Has(VillageLeadsToLake),
+			Has(LakeLeadsToVillage)
+		)
+	)
 end)
 SubrosiaVillagePortal:connect_one_way_entrance(LowerMtCucco, function()
 	return All(
@@ -830,16 +830,16 @@ SubrosiaVillagePortal:connect_one_way_entrance(SubrosiaMountainEast, function()
 	)
 end)
 SubrosiaVillagePortal:connect_one_way_entrance(SubrosiaMarket, function()
-    return All(
-        Any(
-            Has(ShufflePortalsOn),
-            Has(ShufflePortalsOutward)
-        ),
-        Any(
-            Has(VillageLeadsToMarket),
-            Has(MarketLeadsToVillage)
-        )
-    )
+	return All(
+		Any(
+			Has(ShufflePortalsOn),
+			Has(ShufflePortalsOutward)
+		),
+		Any(
+			Has(VillageLeadsToMarket),
+			Has(MarketLeadsToVillage)
+		)
+	)
 end)
 SubrosiaVillagePortal:connect_one_way_entrance(EastFurnace, function()
 	return All(
@@ -916,16 +916,16 @@ Pirates:connect_one_way_entrance(SpoolPortal, function()
 	)
 end)
 Pirates:connect_one_way_entrance(EyeglassPortal, function()
-    return All(
-        Any(
-            Has(ShufflePortalsOn),
-            Has(ShufflePortalsOutward)
-        ),
-        Any(
-            Has(PiratesLeadsToLake),
-            Has(LakeLeadsToPirates)
-        )
-    )
+	return All(
+		Any(
+			Has(ShufflePortalsOn),
+			Has(ShufflePortalsOutward)
+		),
+		Any(
+			Has(PiratesLeadsToLake),
+			Has(LakeLeadsToPirates)
+		)
+	)
 end)
 Pirates:connect_one_way_entrance(LowerMtCucco, function()
 	return All(
@@ -1074,16 +1074,16 @@ Volcano:connect_one_way_entrance(SpoolPortal, function()
 	)
 end)
 Volcano:connect_one_way_entrance(EyeglassPortal, function()
-    return All(
-        Any(
-            Has(ShufflePortalsOn),
-            Has(ShufflePortalsOutward)
-        ),
-        Any(
-            Has(VolcanoLeadsToLake),
-            Has(LakeLeadsToVolcano)
-        )
-    )
+	return All(
+		Any(
+			Has(ShufflePortalsOn),
+			Has(ShufflePortalsOutward)
+		),
+		Any(
+			Has(VolcanoLeadsToLake),
+			Has(LakeLeadsToVolcano)
+		)
+	)
 end)
 Volcano:connect_one_way_entrance(LowerMtCucco, function()
 	return All(
@@ -1232,16 +1232,16 @@ SwordAndShieldMaze:connect_one_way_entrance(SpoolPortal, function()
 	)
 end)
 SwordAndShieldMaze:connect_one_way_entrance(EyeglassPortal, function()
-    return All(
-        Any(
-            Has(ShufflePortalsOn),
-            Has(ShufflePortalsOutward)
-        ),
-        Any(
-            Has(D8LeadsToLake),
-            Has(LakeLeadsToD8)
-        )
-    )
+	return All(
+		Any(
+			Has(ShufflePortalsOn),
+			Has(ShufflePortalsOutward)
+		),
+		Any(
+			Has(D8LeadsToLake),
+			Has(LakeLeadsToD8)
+		)
+	)
 end)
 SwordAndShieldMaze:connect_one_way_entrance(LowerMtCucco, function()
 	return All(

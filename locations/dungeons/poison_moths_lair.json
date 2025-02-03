@@ -41,10 +41,10 @@
 				"name": "Chest Above East Trampoline",
 				"sections": [
 					{
-                        "name": "1F",
+						"name": "1F",
 						"access_rules": ["^$CanReach|PoisonZolChest"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "poison_moths_lair2",
@@ -57,10 +57,10 @@
 				"name": "Chest in Roller Room",
 				"sections": [
 					{
-                        "name": "B1F",
+						"name": "B1F",
 						"access_rules": ["^$CanReach|PoisonRollerChest"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "poison_moths_lair1",
@@ -73,10 +73,10 @@
 				"name": "Chest in Moldorm Room",
 				"sections": [
 					{
-                        "name": "1F",
+						"name": "1F",
 						"access_rules": ["^$CanReach|PoisonMoldormChest"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "poison_moths_lair2",
@@ -89,10 +89,10 @@
 				"name": "Chest in Room Behind Hidden Cracked Wall",
 				"sections": [
 					{
-                        "name": "1F",
+						"name": "1F",
 						"access_rules": ["^$CanReach|PoisonBombWallChest"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "poison_moths_lair2",
@@ -105,10 +105,10 @@
 				"name": "Chest in Mimics Room",
 				"sections": [
 					{
-                        "name": "1F",
+						"name": "1F",
 						"access_rules": ["^$CanReach|PoisonMimicChest"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "poison_moths_lair2",
@@ -121,10 +121,10 @@
 				"name": "Chest on Quicksand Terrace",
 				"sections": [
 					{
-                        "name": "B1F",
+						"name": "B1F",
 						"access_rules": ["^$CanReach|PoisonTerraceChest"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "poison_moths_lair1",
@@ -137,10 +137,10 @@
 				"name": "Chest in Moving Blade Room",
 				"sections": [
 					{
-                        "name": "B1F",
+						"name": "B1F",
 						"access_rules": ["^$CanReach|PoisonBladeTrapChest"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "poison_moths_lair1",
@@ -153,10 +153,10 @@
 				"name": "Boss Reward",
 				"sections": [
 					{
-                        "name": "Mothula",
+						"name": "Mothula",
 						"access_rules": ["^$CanReach|Mothula"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "poison_moths_lair2",
@@ -169,10 +169,10 @@
 				"name": "Bright Sun",
 				"sections": [
 					{
-                        "name": "Essence",
+						"name": "Essence",
 						"access_rules": ["^$CanReach|PoisonEssence"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "poison_moths_lair1",

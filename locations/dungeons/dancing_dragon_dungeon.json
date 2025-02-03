@@ -9,10 +9,10 @@
 				"name": "Chest North of Entrance",
 				"sections": [
 					{
-                        "name": "2F",
+						"name": "2F",
 						"access_rules": ["^$CanReach|DancingMinecart"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "dancing_dragon_dungeon1",
@@ -25,10 +25,10 @@
 				"name": "Pots on Buttons Puzzle Drop",
 				"sections": [
 					{
-                        "name": "2F",
+						"name": "2F",
 						"access_rules": ["^$CanReach|DancingPotPush"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "dancing_dragon_dungeon1",
@@ -41,10 +41,10 @@
 				"name": "Chest in Southwest Quadrant of Beamos Room",
 				"sections": [
 					{
-                        "name": "1F",
+						"name": "1F",
 						"access_rules": ["^$CanReach|DancingAntiFairyMaze"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "dancing_dragon_dungeon2",
@@ -57,10 +57,10 @@
 				"name": "Dark Room Chest",
 				"sections": [
 					{
-                        "name": "1F",
+						"name": "1F",
 						"access_rules": ["^$CanReach|DancingDarkRoomChest"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "dancing_dragon_dungeon2",
@@ -73,10 +73,10 @@
 				"name": "Chest in Water Donut Room",
 				"sections": [
 					{
-                        "name": "2F",
+						"name": "2F",
 						"access_rules": ["^$CanReach|DancingWaterRing"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "dancing_dragon_dungeon1",
@@ -89,10 +89,10 @@
 				"name": "Pool Drop",
 				"sections": [
 					{
-                        "name": "2F",
+						"name": "2F",
 						"access_rules": ["^$CanReach|DancingPoolDrop"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "dancing_dragon_dungeon1",
@@ -105,10 +105,10 @@
 				"name": "Chest on Small Terrace",
 				"sections": [
 					{
-                        "name": "1F",
+						"name": "1F",
 						"access_rules": ["^$CanReach|DancingMinecartTorches"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "dancing_dragon_dungeon2",
@@ -121,11 +121,11 @@
 				"name": "Business Scrub",
 				"sections": [
 					{
-                        "name": "1F",
+						"name": "1F",
 						"visibility_rules": ["shufflescrubson"],
 						"access_rules": ["^$CanReach|DancingScrub"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "dancing_dragon_dungeon2",
@@ -138,10 +138,10 @@
 				"name": "Chest Revealed by Minecart Torches",
 				"sections": [
 					{
-                        "name": "1F",
+						"name": "1F",
 						"access_rules": ["^$CanReach|DancingTorchChest"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "dancing_dragon_dungeon2",
@@ -154,10 +154,10 @@
 				"name": "Wild Ember Seeds",
 				"sections": [
 					{
-                        "name": "1F",
+						"name": "1F",
 						"access_rules": ["^$CanReach|DancingWildEmbers"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "dancing_dragon_dungeon2",
@@ -185,10 +185,10 @@
 				"name": "Crumbling Room Chest",
 				"sections": [
 					{
-                        "name": "1F",
+						"name": "1F",
 						"access_rules": ["^$CanReach|DancingPitRace"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "dancing_dragon_dungeon2",
@@ -201,10 +201,10 @@
 				"name": "Eye Diving Spot Item",
 				"sections": [
 					{
-                        "name": "1F",
+						"name": "1F",
 						"access_rules": ["^$CanReach|DancingEyeDive"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "dancing_dragon_dungeon2",
@@ -217,10 +217,10 @@
 				"name": "Boss Reward",
 				"sections": [
 					{
-                        "name": "Gohma",
+						"name": "Gohma",
 						"access_rules": ["^$CanReach|Gohma"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "dancing_dragon_dungeon1",
@@ -233,10 +233,10 @@
 				"name": "Soothing Rain",
 				"sections": [
 					{
-                        "name": "Essence",
+						"name": "Essence",
 						"access_rules": ["^$CanReach|Gohma"]
-                    }
-                ],
+					}
+				],
 				"map_locations": [
 					{
 						"map": "dancing_dragon_dungeon1",

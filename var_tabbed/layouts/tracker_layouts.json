@@ -15,7 +15,7 @@
 							{
 								"type": "tabbed",
 								"dock": "top",
-								"content": [  
+								"content": [
 									{
 										"title": "Items",
 										"type": "dock",
@@ -48,7 +48,7 @@
 												]
 											}
 										]
-									},   
+									},
 									{
 										"title": "Holodrum",
 										"icon": "images/items/sword1.png",
@@ -254,7 +254,7 @@
 				]
 			}
 		},
-	    "settings_popup": {
+		"settings_popup": {
 			"type": "array",
 			"orientation": "horizontal",
 			"h_alignment": "left",

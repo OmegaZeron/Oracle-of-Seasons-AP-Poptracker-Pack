@@ -7,7 +7,7 @@
 		"children": [	
 			{
 				"name": "Drop in Right Stalfos Room",
-				"sections":  [
+				"sections": [
 					{
 						"visibility_rules": ["Gnarled Root Dungeon/Drop in Right Stalfos Room/"],
 						"access_rules": ["^$HasHint|Gnarled Root Dungeon/Drop in Right Stalfos Room/"]

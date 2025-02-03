@@ -1,8 +1,8 @@
 ﻿{
-    "type": "dock",
-    "dropshadow": true,
-    "background": "#333",
-    "content": [{
+	"type": "dock",
+	"dropshadow": true,
+	"background": "#333",
+	"content": [{
 		"type": "dock",
 		"dock": "left",
 		"v_alignment": "stretch",

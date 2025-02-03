@@ -7,7 +7,7 @@
 		"children": [	
 			{
 				"name": "Drop in Right Stalfos Room",
-				"sections":  [
+				"sections": [
 					{
 						"access_rules": ["^$CanReach|GnarledRightStalfosChest"]
 					}

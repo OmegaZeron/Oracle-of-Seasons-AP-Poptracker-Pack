@@ -349,7 +349,7 @@ function CanDestroyPot()
 	return Has(NobleSword) or
 	Has(Bracelet) or
 	Has(BiggoronSword)
-end 
+end
 
 function CanDestroyFlower()
 	return Any(
@@ -623,7 +623,6 @@ function CanNormalKill(pitAvailable, allowGale, allowCane)
 		CanSwordPunchKill(),
 		CanNormalSatchelKill(allowGale),
 		CanNormalSlingshotKill(allowGale),
-		CanGaleKill(),
 		All(
 			Any(
 				Has(Bombs40),
@@ -690,7 +689,7 @@ function CanNormalSlingshotKill(allowGale)
 			Any(
 				Has(EmberSeeds),
 				Has(ScentSeeds),
-				Any(
+				All(
 					allowGale,
 					Any(
 						IsMediumPlus(),

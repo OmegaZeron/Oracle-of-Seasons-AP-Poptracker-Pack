@@ -1,42 +1,41 @@
 LowerTempleRemains:connect_one_way(TempleRemainsFindSeason)
 LowerTempleRemains:connect_one_way_entrance(TempleRemainsStump, function()
-	return Any(
-		All(
-			-- spring
-			Any(
-				Has(Spring),
-				Has(TempleRemainsSpring)
+	return All(
+		CanDestroyBush(),
+		Any(
+			All(
+				-- spring
+				Any(
+					Has(Spring),
+					Has(TempleRemainsSpring)
+				),
+				CanDestroyFlower(),
+				Jump6()
 			),
-			CanDestroyFlower(),
-			CanDestroyBush(),
-			Jump6()
-		),
-		All(
-			-- summer
-			Any(
-				Has(Summer),
-				Has(TempleRemainsSummer)
+			All(
+				-- summer
+				Any(
+					Has(Summer),
+					Has(TempleRemainsSummer)
+				),
+				Jump6()
 			),
-			CanDestroyBush(),
-			Jump6()
-		),
-		All(
-			-- autumn
-			Any(
-				Has(Autumn),
-				Has(TempleRemainsAutumn)
+			All(
+				-- autumn
+				Any(
+					Has(Autumn),
+					Has(TempleRemainsAutumn)
+				)
 			),
-			CanDestroyBush()
-		),
-		All(
-			-- winter
-			Any(
-				Has(Winter),
-				Has(TempleRemainsWinter)
-			),
-			Has(Shovel),
-			CanDestroyBush(),
-			Jump6()
+			All(
+				-- winter
+				Any(
+					Has(Winter),
+					Has(TempleRemainsWinter)
+				),
+				Has(Shovel),
+				Jump6()
+			)
 		)
 	)
 end)

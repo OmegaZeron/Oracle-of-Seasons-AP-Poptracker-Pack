@@ -9,10 +9,10 @@
 				"name": "Eye Drop Near Entrance",
 				"sections": [
 					{
-                        "name": "1F",
-                        "access_rules": ["^$CanReach|MazeEyeDrop"]
-                    }
-                ],
+						"name": "1F",
+						"access_rules": ["^$CanReach|MazeEyeDrop"]
+					}
+				],
 				"map_locations": [
 					{
 						"map": "sword_and_shield_maze1",
@@ -25,10 +25,10 @@
 				"name": "Three Eyes Chest",
 				"sections": [
 					{
-                        "name": "1F",
-                        "access_rules": ["^$CanReach|MazeThreeEyeChest"]
-                    }
-                ],
+						"name": "1F",
+						"access_rules": ["^$CanReach|MazeThreeEyeChest"]
+					}
+				],
 				"map_locations": [
 					{
 						"map": "sword_and_shield_maze1",
@@ -41,10 +41,10 @@
 				"name": "Drop in Hardhat & Magnet Ball Room",
 				"sections": [
 					{
-                        "name": "1F",
-                        "access_rules": ["^$CanReach|MazeHardhatDrop"]
-                    }
-                ],
+						"name": "1F",
+						"access_rules": ["^$CanReach|MazeHardhatDrop"]
+					}
+				],
 				"map_locations": [
 					{
 						"map": "sword_and_shield_maze1",
@@ -57,10 +57,10 @@
 				"name": "U-shaped Spiky Freezer Chest",
 				"sections": [
 					{
-                        "name": "1F",
-                        "access_rules": ["^$CanReach|MazeBigBladeTrap"]
-                    }
-                ],
+						"name": "1F",
+						"access_rules": ["^$CanReach|MazeBigBladeTrap"]
+					}
+				],
 				"map_locations": [
 					{
 						"map": "sword_and_shield_maze1",
@@ -73,10 +73,10 @@
 				"name": "Bottom Chest in Lava Bridge Room",
 				"sections": [
 					{
-                        "name": "1F",
-                        "access_rules": ["^$CanReach|MazeSpinner"]
-                    }
-                ],
+						"name": "1F",
+						"access_rules": ["^$CanReach|MazeSpinner"]
+					}
+				],
 				"map_locations": [
 					{
 						"map": "sword_and_shield_maze1",
@@ -89,10 +89,10 @@
 				"name": "Top Chest in Lava Bridge Room",
 				"sections": [
 					{
-                        "name": "1F",
-                        "access_rules": ["^$CanReach|MazeArmosChest"]
-                    }
-                ],
+						"name": "1F",
+						"access_rules": ["^$CanReach|MazeArmosChest"]
+					}
+				],
 				"map_locations": [
 					{
 						"map": "sword_and_shield_maze1",
@@ -105,10 +105,10 @@
 				"name": "Chest Right of Spinner",
 				"sections": [
 					{
-                        "name": "B1F",
-                        "access_rules": ["^$CanReach|MazeArmosChest"]
-                    }
-                ],
+						"name": "B1F",
+						"access_rules": ["^$CanReach|MazeArmosChest"]
+					}
+				],
 				"map_locations": [
 					{
 						"map": "sword_and_shield_maze2",
@@ -121,10 +121,10 @@
 				"name": "Chest in Bombable Blocks Room",
 				"sections": [
 					{
-                        "name": "1F",
-                        "access_rules": ["^$CanReach|MazeThreeEyeBombChest"]
-                    }
-                ],
+						"name": "1F",
+						"access_rules": ["^$CanReach|MazeThreeEyeBombChest"]
+					}
+				],
 				"map_locations": [
 					{
 						"map": "sword_and_shield_maze1",
@@ -137,10 +137,10 @@
 				"name": "Wild Mystery Seeds",
 				"sections": [
 					{
-                        "name": "B1F",
-                        "access_rules": ["^$CanReach|MazeWildMysteries"]
-                    }
-                ],
+						"name": "B1F",
+						"access_rules": ["^$CanReach|MazeWildMysteries"]
+					}
+				],
 				"map_locations": [
 					{
 						"map": "sword_and_shield_maze2",
@@ -168,10 +168,10 @@
 				"name": "Chest on Terrace After Pols Voice Room",
 				"sections": [
 					{
-                        "name": "1F",
-                        "access_rules": ["^$CanReach|MazeTerrace"]
-                    }
-                ],
+						"name": "1F",
+						"access_rules": ["^$CanReach|MazeTerrace"]
+					}
+				],
 				"map_locations": [
 					{
 						"map": "sword_and_shield_maze1",
@@ -184,10 +184,10 @@
 				"name": "Ghost Armos Puzzle Drop",
 				"sections": [
 					{
-                        "name": "1F",
-                        "access_rules": ["^$CanReach|MazeGhostArmos"]
-                    }
-                ],
+						"name": "1F",
+						"access_rules": ["^$CanReach|MazeGhostArmos"]
+					}
+				],
 				"map_locations": [
 					{
 						"map": "sword_and_shield_maze1",
@@ -200,10 +200,10 @@
 				"name": "Southeast Lava Chest",
 				"sections": [
 					{
-                        "name": "B1F",
-                        "access_rules": ["^$CanReach|MazeSELavaChest"]
-                    }
-                ],
+						"name": "B1F",
+						"access_rules": ["^$CanReach|MazeSELavaChest"]
+					}
+				],
 				"map_locations": [
 					{
 						"map": "sword_and_shield_maze2",
@@ -216,10 +216,10 @@
 				"name": "Chest in Sparks & Pots Room",
 				"sections": [
 					{
-                        "name": "1F",
-                        "access_rules": ["^$CanReach|MazeSparkPots"]
-                    }
-                ],
+						"name": "1F",
+						"access_rules": ["^$CanReach|MazeSparkPots"]
+					}
+				],
 				"map_locations": [
 					{
 						"map": "sword_and_shield_maze1",
@@ -232,10 +232,10 @@
 				"name": "Southwest Lava Chest",
 				"sections": [
 					{
-                        "name": "B1F",
-                        "access_rules": ["^$CanReach|MazeNevermeltIce"]
-                    }
-                ],
+						"name": "B1F",
+						"access_rules": ["^$CanReach|MazeNevermeltIce"]
+					}
+				],
 				"map_locations": [
 					{
 						"map": "sword_and_shield_maze2",
@@ -248,10 +248,10 @@
 				"name": "Boss Reward",
 				"sections": [
 					{
-                        "name": "Medusa Head",
-                        "access_rules": ["^$CanReach|MedusaHead"]
-                    }
-                ],
+						"name": "Medusa Head",
+						"access_rules": ["^$CanReach|MedusaHead"]
+					}
+				],
 				"map_locations": [
 					{
 						"map": "sword_and_shield_maze2",
@@ -264,10 +264,10 @@
 				"name": "Changing Seasons",
 				"sections": [
 					{
-                        "name": "Essence",
-                        "access_rules": ["^$CanReach|MedusaHead"]
-                    }
-                ],
+						"name": "Essence",
+						"access_rules": ["^$CanReach|MedusaHead"]
+					}
+				],
 				"map_locations": [
 					{
 						"map": "sword_and_shield_maze2",

@@ -1,0 +1,674 @@
+﻿[
+	{
+		"name": "Subrosia Hints",
+		"chest_unopened_img": "images/labels/chest.png",
+		"chest_opened_img": "images/labels/chestopen.png",
+		"visibility_rules": ["showhintson"],
+		"children": [
+			{
+				"name": "Temple of Seasons",
+				"sections": [
+					{
+						"name": "Subrosia: Temple of Seasons",
+						"visibility_rules": ["Subrosia/Temple of Seasons/Temple of Seasons"],
+						"access_rules": ["^$HasHint|Subrosia/Temple of Seasons/Temple of Seasons"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "subrosia",
+						"x": 1536,
+						"y": 83,
+						"size": 17,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Temple of Seasons-Summer",
+				"sections": [
+					{
+						"name": "Subrosia: Tower of Summer",
+						"visibility_rules": ["Subrosia/Temple of Seasons-Summer/Tower of Summer"],
+						"access_rules": ["^$HasHint|Subrosia/Temple of Seasons-Summer/Tower of Summer"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "subrosia",
+						"x": 1336,
+						"y": 43,
+						"size": 17,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Temple of Seasons-Autumn",
+				"sections": [
+					{
+						"name": "Subrosia: Tower of Autumn",
+						"visibility_rules": ["Subrosia/Temple of Seasons-Autumn/Tower of Autumn"],
+						"access_rules": ["^$HasHint|Subrosia/Temple of Seasons-Autumn/Tower of Autumn"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "subrosia",
+						"x": 1736,
+						"y": 43,
+						"size": 17,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Temple of Seasons-Winter",
+				"sections": [
+					{
+						"name": "Subrosia: Tower of Winter",
+						"visibility_rules": ["Subrosia/Temple of Seasons-Winter/Tower of Winter"],
+						"access_rules": ["^$HasHint|Subrosia/Temple of Seasons-Winter/Tower of Winter"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "subrosia",
+						"x": 1736,
+						"y": 284,
+						"size": 17,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Temple of Seasons-Spring",
+				"sections": [
+					{
+						"name": "Subrosia: Tower of Spring",
+						"visibility_rules": ["Subrosia/Temple of Seasons-Spring/Tower of Spring"],
+						"access_rules": ["^$HasHint|Subrosia/Temple of Seasons-Spring/Tower of Spring"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "subrosia",
+						"x": 1336,
+						"y": 284,
+						"size": 17,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Subrosian Smithy",
+				"sections": [
+					{
+						"name": "Subrosia: Smithy Hard Ore Reforge",
+						"visibility_rules": ["Subrosia/Subrosian Smithy/Smithy Hard Ore Reforge"],
+						"access_rules": ["^$HasHint|Subrosia/Subrosian Smithy/Smithy Hard Ore Reforge"]
+					},
+					{
+						"name": "Subrosia: Smithy Rusty Bell Reforge",
+						"visibility_rules": ["Subrosia/Subrosian Smithy/Smithy Rusty Bell Reforge"],
+						"access_rules": ["^$HasHint|Subrosia/Subrosian Smithy/Smithy Rusty Bell Reforge"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "subrosia",
+						"x": 600,
+						"y": 451,
+						"size": 17,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Subrosian Dance Hall",
+				"sections": [
+					{
+						"name": "Subrosia: Dance Hall Reward",
+						"visibility_rules": ["Subrosia/Subrosian Dance Hall/Dance Hall Reward"],
+						"access_rules": ["^$HasHint|Subrosia/Subrosian Dance Hall/Dance Hall Reward"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "subrosia",
+						"x": 728,
+						"y": 313,
+						"size": 17,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Cave in the Mountain",
+				"sections": [
+					{
+						"name": "Subrosia: Northwest Open Cave",
+						"visibility_rules": ["Subrosia/Cave in the Mountain/Northwest Open Cave"],
+						"access_rules": ["^$HasHint|Subrosia/Cave in the Mountain/Northwest Open Cave"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "subrosia",
+						"x": 200,
+						"y": 200,
+						"size": 17,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Subrosian Seaside",
+				"sections": [
+					{
+						"name": "Subrosia: Seaside Digging Spot",
+						"visibility_rules": ["Subrosia/Subrosian Seaside/Seaside Digging Spot"],
+						"access_rules": ["^$HasHint|Subrosia/Subrosian Seaside/Seaside Digging Spot"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "subrosia",
+						"x": 1081,
+						"y": 871,
+						"size": 17,
+						"shape": "diamond"
+					},
+					{
+						"map": "subrosia",
+						"x": 1047,
+						"y": 953,
+						"size": 17,
+						"shape": "diamond"
+					},
+					{
+						"map": "subrosia",
+						"x": 935,
+						"y": 953,
+						"size": 17,
+						"shape": "diamond"
+					},
+					{
+						"map": "subrosia",
+						"x": 935,
+						"y": 873,
+						"size": 17,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Subrosian Market",
+				"sections": [
+					{
+						"name": "Subrosia: Market #1",
+						"visibility_rules": ["Subrosia/Subrosian Market/Market #1"],
+						"access_rules": ["^$HasHint|Subrosia/Subrosian Market/Market #1"]
+					},
+					{
+						"name": "Subrosia: Market #2",
+						"visibility_rules": ["Subrosia/Subrosian Market/Market #2"],
+						"access_rules": ["^$HasHint|Subrosia/Subrosian Market/Market #2"]
+					},
+					{
+						"name": "Subrosia: Market #3",
+						"visibility_rules": ["Subrosia/Subrosian Market/Market #3"],
+						"access_rules": ["^$HasHint|Subrosia/Subrosian Market/Market #3"]
+					},
+					{
+						"name": "Subrosia: Market #4",
+						"visibility_rules": ["Subrosia/Subrosian Market/Market #4"],
+						"access_rules": ["^$HasHint|Subrosia/Subrosian Market/Market #4"]
+					},
+					{
+						"name": "Subrosia: Market #5",
+						"visibility_rules": ["Subrosia/Subrosian Market/Market #5"],
+						"access_rules": ["^$HasHint|Subrosia/Subrosian Market/Market #5"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "subrosia",
+						"x": 865,
+						"y": 600,
+						"size": 17,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Subrosian Chef's Kitchen",
+				"sections": [
+					{
+						"name": "Subrosia: Subrosian Chef Trade",
+						"visibility_rules": ["Subrosia/Subrosian Chef's Kitchen/Subrosian Chef Trade"],
+						"access_rules": ["^$HasHint|Subrosia/Subrosian Chef's Kitchen/Subrosian Chef Trade"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "subrosia",
+						"x": 376,
+						"y": 331,
+						"size": 17,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Rosa's World Tour",
+				"sections": [
+					{
+						"name": "Subrosia: Northwest Locked Cave",
+						"visibility_rules": ["Subrosia/Rosa's World Tour/Northwest Locked Cave"],
+						"access_rules": ["^$HasHint|Subrosia/Rosa's World Tour/Northwest Locked Cave"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "subrosia",
+						"x": 472,
+						"y": 231,
+						"size": 17,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Furnace Area",
+				"sections": [
+					{
+						"name": "Subrosia: Chest Above Magnet Cave",
+						"visibility_rules": ["Subrosia/Furnace Area/Chest Above Magnet Cave"],
+						"access_rules": ["^$HasHint|Subrosia/Furnace Area/Chest Above Magnet Cave"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "subrosia",
+						"x": 1337,
+						"y": 697,
+						"size": 17,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Great Furnace",
+				"sections": [
+					{
+						"name": "Subrosia: Item Smelted in Great Furnace",
+						"visibility_rules": ["Subrosia/Great Furnace/Item Smelted in Great Furnace"],
+						"access_rules": ["^$HasHint|Subrosia/Great Furnace/Item Smelted in Great Furnace"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "subrosia",
+						"x": 1545,
+						"y": 633,
+						"size": 17,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Bomb Flower",
+				"sections": [
+					{
+						"name": "Subrosia: Buried Bomb Flower",
+						"visibility_rules": ["Subrosia/Bomb Flower/Buried Bomb Flower"],
+						"access_rules": ["^$HasHint|Subrosia/Bomb Flower/Buried Bomb Flower"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "subrosia",
+						"x": 1585,
+						"y": 828,
+						"size": 17,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Sign-Loving Guy",
+				"sections": [
+					{
+						"name": "Subrosia: Sign-Loving Guy Reward",
+						"visibility_rules": ["Subrosia/Sign-Loving Guy/Sign-Loving Guy Reward"],
+						"access_rules": ["^$HasHint|Subrosia/Sign-Loving Guy/Sign-Loving Guy Reward"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "subrosia",
+						"x": 1690,
+						"y": 688,
+						"size": 17,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Subrosian Village",
+				"sections": [
+					{
+						"name": "Subrosia: Item in House Above Strange Brothers Portal",
+						"visibility_rules": ["Subrosia/Subrosian Village/Item in House Above Strange Brothers Portal"],
+						"access_rules": ["^$HasHint|Subrosia/Subrosian Village/Item in House Above Strange Brothers Portal"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "subrosia",
+						"x": 713,
+						"y": 600,
+						"size": 17,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Subrosian Village Stairs",
+				"sections": [
+					{
+						"name": "Subrosia: Item in Basement to Tower of Spring",
+						"visibility_rules": ["Subrosia/Subrosian Village Stairs/Item in Basement to Tower of Spring"],
+						"access_rules": ["^$HasHint|Subrosia/Subrosian Village Stairs/Item in Basement to Tower of Spring"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "subrosia",
+						"x": 728,
+						"y": 761,
+						"size": 17,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Subrosian Wilds Digging Spot",
+				"sections": [
+					{
+						"name": "Subrosia: Wilds Digging Spot",
+						"visibility_rules": ["Subrosia/Subrosian Wilds Digging Spot/Wilds Digging Spot"],
+						"access_rules": ["^$HasHint|Subrosia/Subrosian Wilds Digging Spot/Wilds Digging Spot"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "subrosia",
+						"x": 41,
+						"y": 633,
+						"size": 17,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Subrosian Wilds",
+				"sections": [
+					{
+						"name": "Subrosia: Wilds Chest",
+						"visibility_rules": ["Subrosia/Subrosian Wilds/Wilds Chest"],
+						"access_rules": ["^$HasHint|Subrosia/Subrosian Wilds/Wilds Chest"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "subrosia",
+						"x": 200,
+						"y": 553,
+						"size": 17,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Market Portal Digging Spot",
+				"visibility_rules": ["gold_ores_shuffled"],
+				"sections": [
+					{
+						"name": "Subrosia: Market Portal Digging Spot",
+						"visibility_rules": ["Subrosia/Market Portal Digging Spot/Market Portal Digging Spot"],
+						"access_rules": ["^$HasHint|Subrosia/Market Portal Digging Spot/Market Portal Digging Spot"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "subrosia",
+						"x": 1272,
+						"y": 709,
+						"size": 17,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Northern Volcanoes Digging Spot",
+				"visibility_rules": ["gold_ores_shuffled"],
+				"sections": [
+					{
+						"name": "Subrosia: Northern Volcanoes Digging Spot",
+						"visibility_rules": ["Subrosia/Northern Volcanoes Digging Spot/Northern Volcanoes Digging Spot"],
+						"access_rules": ["^$HasHint|Subrosia/Northern Volcanoes Digging Spot/Northern Volcanoes Digging Spot"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "subrosia",
+						"x": 1190,
+						"y": 42,
+						"size": 17,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Temple of Seasons Digging Spot",
+				"visibility_rules": ["gold_ores_shuffled"],
+				"sections": [
+					{
+						"name": "Subrosia: Temple of Seasons Digging Spot",
+						"visibility_rules": ["Subrosia/Temple of Seasons Digging Spot/Temple of Seasons Digging Spot"],
+						"access_rules": ["^$HasHint|Subrosia/Temple of Seasons Digging Spot/Temple of Seasons Digging Spot"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "subrosia",
+						"x": 1722,
+						"y": 474,
+						"size": 17,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Hard-Working Subrosian Digging Spot",
+				"visibility_rules": ["gold_ores_shuffled"],
+				"sections": [
+					{
+						"name": "Subrosia: Hard-Working Subrosian Digging Spot",
+						"visibility_rules": ["Subrosia/Hard-Working Subrosian Digging Spot/Hard-Working Subrosian Digging Spot"],
+						"access_rules": ["^$HasHint|Subrosia/Hard-Working Subrosian Digging Spot/Hard-Working Subrosian Digging Spot"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "subrosia",
+						"x": 1192,
+						"y": 585,
+						"size": 17,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "D8 Portal Digging Spot",
+				"visibility_rules": ["gold_ores_shuffled"],
+				"sections": [
+					{
+						"name": "Subrosia: D8 Portal Digging Spot",
+						"visibility_rules": ["Subrosia/D8 Portal Digging Spot/D8 Portal Digging Spot"],
+						"access_rules": ["^$HasHint|Subrosia/D8 Portal Digging Spot/D8 Portal Digging Spot"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "subrosia",
+						"x": 150,
+						"y": 373,
+						"size": 17,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Western Volcanoes Digging Spot",
+				"visibility_rules": ["gold_ores_shuffled"],
+				"sections": [
+					{
+						"name": "Subrosia: Western Volcanoes Digging Spot",
+						"visibility_rules": ["Subrosia/Western Volcanoes Digging Spot/Western Volcanoes Digging Spot"],
+						"access_rules": ["^$HasHint|Subrosia/Western Volcanoes Digging Spot/Western Volcanoes Digging Spot"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "subrosia",
+						"x": 408,
+						"y": 551,
+						"size": 17,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Hot Bath Digging Spot",
+				"visibility_rules": ["gold_ores_shuffled"],
+				"sections": [
+					{
+						"name": "Subrosia: Hot Bath Digging Spot",
+						"visibility_rules": ["Subrosia/Hot Bath Digging Spot/Hot Bath Digging Spot"],
+						"access_rules": ["^$HasHint|Subrosia/Hot Bath Digging Spot/Hot Bath Digging Spot"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "subrosia",
+						"x": 1113,
+						"y": 40,
+						"size": 17,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Strange Brothers' Backyard Treasure",
+				"sections": [
+					{
+						"name": "Subrosia: Strange Brothers' Backyard Treasure",
+						"visibility_rules": ["Subrosia/Strange Brothers' Backyard Treasure/Strange Brothers' Backyard Treasure"],
+						"access_rules": ["^$HasHint|Subrosia/Strange Brothers' Backyard Treasure/Strange Brothers' Backyard Treasure"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "subrosia",
+						"x": 56,
+						"y": 857,
+						"size": 17,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Sword and Shield Maze",
+				"color": "#ff3c00",
+				"sections": [
+					{
+						"name": "Sword & Shield Dungeon (1F): Eye Drop Near Entrance",
+						"ref": "Sword and Shield Maze Hints/Eye Drop Near Entrance/1F"
+					},
+					{
+						"name": "Sword & Shield Dungeon (1F): Three Eyes Chest",
+						"ref": "Sword and Shield Maze Hints/Three Eyes Chest/1F"
+					},
+					{
+						"name": "Sword & Shield Dungeon (1F): Drop in Hardhat & Magnet Ball Room",
+						"ref": "Sword and Shield Maze Hints/Drop in Hardhat & Magnet Ball Room/1F"
+					},
+					{
+						"name": "Sword & Shield Dungeon (1F): U-shaped Spiky Freezer Chest",
+						"ref": "Sword and Shield Maze Hints/U-shaped Spiky Freezer Chest/1F"
+					},
+					{
+						"name": "Sword & Shield Dungeon (1F): Bottom Chest in Lava Bridge Room",
+						"ref": "Sword and Shield Maze Hints/Bottom Chest in Lava Bridge Room/1F"
+					},
+					{
+						"name": "Sword & Shield Dungeon (1F): Top Chest in Lava Bridge Room",
+						"ref": "Sword and Shield Maze Hints/Top Chest in Lava Bridge Room/1F"
+					},
+					{
+						"name": "Sword & Shield Dungeon (B1F): Chest Right of Spinner",
+						"ref": "Sword and Shield Maze Hints/Chest Right of Spinner/B1F"
+					},
+					{
+						"name": "Sword & Shield Dungeon (B1F): Wild Mystery Seeds",
+						"ref": "Sword and Shield Maze Hints/Wild Mystery Seeds/B1F"
+					},
+					{
+						"name": "Sword & Shield Dungeon (1F): Chest in Bombable Blocks Room",
+						"ref": "Sword and Shield Maze Hints/Chest in Bombable Blocks Room/1F"
+					},
+					{
+						"name": "Sword & Shield Dungeon (1F): Chest on Terrace After Pols Voice Room",
+						"ref": "Sword and Shield Maze Hints/Chest on Terrace After Pols Voice Room/1F"
+					},
+					{
+						"name": "Sword & Shield Dungeon (1F): Ghost Armos Puzzle Drop",
+						"ref": "Sword and Shield Maze Hints/Ghost Armos Puzzle Drop/1F"
+					},
+					{
+						"name": "Sword & Shield Dungeon (B1F): Southeast Lava Chest",
+						"ref": "Sword and Shield Maze Hints/Southeast Lava Chest/B1F"
+					},
+					{
+						"name": "Sword & Shield Dungeon (1F): Chest in Sparks & Pots Room",
+						"ref": "Sword and Shield Maze Hints/Chest in Sparks & Pots Room/1F"
+					},
+					{
+						"name": "Sword & Shield Dungeon (B1F): Southwest Lava Chest",
+						"ref": "Sword and Shield Maze Hints/Southwest Lava Chest/B1F"
+					},
+					{
+						"name": "Sword & Shield Dungeon (B1F): Boss Reward",
+						"ref": "Sword and Shield Maze Hints/Boss Reward/Medusa Head"
+					},
+					{
+						"name": "Changing Seasons",
+						"ref": "Sword and Shield Maze Hints/Changing Seasons/Essence"
+					}
+				],
+				"map_locations": [
+					{
+						"map": "subrosia",
+						"x": 72,
+						"y": 57,
+						"size": 17,
+						"shape": "diamond"
+					}
+				]
+			}
+		]
+	}
+]

@@ -1,0 +1,333 @@
+[
+	{
+		"name": "Eastern Suburbs Hints",
+		"chest_unopened_img": "images/labels/chest.png",
+		"chest_opened_img": "images/labels/chestopen.png",
+		"color": "#00ff08",
+		"visibility_rules": ["showhintson"],
+		"children": [
+			{
+				"name": "Samasa Desert: One of Four Pits",
+				"sections": [
+					{
+						"name": "Rusty Bell (With Skull)",
+						"visibility_rules": ["Eastern Suburbs/Samasa Desert - One of Four Pits/Rusty Bell (With Skull)"],
+						"access_rules": ["^$HasHint|Eastern Suburbs/Samasa Desert - One of Four Pits/Rusty Bell (With Skull)"]
+					},
+					{
+						"name": "Business Scrub (Without Skull)",
+						"visibility_rules": ["shufflescrubson, Eastern Suburbs/Samasa Desert - One of Four Pits/Business Scrub (Without Skull)"],
+						"access_rules": ["^$HasHint|Eastern Suburbs/Samasa Desert - One of Four Pits/Business Scrub (Without Skull)"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 538,
+						"y": 588,
+						"size": 10,
+						"shape": "diamond"
+					},
+					{
+						"map": "holodrum",
+						"x": 578,
+						"y": 593,
+						"size": 10,
+						"shape": "diamond"
+					},
+					{
+						"map": "holodrum",
+						"x": 668,
+						"y": 593,
+						"size": 10,
+						"shape": "diamond"
+					},
+					{
+						"map": "holodrum",
+						"x": 580,
+						"y": 515,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Samasa Desert: Cliff Chest",
+				"sections": [
+					{
+						"name": "Bottom Left Pit",
+						"visibility_rules": ["Eastern Suburbs/Samasa Desert - Cliff Chest/Bottom Left Pit"],
+						"access_rules": ["^$HasHint|Eastern Suburbs/Samasa Desert - Cliff Chest/Bottom Left Pit"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 680,
+						"y": 670,
+						"size": 10,
+						"shape": "diamond"
+					},
+					{
+						"map": "holodrum",
+						"x": 590,
+						"y": 680,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Windmill",
+				"sections": [
+					{
+						"name": "Guru-Guru Trade",
+						"visibility_rules": ["Eastern Suburbs/Windmill/Guru-Guru Trade"],
+						"access_rules": ["^$HasHint|Eastern Suburbs/Windmill/Guru-Guru Trade"]
+					},
+					{
+						"name": "Winter Side Entrance",
+						"visibility_rules": ["Eastern Suburbs/Windmill/Winter Side Entrance"],
+						"access_rules": ["^$HasHint|Eastern Suburbs/Windmill/Winter Side Entrance"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 470,
+						"y": 594,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Chest in Spring Cave",
+				"sections": [
+					{
+						"visibility_rules": ["Eastern Suburbs/Chest in Spring Cave/"],
+						"access_rules": ["^$HasHint|Eastern Suburbs/Chest in Spring Cave/"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 544,
+						"y": 544,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Woods of Winter Tree",
+				"sections": [
+					{
+						"visibility_rules": ["Woods of Winter/Seed Tree"],
+						"access_rules": ["^$HasHint|Woods of Winter/Seed Tree"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 631,
+						"y": 417,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Chest on D2 Roof",
+				"sections": [
+					{
+						"visibility_rules": ["Eastern Suburbs/Chest on D2 Roof/"],
+						"access_rules": ["^$HasHint|Eastern Suburbs/Chest on D2 Roof/"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 600,
+						"y": 365,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Mushroom Cave",
+				"sections": [
+					{
+						"name": "Woods of Winter",
+						"visibility_rules": ["Eastern Suburbs/Mushroom Cave/Woods of Winter"],
+						"access_rules": ["^$HasHint|Eastern Suburbs/Mushroom Cave/Woods of Winter"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 641,
+						"y": 374,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Moblin Road Bomb Cave",
+				"sections": [
+					{
+						"visibility_rules": ["Eastern Suburbs/Moblin Road Bomb Cave/"],
+						"access_rules": ["^$HasHint|Eastern Suburbs/Moblin Road Bomb Cave/"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 588,
+						"y": 332,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Woods of Winter Heart Piece",
+				"sections": [
+					{
+						"visibility_rules": ["Eastern Suburbs/Woods of Winter Heart Piece/"],
+						"access_rules": ["^$HasHint|Eastern Suburbs/Woods of Winter Heart Piece/"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 683,
+						"y": 472,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Holly's House",
+				"sections": [
+					{
+						"name": "Holly's Gift",
+						"visibility_rules": ["Eastern Suburbs/Holly's House/Holly's Gift"],
+						"access_rules": ["^$HasHint|Eastern Suburbs/Holly's House/Holly's Gift"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 673,
+						"y": 332,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Waterfall Cave",
+				"sections": [
+					{
+						"visibility_rules": ["Eastern Suburbs/Waterfall Cave/"],
+						"access_rules": ["^$HasHint|Eastern Suburbs/Waterfall Cave/"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 631,
+						"y": 310,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Woods of Winter Old Man",
+				"visibility_rules": ["old_men_locations"],
+				"sections": [
+					{
+						"visibility_rules": ["Eastern Suburbs/Woods of Winter Old Man/"],
+						"access_rules": ["^$HasHint|Eastern Suburbs/Woods of Winter Old Man/"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 668,
+						"y": 370,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Snake's Remains Hints",
+				"sections": [
+					{
+						"name": "Snake's Remains: Chest Left from Entrance",
+						"ref": "Snake's Remains Hints/Chest Left from Entrance/"
+					},
+					{
+						"name": "Snake's Remains: Drop in Left Rope Room",
+						"ref": "Snake's Remains Hints/Drop in Left Rope Room/"
+					},
+					{
+						"name": "Snake's Remains: Chest in Right Rope Room",
+						"ref": "Snake's Remains Hints/Chest in Right Rope Room/"
+					},
+					{
+						"name": "Snake's Remains: Chest Behind Pots in Hardhat Room",
+						"ref": "Snake's Remains Hints/Chest Behind Pots in Hardhat Room/"
+					},
+					{
+						"name": "Snake's Remains: Chest in Distant Moblins Room",
+						"ref": "Snake's Remains Hints/Chest in Distant Moblins Room/"
+					},
+					{
+						"name": "Snake's Remains: Chest in Moving Blades Room",
+						"ref": "Snake's Remains Hints/Chest in Moving Blades Room/"
+					},
+					{
+						"name": "Snake's Remains: Business Scrub",
+						"ref": "Snake's Remains Hints/Business Scrub/"
+					},
+					{
+						"name": "Snake's Remains: Chest in Bomb Spiral Maze Room",
+						"ref": "Snake's Remains Hints/Chest in Bomb Spiral Maze Room/"
+					},
+					{
+						"name": "Snake's Remains: Chest in Rollers Section",
+						"ref": "Snake's Remains Hints/Chest in Rollers Section/"
+					},
+					{
+						"name": "Snake's Remains: Chest on Terrace",
+						"ref": "Snake's Remains Hints/Chest on Terrace/"
+					},
+					{
+						"name": "Snake's Remains: Boss Reward",
+						"ref": "Snake's Remains Hints/Boss Reward/King Dodongo"
+					},
+					{
+						"name": "Gift of Time",
+						"ref": "Snake's Remains Hints/Gift of Time/Essence"
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 568,
+						"y": 352,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			}
+		]
+	}
+]

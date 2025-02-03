@@ -1,0 +1,154 @@
+[
+	{
+		"name": "Tarm Ruins Hints",
+		"chest_unopened_img": "images/labels/chest.png",
+		"chest_opened_img": "images/labels/chestopen.png",
+		"color": "#00ff08",
+		"visibility_rules": ["showhintson"],
+		"children": [
+			{
+				"name": "Tarm Ruins Tree",
+				"sections": [
+					{
+						"name": "Tarm Ruins: Seed Tree",
+						"visibility_rules": ["Tarm Ruins/Seed Tree"],
+						"access_rules": ["^$HasHint|Tarm Ruins/Seed Tree"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 32,
+						"y": 67,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Tarm Ruins Old Man",
+				"visibility_rules": ["old_men_locations"],
+				"sections": [
+					{
+						"visibility_rules": ["Tarm Ruins/Tarm Ruins Old Man/"],
+						"access_rules": ["^$HasHint|Tarm Ruins/Tarm Ruins Old Man/"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 130,
+						"y": 20,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Lost Woods",
+				"sections": [
+					{
+						"name": "Lost Woods: Pedestal Item",
+						"visibility_rules": ["Tarm Ruins/Lost Woods/Pedestal Item"],
+						"access_rules": ["^$HasHint|Tarm Ruins/Lost Woods/Pedestal Item"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 32,
+						"y": 202,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Tree Behind Mushrooms",
+				"sections": [
+					{
+						"name": "Tarm Ruins: Chest in Rabbit Hole Under Tree",
+						"visibility_rules": ["Tarm Ruins/Tree Behind Mushrooms/Chest in Rabbit Hole Under Tree"],
+						"access_rules": ["^$HasHint|Tarm Ruins/Tree Behind Mushrooms/Chest in Rabbit Hole Under Tree"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 25,
+						"y": 95,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Ancient Ruins",
+				"access_rules": ["^$CanReach|AncientFoyer"],
+				"sections": [
+					{
+						"name": "Ancient Ruins (1F): Crumbling Ground Room Chest",
+						"ref": "Ancient Ruins Hints/Crumbling Ground Room Chest/1F"
+					},
+					{
+						"name": "Ancient Ruins (1F): Magnet Ball Puzzle Drop",
+						"ref": "Ancient Ruins Hints/Magnet Ball Puzzle Drop/1F"
+					},
+					{
+						"name": "Ancient Ruins (1F): Chest in Beamos Room",
+						"ref": "Ancient Ruins Hints/Chest in Beamos Room/1F"
+					},
+					{
+						"name": "Ancient Ruins (2F): Chest in Gibdo Room",
+						"ref": "Ancient Ruins Hints/Chest in Gibdo Room/2F"
+					},
+					{
+						"name": "Ancient Ruins (2F): Chest Between 4 Armos",
+						"ref": "Ancient Ruins Hints/Chest Between 4 Armos/2F"
+					},
+					{
+						"name": "Ancient Ruins (3F): Armos Hall Chest",
+						"ref": "Ancient Ruins Hints/Armos Hall Chest/3F"
+					},
+					{
+						"name": "Ancient Ruins (2F): Chest North of Main Spinner",
+						"ref": "Ancient Ruins Hints/Chest North of Main Spinner/2F"
+					},
+					{
+						"name": "Ancient Ruins (1F): Chest on Terrace Left of Entrance",
+						"ref": "Ancient Ruins Hints/Chest on Terrace Left of Entrance/1F"
+					},
+					{
+						"name": "Ancient Ruins (1F): Crystal Maze Room Chest",
+						"ref": "Ancient Ruins Hints/Crystal Maze Room Chest/1F"
+					},
+					{
+						"name": "Ancient Ruins (2F): Chest After Time Trial",
+						"ref": "Ancient Ruins Hints/Chest After Time Trial/2F"
+					},
+					{
+						"name": "Ancient Ruins (2F): Chest on Red Terrace Before Vire",
+						"ref": "Ancient Ruins Hints/Chest on Red Terrace Before Vire/2F"
+					},
+					{
+						"name": "Ancient Ruins (5F): Boss Reward",
+						"ref": "Ancient Ruins Hints/Boss Reward/Manhandla"
+					},
+					{
+						"name": "Blowing Wind",
+						"ref": "Ancient Ruins Hints/Blowing Wind/Essence"
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 10,
+						"y": 35,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			}
+		]
+	}
+]

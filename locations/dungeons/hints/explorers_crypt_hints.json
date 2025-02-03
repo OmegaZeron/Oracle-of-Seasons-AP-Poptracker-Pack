@@ -1,0 +1,258 @@
+[
+	{
+		"name": "Explorer's Crypt Hints",
+		"chest_unopened_img": "images/labels/chest.png",
+		"chest_opened_img": "images/labels/chestopen.png",
+		"color": "#00ff08",
+		"visibility_rules": ["showhintson"],
+		"children": [
+			{
+				"name": "Chest Behind Cracked Wall",
+				"sections": [
+					{
+						"name": "1F",
+						"visibility_rules": ["Explorer's Crypt/Chest Behind Cracked Wall/1F"],
+						"access_rules": ["^$HasHint|Explorer's Crypt/Chest Behind Cracked Wall/1F"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "explorers_crypt1",
+						"x": 159,
+						"y": 478,
+						"size": 11,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Chest in Wizzrobe Room",
+				"sections": [
+					{
+						"name": "1F",
+						"visibility_rules": ["Explorer's Crypt/Chest in Wizzrobe Room/1F"],
+						"access_rules": ["^$HasHint|Explorer's Crypt/Chest in Wizzrobe Room/1F"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "explorers_crypt1",
+						"x": 478,
+						"y": 491,
+						"size": 11,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Chest Right of Entrance",
+				"sections": [
+					{
+						"name": "1F",
+						"visibility_rules": ["Explorer's Crypt/Chest Right of Entrance/1F"],
+						"access_rules": ["^$HasHint|Explorer's Crypt/Chest Right of Entrance/1F"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "explorers_crypt1",
+						"x": 543,
+						"y": 747,
+						"size": 11,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Zol Button Drop",
+				"sections": [
+					{
+						"name": "B1F",
+						"visibility_rules": ["Explorer's Crypt/Zol Button Drop/B1F"],
+						"access_rules": ["^$HasHint|Explorer's Crypt/Zol Button Drop/B1F"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "explorers_crypt1",
+						"x": 68,
+						"y": 43,
+						"size": 11,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Armos Puzzle Drop",
+				"sections": [
+					{
+						"name": "B2F",
+						"visibility_rules": ["Explorer's Crypt/Armos Puzzle Drop/B2F"],
+						"access_rules": ["^$HasHint|Explorer's Crypt/Armos Puzzle Drop/B2F"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "explorers_crypt2",
+						"x": 297,
+						"y": 332,
+						"size": 11,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Chest Connected to Magnet Ball Button",
+				"sections": [
+					{
+						"name": "B1F",
+						"visibility_rules": ["Explorer's Crypt/Chest Connected to Magnet Ball Button/B1F"],
+						"access_rules": ["^$HasHint|Explorer's Crypt/Chest Connected to Magnet Ball Button/B1F"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "explorers_crypt1",
+						"x": 414,
+						"y": 95,
+						"size": 11,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Quicksand Chest Near Second Poe",
+				"sections": [
+					{
+						"name": "1F",
+						"visibility_rules": ["Explorer's Crypt/Quicksand Chest Near Second Poe/1F"],
+						"access_rules": ["^$HasHint|Explorer's Crypt/Quicksand Chest Near Second Poe/1F"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "explorers_crypt1",
+						"x": 107,
+						"y": 786,
+						"size": 11,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Fast Moving Platform Chest",
+				"sections": [
+					{
+						"name": "B1F",
+						"visibility_rules": ["Explorer's Crypt/Fast Moving Platform Chest/B1F"],
+						"access_rules": ["^$HasHint|Explorer's Crypt/Fast Moving Platform Chest/B1F"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "explorers_crypt2",
+						"x": 106,
+						"y": 68,
+						"size": 11,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Stair Maze Chest",
+				"sections": [
+					{
+						"name": "B2F",
+						"visibility_rules": ["Explorer's Crypt/Stair Maze Chest/B2F"],
+						"access_rules": ["^$HasHint|Explorer's Crypt/Stair Maze Chest/B2F"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "explorers_crypt2",
+						"x": 681,
+						"y": 821,
+						"size": 11,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Drop in Room North of Stair Maze",
+				"sections": [
+					{
+						"name": "B2F",
+						"visibility_rules": ["Explorer's Crypt/Drop in Room North of Stair Maze/B2F"],
+						"access_rules": ["^$HasHint|Explorer's Crypt/Drop in Room North of Stair Maze/B2F"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "explorers_crypt2",
+						"x": 681,
+						"y": 516,
+						"size": 11,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Jumping Stalfos Room Chest",
+				"sections": [
+					{
+						"name": "B1F",
+						"visibility_rules": ["Explorer's Crypt/Jumping Stalfos Room Chest/B1F"],
+						"access_rules": ["^$HasHint|Explorer's Crypt/Jumping Stalfos Room Chest/B1F"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "explorers_crypt2",
+						"x": 873,
+						"y": 93,
+						"size": 11,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Boss Reward",
+				"sections": [
+					{
+						"name": "Gleeok",
+						"visibility_rules": ["Explorer's Crypt/Boss Reward/Gleeok"],
+						"access_rules": ["^$HasHint|Explorer's Crypt/Boss Reward/Gleeok"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "explorers_crypt2",
+						"x": 489,
+						"y": 939,
+						"size": 11,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Seed of Life",
+				"sections": [
+					{
+						"name": "Essence",
+						"visibility_rules": ["Explorer's Crypt/Seed of Life/Essence"],
+						"access_rules": ["^$HasHint|Explorer's Crypt/Seed of Life/Essence"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "explorers_crypt2",
+						"x": 310,
+						"y": 936,
+						"size": 11,
+						"shape": "diamond"
+					}
+				]
+			}
+		]
+	}
+]

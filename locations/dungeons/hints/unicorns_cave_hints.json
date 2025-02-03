@@ -1,0 +1,235 @@
+[
+	{
+		"name": "Unicorn's Cave Hints",
+		"chest_unopened_img": "images/labels/chest.png",
+		"chest_opened_img": "images/labels/chestopen.png",
+		"visibility_rules": ["showhintson"],
+		"children": [	
+			{
+				"name": "Right Cart Chest",
+				"sections": [
+					{
+						"visibility_rules": ["Unicorn's Cave/Right Cart Chest/"],
+						"access_rules": ["^$HasHint|Unicorn's Cave/Right Cart Chest/"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "unicorns_cave",
+						"x": 838,
+						"y": 791,
+						"size": 16,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Gibdo Room Chest",
+				"sections": [
+					{
+						"visibility_rules": ["Unicorn's Cave/Gibdo Room Chest/"],
+						"access_rules": ["^$HasHint|Unicorn's Cave/Gibdo Room Chest/"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "unicorns_cave",
+						"x": 854,
+						"y": 454,
+						"size": 16,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Magnet Gloves Chest",
+				"sections": [
+					{
+						"visibility_rules": ["Unicorn's Cave/Magnet Gloves Chest/"],
+						"access_rules": ["^$HasHint|Unicorn's Cave/Magnet Gloves Chest/"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "unicorns_cave",
+						"x": 102,
+						"y": 231,
+						"size": 16,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Chest Left from Entrance",
+				"sections": [
+					{
+						"visibility_rules": ["Unicorn's Cave/Chest Left from Entrance/"],
+						"access_rules": ["^$HasHint|Unicorn's Cave/Chest Left from Entrance/"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "unicorns_cave",
+						"x": 326,
+						"y": 1127,
+						"size": 16,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Quicksand Spiral Chest",
+				"sections": [
+					{
+						"visibility_rules": ["Unicorn's Cave/Quicksand Spiral Chest/"],
+						"access_rules": ["^$HasHint|Unicorn's Cave/Quicksand Spiral Chest/"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "unicorns_cave",
+						"x": 131,
+						"y": 983,
+						"size": 16,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Terrace Chest",
+				"sections": [
+					{
+						"visibility_rules": ["Unicorn's Cave/Terrace Chest/"],
+						"access_rules": ["^$HasHint|Unicorn's Cave/Terrace Chest/"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "unicorns_cave",
+						"x": 278,
+						"y": 743,
+						"size": 16,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Armos Puzzle Room Chest",
+				"sections": [
+					{
+						"visibility_rules": ["Unicorn's Cave/Armos Puzzle Room Chest/"],
+						"access_rules": ["^$HasHint|Unicorn's Cave/Armos Puzzle Room Chest/"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "unicorns_cave",
+						"x": 166,
+						"y": 630,
+						"size": 16,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Magnet Spinner Chest",
+				"sections": [
+					{
+						"visibility_rules": ["Unicorn's Cave/Magnet Spinner Chest/"],
+						"access_rules": ["^$HasHint|Unicorn's Cave/Magnet Spinner Chest/"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "unicorns_cave",
+						"x": 535,
+						"y": 967,
+						"size": 16,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Chest in Right Half of Minecart Bay Room",
+				"sections": [
+					{
+						"visibility_rules": ["Unicorn's Cave/Chest in Right Half of Minecart Bay Room/"],
+						"access_rules": ["^$HasHint|Unicorn's Cave/Chest in Right Half of Minecart Bay Room/"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "unicorns_cave",
+						"x": 918,
+						"y": 1191,
+						"size": 16,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Treadmills Basement Item",
+				"sections": [
+					{
+						"visibility_rules": ["Unicorn's Cave/Treadmills Basement Item/"],
+						"access_rules": ["^$HasHint|Unicorn's Cave/Treadmills Basement Item/"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "unicorns_cave",
+						"x": 1449,
+						"y": 437,
+						"size": 16,
+						"shape": "diamond"
+					},
+					{
+						"map": "unicorns_cave",
+						"x": 1191,
+						"y": 518,
+						"size": 16,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Boss Reward",
+				"sections": [
+					{
+						"name": "Digdogger",
+						"visibility_rules": ["Unicorn's Cave/Boss Reward/Digdogger"],
+						"access_rules": ["^$HasHint|Unicorn's Cave/Boss Reward/Digdogger"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "unicorns_cave",
+						"x": 1094,
+						"y": 311,
+						"size": 16,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Nurturing Warmth",
+				"sections": [
+					{
+						"name": "Essence",
+						"visibility_rules": ["Unicorn's Cave/Nurturing Warmth/Essence"],
+						"access_rules": ["^$HasHint|Unicorn's Cave/Nurturing Warmth/Essence"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "unicorns_cave",
+						"x": 1094,
+						"y": 77,
+						"size": 16,
+						"shape": "diamond"
+					}
+				]
+			}
+		]
+	}
+]

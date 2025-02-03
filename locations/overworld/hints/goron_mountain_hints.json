@@ -1,0 +1,107 @@
+[
+	{
+		"name": "Goron Mountain Hints",
+		"chest_unopened_img": "images/labels/chest.png",
+		"chest_opened_img": "images/labels/chestopen.png",
+		"color": "#00ff08",
+		"visibility_rules": ["showhintson"],
+		"children": [
+			{
+				"name": "Goron Mountain Old Man",
+				"visibility_rules": ["old_men_locations"],
+				"sections": [
+					{
+						"name": "Goron Mountain: Old Man",
+						"visibility_rules": ["Goron Mountain/Goron Mountain Old Man/Old Man"],
+						"access_rules": ["^$HasHint|Goron Mountain/Goron Mountain Old Man/Old Man"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 363,
+						"y": 124,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "East Goron Mountain",
+				"sections": [
+					{
+						"name": "Goron Mountain: Item Across Pits",
+						"visibility_rules": ["Goron Mountain/East Goron Mountain/Item Across Pits"],
+						"access_rules": ["^$HasHint|Goron Mountain/East Goron Mountain/Item Across Pits"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 459,
+						"y": 78,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Goron's Gift",
+				"sections": [
+					{
+						"name": "Goron Mountain: Lonely Goron's Gift",
+						"visibility_rules": ["Goron Mountain/Goron's Gift/Lonely Goron's Gift"],
+						"access_rules": ["^$HasHint|Goron Mountain/Goron's Gift/Lonely Goron's Gift"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 406,
+						"y": 68,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Goron Caves",
+				"sections": [
+					{
+						"name": "Goron Mountain: Chest Across Lava",
+						"visibility_rules": ["Goron Mountain/Goron Caves/Chest Across Lava"],
+						"access_rules": ["^$HasHint|Goron Mountain/Goron Caves/Chest Across Lava"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 371,
+						"y": 98,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Biggoron Trade",
+				"sections": [
+					{
+						"name": "Goron Mountain: Biggoron Trade",
+						"visibility_rules": ["Goron Mountain/Biggoron Trade/Biggoron Trade"],
+						"access_rules": ["^$HasHint|Goron Mountain/Biggoron Trade/Biggoron Trade"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 374,
+						"y": 48,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			}
+		]
+	}
+]

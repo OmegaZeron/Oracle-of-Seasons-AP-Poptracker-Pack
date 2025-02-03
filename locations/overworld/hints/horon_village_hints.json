@@ -1,0 +1,377 @@
+[
+	{
+		"name": "Horon Village Hints",
+		"chest_unopened_img": "images/labels/chest.png",
+		"chest_opened_img": "images/labels/chestopen.png",
+		"color": "#00ff08",
+		"visibility_rules": ["showhintson"],
+		"children": [
+			{
+				"name": "Mushroom Chest Hint",
+				"sections": [
+					{
+						"name": "Horon Village: Chest Behind Mushrooms",
+						"visibility_rules": ["Horon Village/Mushroom Chest/Chest Behind Mushrooms"],
+						"access_rules": ["^$HasHint|Horon Village/Mushroom Chest/Chest Behind Mushrooms"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 247,
+						"y": 672,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Horon Tree Hint",
+				"sections": [
+					{
+						"name": "Horon Village: Seed Tree",
+						"visibility_rules": ["Horon Village/Seed Tree"],
+						"access_rules": ["^$HasHint|Horon Village/Seed Tree"],
+						"hosted_item": "tree_village"
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 354,
+						"y": 664,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Maku Tree Hints",
+				"sections": [
+					{
+						"name": "Maku Tree Gift",
+						"visibility_rules": ["Horon Village/Maku Tree/Maku Tree Gift"],
+						"access_rules": ["^$HasHint|Horon Village/Maku Tree/Maku Tree Gift"]
+					},
+					{
+						"name": "Item Inside Maku Tree (3+ Essences)",
+						"visibility_rules": ["Horon Village/Maku Tree/Item Inside Maku Tree (3+ Essences)"],
+						"access_rules": ["^$HasHint|Horon Village/Maku Tree/Item Inside Maku Tree (3+ Essences)"]
+					},
+					{
+						"name": "Item Inside Maku Tree (5+ Essences)",
+						"visibility_rules": ["Horon Village/Maku Tree/Item Inside Maku Tree (5+ Essences)"],
+						"access_rules": ["^$HasHint|Horon Village/Maku Tree/Item Inside Maku Tree (5+ Essences)"]
+					},
+					{
+						"name": "Item Inside Maku Tree (7+ Essences)",
+						"visibility_rules": ["Horon Village/Maku Tree/Item Inside Maku Tree (7+ Essences)"],
+						"access_rules": ["^$HasHint|Horon Village/Maku Tree/Item Inside Maku Tree (7+ Essences)"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 417,
+						"y": 544,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Mayor's House Hints",
+				"sections": [
+					{
+						"name": "Mayor's Gift",
+						"visibility_rules": ["Horon Village/Mayor's House/Mayor's Gift"],
+						"access_rules": ["^$HasHint|Horon Village/Mayor's House/Mayor's Gift"]
+					},
+					{
+						"name": "Item Behind Cracked Wall in Mayor's House",
+						"visibility_rules": ["Horon Village/Mayor's House/Item Behind Cracked Wall in Mayor's House"],
+						"access_rules": ["^$HasHint|Horon Village/Mayor's House/Item Behind Cracked Wall in Mayor's House"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 377,
+						"y": 520,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Gasha Spot Hints",
+				"sections": [
+					{
+						"name": "Gasha Spot #1",
+						"visibility_rules": ["^$CanSeeGasha|1, Horon Village/Gasha Spots/Gasha Spot #1"],
+						"access_rules": ["^$HasHint|Horon Village/Gasha Spots/Gasha Spot #1"]
+					},
+					{
+						"name": "Gasha Spot #2",
+						"visibility_rules": ["^$CanSeeGasha|2, Horon Village/Gasha Spots/Gasha Spot #2"],
+						"access_rules": ["^$HasHint|Horon Village/Gasha Spots/Gasha Spot #2"]
+					},
+					{
+						"name": "Gasha Spot #3",
+						"visibility_rules": ["^$CanSeeGasha|3, Horon Village/Gasha Spots/Gasha Spot #3"],
+						"access_rules": ["^$HasHint|Horon Village/Gasha Spots/Gasha Spot #3"]
+					},
+					{
+						"name": "Gasha Spot #4",
+						"visibility_rules": ["^$CanSeeGasha|4, Horon Village/Gasha Spots/Gasha Spot #4"],
+						"access_rules": ["^$HasHint|Horon Village/Gasha Spots/Gasha Spot #4"]
+					},
+					{
+						"name": "Gasha Spot #5",
+						"visibility_rules": ["^$CanSeeGasha|5, Horon Village/Gasha Spots/Gasha Spot #5"],
+						"access_rules": ["^$HasHint|Horon Village/Gasha Spots/Gasha Spot #5"]
+					},
+					{
+						"name": "Gasha Spot #6",
+						"visibility_rules": ["^$CanSeeGasha|6, Horon Village/Gasha Spots/Gasha Spot #6"],
+						"access_rules": ["^$HasHint|Horon Village/Gasha Spots/Gasha Spot #6"]
+					},
+					{
+						"name": "Gasha Spot #7",
+						"visibility_rules": ["^$CanSeeGasha|7, Horon Village/Gasha Spots/Gasha Spot #7"],
+						"access_rules": ["^$HasHint|Horon Village/Gasha Spots/Gasha Spot #7"]
+					},
+					{
+						"name": "Gasha Spot #8",
+						"visibility_rules": ["^$CanSeeGasha|8, Horon Village/Gasha Spots/Gasha Spot #8"],
+						"access_rules": ["^$HasHint|Horon Village/Gasha Spots/Gasha Spot #8"]
+					},
+					{
+						"name": "Gasha Spot #9",
+						"visibility_rules": ["^$CanSeeGasha|9, Horon Village/Gasha Spots/Gasha Spot #9"],
+						"access_rules": ["^$HasHint|Horon Village/Gasha Spots/Gasha Spot #9"]
+					},
+					{
+						"name": "Gasha Spot #10",
+						"visibility_rules": ["^$CanSeeGasha|10, Horon Village/Gasha Spots/Gasha Spot #10"],
+						"access_rules": ["^$HasHint|Horon Village/Gasha Spots/Gasha Spot #10"]
+					},
+					{
+						"name": "Gasha Spot #11",
+						"visibility_rules": ["^$CanSeeGasha|11, Horon Village/Gasha Spots/Gasha Spot #11"],
+						"access_rules": ["^$HasHint|Horon Village/Gasha Spots/Gasha Spot #11"]
+					},
+					{
+						"name": "Gasha Spot #12",
+						"visibility_rules": ["^$CanSeeGasha|12, Horon Village/Gasha Spots/Gasha Spot #12"],
+						"access_rules": ["^$HasHint|Horon Village/Gasha Spots/Gasha Spot #12"]
+					},
+					{
+						"name": "Gasha Spot #13",
+						"visibility_rules": ["^$CanSeeGasha|13, Horon Village/Gasha Spots/Gasha Spot #13"],
+						"access_rules": ["^$HasHint|Horon Village/Gasha Spots/Gasha Spot #13"]
+					},
+					{
+						"name": "Gasha Spot #14",
+						"visibility_rules": ["^$CanSeeGasha|14, Horon Village/Gasha Spots/Gasha Spot #14"],
+						"access_rules": ["^$HasHint|Horon Village/Gasha Spots/Gasha Spot #14"]
+					},
+					{
+						"name": "Gasha Spot #15",
+						"visibility_rules": ["^$CanSeeGasha|15, Horon Village/Gasha Spots/Gasha Spot #15"],
+						"access_rules": ["^$HasHint|Horon Village/Gasha Spots/Gasha Spot #15"]
+					},
+					{
+						"name": "Gasha Spot #16",
+						"visibility_rules": ["^$CanSeeGasha|16, Horon Village/Gasha Spots/Gasha Spot #16"],
+						"access_rules": ["^$HasHint|Horon Village/Gasha Spots/Gasha Spot #16"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 337,
+						"y": 540,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Vasu Hint",
+				"sections": [
+					{
+						"name": "Horon Village: Vasu's Gift",
+						"visibility_rules": ["Horon Village/Vasu/Vasu's Gift"],
+						"access_rules": ["^$HasHint|Horon Village/Vasu/Vasu's Gift"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 377,
+						"y": 624,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Horon Heart Piece Hint",
+				"sections": [
+					{
+						"name": "Horon Village: Item Behind Small Tree",
+						"visibility_rules": ["Horon Village/Horon Heart Piece/Item Behind Small Tree"],
+						"access_rules": ["^$HasHint|Horon Village/Horon Heart Piece/Item Behind Small Tree"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 385,
+						"y": 584,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Dr. Left's House Hints",
+				"sections": [
+					{
+						"name": "Horon Village: Dr. Left Reward",
+						"visibility_rules": ["Horon Village/Dr. Left's House/Dr. Left Reward"],
+						"access_rules": ["^$HasHint|Horon Village/Dr. Left's House/Dr. Left Reward"]
+					},
+					{
+						"name": "Horon Village: Chest in Dr. Left's Backyard",
+						"visibility_rules": ["Horon Village/Dr. Left's House/Chest in Dr. Left's Backyard"],
+						"access_rules": ["^$HasHint|Horon Village/Dr. Left's House/Chest in Dr. Left's Backyard"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 417,
+						"y": 642,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Horon Old Man Hint",
+				"visibility_rules": ["old_men_locations"],
+				"sections": [
+					{
+						"name": "Horon Village: Old Man",
+						"visibility_rules": ["Horon Village/Horon Old Man/Old Man"],
+						"access_rules": ["^$HasHint|Horon Village/Horon Old Man/Old Man"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 402,
+						"y": 672,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Horon Shop Hints",
+				"sections": [
+					{
+						"name": "Horon Village: Shop #1",
+						"visibility_rules": ["Horon Village/Horon Shop/Shop #1"],
+						"access_rules": ["^$HasHint|Horon Village/Horon Shop/Shop #1"]
+					},
+					{
+						"name": "Horon Village: Shop #2",
+						"visibility_rules": ["Horon Village/Horon Shop/Shop #2"],
+						"access_rules": ["^$HasHint|Horon Village/Horon Shop/Shop #2"]
+					},
+					{
+						"name": "Horon Village: Shop #3",
+						"visibility_rules": ["Horon Village/Horon Shop/Shop #3"],
+						"access_rules": ["^$HasHint|Horon Village/Horon Shop/Shop #3"]
+					},
+					{
+						"name": "Horon Village: Member's Shop #1",
+						"visibility_rules": ["Horon Village/Horon Shop/Member's Shop #1"],
+						"access_rules": ["^$HasHint|Horon Village/Horon Shop/Member's Shop #1"]
+					},
+					{
+						"name": "Horon Village: Member's Shop #2",
+						"visibility_rules": ["Horon Village/Horon Shop/Member's Shop #2"],
+						"access_rules": ["^$HasHint|Horon Village/Horon Shop/Member's Shop #2"]
+					},
+					{
+						"name": "Horon Village: Member's Shop #3",
+						"visibility_rules": ["Horon Village/Horon Shop/Member's Shop #3"],
+						"access_rules": ["^$HasHint|Horon Village/Horon Shop/Member's Shop #3"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 291,
+						"y": 630,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Advance Shop Hints",
+				"visibility_rules": ["advanceshopon"],
+				"sections": [
+					{
+						"name": "Horon Village: Advance Shop #1",
+						"visibility_rules": ["Horon Village/Advance Shop/Advance Shop #1"],
+						"access_rules": ["^$HasHint|Horon Village/Advance Shop/Advance Shop #1"]
+					},
+					{
+						"name": "Horon Village: Advance Shop #2",
+						"visibility_rules": ["Horon Village/Advance Shop/Advance Shop #2"],
+						"access_rules": ["^$HasHint|Horon Village/Advance Shop/Advance Shop #2"]
+					},
+					{
+						"name": "Horon Village: Advance Shop #3",
+						"visibility_rules": ["Horon Village/Advance Shop/Advance Shop #3"],
+						"access_rules": ["^$HasHint|Horon Village/Advance Shop/Advance Shop #3"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 244,
+						"y": 533,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Clock Shop Hint",
+				"sections": [
+					{
+						"name": "Horon Village: Tick Tock Trade",
+						"visibility_rules": ["Horon Village/Clock Shop/Tick Tock Trade"],
+						"access_rules": ["^$HasHint|Horon Village/Clock Shop/Tick Tock Trade"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 325,
+						"y": 585,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			}
+		]
+	}
+]

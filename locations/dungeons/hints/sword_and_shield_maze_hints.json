@@ -1,0 +1,295 @@
+﻿[
+	{
+		"name": "Sword and Shield Maze Hints",
+		"chest_unopened_img": "images/labels/chest.png",
+		"chest_opened_img": "images/labels/chestopen.png",
+		"visibility_rules": ["showhintson"],
+		"children": [	
+			{
+				"name": "Eye Drop Near Entrance",
+				"sections": [
+					{
+						"name": "1F",
+						"visibility_rules": ["Sword and Shield Maze/Eye Drop Near Entrance/1F"],
+						"access_rules": ["^$HasHint|Sword and Shield Maze/Eye Drop Near Entrance/1F"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "sword_and_shield_maze1",
+						"x": 240,
+						"y": 412,
+						"size": 12,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Three Eyes Chest",
+				"sections": [
+					{
+						"name": "1F",
+						"visibility_rules": ["Sword and Shield Maze/Three Eyes Chest/1F"],
+						"access_rules": ["^$HasHint|Sword and Shield Maze/Three Eyes Chest/1F"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "sword_and_shield_maze1",
+						"x": 91,
+						"y": 293,
+						"size": 12,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Drop in Hardhat & Magnet Ball Room",
+				"sections": [
+					{
+						"name": "1F",
+						"visibility_rules": ["Sword and Shield Maze/Drop in Hardhat & Magnet Ball Room/1F"],
+						"access_rules": ["^$HasHint|Sword and Shield Maze/Drop in Hardhat & Magnet Ball Room/1F"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "sword_and_shield_maze1",
+						"x": 70,
+						"y": 81,
+						"size": 12,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "U-shaped Spiky Freezer Chest",
+				"sections": [
+					{
+						"name": "1F",
+						"visibility_rules": ["Sword and Shield Maze/U-shaped Spiky Freezer Chest/1F"],
+						"access_rules": ["^$HasHint|Sword and Shield Maze/U-shaped Spiky Freezer Chest/1F"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "sword_and_shield_maze1",
+						"x": 294,
+						"y": 636,
+						"size": 12,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Bottom Chest in Lava Bridge Room",
+				"sections": [
+					{
+						"name": "1F",
+						"visibility_rules": ["Sword and Shield Maze/Bottom Chest in Lava Bridge Room/1F"],
+						"access_rules": ["^$HasHint|Sword and Shield Maze/Bottom Chest in Lava Bridge Room/1F"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "sword_and_shield_maze1",
+						"x": 571,
+						"y": 806,
+						"size": 12,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Top Chest in Lava Bridge Room",
+				"sections": [
+					{
+						"name": "1F",
+						"visibility_rules": ["Sword and Shield Maze/Bottom Chest in Lava Bridge Room/1F"],
+						"access_rules": ["^$HasHint|Sword and Shield Maze/Bottom Chest in Lava Bridge Room/1F"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "sword_and_shield_maze1",
+						"x": 380,
+						"y": 753,
+						"size": 12,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Chest Right of Spinner",
+				"sections": [
+					{
+						"name": "B1F",
+						"visibility_rules": ["Sword and Shield Maze/Chest Right of Spinner/B1F"],
+						"access_rules": ["^$HasHint|Sword and Shield Maze/Chest Right of Spinner/B1F"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "sword_and_shield_maze2",
+						"x": 539,
+						"y": 679,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Chest in Bombable Blocks Room",
+				"sections": [
+					{
+						"name": "1F",
+						"visibility_rules": ["Sword and Shield Maze/Chest in Bombable Blocks Room/1F"],
+						"access_rules": ["^$HasHint|Sword and Shield Maze/Chest in Bombable Blocks Room/1F"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "sword_and_shield_maze1",
+						"x": 689,
+						"y": 635,
+						"size": 12,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Chest on Terrace After Pols Voice Room",
+				"sections": [
+					{
+						"name": "1F",
+						"visibility_rules": ["Sword and Shield Maze/Chest on Terrace After Pols Voice Room/1F"],
+						"access_rules": ["^$HasHint|Sword and Shield Maze/Chest on Terrace After Pols Voice Room/1F"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "sword_and_shield_maze1",
+						"x": 849,
+						"y": 293,
+						"size": 12,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Ghost Armos Puzzle Drop",
+				"sections": [
+					{
+						"name": "1F",
+						"visibility_rules": ["Sword and Shield Maze/Ghost Armos Puzzle Drop/1F"],
+						"access_rules": ["^$HasHint|Sword and Shield Maze/Ghost Armos Puzzle Drop/1F"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "sword_and_shield_maze1",
+						"x": 614,
+						"y": 305,
+						"size": 12,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Southeast Lava Chest",
+				"sections": [
+					{
+						"name": "B1F",
+						"visibility_rules": ["Sword and Shield Maze/Southeast Lava Chest/B1F"],
+						"access_rules": ["^$HasHint|Sword and Shield Maze/Southeast Lava Chest/B1F"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "sword_and_shield_maze2",
+						"x": 625,
+						"y": 540,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Chest in Sparks & Pots Room",
+				"sections": [
+					{
+						"name": "1F",
+						"visibility_rules": ["Sword and Shield Maze/Chest in Sparks & Pots Room/1F"],
+						"access_rules": ["^$HasHint|Sword and Shield Maze/Chest in Sparks & Pots Room/1F"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "sword_and_shield_maze1",
+						"x": 849,
+						"y": 561,
+						"size": 12,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Southwest Lava Chest",
+				"sections": [
+					{
+						"name": "B1F",
+						"visibility_rules": ["Sword and Shield Maze/Southwest Lava Chest/B1F"],
+						"access_rules": ["^$HasHint|Sword and Shield Maze/Southwest Lava Chest/B1F"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "sword_and_shield_maze2",
+						"x": 390,
+						"y": 560,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Boss Reward",
+				"sections": [
+					{
+						"name": "Medusa Head",
+						"visibility_rules": ["Sword and Shield Maze/Boss Reward/Medusa Head"],
+						"access_rules": ["^$HasHint|Sword and Shield Maze/Boss Reward/Medusa Head"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "sword_and_shield_maze2",
+						"x": 571,
+						"y": 207,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Changing Seasons",
+				"sections": [
+					{
+						"name": "Essence",
+						"visibility_rules": ["Sword and Shield Maze/Changing Seasons/Essence"],
+						"access_rules": ["^$HasHint|Sword and Shield Maze/Changing Seasons/Essence"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "sword_and_shield_maze2",
+						"x": 571,
+						"y": 71,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			}
+		]
+	}
+]

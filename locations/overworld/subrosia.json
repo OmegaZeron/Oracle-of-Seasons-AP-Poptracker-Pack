@@ -626,7 +626,6 @@
 			{
 				"name": "Sword and Shield Maze",
 				"color": "#ff3c00",
-				// "access_rules": ["$d8_dungeon"],
 				"sections": [
 					{
 						"name": "Sword & Shield Dungeon (1F): Eye Drop Near Entrance",

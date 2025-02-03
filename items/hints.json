@@ -50,6 +50,11 @@
 		"codes": "Spool Swamp/Floodgate Keeper/Item in Floodgate Keeper's House"
 	},
 	{
+		"name": "Spool Swamp/Business Scrub/",
+		"type": "toggle",
+		"codes": "Spool Swamp/Business Scrub/"
+	},
+	{
 		"name": "Spool Swamp/Winter Cave/Chest in Winter Cave",
 		"type": "toggle",
 		"codes": "Spool Swamp/Winter Cave/Chest in Winter Cave"
@@ -110,14 +115,19 @@
 		"codes": "Tarm Ruins/Lost Woods/Pedestal Item"
 	},
 	{
-		"name": "Eastern Suburbs/Skull Pit/One of Four Pits",
+		"name": "Eastern Suburbs/Samasa Desert: One of Four Pits/Rusty Bell (With Skull)",
 		"type": "toggle",
-		"codes": "Eastern Suburbs/Skull Pit/One of Four Pits"
+		"codes": "Eastern Suburbs/Samasa Desert - One of Four Pits/Rusty Bell (With Skull)"
 	},
 	{
-		"name": "Eastern Suburbs/Cliff Chest/Bottom Left Pit",
+		"name": "Eastern Suburbs/Samasa Desert: One of Four Pits/Business Scrub (Without Skull)",
 		"type": "toggle",
-		"codes": "Eastern Suburbs/Cliff Chest/Bottom Left Pit"
+		"codes": "Eastern Suburbs/Samasa Desert - One of Four Pits/Business Scrub (Without Skull)"
+	},
+	{
+		"name": "Eastern Suburbs/Samasa Desert: Cliff Chest/Bottom Left Pit",
+		"type": "toggle",
+		"codes": "Eastern Suburbs/Samasa Desert - Cliff Chest/Bottom Left Pit"
 	},
 	{
 		"name": "Western Coast/Chest on Beach/",
@@ -140,9 +150,9 @@
 		"codes": "Holodrum Plain/Cave Behind Mushrooms/Chest in Flooded Cave Behind Mushrooms"
 	},
 	{
-		"name": "Eastern Suburbs/Mushroom Cave/",
+		"name": "Eastern Suburbs/Mushroom Cave/Woods of Winter",
 		"type": "toggle",
-		"codes": "Eastern Suburbs/Mushroom Cave/"
+		"codes": "Eastern Suburbs/Mushroom Cave/Woods of Winter"
 	},
 	{
 		"name": "Eastern Suburbs/Moblin Road Bomb Cave/",
@@ -205,9 +215,9 @@
 		"codes": "North Horon/West Eyeglass Lake/Chest in Dried Lake West Cave"
 	},
 	{
-		"name": "Eastern Suburbs/Waterfall Cave/Chest in Waterfall Cave",
+		"name": "Eastern Suburbs/Waterfall Cave/",
 		"type": "toggle",
-		"codes": "Eastern Suburbs/Waterfall Cave/Chest in Waterfall Cave"
+		"codes": "Eastern Suburbs/Waterfall Cave/"
 	},
 	{
 		"name": "Horon Village/Horon Shop/Shop #1",
@@ -460,6 +470,11 @@
 		"codes": "Snake's Remains/Chest in Moving Blades Room/"
 	},
 	{
+		"name": "Snake's Remains/Business Scrub/",
+		"type": "toggle",
+		"codes": "Snake's Remains/Business Scrub/"
+	},
+	{
 		"name": "Snake's Remains/Chest in Bomb Spiral Maze Room/",
 		"type": "toggle",
 		"codes": "Snake's Remains/Chest in Bomb Spiral Maze Room/"
@@ -563,6 +578,11 @@
 		"name": "Dancing Dragon Dungeon/Chest Revealed by Minecart Torches/1F",
 		"type": "toggle",
 		"codes": "Dancing Dragon Dungeon/Chest Revealed by Minecart Torches/1F"
+	},
+	{
+		"name": "Dancing Dragon Dungeon/Business Scrub/1F",
+		"type": "toggle",
+		"codes": "Dancing Dragon Dungeon/Business Scrub/1F"
 	},
 	{
 		"name": "Dancing Dragon Dungeon/Crumbling Room Chest/1F",
@@ -1035,44 +1055,44 @@
 		"codes": "Tarm Ruins/Seed Tree"
 	},
 	{
-		"name": "D1/Essence",
+		"name": "Gnarled Root Dungeon/Fertile Soil/Essence",
 		"type": "toggle",
-		"codes": "D1/Essence"
+		"codes": "Gnarled Root Dungeon/Fertile Soil/Essence"
 	},
 	{
-		"name": "D2/Essence",
+		"name": "Snake's Remains/Gift of Time/Essence",
 		"type": "toggle",
-		"codes": "D2/Essence"
+		"codes": "Snake's Remains/Gift of Time/Essence"
 	},
 	{
-		"name": "D3/Essence",
+		"name": "Poison Moth's Lair/Bright Sun/Essence",
 		"type": "toggle",
-		"codes": "D3/Essence"
+		"codes": "Poison Moth's Lair/Bright Sun/Essence"
 	},
 	{
-		"name": "D4/Essence",
+		"name": "Dancing Dragon Dungeon/Soothing Rain/Essence",
 		"type": "toggle",
-		"codes": "D4/Essence"
+		"codes": "Dancing Dragon Dungeon/Soothing Rain/Essence"
 	},
 	{
-		"name": "D5/Essence",
+		"name": "Unicorn's Cave/Nurturing Warmth/Essence",
 		"type": "toggle",
-		"codes": "D5/Essence"
+		"codes": "Unicorn's Cave/Nurturing Warmth/Essence"
 	},
 	{
-		"name": "D6/Essence",
+		"name": "Ancient Ruins/Blowing Wind/Essence",
 		"type": "toggle",
-		"codes": "D6/Essence"
+		"codes": "Ancient Ruins/Blowing Wind/Essence"
 	},
 	{
-		"name": "D7/Essence",
+		"name": "Explorer's Crypt/Seed of Life/Essence",
 		"type": "toggle",
-		"codes": "D7/Essence"
+		"codes": "Explorer's Crypt/Seed of Life/Essence"
 	},
 	{
-		"name": "D8/Essence",
+		"name": "Sword and Shield Maze/Changing Seasons/Essence",
 		"type": "toggle",
-		"codes": "D8/Essence"
+		"codes": "Sword and Shield Maze/Changing Seasons/Essence"
 	},
 	{
 		"name": "Horon Village/Maku Tree/Item Inside Maku Tree (3+ Essences)",

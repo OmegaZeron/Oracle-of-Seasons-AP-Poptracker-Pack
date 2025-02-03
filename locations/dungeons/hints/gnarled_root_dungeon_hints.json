@@ -1,0 +1,210 @@
+[
+	{
+		"name": "Gnarled Root Dungeon Hints",
+		"chest_unopened_img": "images/labels/chest.png",
+		"chest_opened_img": "images/labels/chestopen.png",
+		"visibility_rules": ["showhintson"],
+		"children": [	
+			{
+				"name": "Drop in Right Stalfos Room",
+				"sections":  [
+					{
+						"visibility_rules": ["Gnarled Root Dungeon/Drop in Right Stalfos Room/"],
+						"access_rules": ["^$HasHint|Gnarled Root Dungeon/Drop in Right Stalfos Room/"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "gnarled_root_dungeon",
+						"x": 627,
+						"y": 462,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Chest in Left Stalfos Room",
+				"sections": [
+					{
+						"visibility_rules": ["Gnarled Root Dungeon/Chest in Left Stalfos Room/"],
+						"access_rules": ["^$HasHint|Gnarled Root Dungeon/Chest in Left Stalfos Room/"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "gnarled_root_dungeon",
+						"x": 352,
+						"y": 462,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Chest in Goriya Room",
+				"sections": [
+					{
+						"visibility_rules": ["Gnarled Root Dungeon/Chest in Goriya Room/"],
+						"access_rules": ["^$HasHint|Gnarled Root Dungeon/Chest in Goriya Room/"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "gnarled_root_dungeon",
+						"x": 215,
+						"y": 361,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Chest in Block-pushing Room",
+				"sections": [
+					{
+						"visibility_rules": ["Gnarled Root Dungeon/Chest in Block-pushing Room/"],
+						"access_rules": ["^$HasHint|Gnarled Root Dungeon/Chest in Block-pushing Room/"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "gnarled_root_dungeon",
+						"x": 23,
+						"y": 224,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Chest Near Railway Lever",
+				"sections": [
+					{
+						"visibility_rules": ["Gnarled Root Dungeon/Chest Near Railway Lever/"],
+						"access_rules": ["^$HasHint|Gnarled Root Dungeon/Chest Near Railway Lever/"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "gnarled_root_dungeon",
+						"x": 389,
+						"y": 243,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Chest Near Railway",
+				"sections": [
+					{
+						"visibility_rules": ["Gnarled Root Dungeon/Chest Near Railway/"],
+						"access_rules": ["^$HasHint|Gnarled Root Dungeon/Chest Near Railway/"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "gnarled_root_dungeon",
+						"x": 489,
+						"y": 270,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Hidden Chest Revealed by Button",
+				"sections": [
+					{
+						"visibility_rules": ["Gnarled Root Dungeon/Hidden Chest Revealed by Button/"],
+						"access_rules": ["^$HasHint|Gnarled Root Dungeon/Hidden Chest Revealed by Button/"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "gnarled_root_dungeon",
+						"x": 672,
+						"y": 234,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Item in Basement",
+				"sections": [
+					{
+						"visibility_rules": ["Gnarled Root Dungeon/Item in Basement/"],
+						"access_rules": ["^$HasHint|Gnarled Root Dungeon/Item in Basement/"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "gnarled_root_dungeon",
+						"x": 213,
+						"y": 159,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Chest in Floormaster Room",
+				"sections": [
+					{
+						"visibility_rules": ["Gnarled Root Dungeon/Chest in Floormaster Room/"],
+						"access_rules": ["^$HasHint|Gnarled Root Dungeon/Chest in Floormaster Room/"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "gnarled_root_dungeon",
+						"x": 590,
+						"y": 334,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Boss Reward",
+				"sections": [
+					{
+						"name": "Aquamentus",
+						"visibility_rules": ["Gnarled Root Dungeon/Boss Reward/Aquamentus"],
+						"access_rules": ["^$HasHint|Gnarled Root Dungeon/Boss Reward/Aquamentus"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "gnarled_root_dungeon",
+						"x": 760,
+						"y": 262,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Fertile Soil",
+				"sections": [
+					{
+						"name": "Essence",
+						"visibility_rules": ["Gnarled Root Dungeon/Fertile Soil/Essence"],
+						"access_rules": ["^$HasHint|Gnarled Root Dungeon/Fertile Soil/Essence"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "gnarled_root_dungeon",
+						"x": 901,
+						"y": 262,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			}
+		]
+	}
+]

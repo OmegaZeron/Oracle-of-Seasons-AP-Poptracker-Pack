@@ -241,8 +241,8 @@ HINT_MAPPING = {
 	[27022001239] = {"Horon Village/Gasha Spots/Gasha Spot #14"},
 	[27022001240] = {"Horon Village/Gasha Spots/Gasha Spot #15"},
 	[27022001241] = {"Horon Village/Gasha Spots/Gasha Spot #16"},
-	-- [27022001242] = {"Spool Swamp/Business Scrub/"},
-	-- [27022001243] = {"Snake's Remains/Business Scrub/"},
-	-- [27022001244] = {"Dancing Dragon Dungeon/Business Scrub/1F"},
-	-- [27022001245] = {"Eastern Suburbs/Samasa Desert - One of Four Pits/Business Scrub (Without Skull)"},
+	[27022001242] = {"Spool Swamp/Business Scrub/"},
+	[27022001243] = {"Eastern Suburbs/Samasa Desert - One of Four Pits/Business Scrub (Without Skull)"},
+	[27022001244] = {"Snake's Remains/Business Scrub/"},
+	[27022001245] = {"Dancing Dragon Dungeon/Business Scrub/1F"}
 }

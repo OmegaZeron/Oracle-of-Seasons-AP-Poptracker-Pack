@@ -1,0 +1,222 @@
+[
+	{
+		"name": "Holodrum Plain Hints",
+		"chest_unopened_img": "images/labels/chest.png",
+		"chest_opened_img": "images/labels/chestopen.png",
+		"color": "#00ff08",
+		"visibility_rules": ["showhintson"],
+		"children": [
+			{
+				"name": "Holodrum Plain Tree",
+				"sections": [
+					{
+						"name": "Holodrum Plain: Seed Tree",
+						"visibility_rules": ["Holodrum Plain/Seed Tree"],
+						"access_rules": ["^$HasHint|Holodrum Plain/Seed Tree"],
+						"hosted_item": "tree_plain"
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 333,
+						"y": 289,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Blaino's Gym",
+				"sections": [
+					{
+						"visibility_rules": ["Holodrum Plain/Blaino's Gym/"],
+						"access_rules": ["^$HasHint|Holodrum Plain/Blaino's Gym/"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 376,
+						"y": 332,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Cave Behind Mushrooms",
+				"sections": [
+					{
+						"name": "Holodrum Plain: Chest in Flooded Cave Behind Mushrooms",
+						"visibility_rules": ["Holodrum Plain/Cave Behind Mushrooms/Chest in Flooded Cave Behind Mushrooms"],
+						"access_rules": ["^$HasHint|Holodrum Plain/Cave Behind Mushrooms/Chest in Flooded Cave Behind Mushrooms"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 323,
+						"y": 374,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Old Man Near Blaino's Gym",
+				"visibility_rules": ["old_men_locations"],
+				"sections": [
+					{
+						"name": "Holodrum Plain: Old Man Near Blaino's Gym",
+						"visibility_rules": ["Holodrum Plain/Old Man Near Blaino's Gym/Old Man Near Blaino's Gym"],
+						"access_rules": ["^$HasHint|Holodrum Plain/Old Man Near Blaino's Gym/Old Man Near Blaino's Gym"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 290,
+						"y": 296,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Underwater Item Below Natzu Bridge",
+				"sections": [
+					{
+						"name": "Holodrum Plain: Underwater Item Below Natzu Bridge",
+						"visibility_rules": ["Holodrum Plain/Underwater Item Below Natzu Bridge/Underwater Item Below Natzu Bridge"],
+						"access_rules": ["^$HasHint|Holodrum Plain/Underwater Item Below Natzu Bridge/Underwater Item Below Natzu Bridge"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 282,
+						"y": 252,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Old Man in Treehouse",
+				"sections": [
+					{
+						"name": "Holodrum Plain: Old Man in Treehouse",
+						"visibility_rules": ["Holodrum Plain/Old Man in Treehouse/Old Man in Treehouse"],
+						"access_rules": ["^$HasHint|Holodrum Plain/Old Man in Treehouse/Old Man in Treehouse"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 247,
+						"y": 502,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Flooded Cave",
+				"sections": [
+					{
+						"name": "Holodrum Plain: Chest in Flooded Cave South of Mrs. Ruul",
+						"visibility_rules": ["Holodrum Plain/Flooded Cave/Chest in Flooded Cave South of Mrs. Ruul"],
+						"access_rules": ["^$HasHint|Holodrum Plain/Flooded Cave/Chest in Flooded Cave South of Mrs. Ruul"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 150,
+						"y": 492,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Mrs. Ruul's House",
+				"sections": [
+					{
+						"name": "Holodrum Plain: Mrs. Ruul Trade",
+						"visibility_rules": ["Holodrum Plain/Mrs. Ruul's House/Mrs. Ruul Trade"],
+						"access_rules": ["^$HasHint|Holodrum Plain/Mrs. Ruul's House/Mrs. Ruul Trade"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 150,
+						"y": 455,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Old Man Near Mrs. Ruul's House",
+				"visibility_rules": ["old_men_locations"],
+				"sections": [
+					{
+						"name": "Holodrum Plain: Old Man Near Mrs. Ruul's House",
+						"visibility_rules": ["Holodrum Plain/Old Man Near Mrs. Ruul's House/Old Man Near Mrs. Ruul's House"],
+						"access_rules": ["^$HasHint|Holodrum Plain/Old Man Near Mrs. Ruul's House/Old Man Near Mrs. Ruul's House"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 205,
+						"y": 465,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "North Natzu",
+				"sections": [
+					{
+						"name": "Natzu Region: Chest in Northern Cave",
+						"visibility_rules": ["Holodrum Plain/North Natzu/Chest in Northern Cave"],
+						"access_rules": ["^$HasHint|Holodrum Plain/North Natzu/Chest in Northern Cave"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 430,
+						"y": 190,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Moblin Keep",
+				"sections": [
+					{
+						"name": "Natzu: Chest after Moblin Keep",
+						"visibility_rules": ["Holodrum Plain/Moblin Keep/Chest after Moblin Keep"],
+						"access_rules": ["^$HasHint|Holodrum Plain/Moblin Keep/Chest after Moblin Keep"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 500,
+						"y": 240,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			}
+		]
+	}
+]

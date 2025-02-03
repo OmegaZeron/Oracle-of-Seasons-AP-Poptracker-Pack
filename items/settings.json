@@ -2080,6 +2080,26 @@
 		]
 	},
 	{
+		"name": "Show Hints",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 1,
+		"codes": "showhints",
+		"stages": [
+			{
+				"img": "images/labels/off.png",
+				"codes": "showhintsoff",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/shuffled_label.png",
+				"codes": "showhintson",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
 		"name": "Suburbs Portal Selector",
 		"type": "progressive",
 		"allow_disabled": false,

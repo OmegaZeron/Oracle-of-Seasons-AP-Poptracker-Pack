@@ -1,0 +1,257 @@
+[
+	{
+		"name": "Ancient Ruins Hints",
+		"chest_unopened_img": "images/labels/chest.png",
+		"chest_opened_img": "images/labels/chestopen.png",
+		"visibility_rules": ["showhintson"],
+		"children": [	
+			{
+				"name": "Crumbling Ground Room Chest",
+				"sections": [
+					{
+                        "name": "1F",
+						"visibility_rules": ["Ancient Ruins/Crumbling Ground Room Chest/1F"],
+						"access_rules": ["^$HasHint|Ancient Ruins/Crumbling Ground Room Chest/1F"]
+					}
+                ],
+				"map_locations": [
+					{
+						"map": "ancient_ruins1",
+						"x": 939,
+						"y": 675,
+						"size": 12,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Magnet Ball Puzzle Drop",
+				"sections": [
+					{
+                        "name": "1F",
+						"visibility_rules": ["Ancient Ruins/Magnet Ball Puzzle Drop/1F"],
+						"access_rules": ["^$HasHint|Ancient Ruins/Magnet Ball Puzzle Drop/1F"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "ancient_ruins1",
+						"x": 325,
+						"y": 547,
+						"size": 12,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Chest in Beamos Room",
+				"sections": [
+					{
+                        "name": "1F",
+						"visibility_rules": ["Ancient Ruins/Chest in Beamos Room/1F"],
+						"access_rules": ["^$HasHint|Ancient Ruins/Chest in Beamos Room/1F"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "ancient_ruins1",
+						"x": 607,
+						"y": 483,
+						"size": 12,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Chest in Gibdo Room",
+				"sections": [
+					{
+                        "name": "2F",
+						"visibility_rules": ["Ancient Ruins/Chest in Gibdo Room/2F"],
+						"access_rules": ["^$HasHint|Ancient Ruins/Chest in Gibdo Room/2F"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "ancient_ruins1",
+						"x": 711,
+						"y": 82,
+						"size": 12,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Chest Between 4 Armos",
+				"sections": [
+					{
+                        "name": "2F",
+						"visibility_rules": ["Ancient Ruins/Chest Between 4 Armos/2F"],
+						"access_rules": ["^$HasHint|Ancient Ruins/Chest Between 4 Armos/2F"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "ancient_ruins1",
+						"x": 762,
+						"y": 223,
+						"size": 12,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Armos Hall Chest",
+				"sections": [
+					{
+                        "name": "3F",
+						"visibility_rules": ["Ancient Ruins/Armos Hall Chest/3F"],
+						"access_rules": ["^$HasHint|Ancient Ruins/Armos Hall Chest/3F"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "ancient_ruins2",
+						"x": 568,
+						"y": 750,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Chest North of Main Spinner",
+				"sections": [
+					{
+                        "name": "2F",
+						"visibility_rules": ["Ancient Ruins/Chest North of Main Spinner/2F"],
+						"access_rules": ["^$HasHint|Ancient Ruins/Chest North of Main Spinner/2F"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "ancient_ruins1",
+						"x": 493,
+						"y": 184,
+						"size": 12,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Chest on Terrace Left of Entrance",
+				"sections": [
+					{
+                        "name": "1F",
+						"visibility_rules": ["Ancient Ruins/Chest on Terrace Left of Entrance/1F"],
+						"access_rules": ["^$HasHint|Ancient Ruins/Chest on Terrace Left of Entrance/1F"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "ancient_ruins1",
+						"x": 222,
+						"y": 700,
+						"size": 12,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Crystal Maze Room Chest",
+				"sections": [
+					{
+                        "name": "1F",
+						"visibility_rules": ["Ancient Ruins/Crystal Maze Room Chest/1F"],
+						"access_rules": ["^$HasHint|Ancient Ruins/Crystal Maze Room Chest/1F"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "ancient_ruins1",
+						"x": 184,
+						"y": 624,
+						"size": 12,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Chest After Time Trial",
+				"sections": [
+					{
+                        "name": "2F",
+						"visibility_rules": ["Ancient Ruins/Chest After Time Trial/2F"],
+						"access_rules": ["^$HasHint|Ancient Ruins/Chest After Time Trial/2F"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "ancient_ruins1",
+						"x": 173,
+						"y": 376,
+						"size": 12,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Chest on Red Terrace Before Vire",
+				"sections": [
+					{
+                        "name": "2F",
+						"visibility_rules": ["Ancient Ruins/Chest on Red Terrace Before Vire/2F"],
+						"access_rules": ["^$HasHint|Ancient Ruins/Chest on Red Terrace Before Vire/2F"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "ancient_ruins1",
+						"x": 352,
+						"y": 248,
+						"size": 12,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Boss Reward",
+				"sections": [
+					{
+                        "name": "Manhandla",
+						"visibility_rules": ["Ancient Ruins/Boss Reward/Manhandla"],
+						"access_rules": ["^$HasHint|Ancient Ruins/Boss Reward/Manhandla"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "ancient_ruins2",
+						"x": 101,
+						"y": 216,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Blowing Wind",
+				"sections": [
+					{
+                        "name": "Essence",
+						"visibility_rules": ["Ancient Ruins/Blowing Wind/Essence"],
+						"access_rules": ["^$HasHint|Ancient Ruins/Blowing Wind/Essence"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "ancient_ruins2",
+						"x": 138,
+						"y": 67,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			}
+		]
+	}
+]

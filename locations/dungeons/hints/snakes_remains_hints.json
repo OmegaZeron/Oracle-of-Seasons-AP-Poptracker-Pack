@@ -1,0 +1,229 @@
+[
+	{
+		"name": "Snake's Remains Hints",
+		"chest_unopened_img": "images/labels/chest.png",
+		"chest_opened_img": "images/labels/chestopen.png",
+		"visibility_rules": ["showhintson"],
+		"children": [	
+			{
+				"name": "Chest Left from Entrance",
+				"sections": [
+					{
+                        "visibility_rules": ["Snake's Remains/Chest Left from Entrance/"],
+						"access_rules": ["^$HasHint|Snake's Remains/Chest Left from Entrance/"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "snakes_remains1",
+						"x": 195,
+						"y": 410,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Drop in Left Rope Room",
+				"sections": [
+					{
+						"visibility_rules": ["Snake's Remains/Drop in Left Rope Room/"],
+						"access_rules": ["^$HasHint|Snake's Remains/Drop in Left Rope Room/"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "snakes_remains1",
+						"x": 248,
+						"y": 304,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Chest in Right Rope Room",
+				"sections": [
+					{
+						"visibility_rules": ["Snake's Remains/Chest in Right Rope Room/"],
+						"access_rules": ["^$HasHint|Snake's Remains/Chest in Right Rope Room/"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "snakes_remains1",
+						"x": 569,
+						"y": 303,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Chest Behind Pots in Hardhat Room",
+				"sections": [
+					{
+						"visibility_rules": ["Snake's Remains/Chest Behind Pots in Hardhat Room/"],
+						"access_rules": ["^$HasHint|Snake's Remains/Chest Behind Pots in Hardhat Room/"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "snakes_remains1",
+						"x": 408,
+						"y": 37,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Chest in Distant Moblins Room",
+				"sections": [
+					{
+						"visibility_rules": ["Snake's Remains/Chest in Distant Moblins Room/"],
+						"access_rules": ["^$HasHint|Snake's Remains/Chest in Distant Moblins Room/"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "snakes_remains1",
+						"x": 291,
+						"y": 69,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Chest in Moving Blades Room",
+				"sections": [
+					{
+						"visibility_rules": ["Snake's Remains/Chest in Moving Blades Room/"],
+						"access_rules": ["^$HasHint|Snake's Remains/Chest in Moving Blades Room/"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "snakes_remains1",
+						"x": 697,
+						"y": 175,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Business Scrub",
+				"visibility_rules": ["shufflescrubson"],
+				"sections": [
+					{
+						"visibility_rules": ["Snake's Remains/Business Scrub/"],
+						"access_rules": ["^$HasHint|Snake's Remains/Business Scrub/"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "snakes_remains1",
+						"x": 24,
+						"y": 279,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Chest in Bomb Spiral Maze Room",
+				"sections": [
+					{
+						"visibility_rules": ["Snake's Remains/Chest in Bomb Spiral Maze Room/"],
+						"access_rules": ["^$HasHint|Snake's Remains/Chest in Bomb Spiral Maze Room/"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "snakes_remains1",
+						"x": 89,
+						"y": 185,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Chest in Rollers Section",
+				"sections": [
+					{
+						"visibility_rules": ["Snake's Remains/Chest in Rollers Section/"],
+						"access_rules": ["^$HasHint|Snake's Remains/Chest in Rollers Section/"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "snakes_remains2",
+						"x": 153,
+						"y": 89,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Chest on Terrace",
+				"sections": [
+					{
+						"visibility_rules": ["Snake's Remains/Chest on Terrace/"],
+						"access_rules": ["^$HasHint|Snake's Remains/Chest on Terrace/"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "snakes_remains2",
+						"x": 814,
+						"y": 195,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Boss Reward",
+				"sections": [
+					{
+                        "name": "King Dodongo",
+						"visibility_rules": ["Snake's Remains/Boss Reward/King Dodongo"],
+						"access_rules": ["^$HasHint|Snake's Remains/Boss Reward/King Dodongo"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "snakes_remains2",
+						"x": 750,
+						"y": 419,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Gift of Time",
+				"sections": [
+					{
+                        "name": "Essence",
+						"visibility_rules": ["Snake's Remains/Gift of Time/Essence"],
+						"access_rules": ["^$HasHint|Snake's Remains/Gift of Time/Essence"]
+                    }
+                ],
+				"map_locations": [
+					{
+						"map": "snakes_remains2",
+						"x": 740,
+						"y": 520,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			}
+		]
+	}
+]

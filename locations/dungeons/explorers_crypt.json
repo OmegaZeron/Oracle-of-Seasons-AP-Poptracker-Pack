@@ -71,7 +71,6 @@
 			},
 			{
 				"name": "Zol Button Drop",
-				"access_rules": ["^$CanReach|CryptSurroundedByArmos"], // poe skip check
 				"sections": [
 					{
 						"name": "B1F",
@@ -88,7 +87,6 @@
 			},
 			{
 				"name": "Armos Puzzle Drop",
-				"access_rules": ["^$CanReach|CryptSurroundedByArmos"],
 				"sections": [
 					{
 						"name": "B2F",
@@ -105,8 +103,7 @@
 			},
 			{
 				"name": "Chest Connected to Magnet Ball Button",
-				"sections": 
-				[
+				"sections": [
 					{
 						"name": "B1F",
 						"access_rules": ["^$CanReach|CryptMagunesuReward"]
@@ -122,7 +119,6 @@
 			},
 			{
 				"name": "Quicksand Chest Near Second Poe",
-				"access_rules": ["^$CanReach|CryptSurroundedByArmos"],
 				"sections": [
 					{
 						"name": "1F",
@@ -139,7 +135,6 @@
 			},
 			{
 				"name": "Fast Moving Platform Chest",
-				"access_rules": ["^$CanReach|CryptSurroundedByArmos"],
 				"sections": [
 					{
 						"name": "B1F",
@@ -156,7 +151,6 @@
 			},
 			{
 				"name": "Stair Maze Chest",
-				"access_rules": ["^$CanReach|CryptSurroundedByArmos"],
 				"sections": [
 					{
 						"name": "B2F",
@@ -173,7 +167,6 @@
 			},
 			{
 				"name": "Drop in Room North of Stair Maze",
-				"access_rules": ["^$CanReach|CryptSurroundedByArmos"],
 				"sections": [
 					{
 						"name": "B2F",
@@ -190,7 +183,6 @@
 			},
 			{
 				"name": "Jumping Stalfos Room Chest",
-				"access_rules": ["^$CanReach|CryptSurroundedByArmos"],
 				"sections": [
 					{
 						"name": "B1F",
@@ -207,7 +199,6 @@
 			},
 			{
 				"name": "Boss Reward",
-				"access_rules": ["^$CanReach|CryptSurroundedByArmos"],
 				"sections": [
 					{
 						"name": "Gleeok",
@@ -224,7 +215,6 @@
 			},
 			{
 				"name": "Seed of Life",
-				"access_rules": ["^$CanReach|CryptSurroundedByArmos"],
 				"sections": [
 					{
 						"name": "Essence",

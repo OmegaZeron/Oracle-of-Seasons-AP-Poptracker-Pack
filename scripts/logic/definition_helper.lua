@@ -227,10 +227,10 @@ LostWoodsSummer = "lost_woods_summer"
 LostWoodsAutumn = "lost_woods_fall"
 LostWoodsWinter = "lost_woods_winter"
 
-TempleRemainsSpring = "remains_spring"
-TempleRemainsSummer = "remains_summer"
-TempleRemainsAutumn = "remains_fall"
-TempleRemainsWinter = "remains_winter"
+TempleRemainsSpring = "temple_spring"
+TempleRemainsSummer = "temple_summer"
+TempleRemainsAutumn = "temple_fall"
+TempleRemainsWinter = "temple_winter"
 
 --Dungeon shuffle
 D0LeadsToD0 = "d0_d0"

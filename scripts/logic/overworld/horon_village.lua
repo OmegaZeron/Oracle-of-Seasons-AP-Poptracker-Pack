@@ -30,12 +30,7 @@ HoronVillage:connect_one_way(HoronGasha, CanPlantGasha)
 -- mayor
 HoronVillage:connect_two_ways_entrance(MayorHouse)
 MayorHouse:connect_one_way(MayorsGift)
-MayorHouse:connect_one_way(MayorBombWall, function()
-	return Any(
-		Has(Bombs),
-		Has(Bombchus)
-	)
-end)
+MayorHouse:connect_one_way(MayorBombWall, CanBombWall)
 
 -- vasu
 HoronVillage:connect_two_ways_entrance(Vasu)

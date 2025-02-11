@@ -90,13 +90,23 @@ LowerMtCucco:connect_one_way_entrance(CenterGoronMountain, function()
 end)
 LowerMtCucco:connect_one_way(MtCuccoLedge, function() return AccessibilityLevel.Inspect end)
 UpperMtCucco:connect_one_way(MtCuccoLedge)
-UpperMtCucco:connect_one_way_entrance(TalonReward, function()
+UpperMtCucco:connect_one_way_entrance(TalonCave, function()
+	return Any(
+		Has(Spring),
+		Has(Summer),
+		Has(Autumn),
+		Has(SunkenCitySpring),
+		Has(SunkenCitySummer),
+		Has(SunkenCityAutumn)
+	)
+end)
+TalonCave:connect_one_way_entrance(TalonReward, function()
 	return Any(
 		Has(Megaphone),
 		AccessibilityLevel.Inspect
 	)
 end)
-UpperMtCucco:connect_one_way_entrance(TalonChest, function() return Has(Megaphone) end)
+TalonCave:connect_one_way_entrance(TalonChest, function() return Has(Megaphone) end)
 UpperMtCucco:connect_one_way(MtCuccoDiveSpot, function() return Has(Flippers) end)
 UpperMtCucco:connect_one_way_entrance(DragonKeyhole, function()
 	return All(

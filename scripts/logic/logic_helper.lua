@@ -37,7 +37,13 @@ function CanBombWall()
 	return Any(
 		Has(Bombs),
 		All(
-			Has(Bombchus50),
+			Any(
+				Has(Bombchus50),
+				All(
+					Has(Bombchus),
+					AccessibilityLevel.SequenceBreak
+				)
+			),
 			Any(
 				IsMediumPlus(),
 				AccessibilityLevel.SequenceBreak
@@ -96,7 +102,13 @@ function CanBeatOnox()
 		CanArmorKill(),
 		Any(
 			Has(Bombs),
-			Has(Bombchus20)
+			Any(
+				Has(Bombchus20),
+				All(
+					Has(Bombchus),
+					AccessibilityLevel.SequenceBreak
+				)
+			)
 		),
 		Has(Feather),
 		Any(
@@ -325,7 +337,16 @@ function CanDestroyBush(allowBombchus)
 			),
 			Any(
 				Has(Bombs20),
-				allowBombchus == true and Has(Bombchus50),
+				All(
+					allowBombchus == true,
+					Any(
+						Has(Bombchus50),
+						All(
+							Has(Bombchus),
+							AccessibilityLevel.SequenceBreak
+						)
+					)
+				),
 				All(
 					Any(
 						Has(SeedSatchel),
@@ -370,7 +391,13 @@ function CanDestroyFlower()
 					Has(Slingshot),
 					Has(GaleSeeds)
 				),
-				Has(Bombchus50)
+				Any(
+					Has(Bombchus50),
+					All(
+						Has(Bombchus),
+						AccessibilityLevel.SequenceBreak
+					)
+				)
 			)
 		)
 	)

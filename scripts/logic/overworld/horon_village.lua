@@ -111,12 +111,7 @@ ClockShop:connect_one_way(ClockShopTrade, function() return Has(WoodenBird) end)
 -- dr left
 HoronVillage:connect_two_ways_entrance(DrLeft)
 DrLeft:connect_one_way(DrLeftReward, CanLightTorches)
-DrLeft:connect_one_way_entrance(DrLeftBackyard, function()
-	return Any(
-		Has(Bombs),
-		Has(Bombchus)
-	)
-end)
+DrLeft:connect_one_way_entrance(DrLeftBackyard, CanBombWall)
 DrLeftBackyard:connect_one_way(DrLeftBackyardChest, function()
 	return Any(
 		Has(Flippers),

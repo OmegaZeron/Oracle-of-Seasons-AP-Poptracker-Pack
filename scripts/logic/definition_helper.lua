@@ -83,7 +83,6 @@ SwimmersRing = "ring_swimmer"
 CaneOfSomaria = "somaria"
 Bombchus = "bombchus"
 Bombchus20 = "bombchus20"
-Bombchus40 = "bombchus40"
 Bombchus50 = "bombchus50"
 
 D0SmallKey = "d0sk"

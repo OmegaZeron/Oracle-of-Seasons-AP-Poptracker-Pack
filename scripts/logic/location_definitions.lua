@@ -215,6 +215,7 @@ Syrup3 = OoSLocation.New("Syrup3")
 LowerMtCucco = OoSLocation.New("LowerMtCucco")
 CuccoRightMountain = OoSLocation.New("CuccoRightMountain")
 UpperMtCucco = OoSLocation.New("UpperMtCucco")
+TalonCave = OoSLocation.New("TalonCave")
 DragonKeyhole = OoSLocation.New("DragonKeyhole")
 DancingDragonDungeon = OoSLocation.New("DancingDragonDungeon")
 -- items

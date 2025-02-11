@@ -56,6 +56,7 @@ FacadeDoorstep:connect_one_way_entrance(Facade, function()
 		Has(Bombs)
 	)
 end)
+Facade:connect_one_way_entrance(SnakeFoyer)
 Facade:connect_one_way_entrance(KingDodongo, function()
 	return All(
 		Has(Bracelet),

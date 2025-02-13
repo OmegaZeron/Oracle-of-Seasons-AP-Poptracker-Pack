@@ -103,19 +103,6 @@ SunkenCity:connect_one_way_entrance(MoblinRoadWaterfallCaveChest, function()
 			Has(SunkenCitySpring),
 			Has(SunkenCitySummer),
 			Has(SunkenCityAutumn)
-		),
-		Any(
-			Any(
-				CanWarp(),
-				AccessibilityLevel.SequenceBreak
-			),
-			All(
-				Has(Spring),
-				Any(
-					Has(EasternSuburbsWinter),
-					Has(Winter)
-				)
-			)
 		)
 	)
 end)

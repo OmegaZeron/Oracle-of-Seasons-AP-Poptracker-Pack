@@ -2,6 +2,7 @@
 LowerEasternSuburbs:connect_one_way(EasternSuburbsFindSeason)
 LowerEasternSuburbs:connect_one_way(HoronVillageFindSeason) -- redundant, but could be relevant with alt starting locations
 --standing items
+LowerEasternSuburbs:connect_one_way(Maple, CanMapleTrade)
 LowerEasternSuburbs:connect_one_way(WindmillHP, function()
 	return Any(
 		Has(EasternSuburbsWinter),
@@ -24,12 +25,7 @@ LowerEasternSuburbs:connect_one_way(SuburbsSpringCave, function()
 		)
 	)
 end)
-LowerEasternSuburbs:connect_one_way(SuburbsGasha, function()
-	return All(
-		CanPlantGasha(),
-		CanDestroyBushFlute()
-	)
-end)
+LowerEasternSuburbs:connect_one_way(SuburbsGasha, CanPlantGasha)
 
 -- exits
 LowerEasternSuburbs:connect_one_way_entrance(HoronVillage, function()
@@ -44,7 +40,13 @@ LowerEasternSuburbs:connect_two_ways_entrance(UpperEasternSuburbs, function()
 		Has(Feather),
 		Has(Flippers),
 		Dimitri(),
-		Ricky()
+		All(
+			Ricky(),
+			Any(
+				IsMediumPlus(),
+				AccessibilityLevel.SequenceBreak
+			)
+		)
 	)
 end)
 LowerEasternSuburbs:connect_two_ways_entrance(UpperEasternSuburbsWinter, function()
@@ -76,6 +78,8 @@ end, {SnakeRupeeRoom, AncientRupeeRoom})
 
 -- upper suburbs
 UpperEasternSuburbs:connect_one_way(EasternSuburbsFindSeason)
+UpperEasternSuburbs:connect_one_way(Maple, CanMapleTrade)
+UpperEasternSuburbsWinter:connect_one_way(Maple, CanMapleTrade)
 UpperEasternSuburbs:connect_one_way_entrance(UpperEasternSuburbsWinter, function() return Has(Winter) end)
 UpperEasternSuburbsWinter:connect_one_way(EasternSuburbsFindSeason)
 UpperEasternSuburbsWinter:connect_one_way_entrance(UpperEasternSuburbs, function()
@@ -103,6 +107,7 @@ end)
 -- woods of winter
 MoblinRoad:connect_one_way(EasternSuburbsFindSeason)
 MoblinRoad:connect_one_way(WoodsOfWinterFindSeason)
+MoblinRoad:connect_one_way(Maple, CanMapleTrade)
 MoblinRoad:connect_one_way_entrance(UpperEasternSuburbsWinter, function()
 	return Any(
 		Has(Winter),

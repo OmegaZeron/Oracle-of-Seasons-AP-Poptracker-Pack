@@ -1,5 +1,6 @@
 -- lower
 LowerNorthHoron:connect_one_way(NorthHoronFindSeason)
+LowerEasternSuburbs:connect_one_way(Maple, CanMapleTrade)
 -- standing items
 LowerNorthHoron:connect_one_way(CatInTree, function() return Has(Fish) end)
 LowerNorthHoron:connect_one_way(EyeglassPitsChest, function()
@@ -10,7 +11,7 @@ LowerNorthHoron:connect_one_way(EyeglassPitsChest, function()
 			Any(
 				All(
 					Has(Autumn),
-					CanReach(UpperNorthHoron)
+					CanDestroyBushFlute(true)
 				),
 				Has(NorthHoronAutumn)
 			)
@@ -25,6 +26,7 @@ LowerNorthHoron:connect_one_way_entrance(HoronVillage)
 
 -- upper
 UpperNorthHoron:connect_one_way(NorthHoronFindSeason)
+LowerEasternSuburbs:connect_one_way(Maple, CanMapleTrade)
 -- malon
 UpperNorthHoron:connect_two_ways_entrance(MalonHouse)
 MalonHouse:connect_one_way(MalonTrade, function() return Has(Cuccodex) end)
@@ -36,7 +38,10 @@ UpperNorthHoron:connect_one_way(NorthHoronOldMan, CanBurnTrees)
 GnarledRootDoorstep:connect_one_way_entrance(RedRingOldMan, function()
 	return Any(
 		Has(NorthHoronSummer),
-		Has(Summer)
+		All(
+			Has(Summer),
+			CanDestroyBushFlute()
+		)
 	)
 end)
 RedRingOldMan:connect_one_way(RedRingOldManReward, AreEnoughGoldenBeastsSlain)
@@ -183,6 +188,7 @@ EyeglassPortal:connect_one_way_entrance(DryEyeglassLake, function()
 end)
 
 -- eastern
+EasternNorthHoron:connect_one_way(Maple, CanMapleTrade)
 EasternNorthHoron:connect_one_way(EyeglassGasha, function()
 	return All(
 		CanPlantGasha(),
@@ -262,14 +268,10 @@ UnicornCave:connect_one_way_entrance(DryEyeglassHiddenStairs, function()
 end)
 UnicornCave:connect_one_way_entrance(EasternNorthHoron, function()
 	return Any(
-		Any(
-			CanWarp(),
-			AccessibilityLevel.SequenceBreak
-		),
+		Has(Feather),
 		All(
-			Has(Feather),
-			Has(Autumn),
-			CanDestroyMushroom(true)
+			Has(NorthHoronAutumn),
+			CanDestroyMushroom()
 		)
 	)
 end)

@@ -18,6 +18,10 @@ Tracker:AddLayouts("layouts/item_grids.json")
 Tracker:AddLayouts("layouts/tracker_layouts.json")
 Tracker:AddLayouts("layouts/broadcast.json")
 
+if (Tracker.ActiveVariantUID:find("withouthint")) then
+    Tracker:FindObjectForCode("showhints").CurrentStage = 0
+end
+
 StartLocation = OoSLocation.New("StartLocation")
 StartLocation:connect_one_way_entrance(LowerNorthHoron)
 

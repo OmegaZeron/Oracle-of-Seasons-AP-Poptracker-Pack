@@ -2,15 +2,7 @@
 SnakeFoyer:connect_one_way(SnakeLeftRopeDrop, CanNormalKill)
 SnakeFoyer:connect_one_way_entrance(SnakeAngryTorches, CanLightTorches)
 SnakeAngryTorches:connect_one_way(SnakeRightRopeChest, CanNormalKill)
-SnakeAngryTorches:connect_one_way_entrance(SnakeFoyer, function()
-	return Any(
-		CanLightTorches(),
-		Any(
-			CanWarp(),
-			AccessibilityLevel.SequenceBreak
-		)
-	)
-end)
+SnakeAngryTorches:connect_one_way_entrance(SnakeFoyer)
 SnakeAngryTorches:connect_one_way_entrance(SnakeMoblinRopeFight)
 SnakeMoblinRopeFight:connect_one_way_entrance(SnakeAngryTorches, CanNormalKill)
 SnakeMoblinRopeFight:connect_one_way_entrance(SnakeRupeeRoom, CanBombWall)

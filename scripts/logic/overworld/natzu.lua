@@ -1,11 +1,4 @@
 NatzuWest:connect_one_way(HolodrumPlainFindSeason)
-NatzuWest:connect_one_way_entrance(NorthHolodrumPlain, function()
-	return Any(
-		Has(Flippers),
-		Has(Feather),
-		Has(AnyCompanion)
-	)
-end)
 
 -- ricky
 NatzuWest:connect_two_ways_entrance(NatzuRickyWest, function() return Has(NatzuIsRicky) end)
@@ -111,25 +104,11 @@ MoblinKeepBridge:connect_one_way_entrance(MoblinKeep, function()
 	)
 end)
 MoblinKeep:connect_one_way(GreatMoblinChest, function() return Has(Bracelet) end)
-MoblinKeep:connect_one_way_entrance(SunkenDoorstep, function()
-	return Any(
-		CanWarp(),
-		AccessibilityLevel.SequenceBreak
-	)
-end)
+MoblinKeep:connect_one_way_entrance(SunkenDoorstep)
 
 SunkenDoorstep:connect_one_way(EasternSuburbsFindSeason)
 SunkenDoorstep:connect_one_way(SunkenCityFindSeason)
-SunkenDoorstep:connect_one_way_entrance(UpperEasternSuburbs, function()
-	return Any(
-		Has(Spring),
-		Has(EasternSuburbsSpring),
-		Any(
-			CanWarp(),
-			AccessibilityLevel.SequenceBreak
-		)
-	)
-end)
+SunkenDoorstep:connect_one_way_entrance(UpperEasternSuburbs)
 SunkenDoorstep:connect_two_ways_entrance(SunkenCity, function()
 	return Any(
 		Has(Feather),

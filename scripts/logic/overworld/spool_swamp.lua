@@ -1,3 +1,4 @@
+NorthSpoolSwamp:connect_one_way(Maple, CanMapleTrade)
 NorthSpoolSwamp:connect_one_way(SpoolSwampFindSeason)
 SouthSpoolSwamp:connect_one_way(SpoolSwampFindSeason)
 -- items
@@ -54,16 +55,6 @@ PoisonMothLair:connect_two_ways_entrance(PoisonFoyer, function()
 		Has(D3LeadsToD3)
 	)
 end)
-PoisonMothLair:connect_one_way_entrance(SpoolSwampStump, function()
-	return Any(
-		Has(SpoolSwampSummer),
-		Has(Summer),
-		Any(
-			CanWarp(),
-			AccessibilityLevel.SequenceBreak
-		)
-	)
-end)
 SpoolSwampStump:connect_one_way_entrance(MiddleSpoolSwamp, function()
 	return Any(
 		Has(SpoolSwampSummer),
@@ -79,8 +70,33 @@ end)
 MiddleSpoolSwamp:connect_one_way_entrance(SwampSouthGashaArea, Ricky)
 SwampSouthGashaArea:connect_one_way_entrance(MiddleSpoolSwamp, function()
 	return Any(
-		Has(Feather),
-		CanDestroyBushFlute()
+		Ricky(),
+		All(
+			Has(Feather),
+			Any(
+				Has(MagicBoomerang),
+				All(
+					Any(
+						IsMediumPlus(),
+						AccessibilityLevel.SequenceBreak
+					),
+					Any(
+						HasSword(),
+						All(
+							Has(Slingshot),
+							Has(EmberSeeds)
+						),
+						All(
+							Has(Bombs20),
+							Any(
+								Has(Hard),
+								AccessibilityLevel.SequenceBreak
+							)
+						)
+					)
+				)
+			)
+		)
 	)
 end)
 SwampSouthGashaArea:connect_two_ways_entrance(SpoolPortal, function() return Has(Bracelet) end)
@@ -100,43 +116,62 @@ MiddleSpoolSwamp:connect_two_ways_entrance(SouthSpoolSwamp, function()
 		Has(Flippers)
 	)
 end)
-SouthSpoolSwamp:connect_one_way_entrance(SpringSpoolSwamp, function()
-	return Any(
-		Has(SpoolSwampSpring),
-		All(
-			Has(Spring),
-			CanReach(SpoolSwampStump)
+SouthSpoolSwamp:connect_one_way(Maple, CanMapleTrade)
+
+-- make sure you can go directly from the stump to south, or default season
+-- just because you can reach the stump doesn't mean you can also get there
+-- ex. only access to gasha section is through subrosia
+SouthSpoolSwamp:connect_one_way_entrance(SpringSpoolSwamp, function() return Has(SpoolSwampSpring) end)
+SpoolSwampStump:connect_one_way_entrance(SpringSpoolSwamp, function()
+	return All(
+		Has(Spring),
+		Any(
+			Has(Flippers),
+			Dimitri()
+		),
+		Any(
+			Ricky(),
+			Moosh(),
+			Jump2()
 		)
 	)
-end, {SpoolSwampStump})
-SouthSpoolSwamp:connect_one_way_entrance(SummerSpoolSwamp, function()
-	return Any(
-		Has(SpoolSwampSummer),
-		All(
-			Has(Summer),
-			CanReach(SpoolSwampStump)
+end)
+SouthSpoolSwamp:connect_one_way_entrance(SummerSpoolSwamp, function() return Has(SpoolSwampSummer) end)
+SpoolSwampStump:connect_one_way_entrance(SummerSpoolSwamp, function()
+	return All(
+		Has(Summer),
+		Any(
+			Has(Flippers),
+			AnyFlute(),
+			Jump2()
 		)
 	)
-end, {SpoolSwampStump})
+end)
+SouthSpoolSwamp:connect_one_way_entrance(AutumnSpoolSwamp, function() return Has(SpoolSwampAutumn) end)
+SpoolSwampStump:connect_one_way_entrance(AutumnSpoolSwamp, function()
+	return All(
+		Has(Autumn),
+		Any(
+			Has(Flippers),
+			AnyFlute(),
+			Jump2()
+		)
+	)
+end)
+SouthSpoolSwamp:connect_one_way_entrance(WinterSpoolSwamp, function() return Has(SpoolSwampWinter) end)
+SpoolSwampStump:connect_one_way_entrance(WinterSpoolSwamp, function()
+	return All(
+		Has(Winter),
+		Any(
+			Has(Flippers),
+			AnyFlute(),
+			Jump2()
+		)
+	)
+end)
+
 SummerSpoolSwamp:connect_one_way(GoldenOctorokKill, CanSwordKill)
-SouthSpoolSwamp:connect_one_way_entrance(AutumnSpoolSwamp, function()
-	return Any(
-		Has(SpoolSwampAutumn),
-		All(
-			Has(Autumn),
-			CanReach(SpoolSwampStump)
-		)
-	)
-end, {SpoolSwampStump})
-SouthSpoolSwamp:connect_one_way_entrance(WinterSpoolSwamp, function()
-	return Any(
-		Has(SpoolSwampWinter),
-		All(
-			Has(Winter),
-			CanReach(SpoolSwampStump)
-		)
-	)
-end, {SpoolSwampStump})
+
 SpringSpoolSwamp:connect_one_way_entrance(SouthSpoolSwamp)
 SummerSpoolSwamp:connect_one_way_entrance(SouthSpoolSwamp)
 AutumnSpoolSwamp:connect_one_way_entrance(SouthSpoolSwamp)
@@ -159,44 +194,20 @@ end)
 SwampSouthGashaArea:connect_one_way_entrance(SpringSpoolSwamp, function()
 	return All(
 		Has(SpoolSwampSpring),
-		Any(
-			Has(Spring),
-			CanReach(SpoolSwampStump)
-		),
 		CanDestroyFlower()
 	)
-end, {SpoolSwampStump})
-SwampSouthGashaArea:connect_one_way_entrance(SummerSpoolSwamp, function()
-	return All(
-		Has(SpoolSwampSummer),
-		Any(
-			Has(Summer),
-			CanReach(SpoolSwampStump)
-		)
-	)
-end, {SpoolSwampStump})
-SwampSouthGashaArea:connect_one_way_entrance(AutumnSpoolSwamp, function()
-	return All(
-		Has(SpoolSwampAutumn),
-		Any(
-			Has(Autumn),
-			CanReach(SpoolSwampStump)
-		)
-	)
-end, {SpoolSwampStump})
+end)
+SwampSouthGashaArea:connect_one_way_entrance(SummerSpoolSwamp, function() return Has(SpoolSwampSummer) end)
+SwampSouthGashaArea:connect_one_way_entrance(AutumnSpoolSwamp, function() return Has(SpoolSwampAutumn) end)
 SwampSouthGashaArea:connect_one_way_entrance(WinterSpoolSwamp, function()
 	return All(
-	Has(SpoolSwampWinter),
+		Has(SpoolSwampWinter),
 		Any(
-			Has(Winter),
-			CanReach(SpoolSwampStump)
+			Has(Shovel),
+			AnyFlute()
 		)
-	),
-	Any(
-		Has(Shovel),
-		AnyFlute()
 	)
-end, {SpoolSwampStump})
+end)
 SpringSpoolSwamp:connect_one_way(SwampFloodedHP, function()
 	return Any(
 		Has(Flippers),

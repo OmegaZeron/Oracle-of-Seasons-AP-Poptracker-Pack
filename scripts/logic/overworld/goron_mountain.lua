@@ -36,6 +36,8 @@ CenterGoronMountain:connect_one_way(LonelyGoron, CanBombWall)
 CenterGoronMountain:connect_one_way_entrance(LowerMtCucco, function() return Has(Shovel) end)
 
 -- items
+WestGoronMountain:connect_one_way(Maple, CanMapleTrade)
+CenterGoronMountain:connect_one_way(Maple, CanMapleTrade)
 SouthGoronMountain:connect_one_way(NatzuPlatformCave, function()
 	return Any(
 		Has(Flippers),

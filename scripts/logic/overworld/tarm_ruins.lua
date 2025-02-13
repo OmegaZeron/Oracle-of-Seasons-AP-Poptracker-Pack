@@ -28,7 +28,14 @@ TarmEntrance:connect_one_way_entrance(TarmTreeStump, function()
 		)
 	)
 end)
-TarmTreeStump:connect_one_way(GoldenLynelKill, CanSwordKill)
+TarmTreeStump:connect_one_way(Maple, CanMapleTrade)
+TarmTreeStump:connect_one_way(GoldenLynelKill, function()
+	return Any(
+		-- not biggoron?
+		Has(WoodSword),
+		Has(FoolsOre)
+	)
+end)
 TarmTreeStump:connect_one_way_entrance(LostWoods, function()
 	return All(
 		CanDestroyMushroom(),
@@ -46,6 +53,38 @@ LostWoods:connect_one_way(Pedestal, function()
 			All(
 				-- know the sequence
 				Has(PedestalVanilla),
+				Any(
+					IsMediumPlus(),
+					AccessibilityLevel.SequenceBreak
+				)
+			)
+		)
+	)
+end)
+-- special case to get to D6 using default seasons
+Pedestal:connect_one_way_entrance(TarmTree, function()
+	return All(
+		Any(
+			CanLostWoods(),
+			All(
+				CanLostWoods(true),
+				Any(
+					IsMediumPlus(),
+					AccessibilityLevel.SequenceBreak
+				)
+			)
+		),
+		Any(
+			All(
+				Any(
+					Has(Flippers),
+					JumpLiquid2()
+				),
+				Has(Shield)
+			),
+			All(
+				-- know the sequence
+				Has(LostWoodsVanilla),
 				Any(
 					IsMediumPlus(),
 					AccessibilityLevel.SequenceBreak
@@ -76,7 +115,36 @@ LostWoods:connect_one_way_entrance(TarmTree, function()
 		)
 	)
 end)
-TarmTree:connect_one_way(LostWoodsFindSeason) -- don't do this? sequence break?
+-- special case to get to pedestal using default seasons
+TarmTree:connect_one_way(Pedestal, function()
+	return All(
+		Any(
+			CanPedestal(),
+			All(
+				CanPedestal(true),
+				Any(
+					IsMediumPlus(),
+					AccessibilityLevel.SequenceBreak
+				)
+			)
+		),
+		Any(
+			All(
+				CanBurnTrees(),
+				Has(Phonograph)
+			),
+			All(
+				Has(PedestalVanilla),
+				Any(
+					IsMediumPlus(),
+					AccessibilityLevel.SequenceBreak
+				)
+			)
+		)
+	)
+end)
+TarmTree:connect_one_way_entrance(LostWoods)
+TarmTree:connect_one_way(LostWoodsFindSeason)
 TarmTree:connect_one_way(TarmRuinsFindSeason)
 TarmTree:connect_one_way(TarmGasha, function()
 	return All(
@@ -106,6 +174,7 @@ TarmTree:connect_one_way_entrance(UpperTarm, function()
 		)
 	)
 end)
+UpperTarm:connect_one_way(Maple, CanMapleTrade)
 UpperTarm:connect_one_way_entrance(TarmTree)
 UpperTarm:connect_one_way(TarmOldMan, function()
 	return All(

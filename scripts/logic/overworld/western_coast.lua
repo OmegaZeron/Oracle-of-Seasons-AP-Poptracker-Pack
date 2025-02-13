@@ -1,3 +1,4 @@
+EastWesternCoast:connect_one_way(Maple, CanMapleTrade)
 EastWesternCoast:connect_one_way(WesternCoastFindSeason)
 EastWesternCoast:connect_one_way(BlackBeast, function()
 	return All(
@@ -28,31 +29,9 @@ HerosCave:connect_two_ways_entrance(HerosCaveFoyer, function()
 	)
 end)
 
-HerosCaveFoyer:connect_one_way_entrance(HerosCaveLedge, function()
-	-- connect from foyer to prevent potential softlocks with dungeon shuffle
-	return Any(
-		Has(D0AltRemoved),
-		All(
-			CanDestroyBushFlute(),
-			Any(
-				CanWarp(),
-				Has(ShuffleDungeonOff)
-			)
-		)
-	)
-end)
-EastWesternCoast:connect_one_way_entrance(HerosCaveLedge, function()
-	-- and add the out of logic version of above
-	return All(
-		Has(D0AltVanilla),
-		CanDestroyBushFlute(),
-		AccessibilityLevel.SequenceBreak
-	)
-end)
+EastWesternCoast:connect_one_way_entrance(HerosCaveLedge, CanDestroyBushFlute)
 HerosCaveLedge:connect_one_way_entrance(HerosCaveFoyer)
-HerosCaveFoyer:connect_one_way(HerosCaveLedge, function()
-	return Has(D0AltRemoved)
-end)
+HerosCaveFoyer:connect_one_way(HerosCaveLedge, function() return Has(D0AltRemoved) end)
 HerosCaveFoyer:connect_one_way_entrance(HerosCaveUnderground, function()
 	return Any(
 		CanNormalKill(),
@@ -224,55 +203,49 @@ EastWesternCoast:connect_one_way_entrance(MazeFoyer, function()
 		Has(D0LeadsToD8)
 	)
 end)
--- OoL setup for d0 alt entrance. This is never in logic due to potential softlock
+
+-- dungeon shuffle
 HerosCaveFoyer:connect_one_way_entrance(GnarledRootDungeon, function()
 	return All(
 		Has(ShuffleDungeonOn),
-		Has(D1LeadsToD0),
-		AccessibilityLevel.SequenceBreak
+		Has(D1LeadsToD0)
 	)
 end)
 HerosCaveFoyer:connect_two_ways_entrance(SnakesRemains, function()
 	return All(
 		Has(ShuffleDungeonOn),
-		Has(D2LeadsToD0),
-		AccessibilityLevel.SequenceBreak
+		Has(D2LeadsToD0)
 	)
 end)
 -- d3 is never linked because of infinite drowning
 HerosCaveFoyer:connect_one_way_entrance(DancingDragonDungeon, function()
 	return All(
 		Has(ShuffleDungeonOn),
-		Has(D4LeadsToD0),
-		AccessibilityLevel.SequenceBreak
+		Has(D4LeadsToD0)
 	)
 end)
 HerosCaveFoyer:connect_one_way_entrance(UnicornCave, function()
 	return All(
 		Has(ShuffleDungeonOn),
-		Has(D5LeadsToD0),
-		AccessibilityLevel.SequenceBreak
+		Has(D5LeadsToD0)
 	)
 end)
 HerosCaveFoyer:connect_one_way_entrance(AncientRuins, function()
 	return All(
 		Has(ShuffleDungeonOn),
-		Has(D6LeadsToD0),
-		AccessibilityLevel.SequenceBreak
+		Has(D6LeadsToD0)
 	)
 end)
 HerosCaveFoyer:connect_one_way_entrance(ExplorersCrypt, function()
 	return All(
 		Has(ShuffleDungeonOn),
-		Has(D7LeadsToD0),
-		AccessibilityLevel.SequenceBreak
+		Has(D7LeadsToD0)
 	)
 end)
 HerosCaveFoyer:connect_one_way_entrance(SwordAndShieldMaze, function()
 	return All(
 		Has(ShuffleDungeonOn),
-		Has(D8LeadsToD0),
-		AccessibilityLevel.SequenceBreak
+		Has(D8LeadsToD0)
 	)
 end)
 

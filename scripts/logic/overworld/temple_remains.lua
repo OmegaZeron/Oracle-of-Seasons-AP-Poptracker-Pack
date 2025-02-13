@@ -1,3 +1,4 @@
+LowerTempleRemains:connect_one_way(Maple, CanMapleTrade)
 LowerTempleRemains:connect_one_way(TempleRemainsFindSeason)
 LowerTempleRemains:connect_one_way_entrance(TempleRemainsStump, function()
 	return All(
@@ -75,12 +76,15 @@ TempleRemainsStump:connect_one_way_entrance(LowerTempleRemains, function()
 		)
 	)
 end)
+LowerTempleRemains:connect_one_way_entrance(TempleRemainsLowerPortal, function()
+	return All(
+		CanReach(Fireworks),
+		Has(Feather)
+	)
+end, {Fireworks})
 TempleRemainsStump:connect_one_way_entrance(TempleRemainsLowerPortal, function()
 	return All(
-		Any(
-			Has(Winter),
-			Has(TempleRemainsWinter)
-		),
+		Has(Winter),
 		Has(Feather)
 	)
 end)
@@ -92,24 +96,7 @@ TempleRemainsLowerPortal:connect_two_ways_entrance(Volcano, function()
 		Has(VolcanoLeadsToRemains)
 	)
 end)
-TempleRemainsLowerPortal:connect_one_way_entrance(TempleRemainsStump, function()
-	return Any(
-		All(
-			Has(TempleRemainsWinter),
-			Has(Feather)
-		),
-		All(
-			JumpLiquid2(),
-			CanReach(Fireworks)
-		)
-	)
-end, {Fireworks})
-TempleRemainsLowerPortal:connect_one_way_entrance(LowerTempleRemains, function()
-	return Any(
-		CanWarp(),
-		AccessibilityLevel.SequenceBreak
-	)
-end)
+TempleRemainsLowerPortal:connect_one_way_entrance(LowerTempleRemains)
 LowerTempleRemains:connect_one_way(TempleRemainsBombCave, function()
 	return All(
 		CanReach(Fireworks),
@@ -138,7 +125,15 @@ TempleRemainsUpperPortal:connect_one_way_entrance(LowerTempleRemains, function()
 	)
 end, {Fireworks})
 TempleRemainsUpperPortal:connect_one_way_entrance(TempleRemainsStump, function() return Has(Feather) end)
-TempleRemainsUpperPortal:connect_one_way_entrance(TempleRemainsLowerPortal, function() return Has(TempleRemainsWinter) end)
+TempleRemainsUpperPortal:connect_one_way_entrance(TempleRemainsLowerPortal, function()
+	return Any(
+		Has(Feather),
+		All(
+			Has(TempleRemainsWinter),
+			not CanReach(Fireworks)
+		)
+	)
+end, {Fireworks})
 TempleRemainsUpperPortal:connect_two_ways_entrance(SwordAndShieldMaze, function()
 	return Any(
 		Has(ShufflePortalsOff),

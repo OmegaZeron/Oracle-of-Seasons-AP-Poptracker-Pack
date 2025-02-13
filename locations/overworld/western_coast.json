@@ -73,7 +73,7 @@
 				"sections": [
 					{
 						"name": "Lon Lon Egg Trade",
-						"access_rules": ["^$CanFarmMaple, ^$Has|LonLonEgg"]
+						"access_rules": ["^$CanReach|Maple"]
 					}
 				],
 				"map_locations": [

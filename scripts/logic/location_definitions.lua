@@ -1,4 +1,5 @@
 -- HOLODRUM
+Maple = OoSLocation.New("Maple")
 -- Horon Village
 -- locations
 HoronVillage = OoSLocation.New("HoronVillage")

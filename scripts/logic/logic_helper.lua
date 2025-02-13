@@ -245,22 +245,6 @@ function GashasPlanted()
 	return n
 end
 
-function CanWarp()
-	return All(
-		Any(
-			IsMediumPlus(),
-			AccessibilityLevel.SequenceBreak
-		),
-		Any(
-			Has(Treewarp),
-			All(
-				Has(SeedSatchel),
-				Has(GaleSeeds)
-			)
-		)
-	)
-end
-
 -- INTERACT RULES
 
 function CanUseSeeds()
@@ -359,9 +343,9 @@ function CanDestroyBush(allowBombchus)
 	)
 end
 
-function CanDestroyBushFlute()
+function CanDestroyBushFlute(allowBombchus)
 	return Any(
-		CanDestroyBush(),
+		CanDestroyBush(allowBombchus),
 		AnyFlute()
 	)
 end
@@ -433,18 +417,11 @@ end
 
 function CanTriggerLever()
 	return Any(
-		CanSwordPunchKill(),
-		HasRod(),
-		Has(Shovel),
-		Has(Boomerang),
-		All(
-			CanUseSeeds(),
-			HasContactSeeds()
-		),
+		CanHitLeverFromMinecart(),
 		All(
 			Has(Shovel),
 			Any(
-				Has(Casual),
+				IsMediumPlus(),
 				AccessibilityLevel.SequenceBreak
 			)
 		)
@@ -452,7 +429,7 @@ function CanTriggerLever()
 end
 
 function CanHitLeverFromMinecart()
-	return CanSwordKill() or
+	return CanSwordPunchKill() or
 	Has(Boomerang) or
 	HasRod() or
 	Has(Slingshot) or
@@ -899,8 +876,8 @@ function HasOreChunks(count)
 	)
 end
 
-function CanFarmMaple()
-	return CanNormalKill(false, false)
+function CanMapleTrade()
+	return Has(LonLonEgg) and CanNormalKill(false, false)
 end
 
 function CanEnterTarm()
@@ -921,35 +898,31 @@ local indexToSeason = {
 	[3] = Winter,
 	[4] = UnknownSeason
 }
-function CanLostWoods()
-	if (Has(LostWoodsVanilla)) then
-		return All(
-			Has(Spring),
-			Has(Summer),
-			Has(Autumn),
-			Has(Winter)
-		)
+function CanLostWoods(allowDefault)
+	if (allowDefault == nil) then
+		allowDefault = false
 	end
+	local defaultSeason = indexToSeason[Tracker:FindObjectForCode("lost_woods_season").CurrentStage]
+	local canDefault = defaultSeason ~= UnknownSeason
 	for i=1, 4 do
 		local season = indexToSeason[Tracker:FindObjectForCode("lost_woods_"..i).CurrentStage]
-		if (season == UnknownSeason or not Has(season)) then
+		canDefault = allowDefault and canDefault and defaultSeason == season
+		if (not canDefault and (season == UnknownSeason or not Has(season))) then
 			return false
 		end
 	end
 	return true
 end
-function CanPedestal()
-	if (Has(PedestalVanilla)) then
-		return All(
-			Has(Spring),
-			Has(Summer),
-			Has(Autumn),
-			Has(Winter)
-		)
+function CanPedestal(allowDefault)
+	if (allowDefault == nil) then
+		allowDefault = false
 	end
+	local defaultSeason = indexToSeason[Tracker:FindObjectForCode("lost_woods_season").CurrentStage]
+	local canDefault = defaultSeason ~= UnknownSeason
 	for i=1, 4 do
 		local season = indexToSeason[Tracker:FindObjectForCode("pedestal_"..i).CurrentStage]
-		if (season == UnknownSeason or not Has(season)) then
+		canDefault = allowDefault and canDefault and defaultSeason == season
+		if (not canDefault and (season == UnknownSeason or not Has(season))) then
 			return false
 		end
 	end

@@ -20,25 +20,13 @@ LowerMtCucco:connect_one_way_entrance(CuccoRightMountain, function()
 				),
 				Any(
 					CanDestroyFlower(),
-					All(
-						Has(SpringBanana),
-						Any(
-							CanWarp(),
-							AccessibilityLevel.SequenceBreak
-						)
-					)
+					Has(SpringBanana)
 				)
 			),
-			All(
+			Any(
 				-- cucco clip
-				Any(
-					CanWarp(),
-					AccessibilityLevel.SequenceBreak
-				),
-				Any(
-					Has(Hard),
-					AccessibilityLevel.SequenceBreak
-				)
+				Has(Hard),
+				AccessibilityLevel.SequenceBreak
 			)
 		)
 	)
@@ -65,6 +53,7 @@ LowerMtCucco:connect_one_way_entrance(UpperMtCucco, function()
 		Has(SunkenCitySpring)
 	)
 end)
+UpperMtCucco:connect_one_way_entrance(LowerMtCucco)
 LowerMtCucco:connect_one_way(MtCuccoGasha, function()
 	return All(
 		CanPlantGasha(),
@@ -122,12 +111,7 @@ DragonKeyhole:connect_one_way_entrance(DancingDragonDungeon, function()
 	)
 end)
 DancingDragonDungeon:connect_one_way(SunkenCityFindSeason)
-DancingDragonDungeon:connect_one_way_entrance(UpperMtCucco, function()
-	return Any(
-		CanWarp(),
-		AccessibilityLevel.SequenceBreak
-	)
-end)
+DancingDragonDungeon:connect_one_way_entrance(UpperMtCucco)
 DancingDragonDungeon:connect_two_ways_entrance(DancingFoyer, function()
 	return Any(
 		Has(ShuffleDungeonOff),

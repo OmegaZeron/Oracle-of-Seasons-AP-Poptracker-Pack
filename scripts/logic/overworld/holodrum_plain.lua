@@ -1,3 +1,4 @@
+NorthHolodrumPlain:connect_one_way(Maple, CanMapleTrade)
 NorthHolodrumPlain:connect_one_way(HolodrumPlainFindSeason)
 NorthHolodrumPlain:connect_one_way(NorthHoronFindSeason)
 -- items
@@ -9,30 +10,30 @@ NorthHolodrumPlain:connect_one_way(HolodrumPlainMushroomCave, function()
 		CanDestroyMushroom(true),
 		Any(
 			Has(HolodrumPlainAutumn),
-			All(
-				Has(Autumn),
-				CanReach(SouthHolodrumPlain)
-			)
+			Has(Autumn)
 		)
 	)
-end, {SouthHolodrumPlain})
+end)
 NorthHolodrumPlain:connect_one_way(NorthHolodrumPlainOldMan, function()
 	return All(
 		CanBurnTrees(),
 		Any(
 			Has(HolodrumPlainSummer),
+			Ricky(),
 			All(
 				Has(Summer),
-				CanReach(SouthHolodrumPlain),
 				Any(
-					AnyFlute(),
 					Has(Feather),
-					Has(Flippers)
+					AnyFlute(),
+					All(
+						CanDestroyBushFlute(true),
+						Has(Flippers)
+					)
 				)
 			)
 		)
 	)
-end, {SouthHolodrumPlain})
+end)
 NorthHolodrumPlain:connect_one_way(TreehouseOldMan, function()
 	return All(
 		Any(
@@ -44,6 +45,7 @@ NorthHolodrumPlain:connect_one_way(TreehouseOldMan, function()
 end)
 NorthHolodrumPlain:connect_one_way(UnderNatzuBridge, function() return Has(Flippers) end)
 HolodrumPlainSign:connect_one_way(HolodrumPlainFloodedCave, function() return Has(Flippers) end)
+SouthHolodrumPlain:connect_one_way(Maple, CanMapleTrade)
 SouthHolodrumPlain:connect_one_way(MrsRuul, function() return Has(GhastlyDoll) end)
 SouthHolodrumPlain:connect_one_way(SouthHolodrumPlainGasha, function()
 	return All(
@@ -117,13 +119,7 @@ NorthHolodrumPlain:connect_two_ways_entrance(SouthGoronMountain, function()
 		Dimitri()
 	)
 end)
-NorthHolodrumPlain:connect_one_way_entrance(NatzuWest, function()
-	return Any(
-		Has(Flippers),
-		Has(Feather),
-		Has(AnyCompanion)
-	)
-end)
+NorthHolodrumPlain:connect_two_ways_entrance(NatzuWest)
 NorthHolodrumPlain:connect_one_way(OnoxGasha, function()
 	return All(
 		CanPlantGasha(),

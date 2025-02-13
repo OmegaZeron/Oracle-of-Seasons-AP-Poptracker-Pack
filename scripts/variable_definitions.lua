@@ -373,7 +373,7 @@ SeeSeasonVars = {
 	{"see spool swamp", "swamp_season", "@Spool Swamp/See the Season/Spool Swamp"},
 	{"see sunken city", "sunken_season", "@Sunken City/See the Season/Sunken City"},
 	{"see western coast", "coast_season", "@Western Coast/See the Season/Western Coast"},
-	{"see temple remains", "temple_season", "@Temple Remains/See the Season/Temple Remains"}
+	{"see temple remains", "remains_season", "@Temple Remains/See the Season/Temple Remains"}
 }
 
 QualityToAccess = {

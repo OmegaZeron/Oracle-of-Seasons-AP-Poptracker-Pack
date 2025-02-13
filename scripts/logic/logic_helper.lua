@@ -1194,7 +1194,7 @@ ScriptHost:AddWatchForCode("wild mystery handler", MysterySeeds, OnCollectMyster
 ScriptHost:AddOnLocationSectionChangedHandler("section changed handler", OnSectionChanged)
 ScriptHost:AddOnFrameHandler("load handler", OnFrameHandler)
 -- "See the Season" locations
-for i = 1, 11 do
+for i = 1, #SeeSeasonVars do
 	ScriptHost:AddWatchForCode(SeeSeasonVars[i][1], SeeSeasonVars[i][2], function()
 		local season = Tracker:FindObjectForCode(SeeSeasonVars[i][2])
 		---@cast season JsonItem

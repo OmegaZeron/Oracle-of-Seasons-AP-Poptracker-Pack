@@ -6,7 +6,7 @@
 		"visibility_rules": ["showhintson"],
 		"children": [	
 			{
-				"name": "Crumbling Ground Room Chest",
+				"name": "Crumbling Ground Room Chest Hint",
 				"sections": [
 					{
 						"name": "1F",
@@ -25,7 +25,7 @@
 				]
 			},
 			{
-				"name": "Magnet Ball Puzzle Drop",
+				"name": "Magnet Ball Puzzle Drop Hint",
 				"sections": [
 					{
 						"name": "1F",
@@ -44,7 +44,7 @@
 				]
 			},
 			{
-				"name": "Chest in Beamos Room",
+				"name": "Chest in Beamos Room Hint",
 				"sections": [
 					{
 						"name": "1F",
@@ -63,7 +63,7 @@
 				]
 			},
 			{
-				"name": "Chest in Gibdo Room",
+				"name": "Chest in Gibdo Room Hint",
 				"sections": [
 					{
 						"name": "2F",
@@ -82,7 +82,7 @@
 				]
 			},
 			{
-				"name": "Chest Between 4 Armos",
+				"name": "Chest Between 4 Armos Hint",
 				"sections": [
 					{
 						"name": "2F",
@@ -101,7 +101,7 @@
 				]
 			},
 			{
-				"name": "Armos Hall Chest",
+				"name": "Armos Hall Chest Hint",
 				"sections": [
 					{
 						"name": "3F",
@@ -120,7 +120,7 @@
 				]
 			},
 			{
-				"name": "Chest North of Main Spinner",
+				"name": "Chest North of Main Spinner Hint",
 				"sections": [
 					{
 						"name": "2F",
@@ -139,7 +139,7 @@
 				]
 			},
 			{
-				"name": "Chest on Terrace Left of Entrance",
+				"name": "Chest on Terrace Left of Entrance Hint",
 				"sections": [
 					{
 						"name": "1F",
@@ -158,7 +158,7 @@
 				]
 			},
 			{
-				"name": "Crystal Maze Room Chest",
+				"name": "Crystal Maze Room Chest Hint",
 				"sections": [
 					{
 						"name": "1F",
@@ -177,7 +177,7 @@
 				]
 			},
 			{
-				"name": "Chest After Time Trial",
+				"name": "Chest After Time Trial Hint",
 				"sections": [
 					{
 						"name": "2F",
@@ -196,7 +196,7 @@
 				]
 			},
 			{
-				"name": "Chest on Red Terrace Before Vire",
+				"name": "Chest on Red Terrace Before Vire Hint",
 				"sections": [
 					{
 						"name": "2F",
@@ -215,7 +215,7 @@
 				]
 			},
 			{
-				"name": "Boss Reward",
+				"name": "Boss Reward Hint",
 				"sections": [
 					{
 						"name": "Manhandla",
@@ -234,7 +234,7 @@
 				]
 			},
 			{
-				"name": "Blowing Wind",
+				"name": "Blowing Wind Hint",
 				"sections": [
 					{
 						"name": "Essence",

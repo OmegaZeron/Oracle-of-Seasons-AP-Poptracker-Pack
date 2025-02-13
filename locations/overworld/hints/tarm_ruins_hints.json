@@ -7,7 +7,7 @@
 		"visibility_rules": ["showhintson"],
 		"children": [
 			{
-				"name": "Tarm Ruins Tree",
+				"name": "Tarm Ruins Tree Hint",
 				"sections": [
 					{
 						"name": "Tarm Ruins: Seed Tree",
@@ -26,7 +26,7 @@
 				]
 			},
 			{
-				"name": "Tarm Ruins Old Man",
+				"name": "Tarm Ruins Old Man Hint",
 				"visibility_rules": ["old_men_locations"],
 				"sections": [
 					{
@@ -45,7 +45,7 @@
 				]
 			},
 			{
-				"name": "Lost Woods",
+				"name": "Lost Woods Hint",
 				"sections": [
 					{
 						"name": "Lost Woods: Pedestal Item",
@@ -64,7 +64,7 @@
 				]
 			},
 			{
-				"name": "Tree Behind Mushrooms",
+				"name": "Tree Behind Mushrooms Hint",
 				"sections": [
 					{
 						"name": "Tarm Ruins: Chest in Rabbit Hole Under Tree",
@@ -83,7 +83,7 @@
 				]
 			},
 			{
-				"name": "Ancient Ruins",
+				"name": "Ancient Ruins Hints",
 				"access_rules": ["^$CanReach|AncientFoyer"],
 				"sections": [
 					{

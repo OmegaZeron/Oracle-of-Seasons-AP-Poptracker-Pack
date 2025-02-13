@@ -6,7 +6,7 @@
 		"visibility_rules": ["showhintson"],
 		"children": [	
 			{
-				"name": "Chest in Watery Room",
+				"name": "Chest in Watery Room Hint",
 				"sections": [
 					{
 						"name": "B1F",
@@ -25,7 +25,7 @@
 				]
 			},
 			{
-				"name": "Chest Above West Trampoline & Owl",
+				"name": "Chest Above West Trampoline & Owl Hint",
 				"sections": [
 					{
 						"name": "1F",
@@ -44,7 +44,7 @@
 				]
 			},
 			{
-				"name": "Chest Above East Trampoline",
+				"name": "Chest Above East Trampoline Hint",
 				"sections": [
 					{
 						"name": "1F",
@@ -63,7 +63,7 @@
 				]
 			},
 			{
-				"name": "Chest in Roller Room",
+				"name": "Chest in Roller Room Hint",
 				"sections": [
 					{
 						"name": "B1F",
@@ -82,7 +82,7 @@
 				]
 			},
 			{
-				"name": "Chest in Moldorm Room",
+				"name": "Chest in Moldorm Room Hint",
 				"sections": [
 					{
 						"name": "1F",
@@ -101,7 +101,7 @@
 				]
 			},
 			{
-				"name": "Chest in Room Behind Hidden Cracked Wall",
+				"name": "Chest in Room Behind Hidden Cracked Wall Hint",
 				"sections": [
 					{
 						"name": "1F",
@@ -120,7 +120,7 @@
 				]
 			},
 			{
-				"name": "Chest in Mimics Room",
+				"name": "Chest in Mimics Room Hint",
 				"sections": [
 					{
 						"name": "1F",
@@ -139,7 +139,7 @@
 				]
 			},
 			{
-				"name": "Chest on Quicksand Terrace",
+				"name": "Chest on Quicksand Terrace Hint",
 				"sections": [
 					{
 						"name": "B1F",
@@ -158,7 +158,7 @@
 				]
 			},
 			{
-				"name": "Chest in Moving Blade Room",
+				"name": "Chest in Moving Blade Room Hint",
 				"sections": [
 					{
 						"name": "B1F",
@@ -177,7 +177,7 @@
 				]
 			},
 			{
-				"name": "Boss Reward",
+				"name": "Boss Reward Hint",
 				"sections": [
 					{
 						"name": "Mothula",
@@ -196,7 +196,7 @@
 				]
 			},
 			{
-				"name": "Bright Sun",
+				"name": "Bright Sun Hint",
 				"sections": [
 					{
 						"name": "Essence",

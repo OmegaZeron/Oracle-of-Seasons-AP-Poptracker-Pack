@@ -6,7 +6,7 @@
 		"visibility_rules": ["showhintson"],
 		"children": [	
 			{
-				"name": "Chest North of Entrance",
+				"name": "Chest North of Entrance Hint",
 				"sections": [
 					{
 						"name": "2F",
@@ -25,7 +25,7 @@
 				]
 			},
 			{
-				"name": "Pots on Buttons Puzzle Drop",
+				"name": "Pots on Buttons Puzzle Drop Hint",
 				"sections": [
 					{
 						"name": "2F",
@@ -44,7 +44,7 @@
 				]
 			},
 			{
-				"name": "Chest in Southwest Quadrant of Beamos Room",
+				"name": "Chest in Southwest Quadrant of Beamos Room Hint",
 				"sections": [
 					{
 						"name": "1F",
@@ -63,7 +63,7 @@
 				]
 			},
 			{
-				"name": "Dark Room Chest",
+				"name": "Dark Room Chest Hint",
 				"sections": [
 					{
 						"name": "1F",
@@ -82,7 +82,7 @@
 				]
 			},
 			{
-				"name": "Chest in Water Donut Room",
+				"name": "Chest in Water Donut Room Hint",
 				"sections": [
 					{
 						"name": "2F",
@@ -101,7 +101,7 @@
 				]
 			},
 			{
-				"name": "Pool Drop",
+				"name": "Pool Drop Hint",
 				"sections": [
 					{
 						"name": "2F",
@@ -120,7 +120,7 @@
 				]
 			},
 			{
-				"name": "Chest on Small Terrace",
+				"name": "Chest on Small Terrace Hint",
 				"sections": [
 					{
 						"name": "1F",
@@ -139,7 +139,7 @@
 				]
 			},
 			{
-				"name": "Business Scrub",
+				"name": "Business Scrub Hint",
 				"visibility_rules": ["shufflescrubson"],
 				"sections": [
 					{
@@ -159,7 +159,7 @@
 				]
 			},
 			{
-				"name": "Chest Revealed by Minecart Torches",
+				"name": "Chest Revealed by Minecart Torches Hint",
 				"sections": [
 					{
 						"name": "1F",
@@ -178,7 +178,7 @@
 				]
 			},
 			{
-				"name": "Crumbling Room Chest",
+				"name": "Crumbling Room Chest Hint",
 				"sections": [
 					{
 						"name": "1F",
@@ -197,7 +197,7 @@
 				]
 			},
 			{
-				"name": "Eye Diving Spot Item",
+				"name": "Eye Diving Spot Item Hint",
 				"sections": [
 					{
 						"name": "1F",
@@ -216,7 +216,7 @@
 				]
 			},
 			{
-				"name": "Boss Reward",
+				"name": "Boss Reward Hint",
 				"sections": [
 					{
 						"name": "Gohma",
@@ -235,7 +235,7 @@
 				]
 			},
 			{
-				"name": "Soothing Rain",
+				"name": "Soothing Rain Hint",
 				"sections": [
 					{
 						"name": "Essence",

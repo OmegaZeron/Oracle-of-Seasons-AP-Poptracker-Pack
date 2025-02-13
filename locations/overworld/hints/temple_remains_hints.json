@@ -7,7 +7,7 @@
 		"visibility_rules": ["showhintson"],
 		"children": [
 			{
-				"name": "Temple Remains Heart Piece",
+				"name": "Temple Remains Heart Piece Hint",
 				"sections": [
 					{
 						"name": "Temple Remains: Item in Cave Behind Rockslide",

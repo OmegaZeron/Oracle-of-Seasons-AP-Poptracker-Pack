@@ -6,7 +6,7 @@
 		"visibility_rules": ["showhintson"],
 		"children": [	
 			{
-				"name": "Chest Left from Entrance",
+				"name": "Chest Left from Entrance Hint",
 				"sections": [
 					{
 						"visibility_rules": ["Snake's Remains/Chest Left from Entrance/"],
@@ -24,7 +24,7 @@
 				]
 			},
 			{
-				"name": "Drop in Left Rope Room",
+				"name": "Drop in Left Rope Room Hint",
 				"sections": [
 					{
 						"visibility_rules": ["Snake's Remains/Drop in Left Rope Room/"],
@@ -42,7 +42,7 @@
 				]
 			},
 			{
-				"name": "Chest in Right Rope Room",
+				"name": "Chest in Right Rope Room Hint",
 				"sections": [
 					{
 						"visibility_rules": ["Snake's Remains/Chest in Right Rope Room/"],
@@ -60,7 +60,7 @@
 				]
 			},
 			{
-				"name": "Chest Behind Pots in Hardhat Room",
+				"name": "Chest Behind Pots in Hardhat Room Hint",
 				"sections": [
 					{
 						"visibility_rules": ["Snake's Remains/Chest Behind Pots in Hardhat Room/"],
@@ -78,7 +78,7 @@
 				]
 			},
 			{
-				"name": "Chest in Distant Moblins Room",
+				"name": "Chest in Distant Moblins Room Hint",
 				"sections": [
 					{
 						"visibility_rules": ["Snake's Remains/Chest in Distant Moblins Room/"],
@@ -96,7 +96,7 @@
 				]
 			},
 			{
-				"name": "Chest in Moving Blades Room",
+				"name": "Chest in Moving Blades Room Hint",
 				"sections": [
 					{
 						"visibility_rules": ["Snake's Remains/Chest in Moving Blades Room/"],
@@ -114,7 +114,7 @@
 				]
 			},
 			{
-				"name": "Business Scrub",
+				"name": "Business Scrub Hint",
 				"visibility_rules": ["shufflescrubson"],
 				"sections": [
 					{
@@ -133,7 +133,7 @@
 				]
 			},
 			{
-				"name": "Chest in Bomb Spiral Maze Room",
+				"name": "Chest in Bomb Spiral Maze Room Hint",
 				"sections": [
 					{
 						"visibility_rules": ["Snake's Remains/Chest in Bomb Spiral Maze Room/"],
@@ -151,7 +151,7 @@
 				]
 			},
 			{
-				"name": "Chest in Rollers Section",
+				"name": "Chest in Rollers Section Hint",
 				"sections": [
 					{
 						"visibility_rules": ["Snake's Remains/Chest in Rollers Section/"],
@@ -169,7 +169,7 @@
 				]
 			},
 			{
-				"name": "Chest on Terrace",
+				"name": "Chest on Terrace Hint",
 				"sections": [
 					{
 						"visibility_rules": ["Snake's Remains/Chest on Terrace/"],
@@ -187,7 +187,7 @@
 				]
 			},
 			{
-				"name": "Boss Reward",
+				"name": "Boss Reward Hint",
 				"sections": [
 					{
 						"name": "King Dodongo",
@@ -206,7 +206,7 @@
 				]
 			},
 			{
-				"name": "Gift of Time",
+				"name": "Gift of Time Hint",
 				"sections": [
 					{
 						"name": "Essence",

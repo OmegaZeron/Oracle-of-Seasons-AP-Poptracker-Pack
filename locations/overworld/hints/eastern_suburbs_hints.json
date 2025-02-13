@@ -7,7 +7,7 @@
 		"visibility_rules": ["showhintson"],
 		"children": [
 			{
-				"name": "Samasa Desert: One of Four Pits",
+				"name": "Samasa Desert: One of Four Pits Hints",
 				"sections": [
 					{
 						"name": "Rusty Bell (With Skull)",
@@ -52,7 +52,7 @@
 				]
 			},
 			{
-				"name": "Samasa Desert: Cliff Chest",
+				"name": "Samasa Desert: Cliff Chest Hint",
 				"sections": [
 					{
 						"name": "Bottom Left Pit",
@@ -81,12 +81,12 @@
 				"name": "Windmill",
 				"sections": [
 					{
-						"name": "Guru-Guru Trade",
+						"name": "Guru-Guru Trade Hint",
 						"visibility_rules": ["Eastern Suburbs/Windmill/Guru-Guru Trade"],
 						"access_rules": ["^$HasHint|Eastern Suburbs/Windmill/Guru-Guru Trade"]
 					},
 					{
-						"name": "Winter Side Entrance",
+						"name": "Winter Side Entrance Hint",
 						"visibility_rules": ["Eastern Suburbs/Windmill/Winter Side Entrance"],
 						"access_rules": ["^$HasHint|Eastern Suburbs/Windmill/Winter Side Entrance"]
 					}
@@ -102,7 +102,7 @@
 				]
 			},
 			{
-				"name": "Chest in Spring Cave",
+				"name": "Chest in Spring Cave Hint",
 				"sections": [
 					{
 						"visibility_rules": ["Eastern Suburbs/Chest in Spring Cave/"],
@@ -120,7 +120,7 @@
 				]
 			},
 			{
-				"name": "Woods of Winter Tree",
+				"name": "Woods of Winter Tree Hint",
 				"sections": [
 					{
 						"visibility_rules": ["Woods of Winter/Seed Tree"],
@@ -138,7 +138,7 @@
 				]
 			},
 			{
-				"name": "Chest on D2 Roof",
+				"name": "Chest on D2 Roof Hint",
 				"sections": [
 					{
 						"visibility_rules": ["Eastern Suburbs/Chest on D2 Roof/"],
@@ -156,7 +156,7 @@
 				]
 			},
 			{
-				"name": "Mushroom Cave",
+				"name": "Mushroom Cave Hint",
 				"sections": [
 					{
 						"name": "Woods of Winter",
@@ -175,7 +175,7 @@
 				]
 			},
 			{
-				"name": "Moblin Road Bomb Cave",
+				"name": "Moblin Road Bomb Cave Hint",
 				"sections": [
 					{
 						"visibility_rules": ["Eastern Suburbs/Moblin Road Bomb Cave/"],
@@ -193,7 +193,7 @@
 				]
 			},
 			{
-				"name": "Woods of Winter Heart Piece",
+				"name": "Woods of Winter Heart Piece Hint",
 				"sections": [
 					{
 						"visibility_rules": ["Eastern Suburbs/Woods of Winter Heart Piece/"],
@@ -211,7 +211,7 @@
 				]
 			},
 			{
-				"name": "Holly's House",
+				"name": "Holly's House Hint",
 				"sections": [
 					{
 						"name": "Holly's Gift",
@@ -230,7 +230,7 @@
 				]
 			},
 			{
-				"name": "Waterfall Cave",
+				"name": "Waterfall Cave Hint",
 				"sections": [
 					{
 						"visibility_rules": ["Eastern Suburbs/Waterfall Cave/"],
@@ -248,7 +248,7 @@
 				]
 			},
 			{
-				"name": "Woods of Winter Old Man",
+				"name": "Woods of Winter Old Man Hint",
 				"visibility_rules": ["old_men_locations"],
 				"sections": [
 					{

@@ -7,7 +7,7 @@
 		"visibility_rules": ["showhintson"],
 		"children": [
 			{
-				"name": "Goron Mountain Old Man",
+				"name": "Goron Mountain Old Man Hint",
 				"visibility_rules": ["old_men_locations"],
 				"sections": [
 					{
@@ -27,7 +27,7 @@
 				]
 			},
 			{
-				"name": "East Goron Mountain",
+				"name": "East Goron Mountain Hint",
 				"sections": [
 					{
 						"name": "Goron Mountain: Item Across Pits",
@@ -46,7 +46,7 @@
 				]
 			},
 			{
-				"name": "Goron's Gift",
+				"name": "Goron's Gift Hint",
 				"sections": [
 					{
 						"name": "Goron Mountain: Lonely Goron's Gift",
@@ -65,7 +65,7 @@
 				]
 			},
 			{
-				"name": "Goron Caves",
+				"name": "Goron Caves Hint",
 				"sections": [
 					{
 						"name": "Goron Mountain: Chest Across Lava",
@@ -84,7 +84,7 @@
 				]
 			},
 			{
-				"name": "Biggoron Trade",
+				"name": "Biggoron Trade Hint",
 				"sections": [
 					{
 						"name": "Goron Mountain: Biggoron Trade",

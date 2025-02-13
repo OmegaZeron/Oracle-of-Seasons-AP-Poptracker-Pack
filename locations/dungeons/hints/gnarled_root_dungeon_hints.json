@@ -6,7 +6,7 @@
 		"visibility_rules": ["showhintson"],
 		"children": [	
 			{
-				"name": "Drop in Right Stalfos Room",
+				"name": "Drop in Right Stalfos Room Hint",
 				"sections": [
 					{
 						"visibility_rules": ["Gnarled Root Dungeon/Drop in Right Stalfos Room/"],
@@ -24,7 +24,7 @@
 				]
 			},
 			{
-				"name": "Chest in Left Stalfos Room",
+				"name": "Chest in Left Stalfos Room Hint",
 				"sections": [
 					{
 						"visibility_rules": ["Gnarled Root Dungeon/Chest in Left Stalfos Room/"],
@@ -42,7 +42,7 @@
 				]
 			},
 			{
-				"name": "Chest in Goriya Room",
+				"name": "Chest in Goriya Room Hint",
 				"sections": [
 					{
 						"visibility_rules": ["Gnarled Root Dungeon/Chest in Goriya Room/"],
@@ -60,7 +60,7 @@
 				]
 			},
 			{
-				"name": "Chest in Block-pushing Room",
+				"name": "Chest in Block-pushing Room Hint",
 				"sections": [
 					{
 						"visibility_rules": ["Gnarled Root Dungeon/Chest in Block-pushing Room/"],
@@ -78,7 +78,7 @@
 				]
 			},
 			{
-				"name": "Chest Near Railway Lever",
+				"name": "Chest Near Railway Lever Hint",
 				"sections": [
 					{
 						"visibility_rules": ["Gnarled Root Dungeon/Chest Near Railway Lever/"],
@@ -96,7 +96,7 @@
 				]
 			},
 			{
-				"name": "Chest Near Railway",
+				"name": "Chest Near Railway Hint",
 				"sections": [
 					{
 						"visibility_rules": ["Gnarled Root Dungeon/Chest Near Railway/"],
@@ -114,7 +114,7 @@
 				]
 			},
 			{
-				"name": "Hidden Chest Revealed by Button",
+				"name": "Hidden Chest Revealed by Button Hint",
 				"sections": [
 					{
 						"visibility_rules": ["Gnarled Root Dungeon/Hidden Chest Revealed by Button/"],
@@ -132,7 +132,7 @@
 				]
 			},
 			{
-				"name": "Item in Basement",
+				"name": "Item in Basement Hint",
 				"sections": [
 					{
 						"visibility_rules": ["Gnarled Root Dungeon/Item in Basement/"],
@@ -150,7 +150,7 @@
 				]
 			},
 			{
-				"name": "Chest in Floormaster Room",
+				"name": "Chest in Floormaster Room Hint",
 				"sections": [
 					{
 						"visibility_rules": ["Gnarled Root Dungeon/Chest in Floormaster Room/"],
@@ -168,7 +168,7 @@
 				]
 			},
 			{
-				"name": "Boss Reward",
+				"name": "Boss Reward Hint",
 				"sections": [
 					{
 						"name": "Aquamentus",
@@ -187,7 +187,7 @@
 				]
 			},
 			{
-				"name": "Fertile Soil",
+				"name": "Fertile Soil Hint",
 				"sections": [
 					{
 						"name": "Essence",

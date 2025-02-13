@@ -7,7 +7,7 @@
 		"visibility_rules": ["showhintson"],
 		"children": [
 			{
-				"name": "Sunken City Tree",
+				"name": "Sunken City Tree Hint",
 				"sections": [
 					{
 						"name": "Sunken City: Seed Tree",
@@ -26,7 +26,7 @@
 				]
 			},
 			{
-				"name": "Ingo's House",
+				"name": "Ingo's House Hint",
 				"sections": [
 					{
 						"name": "Sunken City: Vase Trade",
@@ -45,7 +45,7 @@
 				]
 			},
 			{
-				"name": "Syrup's Hut",
+				"name": "Syrup's Hut Hints",
 				"sections": [
 					{
 						"name": "Sunken City: Syrup Trade",
@@ -79,7 +79,7 @@
 				]
 			},
 			{
-				"name": "Waterfall Challenge",
+				"name": "Waterfall Challenge Hint",
 				"sections": [
 					{
 						"name": "Sunken City: Master Diver's Challenge Chest",
@@ -98,7 +98,7 @@
 				]
 			},
 			{
-				"name": "Waterfall",
+				"name": "Waterfall Hints",
 				"sections": [
 					{
 						"name": "Sunken City: Master's Plaque Trade",
@@ -122,7 +122,7 @@
 				]
 			},
 			{
-				"name": "Sunken City Cliffs",
+				"name": "Sunken City Cliffs Hint",
 				"sections": [
 					{
 						"name": "Sunken City: Chest in Summer Cave",

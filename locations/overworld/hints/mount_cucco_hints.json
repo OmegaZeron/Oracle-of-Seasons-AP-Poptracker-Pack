@@ -7,7 +7,7 @@
 		"visibility_rules": ["showhintson"],
 		"children": [
 			{
-				"name": "Spring Banana",
+				"name": "Spring Banana Hint",
 				"sections": [
 					{
 						"name": "Mt. Cucco: Spring Banana Tree",
@@ -26,7 +26,7 @@
 				]
 			},
 			{
-				"name": "Mt. Cucco Cave",
+				"name": "Mt. Cucco Cave Hint",
 				"sections": [
 					{
 						"name": "Mt. Cucco: Moving Platform Cave",
@@ -45,7 +45,7 @@
 				]
 			},
 			{
-				"name": "Talon's Cave",
+				"name": "Talon's Cave Hints",
 				"sections": [
 					{
 						"name": "Mt. Cucco: Talon Trade",
@@ -69,7 +69,7 @@
 				]
 			},
 			{
-				"name": "Diving Spot Outside D4",
+				"name": "Diving Spot Outside D4 Hint",
 				"sections": [
 					{
 						"name": "Mt. Cucco: Diving Spot Outside D4",
@@ -88,7 +88,7 @@
 				]
 			},
 			{
-				"name": "Mt. Cucco Heart Piece",
+				"name": "Mt. Cucco Heart Piece Hint",
 				"sections": [
 					{
 						"name": "Mt. Cucco: Item on Ledge",

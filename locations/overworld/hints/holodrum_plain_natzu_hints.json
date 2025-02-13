@@ -7,7 +7,7 @@
 		"visibility_rules": ["showhintson"],
 		"children": [
 			{
-				"name": "Holodrum Plain Tree",
+				"name": "Holodrum Plain Tree Hint",
 				"sections": [
 					{
 						"name": "Holodrum Plain: Seed Tree",
@@ -27,7 +27,7 @@
 				]
 			},
 			{
-				"name": "Blaino's Gym",
+				"name": "Blaino's Gym Hint",
 				"sections": [
 					{
 						"visibility_rules": ["Holodrum Plain/Blaino's Gym/"],
@@ -45,7 +45,7 @@
 				]
 			},
 			{
-				"name": "Cave Behind Mushrooms",
+				"name": "Cave Behind Mushrooms Hint",
 				"sections": [
 					{
 						"name": "Holodrum Plain: Chest in Flooded Cave Behind Mushrooms",
@@ -64,7 +64,7 @@
 				]
 			},
 			{
-				"name": "Old Man Near Blaino's Gym",
+				"name": "Old Man Near Blaino's Gym Hint",
 				"visibility_rules": ["old_men_locations"],
 				"sections": [
 					{
@@ -84,7 +84,7 @@
 				]
 			},
 			{
-				"name": "Underwater Item Below Natzu Bridge",
+				"name": "Underwater Item Below Natzu Bridge Hint",
 				"sections": [
 					{
 						"name": "Holodrum Plain: Underwater Item Below Natzu Bridge",
@@ -103,7 +103,7 @@
 				]
 			},
 			{
-				"name": "Old Man in Treehouse",
+				"name": "Old Man in Treehouse Hint",
 				"sections": [
 					{
 						"name": "Holodrum Plain: Old Man in Treehouse",
@@ -122,7 +122,7 @@
 				]
 			},
 			{
-				"name": "Flooded Cave",
+				"name": "Flooded Cave Hint",
 				"sections": [
 					{
 						"name": "Holodrum Plain: Chest in Flooded Cave South of Mrs. Ruul",
@@ -141,7 +141,7 @@
 				]
 			},
 			{
-				"name": "Mrs. Ruul's House",
+				"name": "Mrs. Ruul's House Hint",
 				"sections": [
 					{
 						"name": "Holodrum Plain: Mrs. Ruul Trade",
@@ -160,7 +160,7 @@
 				]
 			},
 			{
-				"name": "Old Man Near Mrs. Ruul's House",
+				"name": "Old Man Near Mrs. Ruul's House Hint",
 				"visibility_rules": ["old_men_locations"],
 				"sections": [
 					{
@@ -180,7 +180,7 @@
 				]
 			},
 			{
-				"name": "North Natzu",
+				"name": "North Natzu Hint",
 				"sections": [
 					{
 						"name": "Natzu Region: Chest in Northern Cave",
@@ -199,7 +199,7 @@
 				]
 			},
 			{
-				"name": "Moblin Keep",
+				"name": "Moblin Keep Hint",
 				"sections": [
 					{
 						"name": "Natzu: Chest after Moblin Keep",

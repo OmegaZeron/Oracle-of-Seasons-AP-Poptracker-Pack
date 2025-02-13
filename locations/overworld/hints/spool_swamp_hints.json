@@ -45,7 +45,7 @@
 				]
 			},
 			{
-				"name": "Spool Swamp Digging Spot",
+				"name": "Spool Swamp Digging Spot Hint",
 				"sections": [
 					{
 						"name": "Vasu's Hidden Gift",
@@ -64,7 +64,7 @@
 				]
 			},
 			{
-				"name": "Business Scrub",
+				"name": "Business Scrub Hint",
 				"visibility_rules": ["shufflescrubson"],
 				"sections": [
 					{
@@ -84,7 +84,7 @@
 				]
 			},
 			{
-				"name": "Spool Swamp Heart Piece",
+				"name": "Spool Swamp Heart Piece Hint",
 				"sections": [
 					{
 						"name": "Spool Swamp: Item Amidst Currents in Spring",
@@ -103,7 +103,7 @@
 				]
 			},
 			{
-				"name": "Winter Cave",
+				"name": "Winter Cave Hint",
 				"sections": [
 					{
 						"name": "Spool Swamp: Chest in Winter Cave",
@@ -122,7 +122,7 @@
 				]
 			},
 			{
-				"name": "Poison Moth's Lair",
+				"name": "Poison Moth's Lair Hints",
 				"access_rules": ["^$CanReach|PoisonFoyer"],
 				"sections": [
 					{

@@ -7,7 +7,7 @@
 		"visibility_rules": ["showhintson"],
 		"children": [
 			{
-				"name": "Chest Behind Cracked Wall",
+				"name": "Chest Behind Cracked Wall Hint",
 				"sections": [
 					{
 						"name": "1F",
@@ -26,7 +26,7 @@
 				]
 			},
 			{
-				"name": "Chest in Wizzrobe Room",
+				"name": "Chest in Wizzrobe Room Hint",
 				"sections": [
 					{
 						"name": "1F",
@@ -45,7 +45,7 @@
 				]
 			},
 			{
-				"name": "Chest Right of Entrance",
+				"name": "Chest Right of Entrance Hint",
 				"sections": [
 					{
 						"name": "1F",
@@ -64,7 +64,7 @@
 				]
 			},
 			{
-				"name": "Zol Button Drop",
+				"name": "Zol Button Drop Hint",
 				"sections": [
 					{
 						"name": "B1F",
@@ -83,7 +83,7 @@
 				]
 			},
 			{
-				"name": "Armos Puzzle Drop",
+				"name": "Armos Puzzle Drop Hint",
 				"sections": [
 					{
 						"name": "B2F",
@@ -102,7 +102,7 @@
 				]
 			},
 			{
-				"name": "Chest Connected to Magnet Ball Button",
+				"name": "Chest Connected to Magnet Ball Button Hint",
 				"sections": [
 					{
 						"name": "B1F",
@@ -121,7 +121,7 @@
 				]
 			},
 			{
-				"name": "Quicksand Chest Near Second Poe",
+				"name": "Quicksand Chest Near Second Poe Hint",
 				"sections": [
 					{
 						"name": "1F",
@@ -140,7 +140,7 @@
 				]
 			},
 			{
-				"name": "Fast Moving Platform Chest",
+				"name": "Fast Moving Platform Chest Hint",
 				"sections": [
 					{
 						"name": "B1F",
@@ -159,7 +159,7 @@
 				]
 			},
 			{
-				"name": "Stair Maze Chest",
+				"name": "Stair Maze Chest Hint",
 				"sections": [
 					{
 						"name": "B2F",
@@ -178,7 +178,7 @@
 				]
 			},
 			{
-				"name": "Drop in Room North of Stair Maze",
+				"name": "Drop in Room North of Stair Maze Hint",
 				"sections": [
 					{
 						"name": "B2F",
@@ -197,7 +197,7 @@
 				]
 			},
 			{
-				"name": "Jumping Stalfos Room Chest",
+				"name": "Jumping Stalfos Room Chest Hint",
 				"sections": [
 					{
 						"name": "B1F",
@@ -216,7 +216,7 @@
 				]
 			},
 			{
-				"name": "Boss Reward",
+				"name": "Boss Reward Hint",
 				"sections": [
 					{
 						"name": "Gleeok",
@@ -235,7 +235,7 @@
 				]
 			},
 			{
-				"name": "Seed of Life",
+				"name": "Seed of Life Hint",
 				"sections": [
 					{
 						"name": "Essence",

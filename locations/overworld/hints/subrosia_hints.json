@@ -6,7 +6,7 @@
 		"visibility_rules": ["showhintson"],
 		"children": [
 			{
-				"name": "Temple of Seasons",
+				"name": "Temple of Seasons Hint",
 				"sections": [
 					{
 						"name": "Subrosia: Temple of Seasons",
@@ -25,7 +25,7 @@
 				]
 			},
 			{
-				"name": "Temple of Seasons-Summer",
+				"name": "Temple of Seasons-Summer Hint",
 				"sections": [
 					{
 						"name": "Subrosia: Tower of Summer",
@@ -44,7 +44,7 @@
 				]
 			},
 			{
-				"name": "Temple of Seasons-Autumn",
+				"name": "Temple of Seasons-Autumn Hint",
 				"sections": [
 					{
 						"name": "Subrosia: Tower of Autumn",
@@ -63,7 +63,7 @@
 				]
 			},
 			{
-				"name": "Temple of Seasons-Winter",
+				"name": "Temple of Seasons-Winter Hint",
 				"sections": [
 					{
 						"name": "Subrosia: Tower of Winter",
@@ -82,7 +82,7 @@
 				]
 			},
 			{
-				"name": "Temple of Seasons-Spring",
+				"name": "Temple of Seasons-Spring Hint",
 				"sections": [
 					{
 						"name": "Subrosia: Tower of Spring",
@@ -101,7 +101,7 @@
 				]
 			},
 			{
-				"name": "Subrosian Smithy",
+				"name": "Subrosian Smithy Hints",
 				"sections": [
 					{
 						"name": "Subrosia: Smithy Hard Ore Reforge",
@@ -125,7 +125,7 @@
 				]
 			},
 			{
-				"name": "Subrosian Dance Hall",
+				"name": "Subrosian Dance Hall Hint",
 				"sections": [
 					{
 						"name": "Subrosia: Dance Hall Reward",
@@ -144,7 +144,7 @@
 				]
 			},
 			{
-				"name": "Cave in the Mountain",
+				"name": "Cave in the Mountain Hint",
 				"sections": [
 					{
 						"name": "Subrosia: Northwest Open Cave",
@@ -163,7 +163,7 @@
 				]
 			},
 			{
-				"name": "Subrosian Seaside",
+				"name": "Subrosian Seaside Hint",
 				"sections": [
 					{
 						"name": "Subrosia: Seaside Digging Spot",
@@ -203,7 +203,7 @@
 				]
 			},
 			{
-				"name": "Subrosian Market",
+				"name": "Subrosian Market Hints",
 				"sections": [
 					{
 						"name": "Subrosia: Market #1",
@@ -242,7 +242,7 @@
 				]
 			},
 			{
-				"name": "Subrosian Chef's Kitchen",
+				"name": "Subrosian Chef's Kitchen Hint",
 				"sections": [
 					{
 						"name": "Subrosia: Subrosian Chef Trade",
@@ -261,7 +261,7 @@
 				]
 			},
 			{
-				"name": "Rosa's World Tour",
+				"name": "Rosa's World Tour Hint",
 				"sections": [
 					{
 						"name": "Subrosia: Northwest Locked Cave",
@@ -280,7 +280,7 @@
 				]
 			},
 			{
-				"name": "Furnace Area",
+				"name": "Furnace Area Hint",
 				"sections": [
 					{
 						"name": "Subrosia: Chest Above Magnet Cave",
@@ -299,7 +299,7 @@
 				]
 			},
 			{
-				"name": "Great Furnace",
+				"name": "Great Furnace Hint",
 				"sections": [
 					{
 						"name": "Subrosia: Item Smelted in Great Furnace",
@@ -318,7 +318,7 @@
 				]
 			},
 			{
-				"name": "Bomb Flower",
+				"name": "Bomb Flower Hint",
 				"sections": [
 					{
 						"name": "Subrosia: Buried Bomb Flower",
@@ -337,7 +337,7 @@
 				]
 			},
 			{
-				"name": "Sign-Loving Guy",
+				"name": "Sign-Loving Guy Hint",
 				"sections": [
 					{
 						"name": "Subrosia: Sign-Loving Guy Reward",
@@ -356,7 +356,7 @@
 				]
 			},
 			{
-				"name": "Subrosian Village",
+				"name": "Subrosian Village Hint",
 				"sections": [
 					{
 						"name": "Subrosia: Item in House Above Strange Brothers Portal",
@@ -375,7 +375,7 @@
 				]
 			},
 			{
-				"name": "Subrosian Village Stairs",
+				"name": "Subrosian Village Stairs Hint",
 				"sections": [
 					{
 						"name": "Subrosia: Item in Basement to Tower of Spring",
@@ -394,7 +394,7 @@
 				]
 			},
 			{
-				"name": "Subrosian Wilds Digging Spot",
+				"name": "Subrosian Wilds Digging Spot Hint",
 				"sections": [
 					{
 						"name": "Subrosia: Wilds Digging Spot",
@@ -413,7 +413,7 @@
 				]
 			},
 			{
-				"name": "Subrosian Wilds",
+				"name": "Subrosian Wilds Hint",
 				"sections": [
 					{
 						"name": "Subrosia: Wilds Chest",
@@ -432,7 +432,7 @@
 				]
 			},
 			{
-				"name": "Market Portal Digging Spot",
+				"name": "Market Portal Digging Spot Hint",
 				"visibility_rules": ["gold_ores_shuffled"],
 				"sections": [
 					{
@@ -452,7 +452,7 @@
 				]
 			},
 			{
-				"name": "Northern Volcanoes Digging Spot",
+				"name": "Northern Volcanoes Digging Spot Hint",
 				"visibility_rules": ["gold_ores_shuffled"],
 				"sections": [
 					{
@@ -472,7 +472,7 @@
 				]
 			},
 			{
-				"name": "Temple of Seasons Digging Spot",
+				"name": "Temple of Seasons Digging Spot Hint",
 				"visibility_rules": ["gold_ores_shuffled"],
 				"sections": [
 					{
@@ -492,7 +492,7 @@
 				]
 			},
 			{
-				"name": "Hard-Working Subrosian Digging Spot",
+				"name": "Hard-Working Subrosian Digging Spot Hint",
 				"visibility_rules": ["gold_ores_shuffled"],
 				"sections": [
 					{
@@ -512,7 +512,7 @@
 				]
 			},
 			{
-				"name": "D8 Portal Digging Spot",
+				"name": "D8 Portal Digging Spot Hint",
 				"visibility_rules": ["gold_ores_shuffled"],
 				"sections": [
 					{
@@ -532,7 +532,7 @@
 				]
 			},
 			{
-				"name": "Western Volcanoes Digging Spot",
+				"name": "Western Volcanoes Digging Spot Hint",
 				"visibility_rules": ["gold_ores_shuffled"],
 				"sections": [
 					{
@@ -552,7 +552,7 @@
 				]
 			},
 			{
-				"name": "Hot Bath Digging Spot",
+				"name": "Hot Bath Digging Spot Hint",
 				"visibility_rules": ["gold_ores_shuffled"],
 				"sections": [
 					{
@@ -572,7 +572,7 @@
 				]
 			},
 			{
-				"name": "Strange Brothers' Backyard Treasure",
+				"name": "Strange Brothers' Backyard Treasure Hint",
 				"sections": [
 					{
 						"name": "Subrosia: Strange Brothers' Backyard Treasure",
@@ -591,7 +591,7 @@
 				]
 			},
 			{
-				"name": "Sword and Shield Maze",
+				"name": "Sword and Shield Maze Hints",
 				"color": "#ff3c00",
 				"sections": [
 					{

@@ -6,7 +6,7 @@
 		"visibility_rules": ["showhintson"],
 		"children": [	
 			{
-				"name": "Right Cart Chest",
+				"name": "Right Cart Chest Hint",
 				"sections": [
 					{
 						"visibility_rules": ["Unicorn's Cave/Right Cart Chest/"],
@@ -24,7 +24,7 @@
 				]
 			},
 			{
-				"name": "Gibdo Room Chest",
+				"name": "Gibdo Room Chest Hint",
 				"sections": [
 					{
 						"visibility_rules": ["Unicorn's Cave/Gibdo Room Chest/"],
@@ -42,7 +42,7 @@
 				]
 			},
 			{
-				"name": "Magnet Gloves Chest",
+				"name": "Magnet Gloves Chest Hint",
 				"sections": [
 					{
 						"visibility_rules": ["Unicorn's Cave/Magnet Gloves Chest/"],
@@ -60,7 +60,7 @@
 				]
 			},
 			{
-				"name": "Chest Left from Entrance",
+				"name": "Chest Left from Entrance Hint",
 				"sections": [
 					{
 						"visibility_rules": ["Unicorn's Cave/Chest Left from Entrance/"],
@@ -78,7 +78,7 @@
 				]
 			},
 			{
-				"name": "Quicksand Spiral Chest",
+				"name": "Quicksand Spiral Chest Hint",
 				"sections": [
 					{
 						"visibility_rules": ["Unicorn's Cave/Quicksand Spiral Chest/"],
@@ -96,7 +96,7 @@
 				]
 			},
 			{
-				"name": "Terrace Chest",
+				"name": "Terrace Chest Hint",
 				"sections": [
 					{
 						"visibility_rules": ["Unicorn's Cave/Terrace Chest/"],
@@ -114,7 +114,7 @@
 				]
 			},
 			{
-				"name": "Armos Puzzle Room Chest",
+				"name": "Armos Puzzle Room Chest Hint",
 				"sections": [
 					{
 						"visibility_rules": ["Unicorn's Cave/Armos Puzzle Room Chest/"],
@@ -132,7 +132,7 @@
 				]
 			},
 			{
-				"name": "Magnet Spinner Chest",
+				"name": "Magnet Spinner Chest Hint",
 				"sections": [
 					{
 						"visibility_rules": ["Unicorn's Cave/Magnet Spinner Chest/"],
@@ -150,7 +150,7 @@
 				]
 			},
 			{
-				"name": "Chest in Right Half of Minecart Bay Room",
+				"name": "Chest in Right Half of Minecart Bay Room Hint",
 				"sections": [
 					{
 						"visibility_rules": ["Unicorn's Cave/Chest in Right Half of Minecart Bay Room/"],
@@ -168,7 +168,7 @@
 				]
 			},
 			{
-				"name": "Treadmills Basement Item",
+				"name": "Treadmills Basement Item Hint",
 				"sections": [
 					{
 						"visibility_rules": ["Unicorn's Cave/Treadmills Basement Item/"],
@@ -193,7 +193,7 @@
 				]
 			},
 			{
-				"name": "Boss Reward",
+				"name": "Boss Reward Hint",
 				"sections": [
 					{
 						"name": "Digdogger",
@@ -212,7 +212,7 @@
 				]
 			},
 			{
-				"name": "Nurturing Warmth",
+				"name": "Nurturing Warmth Hint",
 				"sections": [
 					{
 						"name": "Essence",

@@ -100,7 +100,8 @@ UpperEasternSuburbs:connect_one_way_entrance(WoodsOfWinter)
 UpperEasternSuburbsWinter:connect_one_way_entrance(WoodsOfWinter, function()
 	return Any(
 		Has(Feather),
-		AnyFlute()
+		AnyFlute(),
+		Has(Shovel)
 	)
 end)
 

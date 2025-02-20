@@ -87,7 +87,11 @@ SwampSouthGashaArea:connect_one_way_entrance(MiddleSpoolSwamp, function()
 							Has(EmberSeeds)
 						),
 						All(
-							Has(Bombs20),
+							Has(Bombs),
+							All(
+								Has(Bombs20),
+								AccessibilityLevel.SequenceBreak
+							),
 							Any(
 								Has(Hard),
 								AccessibilityLevel.SequenceBreak

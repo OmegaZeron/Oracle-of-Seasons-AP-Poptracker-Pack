@@ -102,7 +102,11 @@ Frypolar:connect_one_way_entrance(MazeNineTorches, function()
 				IsMediumPlus(),
 				AccessibilityLevel.SequenceBreak
 			),
-			Has(UpgradedSatchel),
+			Has(SeedSatchel),
+			Any(
+				Has(UpgradedSatchel),
+				AccessibilityLevel.SequenceBreak
+			),
 			Has(EmberSeeds)
 		),
 		All(

@@ -7,7 +7,11 @@ Aquamentus:connect_one_way(GnarledEssence, function()
 	return Any(
 		CanArmorKill(),
 		All(
-			Has(Bombs40),
+			Has(Bombs),
+			All(
+				Has(Bombs40),
+				AccessibilityLevel.SequenceBreak
+			),
 			Any(
 				IsMediumPlus(),
 				AccessibilityLevel.SequenceBreak

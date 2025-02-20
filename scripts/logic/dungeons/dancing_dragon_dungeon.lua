@@ -245,7 +245,11 @@ DancingPotHeaven:connect_one_way_entrance(Gohma, function()
 						IsMediumPlus(),
 						AccessibilityLevel.SequenceBreak
 					),
-					Has(UpgradedSatchel),
+					Has(SeedSatchel),
+					Any(
+						Has(UpgradedSatchel),
+						AccessibilityLevel.SequenceBreak
+					),
 					Has(MysterySeeds)
 				)
 			)

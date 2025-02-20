@@ -254,7 +254,11 @@ end
 
 function CanShootSeedsCombat()
 	return All(
-		Has(UpgradedSatchel),
+		Has(SeedSatchel),
+		Any(
+			Has(UpgradedSatchel),
+			AccessibilityLevel.SequenceBreak
+		),
 		Has(Slingshot),
 		Any(
 			Has(EmberSeeds),
@@ -322,6 +326,10 @@ function CanDestroyBush(allowBombchus)
 			Any(
 				Has(Bombs20),
 				All(
+					Has(Bombs),
+					AccessibilityLevel.SequenceBreak
+				),
+				All(
 					allowBombchus == true,
 					Any(
 						Has(Bombchus50),
@@ -367,6 +375,10 @@ function CanDestroyFlower()
 			),
 			Any(
 				Has(Bombs20),
+				All(
+					Has(Bombs),
+					AccessibilityLevel.SequenceBreak
+				),
 				All(
 					CanUseSeeds(),
 					Has(EmberSeeds)
@@ -624,7 +636,15 @@ function CanNormalKill(pitAvailable, allowGale, allowCane)
 		All(
 			Any(
 				Has(Bombs40),
-				Has(Bombchus20)
+				All(
+					Has(Bombs),
+					AccessibilityLevel.SequenceBreak
+				),
+				Has(Bombchus20),
+				All(
+					Has(Bombchus),
+					AccessibilityLevel.SequenceBreak
+				)
 			),
 			Any(
 				IsMediumPlus(),
@@ -646,7 +666,11 @@ function CanNormalSatchelKill(allowGale)
 		allowGale = true
 	end
 	return All(
-		Has(UpgradedSatchel),
+		Has(SeedSatchel),
+		Any(
+			Has(UpgradedSatchel),
+			AccessibilityLevel.SequenceBreak
+		),
 		Any(
 			Has(EmberSeeds),
 			All(
@@ -681,7 +705,11 @@ function CanNormalSlingshotKill(allowGale)
 		allowGale = true
 	end
 	return All(
-		Has(UpgradedSatchel),
+		Has(SeedSatchel),
+		Any(
+			Has(UpgradedSatchel),
+			AccessibilityLevel.SequenceBreak
+		),
 		All(
 			Has(Slingshot),
 			Any(
@@ -705,7 +733,11 @@ function CanArmorKill()
 	return Any(
 		CanSwordPunchKill(),
 		All(
-			Has(UpgradedSatchel),
+			Has(SeedSatchel),
+			Any(
+				Has(UpgradedSatchel),
+				AccessibilityLevel.SequenceBreak
+			),
 			Has(ScentSeeds),
 			Any(
 				Has(Slingshot),

@@ -585,25 +585,19 @@ function CanSwordPunchKill()
 end
 
 function CanGaleKill()
-	return Any(
-		All(
-			Has(UpgradedSatchel),
-			Has(Slingshot),
-			Has(GaleSeeds)
+	return All(
+		Has(GaleSeeds),
+		Any(
+			IsMediumPlus(),
+			AccessibilityLevel.SequenceBreak
 		),
-		All(
-			Has(SeedSatchel),
-			Has(GaleSeeds),
-			Any(
-				All(
-					Has(Feather),
-					Any(
-						IsMediumPlus(),
-						AccessibilityLevel.SequenceBreak
-					)
-				),
+		Any(
+			Has(Slingshot),
+			All(
+				Has(SeedSatchel),
 				Any(
 					Has(Hard),
+					Has(Feather),
 					AccessibilityLevel.SequenceBreak
 				)
 			)

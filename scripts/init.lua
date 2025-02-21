@@ -1,5 +1,5 @@
 if (PopVersion >= "0.30.2") then
-    Tracker.AllowDeferredLogicUpdate = true
+	Tracker.AllowDeferredLogicUpdate = true
 end
 ScriptHost:LoadScript("scripts/logic/definition_helper.lua")
 ScriptHost:LoadScript("scripts/logic/logic.lua")
@@ -13,7 +13,7 @@ ScriptHost:LoadScript("scripts/locations.lua")
 Tracker:AddItems("items/items.json")
 Tracker:AddItems("items/hints.json")
 
-Tracker:AddItems("items/settings.json")
+Tracker:AddItems("items/pack_settings.json")
 Tracker:AddItems("items/labels.json")
 Tracker:AddMaps("maps/maps.json")
 
@@ -22,7 +22,7 @@ Tracker:AddLayouts("layouts/tracker_layouts.json")
 Tracker:AddLayouts("layouts/broadcast.json")
 
 if (Tracker.ActiveVariantUID:find("withouthint")) then
-    Tracker:FindObjectForCode("showhints").CurrentStage = 0
+	Tracker:FindObjectForCode("showhints").CurrentStage = 0
 end
 
 StartLocation = OoSLocation.New("StartLocation")

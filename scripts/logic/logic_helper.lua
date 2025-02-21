@@ -864,10 +864,7 @@ function CanFarmOreChunks()
 		Has(Shovel),
 		All(
 			CanReach(SubrosiaMountainEast),
-			Any(
-				Has(Hard),
-				AccessibilityLevel.SequenceBreak
-			)
+			Has(Hard)
 		),
 		All(
 			Any(
@@ -875,10 +872,7 @@ function CanFarmOreChunks()
 				Has(Bracelet),
 				Has(MagicBoomerang)
 			),
-			Any(
-				IsMediumPlus(),
-				AccessibilityLevel.SequenceBreak
-			)
+			IsMediumPlus()
 		)
 	)
 end
@@ -893,13 +887,7 @@ function HasOreChunks(count)
 
 	local oreChunks = Tracker:FindObjectForCode(OreChunkCount).AcquiredCount
 	
-	return Any(
-		oreChunks >= count,
-		All(
-			CanFarmOreChunks(),
-			AccessibilityLevel.SequenceBreak
-		)
-	)
+	return oreChunks >= count
 end
 
 function CanMapleTrade()

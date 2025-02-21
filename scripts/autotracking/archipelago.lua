@@ -138,59 +138,11 @@ function onClear(slot_data)
 	end
 
 	Tracker:FindObjectForCode("default_seasons").CurrentStage = DefaultSeasonOptionMapping[slot_data["default_seasons_option"]]
-	-- if slot_data["default_seasons_option"] == "vanilla" then
-	-- 	Tracker:FindObjectForCode("default_seasons").CurrentStage = 0
-	-- elseif slot_data["default_seasons_option"] == "randomized" then
-	-- 	Tracker:FindObjectForCode("default_seasons").CurrentStage = 1
-	-- elseif slot_data["default_seasons_option"] == "random_singularity" then
-	-- 	Tracker:FindObjectForCode("default_seasons").CurrentStage = 2
-	-- elseif slot_data["default_seasons_option"] == "spring_singularity" then
-	-- 	Tracker:FindObjectForCode("default_seasons").CurrentStage = 3
-	-- elseif slot_data["default_seasons_option"] == "summer_singularity" then
-	-- 	Tracker:FindObjectForCode("default_seasons").CurrentStage = 4
-	-- elseif slot_data["default_seasons_option"] == "autumn_singularity" then
-	-- 	Tracker:FindObjectForCode("default_seasons").CurrentStage = 5
-	-- elseif slot_data["default_seasons_option"] == "winter_singularity" then
-	-- 	Tracker:FindObjectForCode("default_seasons").CurrentStage = 6
-	-- end
 
 	for region_name, season_id in pairs(slot_data["default_seasons"]) do
 		if (region_name ~= "HORON_VILLAGE" or Tracker:FindObjectForCode("horon_village_season_shuffle").CurrentStage == 1) then
 			Tracker:FindObjectForCode(RegionToSeasonMapping[region_name]).CurrentStage = season_id
 		end
-		-- if (region_name == "EYEGLASS_LAKE") then
-		-- 	Tracker:FindObjectForCode("north_horon_season_hidden").CurrentStage = season_id
-		-- end
-		-- if (region_name == "EASTERN_SUBURBS") then
-		-- 	Tracker:FindObjectForCode("suburbs_season_hidden").CurrentStage = season_id
-		-- end
-		-- if (region_name == "WOODS_OF_WINTER") then
-		-- 	Tracker:FindObjectForCode("wow_season_hidden").CurrentStage = season_id
-		-- end
-		-- if (region_name == "HOLODRUM_PLAIN") then
-		-- 	Tracker:FindObjectForCode("plain_season_hidden").CurrentStage = season_id
-		-- end
-		-- if (region_name == "SPOOL_SWAMP") then
-		-- 	Tracker:FindObjectForCode("swamp_season_hidden").CurrentStage = season_id
-		-- end
-		-- if (region_name == "SUNKEN_CITY") then
-		-- 	Tracker:FindObjectForCode("sunken_season_hidden").CurrentStage = season_id
-		-- end
-		-- if (region_name == "LOST_WOODS") then
-		-- 	Tracker:FindObjectForCode("lost_woods_season_hidden").CurrentStage = season_id
-		-- end
-		-- if (region_name == "TARM_RUINS") then
-		-- 	Tracker:FindObjectForCode("tarm_ruins_season_hidden").CurrentStage = season_id
-		-- end
-		-- if (region_name == "WESTERN_COAST") then
-		-- 	Tracker:FindObjectForCode("coast_season_hidden").CurrentStage = season_id
-		-- end
-		-- if (region_name == "TEMPLE_REMAINS") then
-		-- 	Tracker:FindObjectForCode("remains_season_hidden").CurrentStage = season_id
-		-- end
-		-- if (Tracker:FindObjectForCode("horon_village_season_shuffle").CurrentStage == 1 and region_name == "HORON_VILLAGE") then
-		-- 	Tracker:FindObjectForCode("horon_village_season_hidden").CurrentStage = season_id
-		-- end
 	end
 
 	for region_name, portal_name in pairs(slot_data["portal_connections"]) do
@@ -213,11 +165,17 @@ function onClear(slot_data)
 	end
 
 	-- shop prices
-	if (slot_data["shop_prices"]) then
-		for shop, price in pairs(slot_data["shop_prices"]) do
+	if (slot_data["shop_rupee_requirements"]) then
+		for shop, price in pairs(slot_data["shop_rupee_requirements"]) do
 			ShopPrices[shop] = price
 		end
 	end
+	for k, v in pairs(slot_data["shop_costs"]) do
+		if (k:find("^subrosia")) then
+			ShopPrices[SubrosianMarketPrice] = ShopPrices[SubrosianMarketPrice] + v
+		end
+	end
+	print("Market:", ShopPrices[SubrosianMarketPrice])
 
 	-- if starting maps/compasses, auto collect
 	if (slot_data["starting_maps_compasses"] == 1) then

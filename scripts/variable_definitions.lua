@@ -47,26 +47,15 @@ LostWoodsDefault = {3, 2, 0, 1}
 -- }
 -- With no AP connection, we can't tell how shop logic works, so default to just "CanFarm"
 ShopPrices = {
-	[HoronShop1Price] = 0,
-	[HoronShop2Price] = 0,
-	[HoronShop3Price] = 0,
-	[AdvanceShop1Price] = 0,
-	[AdvanceShop2Price] = 0,
-	[AdvanceShop3Price] = 0,
-	[MemberShop1Price] = 0,
-	[MemberShop2Price] = 0,
-	[MemberShop3Price] = 0,
-	[SyrupShop1Price] = 0,
-	[SyrupShop2Price] = 0,
-	[SyrupShop3Price] = 0,
+	[HoronShopPrice] = 0,
+	[AdvanceShopPrice] = 0,
+	[MemberShopPrice] = 0,
+	[SyrupShopPrice] = 0,
 	[SpoolSwampScrubPrice] = 0,
 	[SamasaCaveScrubPrice] = 0,
 	[D2ScrubPrice] = 0,
 	[D4ScrubPrice] = 0,
-	[SubrosianMarket2Price] = 0,
-	[SubrosianMarket3Price] = 0,
-	[SubrosianMarket4Price] = 0,
-	[SubrosianMarket5Price] = 0
+	[SubrosianMarketPrice] = 0,
 }
 WildSeeds = {
 	["Dancing Dragon Dungeon/Wild Ember Seeds/1F"] = EmberSeeds,

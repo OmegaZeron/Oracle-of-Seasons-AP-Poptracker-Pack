@@ -1,0 +1,5444 @@
+[
+	{
+		"name": "Goal",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 0,
+		"codes": "goal",
+		"stages": [
+			{
+			"img": "images/items/onox_setting.png",
+			"codes": "onox_goal",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/items/ganon_setting.png",
+			"codes": "ganon_goal",
+			"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Logic Level",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 1,
+		"loop": true,
+		"codes": "logiclevel",
+		"stages": [
+			{
+			"img": "images/labels/casual.png",
+			"codes": "casual",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/medium.png",
+			"codes": "medium",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/hard.png",
+			"codes": "hard",
+			"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Onox Essences Required",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 8,
+		"codes": "onox_essences",
+				"stages": [
+			{
+			"img": "images/labels/0essence.png",
+			"codes": "onox0",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/1essence.png",
+			"codes": "onox1",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/2essence.png",
+			"codes": "onox2",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/3essence.png",
+			"codes": "onox3",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/4essence.png",
+			"codes": "onox4",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/5essence.png",
+			"codes": "onox5",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/6essence.png",
+			"codes": "onox6",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/7essence.png",
+			"codes": "onox7",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/8essence.png",
+			"codes": "onox8",
+			"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Default Seasons",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx":0,
+		"codes": "default_seasons",
+		"stages": [
+			{
+				"img": "images/labels/vanilla_label.png",
+				"codes": "defaultseasonson",
+				"inherit_codes": false
+			},
+			{
+			"img": "images/labels/shuffled_label.png",
+			"codes": "defaultseasonsoff",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/singularity_random_label.png",
+			"codes": "singularity_random",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/spring_label.png",
+			"codes": "singularity_spring",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/summer_label.png",
+			"codes": "singularity_summer",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/fall_label.png",
+			"codes": "singularity_fall",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/winter_label.png",
+			"codes": "singularity_winter",
+			"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Horon Village Season Shuffle",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx":0,
+		"codes": "horon_village_season_shuffle",
+		"stages": [
+			{
+			"img": "images/labels/chaotic_label.png",
+			"codes": "horon_seasons_chaotic",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/normalized_label.png",
+			"codes": "horon_seasons_normalized",
+			"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Natzu animal",
+		"type": "progressive",
+		"allow_disabled": false,
+		"codes": "natzu_animal",
+		"loop": true,
+		"stages": [
+			{
+			"img": "images/items/ricky.png",
+			"codes": "natzu_ricky",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/items/dimitri.png",
+			"codes": "natzu_dimitri",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/items/moosh.png",
+			"codes": "natzu_moosh",
+			"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Dungeon Shuffle",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"codes": "dungeonshuffle",
+		"stages": [
+			{
+			"img": "images/labels/vanilla_label.png",
+			"codes": "shuffledungeonoff",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/shuffled_label.png",
+			"codes": "shuffledungeonon",
+			"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Portal Shuffle selector",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 0,
+		"codes": "portalshuffle",
+		"stages": [
+			{
+			"img": "images/labels/off.png",
+			"codes": "portalshuffleoff",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/out.png",
+			"codes": "portalshuffleoutward",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/on.png",
+			"codes": "portalshuffleon",
+			"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Small Keysanity selector",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 0,
+		"codes": "small_keysanity",
+		"stages": [
+			{
+			"img": "images/labels/off.png",
+			"codes": "small_keysanity_off",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/on.png",
+			"codes": "small_keysanity_on",
+			"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Boss Keysanity selector",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 0,
+		"codes": "boss_keysanity",
+		"stages": [
+			{
+			"img": "images/labels/off.png",
+			"codes": "boss_keysanity_off",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/on.png",
+			"codes": "boss_keysanity_on",
+			"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Map/Compass Shuffle selector",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 0,
+		"codes": "map_compass",
+		"stages": [
+			{
+			"img": "images/labels/off.png",
+			"codes": "map_compass_off",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/on.png",
+			"codes": "map_compass_on",
+			"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Master Keys selector",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 0,
+		"codes": "master_keys",
+		"stages": [
+			{
+			"img": "images/labels/off.png",
+			"codes": "master_keys_off",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/small_keys_label.png",
+			"codes": "master_keys_small",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/both_keys_label.png",
+			"codes": "master_keys_both",
+			"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "D0 Alt Entrance selector",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 0,
+		"codes": "d0_alt_entrance",
+		"stages": [
+			{
+			"img": "images/labels/vanilla_label.png",
+			"codes": "d0_alt_entrance_vanilla",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/removed_label.png",
+			"codes": "d0_alt_entrance_removed",
+			"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "D2 Alt Entrance selector",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 0,
+		"codes": "d2_alt_entrance",
+		"stages": [
+			{
+			"img": "images/labels/vanilla_label.png",
+			"codes": "d2_alt_entrance_vanilla",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/removed_label.png",
+			"codes": "d2_alt_entrance_removed",
+			"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Shuffle Old Men",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx":0,
+		"codes": "shuffle_old_men",
+		"stages": [
+			{
+			"img": "images/labels/vanilla_label.png",
+			"codes": "old_men_vanilla",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/shuffled_label.png",
+			"codes": "old_men_shuffled",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/random_label.png",
+			"codes": "old_men_random",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/random_positive_label.png",
+			"codes": "old_men_random_positive",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/locations_label.png",
+			"codes": "old_men_locations",
+			"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Shuffle Gold Ore Spots",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx":0,
+		"codes": "shuffle_gold_ores",
+		"stages": [
+			{
+			"img": "images/labels/vanilla_label.png",
+			"codes": "gold_ores_vanilla",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/shuffled_label.png",
+			"codes": "gold_ores_shuffled",
+			"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Horon Shop Potion",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx":0,
+		"codes": "horon_shop_potion",
+		"stages": [
+			{
+			"img": "images/labels/off.png",
+			"codes": "horon_potion_off",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/on.png",
+			"codes": "horon_potion_on",
+			"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Old Man Essences Required",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 5,
+		"codes": "oldmanessences",
+				"stages": [
+			{
+			"img": "images/labels/0essence.png",
+			"codes": "oldman0",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/1essence.png",
+			"codes": "oldman1",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/2essence.png",
+			"codes": "oldman2",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/3essence.png",
+			"codes": "oldman3",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/4essence.png",
+			"codes": "oldman4",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/5essence.png",
+			"codes": "oldman5",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/6essence.png",
+			"codes": "oldman6",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/7essence.png",
+			"codes": "oldman7",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/8essence.png",
+			"codes": "oldman8",
+			"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Golden Beasts Required",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 4,
+		"codes": "goldenbeastsrequired",
+				"stages": [
+			{
+			"img": "images/labels/0golden.png",
+			"codes": "golden0",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/1golden.png",
+			"codes": "golden1",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/2golden.png",
+			"codes": "golden2",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/3golden.png",
+			"codes": "golden3",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/4golden.png",
+			"codes": "golden4",
+			"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Tarm Ruins Jewel Requirement",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 4,
+		"codes": "jewelreq",
+				"stages": [
+			{
+			"img": "images/labels/0jewels.png",
+			"codes": "jewelreq0",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/1jewels.png",
+			"codes": "jewelreq1",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/2jewels.png",
+			"codes": "jewelreq2",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/3jewels.png",
+			"codes": "jewelreq3",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/4jewels.png",
+			"codes": "jewelreq4",
+			"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Gasha Seed Requirement",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 0,
+		"codes": "gashareq",
+		"stages": [
+			{
+				"img": "images/labels/0gasha.png",
+				"codes": "gashareq0",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/1gasha.png",
+				"codes": "gashareq1",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/2gasha.png",
+				"codes": "gashareq2",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/3gasha.png",
+				"codes": "gashareq3",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/4gasha.png",
+				"codes": "gashareq4",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/5gasha.png",
+				"codes": "gashareq5",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/6gasha.png",
+				"codes": "gashareq6",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/7gasha.png",
+				"codes": "gashareq7",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/8gasha.png",
+				"codes": "gashareq8",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/9gasha.png",
+				"codes": "gashareq9",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/10gasha.png",
+				"codes": "gashareq10",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/11gasha.png",
+				"codes": "gashareq11",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/12gasha.png",
+				"codes": "gashareq12",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/13gasha.png",
+				"codes": "gashareq13",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/14gasha.png",
+				"codes": "gashareq14",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/15gasha.png",
+				"codes": "gashareq15",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/16gasha.png",
+				"codes": "gashareq16",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Tree Warp selector",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 2,
+		"codes": "treewarp",
+		"stages": [
+			{
+			"img": "images/labels/off.png",
+			"codes": "notreewarp",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/on.png",
+			"codes": "treewarp",
+			"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Horon Village Advance Shop",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx":0,
+		"codes": "advance_shop",
+		"stages": [
+			{
+			"img": "images/labels/off.png",
+			"codes": "advanceshopoff",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/on.png",
+			"codes": "advanceshopon",
+			"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Randomized Seasons Fill Selector",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"codes": "fill_seasons",
+		"stages": [
+			{
+			"img": "images/labels/fill.png",
+			"codes": "fill_seasons_off",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/filled.png",
+			"codes": "fill_seasons_on",
+			"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Horon Village Season",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 4,
+		"loop": true,
+		"codes": "horon_village_season",
+		"stages": [
+			{
+			"img": "images/labels/selector_spring.png",
+			"codes": "horonvillage_spring",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_summer.png",
+			"codes": "horonvillage_summer",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_fall.png",
+			"codes": "horonvillage_fall",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_winter.png",
+			"codes": "horonvillage_winter",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_neutral.png",
+			"codes": "season_horonvillage",
+			"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Horon Village Season Hidden",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 4,
+		"loop": true,
+		"codes": "horon_village_season_hidden",
+		"stages": [
+			{
+			"img": "images/labels/selector_spring.png",
+			"codes": "horonvillage_spring_hidden",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_summer.png",
+			"codes": "horonvillage_summer_hidden",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_fall.png",
+			"codes": "horonvillage_fall_hidden",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_winter.png",
+			"codes": "horonvillage_winter_hidden",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_neutral.png",
+			"codes": "season_horonvillage_hidden",
+			"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "North Horon Season",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 3,
+		"loop": true,
+		"codes": "north_horon_season",
+		"stages": [
+			{
+			"img": "images/labels/selector_spring.png",
+			"codes": "north_spring",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_summer.png",
+			"codes": "north_summer",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_fall.png",
+			"codes": "north_fall",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_winter.png",
+			"codes": "north_winter",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_neutral.png",
+			"codes": "season_northhoron",
+			"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "North Horon Season Hidden",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 4,
+		"loop": true,
+		"codes": "north_horon_season_hidden",
+		"stages": [
+			{
+			"img": "images/labels/selector_spring.png",
+			"codes": "north_spring_hidden",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_summer.png",
+			"codes": "north_summer_hidden",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_fall.png",
+			"codes": "north_fall_hidden",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_winter.png",
+			"codes": "north_winter_hidden",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_neutral.png",
+			"codes": "season_northhoron_hidden",
+			"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Randomized Portals Fill Selector",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"codes": "fill_portals",
+		"stages": [
+			{
+			"img": "images/labels/fill.png",
+			"codes": "fill_portals_off",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/filled.png",
+			"codes": "fill_portals_on",
+			"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Eastern Suburbs Season",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 2,
+		"loop": true,
+		"codes": "suburbs_season",
+		"stages": [
+			{
+			"img": "images/labels/selector_spring.png",
+			"codes": "suburbs_spring",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_summer.png",
+			"codes": "suburbs_summer",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_fall.png",
+			"codes": "suburbs_fall",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_winter.png",
+			"codes": "suburbs_winter",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_neutral.png",
+			"codes": "season_eastsuburbs",
+			"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Eastern Suburbs Season Hidden",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 4,
+		"loop": true,
+		"codes": "suburbs_season_hidden",
+		"stages": [
+			{
+			"img": "images/labels/selector_spring.png",
+			"codes": "suburbs_spring_hidden",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_summer.png",
+			"codes": "suburbs_summer_hidden",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_fall.png",
+			"codes": "suburbs_fall_hidden",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_winter.png",
+			"codes": "suburbs_winter_hidden",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_neutral.png",
+			"codes": "season_eastsuburbs_hidden",
+			"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Woods of Winter Season",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 1,
+		"loop": true,
+		"codes": "wow_season",
+		"stages": [
+			{
+			"img": "images/labels/selector_spring.png",
+			"codes": "wow_spring",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_summer.png",
+			"codes": "wow_summer",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_fall.png",
+			"codes": "wow_fall",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_winter.png",
+			"codes": "wow_winter",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_neutral.png",
+			"codes": "season_woodsofwinter",
+			"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Woods of Winter Season Hidden",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 4,
+		"loop": true,
+		"codes": "wow_season_hidden",
+		"stages": [
+			{
+			"img": "images/labels/selector_spring.png",
+			"codes": "wow_spring_hidden",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_summer.png",
+			"codes": "wow_summer_hidden",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_fall.png",
+			"codes": "wow_fall_hidden",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_winter.png",
+			"codes": "wow_winter_hidden",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_neutral.png",
+			"codes": "season_woodsofwinter_hidden",
+			"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Holodrum Plain Season",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 0,
+		"loop": true,
+		"codes": "plain_season",
+		"stages": [
+			{
+			"img": "images/labels/selector_spring.png",
+			"codes": "plain_spring",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_summer.png",
+			"codes": "plain_summer",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_fall.png",
+			"codes": "plain_fall",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_winter.png",
+			"codes": "plain_winter",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_neutral.png",
+			"codes": "season_holodrumplain",
+			"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Holodrum Plain Season Hidden",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 4,
+		"loop": true,
+		"codes": "plain_season_hidden",
+		"stages": [
+			{
+			"img": "images/labels/selector_spring.png",
+			"codes": "plain_spring_hidden",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_summer.png",
+			"codes": "plain_summer_hidden",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_fall.png",
+			"codes": "plain_fall_hidden",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_winter.png",
+			"codes": "plain_winter_hidden",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_neutral.png",
+			"codes": "season_holodrumplain_hidden",
+			"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Tarm Ruins Season",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 0,
+		"loop": true,
+		"codes": "tarm_ruins_season",
+		"stages": [
+			{
+			"img": "images/labels/selector_spring.png",
+			"codes": "tarm_ruins_spring",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_summer.png",
+			"codes": "tarm_ruins_summer",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_fall.png",
+			"codes": "tarm_ruins_fall",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_winter.png",
+			"codes": "tarm_ruins_winter",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_neutral.png",
+			"codes": "season_tarm_ruins",
+			"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Tarm Ruins Season Hidden",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 4,
+		"loop": true,
+		"codes": "tarm_ruins_season_hidden",
+		"stages": [
+			{
+			"img": "images/labels/selector_spring.png",
+			"codes": "tarm_ruins_spring_hidden",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_summer.png",
+			"codes": "tarm_ruins_summer_hidden",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_fall.png",
+			"codes": "tarm_ruins_fall_hidden",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_winter.png",
+			"codes": "tarm_ruins_winter_hidden",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_neutral.png",
+			"codes": "season_tarm_ruins_hidden",
+			"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Lost Woods Season",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 2,
+		"loop": true,
+		"codes": "lost_woods_season",
+		"stages": [
+			{
+				"img": "images/labels/selector_spring.png",
+				"codes": "lost_woods_spring",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_summer.png",
+				"codes": "lost_woods_summer",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_fall.png",
+				"codes": "lost_woods_fall",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_winter.png",
+				"codes": "lost_woods_winter",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_neutral.png",
+				"codes": "season_lost_woods",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Lost Woods Season Hidden",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 4,
+		"loop": true,
+		"codes": "lost_woods_season_hidden",
+		"stages": [
+			{
+				"img": "images/labels/selector_spring.png",
+				"codes": "lost_woods_spring_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_summer.png",
+				"codes": "lost_woods_summer_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_fall.png",
+				"codes": "lost_woods_fall_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_winter.png",
+				"codes": "lost_woods_winter_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_neutral.png",
+				"codes": "season_lost_woods_hidden",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Spool Swamp Season",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 2,
+		"loop": true,
+		"codes": "swamp_season",
+		"stages": [
+			{
+			"img": "images/labels/selector_spring.png",
+			"codes": "swamp_spring",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_summer.png",
+			"codes": "swamp_summer",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_fall.png",
+			"codes": "swamp_fall",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_winter.png",
+			"codes": "swamp_winter",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_neutral.png",
+			"codes": "season_spoolswamp",
+			"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Spool Swamp Season Hidden",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 4,
+		"loop": true,
+		"codes": "swamp_season_hidden",
+		"stages": [
+			{
+			"img": "images/labels/selector_spring.png",
+			"codes": "swamp_spring_hidden",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_summer.png",
+			"codes": "swamp_summer_hidden",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_fall.png",
+			"codes": "swamp_fall_hidden",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_winter.png",
+			"codes": "swamp_winter_hidden",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_neutral.png",
+			"codes": "season_spoolswamp_hidden",
+			"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Sunken City Season",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 1,
+		"loop": true,
+		"codes": "sunken_season",
+		"stages": [
+			{
+			"img": "images/labels/selector_spring.png",
+			"codes": "sunken_spring",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_summer.png",
+			"codes": "sunken_summer",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_fall.png",
+			"codes": "sunken_fall",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_winter.png",
+			"codes": "sunken_winter",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_neutral.png",
+			"codes": "season_sunkencity",
+			"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Sunken City Season Hidden",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 4,
+		"loop": true,
+		"codes": "sunken_season_hidden",
+		"stages": [
+			{
+			"img": "images/labels/selector_spring.png",
+			"codes": "sunken_spring_hidden",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_summer.png",
+			"codes": "sunken_summer_hidden",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_fall.png",
+			"codes": "sunken_fall_hidden",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_winter.png",
+			"codes": "sunken_winter_hidden",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_neutral.png",
+			"codes": "season_sunkencity_hidden",
+			"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Western Coast Season",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 3,
+		"loop": true,
+		"codes": "coast_season",
+		"stages": [
+			{
+			"img": "images/labels/selector_spring.png",
+			"codes": "coast_spring",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_summer.png",
+			"codes": "coast_summer",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_fall.png",
+			"codes": "coast_fall",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_winter.png",
+			"codes": "coast_winter",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_neutral.png",
+			"codes": "western_coast_season",
+			"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Western Coast Season Hidden",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 4,
+		"loop": true,
+		"codes": "coast_season_hidden",
+		"stages": [
+			{
+			"img": "images/labels/selector_spring.png",
+			"codes": "coast_spring_hidden",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_summer.png",
+			"codes": "coast_summer_hidden",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_fall.png",
+			"codes": "coast_fall_hidden",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_winter.png",
+			"codes": "coast_winter_hidden",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_neutral.png",
+			"codes": "western_coast_season_hidden",
+			"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Temple Remains Season",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 3,
+		"loop": true,
+		"codes": "remains_season",
+		"stages": [
+			{
+			"img": "images/labels/selector_spring.png",
+			"codes": "temple_spring",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_summer.png",
+			"codes": "temple_summer",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_fall.png",
+			"codes": "temple_fall",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_winter.png",
+			"codes": "temple_winter",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_neutral.png",
+			"codes": "season_templeremains",
+			"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Temple Remains Season Hidden",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 4,
+		"loop": true,
+		"codes": "remains_season_hidden",
+		"stages": [
+			{
+			"img": "images/labels/selector_spring.png",
+			"codes": "temple_spring_hidden",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_summer.png",
+			"codes": "temple_summer_hidden",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_fall.png",
+			"codes": "temple_fall_hidden",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_winter.png",
+			"codes": "temple_winter_hidden",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/selector_neutral.png",
+			"codes": "season_templeremains_hidden",
+			"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Randomize Lost Woods Sequence",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 0,
+		"codes": "shuffle_lost_woods",
+		"stages": [
+			{
+				"img": "images/labels/vanilla_label.png",
+				"codes": "lost_woods_vanilla",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/shuffled_label.png",
+				"codes": "lost_woods_randomized",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Randomize Pedestal Sequence",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 0,
+		"codes": "shuffle_pedestal",
+		"stages": [
+			{
+				"img": "images/labels/vanilla_label.png",
+				"codes": "pedestal_vanilla",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/shuffled_label.png",
+				"codes": "pedestal_randomized",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Lost Woods Main Direction 1",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 0,
+		"loop": true,
+		"codes": "lost_woods_d_1",
+		"stages": [
+			{
+				"img": "images/labels/dir_left.png",
+				"codes": "lost_woods_1_left",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/dir_down.png",
+				"codes": "lost_woods_1_down",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/dir_right.png",
+				"codes": "lost_woods_1_right",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/dir_up.png",
+				"codes": "lost_woods_1_up",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/DX_unknown.png",
+				"codes": "lost_woods_1_d_unknown",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Lost Woods Main Direction 2",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 1,
+		"loop": true,
+		"codes": "lost_woods_d_2",
+		"stages": [
+			{
+				"img": "images/labels/dir_left.png",
+				"codes": "lost_woods_2_left",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/dir_down.png",
+				"codes": "lost_woods_2_down",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/dir_right.png",
+				"codes": "lost_woods_2_right",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/dir_up.png",
+				"codes": "lost_woods_2_up",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/DX_unknown.png",
+				"codes": "lost_woods_2_d_unknown",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Lost Woods Main Direction 3",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 2,
+		"loop": true,
+		"codes": "lost_woods_d_3",
+		"stages": [
+			{
+				"img": "images/labels/dir_left.png",
+				"codes": "lost_woods_3_left",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/dir_down.png",
+				"codes": "lost_woods_3_down",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/dir_right.png",
+				"codes": "lost_woods_3_right",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/dir_up.png",
+				"codes": "lost_woods_3_up",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/DX_unknown.png",
+				"codes": "lost_woods_3_d_unknown",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Lost Woods Main Direction 4",
+		"type": "static",
+		"codes": "lost_woods_d_4",
+		"img": "images/labels/dir_up.png"
+	},
+	{
+		"name": "Lost Woods Main Sequence 1",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 3,
+		"loop": true,
+		"codes": "lost_woods_1",
+		"stages": [
+			{
+				"img": "images/labels/selector_spring.png",
+				"codes": "lost_woods_1_spring",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_summer.png",
+				"codes": "lost_woods_1_summer",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_fall.png",
+				"codes": "lost_woods_1_fall",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_winter.png",
+				"codes": "lost_woods_1_winter",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_neutral.png",
+				"codes": "lost_woods_1_unknown",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Lost Woods Main Sequence 2",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 2,
+		"loop": true,
+		"codes": "lost_woods_2",
+		"stages": [
+			{
+				"img": "images/labels/selector_spring.png",
+				"codes": "lost_woods_2_spring",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_summer.png",
+				"codes": "lost_woods_2_summer",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_fall.png",
+				"codes": "lost_woods_2_fall",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_winter.png",
+				"codes": "lost_woods_2_winter",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_neutral.png",
+				"codes": "lost_woods_2_unknown",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Lost Woods Main Sequence 3",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 0,
+		"loop": true,
+		"codes": "lost_woods_3",
+		"stages": [
+			{
+				"img": "images/labels/selector_spring.png",
+				"codes": "lost_woods_3_spring",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_summer.png",
+				"codes": "lost_woods_3_summer",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_fall.png",
+				"codes": "lost_woods_3_fall",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_winter.png",
+				"codes": "lost_woods_3_winter",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_neutral.png",
+				"codes": "lost_woods_3_unknown",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Lost Woods Main Sequence 4",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 1,
+		"loop": true,
+		"codes": "lost_woods_4",
+		"stages": [
+			{
+				"img": "images/labels/selector_spring.png",
+				"codes": "lost_woods_4_spring",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_summer.png",
+				"codes": "lost_woods_4_summer",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_fall.png",
+				"codes": "lost_woods_4_fall",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_winter.png",
+				"codes": "lost_woods_4_winter",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_neutral.png",
+				"codes": "lost_woods_4_unknown",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Pedestal Direction 1",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 0,
+		"loop": true,
+		"codes": "pedestal_d_1",
+		"stages": [
+			{
+				"img": "images/labels/dir_left.png",
+				"codes": "pedestal_1_left",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/dir_down.png",
+				"codes": "pedestal_1_down",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/dir_right.png",
+				"codes": "pedestal_1_right",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/dir_up.png",
+				"codes": "pedestal_1_up",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/DX_unknown.png",
+				"codes": "pedestal_1_d_unknown",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Pedestal Direction 2",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 0,
+		"loop": true,
+		"codes": "pedestal_d_2",
+		"stages": [
+			{
+				"img": "images/labels/dir_left.png",
+				"codes": "pedestal_2_left",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/dir_down.png",
+				"codes": "pedestal_2_down",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/dir_right.png",
+				"codes": "pedestal_2_right",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/dir_up.png",
+				"codes": "pedestal_2_up",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/DX_unknown.png",
+				"codes": "pedestal_2_d_unknown",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Pedestal Direction 3",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 0,
+		"loop": true,
+		"codes": "pedestal_d_3",
+		"stages": [
+			{
+				"img": "images/labels/dir_left.png",
+				"codes": "pedestal_3_left",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/dir_down.png",
+				"codes": "pedestal_3_down",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/dir_right.png",
+				"codes": "pedestal_3_right",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/dir_up.png",
+				"codes": "pedestal_3_up",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/DX_unknown.png",
+				"codes": "pedestal_3_d_unknown",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Pedestal Direction 4",
+		"type": "static",
+		"codes": "pedestal_d_4",
+		"img": "images/labels/dir_left.png"
+	},
+	{
+		"name": "Pedestal Sequence 1",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 3,
+		"loop": true,
+		"codes": "pedestal_1",
+		"stages": [
+			{
+				"img": "images/labels/selector_spring.png",
+				"codes": "pedestal_1_spring",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_summer.png",
+				"codes": "pedestal_1_summer",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_fall.png",
+				"codes": "pedestal_1_fall",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_winter.png",
+				"codes": "pedestal_1_winter",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_neutral.png",
+				"codes": "pedestal_1_unknown",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Pedestal Sequence 2",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 2,
+		"loop": true,
+		"codes": "pedestal_2",
+		"stages": [
+			{
+				"img": "images/labels/selector_spring.png",
+				"codes": "pedestal_2_spring",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_summer.png",
+				"codes": "pedestal_2_summer",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_fall.png",
+				"codes": "pedestal_2_fall",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_winter.png",
+				"codes": "pedestal_2_winter",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_neutral.png",
+				"codes": "pedestal_2_unknown",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Pedestal Sequence 3",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 0,
+		"loop": true,
+		"codes": "pedestal_3",
+		"stages": [
+			{
+				"img": "images/labels/selector_spring.png",
+				"codes": "pedestal_3_spring",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_summer.png",
+				"codes": "pedestal_3_summer",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_fall.png",
+				"codes": "pedestal_3_fall",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_winter.png",
+				"codes": "pedestal_3_winter",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_neutral.png",
+				"codes": "pedestal_3_unknown",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Pedestal Sequence 4",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 1,
+		"loop": true,
+		"codes": "pedestal_4",
+		"stages": [
+			{
+				"img": "images/labels/selector_spring.png",
+				"codes": "pedestal_4_spring",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_summer.png",
+				"codes": "pedestal_4_summer",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_fall.png",
+				"codes": "pedestal_4_fall",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_winter.png",
+				"codes": "pedestal_4_winter",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/selector_neutral.png",
+				"codes": "pedestal_4_unknown",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Sign Guy Requirement",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 1,
+		"codes": "sign_guy_requirement",
+		"stages": [
+			{
+				"img": "images/labels/sign_0.png",
+				"codes": "sign_0",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/sign_1.png",
+				"codes": "sign_1",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Shuffle Business Scrubs",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 0,
+		"codes": "shufflescrubs",
+		"stages": [
+			{
+				"img": "images/labels/off.png",
+				"codes": "shufflescrubsoff",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/shuffled_label.png",
+				"codes": "shufflescrubson",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Show Hints",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 1,
+		"codes": "showhints",
+		"stages": [
+			{
+				"img": "images/labels/off.png",
+				"codes": "showhintsoff",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/shuffled_label.png",
+				"codes": "showhintson",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Suburbs Portal Selector",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 1,
+		"codes": "suburbs_portal_selector",
+		"stages": [
+			{
+				"img": "images/labels/DX_unknown3.png",
+				"codes": "suburbs_portal",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/mountain_label_sub.png",
+				"codes": "suburbs_mountain",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/market_label_sub.png",
+				"codes": "suburbs_market",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/furnace_label_sub.png",
+				"codes": "suburbs_furnace",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/village_label_sub.png",
+				"codes": "suburbs_village",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/pirates_label_sub.png",
+				"codes": "suburbs_pirates",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/volcano_label_sub.png",
+				"codes": "suburbs_volcano",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/d8_label_sub.png",
+				"codes": "suburbs_d8",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/swamp_label_sub.png",
+				"codes": "suburbs_swamp",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/lake_label_sub.png",
+				"codes": "suburbs_lake",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/mtcucco_label_sub.png",
+				"codes": "suburbs_mtcucco",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/horon_label_sub.png",
+				"codes": "suburbs_horon",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/remains_label_sub.png",
+				"codes": "suburbs_remains",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/upremains_label_sub.png",
+				"codes": "suburbs_upremains",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Suburbs Portal Selector Hidden",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 1,
+		"codes": "suburbs_portal_selector_hidden",
+		"stages": [
+			{
+				"img": "images/labels/DX_unknown3.png",
+				"codes": "suburbs_portal_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/mountain_label_sub.png",
+				"codes": "suburbs_mountain_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/market_label_sub.png",
+				"codes": "suburbs_market_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/furnace_label_sub.png",
+				"codes": "suburbs_furnace_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/village_label_sub.png",
+				"codes": "suburbs_village_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/pirates_label_sub.png",
+				"codes": "suburbs_pirates_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/volcano_label_sub.png",
+				"codes": "suburbs_volcano_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/d8_label_sub.png",
+				"codes": "suburbs_d8_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/swamp_label_sub.png",
+				"codes": "suburbs_swamp_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/lake_label_sub.png",
+				"codes": "suburbs_lake_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/mtcucco_label_sub.png",
+				"codes": "suburbs_mtcucco_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/horon_label_sub.png",
+				"codes": "suburbs_horon_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/remains_label_sub.png",
+				"codes": "suburbs_remains_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/upremains_label_sub.png",
+				"codes": "suburbs_upremains_hidden",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Swamp Portal Selector",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 2,
+		"codes": "swamp_portal_selector",
+		"stages": [
+			{
+				"img": "images/labels/DX_unknown3.png",
+				"codes": "swamp_portal",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/mountain_label_sub.png",
+				"codes": "swamp_mountain",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/market_label_sub.png",
+				"codes": "swamp_market",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/furnace_label_sub.png",
+				"codes": "swamp_furnace",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/village_label_sub.png",
+				"codes": "swamp_village",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/pirates_label_sub.png",
+				"codes": "swamp_pirates",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/volcano_label_sub.png",
+				"codes": "swamp_volcano",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/d8_label_sub.png",
+				"codes": "swamp_d8",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/suburbs_label_sub.png",
+				"codes": "swamp_swamp",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/lake_label_sub.png",
+				"codes": "swamp_lake",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/mtcucco_label_sub.png",
+				"codes": "swamp_mtcucco",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/horon_label_sub.png",
+				"codes": "swamp_horon",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/remains_label_sub.png",
+				"codes": "swamp_remains",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/upremains_label_sub.png",
+				"codes": "swamp_upremains",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Swamp Portal Selector Hidden",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 2,
+		"codes": "swamp_portal_selector_hidden",
+		"stages": [
+			{
+				"img": "images/labels/DX_unknown3.png",
+				"codes": "swamp_portal_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/mountain_label_sub.png",
+				"codes": "swamp_mountain_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/market_label_sub.png",
+				"codes": "swamp_market_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/furnace_label_sub.png",
+				"codes": "swamp_furnace_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/village_label_sub.png",
+				"codes": "swamp_village_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/pirates_label_sub.png",
+				"codes": "swamp_pirates_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/volcano_label_sub.png",
+				"codes": "swamp_volcano_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/d8_label_sub.png",
+				"codes": "swamp_d8_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/suburbs_label_sub.png",
+				"codes": "swamp_suburbs_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/lake_label_sub.png",
+				"codes": "swamp_lake_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/mtcucco_label_sub.png",
+				"codes": "swamp_mtcucco_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/horon_label_sub.png",
+				"codes": "swamp_horon_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/remains_label_sub.png",
+				"codes": "swamp_remains_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/upremains_label_sub.png",
+				"codes": "swamp_upremains_hidden",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Lake Portal Selector",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 3,
+		"codes": "lake_portal_selector",
+		"stages": [
+			{
+				"img": "images/labels/DX_unknown3.png",
+				"codes": "lake_portal",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/mountain_label_sub.png",
+				"codes": "lake_mountain",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/market_label_sub.png",
+				"codes": "lake_market",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/furnace_label_sub.png",
+				"codes": "lake_furnace",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/village_label_sub.png",
+				"codes": "lake_village",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/pirates_label_sub.png",
+				"codes": "lake_pirates",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/volcano_label_sub.png",
+				"codes": "lake_volcano",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/d8_label_sub.png",
+				"codes": "lake_d8",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/suburbs_label_sub.png",
+				"codes": "lake_suburbs",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/swamp_label_sub.png",
+				"codes": "lake_swamp",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/mtcucco_label_sub.png",
+				"codes": "lake_mtcucco",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/horon_label_sub.png",
+				"codes": "lake_horon",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/remains_label_sub.png",
+				"codes": "lake_remains",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/upremains_label_sub.png",
+				"codes": "lake_upremains",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Lake Portal Selector Hidden",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 3,
+		"codes": "lake_portal_selector_hidden",
+		"stages": [
+			{
+				"img": "images/labels/DX_unknown3.png",
+				"codes": "lake_portal_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/mountain_label_sub.png",
+				"codes": "lake_mountain_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/market_label_sub.png",
+				"codes": "lake_market_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/furnace_label_sub.png",
+				"codes": "lake_furnace_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/village_label_sub.png",
+				"codes": "lake_village_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/pirates_label_sub.png",
+				"codes": "lake_pirates_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/volcano_label_sub.png",
+				"codes": "lake_volcano_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/d8_label_sub.png",
+				"codes": "lake_d8_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/suburbs_label_sub.png",
+				"codes": "lake_suburbs_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/swamp_label_sub.png",
+				"codes": "lake_swamp_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/mtcucco_label_sub.png",
+				"codes": "lake_mtcucco_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/horon_label_sub.png",
+				"codes": "lake_horon_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/remains_label_sub.png",
+				"codes": "lake_remains_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/upremains_label_sub.png",
+				"codes": "lake_upremains_hidden",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Mt. Cucco Portal Selector",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 4,
+		"codes": "mtcucco_portal_selector",
+		"stages": [
+			{
+				"img": "images/labels/DX_unknown3.png",
+				"codes": "mtcucco_portal",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/mountain_label_sub.png",
+				"codes": "mtcucco_mountain",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/market_label_sub.png",
+				"codes": "mtcucco_market",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/furnace_label_sub.png",
+				"codes": "mtcucco_furnace",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/village_label_sub.png",
+				"codes": "mtcucco_village",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/pirates_label_sub.png",
+				"codes": "mtcucco_pirates",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/volcano_label_sub.png",
+				"codes": "mtcucco_volcano",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/d8_label_sub.png",
+				"codes": "mtcucco_d8",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/suburbs_label_sub.png",
+				"codes": "mtcucco_suburbs",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/swamp_label_sub.png",
+				"codes": "mtcucco_swamp",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/lake_label_sub.png",
+				"codes": "mtcucco_lake",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/horon_label_sub.png",
+				"codes": "mtcucco_horon",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/remains_label_sub.png",
+				"codes": "mtcucco_remains",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/upremains_label_sub.png",
+				"codes": "mtcucco_upremains",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Mt. Cucco Portal Selector Hidden",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 4,
+		"codes": "mtcucco_portal_selector_hidden",
+		"stages": [
+			{
+				"img": "images/labels/DX_unknown3.png",
+				"codes": "mtcucco_portal_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/mountain_label_sub.png",
+				"codes": "mtcucco_mountain_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/market_label_sub.png",
+				"codes": "mtcucco_market_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/furnace_label_sub.png",
+				"codes": "mtcucco_furnace_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/village_label_sub.png",
+				"codes": "mtcucco_village_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/pirates_label_sub.png",
+				"codes": "mtcucco_pirates_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/volcano_label_sub.png",
+				"codes": "mtcucco_volcano_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/d8_label_sub.png",
+				"codes": "mtcucco_d8_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/suburbs_label_sub.png",
+				"codes": "mtcucco_suburbs_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/swamp_label_sub.png",
+				"codes": "mtcucco_swamp_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/lake_label_sub.png",
+				"codes": "mtcucco_lake_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/horon_label_sub.png",
+				"codes": "mtcucco_horon_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/remains_label_sub.png",
+				"codes": "mtcucco_remains_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/upremains_label_sub.png",
+				"codes": "mtcucco_upremains_hidden",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Horon Village Portal Selector",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 5,
+		"codes": "horon_portal_selector",
+		"stages": [
+			{
+				"img": "images/labels/DX_unknown3.png",
+				"codes": "horon_portal",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/mountain_label_sub.png",
+				"codes": "horon_mountain",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/market_label_sub.png",
+				"codes": "horon_market",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/furnace_label_sub.png",
+				"codes": "horon_furnace",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/village_label_sub.png",
+				"codes": "horon_village",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/pirates_label_sub.png",
+				"codes": "horon_pirates",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/volcano_label_sub.png",
+				"codes": "horon_volcano",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/d8_label_sub.png",
+				"codes": "horon_d8",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/suburbs_label_sub.png",
+				"codes": "horon_suburbs",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/swamp_label_sub.png",
+				"codes": "horon_swamp",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/lake_label_sub.png",
+				"codes": "horon_lake",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/mtcucco_label_sub.png",
+				"codes": "horon_mtcucco",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/remains_label_sub.png",
+				"codes": "horon_remains",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/upremains_label_sub.png",
+				"codes": "horon_upremains",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Horon Village Portal Selector Hidden",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 5,
+		"codes": "horon_portal_selector_hidden",
+		"stages": [
+			{
+				"img": "images/labels/DX_unknown3.png",
+				"codes": "horon_portal_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/mountain_label_sub.png",
+				"codes": "horon_mountain_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/market_label_sub.png",
+				"codes": "horon_market_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/furnace_label_sub.png",
+				"codes": "horon_furnace_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/village_label_sub.png",
+				"codes": "horon_village_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/pirates_label_sub.png",
+				"codes": "horon_pirates_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/volcano_label_sub.png",
+				"codes": "horon_volcano_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/d8_label_sub.png",
+				"codes": "horon_d8_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/suburbs_label_sub.png",
+				"codes": "horon_suburbs_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/swamp_label_sub.png",
+				"codes": "horon_swamp_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/lake_label_sub.png",
+				"codes": "horon_lake_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/mtcucco_label_sub.png",
+				"codes": "horon_mtcucco_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/remains_label_sub.png",
+				"codes": "horon_remains_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/upremains_label_sub.png",
+				"codes": "horon_upremains_hidden",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Temple Remains Portal Selector",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 6,
+		"codes": "remains_portal_selector",
+		"stages": [
+			{
+				"img": "images/labels/DX_unknown3.png",
+				"codes": "remains_portal",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/mountain_label_sub.png",
+				"codes": "remains_mountain",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/market_label_sub.png",
+				"codes": "remains_market",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/furnace_label_sub.png",
+				"codes": "remains_furnace",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/village_label_sub.png",
+				"codes": "remains_village",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/pirates_label_sub.png",
+				"codes": "remains_pirates",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/volcano_label_sub.png",
+				"codes": "remains_volcano",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/d8_label_sub.png",
+				"codes": "remains_d8",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/suburbs_label_sub.png",
+				"codes": "remains_suburbs",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/swamp_label_sub.png",
+				"codes": "remains_swamp",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/lake_label_sub.png",
+				"codes": "remains_lake",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/mtcucco_label_sub.png",
+				"codes": "remains_mtcucco",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/horon_label_sub.png",
+				"codes": "remains_horon",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/upremains_label_sub.png",
+				"codes": "remains_upremains",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Temple Remains Portal Selector Hidden",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 6,
+		"codes": "remains_portal_selector_hidden",
+		"stages": [
+			{
+				"img": "images/labels/DX_unknown3.png",
+				"codes": "remains_portal_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/mountain_label_sub.png",
+				"codes": "remains_mountain_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/market_label_sub.png",
+				"codes": "remains_market_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/furnace_label_sub.png",
+				"codes": "remains_furnace_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/village_label_sub.png",
+				"codes": "remains_village_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/pirates_label_sub.png",
+				"codes": "remains_pirates_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/volcano_label_sub.png",
+				"codes": "remains_volcano_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/d8_label_sub.png",
+				"codes": "remains_d8_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/suburbs_label_sub.png",
+				"codes": "remains_suburbs_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/swamp_label_sub.png",
+				"codes": "remains_swamp_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/lake_label_sub.png",
+				"codes": "remains_lake_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/mtcucco_label_sub.png",
+				"codes": "remains_mtcucco_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/horon_label_sub.png",
+				"codes": "remains_horon_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/upremains_label_sub.png",
+				"codes": "remains_upremains_hidden",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Upper Temple Remains Portal Selector",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 7,
+		"codes": "upremains_portal_selector",
+		"stages": [
+			{
+				"img": "images/labels/DX_unknown3.png",
+				"codes": "upremains_portal",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/mountain_label_sub.png",
+				"codes": "upremains_mountain",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/market_label_sub.png",
+				"codes": "upremains_market",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/furnace_label_sub.png",
+				"codes": "upremains_furnace",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/village_label_sub.png",
+				"codes": "upremains_village",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/pirates_label_sub.png",
+				"codes": "upremains_pirates",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/volcano_label_sub.png",
+				"codes": "upremains_volcano",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/d8_label_sub.png",
+				"codes": "upremains_d8",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/suburbs_label_sub.png",
+				"codes": "upremains_suburbs",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/swamp_label_sub.png",
+				"codes": "upremains_swamp",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/lake_label_sub.png",
+				"codes": "upremains_lake",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/mtcucco_label_sub.png",
+				"codes": "upremains_mtcucco",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/horon_label_sub.png",
+				"codes": "upremains_horon",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/remains_label_sub.png",
+				"codes": "upremains_remains",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Upper Temple Remains Portal Selector Hidden",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 7,
+		"codes": "upremains_portal_selector_hidden",
+		"stages": [
+			{
+				"img": "images/labels/DX_unknown3.png",
+				"codes": "upremains_portal_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/mountain_label_sub.png",
+				"codes": "upremains_mountain_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/market_label_sub.png",
+				"codes": "upremains_market_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/furnace_label_sub.png",
+				"codes": "upremains_furnace_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/village_label_sub.png",
+				"codes": "upremains_village_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/pirates_label_sub.png",
+				"codes": "upremains_pirates_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/volcano_label_sub.png",
+				"codes": "upremains_volcano_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/d8_label_sub.png",
+				"codes": "upremains_d8_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/suburbs_label_sub.png",
+				"codes": "upremains_suburbs_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/swamp_label_sub.png",
+				"codes": "upremains_swamp_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/lake_label_sub.png",
+				"codes": "upremains_lake_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/mtcucco_label_sub.png",
+				"codes": "upremains_mtcucco_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/horon_label_sub.png",
+				"codes": "upremains_horon_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/remains_label_sub.png",
+				"codes": "upremains_remains_hidden",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Mountain Portal Selector",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 7,
+		"codes": "mountain_portal_selector",
+		"stages": [
+			{
+				"img": "images/labels/market_label_sub.png",
+				"codes": "mountain_market",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/furnace_label_sub.png",
+				"codes": "mountain_furnace",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/village_label_sub.png",
+				"codes": "mountain_village",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/pirates_label_sub.png",
+				"codes": "mountain_pirates",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/volcano_label_sub.png",
+				"codes": "mountain_volcano",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/d8_label_sub.png",
+				"codes": "mountain_d8",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/DX_unknown3.png",
+				"codes": "mountain_portal",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/suburbs_label_sub.png",
+				"codes": "mountain_suburbs",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/swamp_label_sub.png",
+				"codes": "mountain_swamp",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/lake_label_sub.png",
+				"codes": "mountain_lake",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/mtcucco_label_sub.png",
+				"codes": "mountain_mtcucco",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/horon_label_sub.png",
+				"codes": "mountain_horon",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/remains_label_sub.png",
+				"codes": "mountain_remains",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/upremains_label_sub.png",
+				"codes": "mountain_upremains",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Mountain Portal Selector Hidden",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 7,
+		"codes": "mountain_portal_selector_hidden",
+		"stages": [
+			{
+				"img": "images/labels/market_label_sub.png",
+				"codes": "mountain_market_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/furnace_label_sub.png",
+				"codes": "mountain_furnace_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/village_label_sub.png",
+				"codes": "mountain_village_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/pirates_label_sub.png",
+				"codes": "mountain_pirates_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/volcano_label_sub.png",
+				"codes": "mountain_volcano_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/d8_label_sub.png",
+				"codes": "mountain_d8_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/DX_unknown3.png",
+				"codes": "mountain_portal_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/suburbs_label_sub.png",
+				"codes": "mountain_suburbs_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/swamp_label_sub.png",
+				"codes": "mountain_swamp_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/lake_label_sub.png",
+				"codes": "mountain_lake_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/mtcucco_label_sub.png",
+				"codes": "mountain_mtcucco_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/horon_label_sub.png",
+				"codes": "mountain_horon_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/remains_label_sub.png",
+				"codes": "mountain_remains_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/upremains_label_sub.png",
+				"codes": "mountain_upremains_hidden",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Market Portal Selector",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 8,
+		"codes": "market_portal_selector",
+		"stages": [
+			{
+				"img": "images/labels/mountain_label_sub.png",
+				"codes": "market_mountain",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/furnace_label_sub.png",
+				"codes": "market_furnace",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/village_label_sub.png",
+				"codes": "market_village",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/pirates_label_sub.png",
+				"codes": "market_pirates",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/volcano_label_sub.png",
+				"codes": "market_volcano",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/d8_label_sub.png",
+				"codes": "market_d8",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/DX_unknown3.png",
+				"codes": "market_portal",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/suburbs_label_sub.png",
+				"codes": "market_suburbs",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/swamp_label_sub.png",
+				"codes": "market_swamp",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/lake_label_sub.png",
+				"codes": "market_lake",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/mtcucco_label_sub.png",
+				"codes": "market_mtcucco",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/horon_label_sub.png",
+				"codes": "market_horon",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/remains_label_sub.png",
+				"codes": "market_remains",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/upremains_label_sub.png",
+				"codes": "market_upremains",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Market Portal Selector Hidden",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 8,
+		"codes": "market_portal_selector_hidden",
+		"stages": [
+			{
+				"img": "images/labels/mountain_label_sub.png",
+				"codes": "market_mountain_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/furnace_label_sub.png",
+				"codes": "market_furnace_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/village_label_sub.png",
+				"codes": "market_village_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/pirates_label_sub.png",
+				"codes": "market_pirates_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/volcano_label_sub.png",
+				"codes": "market_volcano_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/d8_label_sub.png",
+				"codes": "market_d8_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/DX_unknown3.png",
+				"codes": "market_portal_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/suburbs_label_sub.png",
+				"codes": "market_suburbs_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/swamp_label_sub.png",
+				"codes": "market_swamp_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/lake_label_sub.png",
+				"codes": "market_lake_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/mtcucco_label_sub.png",
+				"codes": "market_mtcucco_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/horon_label_sub.png",
+				"codes": "market_horon_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/remains_label_sub.png",
+				"codes": "market_remains_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/upremains_label_sub.png",
+				"codes": "market_upremains_hidden",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Furnace Portal Selector",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 9,
+		"codes": "furnace_portal_selector",
+		"stages": [
+			{
+				"img": "images/labels/mountain_label_sub.png",
+				"codes": "furnace_mountain",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/market_label_sub.png",
+				"codes": "furnace_market",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/village_label_sub.png",
+				"codes": "furnace_village",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/pirates_label_sub.png",
+				"codes": "furnace_pirates",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/volcano_label_sub.png",
+				"codes": "furnace_volcano",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/d8_label_sub.png",
+				"codes": "furnace_d8",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/DX_unknown3.png",
+				"codes": "furnace_portal",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/suburbs_label_sub.png",
+				"codes": "furnace_suburbs",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/swamp_label_sub.png",
+				"codes": "furnace_swamp",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/lake_label_sub.png",
+				"codes": "furnace_lake",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/mtcucco_label_sub.png",
+				"codes": "furnace_mtcucco",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/horon_label_sub.png",
+				"codes": "furnace_horon",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/remains_label_sub.png",
+				"codes": "furnace_remains",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/upremains_label_sub.png",
+				"codes": "furnace_upremains",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Furnace Portal Selector Hidden",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 9,
+		"codes": "furnace_portal_selector_hidden",
+		"stages": [
+			{
+				"img": "images/labels/mountain_label_sub.png",
+				"codes": "furnace_mountain_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/market_label_sub.png",
+				"codes": "furnace_market_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/village_label_sub.png",
+				"codes": "furnace_village_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/pirates_label_sub.png",
+				"codes": "furnace_pirates_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/volcano_label_sub.png",
+				"codes": "furnace_volcano_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/d8_label_sub.png",
+				"codes": "furnace_d8_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/DX_unknown3.png",
+				"codes": "furnace_portal_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/suburbs_label_sub.png",
+				"codes": "furnace_suburbs_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/swamp_label_sub.png",
+				"codes": "furnace_swamp_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/lake_label_sub.png",
+				"codes": "furnace_lake_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/mtcucco_label_sub.png",
+				"codes": "furnace_mtcucco_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/horon_label_sub.png",
+				"codes": "furnace_horon_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/remains_label_sub.png",
+				"codes": "furnace_remains_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/upremains_label_sub.png",
+				"codes": "furnace_upremains_hidden",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Subrosian Village Portal Selector",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 10,
+		"codes": "village_portal_selector",
+		"stages": [
+			{
+				"img": "images/labels/mountain_label_sub.png",
+				"codes": "village_mountain",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/market_label_sub.png",
+				"codes": "village_market",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/furnace_label_sub.png",
+				"codes": "village_furnace",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/pirates_label_sub.png",
+				"codes": "village_pirates",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/volcano_label_sub.png",
+				"codes": "village_volcano",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/d8_label_sub.png",
+				"codes": "village_d8",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/DX_unknown3.png",
+				"codes": "village_portal",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/suburbs_label_sub.png",
+				"codes": "village_suburbs",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/swamp_label_sub.png",
+				"codes": "village_swamp",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/lake_label_sub.png",
+				"codes": "village_lake",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/mtcucco_label_sub.png",
+				"codes": "village_mtcucco",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/horon_label_sub.png",
+				"codes": "village_horon",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/remains_label_sub.png",
+				"codes": "village_remains",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/upremains_label_sub.png",
+				"codes": "village_upremains",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Subrosia Village Portal Selector Hidden",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 10,
+		"codes": "village_portal_selector_hidden",
+		"stages": [
+			{
+				"img": "images/labels/mountain_label_sub.png",
+				"codes": "village_mountain_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/market_label_sub.png",
+				"codes": "village_market_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/furnace_label_sub.png",
+				"codes": "village_furnace_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/pirates_label_sub.png",
+				"codes": "village_pirates_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/volcano_label_sub.png",
+				"codes": "village_volcano_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/d8_label_sub.png",
+				"codes": "village_d8_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/DX_unknown3.png",
+				"codes": "village_portal_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/suburbs_label_sub.png",
+				"codes": "village_suburbs_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/swamp_label_sub.png",
+				"codes": "village_swamp_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/lake_label_sub.png",
+				"codes": "village_lake_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/mtcucco_label_sub.png",
+				"codes": "village_mtcucco_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/horon_label_sub.png",
+				"codes": "village_horon_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/remains_label_sub.png",
+				"codes": "village_remains_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/upremains_label_sub.png",
+				"codes": "village_upremains_hidden",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Pirates Portal Selector",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 11,
+		"codes": "pirates_portal_selector",
+		"stages": [
+			{
+				"img": "images/labels/mountain_label_sub.png",
+				"codes": "pirates_mountain",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/market_label_sub.png",
+				"codes": "pirates_market",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/furnace_label_sub.png",
+				"codes": "pirates_furnace",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/village_label_sub.png",
+				"codes": "pirates_village",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/volcano_label_sub.png",
+				"codes": "pirates_volcano",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/d8_label_sub.png",
+				"codes": "pirates_d8",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/DX_unknown3.png",
+				"codes": "pirates_portal",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/suburbs_label_sub.png",
+				"codes": "pirates_suburbs",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/swamp_label_sub.png",
+				"codes": "pirates_swamp",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/lake_label_sub.png",
+				"codes": "pirates_lake",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/mtcucco_label_sub.png",
+				"codes": "pirates_mtcucco",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/horon_label_sub.png",
+				"codes": "pirates_horon",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/remains_label_sub.png",
+				"codes": "pirates_remains",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/upremains_label_sub.png",
+				"codes": "pirates_upremains",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Pirates Portal Selector Hidden",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 11,
+		"codes": "pirates_portal_selector_hidden",
+		"stages": [
+			{
+				"img": "images/labels/mountain_label_sub.png",
+				"codes": "pirates_mountain_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/market_label_sub.png",
+				"codes": "pirates_market_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/furnace_label_sub.png",
+				"codes": "pirates_furnace_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/village_label_sub.png",
+				"codes": "pirates_village_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/pirates_label_sub.png",
+				"codes": "pirates_pirates_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/volcano_label_sub.png",
+				"codes": "pirates_volcano_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/d8_label_sub.png",
+				"codes": "pirates_d8_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/DX_unknown3.png",
+				"codes": "pirates_portal_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/suburbs_label_sub.png",
+				"codes": "pirates_suburbs_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/swamp_label_sub.png",
+				"codes": "pirates_swamp_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/lake_label_sub.png",
+				"codes": "pirates_lake_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/mtcucco_label_sub.png",
+				"codes": "pirates_mtcucco_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/horon_label_sub.png",
+				"codes": "pirates_horon_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/remains_label_sub.png",
+				"codes": "pirates_remains_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/upremains_label_sub.png",
+				"codes": "pirates_upremains_hidden",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Volcano Portal Selector",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 12,
+		"codes": "volcano_portal_selector",
+		"stages": [
+			{
+				"img": "images/labels/mountain_label_sub.png",
+				"codes": "volcano_mountain",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/market_label_sub.png",
+				"codes": "volcano_market",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/furnace_label_sub.png",
+				"codes": "volcano_furnace",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/village_label_sub.png",
+				"codes": "volcano_village",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/pirates_label_sub.png",
+				"codes": "volcano_pirates",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/d8_label_sub.png",
+				"codes": "volcano_d8",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/DX_unknown3.png",
+				"codes": "volcano_portal",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/suburbs_label_sub.png",
+				"codes": "volcano_suburbs",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/swamp_label_sub.png",
+				"codes": "volcano_swamp",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/lake_label_sub.png",
+				"codes": "volcano_lake",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/mtcucco_label_sub.png",
+				"codes": "volcano_mtcucco",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/horon_label_sub.png",
+				"codes": "volcano_horon",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/remains_label_sub.png",
+				"codes": "volcano_remains",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/upremains_label_sub.png",
+				"codes": "volcano_upremains",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Volcano Portal Selector Hidden",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 12,
+		"codes": "volcano_portal_selector_hidden",
+		"stages": [
+			{
+				"img": "images/labels/mountain_label_sub.png",
+				"codes": "volcano_mountain_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/market_label_sub.png",
+				"codes": "volcano_market_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/furnace_label_sub.png",
+				"codes": "volcano_furnace_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/village_label_sub.png",
+				"codes": "volcano_village_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/pirates_label_sub.png",
+				"codes": "volcano_pirates_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/d8_label_sub.png",
+				"codes": "volcano_d8_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/DX_unknown3.png",
+				"codes": "volcano_portal_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/suburbs_label_sub.png",
+				"codes": "volcano_suburbs_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/swamp_label_sub.png",
+				"codes": "volcano_swamp_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/lake_label_sub.png",
+				"codes": "volcano_lake_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/mtcucco_label_sub.png",
+				"codes": "volcano_mtcucco_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/horon_label_sub.png",
+				"codes": "volcano_horon_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/remains_label_sub.png",
+				"codes": "volcano_remains_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/upremains_label_sub.png",
+				"codes": "volcano_upremains_hidden",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Sword and Shield Maze Portal Selector",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 13,
+		"codes": "d8_portal_selector",
+		"stages": [
+			{
+				"img": "images/labels/mountain_label_sub.png",
+				"codes": "d8_mountain",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/market_label_sub.png",
+				"codes": "d8_market",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/furnace_label_sub.png",
+				"codes": "d8_furnace",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/village_label_sub.png",
+				"codes": "d8_village",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/pirates_label_sub.png",
+				"codes": "d8_pirates",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/volcano_label_sub.png",
+				"codes": "d8_volcano",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/DX_unknown3.png",
+				"codes": "d8_portal",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/suburbs_label_sub.png",
+				"codes": "d8_suburbs",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/swamp_label_sub.png",
+				"codes": "d8_swamp",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/lake_label_sub.png",
+				"codes": "d8_lake",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/mtcucco_label_sub.png",
+				"codes": "d8_mtcucco",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/horon_label_sub.png",
+				"codes": "d8_horon",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/remains_label_sub.png",
+				"codes": "d8_remains",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/upremains_label_sub.png",
+				"codes": "d8_upremains",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Sword and Shield Maze Portal Selector Hidden",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 13,
+		"codes": "d8_portal_selector_hidden",
+		"stages": [
+			{
+				"img": "images/labels/mountain_label_sub.png",
+				"codes": "d8_mountain_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/market_label_sub.png",
+				"codes": "d8_market_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/furnace_label_sub.png",
+				"codes": "d8_furnace_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/village_label_sub.png",
+				"codes": "d8_village_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/pirates_label_sub.png",
+				"codes": "d8_pirates_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/volcano_label_sub.png",
+				"codes": "d8_volcano_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/DX_unknown3.png",
+				"codes": "d8_portal_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/suburbs_label_sub.png",
+				"codes": "d8_suburbs_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/swamp_label_sub.png",
+				"codes": "d8_swamp_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/lake_label_sub.png",
+				"codes": "d8_lake_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/mtcucco_label_sub.png",
+				"codes": "d8_mtcucco_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/horon_label_sub.png",
+				"codes": "d8_horon_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/remains_label_sub.png",
+				"codes": "d8_remains_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/upremains_label_sub.png",
+				"codes": "d8_upremains_hidden",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Randomized Dungeons Fill Selector",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"codes": "fill_dungeons",
+		"stages": [
+			{
+			"img": "images/labels/fill2.png",
+			"codes": "fill_dungeons_off",
+			"inherit_codes": false
+			},
+			{
+			"img": "images/labels/filled2.png",
+			"codes": "fill_dungeons_on",
+			"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Hero's Cave Dungeon Entrance",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 1,
+		"codes": "d0_ent_selector",
+		"stages": [
+			{
+				"img": "images/labels/DX_unknown.png",
+				"codes": "d0_ent",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D0_entrance.png",
+				"codes": "d0_d0",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D1_entrance.png",
+				"codes": "d1_d0",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D2_entrance.png",
+				"codes": "d2_d0",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D3_entrance.png",
+				"codes": "d3_d0",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D4_entrance.png",
+				"codes": "d4_d0",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D5_entrance.png",
+				"codes": "d5_d0",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D6_entrance.png",
+				"codes": "d6_d0",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D7_entrance.png",
+				"codes": "d7_d0",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D8_entrance.png",
+				"codes": "d8_d0",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Hero's Cave Dungeon Entrance Hidden",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 1,
+		"codes": "d0_ent_selector_hidden",
+		"stages": [
+			{
+				"img": "images/labels/DX_unknown.png",
+				"codes": "d0_ent_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D0_entrance_toggle.png",
+				"codes": "d0_d0_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D1_entrance_toggle.png",
+				"codes": "d1_d0_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D2_entrance_toggle.png",
+				"codes": "d2_d0_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D3_entrance_toggle.png",
+				"codes": "d3_d0_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D4_entrance_toggle.png",
+				"codes": "d4_d0_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D5_entrance_toggle.png",
+				"codes": "d5_d0_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D6_entrance_toggle.png",
+				"codes": "d6_d0_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D7_entrance_toggle.png",
+				"codes": "d7_d0_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D8_entrance_toggle.png",
+				"codes": "d8_d0_hidden",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Gnarled Root Dungeon Entrance",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 2,
+		"codes": "d1_ent_selector",
+		"stages": [
+			{
+				"img": "images/labels/DX_unknown.png",
+				"codes": "d1_ent",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D0_entrance.png",
+				"codes": "d0_d1",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D1_entrance.png",
+				"codes": "d1_d1",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D2_entrance.png",
+				"codes": "d2_d1",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D3_entrance.png",
+				"codes": "d3_d1",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D4_entrance.png",
+				"codes": "d4_d1",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D5_entrance.png",
+				"codes": "d5_d1",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D6_entrance.png",
+				"codes": "d6_d1",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D7_entrance.png",
+				"codes": "d7_d1",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D8_entrance.png",
+				"codes": "d8_d1",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Gnarled Root Dungeon Entrance Hidden",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 2,
+		"codes": "d1_ent_selector_hidden",
+		"stages": [
+			{
+				"img": "images/labels/DX_unknown.png",
+				"codes": "d1_ent_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D0_entrance_toggle.png",
+				"codes": "d0_d1_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D1_entrance_toggle.png",
+				"codes": "d1_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D2_entrance_toggle.png",
+				"codes": "d2_d1_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D3_entrance_toggle.png",
+				"codes": "d3_d1_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D4_entrance_toggle.png",
+				"codes": "d4_d1_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D5_entrance_toggle.png",
+				"codes": "d5_d1_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D6_entrance_toggle.png",
+				"codes": "d6_d1_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D7_entrance_toggle.png",
+				"codes": "d7_d1_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D8_entrance_toggle.png",
+				"codes": "d8_d1_hidden",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Snake's Remains Entrance",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 3,
+		"codes": "d2_ent_selector",
+		"stages": [
+			{
+				"img": "images/labels/DX_unknown.png",
+				"codes": "d2_ent",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D0_entrance.png",
+				"codes": "d0_d2",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D1_entrance.png",
+				"codes": "d1_d2",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D2_entrance.png",
+				"codes": "d2_d2",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D3_entrance.png",
+				"codes": "d3_d2",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D4_entrance.png",
+				"codes": "d4_d2",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D5_entrance.png",
+				"codes": "d5_d2",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D6_entrance.png",
+				"codes": "d6_d2",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D7_entrance.png",
+				"codes": "d7_d2",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D8_entrance.png",
+				"codes": "d8_d2",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Snake's Remains Entrance Hidden",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 3,
+		"codes": "d2_ent_selector_hidden",
+		"stages": [
+			{
+				"img": "images/labels/DX_unknown.png",
+				"codes": "d2_ent_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D0_entrance_toggle.png",
+				"codes": "d0_d2_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D1_entrance_toggle.png",
+				"codes": "d1_d2_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D2_entrance_toggle.png",
+				"codes": "d2_d2_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D3_entrance_toggle.png",
+				"codes": "d3_d2_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D4_entrance_toggle.png",
+				"codes": "d4_d2_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D5_entrance_toggle.png",
+				"codes": "d5_d2_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D6_entrance_toggle.png",
+				"codes": "d6_d2_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D7_entrance_toggle.png",
+				"codes": "d7_d2_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D8_entrance_toggle.png",
+				"codes": "d8_d2_hidden",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Poison Moth's Lair Entrance",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 4,
+		"codes": "d3_ent_selector",
+		"stages": [
+			{
+				"img": "images/labels/DX_unknown.png",
+				"codes": "d3_ent",
+			"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D0_entrance.png",
+				"codes": "d0_d3",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D1_entrance.png",
+				"codes": "d1_d3",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D2_entrance.png",
+				"codes": "d2_d3",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D3_entrance.png",
+				"codes": "d3_d3",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D4_entrance.png",
+				"codes": "d4_d3",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D5_entrance.png",
+				"codes": "d5_d3",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D6_entrance.png",
+				"codes": "d6_d3",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D7_entrance.png",
+				"codes": "d7_d3",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D8_entrance.png",
+				"codes": "d8_d3",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Poison Moth's Lair Entrance Hidden",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 4,
+		"codes": "d3_ent_selector_hidden",
+		"stages": [
+			{
+				"img": "images/labels/DX_unknown.png",
+				"codes": "d3_ent_hidden",
+			"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D0_entrance_toggle.png",
+				"codes": "d0_d3_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D1_entrance_toggle.png",
+				"codes": "d1_d3_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D2_entrance_toggle.png",
+				"codes": "d2_d3_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D3_entrance_toggle.png",
+				"codes": "d3_d3_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D4_entrance_toggle.png",
+				"codes": "d4_d3_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D5_entrance_toggle.png",
+				"codes": "d5_d3_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D6_entrance_toggle.png",
+				"codes": "d6_d3_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D7_entrance_toggle.png",
+				"codes": "d7_d3_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D8_entrance_toggle.png",
+				"codes": "d8_d3_hidden",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Dancing Dragon Dungeon Entrance",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 5,
+		"codes": "d4_ent_selector",
+		"stages": [
+			{
+				"img": "images/labels/DX_unknown.png",
+				"codes": "d4_ent",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D0_entrance.png",
+				"codes": "d0_d4",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D1_entrance.png",
+				"codes": "d1_d4",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D2_entrance.png",
+				"codes": "d2_d4",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D3_entrance.png",
+				"codes": "d3_d4",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D4_entrance.png",
+				"codes": "d4_d4",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D5_entrance.png",
+				"codes": "d5_d4",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D6_entrance.png",
+				"codes": "d6_d4",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D7_entrance.png",
+				"codes": "d7_d4",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D8_entrance.png",
+				"codes": "d8_d4",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Dancing Dragon Dungeon Entrance Hidden",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 5,
+		"codes": "d4_ent_selector_hidden",
+		"stages": [
+			{
+				"img": "images/labels/DX_unknown.png",
+				"codes": "d4_ent_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D0_entrance_toggle.png",
+				"codes": "d0_d4_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D1_entrance_toggle.png",
+				"codes": "d1_d4_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D2_entrance_toggle.png",
+				"codes": "d2_d4_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D3_entrance_toggle.png",
+				"codes": "3_d4_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D4_entrance_toggle.png",
+				"codes": "d4_d4_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D5_entrance_toggle.png",
+				"codes": "d5_d4_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D6_entrance_toggle.png",
+				"codes": "d6_d4_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D7_entrance_toggle.png",
+				"codes": "d7_d4_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D8_entrance_toggle.png",
+				"codes": "d8_d4_hidden",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Unicorn's Cave Entrance",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 6,
+		"codes": "d5_ent_selector",
+		"stages": [
+			{
+				"img": "images/labels/DX_unknown.png",
+				"codes": "d5_ent",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D0_entrance.png",
+				"codes": "d0_d5",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D1_entrance.png",
+				"codes": "d1_d5",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D2_entrance.png",
+				"codes": "d2_d5",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D3_entrance.png",
+				"codes": "d3_d5",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D4_entrance.png",
+				"codes": "d4_d5",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D5_entrance.png",
+				"codes": "d5_d5",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D6_entrance.png",
+				"codes": "d6_d5",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D7_entrance.png",
+				"codes": "d7_d5",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D8_entrance.png",
+				"codes": "d8_d5",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Unicorn's Cave Entrance Hidden",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 6,
+		"codes": "d5_ent_selector_hidden",
+		"stages": [
+			{
+				"img": "images/labels/DX_unknown.png",
+				"codes": "d5_ent_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D0_entrance_toggle.png",
+				"codes": "d0_d5_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D1_entrance_toggle.png",
+				"codes": "d1_d5_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D2_entrance_toggle.png",
+				"codes": "d2_d5_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D3_entrance_toggle.png",
+				"codes": "d3_d5_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D4_entrance_toggle.png",
+				"codes": "d4_d5_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D5_entrance_toggle.png",
+				"codes": "d5_d5_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D6_entrance_toggle.png",
+				"codes": "d6_d5_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D7_entrance_toggle.png",
+				"codes": "d7_d5_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D8_entrance_toggle.png",
+				"codes": "d8_d5_hidden",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Ancient Ruins Entrance",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 7,
+		"codes": "d6_ent_selector",
+		"stages": [
+			{
+				"img": "images/labels/DX_unknown.png",
+				"codes": "d6_ent",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D0_entrance.png",
+				"codes": "d0_d6",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D1_entrance.png",
+				"codes": "d1_d6",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D2_entrance.png",
+				"codes": "d2_d6",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D3_entrance.png",
+				"codes": "d3_d6",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D4_entrance.png",
+				"codes": "d4_d6",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D5_entrance.png",
+				"codes": "d5_d6",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D6_entrance.png",
+				"codes": "d6_d6",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D7_entrance.png",
+				"codes": "d7_d6",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D8_entrance.png",
+				"codes": "d8_d6",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Ancient Ruins Entrance Hidden",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 7,
+		"codes": "d6_ent_selector_hidden",
+		"stages": [
+			{
+				"img": "images/labels/DX_unknown.png",
+				"codes": "d6_ent_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D0_entrance_toggle.png",
+				"codes": "d0_d6_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D1_entrance_toggle.png",
+				"codes": "d1_d6_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D2_entrance_toggle.png",
+				"codes": "d2_d6_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D3_entrance_toggle.png",
+				"codes": "d3_d6_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D4_entrance_toggle.png",
+				"codes": "d4_d6_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D5_entrance_toggle.png",
+				"codes": "d5_d6_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D6_entrance_toggle.png",
+				"codes": "d6_d6_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D7_entrance_toggle.png",
+				"codes": "d7_d6_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D8_entrance_toggle.png",
+				"codes": "d8_d6_hidden",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Explorer's Crypt Entrance",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 8,
+		"codes": "d7_ent_selector",
+		"stages": [
+			{
+				"img": "images/labels/DX_unknown.png",
+				"codes": "d7_ent",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D0_entrance.png",
+				"codes": "d0_d7",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D1_entrance.png",
+				"codes": "d1_d7",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D2_entrance.png",
+				"codes": "d2_d7",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D3_entrance.png",
+				"codes": "d3_d7",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D4_entrance.png",
+				"codes": "d4_d7",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D5_entrance.png",
+				"codes": "d5_d7",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D6_entrance.png",
+				"codes": "d6_d7",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D7_entrance.png",
+				"codes": "d7_d7",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D8_entrance.png",
+				"codes": "d8_d7",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Explorer's Crypt Entrance Hidden",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 8,
+		"codes": "d7_ent_selector_hidden",
+		"stages": [
+			{
+				"img": "images/labels/DX_unknown.png",
+				"codes": "d7_ent_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D0_entrance_toggle.png",
+				"codes": "d0_d7_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D1_entrance_toggle.png",
+				"codes": "d1_d7_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D2_entrance_toggle.png",
+				"codes": "d2_d7_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D3_entrance_toggle.png",
+				"codes": "d3_d7_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D4_entrance_toggle.png",
+				"codes": "d4_d7_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D5_entrance_toggle.png",
+				"codes": "d5_d7_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D6_entrance_toggle.png",
+				"codes": "d6_d7_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D7_entrance_toggle.png",
+				"codes": "d7_d7_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D8_entrance_toggle.png",
+				"codes": "d8_d7_hidden",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Sword and Shield Maze Entrance",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 9 ,
+		"codes": "d8_ent_selector",
+		"stages": [
+			{
+				"img": "images/labels/DX_unknown.png",
+				"codes": "d8_ent",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D0_entrance.png",
+				"codes": "d0_d8",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D1_entrance.png",
+				"codes": "d1_d8",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D2_entrance.png",
+				"codes": "d2_d8",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D3_entrance.png",
+				"codes": "d3_d8",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D4_entrance.png",
+				"codes": "d4_d8",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D5_entrance.png",
+				"codes": "d5_d8",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D6_entrance.png",
+				"codes": "d6_d8",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D7_entrance.png",
+				"codes": "d7_d8",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D8_entrance.png",
+				"codes": "d8_d8",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Sword and Shield Maze Entrance Hidden",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 9 ,
+		"codes": "d8_ent_selector_hidden",
+		"stages": [
+			{
+				"img": "images/labels/DX_unknown.png",
+				"codes": "d8_ent_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D0_entrance_toggle.png",
+				"codes": "d0_d8_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D1_entrance_toggle.png",
+				"codes": "d1_d8_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D2_entrance_toggle.png",
+				"codes": "d2_d8_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D3_entrance_toggle.png",
+				"codes": "d3_d8_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D4_entrance_toggle.png",
+				"codes": "d4_d8_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D5_entrance_toggle.png",
+				"codes": "d5_d8_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D6_entrance_toggle.png",
+				"codes": "d6_d8_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D7_entrance_toggle.png",
+				"codes": "d7_d8_hidden",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D8_entrance_toggle.png",
+				"codes": "d8_d8_hidden",
+				"inherit_codes": false
+			}
+		]
+	}
+]

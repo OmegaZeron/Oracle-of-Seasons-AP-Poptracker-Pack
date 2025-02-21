@@ -68,19 +68,19 @@ SunkenCity:connect_one_way_entrance(Syrup, function()
 end, {SunkenDimitri})
 Syrup:connect_one_way(Syrup1, function()
 	return Any(
-		HasRupees(ShopPrices[SyrupShop1Price]),
+		HasRupees(ShopPrices[SyrupShopPrice]),
 		AccessibilityLevel.Inspect
 	)
 end, {SnakeRupeeRoom, AncientRupeeRoom})
 Syrup:connect_one_way(Syrup2, function()
 	return Any(
-		HasRupees(ShopPrices[SyrupShop2Price]),
+		HasRupees(ShopPrices[SyrupShopPrice]),
 		AccessibilityLevel.Inspect
 	)
 end, {SnakeRupeeRoom, AncientRupeeRoom})
 Syrup:connect_one_way(Syrup3, function()
 	return Any(
-		HasRupees(ShopPrices[SyrupShop3Price]),
+		HasRupees(ShopPrices[SyrupShopPrice]),
 		AccessibilityLevel.Inspect
 	)
 end, {SnakeRupeeRoom, AncientRupeeRoom})

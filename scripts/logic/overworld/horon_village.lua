@@ -40,19 +40,19 @@ Vasu:connect_one_way(VasuGift)
 HoronVillage:connect_two_ways_entrance(HoronShop)
 HoronShop:connect_one_way(HoronShop1, function()
 	return Any(
-		HasRupees(ShopPrices[HoronShop1Price]),
+		HasRupees(ShopPrices[HoronShopPrice]),
 		AccessibilityLevel.Inspect
 	)
 end, {SnakeRupeeRoom, AncientRupeeRoom})
 HoronShop:connect_one_way(HoronShop2, function()
 	return Any(
-		HasRupees(ShopPrices[HoronShop2Price]),
+		HasRupees(ShopPrices[HoronShopPrice]),
 		AccessibilityLevel.Inspect
 	)
 end, {SnakeRupeeRoom, AncientRupeeRoom})
 HoronShop:connect_one_way(HoronShop3, function()
 	return Any(
-		HasRupees(ShopPrices[HoronShop3Price]),
+		HasRupees(ShopPrices[HoronShopPrice]),
 		AccessibilityLevel.Inspect
 	)
 end, {SnakeRupeeRoom, AncientRupeeRoom})
@@ -61,7 +61,7 @@ MemberShop:connect_one_way(MembersShop1, function()
 	return Any(
 		All(
 			Has(MembersCard),
-			HasRupees(ShopPrices[MemberShop1Price])
+			HasRupees(ShopPrices[MemberShopPrice])
 		),
 		AccessibilityLevel.Inspect
 	)
@@ -70,7 +70,7 @@ MemberShop:connect_one_way(MembersShop2, function()
 	return Any(
 		All(
 			Has(MembersCard),
-			HasRupees(ShopPrices[MemberShop2Price])
+			HasRupees(ShopPrices[MemberShopPrice])
 		),
 		AccessibilityLevel.Inspect
 	)
@@ -79,7 +79,7 @@ MemberShop:connect_one_way(MembersShop3, function()
 	return Any(
 		All(
 			Has(MembersCard),
-			HasRupees(ShopPrices[MemberShop3Price])
+			HasRupees(ShopPrices[MemberShopPrice])
 		),
 		AccessibilityLevel.Inspect
 	)
@@ -87,19 +87,19 @@ end, {SnakeRupeeRoom, AncientRupeeRoom})
 HoronShop:connect_one_way_entrance(AdvanceShop)
 AdvanceShop:connect_one_way(AdvanceShop1, function()
 	return Any(
-		HasRupees(ShopPrices[AdvanceShop1Price]),
+		HasRupees(ShopPrices[AdvanceShopPrice]),
 		AccessibilityLevel.Inspect
 	)
 end, {SnakeRupeeRoom, AncientRupeeRoom})
 AdvanceShop:connect_one_way(AdvanceShop2, function()
 	return Any(
-		HasRupees(ShopPrices[AdvanceShop2Price]),
+		HasRupees(ShopPrices[AdvanceShopPrice]),
 		AccessibilityLevel.Inspect
 	)
 end, {SnakeRupeeRoom, AncientRupeeRoom})
 AdvanceShop:connect_one_way(AdvanceShop3, function()
 	return Any(
-		HasRupees(ShopPrices[AdvanceShop3Price]),
+		HasRupees(ShopPrices[AdvanceShopPrice]),
 		AccessibilityLevel.Inspect
 	)
 end, {SnakeRupeeRoom, AncientRupeeRoom})

@@ -284,7 +284,7 @@ end)
 
 -- Dungeon shuffle
 -- d1
-GnarledRootDungeon:connect_one_way_entrance(HerosCaveFoyer, function()
+GnarledRootDungeon:connect_two_ways_entrance(HerosCaveFoyer, function()
 	return All(
 		Has(ShuffleDungeonOn),
 		Has(D1LeadsToD0)
@@ -334,7 +334,7 @@ GnarledRootDungeon:connect_one_way_entrance(MazeFoyer, function()
 end)
 
 -- d5
-UnicornCave:connect_one_way_entrance(HerosCaveFoyer, function()
+UnicornCave:connect_two_ways_entrance(HerosCaveFoyer, function()
 	return All(
 		Has(ShuffleDungeonOn),
 		Has(D5LeadsToD0)

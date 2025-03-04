@@ -210,7 +210,7 @@ AncientRuins:connect_two_ways_entrance(AncientFoyer, function()
 end)
 
 -- dungeon shuffle
-AncientRuins:connect_one_way_entrance(HerosCaveFoyer, function()
+AncientRuins:connect_two_ways_entrance(HerosCaveFoyer, function()
 	return All(
 		Has(ShuffleDungeonOn),
 		Has(D6LeadsToD0)

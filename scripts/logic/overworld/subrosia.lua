@@ -208,7 +208,7 @@ SwordAndShieldMaze:connect_one_way_entrance(TempleRemainsUpperPortal, function()
 end)
 
 -- dungeon shuffle
-SwordAndShieldMaze:connect_one_way_entrance(HerosCaveFoyer, function()
+SwordAndShieldMaze:connect_two_ways_entrance(HerosCaveFoyer, function()
 	return All(
 		Has(ShuffleDungeonOn),
 		Has(D8LeadsToD0)

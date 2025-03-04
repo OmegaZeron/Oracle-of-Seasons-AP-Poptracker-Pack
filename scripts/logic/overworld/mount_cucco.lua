@@ -121,7 +121,7 @@ end)
 LowerMtCucco:connect_one_way_entrance(SunkenCity, function() return Has(Flippers) end)
 
 -- dungeon shuffle
-DancingDragonDungeon:connect_one_way_entrance(HerosCaveFoyer, function()
+DancingDragonDungeon:connect_two_ways_entrance(HerosCaveFoyer, function()
 	return All(
 		Has(ShuffleDungeonOn),
 		Has(D4LeadsToD0)

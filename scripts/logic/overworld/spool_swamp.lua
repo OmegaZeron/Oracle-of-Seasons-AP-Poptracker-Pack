@@ -243,7 +243,7 @@ PoisonMothLair:connect_one_way_entrance(GnarledFoyer, function()
 		Has(D3LeadsToD1)
 	)
 end)
-PoisonMothLair:connect_two_ways_entrance(SnakeFoyer, function()
+PoisonMothLair:connect_one_way_entrance(SnakeFoyer, function()
 	return All(
 		Has(ShuffleDungeonOn),
 		Has(D3LeadsToD2),

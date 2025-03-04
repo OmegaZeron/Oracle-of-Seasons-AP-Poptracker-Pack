@@ -209,7 +209,7 @@ WoodsOfWinterMushroomCave:connect_one_way(WoodsOfWinterMushroomCaveChest, functi
 end)
 
 -- dungeon shuffle
-SnakesRemains:connect_one_way_entrance(HerosCaveFoyer, function()
+SnakesRemains:connect_two_ways_entrance(HerosCaveFoyer, function()
 	return All(
 		Has(ShuffleDungeonOn),
 		Has(D2LeadsToD0)

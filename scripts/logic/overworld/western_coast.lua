@@ -155,102 +155,57 @@ end)
 
 -- Dungeon shuffle
 -- d0
-EastWesternCoast:connect_one_way_entrance(GnarledFoyer, function()
+HerosCave:connect_one_way_entrance(GnarledFoyer, function()
 	return All(
 		Has(ShuffleDungeonOn),
 		Has(D0LeadsToD1)
 	)
 end)
-EastWesternCoast:connect_two_ways_entrance(SnakeFoyer, function()
+HerosCave:connect_two_ways_entrance(SnakeFoyer, function()
 	return All(
 		Has(ShuffleDungeonOn),
 		Has(D0LeadsToD2)
 	)
 end)
-EastWesternCoast:connect_one_way_entrance(PoisonFoyer, function()
+HerosCave:connect_one_way_entrance(PoisonFoyer, function()
 	return All(
 		Has(ShuffleDungeonOn),
 		Has(D0LeadsToD3)
 	)
 end)
-EastWesternCoast:connect_one_way_entrance(DancingFoyer, function()
+HerosCave:connect_one_way_entrance(DancingFoyer, function()
 	return All(
 		Has(ShuffleDungeonOn),
 		Has(D0LeadsToD4)
 	)
 end)
-EastWesternCoast:connect_one_way_entrance(UnicornFoyer, function()
+HerosCave:connect_one_way_entrance(UnicornFoyer, function()
 	return All(
 		Has(ShuffleDungeonOn),
 		Has(D0LeadsToD5)
 	)
 end)
-EastWesternCoast:connect_one_way_entrance(AncientFoyer, function()
+HerosCave:connect_one_way_entrance(AncientFoyer, function()
 	return All(
 		Has(ShuffleDungeonOn),
 		Has(D0LeadsToD6)
 	)
 end)
-EastWesternCoast:connect_one_way_entrance(CryptFoyer, function()
+HerosCave:connect_one_way_entrance(CryptFoyer, function()
 	return All(
 		Has(ShuffleDungeonOn),
 		Has(D0LeadsToD7)
 	)
 end)
-EastWesternCoast:connect_one_way_entrance(MazeFoyer, function()
+HerosCave:connect_one_way_entrance(MazeFoyer, function()
 	return All(
 		Has(ShuffleDungeonOn),
 		Has(D0LeadsToD8)
 	)
 end)
 
--- dungeon shuffle
-HerosCaveFoyer:connect_one_way_entrance(GnarledRootDungeon, function()
-	return All(
-		Has(ShuffleDungeonOn),
-		Has(D1LeadsToD0)
-	)
-end)
-HerosCaveFoyer:connect_two_ways_entrance(SnakesRemains, function()
-	return All(
-		Has(ShuffleDungeonOn),
-		Has(D2LeadsToD0)
-	)
-end)
--- d3 is never linked because of infinite drowning
-HerosCaveFoyer:connect_one_way_entrance(DancingDragonDungeon, function()
-	return All(
-		Has(ShuffleDungeonOn),
-		Has(D4LeadsToD0)
-	)
-end)
-HerosCaveFoyer:connect_one_way_entrance(UnicornCave, function()
-	return All(
-		Has(ShuffleDungeonOn),
-		Has(D5LeadsToD0)
-	)
-end)
-HerosCaveFoyer:connect_one_way_entrance(AncientRuins, function()
-	return All(
-		Has(ShuffleDungeonOn),
-		Has(D6LeadsToD0)
-	)
-end)
-HerosCaveFoyer:connect_one_way_entrance(ExplorersCrypt, function()
-	return All(
-		Has(ShuffleDungeonOn),
-		Has(D7LeadsToD0)
-	)
-end)
-HerosCaveFoyer:connect_one_way_entrance(SwordAndShieldMaze, function()
-	return All(
-		Has(ShuffleDungeonOn),
-		Has(D8LeadsToD0)
-	)
-end)
-
 -- d7
-ExplorersCrypt:connect_one_way_entrance(HerosCaveFoyer, function()
+ExplorersCrypt:connect_two_ways_entrance(HerosCaveFoyer, function()
 	return All(
 		Has(ShuffleDungeonOn),
 		Has(D7LeadsToD0)

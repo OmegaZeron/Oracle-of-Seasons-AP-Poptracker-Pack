@@ -150,7 +150,6 @@ ShuffleGoldOresShuffled = "gold_ores_shuffled"
 
 -- Helpers
 HiddenGasha = "hidden_gasha"
-CanCreateFireworks = "hidden_fireworks"
 
 -- Shop Prices
 HoronShopPrice = "horonShop"

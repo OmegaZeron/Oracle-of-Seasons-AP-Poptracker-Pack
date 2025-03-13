@@ -122,11 +122,34 @@ function CanBeatOnox()
 end
 
 function CanBeatGanon()
-	return All(
-		Has(Slingshot),
-		Any(
+	return Any(
+		All(
+			-- casual rules
+			Has(NobleSword),
+			Has(Slingshot),
 			Has(EmberSeeds),
 			Has(MysterySeeds)
+		),
+		All(
+			Any(
+				IsMediumPlus(),
+				AccessibilityLevel.SequenceBreak
+			),
+			Has(WoodSword),
+			Any(
+				-- all seeds damage Twinrova phase 2
+				Has(Slingshot),
+				All(
+					Any(
+						Has(Hard),
+						AccessibilityLevel.SequenceBreak
+					),
+					Has(SeedSatchel),
+					-- all seeds other than Pegasus damage from satchel
+					HasContactSeeds(),
+					Has(GaleSeeds)
+				)
+			)
 		)
 	)
 end
@@ -137,10 +160,7 @@ function CanGoal()
 		CanBeatOnox(),
 		Any(
 			Has(OnoxGoal),
-			All(
-				Has(GanonGoal),
-				CanBeatGanon()
-			)
+			CanBeatGanon()
 		)
 	)
 end

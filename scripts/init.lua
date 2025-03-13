@@ -1,4 +1,4 @@
-if (PopVersion >= "0.30.2") then
+if (PopVersion >= "0.30.4") then
 	Tracker.AllowDeferredLogicUpdate = true
 end
 ScriptHost:LoadScript("scripts/logic/definition_helper.lua")

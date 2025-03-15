@@ -247,9 +247,9 @@ function OnSectionChanged(section)
 	if (GashaIDToLocation[section.FullID]) then
 		GashaIDToLocation[section.FullID].cleared = section.AccessibilityLevel == AccessibilityLevel.Cleared
 		
-		local hiddenGasha = Tracker:FindObjectForCode(HiddenGasha)
-		---@cast hiddenGasha JsonItem
-		hiddenGasha.Active = not hiddenGasha.Active
+		local hiddenSetting = Tracker:FindObjectForCode(HiddenSetting)
+		---@cast hiddenSetting JsonItem
+		hiddenSetting.Active = not hiddenSetting.Active
 	elseif (WildSeeds[section.FullID] and section.AccessibilityLevel == AccessibilityLevel.Cleared) then
 		Tracker:FindObjectForCode(WildSeeds[section.FullID]).Active = true
 	end

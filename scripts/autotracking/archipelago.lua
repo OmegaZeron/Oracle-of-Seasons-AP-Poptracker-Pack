@@ -29,6 +29,16 @@ function onClear(slot_data)
 			end
 		end
 	end
+	for _, dsLoc in pairs(DataStorageTable) do
+		local obj = Tracker:FindObjectForCode(dsLoc)
+		if (obj) then
+			if dsLoc:sub(1, 1) == "@" then
+				obj.AvailableChestCount = obj.ChestCount
+			else
+				obj.Active = false
+			end
+		end
+	end
 	-- reset items
 	for _, v in pairs(ITEM_DISPLAY_MAPPING) do
 		if v[1] and v[2] then
@@ -58,8 +68,10 @@ function onClear(slot_data)
 
 	if Archipelago.PlayerNumber > -1 then
 		HINTS_ID = "_read_hints_"..TEAM_NUMBER.."_"..PLAYER_ID
-		Archipelago:SetNotify({HINTS_ID})
-		Archipelago:Get({HINTS_ID})
+		DATA_STORAGE_ID = "OoS_"..TEAM_NUMBER.."_"..PLAYER_ID
+
+		Archipelago:SetNotify({HINTS_ID, DATA_STORAGE_ID})
+		Archipelago:Get({HINTS_ID, DATA_STORAGE_ID})
 	end
 
 	if slot_data["required_essences"] then
@@ -170,12 +182,13 @@ function onClear(slot_data)
 			ShopPrices[shop] = price
 		end
 	end
-	for k, v in pairs(slot_data["shop_costs"]) do
-		if (k:find("^subrosia")) then
-			ShopPrices[SubrosianMarketPrice] = ShopPrices[SubrosianMarketPrice] + v
+	if (slot_data["shop_costs"]) then
+		for k, v in pairs(slot_data["shop_costs"]) do
+			if (k:find("^subrosia")) then
+				ShopPrices[SubrosianMarketPrice] = ShopPrices[SubrosianMarketPrice] + v
+			end
 		end
 	end
-	print("Market:", ShopPrices[SubrosianMarketPrice])
 
 	-- if starting maps/compasses, auto collect
 	if (slot_data["starting_maps_compasses"] == 1) then
@@ -281,20 +294,31 @@ function onScout(location_id, location_name, item_id, item_name, item_player)
 end
 
 function onNotify(key, value, old_value)
-	-- print(string.format("called onNotify: %s, %s, %s", key, dump(value), old_value))
-	if value ~= old_value and key == HINTS_ID then
-		COLLECTED_HINTS = {}
-		for _, hint in ipairs(value) do
-			if not hint.found and hint.finding_player == Archipelago.PlayerNumber then
-				updateHints(hint.location, hint.item_flags)
+	if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
+		print(string.format("called onNotify: %s, %s, %s", key, dump(value), old_value))
+	end
+	if value ~= old_value then
+		if key == HINTS_ID then
+			COLLECTED_HINTS = {}
+			for _, hint in ipairs(value) do
+				if not hint.found and hint.finding_player == Archipelago.PlayerNumber then
+					updateHints(hint.location, hint.item_flags)
+				end
+			end
+		elseif key == DATA_STORAGE_ID then
+			for k, v in pairs(value) do
+				Tracker:FindObjectForCode(DataStorageTable[k]).AvailableChestCount = v and 0 or 1
 			end
 		end
-		Tracker:FindObjectForCode(HiddenGasha).Active = not Tracker:FindObjectForCode(HiddenGasha).Active
+		Tracker:FindObjectForCode(HiddenSetting).Active = not Tracker:FindObjectForCode(HiddenSetting).Active
 	end
+
 end
 
 function onNotifyLaunch(key, value)
-	-- print(string.format("Hint: %s", dump(value)))
+	if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
+		print(string.format("called onNotifyLaunch: %s, %s", key, dump(value)))
+	end
 	if key == HINTS_ID then
 		COLLECTED_HINTS = {}
 		for _, hint in ipairs(value) do
@@ -304,7 +328,12 @@ function onNotifyLaunch(key, value)
 				clearHints(hint.location)
 			end
 		end
-		Tracker:FindObjectForCode(HiddenGasha).Active = not Tracker:FindObjectForCode(HiddenGasha).Active
+		Tracker:FindObjectForCode(HiddenSetting).Active = not Tracker:FindObjectForCode(HiddenSetting).Active
+	elseif key == DATA_STORAGE_ID then
+		for k, v in pairs(value) do
+			Tracker:FindObjectForCode(DataStorageTable[k]).AvailableChestCount = v and 0 or 1
+		end
+		Tracker:FindObjectForCode(HiddenSetting).Active = not Tracker:FindObjectForCode(HiddenSetting).Active
 	end
 end
 

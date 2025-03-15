@@ -149,7 +149,7 @@ ShuffleGoldOresVanilla = "gold_ores_vanilla"
 ShuffleGoldOresShuffled = "gold_ores_shuffled"
 
 -- Helpers
-HiddenGasha = "hidden_gasha"
+HiddenSetting = "hidden_setting"
 
 -- Shop Prices
 HoronShopPrice = "horonShop"

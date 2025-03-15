@@ -1050,15 +1050,9 @@
 		"codes": "d8_compass"
 	},
 	{
-		"name": "Hidden Gasha",
+		"name": "Hidden Setting",
 		"type": "toggle",
 		"img": "images/items/compass.png",
-		"codes": "hidden_gasha"
-	},
-	{
-		"name": "Hidden Fireworks",
-		"type": "toggle",
-		"img": "images/items/compass.png",
-		"codes": "hidden_fireworks"
+		"codes": "hidden_setting"
 	}
 ]

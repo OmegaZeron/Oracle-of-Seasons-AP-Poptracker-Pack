@@ -20,6 +20,42 @@ GashaIDToLocation = {
 	["Eastern Suburbs/Samasa Desert Gasha Spot/Surrounded by Cacti"] = SamasaDesertGasha,
 	["Tarm Ruins/Tarm Ruins Gasha Spot/Dig It Up"] = TarmGasha
 }
+
+DataStorageTable = {
+	["Planted Mount Cucco Gasha Spot"] = "@Mount Cucco/Mount Cucco Gasha Spot/Behind Mushrooms",
+	["Harvested Mount Cucco Gasha Spot"] = "@Mount Cucco/Mount Cucco Gasha Spot/Harvested",
+	["Planted Tarm Ruins Gasha Spot"] = "@Tarm Ruins/Tarm Ruins Gasha Spot/Dig It Up",
+	["Harvested Tarm Ruins Gasha Spot"] = "@Tarm Ruins/Tarm Ruins Gasha Spot/Harvested",
+	["Planted Goron Mountain West Gasha Spot"] = "@Goron Mountain/Goron Mountain West Gasha Spot/Dig It Up",
+	["Harvested Goron Mountain West Gasha Spot"] = "@Goron Mountain/Goron Mountain West Gasha Spot/Harvested",
+	["Planted Goron Mountain East Gasha Spot"] = "@Goron Mountain/Goron Mountain East Gasha Spot/Under Rocks",
+	["Harvested Goron Mountain East Gasha Spot"] = "@Goron Mountain/Goron Mountain East Gasha Spot/Harvested",
+	["Planted Onox Gasha Spot"] = "@Holodrum Plain/Onox Gasha Spot/Dig It Up",
+	["Harvested Onox Gasha Spot"] = "@Holodrum Plain/Onox Gasha Spot/Harvested",
+	["Planted Sunken City Gasha Spot"] = "@Sunken City/Sunken City Gasha Spot/Near Master Diver",
+	["Harvested Sunken City Gasha Spot"] = "@Sunken City/Sunken City Gasha Spot/Harvested",
+	["Planted Holodrum Plain Island Gasha Spot"] = "@Holodrum Plain/Holodrum Plain Island Gasha Spot/Under Bushes",
+	["Harvested Holodrum Plain Island Gasha Spot"] = "@Holodrum Plain/Holodrum Plain Island Gasha Spot/Harvested",
+	["Planted Spool Swamp North Gasha Spot"] = "@Spool Swamp/Spool Swamp North Gasha Spot/Near Keyhole",
+	["Harvested Spool Swamp North Gasha Spot"] = "@Spool Swamp/Spool Swamp North Gasha Spot/Harvested",
+	["Planted Eyeglass Lake Gasha Spot"] = "@North Horon/Eyeglass Lake Gasha Spot/Near D5",
+	["Harvested Eyeglass Lake Gasha Spot"] = "@North Horon/Eyeglass Lake Gasha Spot/Harvested",
+	["Planted Lower Holodrum Plain Gasha Spot"] = "@Holodrum Plain/Lower Holodrum Plain Gasha Spot/Dig It Up",
+	["Harvested Lower Holodrum Plain Gasha Spot"] = "@Holodrum Plain/Lower Holodrum Plain Gasha Spot/Harvested",
+	["Planted North Horon Gasha Spot"] = "@North Horon/North Horon Gasha Spot/Near Impa",
+	["Harvested North Horon Gasha Spot"] = "@North Horon/North Horon Gasha Spot/Harvested",
+	["Planted Eastern Suburbs Gasha Spot"] = "@Eastern Suburbs/Eastern Suburbs Gasha Spot/Under Bushes",
+	["Harvested Eastern Suburbs Gasha Spot"] = "@Eastern Suburbs/Eastern Suburbs Gasha Spot/Harvested",
+	["Planted Spool Swamp South Gasha Spot"] = "@Spool Swamp/Spool Swamp South Gasha Spot/Near Portal",
+	["Harvested Spool Swamp South Gasha Spot"] = "@Spool Swamp/Spool Swamp South Gasha Spot/Harvested",
+	["Planted Samasa Desert Gasha Spot"] = "@Eastern Suburbs/Samasa Desert Gasha Spot/Surrounded by Cacti",
+	["Harvested Samasa Desert Gasha Spot"] = "@Eastern Suburbs/Samasa Desert Gasha Spot/Harvested",
+	["Planted Western Coast Gasha Spot"] = "@Western Coast/Western Coast Gasha Spot/Near Graveyard",
+	["Harvested Western Coast Gasha Spot"] = "@Western Coast/Western Coast Gasha Spot/Harvested",
+	["Planted Horon Village Gasha Spot"] = "@Horon Village/Horon Village Gasha Spot/Near Mayor",
+	["Harvested Horon Village Gasha Spot"] = "@Horon Village/Horon Village Gasha Spot/Harvested",
+}
+
 JewelKeys = {RoundJewel, SquareJewel, PyramidJewel, XJewel}
 LostWoodsDefault = {3, 2, 0, 1}
 

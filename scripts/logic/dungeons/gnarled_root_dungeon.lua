@@ -8,7 +8,7 @@ Aquamentus:connect_one_way(GnarledEssence, function()
 		CanArmorKill(),
 		All(
 			Has(Bombs),
-			All(
+			Any(
 				Has(Bombs40),
 				AccessibilityLevel.SequenceBreak
 			),
@@ -20,9 +20,7 @@ Aquamentus:connect_one_way(GnarledEssence, function()
 	)
 end)
 -- 1 key
-GnarledFoyer:connect_one_way_entrance(GnarledLeftStalfos, function()
-	return D1KeyCount(1)
-end)
+GnarledFoyer:connect_one_way_entrance(GnarledLeftStalfos, function() return D1KeyCount(1) end)
 GnarledLeftStalfos:connect_one_way(GnarledLeftStalfosChest, CanKillStalfos)
 GnarledLeftStalfos:connect_one_way_entrance(GnarledZolRoom, CanKillStalfos)
 GnarledZolRoom:connect_one_way_entrance(GnarledGoriyaRoom, CanLightTorches)

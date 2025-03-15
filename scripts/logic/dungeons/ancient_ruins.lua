@@ -86,24 +86,29 @@ AncientFoyer:connect_one_way(AncientNorthOfSpinnerChest, function()
 			D6KeyCount(3),
 			All(
 				D6KeyCount(2),
-				CanBombWall()
+				Any(
+					CanBombWall(),
+					CanReach(Vire)
+				)
 			),
 			All(
 				D6KeyCount(1),
-				AccessibilityLevel.SequenceBreak
+				Any(
+					All(
+						CanBombWall(),
+						CanReach(Vire)
+					),
+					AccessibilityLevel.SequenceBreak
+				)
 			)
 		)
 	)
-end)
+end, {Vire})
 AncientVireDoorstep:connect_one_way_entrance(Vire, function()
 	return All(
-		Any(
-			D6KeyCount(3),
-			All(
-				D6KeyCount(1),
-				AccessibilityLevel.SequenceBreak
-			)
-		),
+		-- only 1 key here because you can't do anything special by getting here
+		-- other than opening the miniboss portal, which can get you to spinner north
+		D6KeyCount(1),
 		Any(
 			Has(WoodSword),
 			Has(FoolsOre)
@@ -112,6 +117,10 @@ AncientVireDoorstep:connect_one_way_entrance(Vire, function()
 end)
 Vire:connect_one_way_entrance(AncientBossDoor, function()
 	return All(
+		Any(
+			D6KeyCount(3),
+			AccessibilityLevel.SequenceBreak
+		),
 		Has(Feather),
 		Any(
 			Has(MagnetGlove),

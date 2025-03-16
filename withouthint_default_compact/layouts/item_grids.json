@@ -234,10 +234,10 @@
 				"rows": [
 					["logic_label", "logiclevel", "goal_label", "goal", "dungeon_shuffle_label", "shuffledungeonoff", "portal_shuffle_label", "portalshuffleoff"],
 					["onox_essences_label", "onox_essences", "old_man_essences_label", "oldmanessences", "sign_guy_requirement", "goldenbeastsrequired", "gashareq", "jewelreq"],
-					["small_keysanity_label", "small_keysanity", "boss_keysanity_label", "boss_keysanity", "master_keys_label", "master_keys", "treewarp_label", "notreewarp"],
+					["small_keysanity_label", "small_keysanity", "boss_keysanity_label", "boss_keysanity", "master_keys_label", "master_keys", "secret_locations_label", "secrets_off"],
 					["horon_shop_potion_label", "horon_shop_potion", "advance_shop_label", "advance_shop", "shuffle_old_men_label", "shuffle_old_men", "gold_ore_label", "shuffle_gold_ores"],
 					["default_seasons_label", "defaultseasonsoff", "horon_village_season_label", "horon_village_season_shuffle", "d0_alt_entrance_label", "d0_alt_entrance", "d2_alt_entrance_label", "d2_alt_entrance"],
-					["lost_woods_label", "shuffle_lost_woods", "pedestal_label", "shuffle_pedestal"]
+					["lost_woods_label", "shuffle_lost_woods", "pedestal_label", "shuffle_pedestal", "shuffle_scrub_label", "shufflescrubs"]
 				]
 			}
 		]

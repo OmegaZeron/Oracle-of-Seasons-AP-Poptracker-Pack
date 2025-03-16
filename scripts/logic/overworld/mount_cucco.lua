@@ -25,7 +25,7 @@ LowerMtCucco:connect_one_way_entrance(CuccoRightMountain, function()
 			),
 			Any(
 				-- cucco clip
-				Has(Hard),
+				HardLogic(),
 				AccessibilityLevel.SequenceBreak
 			)
 		)

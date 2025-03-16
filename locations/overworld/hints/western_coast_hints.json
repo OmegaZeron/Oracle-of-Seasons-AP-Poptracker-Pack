@@ -133,6 +133,25 @@
 				]
 			},
 			{
+				"name": "Graveyard Secret Hint",
+				"sections": [
+					{
+						"name": "Color Challenge",
+						"visibility_rules": ["Western Coast/Graveyard Secret/Color Challenge"],
+						"access_rules": ["^$HasHint|Western Coast/Graveyard Secret/Color Challenge"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 22,
+						"y": 620,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
 				"name": "Graveyard Mushroom Item Hint",
 				"sections": [
 					{

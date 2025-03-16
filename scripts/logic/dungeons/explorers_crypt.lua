@@ -3,7 +3,7 @@ CryptFoyer:connect_one_way(CryptWildEmbers, function()
 	return All(
 		CanDestroyRespawningBush(),
 		Any(
-			IsMediumPlus(),
+			MediumLogic(),
 			AccessibilityLevel.SequenceBreak
 		)
 	)
@@ -19,7 +19,7 @@ Crypt1FLeftOfPoe:connect_one_way_entrance(CryptSurroundedByArmos, function()
 		Has(SeedSatchel),
 		Has(PegasusSeeds),
 		Any(
-			Has(Hard),
+			HardLogic(),
 			AccessibilityLevel.SequenceBreak
 		)
 	)
@@ -84,7 +84,7 @@ CryptPoeTrampoline:connect_one_way_entrance(CryptPoe2, function()
 		Has(EmberSeeds),
 		Any(
 			Has(PegasusSeeds),
-			Has(Hard),
+			HardLogic(),
 			AccessibilityLevel.SequenceBreak
 		)
 	)
@@ -100,7 +100,7 @@ CryptDarknutBridge:connect_one_way_entrance(CryptDarknutBridgeTrampolines, funct
 			Has(Feather),
 			Has(MagnetGlove),
 			Any(
-				Has(Hard),
+				HardLogic(),
 				AccessibilityLevel.SequenceBreak
 			)
 		)
@@ -123,7 +123,7 @@ CryptDarknutBridge:connect_one_way_entrance(CryptPastDarknutBridge, function()
 				CanArmorKill(),
 				Has(Shield),
 				Has(Bombchus20),
-				IsMediumPlus(),
+				MediumLogic(),
 				AccessibilityLevel.SequenceBreak
 			)
 		)
@@ -169,7 +169,7 @@ CryptStairMaze:connect_one_way_entrance(CryptWizzrobeStalfosRoom, function()
 		All(
 			Jump6(),
 			Any(
-				Has(Hard),
+				HardLogic(),
 				AccessibilityLevel.SequenceBreak
 			)
 		)
@@ -201,7 +201,7 @@ CryptStairMaze:connect_one_way_entrance(CryptJumpingStalfos, function()
 			All(
 				Has(Feather),
 				Any(
-					Has(Hard),
+					HardLogic(),
 					AccessibilityLevel.SequenceBreak
 				)
 			)

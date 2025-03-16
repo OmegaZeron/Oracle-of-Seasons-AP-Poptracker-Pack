@@ -26,6 +26,25 @@
 				]
 			},
 			{
+				"name": "Diver Secret Hint",
+				"sections": [
+					{
+						"name": "Underwater Race",
+						"visibility_rules": ["Sunken City/Diver Secret/Underwater Race"],
+						"access_rules": ["^$HasHint|Sunken City/Diver Secret/Underwater Race"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 595,
+						"y": 240,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
 				"name": "Ingo's House Hint",
 				"sections": [
 					{

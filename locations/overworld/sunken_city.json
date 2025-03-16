@@ -45,6 +45,23 @@
 				]
 			},
 			{
+				"name": "Diver Secret",
+				"sections": [
+					{
+						"name": "Underwater Race",
+						"visibility_rules": ["secrets_on"],
+						"access_rules": ["^$CanReach|DiverSecret"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 585,
+						"y": 230
+					}
+				]
+			},
+			{
 				"name": "Ingo's House",
 				"sections": [
 					{

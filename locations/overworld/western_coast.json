@@ -187,6 +187,23 @@
 				]
 			},
 			{
+				"name": "Graveyard Secret",
+				"sections": [
+					{
+						"name": "Color Challenge",
+						"visibility_rules": ["secrets_on"],
+						"access_rules": ["^$CanReach|GraveyardSecret"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 12,
+						"y": 610
+					}
+				]
+			},
+			{
 				"name": "Graveyard Mushroom Item",
 				"sections": [
 					{

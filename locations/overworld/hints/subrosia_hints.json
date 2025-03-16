@@ -9,9 +9,14 @@
 				"name": "Temple of Seasons Hint",
 				"sections": [
 					{
-						"name": "Subrosia: Temple of Seasons",
-						"visibility_rules": ["Subrosia/Temple of Seasons/Temple of Seasons"],
-						"access_rules": ["^$HasHint|Subrosia/Temple of Seasons/Temple of Seasons"]
+						"name": "Rod of Seasons",
+						"visibility_rules": ["Subrosia/Temple of Seasons/Rod of Seasons"],
+						"access_rules": ["^$HasHint|Subrosia/Temple of Seasons/Rod of Seasons"]
+					},
+					{
+						"name": "Temple Secret",
+						"visibility_rules": ["Subrosia/Temple of Seasons/Temple Secret"],
+						"access_rules": ["^$HasHint|Subrosia/Temple of Seasons/Temple Secret"]
 					}
 				],
 				"map_locations": [
@@ -104,14 +109,19 @@
 				"name": "Subrosian Smithy Hints",
 				"sections": [
 					{
-						"name": "Subrosia: Smithy Hard Ore Reforge",
+						"name": "Smithy Hard Ore Reforge",
 						"visibility_rules": ["Subrosia/Subrosian Smithy/Smithy Hard Ore Reforge"],
 						"access_rules": ["^$HasHint|Subrosia/Subrosian Smithy/Smithy Hard Ore Reforge"]
 					},
 					{
-						"name": "Subrosia: Smithy Rusty Bell Reforge",
+						"name": "Smithy Rusty Bell Reforge",
 						"visibility_rules": ["Subrosia/Subrosian Smithy/Smithy Rusty Bell Reforge"],
 						"access_rules": ["^$HasHint|Subrosia/Subrosian Smithy/Smithy Rusty Bell Reforge"]
+					},
+					{
+						"name": "Smith Secret",
+						"visibility_rules": ["Subrosia/Subrosian Smithy/Smith Secret"],
+						"access_rules": ["^$HasHint|Subrosia/Subrosian Smithy/Smith Secret"]
 					}
 				],
 				"map_locations": [
@@ -119,6 +129,25 @@
 						"map": "subrosia",
 						"x": 600,
 						"y": 451,
+						"size": 17,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Subrosian Secret Hint",
+				"sections": [
+					{
+						"name": "Boomerang Challenge",
+						"visibility_rules": ["Subrosia/Subrosian Secret/Boomerang Challenge"],
+						"access_rules": ["^$HasHint|Subrosia/Subrosian Secret/Boomerang Challenge"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "subrosia",
+						"x": 778,
+						"y": 116,
 						"size": 17,
 						"shape": "diamond"
 					}
@@ -426,6 +455,24 @@
 						"map": "subrosia",
 						"x": 200,
 						"y": 553,
+						"size": 17,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Pirate Secret Hint",
+				"sections": [
+					{
+						"visibility_rules": ["Subrosia/Pirate Secret/"],
+						"access_rules": ["^$HasHint|Subrosia/Pirate Secret/"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "subrosia",
+						"x": 389,
+						"y": 998,
 						"size": 17,
 						"shape": "diamond"
 					}

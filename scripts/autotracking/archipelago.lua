@@ -92,9 +92,6 @@ function onClear(slot_data)
 	if slot_data["shuffle_dungeons"] then
 		Tracker:FindObjectForCode("dungeonshuffle").CurrentStage = slot_data["shuffle_dungeons"]
 	end
-	if slot_data["warp_to_start"] then
-		Tracker:FindObjectForCode("treewarp").CurrentStage = slot_data["warp_to_start"]
-	end
 	if slot_data["shuffle_portals"] then
 		Tracker:FindObjectForCode("portalshuffle").CurrentStage = slot_data["shuffle_portals"]
 	end
@@ -139,6 +136,9 @@ function onClear(slot_data)
 	end
 	if slot_data["sign_guy_requirement"] then
 		Tracker:FindObjectForCode("sign_guy_requirement").CurrentStage = slot_data["sign_guy_requirement"]
+	end
+	if slot_data["secret_locations"] then
+		Tracker:FindObjectForCode("secrets").CurrentStage = slot_data["secret_locations"]
 	end
 	
 	if slot_data["animal_companion"] == "Ricky" then

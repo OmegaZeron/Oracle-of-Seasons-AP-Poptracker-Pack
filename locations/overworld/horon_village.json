@@ -93,6 +93,11 @@
 					{
 						"name": "Item Behind Cracked Wall in Mayor's House",
 						"access_rules": ["^$CanReach|MayorBombWall"]
+					},
+					{
+						"name": "Mayor Secret",
+						"visibility_rules": ["secrets_on"],
+						"access_rules": ["^$CanReach|MayorSecret"]
 					}
 				],
 				"map_locations": [
@@ -360,6 +365,23 @@
 						"map": "holodrum",
 						"x": 315,
 						"y": 575
+					}
+				]
+			},
+			{
+				"name": "Clock Shop Secret",
+				"visibility_rules": ["secrets_on"],
+				"sections": [
+					{
+						"name": "Combat Challenge",
+						"access_rules": ["^$CanReach|ClockShopSecret"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 325,
+						"y": 555
 					}
 				]
 			},

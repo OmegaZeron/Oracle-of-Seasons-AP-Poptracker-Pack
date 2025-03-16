@@ -4,7 +4,7 @@ PoisonFoyer:connect_one_way_entrance(PoisonCentral, function()
 		CanKillSpinyBeetle(),
 		All(
 			Any(
-				IsMediumPlus(),
+				MediumLogic(),
 				AccessibilityLevel.SequenceBreak
 			),
 			CanFlipBeetle(),
@@ -62,7 +62,7 @@ Omuai:connect_one_way(PoisonBladeTrapChest, function()
 	return Any(
 		Has(Feather),
 		Any(
-			Has(Hard),
+			HardLogic(),
 			AccessibilityLevel.SequenceBreak
 		)
 	)

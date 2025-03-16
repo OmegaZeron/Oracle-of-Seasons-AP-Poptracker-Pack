@@ -91,6 +91,11 @@
 						"name": "Item Behind Cracked Wall in Mayor's House",
 						"visibility_rules": ["Horon Village/Mayor's House/Item Behind Cracked Wall in Mayor's House"],
 						"access_rules": ["^$HasHint|Horon Village/Mayor's House/Item Behind Cracked Wall in Mayor's House"]
+					},
+					{
+						"name": "Mayor Secret",
+						"visibility_rules": ["Horon Village/Mayor's House/Mayor Secret"],
+						"access_rules": ["^$HasHint|Horon Village/Mayor's House/Mayor Secret"]
 					}
 				],
 				"map_locations": [
@@ -367,6 +372,25 @@
 						"map": "holodrum",
 						"x": 325,
 						"y": 585,
+						"size": 10,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Clock Shop Secret Hint",
+				"sections": [
+					{
+						"name": "Combat Challenge",
+						"visibility_rules": ["Horon Village/Clock Shop Secret/Combat Challenge"],
+						"access_rules": ["^$HasHint|Horon Village/Clock Shop Secret/Combat Challenge"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 335,
+						"y": 545,
 						"size": 10,
 						"shape": "diamond"
 					}

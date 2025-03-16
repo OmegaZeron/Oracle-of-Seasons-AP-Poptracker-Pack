@@ -82,7 +82,7 @@ UpperNorthHoron:connect_one_way_entrance(EyeglassLake, function()
 		Any(
 			Has(Flippers),
 			All(
-				IsMediumPlus(),
+				MediumLogic(),
 				Dimitri(),
 				Has(Bracelet)
 			)
@@ -246,7 +246,7 @@ UpperNorthHoron:connect_one_way_entrance(UnicornCave, function()
 		Any(
 			Has(Flippers),
 			All(
-				IsMediumPlus(),
+				MediumLogic(),
 				Dimitri(),
 				Has(Bracelet)
 			)

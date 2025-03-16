@@ -290,9 +290,9 @@
 		"codes": "Subrosia/Subrosian Dance Hall/Dance Hall Reward"
 	},
 	{
-		"name": "Subrosia/Temple of Seasons/Temple of Seasons",
+		"name": "Subrosia/Temple of Seasons/Rod of Seasons",
 		"type": "toggle",
-		"codes": "Subrosia/Temple of Seasons/Temple of Seasons"
+		"codes": "Subrosia/Temple of Seasons/Rod of Seasons"
 	},
 	{
 		"name": "Subrosia/Subrosian Seaside/Seaside Digging Spot",
@@ -935,9 +935,9 @@
 		"codes": "Subrosia/Subrosian Chef's Kitchen/Subrosian Chef Trade"
 	},
 	{
-		"name": "Goron Mountain/Biggoron Trade/Biggoron Trade",
+		"name": "Goron Mountain/Biggoron/Biggoron Trade",
 		"type": "toggle",
-		"codes": "Goron Mountain/Biggoron Trade/Biggoron Trade"
+		"codes": "Goron Mountain/Biggoron/Biggoron Trade"
 	},
 	{
 		"name": "Sunken City/Ingo's House/Vase Trade",
@@ -1228,5 +1228,55 @@
 		"name": "Horon Village/Gasha Spots/Gasha Spot #16",
 		"type": "toggle",
 		"codes": "Horon Village/Gasha Spots/Gasha Spot #16"
+	},
+	{
+		"name": "Horon Village/Clock Shop Secret/Combat Challenge",
+		"type": "toggle",
+		"codes": "Horon Village/Clock Shop Secret/Combat Challenge"
+	},
+	{
+		"name": "Western Coast/Graveyard Secret/Color Challenge",
+		"type": "toggle",
+		"codes": "Western Coast/Graveyard Secret/Color Challenge"
+	},
+	{
+		"name": "Subrosia/Subrosian Secret/Boomerang Challenge",
+		"type": "toggle",
+		"codes": "Subrosia/Subrosian Secret/Boomerang Challenge"
+	},
+	{
+		"name": "Sunken City/Diver Secret/Underwater Race",
+		"type": "toggle",
+		"codes": "Sunken City/Diver Secret/Underwater Race"
+	},
+	{
+		"name": "Subrosia/Subrosian Smithy/Smith Secret",
+		"type": "toggle",
+		"codes": "Subrosia/Subrosian Smithy/Smith Secret"
+	},
+	{
+		"name": "Subrosia/Pirate Secret/",
+		"type": "toggle",
+		"codes": "Subrosia/Pirate Secret/"
+	},
+	{
+		"name": "Subrosia/Temple of Seasons/Temple Secret",
+		"type": "toggle",
+		"codes": "Subrosia/Temple of Seasons/Temple Secret"
+	},
+	{
+		"name": "Holodrum Plain/Deku Secret/Seed Master",
+		"type": "toggle",
+		"codes": "Holodrum Plain/Deku Secret/Seed Master"
+	},
+	{
+		"name": "Goron Mountain/Biggoron/Biggoron Secret",
+		"type": "toggle",
+		"codes": "Goron Mountain/Biggoron/Biggoron Secret"
+	},
+	{
+		"name": "Horon Village/Mayor's House/Mayor Secret",
+		"type": "toggle",
+		"codes": "Horon Village/Mayor's House/Mayor Secret"
 	}
 ]

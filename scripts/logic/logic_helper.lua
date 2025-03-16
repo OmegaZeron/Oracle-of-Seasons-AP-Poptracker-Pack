@@ -1,6 +1,9 @@
-function IsMediumPlus()
+function MediumLogic()
 	return Has(Medium) or
-	Has(Hard)
+	HardLogic()
+end
+function HardLogic()
+	return Has(Hard)
 end
 
 function HasSword()
@@ -45,7 +48,7 @@ function CanBombWall()
 				)
 			),
 			Any(
-				IsMediumPlus(),
+				MediumLogic(),
 				AccessibilityLevel.SequenceBreak
 			)
 		)
@@ -114,7 +117,7 @@ function CanBeatOnox()
 		Any(
 			HasRod(),
 			Any(
-				Has(Hard),
+				HardLogic(),
 				AccessibilityLevel.SequenceBreak
 			)
 		)
@@ -132,7 +135,7 @@ function CanBeatGanon()
 		),
 		All(
 			Any(
-				IsMediumPlus(),
+				MediumLogic(),
 				AccessibilityLevel.SequenceBreak
 			),
 			Has(WoodSword),
@@ -141,7 +144,7 @@ function CanBeatGanon()
 				Has(Slingshot),
 				All(
 					Any(
-						Has(Hard),
+						HardLogic(),
 						AccessibilityLevel.SequenceBreak
 					),
 					Has(SeedSatchel),
@@ -285,7 +288,7 @@ function CanShootSeedsCombat()
 			Has(ScentSeeds),
 			All(
 				Any(
-					IsMediumPlus(),
+					MediumLogic(),
 					AccessibilityLevel.SequenceBreak
 				),
 				Any(
@@ -314,7 +317,7 @@ function CanLightTorches()
 			All(
 				Has(MysterySeeds),
 				Any(
-					IsMediumPlus(),
+					MediumLogic(),
 					AccessibilityLevel.SequenceBreak
 				)
 			)
@@ -340,7 +343,7 @@ function CanDestroyBush(allowBombchus)
 		),
 		All(
 			Any(
-				IsMediumPlus(),
+				MediumLogic(),
 				AccessibilityLevel.SequenceBreak
 			),
 			Any(
@@ -390,7 +393,7 @@ function CanDestroyFlower()
 		Has(MagicBoomerang),
 		All(
 			Any(
-				IsMediumPlus(),
+				MediumLogic(),
 				AccessibilityLevel.SequenceBreak
 			),
 			Any(
@@ -427,7 +430,7 @@ function CanDestroyCrystal()
 		All(
 			Has(ExpertsRing),
 			Any(
-				Has(Hard),
+				HardLogic(),
 				AccessibilityLevel.SequenceBreak
 			)
 		)
@@ -440,7 +443,7 @@ function CanDestroyRespawningBush()
 		All(
 			Has(Bombs),
 			Any(
-				IsMediumPlus(),
+				MediumLogic(),
 				AccessibilityLevel.SequenceBreak
 			)
 		)
@@ -453,7 +456,7 @@ function CanTriggerLever()
 		All(
 			Has(Shovel),
 			Any(
-				IsMediumPlus(),
+				MediumLogic(),
 				AccessibilityLevel.SequenceBreak
 			)
 		)
@@ -510,7 +513,7 @@ function Jump2()
 		All(
 			MaxJump() >= 1,
 			Any(
-				IsMediumPlus(),
+				MediumLogic(),
 				AccessibilityLevel.SequenceBreak
 			)
 		)
@@ -523,7 +526,7 @@ function Jump3()
 		All(
 			MaxJump() >= 2,
 			Any(
-				IsMediumPlus(),
+				MediumLogic(),
 				AccessibilityLevel.SequenceBreak
 			)
 		)
@@ -536,7 +539,7 @@ function Jump4()
 		All(
 			MaxJump() >= 3,
 			Any(
-				IsMediumPlus(),
+				MediumLogic(),
 				AccessibilityLevel.SequenceBreak
 			)
 		)
@@ -551,7 +554,7 @@ function Jump6()
 	return All(
 		MaxJump() >= 5,
 		Any(
-			IsMediumPlus(),
+			MediumLogic(),
 			AccessibilityLevel.SequenceBreak
 		)
 	)
@@ -564,7 +567,7 @@ function JumpLiquid2()
 			MaxJump() >= 1,
 			Has(Bombs),
 			Any(
-				Has(Hard),
+				HardLogic(),
 				AccessibilityLevel.SequenceBreak
 			)
 		)
@@ -578,7 +581,7 @@ function JumpLiquid3()
 			MaxJump() >= 2,
 			Has(Bombs),
 			Any(
-				Has(Hard),
+				HardLogic(),
 				AccessibilityLevel.SequenceBreak
 			)
 		)
@@ -592,7 +595,7 @@ function JumpLiquid4()
 			MaxJump() >= 3,
 			Has(Bombs),
 			Any(
-				Has(Hard),
+				HardLogic(),
 				AccessibilityLevel.SequenceBreak
 			)
 		)
@@ -620,7 +623,7 @@ function CanGaleKill()
 	return All(
 		Has(GaleSeeds),
 		Any(
-			IsMediumPlus(),
+			MediumLogic(),
 			AccessibilityLevel.SequenceBreak
 		),
 		Any(
@@ -628,7 +631,7 @@ function CanGaleKill()
 			All(
 				Has(SeedSatchel),
 				Any(
-					Has(Hard),
+					HardLogic(),
 					Has(Feather),
 					AccessibilityLevel.SequenceBreak
 				)
@@ -667,14 +670,14 @@ function CanNormalKill(pitAvailable, allowGale, allowCane)
 				)
 			),
 			Any(
-				IsMediumPlus(),
+				MediumLogic(),
 				AccessibilityLevel.SequenceBreak
 			)
 		),
 		All(
 			allowCane and Has(CaneOfSomaria),
 			Any(
-				IsMediumPlus(),
+				MediumLogic(),
 				AccessibilityLevel.SequenceBreak
 			)
 		)
@@ -695,7 +698,7 @@ function CanNormalSatchelKill(allowGale)
 			Has(EmberSeeds),
 			All(
 				Any(
-					IsMediumPlus(),
+					MediumLogic(),
 					AccessibilityLevel.SequenceBreak
 				),
 				Any(
@@ -711,7 +714,7 @@ function CanNormalSatchelKill(allowGale)
 			All(
 				allowGale,
 				Any(
-					Has(Hard),
+					HardLogic(),
 					AccessibilityLevel.SequenceBreak
 				),
 				Has(GaleSeeds)
@@ -738,7 +741,7 @@ function CanNormalSlingshotKill(allowGale)
 				All(
 					allowGale,
 					Any(
-						IsMediumPlus(),
+						MediumLogic(),
 						AccessibilityLevel.SequenceBreak
 					),
 					Has(MysterySeeds),
@@ -762,7 +765,7 @@ function CanArmorKill()
 			Any(
 				Has(Slingshot),
 				Any(
-					IsMediumPlus(),
+					MediumLogic(),
 					AccessibilityLevel.SequenceBreak
 				)
 			)
@@ -770,7 +773,7 @@ function CanArmorKill()
 		All(
 			Has(CaneOfSomaria),
 			Any(
-				IsMediumPlus(),
+				MediumLogic(),
 				AccessibilityLevel.SequenceBreak
 			)
 		)
@@ -790,7 +793,7 @@ function CanKillStalfos()
 		All(
 			HasRod(),
 			Any(
-				IsMediumPlus(),
+				MediumLogic(),
 				AccessibilityLevel.SequenceBreak
 			)
 		)
@@ -803,7 +806,7 @@ function CanFlipBeetle()
 		All(
 			Has(Shovel),
 			Any(
-				IsMediumPlus(),
+				MediumLogic(),
 				AccessibilityLevel.SequenceBreak
 			)
 		)
@@ -839,7 +842,7 @@ function HasRupees(count)
 	-- rupee rooms
 	local snakeRupees = CanReach(SnakeRupeeRoom)
 	local snakeRupeeAmount = 150
-	if (snakeRupees == AccessibilityLevel.SequenceBreak or (snakeRupees == AccessibilityLevel.Normal and not IsMediumPlus())) then
+	if (snakeRupees == AccessibilityLevel.SequenceBreak or (snakeRupees == AccessibilityLevel.Normal and not MediumLogic())) then
 		oolRupees = oolRupees + snakeRupeeAmount
 	elseif (snakeRupees == AccessibilityLevel.Normal) then
 		bonusRupees = bonusRupees + snakeRupeeAmount
@@ -847,7 +850,7 @@ function HasRupees(count)
 
 	local ancientRupees = CanReach(AncientRupeeRoom)
 	local ancientRupeeAmount = 90
-	if (ancientRupees == AccessibilityLevel.SequenceBreak or (ancientRupees == AccessibilityLevel.Normal and not IsMediumPlus())) then
+	if (ancientRupees == AccessibilityLevel.SequenceBreak or (ancientRupees == AccessibilityLevel.Normal and not MediumLogic())) then
 		oolRupees = oolRupees + ancientRupeeAmount
 	elseif (ancientRupees == AccessibilityLevel.Normal) then
 		bonusRupees = bonusRupees + ancientRupeeAmount
@@ -860,14 +863,14 @@ function HasRupees(count)
 		All(
 			Has(Shovel),
 			Any(
-				Has(Hard),
+				HardLogic(),
 				AccessibilityLevel.SequenceBreak
 			)
 		),
 		-- D2 and D6 rupee rooms are medium+ only
 		All(
 			Any(
-				IsMediumPlus(),
+				MediumLogic(),
 				AccessibilityLevel.SequenceBreak
 			),
 			rupees + bonusRupees >= count
@@ -884,7 +887,7 @@ function CanFarmOreChunks()
 		Has(Shovel),
 		All(
 			CanReach(SubrosiaMountainEast),
-			Has(Hard)
+			HardLogic()
 		),
 		All(
 			Any(
@@ -892,7 +895,7 @@ function CanFarmOreChunks()
 				Has(Bracelet),
 				Has(MagicBoomerang)
 			),
-			IsMediumPlus()
+			MediumLogic()
 		)
 	)
 end

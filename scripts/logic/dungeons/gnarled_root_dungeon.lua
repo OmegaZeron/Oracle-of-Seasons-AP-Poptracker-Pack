@@ -13,7 +13,7 @@ Aquamentus:connect_one_way(GnarledEssence, function()
 				AccessibilityLevel.SequenceBreak
 			),
 			Any(
-				IsMediumPlus(),
+				MediumLogic(),
 				AccessibilityLevel.SequenceBreak
 			)
 		)
@@ -31,7 +31,7 @@ GnarledZolRoom:connect_one_way_entrance(GnarledPushBlocks, function()
 		All(
 			Has(Bracelet),
 			Any(
-				Has(Hard),
+				HardLogic(),
 				AccessibilityLevel.SequenceBreak
 			)
 		)
@@ -44,7 +44,7 @@ GnarledZolRoom:connect_one_way_entrance(GnarledMinecartChest, function()
 		All(
 			Has(Bracelet),
 			Any(
-				Has(Hard),
+				HardLogic(),
 				AccessibilityLevel.SequenceBreak
 			)
 		)

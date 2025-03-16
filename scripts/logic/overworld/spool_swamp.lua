@@ -77,7 +77,7 @@ SwampSouthGashaArea:connect_one_way_entrance(MiddleSpoolSwamp, function()
 				Has(MagicBoomerang),
 				All(
 					Any(
-						IsMediumPlus(),
+						MediumLogic(),
 						AccessibilityLevel.SequenceBreak
 					),
 					Any(
@@ -93,7 +93,7 @@ SwampSouthGashaArea:connect_one_way_entrance(MiddleSpoolSwamp, function()
 								AccessibilityLevel.SequenceBreak
 							),
 							Any(
-								Has(Hard),
+								HardLogic(),
 								AccessibilityLevel.SequenceBreak
 							)
 						)

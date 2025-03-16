@@ -17,7 +17,7 @@ DancingMinecart:connect_one_way_entrance(DancingAntiFairyMaze, function()
 		All(
 			Has(Bracelet),
 			Any(
-				Has(Hard),
+				HardLogic(),
 				AccessibilityLevel.SequenceBreak
 			)
 		)
@@ -45,7 +45,7 @@ DancingSpikeTrap:connect_one_way(DancingWaterRing, function()
 			All(
 				Has(Bracelet),
 				Any(
-					IsMediumPlus(),
+					MediumLogic(),
 					AccessibilityLevel.SequenceBreak
 				)
 			)
@@ -66,7 +66,7 @@ DancingPostWaterRollers:connect_one_way(DancingPoolDrop, function()
 			All(
 				Has(Bracelet),
 				Any(
-					IsMediumPlus(),
+					MediumLogic(),
 					AccessibilityLevel.SequenceBreak
 				)
 			)
@@ -76,7 +76,7 @@ DancingPostWaterRollers:connect_one_way(DancingPoolDrop, function()
 			All(
 				Has(Bracelet),
 				Any(
-					Has(Hard),
+					HardLogic(),
 					AccessibilityLevel.SequenceBreak
 				)
 			)
@@ -92,7 +92,7 @@ DancingPostWaterRollers:connect_one_way_entrance(DancingMinecartTorches, functio
 			All(
 				Has(Bracelet),
 				Any(
-					IsMediumPlus(),
+					MediumLogic(),
 					AccessibilityLevel.SequenceBreak
 				)
 			)
@@ -117,7 +117,7 @@ Agunima:connect_one_way(DancingWildEmbers, function()
 	return All(
 		CanDestroyRespawningBush(),
 		Any(
-			IsMediumPlus(),
+			MediumLogic(),
 			AccessibilityLevel.SequenceBreak
 		)
 	)
@@ -170,8 +170,9 @@ DancingBranchingMinecart:connect_one_way_entrance(DancingTorchPit, function()
 			Has(Slingshot),
 			All(
 				-- jump slash the lever
+				Has(Feather),
 				Any(
-					Has(Hard),
+					HardLogic(),
 					AccessibilityLevel.SequenceBreak
 				)
 			)
@@ -192,7 +193,7 @@ DancingTorchPit:connect_one_way_entrance(DancingPotHeaven, function()
 				CanUseSeeds(),
 				Has(EmberSeeds),
 				Any(
-					Has(Hard),
+					HardLogic(),
 					AccessibilityLevel.SequenceBreak
 				)
 			)
@@ -204,25 +205,28 @@ DancingPotHeaven:connect_one_way_entrance(Gohma, function()
 		All(
 			-- don't break claw
 			Any(
-				IsMediumPlus(),
+				MediumLogic(),
 				AccessibilityLevel.SequenceBreak
 			),
 			Any(
 				Has(Slingshot),
 				Any(
-					Has(Hard),
+					HardLogic(),
 					AccessibilityLevel.SequenceBreak
 				)
 			),
-			Any(
-				Has(EmberSeeds),
-				Has(ScentSeeds)
+			All(
+				CanUseSeeds(),
+				Any(
+					Has(EmberSeeds),
+					Has(ScentSeeds)
+				)
 			)
 		),
 		All(
 			-- sword beams
 			Any(
-				IsMediumPlus(),
+				MediumLogic(),
 				AccessibilityLevel.SequenceBreak
 			),
 			Any(
@@ -242,7 +246,7 @@ DancingPotHeaven:connect_one_way_entrance(Gohma, function()
 				Has(ScentSeeds),
 				All(
 					Any(
-						IsMediumPlus(),
+						MediumLogic(),
 						AccessibilityLevel.SequenceBreak
 					),
 					Has(SeedSatchel),

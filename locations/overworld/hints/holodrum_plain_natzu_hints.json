@@ -199,6 +199,49 @@
 				]
 			},
 			{
+				"name": "Deku Secret Hint",
+				"sections": [
+					{
+						"name": "Seed Master",
+						"visibility_rules": ["Holodrum Plain/Deku Secret/Seed Master"],
+						"access_rules": ["^$HasHint|Holodrum Plain/Deku Secret/Seed Master"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 430,
+						"y": 330,
+						"size": 10,
+						"shape": "diamond"
+					},
+					{
+						"map": "natzu",
+						"x": 630,
+						"y": 470,
+						"size": 20,
+						"shape": "diamond",
+						"restrict_visibility_rules": ["natzu_ricky"]
+					},
+					{
+						"map": "natzu",
+						"x": 713,
+						"y": 700,
+						"size": 20,
+						"shape": "diamond",
+						"restrict_visibility_rules": ["natzu_dimitri"]
+					},
+					{
+						"map": "natzu",
+						"x": 570,
+						"y": 1240,
+						"size": 20,
+						"shape": "diamond",
+						"restrict_visibility_rules": ["natzu_moosh"]
+					}
+				]
+			},
+			{
 				"name": "Moblin Keep Hint",
 				"sections": [
 					{

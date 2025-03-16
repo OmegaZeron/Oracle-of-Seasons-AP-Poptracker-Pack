@@ -30,6 +30,7 @@ HoronVillage:connect_one_way(HoronGasha, CanPlantGasha)
 -- mayor
 HoronVillage:connect_two_ways_entrance(MayorHouse)
 MayorHouse:connect_one_way(MayorsGift)
+MayorHouse:connect_one_way(MayorSecret)
 MayorHouse:connect_one_way(MayorBombWall, CanBombWall)
 
 -- vasu
@@ -107,6 +108,22 @@ end, {SnakeRupeeRoom, AncientRupeeRoom})
 -- clock shop
 HoronVillage:connect_two_ways_entrance(ClockShop)
 ClockShop:connect_one_way(ClockShopTrade, function() return Has(WoodenBird) end)
+HoronVillage:connect_one_way(ClockShopSecret, function()
+	return All(
+		Has(Shovel),
+		Any(
+			Has(NobleSword),
+			Has(FoolsOre),
+			All(
+				Has(WoodSword),
+				Any(
+					MediumLogic(),
+					AccessibilityLevel.SequenceBreak
+				)
+			)
+		)
+	)
+end)
 
 -- dr left
 HoronVillage:connect_two_ways_entrance(DrLeft)

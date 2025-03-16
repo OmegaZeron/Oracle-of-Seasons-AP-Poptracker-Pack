@@ -5,7 +5,7 @@ AncientFoyer:connect_one_way_entrance(AncientRightOfSpinner, function()
 		Has(Bombs),
 		HasSword(),
 		Any(
-			Has(Hard),
+			HardLogic(),
 			AccessibilityLevel.SequenceBreak
 		)
 	)
@@ -22,7 +22,7 @@ AncientRopeSpinnerWest:connect_one_way(AncientMagnetBallDrop, function()
 		All(
 			Has(CaneOfSomaria),
 			Any(
-				IsMediumPlus(),
+				MediumLogic(),
 				AccessibilityLevel.SequenceBreak
 			)
 		)
@@ -40,7 +40,7 @@ AncientArrowTrap:connect_one_way_entrance(AncientSpinyTrampoline, function()
 		Any(
 			Has(Slingshot),
 			Any(
-				IsMediumPlus(),
+				MediumLogic(),
 				AccessibilityLevel.SequenceBreak
 			)
 		)
@@ -126,7 +126,7 @@ Vire:connect_one_way_entrance(AncientBossDoor, function()
 			Has(MagnetGlove),
 			All(
 				Any(
-					IsMediumPlus(),
+					MediumLogic(),
 					AccessibilityLevel.SequenceBreak
 				),
 				Has(GaleSeeds),
@@ -135,7 +135,7 @@ Vire:connect_one_way_entrance(AncientBossDoor, function()
 					All(
 						Has(SeedSatchel),
 						Any(
-							Has(Hard),
+							HardLogic(),
 							AccessibilityLevel.SequenceBreak
 						)
 					)

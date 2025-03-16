@@ -19,9 +19,16 @@ SubrosiaMountainEast:connect_one_way(SubrosiaMountainMagnetDigSpot, function()
 		)
 	)
 end)
+SubrosiaMountainEast:connect_one_way(SubrosianSecret, function()
+	return All(
+		Has(Feather),
+		Has(MagicBoomerang)
+	)
+end)
 SubrosiaMountainEast:connect_one_way(SubrosiaMountainTempleDigSpot, function() return Has(Shovel) end)
 SubrosiaMountainEast:connect_one_way(SmithyHardOre, function() return Has(HardOre) end)
 SubrosiaMountainEast:connect_one_way(SmithyBell, function() return Has(RustyBell) end)
+SubrosiaMountainEast:connect_one_way(SmithSecret, function() return Has(Shield) end)
 SubrosiaMountainWest:connect_one_way(SubrosiaChef, function() return Has(IronPot) end)
 SubrosiaMountainWest:connect_two_ways_entrance(SubrosiaWilds, JumpLiquid5)
 SubrosiaMountainWest:connect_one_way(SubrosiaMountainLockedChest, function() return CanReach(RosaDate) end, {RosaDate})
@@ -44,6 +51,7 @@ end)
 
 -- temple
 TempleOfSeasons:connect_one_way(TempleDigSpot, function() return Has(Shovel) end)
+TempleOfSeasons:connect_one_way(TempleSecret)
 TempleOfSeasons:connect_one_way(TempleWinterFairy, function()
 	return Any(
 		Has(Feather),
@@ -146,6 +154,9 @@ StrangeBrothers:connect_one_way_entrance(SubrosiaMarket, function()
 		)
 	)
 end)
+
+-- pirates
+Pirates:connect_one_way(PirateSecret, function() return Has(PolishedBell) end)
 
 -- furnace
 EastFurnace:connect_one_way_entrance(EyeglassPortal, function()

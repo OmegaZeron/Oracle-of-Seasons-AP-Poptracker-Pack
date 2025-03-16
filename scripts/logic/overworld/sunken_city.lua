@@ -16,7 +16,7 @@ SunkenDimitri:connect_one_way(SunkenTree, function()
 	return All(
 		CanHarvestSeeds(),
 		Any(
-			IsMediumPlus(),
+			MediumLogic(),
 			AccessibilityLevel.SequenceBreak
 		)
 	)
@@ -43,6 +43,16 @@ SunkenCity:connect_one_way(SunkenGashaSpot, function()
 	)
 end)
 SunkenDimitri:connect_one_way(SunkenGashaSpot, CanPlantGasha)
+SunkenCity:connect_one_way(DiverSecret, function()
+	return All(
+		Has(Flippers),
+		Any(
+			CanSwordKill(),
+			MediumLogic(),
+			AccessibilityLevel.SequenceBreak
+		)
+	)
+end)
 
 -- exits
 SunkenCity:connect_one_way_entrance(SunkenDimitri, function()

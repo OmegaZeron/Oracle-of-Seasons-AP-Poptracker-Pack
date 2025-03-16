@@ -38,7 +38,7 @@ HerosCaveFoyer:connect_one_way_entrance(HerosCaveUnderground, function()
 		All(
 			Has(Boomerang),
 			Any(
-				IsMediumPlus(),
+				MediumLogic(),
 				AccessibilityLevel.SequenceBreak
 			)
 		)
@@ -69,7 +69,7 @@ WesternCoastHouse:connect_one_way_entrance(WesternCoastStump, function()
 		Any(
 			Has(Feather),
 			Any(
-				Has(Hard),
+				HardLogic(),
 				AccessibilityLevel.SequenceBreak
 			)
 		)
@@ -132,6 +132,7 @@ GraveyardWinter:connect_one_way_entrance(ExplorersCrypt, function() return Has(S
 Graveyard:connect_one_way_entrance(WestWesternCoast)
 GraveyardAutumn:connect_one_way_entrance(WestWesternCoast)
 GraveyardWinter:connect_one_way_entrance(WestWesternCoast)
+ExplorersCrypt:connect_one_way(GraveyardSecret, function() return Has(Shovel) end)
 
 ExplorersCrypt:connect_one_way(WesternCoastFindSeason)
 ExplorersCrypt:connect_one_way_entrance(Graveyard, function()

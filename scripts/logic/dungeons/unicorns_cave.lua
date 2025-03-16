@@ -27,7 +27,7 @@ UnicornUndergroundPipesRight:connect_two_ways_entrance(UnicornPotRoom, function(
 			CanUseSeeds(),
 			Has(PegasusSeeds),
 			Any(
-				Has(Hard),
+				HardLogic(),
 				AccessibilityLevel.SequenceBreak
 			)
 		)
@@ -55,7 +55,7 @@ UnicornTerrace:connect_one_way(UnicornArmosPuzzle, function()
 end)
 UnicornArmosPuzzle:connect_one_way(UnicornArmosPuzzleEmbers, function()
 	return Any(
-		IsMediumPlus(),
+		MediumLogic(),
 		AccessibilityLevel.SequenceBreak
 	)
 end)
@@ -74,7 +74,7 @@ UnicornMinecarts:connect_one_way_entrance(UnicornMinecartPushBlock, function()
 			All(
 				Has(Shield),
 				Any(
-					IsMediumPlus(),
+					MediumLogic(),
 					AccessibilityLevel.SequenceBreak
 				)
 			),
@@ -97,7 +97,7 @@ UnicornPotRoom:connect_one_way(UnicornMagnetGloveChest, function()
 			All(
 				Jump4(), -- is liquid, but diagonal makes this effectively a 4 pit for rules
 				Any(
-					IsMediumPlus(), -- force medium for lower path
+					MediumLogic(), -- force medium for lower path
 					AccessibilityLevel.SequenceBreak
 				)
 			)
@@ -130,7 +130,7 @@ UnicornPostSyger:connect_one_way(UnicornTreadmillBasement, function()
 			All(
 				Has(Feather),
 				Any(
-					IsMediumPlus(),
+					MediumLogic(),
 					AccessibilityLevel.SequenceBreak
 				)
 			),

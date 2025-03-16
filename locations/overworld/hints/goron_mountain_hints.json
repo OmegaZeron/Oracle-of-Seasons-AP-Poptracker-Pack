@@ -84,12 +84,17 @@
 				]
 			},
 			{
-				"name": "Biggoron Trade Hint",
+				"name": "Biggoron Hints",
 				"sections": [
 					{
-						"name": "Goron Mountain: Biggoron Trade",
-						"visibility_rules": ["Goron Mountain/Biggoron Trade/Biggoron Trade"],
-						"access_rules": ["^$HasHint|Goron Mountain/Biggoron Trade/Biggoron Trade"]
+						"name": "Biggoron Trade",
+						"visibility_rules": ["Goron Mountain/Biggoron/Biggoron Trade"],
+						"access_rules": ["^$HasHint|Goron Mountain/Biggoron/Biggoron Trade"]
+					},
+					{
+						"name": "Biggoron Secret",
+						"visibility_rules": ["Goron Mountain/Biggoron/Biggoron Secret"],
+						"access_rules": ["^$HasHint|Goron Mountain/Biggoron/Biggoron Secret"]
 					}
 				],
 				"map_locations": [

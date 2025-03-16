@@ -8,8 +8,13 @@
 				"name": "Temple of Seasons",
 				"sections": [
 					{
-						"name": "Subrosia: Temple of Seasons",
+						"name": "Rod of Seasons",
 						"access_rules": ["^$CanReach|TempleOfSeasons"]
+					},
+					{
+						"name": "Temple Secret",
+						"visibility_rules": ["secrets_on"],
+						"access_rules": ["^$CanReach|TempleSecret"]
 					}
 				],
 				"map_locations": [
@@ -88,12 +93,17 @@
 				"name": "Subrosian Smithy",
 				"sections": [
 					{
-						"name": "Subrosia: Smithy Hard Ore Reforge",
+						"name": "Smithy Hard Ore Reforge",
 						"access_rules": ["^$CanReach|SmithyHardOre"]
 					},
 					{
-						"name": "Subrosia: Smithy Rusty Bell Reforge",
+						"name": "Smithy Rusty Bell Reforge",
 						"access_rules": ["^$CanReach|SmithyBell"]
+					},
+					{
+						"name": "Smith Secret",
+						"visibility_rules": ["secrets_on"],
+						"access_rules": ["^$CanReach|SmithSecret"]
 					}
 				],
 				"map_locations": [
@@ -133,6 +143,23 @@
 						"map": "subrosia",
 						"x": 600,
 						"y": 170
+					}
+				]
+			},
+			{
+				"name": "Subrosian Secret",
+				"sections": [
+					{
+						"name": "Boomerang Challenge",
+						"visibility_rules": ["secrets_on"],
+						"access_rules": ["^$CanReach|SubrosianSecret"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "subrosia",
+						"x": 762,
+						"y": 100
 					}
 				]
 			},
@@ -440,11 +467,27 @@
 				]
 			},
 			{
+				"name": "Pirate Secret",
+				"sections": [
+					{
+						"visibility_rules": ["secrets_on"],
+						"access_rules": ["^$CanReach|PirateSecret"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "subrosia",
+						"x": 375,
+						"y": 982
+					}
+				]
+			},
+			{
 				"name": "Pirate Portal",
 				"sections": [
 					{
-					"name": "Subrosia: Pirate Portal",
-					"access_rules": ["^$CanReach|Pirates"]
+						"name": "Subrosia: Pirate Portal",
+						"access_rules": ["^$CanReach|Pirates"]
 					}
 				],
 				"map_locations": [
@@ -459,8 +502,8 @@
 				"name": "D8 Portal",
 				"sections": [
 					{
-					"name": "Subrosia: D8 Portal",
-					"access_rules": ["^$CanReach|SwordAndShieldMaze"]
+						"name": "Subrosia: D8 Portal",
+						"access_rules": ["^$CanReach|SwordAndShieldMaze"]
 					}
 				],
 				"map_locations": [

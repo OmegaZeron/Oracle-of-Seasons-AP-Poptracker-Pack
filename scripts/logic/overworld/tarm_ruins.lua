@@ -9,7 +9,7 @@ TarmEntrance:connect_one_way_entrance(TarmTreeStump, function()
 			Has(LostWoodsSummer),
 			All(
 				Any(
-					IsMediumPlus(),
+					MediumLogic(),
 					AccessibilityLevel.SequenceBreak
 				),
 				Any(
@@ -20,7 +20,7 @@ TarmEntrance:connect_one_way_entrance(TarmTreeStump, function()
 				All(
 					Has(Feather),
 					Any(
-						Has(Hard),
+						HardLogic(),
 						AccessibilityLevel.SequenceBreak
 					)
 				)
@@ -54,7 +54,7 @@ LostWoods:connect_one_way(Pedestal, function()
 				-- know the sequence
 				Has(PedestalVanilla),
 				Any(
-					IsMediumPlus(),
+					MediumLogic(),
 					AccessibilityLevel.SequenceBreak
 				)
 			)
@@ -69,7 +69,7 @@ Pedestal:connect_one_way_entrance(TarmTree, function()
 			All(
 				CanLostWoods(true),
 				Any(
-					IsMediumPlus(),
+					MediumLogic(),
 					AccessibilityLevel.SequenceBreak
 				)
 			)
@@ -86,7 +86,7 @@ Pedestal:connect_one_way_entrance(TarmTree, function()
 				-- know the sequence
 				Has(LostWoodsVanilla),
 				Any(
-					IsMediumPlus(),
+					MediumLogic(),
 					AccessibilityLevel.SequenceBreak
 				)
 			)
@@ -108,7 +108,7 @@ LostWoods:connect_one_way_entrance(TarmTree, function()
 				-- know the sequence
 				Has(LostWoodsVanilla),
 				Any(
-					IsMediumPlus(),
+					MediumLogic(),
 					AccessibilityLevel.SequenceBreak
 				)
 			)
@@ -123,7 +123,7 @@ TarmTree:connect_one_way(Pedestal, function()
 			All(
 				CanPedestal(true),
 				Any(
-					IsMediumPlus(),
+					MediumLogic(),
 					AccessibilityLevel.SequenceBreak
 				)
 			)
@@ -136,7 +136,7 @@ TarmTree:connect_one_way(Pedestal, function()
 			All(
 				Has(PedestalVanilla),
 				Any(
-					IsMediumPlus(),
+					MediumLogic(),
 					AccessibilityLevel.SequenceBreak
 				)
 			)

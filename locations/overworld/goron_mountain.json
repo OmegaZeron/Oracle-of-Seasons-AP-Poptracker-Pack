@@ -113,11 +113,16 @@
 				]
 			},
 			{
-				"name": "Biggoron Trade",
+				"name": "Biggoron",
 				"sections": [
 					{
-						"name": "Goron Mountain: Biggoron Trade",
+						"name": "Biggoron Trade",
 						"access_rules": ["^$CanReach|Biggoron"]
+					},
+					{
+						"name": "Biggoron Secret",
+						"visibility_rules": ["secrets_on"],
+						"access_rules": ["^$CanReach|BiggoronSecret"]
 					}
 				],
 				"map_locations": [

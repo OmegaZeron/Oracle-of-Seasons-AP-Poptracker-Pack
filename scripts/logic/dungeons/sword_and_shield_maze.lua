@@ -6,7 +6,7 @@ MazeFoyer:connect_one_way(MazeEyeDrop, function()
 			Has(Slingshot),
 			All(
 				Any(
-					IsMediumPlus(),
+					MediumLogic(),
 					AccessibilityLevel.SequenceBreak
 				),
 				Has(Feather),
@@ -23,7 +23,7 @@ MazeFoyer:connect_one_way(MazeThreeEyeChest, function()
 			Has(HyperSlingshot),
 			All(
 				Any(
-					Has(Hard),
+					HardLogic(),
 					AccessibilityLevel.SequenceBreak
 				),
 				CanUseSeeds(),
@@ -50,7 +50,7 @@ MazeHardhats:connect_one_way_entrance(MazeBigBladeTrap, function()
 			Has(Cape),
 			All(
 				Any(
-					Has(Hard),
+					HardLogic(),
 					AccessibilityLevel.SequenceBreak
 				),
 				Has(Feather),
@@ -71,7 +71,7 @@ MazeThreeEyeOwl:connect_one_way(MazeThreeEyeBombChest, function()
 			Has(HyperSlingshot),
 			All(
 				Any(
-					Has(Hard),
+					HardLogic(),
 					AccessibilityLevel.SequenceBreak
 				),
 				CanUseSeeds(),
@@ -86,7 +86,7 @@ Frypolar:connect_one_way(MazeWildMysteries, function()
 	return All(
 		CanDestroyRespawningBush(),
 		Any(
-			IsMediumPlus(),
+			MediumLogic(),
 			AccessibilityLevel.SequenceBreak
 		)
 	)
@@ -99,7 +99,7 @@ Frypolar:connect_one_way_entrance(MazeNineTorches, function()
 		),
 		All(
 			Any(
-				IsMediumPlus(),
+				MediumLogic(),
 				AccessibilityLevel.SequenceBreak
 			),
 			Has(SeedSatchel),
@@ -111,7 +111,7 @@ Frypolar:connect_one_way_entrance(MazeNineTorches, function()
 		),
 		All(
 			Any(
-				Has(Hard),
+				HardLogic(),
 				AccessibilityLevel.SequenceBreak
 			),
 			CanUseSeeds(),

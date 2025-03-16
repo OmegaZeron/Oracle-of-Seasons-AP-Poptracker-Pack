@@ -25,7 +25,7 @@ SnakeAltEntrance:connect_one_way(SnakeBombPuzzle, function()
 				Has(SeedSatchel),
 				Has(PegasusSeeds),
 				Any(
-					IsMediumPlus(),
+					MediumLogic(),
 					AccessibilityLevel.SequenceBreak
 				)
 			)
@@ -76,7 +76,7 @@ SnakeHardhats:connect_one_way_entrance(SnakeBombMoblins, function()
 			CanKillWithPit(),
 			All(
 				Any(
-					IsMediumPlus(),
+					MediumLogic(),
 					AccessibilityLevel.SequenceBreak
 				),
 				Any(
@@ -84,7 +84,7 @@ SnakeHardhats:connect_one_way_entrance(SnakeBombMoblins, function()
 					All(
 						Has(SeedSatchel),
 						Any(
-							Has(Hard),
+							HardLogic(),
 							AccessibilityLevel.SequenceBreak
 						)
 					)
@@ -97,7 +97,7 @@ SnakeHardhats:connect_one_way_entrance(SnakeBombMoblins, function()
 			All(
 				Has(Shovel),
 				Any(
-					Has(Hard),
+					HardLogic(),
 					AccessibilityLevel.SequenceBreak
 				)
 			)
@@ -111,7 +111,7 @@ SnakeHardhats:connect_one_way_entrance(SnakeBombMoblins, function()
 			),
 			All(
 				Any(
-					Has(Hard),
+					HardLogic(),
 					AccessibilityLevel.SequenceBreak
 				),
 				Any(

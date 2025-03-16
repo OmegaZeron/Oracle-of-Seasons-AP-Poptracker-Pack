@@ -227,6 +227,41 @@
 				]
 			},
 			{
+				"name": "Deku Secret",
+				"sections": [
+					{
+						"name": "Seed Master",
+						"visibility_rules": ["secrets_on"],
+						"access_rules": ["^$CanReach|DekuSecret"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 420,
+						"y": 320
+					},
+					{
+						"map": "natzu",
+						"x": 615,
+						"y": 455,
+						"restrict_visibility_rules": ["natzu_ricky"]
+					},
+					{
+						"map": "natzu",
+						"x": 713,
+						"y": 700,
+						"restrict_visibility_rules": ["natzu_dimitri"]
+					},
+					{
+						"map": "natzu",
+						"x": 570,
+						"y": 1240,
+						"restrict_visibility_rules": ["natzu_moosh"]
+					}
+				]
+			},
+			{
 				"name": "Moblin Keep",
 				"sections": [
 					{

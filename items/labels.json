@@ -7,13 +7,6 @@
 		"codes": "logic_label"
 	},
 	{
-		"name": "Treewarp label",
-		"type": "static",
-		"allow_disabled": false,
-		"img": "images/labels/treewarp_label.png",
-		"codes": "treewarp_label"
-	},
-	{
 		"name": "Entrance label",
 		"type": "toggle",
 		"allow_disabled": false,
@@ -91,13 +84,6 @@
 		"codes": "boss_keysanity_label"
 	},
 	{
-		"name": "Map/Compass Shuffle Label",
-		"type": "static",
-		"allow_disabled": false,
-		"img": "images/labels/map_compass_label.png",
-		"codes": "map_compass_label"
-	},
-	{
 		"name": "Horon Shop Potion Label",
 		"type": "static",
 		"allow_disabled": false,
@@ -130,6 +116,12 @@
 		"type": "static",
 		"img": "images/labels/goal_label.png",
 		"codes": "goal_label"
+	},
+	{
+		"name": "Secret Locations",
+		"type": "static",
+		"img": "images/labels/secret_locations_label.png",
+		"codes": "secret_locations_label"
 	},
 	{
 		"name": "Horon Village Season Label",

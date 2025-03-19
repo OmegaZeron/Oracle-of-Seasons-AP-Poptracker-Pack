@@ -276,9 +276,8 @@
 		"type": "consumable",
 		"img": "images/items/bigrupee.png",
 		"codes": "rupees",
-		"increment": 50,
-		"decrement": 50,
-		"max_quantity": 999
+		"increment": 10,
+		"decrement": 10
 	},
 	{
 		"name": "Ore Chunks",
@@ -286,8 +285,7 @@
 		"img": "images/items/orechunk.png",
 		"codes": "orechunks",
 		"increment": 50,
-		"decrement": 50,
-		"max_quantity": 999
+		"decrement": 50
 	},
 	{
 		"name": "Season's Rod",

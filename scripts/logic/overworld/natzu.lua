@@ -18,9 +18,10 @@ NatzuDimitriEast:connect_one_way_entrance(MoblinKeepBridge, function()
 	return Any(
 		Dimitri(),
 		All(
+			Has(Flippers),
 			Has(SwimmersRing),
 			Any(
-				HardLogic(),
+				MediumLogic(),
 				AccessibilityLevel.SequenceBreak
 			)
 		)

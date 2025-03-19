@@ -113,10 +113,7 @@ CryptDarknutBridge:connect_one_way_entrance(CryptPastDarknutBridge, function()
 			Has(Slingshot),
 			Has(ScentSeeds)
 		),
-		All(
-			Has(WoodSword),
-			Has(EnergyRing)
-		),
+		UseEnergyRing(),
 		All(
 			Has(MagnetGlove),
 			Any(

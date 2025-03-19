@@ -85,7 +85,16 @@ function HasRod()
 end
 
 function CanPunch()
-	return Has(FistRing) or Has(ExpertsRing)
+	return All(
+		Any(
+			MediumLogic(),
+			AccessibilityLevel.SequenceBreak
+		),
+		Any(
+			Has(FistRing),
+			Has(ExpertsRing)
+		)
+	)
 end
 
 function HasEnoughEssencesForTreehouse()
@@ -180,10 +189,13 @@ function HasEnoughEssencesForGoal()
 end
 
 function CanHarvestSeeds(includeDimitri)
-	return CanUseSeeds() and (
-		CanSwordPunchKill() or
-		HasRod() or
-		includeDimitri == true and Dimitri()
+	return All(
+		CanUseSeeds(),
+		Any(
+			CanSwordPunchKill(),
+			HasRod(),
+			includeDimitri == true and Dimitri()
+		)
 	)
 end
 
@@ -430,7 +442,7 @@ function CanDestroyCrystal()
 		All(
 			Has(ExpertsRing),
 			Any(
-				HardLogic(),
+				MediumLogic(),
 				AccessibilityLevel.SequenceBreak
 			)
 		)
@@ -476,9 +488,17 @@ function CanHitFarSwitch()
 		Has(Slingshot),
 		Has(Boomerang),
 		Has(Bombs),
-		All(
-			Has(WoodSword),
-			Has(EnergyRing)
+		UseEnergyRing()
+	)
+end
+
+function UseEnergyRing()
+	return All(
+		Has(WoodSword),
+		Has(EnergyRing),
+		Any(
+			MediumLogic(),
+			AccessibilityLevel.SequenceBreak
 		)
 	)
 end
@@ -615,8 +635,10 @@ function CanSwordKill()
 end
 
 function CanSwordPunchKill()
-	return CanPunch() or
-	CanSwordKill()
+	return Any(
+		CanPunch(),
+		CanSwordKill()
+	)
 end
 
 function CanGaleKill()

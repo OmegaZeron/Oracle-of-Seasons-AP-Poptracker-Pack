@@ -78,7 +78,11 @@ UpperNorthHoron:connect_one_way_entrance(EyeglassLake, function()
 			Has(Autumn),
 			Has(NorthHoronAutumn)
 		),
-		Has(Feather),
+		Any(
+			Has(Feather),
+			Moosh(),
+			Ricky()
+		),
 		Any(
 			Has(Flippers),
 			All(
@@ -95,7 +99,11 @@ UpperNorthHoron:connect_one_way_entrance(FrozenEyeglassLake, function()
 			Has(Winter),
 			Has(NorthHoronWinter)
 		),
-		Has(Feather)
+		Any(
+			Has(Feather),
+			Moosh(),
+			Ricky()
+		)
 	)
 end)
 UpperNorthHoron:connect_one_way_entrance(DryEyeglassLake, function()

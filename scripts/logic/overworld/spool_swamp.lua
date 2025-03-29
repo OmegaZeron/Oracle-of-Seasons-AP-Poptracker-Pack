@@ -2,7 +2,12 @@ NorthSpoolSwamp:connect_one_way(Maple, CanMapleTrade)
 NorthSpoolSwamp:connect_one_way(SpoolSwampFindSeason)
 SouthSpoolSwamp:connect_one_way(SpoolSwampFindSeason)
 -- items
-NorthSpoolSwamp:connect_one_way(SwampTree, function() return CanHarvestSeeds(true) end)
+NorthSpoolSwamp:connect_one_way(SwampTree, function()
+	return Any(
+		CanHarvestSeeds(true),
+		AccessibilityLevel.Inspect
+	)
+end)
 NorthSpoolSwamp:connect_one_way(SwampVasuDigSpot, function()
 	return All(
 		Has(Shovel),

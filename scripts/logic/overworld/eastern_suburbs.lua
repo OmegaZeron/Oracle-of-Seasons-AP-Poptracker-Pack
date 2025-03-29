@@ -160,7 +160,12 @@ WoodsOfWinter:connect_one_way_entrance(UpperEasternSuburbs, function()
 		Has(EasternSuburbsAutumn)
 	)
 end)
-WoodsOfWinter:connect_one_way_entrance(UpperEasternSuburbsWinter, function() return Has(EasternSuburbsWinter) end)
+WoodsOfWinter:connect_one_way_entrance(UpperEasternSuburbsWinter, function()
+	return Any(
+		CanHarvestSeeds(true),
+		AccessibilityLevel.Inspect
+	)
+end)
 WoodsOfWinter:connect_one_way(WoodsOfWinterTree, function() return CanHarvestSeeds(true) end)
 WoodsOfWinter:connect_one_way(GoldenMoblinKill, function()
 	return All(

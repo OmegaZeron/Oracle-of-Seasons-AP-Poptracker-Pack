@@ -113,6 +113,7 @@ HoronVillage:connect_one_way(ClockShopSecret, function()
 		Has(Shovel),
 		Any(
 			Has(NobleSword),
+			Has(BiggoronSword),
 			Has(FoolsOre),
 			All(
 				Has(WoodSword),

@@ -2,7 +2,12 @@ NorthHolodrumPlain:connect_one_way(Maple, CanMapleTrade)
 NorthHolodrumPlain:connect_one_way(HolodrumPlainFindSeason)
 NorthHolodrumPlain:connect_one_way(NorthHoronFindSeason)
 -- items
-NorthHolodrumPlain:connect_one_way(HolodrumPlainTree, function() return CanHarvestSeeds(true) end)
+NorthHolodrumPlain:connect_one_way(HolodrumPlainTree, function()
+	return Any(
+		CanHarvestSeeds(true),
+		AccessibilityLevel.Inspect
+	)
+end)
 NorthHolodrumPlain:connect_one_way(Blaino, CanFarmRupees)
 NorthHolodrumPlain:connect_one_way(HolodrumPlainMushroomCave, function()
 	return All(

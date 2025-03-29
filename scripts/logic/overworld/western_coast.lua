@@ -29,7 +29,12 @@ HerosCave:connect_two_ways_entrance(HerosCaveFoyer, function()
 	)
 end)
 
-EastWesternCoast:connect_one_way_entrance(HerosCaveLedge, CanDestroyBushFlute)
+EastWesternCoast:connect_one_way_entrance(HerosCaveLedge, function()
+	return All(
+		not Has(D0AltRemoved),
+		CanDestroyBushFlute(true)
+	)
+end)
 HerosCaveLedge:connect_one_way_entrance(HerosCaveFoyer)
 HerosCaveFoyer:connect_one_way(HerosCaveLedge, function() return Has(D0AltRemoved) end)
 HerosCaveFoyer:connect_one_way_entrance(HerosCaveUnderground, function()

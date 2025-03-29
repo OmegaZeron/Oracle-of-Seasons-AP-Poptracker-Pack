@@ -93,6 +93,12 @@ Pedestal:connect_one_way_entrance(TarmTree, function()
 		)
 	)
 end)
+TarmTree:connect_one_way(TarmSeedTree, function()
+	return Any(
+		CanHarvestSeeds(true),
+		AccessibilityLevel.Inspect
+	)
+end)
 LostWoods:connect_one_way_entrance(TarmTree, function()
 	return All(
 		CanLostWoods(),

@@ -40,7 +40,7 @@ function onClear(slot_data)
 		end
 	end
 	-- reset items
-	for _, v in pairs(ITEM_DISPLAY_MAPPING) do
+	for _, v in pairs(ITEM_MAPPING) do
 		if v[1] and v[2] then
 			if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
 				print(string.format("onClear: clearing item %s of type %s", v[1], v[2]))
@@ -213,7 +213,7 @@ function onItem(index, item_id, item_name, player_number)
 	SetAsStale()
 	local is_local = player_number == Archipelago.PlayerNumber
 	CUR_INDEX = index;
-	local v = ITEM_DISPLAY_MAPPING[item_name]
+	local v = ITEM_MAPPING[item_id]
 	if not v then
 		if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
 			print(string.format("onItem: could not find item mapping for id %s", item_id))
@@ -297,22 +297,24 @@ function onNotify(key, value, old_value)
 	if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
 		print(string.format("called onNotify: %s, %s, %s", key, dump(value), old_value))
 	end
-	if value ~= old_value then
-		if key == HINTS_ID then
-			COLLECTED_HINTS = {}
-			for _, hint in ipairs(value) do
-				if not hint.found and hint.finding_player == Archipelago.PlayerNumber then
-					updateHints(hint.location, hint.item_flags)
-				end
-			end
-		elseif key == DATA_STORAGE_ID then
-			for k, v in pairs(value) do
-				Tracker:FindObjectForCode(DataStorageTable[k]).AvailableChestCount = v and 0 or 1
-			end
-		end
-		Tracker:FindObjectForCode(HiddenSetting).Active = not Tracker:FindObjectForCode(HiddenSetting).Active
+
+	if value == old_value then
+		return
 	end
 
+	if key == HINTS_ID then
+		COLLECTED_HINTS = {}
+		for _, hint in ipairs(value) do
+			if not hint.found and hint.finding_player == Archipelago.PlayerNumber then
+				updateHints(hint.location, hint.item_flags)
+			end
+		end
+	elseif key == DATA_STORAGE_ID then
+		for k, v in pairs(value) do
+			Tracker:FindObjectForCode(DataStorageTable[k]).AvailableChestCount = v and 0 or 1
+		end
+	end
+	Tracker:FindObjectForCode(HiddenSetting).Active = not Tracker:FindObjectForCode(HiddenSetting).Active
 end
 
 function onNotifyLaunch(key, value)

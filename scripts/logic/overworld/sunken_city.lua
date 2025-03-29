@@ -1,5 +1,10 @@
 -- items
-SunkenCity:connect_one_way(SunkenTree, function() return CanHarvestSeeds(true) end)
+SunkenCity:connect_one_way(SunkenTree, function()
+	return Any(
+		CanHarvestSeeds(true),
+		AccessibilityLevel.Inspect
+	)
+end)
 SunkenCity:connect_one_way(SunkenSummerCave, function()
 	return All(
 		Has(Flippers),

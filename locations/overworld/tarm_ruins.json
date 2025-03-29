@@ -52,7 +52,7 @@
 				"sections": [
 					{
 						"name": "Tarm Ruins: Seed Tree",
-						"access_rules": ["^$CanReach|TarmTree, ^$CanHarvestSeeds"],
+						"access_rules": ["^$CanReach|TarmSeedTree"],
 						"hosted_item": "tree_tarm"
 					}
 				],

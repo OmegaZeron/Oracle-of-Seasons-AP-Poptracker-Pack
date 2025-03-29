@@ -185,7 +185,7 @@
 				"name": "Woods of Winter Tree",
 				"sections": [
 					{
-						"access_rules": ["$CanReach|WoodsOfWinterTree"],
+						"access_rules": ["^$CanReach|WoodsOfWinterTree"],
 						"hosted_item": "tree_wow"
 					}
 				],

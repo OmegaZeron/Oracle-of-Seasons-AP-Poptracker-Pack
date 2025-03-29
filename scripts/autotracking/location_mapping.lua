@@ -251,8 +251,8 @@ LOCATION_MAPPING = {
 	[13030688] = {"@Sunken City/Diver Secret/Underwater Race"},
 	[13030720] = {"@Subrosia/Subrosian Smithy/Smith Secret"},
 	[13030784] = {"@Subrosia/Pirate Secret/"},
-	[13030913] = {"@Subrosia/Temple Secret/Behind the Waterfall"},
+	[13030913] = {"@Subrosia/Temple of Seasons/Temple Secret"},
 	[13030914] = {"@Holodrum Plain/Deku Secret/Seed Master"},
-	[13030916] = {"@Goron Mountain/Biggoron/Biggorn Secret"},
+	[13030916] = {"@Goron Mountain/Biggoron/Biggoron Secret"},
 	[13030920] = {"@Horon Village/Mayor's House/Mayor Secret"},
 }

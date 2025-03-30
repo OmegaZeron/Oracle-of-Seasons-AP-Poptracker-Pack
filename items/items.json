@@ -249,8 +249,8 @@
 		"type": "consumable",
 		"img": "images/items/bigrupee.png",
 		"codes": "rupees",
-		"increment": 10,
-		"decrement": 10
+		"increment": 5,
+		"decrement": 5
 	},
 	{
 		"name": "Ore Chunks",

@@ -197,6 +197,19 @@ function onClear(slot_data)
 			Tracker:FindObjectForCode("d"..i.."_compass").Active = true
 		end
 	end
+
+	-- auto tab and set the season for the starting location
+	-- CurrentLocation = nil
+	-- TODO get this from slot_data once it's a setting
+	-- local startLocation = "impa's house"
+	-- if (startLocation) then
+	-- 	local fakeBounce = {
+	-- 		["data"] = {
+	-- 			["Current room"] = StartLocationMapping[startLocation]
+	-- 		}
+	-- 	}
+	-- 	OnBounce(fakeBounce)
+	-- end
 end
 
 -- called when an item gets collected
@@ -249,7 +262,7 @@ function onItem(index, item_id, item_name, player_number)
 				mult = v[3]
 			end
 			obj.AcquiredCount = obj.AcquiredCount + (obj.Increment * mult)
-			if (obj.AcquiredCount > obj.MaxCount) then
+			if (obj.MaxCount > 0 and obj.AcquiredCount > obj.MaxCount) then
 				obj.AcquiredCount = obj.MaxCount
 			end
 		elseif AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
@@ -331,7 +344,7 @@ function onNotifyLaunch(key, value)
 			end
 		end
 		Tracker:FindObjectForCode(HiddenSetting).Active = not Tracker:FindObjectForCode(HiddenSetting).Active
-	elseif key == DATA_STORAGE_ID then
+	elseif key == DATA_STORAGE_ID and value ~= nil then
 		for k, v in pairs(value) do
 			Tracker:FindObjectForCode(DataStorageTable[k]).AvailableChestCount = v and 0 or 1
 		end
@@ -383,10 +396,32 @@ function HasHint(code)
 end
 
 -- called when a bounce message is received 
-function onBounce(json)
+function OnBounce(json)
 	if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
 		print(string.format("called onBounce: %s", dump(json)))
 	end
+	if not json["data"] then
+		return
+	end
+	if json["data"]["Current room"] then
+		local currentRoom = json["data"]["Current room"]
+		if (CurrentLocationMapping[currentRoom]) then
+			for _, v in ipairs(CurrentLocationMapping[currentRoom]) do
+				local roomMap = v
+				if (roomMap["type"] == "Autotab") then
+					if CurrentLocation ~= roomMap["tab"][#roomMap["tab"]] then
+						CurrentLocation = roomMap["tab"][#roomMap["tab"]]
+						for _, room in ipairs(roomMap["tab"]) do
+							Tracker:UiHint("ActivateTab", room)
+						end
+					end
+				elseif roomMap["type"] == "SeeSeason" then
+					Tracker:FindObjectForCode(roomMap["selector"]).CurrentStage = Tracker:FindObjectForCode(roomMap["selector_hidden"]).CurrentStage
+				end
+			end
+		end
+	end
+
 end
 
 Archipelago:AddClearHandler("clear handler", onClear)
@@ -398,3 +433,4 @@ if AUTOTRACKER_ENABLE_LOCATION_TRACKING then
 end
 Archipelago:AddSetReplyHandler("notify handler", onNotify)
 Archipelago:AddRetrievedHandler("notify launch handler", onNotifyLaunch)
+-- Archipelago:AddBouncedHandler("bounce handler", OnBounce)

@@ -1,6 +1,12 @@
 {
 	"versions": [
 		{
+			"package_version": "2.1.0",
+			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/v.2.1.0/Oracle-of-Seasons-AP-Poptracker-Pack-v2.1.0.zip",
+			"sha256": "591505fae76a9d08dda38fd192b7452ef1ed9e435dfbd37afebb683631f25fc2",
+			"changelog": ["Auto-tab/dungeon/portal/season, fix essences not auto-tracking"]
+		},
+		{
 			"package_version": "2.0.1",
 			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/v.2.0.1/Oracle-of-Seasons-AP-Poptracker-Pack-v2.0.1.zip",
 			"sha256": "989cabc632b63ded24fc57869f669b2c7b7706576ebac6276c9cd7849338bbba",

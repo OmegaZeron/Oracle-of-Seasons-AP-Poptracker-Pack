@@ -237,7 +237,7 @@
 					["small_keysanity_label", "small_keysanity", "boss_keysanity_label", "boss_keysanity", "master_keys_label", "master_keys", "secret_locations_label", "secrets_off"],
 					["horon_shop_potion_label", "horon_shop_potion", "advance_shop_label", "advance_shop", "shuffle_old_men_label", "shuffle_old_men", "gold_ore_label", "shuffle_gold_ores"],
 					["default_seasons_label", "defaultseasonsoff", "horon_village_season_label", "horon_village_season_shuffle", "d0_alt_entrance_label", "d0_alt_entrance", "d2_alt_entrance_label", "d2_alt_entrance"],
-					["lost_woods_label", "shuffle_lost_woods", "pedestal_label", "shuffle_pedestal", "shuffle_scrub_label", "shufflescrubs"]
+					["lost_woods_label", "shuffle_lost_woods", "pedestal_label", "shuffle_pedestal", "shuffle_scrub_label", "shufflescrubs", "autotab_label", "autotab"]
 				]
 			}
 		]

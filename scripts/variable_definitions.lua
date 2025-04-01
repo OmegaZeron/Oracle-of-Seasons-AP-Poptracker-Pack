@@ -56,6 +56,269 @@ DataStorageTable = {
 	["Harvested Horon Village Gasha Spot"] = "@Horon Village/Horon Village Gasha Spot/Harvested",
 }
 
+CurrentTab = nil
+CurrentRoom = nil
+-- TODO fill this out when alt starting locations are added
+-- used to automatically tab and see seasons when connecting to AP
+StartLocationMapping = {
+	["impa's house"] = 0x0B6
+}
+CurrentLocationMapping = {
+	-- North Horon
+	[0x0B6] = {
+		-- from HV
+		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
+		{["type"] = "SeeSeason", ["season"] = NorthHoronSeason, ["season_hidden"] = NorthHoronSeasonHidden}
+	},
+	[0x096] = {
+		-- D1
+		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
+		{["type"] = "DungeonEnt", ["dungeon"] = "d1", ["loc"] = "@North Horon/Enter D0/Gnarled Root Dungeon"},
+		{["type"] = "SeeSeason", ["season"] = NorthHoronSeason, ["season_hidden"] = NorthHoronSeasonHidden}
+	},
+	[0x097] = {{["type"] = "SeeSeason", ["season"] = NorthHoronSeason, ["season_hidden"] = NorthHoronSeasonHidden}}, -- from HP
+	[0x0A6] = {{["type"] = "SeeSeason", ["season"] = NorthHoronSeason, ["season_hidden"] = NorthHoronSeasonHidden}}, -- red ring old man
+	[0x08A] = {
+		-- D5
+		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
+		{["type"] = "DungeonEnt", ["dungeon"] = "d5", ["loc"] = "@North Horon/Enter D5/Unicorn's Cave"},
+		{["type"] = "SeeSeason", ["season"] = NorthHoronSeason, ["season_hidden"] = NorthHoronSeasonHidden}
+	},
+	[0x0B9] = {
+		-- lake portal
+		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
+		{["type"] = "Portal", ["portal"] = EyeglassLakePortalSelector, ["portal_hidden"] = EyeglassLakePortalSelectorHidden},
+		{["type"] = "SeeSeason", ["season"] = NorthHoronSeason, ["season_hidden"] = NorthHoronSeasonHidden}
+	},
+	[0x09A] = {
+		-- suburbs portal
+		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
+		{["type"] = "Portal", ["portal"] = EasternSuburbsPortalSelector, ["portal_hidden"] = EasternSuburbsPortalSelectorHidden},
+		{["type"] = "SeeSeason", ["season"] = NorthHoronSeason, ["season_hidden"] = NorthHoronSeasonHidden}
+	},
+
+	-- Horon Village
+	[0x0C6] = {{["type"] = "SeeSeason", ["season"] = HoronVillageSeason, ["season_hidden"] = HoronVillageSeasonHidden}}, -- from NH
+	[0x0C5] = {{["type"] = "SeeSeason", ["season"] = HoronVillageSeason, ["season_hidden"] = HoronVillageSeasonHidden}}, -- from WC
+	[0x0F7] = {{["type"] = "SeeSeason", ["season"] = HoronVillageSeason, ["season_hidden"] = HoronVillageSeasonHidden}}, -- Subrosia portal
+	[0x0E9] = {{["type"] = "SeeSeason", ["season"] = HoronVillageSeason, ["season_hidden"] = HoronVillageSeasonHidden}}, -- from ES
+	[0x3AB] = {
+		-- Subrosia lever
+		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
+		{["type"] = "Portal", ["portal"] = HoronVillagePortalSelector, ["portal_hidden"] = HoronVillagePortalSelectorHidden}
+	},
+
+	-- Western Coast
+	[0x0C4] = {{["type"] = "SeeSeason", ["season"] = WesternCoastSeason, ["season_hidden"] = WesternCoastSeasonHidden}}, -- from HV
+	[0x0D4] = {
+		-- D0
+		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
+		{["type"] = "DungeonEnt", ["dungeon"] = "d0", ["loc"] = "@Western Coast/Enter D0/Hero's Cave"},
+		{["type"] = "SeeSeason", ["season"] = WesternCoastSeason, ["season_hidden"] = WesternCoastSeasonHidden}
+	},
+	[0x0D0] = {
+		-- D7
+		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
+		{["type"] = "DungeonEnt", ["dungeon"] = "d7", ["loc"] = "@Western Coast/Enter D7/Explorer's Crypt"},
+		{["type"] = "SeeSeason", ["season"] = WesternCoastSeason, ["season_hidden"] = WesternCoastSeasonHidden}
+	},
+	[0x0E2] = {
+		-- warp from turning in the pirate bell
+		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
+		{["type"] = "SeeSeason", ["season"] = WesternCoastSeason, ["season_hidden"] = WesternCoastSeasonHidden}
+	},
+
+	-- Eastern Suburbs
+	[0x0EA] = {{["type"] = "SeeSeason", ["season"] = EasternSuburbsSeason, ["season_hidden"] = EasternSuburbsSeasonHidden}}, -- from HV
+	[0x09B] = {{["type"] = "SeeSeason", ["season"] = EasternSuburbsSeason, ["season_hidden"] = EasternSuburbsSeasonHidden}}, -- from Suburbs portal
+	[0x07C] = {{["type"] = "SeeSeason", ["season"] = EasternSuburbsSeason, ["season_hidden"] = EasternSuburbsSeasonHidden}}, -- from Sunken/Moblin Road
+	[0x08C] = {{["type"] = "SeeSeason", ["season"] = EasternSuburbsSeason, ["season_hidden"] = EasternSuburbsSeasonHidden}}, -- from D2
+	[0x09D] = {{["type"] = "SeeSeason", ["season"] = EasternSuburbsSeason, ["season_hidden"] = EasternSuburbsSeasonHidden}}, -- from WoW tree
+	[0x08F] = {{["type"] = "SeeSeason", ["season"] = EasternSuburbsSeason, ["season_hidden"] = EasternSuburbsSeasonHidden}}, -- from Holly
+
+	-- Woods of Winter
+	[0x9E] = {{["type"] = "SeeSeason", ["season"] = WoodsOfWinterSeason, ["season_hidden"] = WoodsOfWinterSeasonHidden}}, -- tree
+	[0x8D] = {
+		-- D2
+		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
+		{["type"] = "DungeonEnt", ["dungeon"] = "d2", ["loc"] = "@Eastern Suburbs/Enter D2/Snake's Remains"},
+		{["type"] = "SeeSeason", ["season"] = WoodsOfWinterSeason, ["season_hidden"] = WoodsOfWinterSeasonHidden}
+	},
+	[0x8E] = {
+		-- D2 alt
+		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
+		{["type"] = "SeeSeason", ["season"] = WoodsOfWinterSeason, ["season_hidden"] = WoodsOfWinterSeasonHidden}
+	},
+	[0x7E] = {{["type"] = "SeeSeason", ["season"] = WoodsOfWinterSeason, ["season_hidden"] = WoodsOfWinterSeasonHidden}}, -- from Sunken
+	[0x7F] = {{["type"] = "SeeSeason", ["season"] = WoodsOfWinterSeason, ["season_hidden"] = WoodsOfWinterSeasonHidden}}, -- Holly
+
+	-- Holodrum Plain
+	[0x087] = {{["type"] = "SeeSeason", ["season"] = HolodrumPlainSeason, ["season_hidden"] = HolodrumPlainSeasonHidden}}, -- from NH
+	[0x086] = {{["type"] = "SeeSeason", ["season"] = HolodrumPlainSeason, ["season_hidden"] = HolodrumPlainSeasonHidden}}, -- from D1 north
+	[0x095] = {{["type"] = "SeeSeason", ["season"] = HolodrumPlainSeason, ["season_hidden"] = HolodrumPlainSeasonHidden}}, -- from D1 west
+	[0x0A5] = {{["type"] = "SeeSeason", ["season"] = HolodrumPlainSeason, ["season_hidden"] = HolodrumPlainSeasonHidden}}, -- from red ring old man
+	[0x0B3] = {{["type"] = "SeeSeason", ["season"] = HolodrumPlainSeason, ["season_hidden"] = HolodrumPlainSeasonHidden}}, -- from lower SS
+	[0x093] = {{["type"] = "SeeSeason", ["season"] = HolodrumPlainSeason, ["season_hidden"] = HolodrumPlainSeasonHidden}}, -- from upper SS
+	[0x045] = {{["type"] = "SeeSeason", ["season"] = HolodrumPlainSeason, ["season_hidden"] = HolodrumPlainSeasonHidden}}, -- from Onox
+	[0x055] = {{["type"] = "SeeSeason", ["season"] = HolodrumPlainSeason, ["season_hidden"] = HolodrumPlainSeasonHidden}}, -- from natzu W
+	[0x066] = {{["type"] = "SeeSeason", ["season"] = HolodrumPlainSeason, ["season_hidden"] = HolodrumPlainSeasonHidden}}, -- from natzu SW
+	[0x068] = {{["type"] = "SeeSeason", ["season"] = HolodrumPlainSeason, ["season_hidden"] = HolodrumPlainSeasonHidden}}, -- from natzu SE
+
+	-- Spool Swamp
+	[0x083] = {{["type"] = "SeeSeason", ["season"] = SpoolSwampSeason, ["season_hidden"] = SpoolSwampSeasonHidden}}, -- from upper HP
+	[0x073] = {{["type"] = "SeeSeason", ["season"] = SpoolSwampSeason, ["season_hidden"] = SpoolSwampSeasonHidden}}, -- from tarm
+	[0x0B2] = {{["type"] = "SeeSeason", ["season"] = SpoolSwampSeason, ["season_hidden"] = SpoolSwampSeasonHidden}}, -- from lower HP
+	[0x060] = {
+		-- d3
+		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
+		{["type"] = "DungeonEnt", ["dungeon"] = "d3", ["loc"] = "@Spool Swamp/Enter D3/Poison Moth's Lair"},
+		{["type"] = "SeeSeason", ["season"] = SpoolSwampSeason, ["season_hidden"] = SpoolSwampSeasonHidden}
+	},
+	[0x0B0] = {
+		-- portal
+		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
+		{["type"] = "Portal", ["portal"] = SpoolSwampPortalSelector, ["portal_hidden"] = SpoolSwampPortalSelectorHidden},
+		{["type"] = "SeeSeason", ["season"] = SpoolSwampSeason, ["season_hidden"] = SpoolSwampSeasonHidden}
+	},
+
+	-- Sunken City/Mt. Cucco
+	[0x05D] = {{["type"] = "SeeSeason", ["season"] = SunkenCitySeason, ["season_hidden"] = SunkenCitySeasonHidden}}, -- from natzu
+	[0x02B] = {{["type"] = "SeeSeason", ["season"] = SunkenCitySeason, ["season_hidden"] = SunkenCitySeasonHidden}}, -- from Goron Mountain
+	[0x03B] = {{["type"] = "SeeSeason", ["season"] = SunkenCitySeason, ["season_hidden"] = SunkenCitySeasonHidden}}, -- lower gasha spot
+	[0x01D] = {
+		-- d4
+		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
+		{["type"] = "DungeonEnt", ["dungeon"] = "d4", ["loc"] = "@Mount Cucco/Enter D4/Dancing Dragon Dungeon"},
+		{["type"] = "SeeSeason", ["season"] = SunkenCitySeason, ["season_hidden"] = SunkenCitySeasonHidden}
+	},
+	[0x01E] = {
+		-- portal
+		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
+		{["type"] = "Portal", ["portal"] = MtCuccoPortalSelector, ["portal_hidden"] = MtCuccoPortalSelectorHidden},
+		{["type"] = "SeeSeason", ["season"] = SunkenCitySeason, ["season_hidden"] = SunkenCitySeasonHidden}
+	},
+
+	-- Lost Woods
+	[0x063] = {{["type"] = "SeeSeason", ["season"] = LostWoodsSeason, ["season_hidden"] = LostWoodsSeasonHidden}}, -- from SS
+	[0x020] = {{["type"] = "SeeSeason", ["season"] = LostWoodsSeason, ["season_hidden"] = LostWoodsSeasonHidden}}, -- from tarm
+
+	-- Tarm Ruins
+	[0x010] = {{["type"] = "SeeSeason", ["season"] = TarmRuinsSeason, ["season_hidden"] = TarmRuinsSeasonHidden}}, -- from LW
+	[0x000] = {
+		-- d6
+		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
+		{["type"] = "DungeonEnt", ["dungeon"] = "d6", ["loc"] = "@Tarm Ruins/Enter D6/Ancient Ruins"},
+		{["type"] = "SeeSeason", ["season"] = TarmRuinsSeason, ["season_hidden"] = TarmRuinsSeasonHidden}
+	},
+
+	-- Temple Remains
+	[0x035] = {{["type"] = "SeeSeason", ["season"] = TempleRemainsSeason, ["season_hidden"] = TempleRemainsSeasonHidden}}, -- from HP
+	[0x037] = {{["type"] = "SeeSeason", ["season"] = TempleRemainsSeason, ["season_hidden"] = TempleRemainsSeasonHidden}}, -- from Goron Mountain
+	[0x025] = {
+		-- lower portal
+		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
+		{["type"] = "Portal", ["portal"] = LowerRemainsPortalSelector, ["portal_hidden"] = LowerRemainsPortalSelectorHidden},
+		{["type"] = "SeeSeason", ["season"] = TempleRemainsSeason, ["season_hidden"] = TempleRemainsSeasonHidden}
+	},
+	[0x004] = {{["type"] = "SeeSeason", ["season"] = TempleRemainsSeason, ["season_hidden"] = TempleRemainsSeasonHidden}}, -- upper remains
+	[0x3A8] = {
+		-- upper portal
+		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
+		{["type"] = "Portal", ["portal"] = UpperRemainsPortalSelector, ["portal_hidden"] = UpperRemainsPortalSelectorHidden},
+	},
+
+	-- Subrosia
+	[0x105] = {
+		-- mountain
+		{["type"] = "Autotab", ["tab"] = {"Subrosia"}},
+		{["type"] = "Portal", ["portal"] = MountainPortalSelector, ["portal_hidden"] = MountainPortalSelectorHidden}
+	},
+	[0x157] = {
+		-- market
+		{["type"] = "Autotab", ["tab"] = {"Subrosia"}},
+		{["type"] = "Portal", ["portal"] = MountainPortalSelector, ["portal_hidden"] = MountainPortalSelectorHidden}
+	},
+	[0x135] = {
+		-- village
+		{["type"] = "Autotab", ["tab"] = {"Subrosia"}},
+		{["type"] = "Portal", ["portal"] = SubrosiaVillagePortalSelector, ["portal_hidden"] = SubrosiaVillagePortalSelectorHidden}
+	},
+	[0x172] = {
+		-- pirates
+		{["type"] = "Autotab", ["tab"] = {"Subrosia"}},
+		{["type"] = "Portal", ["portal"] = PiratesPortalSelector, ["portal_hidden"] = PiratesPortalSelectorHidden}
+	},
+	[0x14A] = {
+		-- furnace
+		{["type"] = "Autotab", ["tab"] = {"Subrosia"}},
+		{["type"] = "Portal", ["portal"] = FurnacePortalSelector, ["portal_hidden"] = FurnacePortalSelectorHidden}
+	},
+	[0x113] = {
+		-- volcano
+		{["type"] = "Autotab", ["tab"] = {"Subrosia"}},
+		{["type"] = "Portal", ["portal"] = VolcanoPortalSelector, ["portal_hidden"] = VolcanoPortalSelectorHidden}
+	},
+	[0x120] = {
+		-- d8 portal
+		{["type"] = "Autotab", ["tab"] = {"Subrosia"}},
+		{["type"] = "Portal", ["portal"] = D8PortalSelector, ["portal_hidden"] = D8PortalSelectorHidden}
+	},
+	[0x100] = {
+		-- d8
+		{["type"] = "Autotab", ["tab"] = {"Subrosia"}},
+		{["type"] = "DungeonEnt", ["dungeon"] = "d8", ["loc"] = "@Subrosia/Enter D8/Sword and Shield Maze"}
+	},
+
+	-- D0
+	[0x404] = {
+		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
+		{["type"] = "DungeonIn", ["dungeon"] = "d0"}
+	},
+	-- [0x405] = {{["type"] = "Autotab", ["tab"] = {"Holodrum"}}},
+	-- D1
+	[0x41C] = {
+		{["type"] = "Autotab", ["tab"] = {"Gnarled Root Dungeon"}},
+		{["type"] = "DungeonIn", ["dungeon"] = "d1"}
+	},
+	-- D2
+	[0x437] = {
+		{["type"] = "Autotab", ["tab"] = {"Snake's Remains"}},
+		{["type"] = "DungeonIn", ["dungeon"] = "d2"}
+	},
+	[0x439] = {{["type"] = "Autotab", ["tab"] = {"Snake's Remains"}}},
+	[0x433] = {{["type"] = "Autotab", ["tab"] = {"Snake's Remains"}}},
+	-- D3
+	[0x44B] = {
+		{["type"] = "Autotab", ["tab"] = {"Poison Moth's Lair"}},
+		{["type"] = "DungeonIn", ["dungeon"] = "d3"}
+	},
+	-- D4
+	[0x481] = {
+		{["type"] = "Autotab", ["tab"] = {"Dancing Dragon Dungeon"}},
+		{["type"] = "DungeonIn", ["dungeon"] = "d4"}
+	},
+	-- D5
+	[0x4A7] = {
+		{["type"] = "Autotab", ["tab"] = {"Unicorn's Cave"}},
+		{["type"] = "DungeonIn", ["dungeon"] = "d5"}
+	},
+	-- D6
+	[0x4BA] = {
+		{["type"] = "Autotab", ["tab"] = {"Ancient Ruins"}},
+		{["type"] = "DungeonIn", ["dungeon"] = "d6"}
+	},
+	-- D7
+	[0x55B] = {
+		{["type"] = "Autotab", ["tab"] = {"Explorer's Crypt"}},
+		{["type"] = "DungeonIn", ["dungeon"] = "d7"}
+	},
+	-- D8
+	[0x587] = {
+		{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze"}},
+		{["type"] = "DungeonIn", ["dungeon"] = "d8"}
+	}
+}
+
 JewelKeys = {RoundJewel, SquareJewel, PyramidJewel, XJewel}
 LostWoodsDefault = {3, 2, 0, 1}
 
@@ -100,17 +363,17 @@ WildSeeds = {
 	["Sword and Shield Maze/Wild Mystery Seeds/B1F"] = MysterySeeds
 }
 RegionToSeasonMapping = {
-	["EYEGLASS_LAKE"] = "north_horon_season_hidden",
-	["EASTERN_SUBURBS"] = "suburbs_season_hidden",
-	["WOODS_OF_WINTER"] = "wow_season_hidden",
-	["HOLODRUM_PLAIN"] = "plain_season_hidden",
-	["SPOOL_SWAMP"] = "swamp_season_hidden",
-	["SUNKEN_CITY"] = "sunken_season_hidden",
-	["LOST_WOODS"] = "lost_woods_season_hidden",
-	["TARM_RUINS"] = "tarm_ruins_season_hidden",
-	["WESTERN_COAST"] = "coast_season_hidden",
-	["TEMPLE_REMAINS"] = "remains_season_hidden",
-	["HORON_VILLAGE"] = "horon_village_season_hidden"
+	["EYEGLASS_LAKE"] = NorthHoronSeasonHidden,
+	["EASTERN_SUBURBS"] = EasternSuburbsSeasonHidden,
+	["WOODS_OF_WINTER"] = WoodsOfWinterSeasonHidden,
+	["HOLODRUM_PLAIN"] = HolodrumPlainSeasonHidden,
+	["SPOOL_SWAMP"] = SpoolSwampSeasonHidden,
+	["SUNKEN_CITY"] = SunkenCitySeasonHidden,
+	["LOST_WOODS"] = LostWoodsSeasonHidden,
+	["TARM_RUINS"] = TarmRuinsSeasonHidden,
+	["WESTERN_COAST"] = WesternCoastSeasonHidden,
+	["TEMPLE_REMAINS"] = TempleRemainsSeasonHidden,
+	["HORON_VILLAGE"] = HoronVillageSeasonHidden
 }
 DefaultSeasonOptionMapping = {
 	["vanilla"] = 0,
@@ -334,20 +597,20 @@ PortalDictionary = {
 	}
 }
 PortalMapping = {
-	["eastern suburbs portal"] = "suburbs_portal_selector_hidden",
-	["spool swamp portal"] = "swamp_portal_selector_hidden",
-	["eyeglass lake portal"] = "lake_portal_selector_hidden",
-	["mt. cucco portal"] = "mtcucco_portal_selector_hidden",
-	["horon village portal"] = "horon_portal_selector_hidden",
-	["temple remains lower portal"] = "remains_portal_selector_hidden",
-	["temple remains upper portal"] = "upremains_portal_selector_hidden",
-	["volcanoes east portal"] = "mountain_portal_selector_hidden",
-	["subrosia market portal"] = "market_portal_selector_hidden",
-	["great furnace portal"] = "furnace_portal_selector_hidden",
-	["strange brothers portal"] = "village_portal_selector_hidden",
-	["house of pirates portal"] = "pirates_portal_selector_hidden",
-	["volcanoes west portal"] = "volcano_portal_selector_hidden",
-	["d8 entrance portal"] = "d8_portal_selector_hidden"
+	["eastern suburbs portal"] = EasternSuburbsPortalSelectorHidden,
+	["spool swamp portal"] = SpoolSwampPortalSelectorHidden,
+	["eyeglass lake portal"] = EyeglassLakePortalSelectorHidden,
+	["mt. cucco portal"] = MtCuccoPortalSelectorHidden,
+	["horon village portal"] = HoronVillagePortalSelectorHidden,
+	["temple remains lower portal"] = LowerRemainsPortalSelectorHidden,
+	["temple remains upper portal"] = UpperRemainsPortalSelectorHidden,
+	["volcanoes east portal"] = MountainPortalSelectorHidden,
+	["subrosia market portal"] = MarketPortalSelectorHidden,
+	["great furnace portal"] = FurnacePortalSelectorHidden,
+	["strange brothers portal"] = SubrosiaVillagePortalSelectorHidden,
+	["house of pirates portal"] = PiratesPortalSelectorHidden,
+	["volcanoes west portal"] = VolcanoPortalSelectorHidden,
+	["d8 entrance portal"] = D8PortalSelectorHidden
 }
 DungeonDictionary = {
 	["d0 entrance"] = 1,
@@ -388,17 +651,17 @@ WildSeedLocationMapping = {
 }
 
 SeeSeasonVars = {
-	{"see horon village", "horon_village_season", "@Horon Village/See the Season/Horon Village"},
-	{"see north horon", "north_horon_season", "@North Horon/See the Season/North Horon"},
-	{"see eastern suburbs", "suburbs_season", "@Eastern Suburbs/See the Season/Eastern Suburbs"},
-	{"see woods of winter", "wow_season", "@Woods of Winter/See the Season/Woods of Winter"},
-	{"see holodrum plain", "plain_season", "@Holodrum Plain/See the Season/Holodrum Plain"},
-	{"see lost woods", "lost_woods_season", "@Lost Woods/See the Season/Lost Woods"},
-	{"see tarm ruins", "tarm_ruins_season", "@Tarm Ruins/See the Season/Tarm Ruins"},
-	{"see spool swamp", "swamp_season", "@Spool Swamp/See the Season/Spool Swamp"},
-	{"see sunken city", "sunken_season", "@Sunken City/See the Season/Sunken City"},
-	{"see western coast", "coast_season", "@Western Coast/See the Season/Western Coast"},
-	{"see temple remains", "remains_season", "@Temple Remains/See the Season/Temple Remains"}
+	{"see horon village", HoronVillageSeason, "@Horon Village/See the Season/Horon Village"},
+	{"see north horon", NorthHoronSeason, "@North Horon/See the Season/North Horon"},
+	{"see eastern suburbs", EasternSuburbsSeason, "@Eastern Suburbs/See the Season/Eastern Suburbs"},
+	{"see woods of winter", WoodsOfWinterSeason, "@Woods of Winter/See the Season/Woods of Winter"},
+	{"see holodrum plain", HolodrumPlainSeason, "@Holodrum Plain/See the Season/Holodrum Plain"},
+	{"see lost woods", LostWoodsSeason, "@Lost Woods/See the Season/Lost Woods"},
+	{"see tarm ruins", TarmRuinsSeason, "@Tarm Ruins/See the Season/Tarm Ruins"},
+	{"see spool swamp", SpoolSwampSeason, "@Spool Swamp/See the Season/Spool Swamp"},
+	{"see sunken city", SunkenCitySeason, "@Sunken City/See the Season/Sunken City"},
+	{"see western coast", WesternCoastSeason, "@Western Coast/See the Season/Western Coast"},
+	{"see temple remains", TempleRemainsSeason, "@Temple Remains/See the Season/Temple Remains"}
 }
 
 QualityToAccess = {

@@ -160,6 +160,12 @@
 		"codes": "shuffle_scrub_label"
 	},
 	{
+		"name": "Autotab Label",
+		"type": "static",
+		"img": "images/labels/autotab_label.png",
+		"codes": "autotab_label"
+	},
+	{
 		"name": "Natzu label",
 		"type": "static",
 		"img": "images/labels/natzu_animal_label.png",

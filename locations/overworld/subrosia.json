@@ -654,7 +654,7 @@
 				"visibility_rules": ["ShuffleDungeonOn"],
 				"sections": [
 					{
-						"name": "Enter D8",
+						"name": "Sword and Shield Maze",
 						"access_rules": ["^$CanReach|SwordAndShieldMaze"]
 					}
 				],

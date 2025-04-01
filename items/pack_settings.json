@@ -700,6 +700,25 @@
 			}
 		]
 	},
+	{
+		"name": "Autotab",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 1,
+		"stages": [
+			{
+				"img": "images/labels/off.png",
+				"codes": "autotab, autotab_off",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/on.png",
+				"codes": "autotab, autotab_on",
+				"inherit_codes": false
+			}
+		]
+	},
 	// misc settings/items
 	{
 		"name": "Show Hints",
@@ -836,32 +855,31 @@
 		"allow_disabled": false,
 		"initial_stage_idx": 3,
 		"loop": true,
-		"codes": "north_horon_season",
 		"stages": [
 			{
-			"img": "images/labels/selector_spring.png",
-			"codes": "north_spring",
-			"inherit_codes": false
+				"img": "images/labels/selector_spring.png",
+				"codes": "north_horon_season, north_spring",
+				"inherit_codes": false
 			},
 			{
-			"img": "images/labels/selector_summer.png",
-			"codes": "north_summer",
-			"inherit_codes": false
+				"img": "images/labels/selector_summer.png",
+				"codes": "north_horon_season, north_summer",
+				"inherit_codes": false
 			},
 			{
-			"img": "images/labels/selector_fall.png",
-			"codes": "north_fall",
-			"inherit_codes": false
+				"img": "images/labels/selector_fall.png",
+				"codes": "north_horon_season, north_fall",
+				"inherit_codes": false
 			},
 			{
-			"img": "images/labels/selector_winter.png",
-			"codes": "north_winter",
-			"inherit_codes": false
+				"img": "images/labels/selector_winter.png",
+				"codes": "north_horon_season, north_winter",
+				"inherit_codes": false
 			},
 			{
-			"img": "images/labels/selector_neutral.png",
-			"codes": "season_northhoron",
-			"inherit_codes": false
+				"img": "images/labels/selector_neutral.png",
+				"codes": "north_horon_season, season_northhoron",
+				"inherit_codes": false
 			}
 		]
 	},

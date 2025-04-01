@@ -199,17 +199,13 @@ function onClear(slot_data)
 	end
 
 	-- auto tab and set the season for the starting location
-	-- CurrentLocation = nil
+	CurrentLocation = nil
+	CurrentTab = nil
 	-- TODO get this from slot_data once it's a setting
-	-- local startLocation = "impa's house"
-	-- if (startLocation) then
-	-- 	local fakeBounce = {
-	-- 		["data"] = {
-	-- 			["Current room"] = StartLocationMapping[startLocation]
-	-- 		}
-	-- 	}
-	-- 	OnBounce(fakeBounce)
-	-- end
+	local startLocation = "impa's house"
+	if (Tracker:FindObjectForCode("autotab").CurrentStage == 1 and startLocation) then
+		OnBounce({["data"] = {["Current room"] = StartLocationMapping[startLocation]}})
+	end
 end
 
 -- called when an item gets collected
@@ -404,19 +400,54 @@ function OnBounce(json)
 		return
 	end
 	if json["data"]["Current room"] then
-		local currentRoom = json["data"]["Current room"]
-		if (CurrentLocationMapping[currentRoom]) then
-			for _, v in ipairs(CurrentLocationMapping[currentRoom]) do
-				local roomMap = v
-				if (roomMap["type"] == "Autotab") then
-					if CurrentLocation ~= roomMap["tab"][#roomMap["tab"]] then
-						CurrentLocation = roomMap["tab"][#roomMap["tab"]]
+		local prevRoom = CurrentRoom
+		CurrentRoom = json["data"]["Current room"]
+		print("Current room", CurrentRoom)
+		if prevRoom == CurrentRoom or CurrentRoom == nil then
+			return
+		end
+
+		if (CurrentLocationMapping[CurrentRoom]) then
+			for _, roomMap in ipairs(CurrentLocationMapping[CurrentRoom]) do
+				if (roomMap["type"] == "Autotab" and Tracker:FindObjectForCode("autotab").CurrentStage == 1) then
+					if CurrentTab ~= roomMap["tab"][#roomMap["tab"]] then
+						CurrentTab = roomMap["tab"][#roomMap["tab"]]
 						for _, room in ipairs(roomMap["tab"]) do
 							Tracker:UiHint("ActivateTab", room)
 						end
 					end
+				elseif roomMap["type"] == "Portal" and prevRoom ~= nil then
+					-- make sure we came from another portal
+					if CurrentLocationMapping[prevRoom] then
+						for _, prevMap in ipairs(CurrentLocationMapping[prevRoom]) do
+							if prevMap["type"] == "Portal" then
+								Tracker:FindObjectForCode(roomMap["portal"]).CurrentStage = Tracker:FindObjectForCode(roomMap["portal_hidden"]).CurrentStage
+								Tracker:FindObjectForCode(prevMap["portal"]).CurrentStage = Tracker:FindObjectForCode(prevMap["portal_hidden"]).CurrentStage
+							end
+						end
+					end
+				elseif roomMap["type"] == "DungeonEnt" and prevRoom ~= nil then
+					-- make sure we came from the inside
+					if CurrentLocationMapping[prevRoom] then
+						for _, prevMap in ipairs(CurrentLocationMapping[prevRoom]) do
+							if prevMap["type"] == "DungeonIn" then
+								Tracker:FindObjectForCode(prevMap["dungeon"].."_ent_selector").CurrentStage = Tracker:FindObjectForCode(prevMap["dungeon"].."_ent_selector_hidden").CurrentStage
+								Tracker:FindObjectForCode(roomMap["loc"]).AvailableChestCount = 0
+							end
+						end
+					end
+				elseif roomMap["type"] == "DungeonIn" and prevRoom ~= nil then
+					-- make sure we came from the outside
+					if CurrentLocationMapping[prevRoom] then
+						for _, prevMap in ipairs(CurrentLocationMapping[prevRoom]) do
+							if prevMap["type"] == "DungeonEnt" then
+								Tracker:FindObjectForCode(roomMap["dungeon"].."_ent_selector").CurrentStage = Tracker:FindObjectForCode(roomMap["dungeon"].."_ent_selector_hidden").CurrentStage
+								Tracker:FindObjectForCode(prevMap["loc"]).AvailableChestCount = 0
+							end
+						end
+					end
 				elseif roomMap["type"] == "SeeSeason" then
-					Tracker:FindObjectForCode(roomMap["selector"]).CurrentStage = Tracker:FindObjectForCode(roomMap["selector_hidden"]).CurrentStage
+					Tracker:FindObjectForCode(roomMap["season"]).CurrentStage = Tracker:FindObjectForCode(roomMap["season_hidden"]).CurrentStage
 				end
 			end
 		end
@@ -433,4 +464,4 @@ if AUTOTRACKER_ENABLE_LOCATION_TRACKING then
 end
 Archipelago:AddSetReplyHandler("notify handler", onNotify)
 Archipelago:AddRetrievedHandler("notify launch handler", onNotifyLaunch)
--- Archipelago:AddBouncedHandler("bounce handler", OnBounce)
+Archipelago:AddBouncedHandler("bounce handler", OnBounce)

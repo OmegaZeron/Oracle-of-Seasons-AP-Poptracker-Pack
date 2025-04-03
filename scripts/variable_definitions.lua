@@ -137,20 +137,20 @@ CurrentLocationMapping = {
 	[0x08F] = {{["type"] = "SeeSeason", ["season"] = EasternSuburbsSeason, ["season_hidden"] = EasternSuburbsSeasonHidden}}, -- from Holly
 
 	-- Woods of Winter
-	[0x9E] = {{["type"] = "SeeSeason", ["season"] = WoodsOfWinterSeason, ["season_hidden"] = WoodsOfWinterSeasonHidden}}, -- tree
-	[0x8D] = {
+	[0x09E] = {{["type"] = "SeeSeason", ["season"] = WoodsOfWinterSeason, ["season_hidden"] = WoodsOfWinterSeasonHidden}}, -- tree
+	[0x08D] = {
 		-- D2
 		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
 		{["type"] = "DungeonEnt", ["dungeon"] = "d2", ["loc"] = "@Eastern Suburbs/Enter D2/Snake's Remains"},
 		{["type"] = "SeeSeason", ["season"] = WoodsOfWinterSeason, ["season_hidden"] = WoodsOfWinterSeasonHidden}
 	},
-	[0x8E] = {
+	[0x08E] = {
 		-- D2 alt
 		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
 		{["type"] = "SeeSeason", ["season"] = WoodsOfWinterSeason, ["season_hidden"] = WoodsOfWinterSeasonHidden}
 	},
-	[0x7E] = {{["type"] = "SeeSeason", ["season"] = WoodsOfWinterSeason, ["season_hidden"] = WoodsOfWinterSeasonHidden}}, -- from Sunken
-	[0x7F] = {{["type"] = "SeeSeason", ["season"] = WoodsOfWinterSeason, ["season_hidden"] = WoodsOfWinterSeasonHidden}}, -- Holly
+	[0x07E] = {{["type"] = "SeeSeason", ["season"] = WoodsOfWinterSeason, ["season_hidden"] = WoodsOfWinterSeasonHidden}}, -- from Sunken
+	[0x07F] = {{["type"] = "SeeSeason", ["season"] = WoodsOfWinterSeason, ["season_hidden"] = WoodsOfWinterSeasonHidden}}, -- Holly
 
 	-- Holodrum Plain
 	[0x087] = {{["type"] = "SeeSeason", ["season"] = HolodrumPlainSeason, ["season_hidden"] = HolodrumPlainSeasonHidden}}, -- from NH
@@ -236,9 +236,9 @@ CurrentLocationMapping = {
 	[0x157] = {
 		-- market
 		{["type"] = "Autotab", ["tab"] = {"Subrosia"}},
-		{["type"] = "Portal", ["portal"] = MountainPortalSelector, ["portal_hidden"] = MountainPortalSelectorHidden}
+		{["type"] = "Portal", ["portal"] = MarketPortalSelector, ["portal_hidden"] = MarketPortalSelectorHidden}
 	},
-	[0x135] = {
+	[0x153] = {
 		-- village
 		{["type"] = "Autotab", ["tab"] = {"Subrosia"}},
 		{["type"] = "Portal", ["portal"] = SubrosiaVillagePortalSelector, ["portal_hidden"] = SubrosiaVillagePortalSelectorHidden}
@@ -248,6 +248,7 @@ CurrentLocationMapping = {
 		{["type"] = "Autotab", ["tab"] = {"Subrosia"}},
 		{["type"] = "Portal", ["portal"] = PiratesPortalSelector, ["portal_hidden"] = PiratesPortalSelectorHidden}
 	},
+	[0x174] = {{["type"] = "Autotab", ["tab"] = {"Subrosia"}}}, -- from pirate ship
 	[0x14A] = {
 		-- furnace
 		{["type"] = "Autotab", ["tab"] = {"Subrosia"}},
@@ -271,32 +272,55 @@ CurrentLocationMapping = {
 
 	-- D0
 	[0x404] = {
+		-- main entrance
 		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
 		{["type"] = "DungeonIn", ["dungeon"] = "d0"}
 	},
-	-- [0x405] = {{["type"] = "Autotab", ["tab"] = {"Holodrum"}}},
+	[0x406] = {{["type"] = "DungeonIn", ["dungeon"] = "d0"}}, -- sword chest
 	-- D1
 	[0x41C] = {
 		{["type"] = "Autotab", ["tab"] = {"Gnarled Root Dungeon"}},
 		{["type"] = "DungeonIn", ["dungeon"] = "d1"}
 	},
 	-- D2
-	[0x437] = {
-		{["type"] = "Autotab", ["tab"] = {"Snake's Remains"}},
+	[0x439] = {
+		-- main entrance
+		{["type"] = "Autotab", ["tab"] = {"Snake's Remains", "Snake's Remains Front"}},
 		{["type"] = "DungeonIn", ["dungeon"] = "d2"}
 	},
-	[0x439] = {{["type"] = "Autotab", ["tab"] = {"Snake's Remains"}}},
-	[0x433] = {{["type"] = "Autotab", ["tab"] = {"Snake's Remains"}}},
+	[0x437] = {{["type"] = "Autotab", ["tab"] = {"Snake's Remains", "Snake's Remains Front"}}}, -- alt entrance
+	[0x433] = {{["type"] = "Autotab", ["tab"] = {"Snake's Remains", "Snake's Remains Front"}}}, -- bomb maze
+	[0x432] = {{["type"] = "Autotab", ["tab"] = {"Snake's Remains", "Snake's Remains Front"}}}, -- cracked wall with ropes
+	[0x61E] = {{["type"] = "Autotab", ["tab"] = {"Snake's Remains", "Snake's Remains Back"}}}, -- 2D section
+	[0x42C] = {{["type"] = "DungeonIn", ["dungeon"] = "d2"}}, -- essence
 	-- D3
 	[0x44B] = {
-		{["type"] = "Autotab", ["tab"] = {"Poison Moth's Lair"}},
+		-- main entrance
+		{["type"] = "Autotab", ["tab"] = {"Poison Moth's Lair", "Poison Moth's Lair B1F"}},
 		{["type"] = "DungeonIn", ["dungeon"] = "d3"}
 	},
+	[0x441] = {{["type"] = "Autotab", ["tab"] = {"Poison Moth's Lair", "Poison Moth's Lair B1F"}}}, -- water room
+	[0x452] = {{["type"] = "Autotab", ["tab"] = {"Poison Moth's Lair", "Poison Moth's Lair 1F"}}}, -- above water room
+	[0x63B] = {{["type"] = "Autotab", ["tab"] = {"Poison Moth's Lair", "Poison Moth's Lair B1F"}}}, -- trampoline owl 2D section
+	[0x43E] = {{["type"] = "Autotab", ["tab"] = {"Poison Moth's Lair", "Poison Moth's Lair 1F"}}}, -- trampoline owl
+	[0x63D] = {{["type"] = "Autotab", ["tab"] = {"Poison Moth's Lair", "Poison Moth's Lair B1F"}}}, -- trampoline 2D section
+	[0x43F] = {{["type"] = "Autotab", ["tab"] = {"Poison Moth's Lair", "Poison Moth's Lair 1F"}}}, -- trampoline
+	[0x44A] = {{["type"] = "Autotab", ["tab"] = {"Poison Moth's Lair", "Poison Moth's Lair B1F"}}}, -- mimic room
+	[0x459] = {{["type"] = "Autotab", ["tab"] = {"Poison Moth's Lair", "Poison Moth's Lair 1F"}}}, -- pol's voice room
+	[0x448] = {{["type"] = "Autotab", ["tab"] = {"Poison Moth's Lair", "Poison Moth's Lair B1F"}}}, -- omuai
+	[0x457] = {{["type"] = "Autotab", ["tab"] = {"Poison Moth's Lair", "Poison Moth's Lair 1F"}}}, -- peahat after omuai
 	-- D4
 	[0x481] = {
-		{["type"] = "Autotab", ["tab"] = {"Dancing Dragon Dungeon"}},
+		-- main entrance
+		{["type"] = "Autotab", ["tab"] = {"Dancing Dragon Dungeon", "Dancing Dragon Dungeon 2F"}},
 		{["type"] = "DungeonIn", ["dungeon"] = "d4"}
 	},
+	[0x479] = {{["type"] = "Autotab", ["tab"] = {"Dancing Dragon Dungeon", "Dancing Dragon Dungeon 2F"}}}, -- left water stairs
+	[0x466] = {{["type"] = "Autotab", ["tab"] = {"Dancing Dragon Dungeon", "Dancing Dragon Dungeon 1F"}}}, -- antifairy wizzrobe maze
+	[0x477] = {{["type"] = "Autotab", ["tab"] = {"Dancing Dragon Dungeon", "Dancing Dragon Dungeon 2F"}}}, -- big jump owl
+	[0x465] = {{["type"] = "Autotab", ["tab"] = {"Dancing Dragon Dungeon", "Dancing Dragon Dungeon 1F"}}}, -- pre-minecart
+	[0x469] = {{["type"] = "Autotab", ["tab"] = {"Dancing Dragon Dungeon", "Dancing Dragon Dungeon 1F"}}}, -- beamos
+	[0x461] = {{["type"] = "Autotab", ["tab"] = {"Dancing Dragon Dungeon", "Dancing Dragon Dungeon 2F"}}}, -- pre-gohma
 	-- D5
 	[0x4A7] = {
 		{["type"] = "Autotab", ["tab"] = {"Unicorn's Cave"}},
@@ -304,19 +328,60 @@ CurrentLocationMapping = {
 	},
 	-- D6
 	[0x4BA] = {
-		{["type"] = "Autotab", ["tab"] = {"Ancient Ruins"}},
+		-- main entrance
+		{["type"] = "Autotab", ["tab"] = {"Ancient Ruins", "Ancient Ruins 1F, 2F"}},
 		{["type"] = "DungeonIn", ["dungeon"] = "d6"}
 	},
+	[0x4C2] = {{["type"] = "Autotab", ["tab"] = {"Ancient Ruins", "Ancient Ruins 1F, 2F"}}}, -- spiny beetle trampoline
+	[0x4CC] = {{["type"] = "Autotab", ["tab"] = {"Ancient Ruins", "Ancient Ruins 3F, 4F, 5F"}}}, -- darknuts
+	[0x4CF] = {{["type"] = "Autotab", ["tab"] = {"Ancient Ruins", "Ancient Ruins 3F, 4F, 5F"}}}, -- ball and chain trooper
+	[0x4C6] = {{["type"] = "Autotab", ["tab"] = {"Ancient Ruins", "Ancient Ruins 1F, 2F"}}}, -- indy jones drop
+	[0x4C5] = {{["type"] = "Autotab", ["tab"] = {"Ancient Ruins", "Ancient Ruins 1F, 2F"}}}, -- indy jones stairs
+	[0x4CE] = {{["type"] = "Autotab", ["tab"] = {"Ancient Ruins", "Ancient Ruins 3F, 4F, 5F"}}}, -- hooded stalfos
+	[0x4CB] = {{["type"] = "Autotab", ["tab"] = {"Ancient Ruins", "Ancient Ruins 3F, 4F, 5F"}}}, -- before vire
+	[0x4C1] = {{["type"] = "Autotab", ["tab"] = {"Ancient Ruins", "Ancient Ruins 1F, 2F"}}}, -- below vire
 	-- D7
 	[0x55B] = {
-		{["type"] = "Autotab", ["tab"] = {"Explorer's Crypt"}},
+		-- main entrance
+		{["type"] = "Autotab", ["tab"] = {"Explorer's Crypt", "Explorer's Crypt 1F, B1F"}},
 		{["type"] = "DungeonIn", ["dungeon"] = "d7"}
 	},
+	[0x54A] = {{["type"] = "Autotab", ["tab"] = {"Explorer's Crypt", "Explorer's Crypt 1F, B1F"}}}, -- quicksand antifairy
+	[0x539] = {{["type"] = "Autotab", ["tab"] = {"Explorer's Crypt", "Explorer's Crypt B2F"}}}, -- moving platform keese
+	[0x547] = {{["type"] = "Autotab", ["tab"] = {"Explorer's Crypt", "Explorer's Crypt 1F, B1F"}}}, -- magnet chest
+	[0x537] = {{["type"] = "Autotab", ["tab"] = {"Explorer's Crypt", "Explorer's Crypt B2F"}}}, -- magnunesu
+	[0x54C] = {{["type"] = "Autotab", ["tab"] = {"Explorer's Crypt", "Explorer's Crypt 1F, B1F"}}}, -- poe 2 water room
+	[0x543] = {{["type"] = "Autotab", ["tab"] = {"Explorer's Crypt", "Explorer's Crypt B2F"}}}, -- flying tile key block
 	-- D8
 	[0x587] = {
-		{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze"}},
+		-- main entrance
+		{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze 1F"}},
 		{["type"] = "DungeonIn", ["dungeon"] = "d8"}
-	}
+	},
+	[0x577] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze 1F"}}}, -- green zol key block
+	[0x55E] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze B1F"}}}, -- rope pots
+	[0x563] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze B1F"}}}, -- big blade trap
+	[0x75D] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze 1F"}}}, -- lava 2D section right
+	[0x75C] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze 1F"}}}, -- lava 2D section left
+	[0x569] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze B1F"}}}, -- lava roller
+	[0x56E] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze B1F"}}}, -- magunesu and gels
+	[0x58B] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze 1F"}}}, -- ice spike room
+	[0x573] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze B1F"}}}, -- silent watch
+	[0x58D] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze 1F"}}}, -- below armos chest
+	[0x574] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze B1F"}}}, -- ball and chain trooper
+	[0x58E] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze 1F"}}}, -- trapped by magnet ball
+	[0x571] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze B1F"}}}, -- three eye owl
+	[0x58C] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze 1F"}}}, -- bomb whisps
+	[0x56C] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze B1F"}}}, -- after frypolar
+	[0x58A] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze 1F"}}}, -- after 7 torches
+	[0x584] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze 1F"}}}, -- ice pickup room
+	[0x589] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze 1F"}}}, -- SE ice drop
+	[0x588] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze 1F"}}}, -- SW ice drop
+	[0x583] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze 1F"}}}, -- beamos
+	[0x56B] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze B1F"}}}, -- SE lava flow
+	[0x568] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze B1F"}}}, -- lava trapped stairs
+	[0x56A] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze B1F"}}}, -- SW lava flow
+	[0x567] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze B1F"}}}, -- stairs below beamos
 }
 
 JewelKeys = {RoundJewel, SquareJewel, PyramidJewel, XJewel}

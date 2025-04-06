@@ -11,7 +11,7 @@
 				"sections": [
 					{
 						"name": "Horon Village",
-						"access_rules": ["^$CanReach|HoronVillageFindSeason"]
+						"access_rules": ["{^$CanReach|HoronVillageFindSeason}"]
 					}
 				],
 				"map_locations": [

@@ -11,7 +11,7 @@
 				"sections": [
 					{
 						"name": "Temple Remains",
-						"access_rules": ["^$CanReach|TempleRemainsFindSeason"]
+						"access_rules": ["{^$CanReach|TempleRemainsFindSeason}"]
 					}
 				],
 				"map_locations": [

@@ -11,7 +11,7 @@
 				"sections": [
 					{
 						"name": "Western Coast",
-						"access_rules": ["^$CanReach|WesternCoastFindSeason"]
+						"access_rules": ["{^$CanReach|WesternCoastFindSeason}"]
 					}
 				],
 				"map_locations": [

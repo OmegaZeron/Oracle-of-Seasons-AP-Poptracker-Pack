@@ -11,7 +11,7 @@
 				"sections": [
 					{
 						"name": "North Horon",
-						"access_rules": ["^$CanReach|NorthHoronFindSeason"]
+						"access_rules": ["{^$CanReach|NorthHoronFindSeason}"]
 					}
 				],
 				"map_locations": [

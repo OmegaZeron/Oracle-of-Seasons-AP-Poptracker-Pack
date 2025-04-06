@@ -11,7 +11,7 @@
 				"sections": [
 					{
 						"name": "Holodrum Plain",
-						"access_rules": ["^$CanReach|HolodrumPlainFindSeason"]
+						"access_rules": ["{^$CanReach|HolodrumPlainFindSeason}"]
 					}
 				],
 				"map_locations": [

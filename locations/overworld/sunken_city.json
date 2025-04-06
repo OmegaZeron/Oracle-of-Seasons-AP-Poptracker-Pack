@@ -11,7 +11,7 @@
 				"sections": [
 					{
 						"name": "Sunken City",
-						"access_rules": ["^$CanReach|SunkenCityFindSeason"]
+						"access_rules": ["{^$CanReach|SunkenCityFindSeason}"]
 					}
 				],
 				"map_locations": [

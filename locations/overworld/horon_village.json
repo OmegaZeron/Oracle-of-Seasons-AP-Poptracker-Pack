@@ -389,10 +389,7 @@
 				"name": "Horon Portal",
 				"chest_unopened_img": "images/labels/portal.png",
 				"chest_opened_img": "images/labels/portalgray.png",
-				// "visibility_rules": [
-				// 	"PortalShuffleOn",
-				// 	"PortalShuffleOutward"
-				// ],
+				"visibility_rules": ["portalshuffleon", "portalshuffleoutward"],
 				"sections": [
 					{
 						"access_rules": ["{^$CanReach|HoronPortal}"]

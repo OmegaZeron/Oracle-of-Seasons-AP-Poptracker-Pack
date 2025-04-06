@@ -3,7 +3,7 @@ Poptracker Pack for Seasons AP
 
 Tracker pack for [PopTracker](https://github.com/black-sliver/PopTracker/) with Autotracking.
 
-PopTracker v0.23.0 or higher is recommended. 
+PopTracker v0.30.4 or higher is recommended. 
 
 Installation:
 Download Poptracker from the link above, and place installation anywhere on your PC. Place this pack inside the "Packs" folder within. 

@@ -116,6 +116,7 @@
 			},
 			{
 				"name": "Subrosian Mountain Portal",
+				"visibility_rules": ["portalshuffleon", "portalshuffleoutward"],
 				"sections": [
 					{
 						"access_rules": ["{^$CanReach|SubrosiaMountainEast}"]
@@ -131,6 +132,7 @@
 			},
 			{
 				"name": "Subrosian Volcano Portal",
+				"visibility_rules": ["portalshuffleon", "portalshuffleoutward"],
 				"sections": [
 					{
 						"access_rules": ["{^$CanReach|Volcano}"]
@@ -226,6 +228,7 @@
 			},
 			{
 				"name": "Subrosian Market Portal",
+				"visibility_rules": ["portalshuffleon", "portalshuffleoutward"],
 				"sections": [
 					{
 						"access_rules": ["{^$CanReach|SubrosiaMarket}"]
@@ -305,6 +308,7 @@
 			},
 			{
 				"name": "Furnace Portal",
+				"visibility_rules": ["portalshuffleon", "portalshuffleoutward"],
 				"sections": [
 					{
 						"access_rules": ["{^$CanReach|EastFurnace}"]
@@ -384,6 +388,7 @@
 			},
 			{
 				"name": "Subrosian Village Portal",
+				"visibility_rules": ["portalshuffleon", "portalshuffleoutward"],
 				"sections": [
 					{
 					"access_rules": ["{^$CanReach|SubrosiaVillagePortal}"]
@@ -479,6 +484,7 @@
 			},
 			{
 				"name": "Pirate Portal",
+				"visibility_rules": ["portalshuffleon", "portalshuffleoutward"],
 				"sections": [
 					{
 						"access_rules": ["{^$CanReach|Pirates}"]
@@ -494,6 +500,7 @@
 			},
 			{
 				"name": "D8 Portal",
+				"visibility_rules": ["portalshuffleon", "portalshuffleoutward"],
 				"sections": [
 					{
 						"access_rules": ["{^$CanReach|SwordAndShieldMaze}"]

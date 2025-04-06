@@ -1,41 +1,41 @@
 ﻿{
 	"name": "Oracle of Seasons Tracker",
 	"game_name": "The Legend of Zelda: Oracle of Seasons",
-	"package_version": "2.1.0",
+	"package_version": "2.2.0",
 	"package_uid": "seasons_ap",
 	"platform": "gba",
 	"author": "Seto10987, OmegaZeron",
 	"variants": {
 		"standard": {
-			"display_name": "AP Autotracker v.2.1.0 - Vertical",
+			"display_name": "AP Autotracker v.2.2.0 - Vertical",
 			"flags": ["ap"]
 		},
 		"withhint_horizontal": {
-			"display_name": "AP Autotracker v.2.1.0 - Horizontal",
+			"display_name": "AP Autotracker v.2.2.0 - Horizontal",
 			"flags": ["ap"]
 		},
 		"withhint_default_compact": {
-			"display_name": "AP Autotracker v.2.1.0 - Vertical (Compact)",
+			"display_name": "AP Autotracker v.2.2.0 - Vertical (Compact)",
 			"flags": ["ap"]
 		},
 		"withhint_horizontal_compact": {
-			"display_name": "AP Autotracker v.2.1.0 - Horizontal (Compact)",
+			"display_name": "AP Autotracker v.2.2.0 - Horizontal (Compact)",
 			"flags": ["ap"]
 		},
 		"withouthint_default": {
-			"display_name": "AP Autotracker v.2.1.0 - Vertical (No Hints)",
+			"display_name": "AP Autotracker v.2.2.0 - Vertical (No Hints)",
 			"flags": ["ap"]
 		},
 		"withouthint_horizontal": {
-			"display_name": "AP Autotracker v.2.1.0 - Horizontal (No Hints)",
+			"display_name": "AP Autotracker v.2.2.0 - Horizontal (No Hints)",
 			"flags": ["ap"]
 		},
 		"withouthint_default_compact": {
-			"display_name": "AP Autotracker v.2.1.0 - Vertical (Compact, No Hints)",
+			"display_name": "AP Autotracker v.2.2.0 - Vertical (Compact, No Hints)",
 			"flags": ["ap"]
 		},
 		"withouthint_horizontal_compact": {
-			"display_name": "AP Autotracker v.2.1.0 - Horizontal (Compact, No Hints)",
+			"display_name": "AP Autotracker v.2.2.0 - Horizontal (Compact, No Hints)",
 			"flags": ["ap"]
 		}
 	},

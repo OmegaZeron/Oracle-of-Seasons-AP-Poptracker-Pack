@@ -42,6 +42,7 @@
 				"name": "Temple Remains Lower Portal",
 				"chest_unopened_img": "images/labels/portal.png",
 				"chest_opened_img": "images/labels/portalgray.png",
+				"visibility_rules": ["portalshuffleon", "portalshuffleoutward"],
 				"sections": [
 					{
 						"access_rules": ["{^$CanReach|TempleRemainsLowerPortal}"]
@@ -59,6 +60,7 @@
 				"name": "Temple Remains Upper Portal",
 				"chest_unopened_img": "images/labels/portal.png",
 				"chest_opened_img": "images/labels/portalgray.png",
+				"visibility_rules": ["portalshuffleon", "portalshuffleoutward"],
 				"sections": [
 					{
 						"access_rules": ["{^$CanReach|TempleRemainsUpperPortal}"]

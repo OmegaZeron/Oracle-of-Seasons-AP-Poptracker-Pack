@@ -1,6 +1,12 @@
 {
 	"versions": [
 		{
+			"package_version": "2.2.0",
+			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/v.2.2.0/Oracle-of-Seasons-AP-Poptracker-Pack-v2.2.0.zip",
+			"sha256": "a2bb76caf6aa34518a364028c4b14613f47b935ad3c55b9353675546f182d68b",
+			"changelog": ["Auto-tab fixes, lever function fix, eyeglass portal fix, additional combat logic, wild bombs"]
+		},
+		{
 			"package_version": "2.1.0",
 			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/v.2.1.0/Oracle-of-Seasons-AP-Poptracker-Pack-v2.1.0.zip",
 			"sha256": "591505fae76a9d08dda38fd192b7452ef1ed9e435dfbd37afebb683631f25fc2",

@@ -256,8 +256,8 @@ function OnSectionChanged(section)
 		local hiddenSetting = Tracker:FindObjectForCode(HiddenSetting)
 		---@cast hiddenSetting JsonItem
 		hiddenSetting.Active = not hiddenSetting.Active
-	elseif (WildSeeds[section.FullID] and section.AccessibilityLevel == AccessibilityLevel.Cleared) then
-		Tracker:FindObjectForCode(WildSeeds[section.FullID]).Active = true
+	elseif (WildItems[section.FullID] and section.AccessibilityLevel == AccessibilityLevel.Cleared) then
+		Tracker:FindObjectForCode(WildItems[section.FullID]).Active = true
 	end
 end
 
@@ -1129,36 +1129,37 @@ function display_pedestal()
 		end
 	end
 end
-
-function OnCollectEmbers()
-	local seeds = Tracker:FindObjectForCode(EmberSeeds)
-	if (seeds == nil) then
-		return
-	end
-	for _, loc in pairs(WildSeedLocationMapping[EmberSeeds]) do
+function OnCollectWildItem(item, trackerItem)
+	for _, loc in pairs(WildItemLocationMapping[item]) do
 		local wildSection = Tracker:FindObjectForCode(loc)
 		---@cast wildSection LocationSection
-		if (seeds.Active) then
+		if (trackerItem.Active) then
 			wildSection.AvailableChestCount = wildSection.AvailableChestCount - 1
 		else
 			wildSection.AvailableChestCount = wildSection.AvailableChestCount + 1
 		end
 	end
 end
-function OnCollectMysteries()
-	local seeds = Tracker:FindObjectForCode(MysterySeeds)
-	if (seeds == nil) then
+function OnCollectEmbers()
+	local trackerItem = Tracker:FindObjectForCode(EmberSeeds)
+	if (trackerItem == nil) then
 		return
 	end
-	for _, loc in pairs(WildSeedLocationMapping[MysterySeeds]) do
-		local wildSection = Tracker:FindObjectForCode(loc)
-		---@cast wildSection LocationSection
-		if (seeds.Active) then
-			wildSection.AvailableChestCount = wildSection.AvailableChestCount - 1
-		else
-			wildSection.AvailableChestCount = wildSection.AvailableChestCount + 1
-		end
+	OnCollectWildItem(EmberSeeds, trackerItem)
+end
+function OnCollectMysteries()
+	local trackerItem = Tracker:FindObjectForCode(MysterySeeds)
+	if (trackerItem == nil) then
+		return
 	end
+	OnCollectWildItem(MysterySeeds, trackerItem)
+end
+function OnCollectBombs()
+	local trackerItem = Tracker:FindObjectForCode(Bombs)
+	if (trackerItem == nil) then
+		return
+	end
+	OnCollectWildItem(Bombs, trackerItem)
 end
 
 function OnFrameHandler()
@@ -1176,6 +1177,7 @@ ScriptHost:AddWatchForCode("lost woods handler", "shuffle_lost_woods", display_l
 ScriptHost:AddWatchForCode("pedestal handler", "shuffle_pedestal", display_pedestal)
 ScriptHost:AddWatchForCode("wild ember handler", EmberSeeds, OnCollectEmbers)
 ScriptHost:AddWatchForCode("wild mystery handler", MysterySeeds, OnCollectMysteries)
+ScriptHost:AddWatchForCode("wild bombs handler", Bombs, OnCollectBombs)
 ScriptHost:AddOnLocationSectionChangedHandler("section changed handler", OnSectionChanged)
 ScriptHost:AddOnFrameHandler("load handler", OnFrameHandler)
 -- "See the Season" locations

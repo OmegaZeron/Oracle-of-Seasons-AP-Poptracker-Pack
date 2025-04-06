@@ -81,6 +81,26 @@
 				]
 			},
 			{
+				"name": "Wild Bombs",
+				"sections": [
+					{
+						"access_rules": ["^$CanReach|SnakeWildBombs"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "snakes_remains1",
+						"x": 300,
+						"y": 98
+					},
+					{
+						"map": "snakes_remains1",
+						"x": 300,
+						"y": 20
+					}
+				]
+			},
+			{
 				"name": "Chest in Moving Blades Room",
 				"sections": [
 					{

@@ -64,6 +64,12 @@ SnakeMoblinRopeFight:connect_one_way_entrance(SnakeHardhats, function()
 	)
 end)
 SnakeHardhats:connect_one_way(SnakeHardhatChest, CanDestroyPot)
+SnakeHardhats:connect_one_way(SnakeWildBombs, function()
+	return All(
+		CanDestroyRespawningBush(),
+		MediumLogic()
+	)
+end)
 SnakeHardhats:connect_one_way_entrance(SnakeBombMoblins, function()
 	return All(
 		Any(

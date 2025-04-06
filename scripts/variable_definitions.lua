@@ -421,11 +421,12 @@ ShopPrices = {
 	[D4ScrubPrice] = 0,
 	[SubrosianMarketPrice] = 0,
 }
-WildSeeds = {
+WildItems = {
 	["Dancing Dragon Dungeon/Wild Ember Seeds/1F"] = EmberSeeds,
 	["Unicorn's Cave/Armos Puzzle Room/Ember Seeds"] = EmberSeeds,
 	["Explorer's Crypt/Wild Ember Seeds/1F"] = EmberSeeds,
-	["Sword and Shield Maze/Wild Mystery Seeds/B1F"] = MysterySeeds
+	["Sword and Shield Maze/Wild Mystery Seeds/B1F"] = MysterySeeds,
+	["Snake's Remains/Wild Bombs/"] = Bombs
 }
 RegionToSeasonMapping = {
 	["EYEGLASS_LAKE"] = NorthHoronSeasonHidden,
@@ -720,13 +721,14 @@ SeedMapping = {
 	["Pegasus Seeds"] = PegasusSeeds,
 	["Gale Seeds"] = GaleSeeds
 }
-WildSeedLocationMapping = {
+WildItemLocationMapping = {
 	[EmberSeeds] = {
 		"@Dancing Dragon Dungeon/Wild Ember Seeds/1F",
 		"@Unicorn's Cave/Armos Puzzle Room/Ember Seeds",
 		"@Explorer's Crypt/Wild Ember Seeds/1F"
 	},
-	[MysterySeeds] = {"@Sword and Shield Maze/Wild Mystery Seeds/B1F"}
+	[MysterySeeds] = {"@Sword and Shield Maze/Wild Mystery Seeds/B1F"},
+	[Bombs] = {"@Snake's Remains/Wild Bombs/"}
 }
 
 SeeSeasonVars = {

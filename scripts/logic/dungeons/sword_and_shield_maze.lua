@@ -93,7 +93,7 @@ Frypolar:connect_one_way_entrance(MazeNineTorches, function()
 		All(
 			-- ember seeds
 			MediumLogic(),
-			Has(SeedSatchel),
+			CanUseSeeds(),
 			Any(
 				Has(UpgradedSatchel),
 				HardLogic()

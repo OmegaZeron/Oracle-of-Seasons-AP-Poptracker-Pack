@@ -187,8 +187,7 @@
 				// ],
 				"sections": [
 					{
-						"name": "Eyeglass Lake Portal",
-						"access_rules": ["^$CanReach|EyeglassPortal"]
+						"access_rules": ["{^$CanReach|EyeglassPortal}"]
 					}
 				],
 				"map_locations": [
@@ -206,7 +205,7 @@
 				"sections": [
 					{
 						"name": "Gnarled Root Dungeon",
-						"access_rules": ["^$CanReach|GnarledRootDungeon"]
+						"access_rules": ["{^$CanReach|GnarledRootDungeon}"]
 					}
 				],
 				"map_locations": [
@@ -223,7 +222,7 @@
 				"sections": [
 					{
 						"name": "Unicorn's Cave",
-						"access_rules": ["^$CanReach|UnicornCave"]
+						"access_rules": ["{^$CanReach|UnicornCave}"]
 					}
 				],
 				"map_locations": [

@@ -5,10 +5,7 @@ MazeFoyer:connect_one_way(MazeEyeDrop, function()
 		Any(
 			Has(Slingshot),
 			All(
-				Any(
-					MediumLogic(),
-					AccessibilityLevel.SequenceBreak
-				),
+				MediumLogic(),
 				Has(Feather),
 				CanUseSeeds(),
 				HasContactSeeds()
@@ -22,10 +19,7 @@ MazeFoyer:connect_one_way(MazeThreeEyeChest, function()
 		Any(
 			Has(HyperSlingshot),
 			All(
-				Any(
-					HardLogic(),
-					AccessibilityLevel.SequenceBreak
-				),
+				HardLogic(),
 				CanUseSeeds(),
 				HasContactSeeds()
 			)
@@ -49,10 +43,7 @@ MazeHardhats:connect_one_way_entrance(MazeBigBladeTrap, function()
 		Any(
 			Has(Cape),
 			All(
-				Any(
-					HardLogic(),
-					AccessibilityLevel.SequenceBreak
-				),
+				HardLogic(),
 				Has(Feather),
 				Has(SeedSatchel),
 				Has(PegasusSeeds)
@@ -70,10 +61,7 @@ MazeThreeEyeOwl:connect_one_way(MazeThreeEyeBombChest, function()
 		Any(
 			Has(HyperSlingshot),
 			All(
-				Any(
-					HardLogic(),
-					AccessibilityLevel.SequenceBreak
-				),
+				HardLogic(),
 				CanUseSeeds(),
 				HasContactSeeds()
 			)
@@ -85,36 +73,31 @@ MazeThreeEyeOwl:connect_one_way_entrance(Frypolar, function() return D8KeyCount(
 Frypolar:connect_one_way(MazeWildMysteries, function()
 	return All(
 		CanDestroyRespawningBush(),
-		Any(
-			MediumLogic(),
-			AccessibilityLevel.SequenceBreak
-		)
+		MediumLogic()
 	)
 end)
 Frypolar:connect_one_way_entrance(MazeNineTorches, function()
 	return Any(
 		All(
-			Has(Slingshot),
-			Has(MysterySeeds)
+			-- throw ice
+			Any(
+				Has(Slingshot),
+				All(
+					Has(SeedSatchel),
+					AccessibilityLevel.SequenceBreak
+				)
+			),
+			Has(MysterySeeds),
+			Has(Bracelet)
 		),
 		All(
-			Any(
-				MediumLogic(),
-				AccessibilityLevel.SequenceBreak
-			),
+			-- ember seeds
+			MediumLogic(),
 			Has(SeedSatchel),
 			Any(
 				Has(UpgradedSatchel),
-				AccessibilityLevel.SequenceBreak
+				HardLogic()
 			),
-			Has(EmberSeeds)
-		),
-		All(
-			Any(
-				HardLogic(),
-				AccessibilityLevel.SequenceBreak
-			),
-			CanUseSeeds(),
 			Has(EmberSeeds)
 		)
 	)

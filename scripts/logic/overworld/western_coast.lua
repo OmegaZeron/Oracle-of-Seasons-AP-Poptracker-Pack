@@ -42,10 +42,7 @@ HerosCaveFoyer:connect_one_way_entrance(HerosCaveUnderground, function()
 		CanNormalKill(),
 		All(
 			Has(Boomerang),
-			Any(
-				MediumLogic(),
-				AccessibilityLevel.SequenceBreak
-			)
+			MediumLogic()
 		)
 	)
 end)
@@ -73,10 +70,7 @@ WesternCoastHouse:connect_one_way_entrance(WesternCoastStump, function()
 		CanBombWall(),
 		Any(
 			Has(Feather),
-			Any(
-				HardLogic(),
-				AccessibilityLevel.SequenceBreak
-			)
+			HardLogic()
 		)
 	)
 end)

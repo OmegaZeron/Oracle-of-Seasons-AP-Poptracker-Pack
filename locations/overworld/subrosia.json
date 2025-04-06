@@ -118,8 +118,7 @@
 				"name": "Subrosian Mountain Portal",
 				"sections": [
 					{
-						"name": "Subrosia: Mountain Portal",
-						"access_rules": ["^$CanReach|SubrosiaMountainEast"]
+						"access_rules": ["{^$CanReach|SubrosiaMountainEast}"]
 					}
 				],
 				"map_locations": [
@@ -134,8 +133,7 @@
 				"name": "Subrosian Volcano Portal",
 				"sections": [
 					{
-						"name": "Subrosia: Volcano Portal",
-						"access_rules": ["^$CanReach|Volcano"]
+						"access_rules": ["{^$CanReach|Volcano}"]
 					}
 				],
 				"map_locations": [
@@ -230,8 +228,7 @@
 				"name": "Subrosian Market Portal",
 				"sections": [
 					{
-						"name": "Subrosia: Market Portal",
-						"access_rules": ["^$CanReach|SubrosiaMarket"]
+						"access_rules": ["{^$CanReach|SubrosiaMarket}"]
 					}
 				],
 				"map_locations": [
@@ -310,8 +307,7 @@
 				"name": "Furnace Portal",
 				"sections": [
 					{
-						"name": "Subrosia: Furnace Portal",
-						"access_rules": ["^$CanReach|EastFurnace"]
+						"access_rules": ["{^$CanReach|EastFurnace}"]
 					}
 				],
 				"map_locations": [
@@ -390,8 +386,7 @@
 				"name": "Subrosian Village Portal",
 				"sections": [
 					{
-					"name": "Subrosia: Village Portal",
-					"access_rules": ["^$CanReach|SubrosiaVillagePortal"]
+					"access_rules": ["{^$CanReach|SubrosiaVillagePortal}"]
 					}
 				],
 				"map_locations": [
@@ -486,8 +481,7 @@
 				"name": "Pirate Portal",
 				"sections": [
 					{
-						"name": "Subrosia: Pirate Portal",
-						"access_rules": ["^$CanReach|Pirates"]
+						"access_rules": ["{^$CanReach|Pirates}"]
 					}
 				],
 				"map_locations": [
@@ -502,8 +496,7 @@
 				"name": "D8 Portal",
 				"sections": [
 					{
-						"name": "Subrosia: D8 Portal",
-						"access_rules": ["^$CanReach|SwordAndShieldMaze"]
+						"access_rules": ["{^$CanReach|SwordAndShieldMaze}"]
 					}
 				],
 				"map_locations": [
@@ -655,7 +648,7 @@
 				"sections": [
 					{
 						"name": "Sword and Shield Maze",
-						"access_rules": ["^$CanReach|SwordAndShieldMaze"]
+						"access_rules": ["{^$CanReach|SwordAndShieldMaze}"]
 					}
 				],
 				"map_locations": [

@@ -25,7 +25,7 @@
 			{
 				"name": "Enter D0",
 				"visibility_rules": ["ShuffleDungeonOn"],
-				"access_rules": ["^$CanReach|HerosCave"],
+				"access_rules": ["{^$CanReach|HerosCave}"],
 				"sections": [
 					{
 						"name": "Hero's Cave"
@@ -224,7 +224,7 @@
 				"sections": [
 					{
 						"name": "Explorer's Crypt",
-						"access_rules": ["^$CanReach|ExplorersCrypt"]
+						"access_rules": ["{^$CanReach|ExplorersCrypt}"]
 					}
 				],
 				"map_locations": [

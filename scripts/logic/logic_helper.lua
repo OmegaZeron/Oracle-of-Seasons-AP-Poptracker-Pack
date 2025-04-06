@@ -1,9 +1,15 @@
 function MediumLogic()
-	return Has(Medium) or
-	HardLogic()
+	return Any(
+		Has(Medium),
+		HardLogic(),
+		AccessibilityLevel.SequenceBreak
+	)
 end
 function HardLogic()
-	return Has(Hard)
+	return Any(
+		Has(Hard),
+		AccessibilityLevel.SequenceBreak
+	)
 end
 
 function HasSword()
@@ -47,10 +53,7 @@ function CanBombWall()
 					AccessibilityLevel.SequenceBreak
 				)
 			),
-			Any(
-				MediumLogic(),
-				AccessibilityLevel.SequenceBreak
-			)
+			MediumLogic()
 		)
 	)
 end
@@ -86,10 +89,7 @@ end
 
 function CanPunch()
 	return All(
-		Any(
-			MediumLogic(),
-			AccessibilityLevel.SequenceBreak
-		),
+		MediumLogic(),
 		Any(
 			Has(FistRing),
 			Has(ExpertsRing)
@@ -125,10 +125,7 @@ function CanBeatOnox()
 		Has(Feather),
 		Any(
 			HasRod(),
-			Any(
-				HardLogic(),
-				AccessibilityLevel.SequenceBreak
-			)
+			HardLogic()
 		)
 	)
 end
@@ -143,19 +140,13 @@ function CanBeatGanon()
 			Has(MysterySeeds)
 		),
 		All(
-			Any(
-				MediumLogic(),
-				AccessibilityLevel.SequenceBreak
-			),
+			MediumLogic(),
 			Has(WoodSword),
 			Any(
 				-- all seeds damage Twinrova phase 2
 				Has(Slingshot),
 				All(
-					Any(
-						HardLogic(),
-						AccessibilityLevel.SequenceBreak
-					),
+					HardLogic(),
 					Has(SeedSatchel),
 					-- all seeds other than Pegasus damage from satchel
 					HasContactSeeds(),
@@ -299,10 +290,7 @@ function CanShootSeedsCombat()
 			Has(EmberSeeds),
 			Has(ScentSeeds),
 			All(
-				Any(
-					MediumLogic(),
-					AccessibilityLevel.SequenceBreak
-				),
+				MediumLogic(),
 				Any(
 					Has(MysterySeeds),
 					Has(GaleSeeds)
@@ -328,10 +316,7 @@ function CanLightTorches()
 			Has(EmberSeeds),
 			All(
 				Has(MysterySeeds),
-				Any(
-					MediumLogic(),
-					AccessibilityLevel.SequenceBreak
-				)
+				MediumLogic()
 			)
 		)
 	)
@@ -350,14 +335,7 @@ function CanDestroyBush(allowBombchus)
 		Has(MagicBoomerang),
 		Has(Bracelet),
 		All(
-			Has(Slingshot),
-			Has(GaleSeeds)
-		),
-		All(
-			Any(
-				MediumLogic(),
-				AccessibilityLevel.SequenceBreak
-			),
+			MediumLogic(),
 			Any(
 				Has(Bombs20),
 				All(
@@ -375,11 +353,12 @@ function CanDestroyBush(allowBombchus)
 					)
 				),
 				All(
-					Any(
-						Has(SeedSatchel),
-						Has(Slingshot)
-					),
+					CanUseSeeds(),
 					Has(EmberSeeds)
+				),
+				All(
+					Has(Slingshot),
+					Has(GaleSeeds)
 				)
 			)
 		)
@@ -404,10 +383,7 @@ function CanDestroyFlower()
 		HasSword(),
 		Has(MagicBoomerang),
 		All(
-			Any(
-				MediumLogic(),
-				AccessibilityLevel.SequenceBreak
-			),
+			MediumLogic(),
 			Any(
 				Has(Bombs20),
 				All(
@@ -441,10 +417,7 @@ function CanDestroyCrystal()
 		Has(Bracelet),
 		All(
 			Has(ExpertsRing),
-			Any(
-				MediumLogic(),
-				AccessibilityLevel.SequenceBreak
-			)
+			MediumLogic()
 		)
 	)
 end
@@ -454,10 +427,7 @@ function CanDestroyRespawningBush()
 		CanSwordKill(),
 		All(
 			Has(Bombs),
-			Any(
-				MediumLogic(),
-				AccessibilityLevel.SequenceBreak
-			)
+			MediumLogic()
 		)
 	)
 end
@@ -467,20 +437,22 @@ function CanTriggerLever()
 		CanHitLeverFromMinecart(),
 		All(
 			Has(Shovel),
-			Any(
-				MediumLogic(),
-				AccessibilityLevel.SequenceBreak
-			)
+			MediumLogic()
 		)
 	)
 end
 
 function CanHitLeverFromMinecart()
-	return CanSwordPunchKill() or
-	Has(Boomerang) or
-	HasRod() or
-	Has(Slingshot) or
-	CanUseSeeds() and HasContactSeeds()
+	return Any(
+		CanSwordPunchKill(),
+		Has(Boomerang),
+		HasRod(),
+		Has(Slingshot),
+		All(
+			CanUseSeeds(),
+			HasContactSeeds()
+		)
+	)
 end
 
 function CanHitFarSwitch()
@@ -496,10 +468,7 @@ function UseEnergyRing()
 	return All(
 		Has(WoodSword),
 		Has(EnergyRing),
-		Any(
-			MediumLogic(),
-			AccessibilityLevel.SequenceBreak
-		)
+		MediumLogic()
 	)
 end
 
@@ -532,10 +501,7 @@ function Jump2()
 		MaxJump() >= 2,
 		All(
 			MaxJump() >= 1,
-			Any(
-				MediumLogic(),
-				AccessibilityLevel.SequenceBreak
-			)
+			MediumLogic()
 		)
 	)
 end
@@ -545,10 +511,7 @@ function Jump3()
 		MaxJump() >= 3,
 		All(
 			MaxJump() >= 2,
-			Any(
-				MediumLogic(),
-				AccessibilityLevel.SequenceBreak
-			)
+			MediumLogic()
 		)
 	)
 end
@@ -558,10 +521,7 @@ function Jump4()
 		MaxJump() >= 4,
 		All(
 			MaxJump() >= 3,
-			Any(
-				MediumLogic(),
-				AccessibilityLevel.SequenceBreak
-			)
+			MediumLogic()
 		)
 	)
 end
@@ -573,10 +533,7 @@ end
 function Jump6()
 	return All(
 		MaxJump() >= 5,
-		Any(
-			MediumLogic(),
-			AccessibilityLevel.SequenceBreak
-		)
+		MediumLogic()
 	)
 end
 
@@ -586,10 +543,7 @@ function JumpLiquid2()
 		All(
 			MaxJump() >= 1,
 			Has(Bombs),
-			Any(
-				HardLogic(),
-				AccessibilityLevel.SequenceBreak
-			)
+			HardLogic()
 		)
 	)
 end
@@ -600,10 +554,7 @@ function JumpLiquid3()
 		All(
 			MaxJump() >= 2,
 			Has(Bombs),
-			Any(
-				HardLogic(),
-				AccessibilityLevel.SequenceBreak
-			)
+			HardLogic()
 		)
 	)
 end
@@ -614,10 +565,7 @@ function JumpLiquid4()
 		All(
 			MaxJump() >= 3,
 			Has(Bombs),
-			Any(
-				HardLogic(),
-				AccessibilityLevel.SequenceBreak
-			)
+			HardLogic()
 		)
 	)
 end
@@ -644,18 +592,14 @@ end
 function CanGaleKill()
 	return All(
 		Has(GaleSeeds),
-		Any(
-			MediumLogic(),
-			AccessibilityLevel.SequenceBreak
-		),
+		MediumLogic(),
 		Any(
 			Has(Slingshot),
 			All(
 				Has(SeedSatchel),
 				Any(
 					HardLogic(),
-					Has(Feather),
-					AccessibilityLevel.SequenceBreak
+					Has(Feather)
 				)
 			)
 		)
@@ -691,17 +635,11 @@ function CanNormalKill(pitAvailable, allowGale, allowCane)
 					AccessibilityLevel.SequenceBreak
 				)
 			),
-			Any(
-				MediumLogic(),
-				AccessibilityLevel.SequenceBreak
-			)
+			MediumLogic()
 		),
 		All(
 			allowCane and Has(CaneOfSomaria),
-			Any(
-				MediumLogic(),
-				AccessibilityLevel.SequenceBreak
-			)
+			MediumLogic()
 		)
 	)
 end
@@ -719,10 +657,7 @@ function CanNormalSatchelKill(allowGale)
 		Any(
 			Has(EmberSeeds),
 			All(
-				Any(
-					MediumLogic(),
-					AccessibilityLevel.SequenceBreak
-				),
+				MediumLogic(),
 				Any(
 					Has(ScentSeeds),
 					Has(MysterySeeds),
@@ -735,10 +670,7 @@ function CanNormalSatchelKill(allowGale)
 			),
 			All(
 				allowGale,
-				Any(
-					HardLogic(),
-					AccessibilityLevel.SequenceBreak
-				),
+				HardLogic(),
 				Has(GaleSeeds)
 			)
 		)
@@ -762,10 +694,7 @@ function CanNormalSlingshotKill(allowGale)
 				Has(ScentSeeds),
 				All(
 					allowGale,
-					Any(
-						MediumLogic(),
-						AccessibilityLevel.SequenceBreak
-					),
+					MediumLogic(),
 					Has(MysterySeeds),
 					Has(GaleSeeds)
 				)
@@ -778,6 +707,21 @@ function CanArmorKill()
 	return Any(
 		CanSwordPunchKill(),
 		All(
+			MediumLogic(),
+			Any(
+				Has(Bombs40),
+				All(
+					Has(Bombs),
+					AccessibilityLevel.SequenceBreak
+				),
+				Has(Bombchus20),
+				All(
+					Has(Bombchus),
+					AccessibilityLevel.SequenceBreak
+				)
+			)
+		),
+		All(
 			Has(SeedSatchel),
 			Any(
 				Has(UpgradedSatchel),
@@ -786,18 +730,12 @@ function CanArmorKill()
 			Has(ScentSeeds),
 			Any(
 				Has(Slingshot),
-				Any(
-					MediumLogic(),
-					AccessibilityLevel.SequenceBreak
-				)
+				MediumLogic()
 			)
 		),
 		All(
 			Has(CaneOfSomaria),
-			Any(
-				MediumLogic(),
-				AccessibilityLevel.SequenceBreak
-			)
+			MediumLogic()
 		)
 	)
 end
@@ -814,10 +752,7 @@ function CanKillStalfos()
 		CanNormalKill(),
 		All(
 			HasRod(),
-			Any(
-				MediumLogic(),
-				AccessibilityLevel.SequenceBreak
-			)
+			MediumLogic()
 		)
 	)
 end
@@ -827,10 +762,7 @@ function CanFlipBeetle()
 		Has(Shield),
 		All(
 			Has(Shovel),
-			Any(
-				MediumLogic(),
-				AccessibilityLevel.SequenceBreak
-			)
+			MediumLogic()
 		)
 	)
 end
@@ -864,7 +796,7 @@ function HasRupees(count)
 	-- rupee rooms
 	local snakeRupees = CanReach(SnakeRupeeRoom)
 	local snakeRupeeAmount = 150
-	if (snakeRupees == AccessibilityLevel.SequenceBreak or (snakeRupees == AccessibilityLevel.Normal and not MediumLogic())) then
+	if (snakeRupees == AccessibilityLevel.SequenceBreak or (snakeRupees == AccessibilityLevel.Normal and not Has(Medium) and not Has(Hard))) then
 		oolRupees = oolRupees + snakeRupeeAmount
 	elseif (snakeRupees == AccessibilityLevel.Normal) then
 		bonusRupees = bonusRupees + snakeRupeeAmount
@@ -872,7 +804,7 @@ function HasRupees(count)
 
 	local ancientRupees = CanReach(AncientRupeeRoom)
 	local ancientRupeeAmount = 90
-	if (ancientRupees == AccessibilityLevel.SequenceBreak or (ancientRupees == AccessibilityLevel.Normal and not MediumLogic())) then
+	if (ancientRupees == AccessibilityLevel.SequenceBreak or (ancientRupees == AccessibilityLevel.Normal and not Has(Medium) and not Has(Hard))) then
 		oolRupees = oolRupees + ancientRupeeAmount
 	elseif (ancientRupees == AccessibilityLevel.Normal) then
 		bonusRupees = bonusRupees + ancientRupeeAmount
@@ -884,17 +816,11 @@ function HasRupees(count)
 		-- shovel is infinite farm, and expected in hard
 		All(
 			Has(Shovel),
-			Any(
-				HardLogic(),
-				AccessibilityLevel.SequenceBreak
-			)
+			HardLogic()
 		),
 		-- D2 and D6 rupee rooms are medium+ only
 		All(
-			Any(
-				MediumLogic(),
-				AccessibilityLevel.SequenceBreak
-			),
+			MediumLogic(),
 			rupees + bonusRupees >= count
 		),
 		All(
@@ -1260,6 +1186,34 @@ for i = 1, #SeeSeasonVars do
 		local location = Tracker:FindObjectForCode(SeeSeasonVars[i][3])
 		---@cast location LocationSection
 		if (season.CurrentStage == 4) then
+			location.AvailableChestCount = 1
+		else
+			location.AvailableChestCount = 0
+		end
+	end)
+end
+-- "Enter dungeon" locations
+for i = 1, #DungeonSetVars do
+	ScriptHost:AddWatchForCode(DungeonSetVars[i][1], DungeonSetVars[i][2], function()
+		local dungeon = Tracker:FindObjectForCode(DungeonSetVars[i][2])
+		---@cast dungeon JsonItem
+		local location = Tracker:FindObjectForCode(DungeonSetVars[i][3])
+		---@cast location LocationSection
+		if (dungeon.CurrentStage == 0) then
+			location.AvailableChestCount = 1
+		else
+			location.AvailableChestCount = 0
+		end
+	end)
+end
+-- "Enter portal" locations
+for i = 1, #PortalSetVars do
+	ScriptHost:AddWatchForCode(PortalSetVars[i][1], PortalSetVars[i][2], function()
+		local portal = Tracker:FindObjectForCode(PortalSetVars[i][2])
+		---@cast portal JsonItem
+		local location = Tracker:FindObjectForCode(PortalSetVars[i][3])
+		---@cast location LocationSection
+		if (portal.CurrentStage == PortalDictionary[PortalSetVars[i][1]]['unknown']) then
 			location.AvailableChestCount = 1
 		else
 			location.AvailableChestCount = 0

@@ -42,10 +42,7 @@ LowerEasternSuburbs:connect_two_ways_entrance(UpperEasternSuburbs, function()
 		Dimitri(),
 		All(
 			Ricky(),
-			Any(
-				MediumLogic(),
-				AccessibilityLevel.SequenceBreak
-			)
+			MediumLogic()
 		)
 	)
 end)
@@ -178,10 +175,7 @@ WoodsOfWinter:connect_one_way(GoldenMoblinKill, function()
 			All(
 				Has(EmberSeeds),
 				CanUseSeeds(),
-				Any(
-					MediumLogic(),
-					AccessibilityLevel.SequenceBreak
-				)
+				MediumLogic()
 			)
 		)
 	)

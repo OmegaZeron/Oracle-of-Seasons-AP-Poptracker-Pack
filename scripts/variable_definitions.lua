@@ -451,6 +451,7 @@ DefaultSeasonOptionMapping = {
 }
 PortalDictionary = {
 	['eastern suburbs portal'] = {
+		['unknown'] = 0,
 		['volcanoes east portal'] = 1,
 		['subrosia market portal'] = 2,
 		['great furnace portal'] = 3,
@@ -466,6 +467,7 @@ PortalDictionary = {
 		['temple remains upper portal'] = 13
 	},
 	['spool swamp portal'] = {
+		['unknown'] = 0,
 		['volcanoes east portal'] = 1,
 		['subrosia market portal'] = 2,
 		['great furnace portal'] = 3,
@@ -481,6 +483,7 @@ PortalDictionary = {
 		['temple remains upper portal'] = 13
 	},
 	['eyeglass lake portal'] = {
+		['unknown'] = 0,
 		['volcanoes east portal'] = 1,
 		['subrosia market portal'] = 2,
 		['great furnace portal'] = 3,
@@ -496,6 +499,7 @@ PortalDictionary = {
 		['temple remains upper portal'] = 13
 	},
 	['horon village portal'] = {
+		['unknown'] = 0,
 		['volcanoes east portal'] = 1,
 		['subrosia market portal'] = 2,
 		['great furnace portal'] = 3,
@@ -511,6 +515,7 @@ PortalDictionary = {
 		['temple remains upper portal'] = 13
 	},
 	['mt. cucco portal'] = {
+		['unknown'] = 0,
 		['volcanoes east portal'] = 1,
 		['subrosia market portal'] = 2,
 		['great furnace portal'] = 3,
@@ -526,6 +531,7 @@ PortalDictionary = {
 		['temple remains upper portal'] = 13
 	},
 	['temple remains lower portal'] = {
+		['unknown'] = 0,
 		['volcanoes east portal'] = 1,
 		['subrosia market portal'] = 2,
 		['great furnace portal'] = 3,
@@ -541,6 +547,7 @@ PortalDictionary = {
 		['temple remains upper portal'] = 13
 	},
 	['temple remains upper portal'] = {
+		['unknown'] = 0,
 		['volcanoes east portal'] = 1,
 		['subrosia market portal'] = 2,
 		['great furnace portal'] = 3,
@@ -562,6 +569,7 @@ PortalDictionary = {
 		['house of pirates portal'] = 3,
 		['volcanoes west portal'] = 4,
 		['d8 entrance portal'] = 5,
+		['unknown'] = 6,
 		['eastern suburbs portal'] = 7,
 		['spool swamp portal'] = 8,
 		['eyeglass lake portal'] = 9,
@@ -577,6 +585,7 @@ PortalDictionary = {
 		['house of pirates portal'] = 3,
 		['volcanoes west portal'] = 4,
 		['d8 entrance portal'] = 5,
+		['unknown'] = 6,
 		['eastern suburbs portal'] = 7,
 		['spool swamp portal'] = 8,
 		['eyeglass lake portal'] = 9,
@@ -592,6 +601,7 @@ PortalDictionary = {
 		['house of pirates portal'] = 3,
 		['volcanoes west portal'] = 4,
 		['d8 entrance portal'] = 5,
+		['unknown'] = 6,
 		['eastern suburbs portal'] = 7,
 		['spool swamp portal'] = 8,
 		['eyeglass lake portal'] = 9,
@@ -607,6 +617,7 @@ PortalDictionary = {
 		['house of pirates portal'] = 3,
 		['volcanoes west portal'] = 4,
 		['d8 entrance portal'] = 5,
+		['unknown'] = 6,
 		['eastern suburbs portal'] = 7,
 		['spool swamp portal'] = 8,
 		['eyeglass lake portal'] = 9,
@@ -622,6 +633,7 @@ PortalDictionary = {
 		['strange brothers portal'] = 3,
 		['volcanoes west portal'] = 4,
 		['d8 entrance portal'] = 5,
+		['unknown'] = 6,
 		['eastern suburbs portal'] = 7,
 		['spool swamp portal'] = 8,
 		['eyeglass lake portal'] = 9,
@@ -637,6 +649,7 @@ PortalDictionary = {
 		['strange brothers portal'] = 3,
 		['house of pirates portal'] = 4,
 		['d8 entrance portal'] = 5,
+		['unknown'] = 6,
 		['eastern suburbs portal'] = 7,
 		['spool swamp portal'] = 8,
 		['eyeglass lake portal'] = 9,
@@ -652,6 +665,7 @@ PortalDictionary = {
 		['strange brothers portal'] = 3,
 		['house of pirates portal'] = 4,
 		['volcanoes west portal'] = 5,
+		['unknown'] = 6,
 		['eastern suburbs portal'] = 7,
 		['spool swamp portal'] = 8,
 		['eyeglass lake portal'] = 9,
@@ -727,6 +741,33 @@ SeeSeasonVars = {
 	{"see sunken city", SunkenCitySeason, "@Sunken City/See the Season/Sunken City"},
 	{"see western coast", WesternCoastSeason, "@Western Coast/See the Season/Western Coast"},
 	{"see temple remains", TempleRemainsSeason, "@Temple Remains/See the Season/Temple Remains"}
+}
+DungeonSetVars = {
+	{"d0 entrance selector", D0EntranceSelector, "@Western Coast/Enter D0/Hero's Cave"},
+	{"d1 entrance selector", D1EntranceSelector, "@North Horon/Enter D1/Gnarled Root Dungeon"},
+	{"d2 entrance selector", D2EntranceSelector, "@Eastern Suburbs/Enter D2/Snake's Remains"},
+	{"d3 entrance selector", D3EntranceSelector, "@Spool Swamp/Enter D3/Poison Moth's Lair"},
+	{"d4 entrance selector", D4EntranceSelector, "@Mount Cucco/Enter D4/Dancing Dragon Dungeon"},
+	{"d5 entrance selector", D5EntranceSelector, "@North Horon/Enter D5/Unicorn's Cave"},
+	{"d6 entrance selector", D6EntranceSelector, "@Tarm Ruins/Enter D6/Ancient Ruins"},
+	{"d7 entrance selector", D7EntranceSelector, "@Western Coast/Enter D7/Explorer's Crypt"},
+	{"d8 entrance selector", D8EntranceSelector, "@Subrosia/Enter D8/Sword and Shield Maze"}
+}
+PortalSetVars = {
+	{"eastern suburbs portal", EasternSuburbsPortalSelector, "@Eastern Suburbs/Eastern Suburbs Portal/"},
+	{"spool swamp portal", SpoolSwampPortalSelector, "@Spool Swamp/Spool Swamp Portal/"},
+	{"eyeglass lake portal", EyeglassLakePortalSelector, "@North Horon/Eyeglass Lake Portal/"},
+	{"mt. cucco portal", MtCuccoPortalSelector, "@Mount Cucco/Mt. Cucco Portal/"},
+	{"horon village portal", HoronVillagePortalSelector, "@Horon Village/Horon Portal/"},
+	{"temple remains lower portal", LowerRemainsPortalSelector, "@Temple Remains/Temple Remains Lower Portal/"},
+	{"temple remains upper portal", UpperRemainsPortalSelector, "@Temple Remains/Temple Remains Upper Portal/"},
+	{"volcanoes east portal", MountainPortalSelector, "@Subrosia/Subrosian Mountain Portal/"},
+	{"subrosia market portal", MarketPortalSelector, "@Subrosia/Subrosian Market Portal/"},
+	{"great furnace portal", FurnacePortalSelector, "@Subrosia/Furnace Portal/"},
+	{"strange brothers portal", SubrosiaVillagePortalSelector, "@Subrosia/Subrosian Village Portal/"},
+	{"house of pirates portal", PiratesPortalSelector, "@Subrosia/Pirate Portal/"},
+	{"volcanoes west portal", VolcanoPortalSelector, "@Subrosia/Subrosian Volcano Portal/"},
+	{"d8 entrance portal", D8PortalSelector, "@Subrosia/D8 Portal/"}
 }
 
 QualityToAccess = {

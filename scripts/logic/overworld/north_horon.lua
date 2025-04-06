@@ -140,6 +140,7 @@ FrozenEyeglassLake:connect_one_way_entrance(EasternNorthHoron)
 FrozenEyeglassLake:connect_one_way_entrance(EyeglassPortal, function()
 	return Any(
 		Has(Flippers),
+		JumpLiquid5(),
 		All(
 			Dimitri(),
 			Any(

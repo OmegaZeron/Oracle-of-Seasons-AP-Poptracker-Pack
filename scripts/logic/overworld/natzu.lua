@@ -20,10 +20,7 @@ NatzuDimitriEast:connect_one_way_entrance(MoblinKeepBridge, function()
 		All(
 			Has(Flippers),
 			Has(SwimmersRing),
-			Any(
-				MediumLogic(),
-				AccessibilityLevel.SequenceBreak
-			)
+			MediumLogic()
 		)
 	)
 end)
@@ -43,10 +40,7 @@ NatzuMooshWest:connect_two_ways_entrance(NatzuMooshEast, function()
 		All(
 			CanDestroyBush(),
 			Jump3(),
-			Any(
-				MediumLogic(),
-				AccessibilityLevel.SequenceBreak
-			)
+			MediumLogic()
 		)
 	)
 end)

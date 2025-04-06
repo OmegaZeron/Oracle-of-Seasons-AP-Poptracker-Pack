@@ -136,7 +136,7 @@
 				"chest_opened_img": "images/labels/portalgray.png",
 				"sections": [
 					{
-						"access_rules": ["^$CanReach|SpoolPortal"]
+						"access_rules": ["{^$CanReach|SpoolPortal}"]
 					}
 				],
 				"map_locations": [
@@ -202,7 +202,7 @@
 				"sections": [
 					{
 						"name": "Poison Moth's Lair",
-						"access_rules": ["^$CanReach|PoisonMothLair"]
+						"access_rules": ["{^$CanReach|PoisonMothLair}"]
 					}
 				],
 				"map_locations": [

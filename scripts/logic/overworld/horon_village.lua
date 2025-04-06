@@ -117,10 +117,7 @@ HoronVillage:connect_one_way(ClockShopSecret, function()
 			Has(FoolsOre),
 			All(
 				Has(WoodSword),
-				Any(
-					MediumLogic(),
-					AccessibilityLevel.SequenceBreak
-				)
+				MediumLogic()
 			)
 		)
 	)

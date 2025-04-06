@@ -23,11 +23,7 @@ LowerMtCucco:connect_one_way_entrance(CuccoRightMountain, function()
 					Has(SpringBanana)
 				)
 			),
-			Any(
-				-- cucco clip
-				HardLogic(),
-				AccessibilityLevel.SequenceBreak
-			)
+			HardLogic() -- cucco clip
 		)
 	)
 end)

@@ -8,34 +8,22 @@ TarmEntrance:connect_one_way_entrance(TarmTreeStump, function()
 			Has(Summer),
 			Has(LostWoodsSummer),
 			All(
-				Any(
-					MediumLogic(),
-					AccessibilityLevel.SequenceBreak
-				),
+				MediumLogic(),
 				Any(
 					Has(Autumn),
 					Has(LostWoodsAutumn)
 				),
 				Has(MagicBoomerang),
-				All(
+				Any(
 					Has(Feather),
-					Any(
-						HardLogic(),
-						AccessibilityLevel.SequenceBreak
-					)
+					HardLogic()
 				)
 			)
 		)
 	)
 end)
 TarmTreeStump:connect_one_way(Maple, CanMapleTrade)
-TarmTreeStump:connect_one_way(GoldenLynelKill, function()
-	return Any(
-		-- not biggoron?
-		Has(WoodSword),
-		Has(FoolsOre)
-	)
-end)
+TarmTreeStump:connect_one_way(GoldenLynelKill, CanSwordKill)
 TarmTreeStump:connect_one_way_entrance(LostWoods, function()
 	return All(
 		CanDestroyMushroom(),
@@ -53,10 +41,7 @@ LostWoods:connect_one_way(Pedestal, function()
 			All(
 				-- know the sequence
 				Has(PedestalVanilla),
-				Any(
-					MediumLogic(),
-					AccessibilityLevel.SequenceBreak
-				)
+				MediumLogic()
 			)
 		)
 	)
@@ -68,10 +53,7 @@ Pedestal:connect_one_way_entrance(TarmTree, function()
 			CanLostWoods(),
 			All(
 				CanLostWoods(true),
-				Any(
-					MediumLogic(),
-					AccessibilityLevel.SequenceBreak
-				)
+				MediumLogic()
 			)
 		),
 		Any(
@@ -85,10 +67,7 @@ Pedestal:connect_one_way_entrance(TarmTree, function()
 			All(
 				-- know the sequence
 				Has(LostWoodsVanilla),
-				Any(
-					MediumLogic(),
-					AccessibilityLevel.SequenceBreak
-				)
+				MediumLogic()
 			)
 		)
 	)
@@ -113,10 +92,7 @@ LostWoods:connect_one_way_entrance(TarmTree, function()
 			All(
 				-- know the sequence
 				Has(LostWoodsVanilla),
-				Any(
-					MediumLogic(),
-					AccessibilityLevel.SequenceBreak
-				)
+				MediumLogic()
 			)
 		)
 	)
@@ -128,10 +104,7 @@ TarmTree:connect_one_way(Pedestal, function()
 			CanPedestal(),
 			All(
 				CanPedestal(true),
-				Any(
-					MediumLogic(),
-					AccessibilityLevel.SequenceBreak
-				)
+				MediumLogic()
 			)
 		),
 		Any(
@@ -141,10 +114,7 @@ TarmTree:connect_one_way(Pedestal, function()
 			),
 			All(
 				Has(PedestalVanilla),
-				Any(
-					MediumLogic(),
-					AccessibilityLevel.SequenceBreak
-				)
+				MediumLogic()
 			)
 		)
 	)

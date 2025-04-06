@@ -44,7 +44,7 @@
 				"chest_opened_img": "images/labels/portalgray.png",
 				"sections": [
 					{
-						"access_rules": ["^$CanReach|TempleRemainsLowerPortal"]
+						"access_rules": ["{^$CanReach|TempleRemainsLowerPortal}"]
 					}
 				],
 				"map_locations": [
@@ -61,7 +61,7 @@
 				"chest_opened_img": "images/labels/portalgray.png",
 				"sections": [
 					{
-						"access_rules": ["^$CanReach|TempleRemainsUpperPortal"]
+						"access_rules": ["{^$CanReach|TempleRemainsUpperPortal}"]
 					}
 				],
 				"map_locations": [

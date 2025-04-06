@@ -332,8 +332,7 @@
 				// ],
 				"sections": [
 					{
-						"name": "Enter Eastern Suburbs Portal",
-						"access_rules": ["^$CanReach|SuburbsPortal"]
+						"access_rules": ["{^$CanReach|SuburbsPortal}"]
 					}
 				],
 				"map_locations": [
@@ -350,7 +349,7 @@
 				"sections": [
 					{
 						"name": "Snake's Remains",
-						"access_rules": ["^$CanReach|SnakesRemains"]
+						"access_rules": ["{^$CanReach|SnakesRemains}"]
 					}
 				],
 				"map_locations": [

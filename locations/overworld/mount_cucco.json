@@ -133,7 +133,7 @@
 				"sections": [
 					{
 						"name": "Dancing Dragon Dungeon",
-						"access_rules": ["^$CanReach|DancingDragonDungeon"]
+						"access_rules": ["{^$CanReach|DancingDragonDungeon}"]
 					}
 				],
 				"map_locations": [

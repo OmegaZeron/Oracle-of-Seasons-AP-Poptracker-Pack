@@ -395,8 +395,7 @@
 				// ],
 				"sections": [
 					{
-						"name": "Horon Village: Subrosia Portal",
-						"access_rules": ["^$CanReach|HoronPortal"]
+						"access_rules": ["{^$CanReach|HoronPortal}"]
 					}
 				],
 				"map_locations": [

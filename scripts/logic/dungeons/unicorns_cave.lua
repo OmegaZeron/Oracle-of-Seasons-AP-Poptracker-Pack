@@ -26,10 +26,7 @@ UnicornUndergroundPipesRight:connect_two_ways_entrance(UnicornPotRoom, function(
 		All(
 			CanUseSeeds(),
 			Has(PegasusSeeds),
-			Any(
-				HardLogic(),
-				AccessibilityLevel.SequenceBreak
-			)
+			HardLogic()
 		)
 	)
 end)
@@ -53,12 +50,7 @@ UnicornTerrace:connect_one_way(UnicornArmosPuzzle, function()
 		Has(Bombchus20)
 	)
 end)
-UnicornArmosPuzzle:connect_one_way(UnicornArmosPuzzleEmbers, function()
-	return Any(
-		MediumLogic(),
-		AccessibilityLevel.SequenceBreak
-	)
-end)
+UnicornArmosPuzzle:connect_one_way(UnicornArmosPuzzleEmbers, MediumLogic)
 UnicornMinecarts:connect_one_way(UnicornMiddleMinecartChest, CanHitLeverFromMinecart)
 UnicornMinecarts:connect_one_way(UnicornSpinnerChest, function()
 	return Any(
@@ -73,10 +65,7 @@ UnicornMinecarts:connect_one_way_entrance(UnicornMinecartPushBlock, function()
 			CanArmorKill(),
 			All(
 				Has(Shield),
-				Any(
-					MediumLogic(),
-					AccessibilityLevel.SequenceBreak
-				)
+				MediumLogic()
 			),
 			Has(Bombchus20)
 		)
@@ -96,10 +85,7 @@ UnicornPotRoom:connect_one_way(UnicornMagnetGloveChest, function()
 			Has(Flippers),
 			All(
 				Jump4(), -- is liquid, but diagonal makes this effectively a 4 pit for rules
-				Any(
-					MediumLogic(), -- force medium for lower path
-					AccessibilityLevel.SequenceBreak
-				)
+				MediumLogic() -- force medium for lower path
 			)
 		)
 	)
@@ -129,10 +115,7 @@ UnicornPostSyger:connect_one_way(UnicornTreadmillBasement, function()
 			CanSwordPunchKill(),
 			All(
 				Has(Feather),
-				Any(
-					MediumLogic(),
-					AccessibilityLevel.SequenceBreak
-				)
+				MediumLogic()
 			),
 			All(
 				Has(CaneOfSomaria),

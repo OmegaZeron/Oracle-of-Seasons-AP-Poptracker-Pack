@@ -24,12 +24,8 @@ SnakeAltEntrance:connect_one_way(SnakeBombPuzzle, function()
 				Has(Bombchus50),
 				Has(SeedSatchel),
 				Has(PegasusSeeds),
-				Any(
-					MediumLogic(),
-					AccessibilityLevel.SequenceBreak
-				)
+				MediumLogic()
 			)
-
 		)
 	)
 end)
@@ -75,18 +71,12 @@ SnakeHardhats:connect_one_way_entrance(SnakeBombMoblins, function()
 			Has(Boomerang),
 			CanKillWithPit(),
 			All(
-				Any(
-					MediumLogic(),
-					AccessibilityLevel.SequenceBreak
-				),
+				MediumLogic(),
 				Any(
 					Has(Slingshot),
 					All(
 						Has(SeedSatchel),
-						Any(
-							HardLogic(),
-							AccessibilityLevel.SequenceBreak
-						)
+						HardLogic()
 					)
 				),
 				Any(
@@ -96,10 +86,7 @@ SnakeHardhats:connect_one_way_entrance(SnakeBombMoblins, function()
 			),
 			All(
 				Has(Shovel),
-				Any(
-					HardLogic(),
-					AccessibilityLevel.SequenceBreak
-				)
+				HardLogic()
 			)
 		),
 		Any(
@@ -110,10 +97,7 @@ SnakeHardhats:connect_one_way_entrance(SnakeBombMoblins, function()
 				CanKillWithPit()
 			),
 			All(
-				Any(
-					HardLogic(),
-					AccessibilityLevel.SequenceBreak
-				),
+				HardLogic(),
 				Any(
 					All(
 						CanUseSeeds(),

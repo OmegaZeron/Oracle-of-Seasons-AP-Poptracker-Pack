@@ -158,7 +158,7 @@
 				"sections": [
 					{
 						"name": "Ancient Ruins",
-						"access_rules": ["^$CanReach|AncientRuins"]
+						"access_rules": ["{^$CanReach|AncientRuins}"]
 					}
 				],
 				"map_locations": [

@@ -16,10 +16,7 @@ DancingMinecart:connect_one_way_entrance(DancingAntiFairyMaze, function()
 		CanHitLeverFromMinecart(),
 		All(
 			Has(Bracelet),
-			Any(
-				HardLogic(),
-				AccessibilityLevel.SequenceBreak
-			)
+			HardLogic()
 		)
 	)
 end)
@@ -44,10 +41,7 @@ DancingSpikeTrap:connect_one_way(DancingWaterRing, function()
 			CanNormalKill(),
 			All(
 				Has(Bracelet),
-				Any(
-					MediumLogic(),
-					AccessibilityLevel.SequenceBreak
-				)
+				MediumLogic()
 			)
 		)
 	)
@@ -65,20 +59,14 @@ DancingPostWaterRollers:connect_one_way(DancingPoolDrop, function()
 			CanNormalKill(),
 			All(
 				Has(Bracelet),
-				Any(
-					MediumLogic(),
-					AccessibilityLevel.SequenceBreak
-				)
+				MediumLogic()
 			)
 		),
 		Any(
 			CanHitLeverFromMinecart(),
 			All(
 				Has(Bracelet),
-				Any(
-					HardLogic(),
-					AccessibilityLevel.SequenceBreak
-				)
+				HardLogic()
 			)
 		)
 	)
@@ -91,10 +79,7 @@ DancingPostWaterRollers:connect_one_way_entrance(DancingMinecartTorches, functio
 			CanKillStalfos(),
 			All(
 				Has(Bracelet),
-				Any(
-					MediumLogic(),
-					AccessibilityLevel.SequenceBreak
-				)
+				MediumLogic()
 			)
 		),
 		Jump2()
@@ -116,10 +101,7 @@ DancingMinecartTorches:connect_one_way_entrance(Agunima)
 Agunima:connect_one_way(DancingWildEmbers, function()
 	return All(
 		CanDestroyRespawningBush(),
-		Any(
-			MediumLogic(),
-			AccessibilityLevel.SequenceBreak
-		)
+		MediumLogic()
 	)
 end)
 Agunima:connect_one_way_entrance(DancingBranchingMinecart, function()
@@ -171,10 +153,7 @@ DancingBranchingMinecart:connect_one_way_entrance(DancingTorchPit, function()
 			All(
 				-- jump slash the lever
 				Has(Feather),
-				Any(
-					HardLogic(),
-					AccessibilityLevel.SequenceBreak
-				)
+				HardLogic()
 			)
 		)
 	)
@@ -192,10 +171,7 @@ DancingTorchPit:connect_one_way_entrance(DancingPotHeaven, function()
 				Has(Feather),
 				CanUseSeeds(),
 				Has(EmberSeeds),
-				Any(
-					HardLogic(),
-					AccessibilityLevel.SequenceBreak
-				)
+				HardLogic()
 			)
 		)
 	)
@@ -204,16 +180,10 @@ DancingPotHeaven:connect_one_way_entrance(Gohma, function()
 	return Any(
 		All(
 			-- don't break claw
-			Any(
-				MediumLogic(),
-				AccessibilityLevel.SequenceBreak
-			),
+			MediumLogic(),
 			Any(
 				Has(Slingshot),
-				Any(
-					HardLogic(),
-					AccessibilityLevel.SequenceBreak
-				)
+				HardLogic()
 			),
 			All(
 				CanUseSeeds(),
@@ -225,10 +195,7 @@ DancingPotHeaven:connect_one_way_entrance(Gohma, function()
 		),
 		All(
 			-- sword beams
-			Any(
-				MediumLogic(),
-				AccessibilityLevel.SequenceBreak
-			),
+			MediumLogic(),
 			Any(
 				Has(NobleSword),
 				All(
@@ -245,10 +212,7 @@ DancingPotHeaven:connect_one_way_entrance(Gohma, function()
 				Has(EmberSeeds),
 				Has(ScentSeeds),
 				All(
-					Any(
-						MediumLogic(),
-						AccessibilityLevel.SequenceBreak
-					),
+					MediumLogic(),
 					Has(SeedSatchel),
 					Any(
 						Has(UpgradedSatchel),

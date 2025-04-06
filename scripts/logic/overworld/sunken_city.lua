@@ -20,10 +20,7 @@ SunkenDimitri:connect_one_way(SunkenTree, function()
 	-- may not actually have Dimitri's flute, but can use him after saving to get the seeds
 	return All(
 		CanHarvestSeeds(),
-		Any(
-			MediumLogic(),
-			AccessibilityLevel.SequenceBreak
-		)
+		MediumLogic()
 	)
 end)
 SunkenDimitri:connect_one_way(MasterChallenge, function()
@@ -53,8 +50,7 @@ SunkenCity:connect_one_way(DiverSecret, function()
 		Has(Flippers),
 		Any(
 			CanSwordKill(),
-			MediumLogic(),
-			AccessibilityLevel.SequenceBreak
+			MediumLogic()
 		)
 	)
 end)

@@ -25,7 +25,15 @@ end)
 NorthSpoolSwamp:connect_one_way(LostWoodsFindSeason)
 NorthSpoolSwamp:connect_one_way_entrance(TarmEntrance, CanEnterTarm)
 NorthSpoolSwamp:connect_one_way_entrance(FloodgateKeeper)
-FloodgateKeeper:connect_one_way_entrance(FloodgateLever, CanTriggerLever)
+FloodgateKeeper:connect_one_way_entrance(FloodgateLever, function()
+	return Any(
+		CanTriggerLever(),
+		All(
+			Has(Bracelet),
+			HardLogic()
+		)
+	)
+end)
 FloodgateLever:connect_one_way_entrance(FloodgateKeyhole, function()
 	return All(
 		Has(Bracelet),
@@ -81,10 +89,7 @@ SwampSouthGashaArea:connect_one_way_entrance(MiddleSpoolSwamp, function()
 			Any(
 				Has(MagicBoomerang),
 				All(
-					Any(
-						MediumLogic(),
-						AccessibilityLevel.SequenceBreak
-					),
+					MediumLogic(),
 					Any(
 						HasSword(),
 						All(
@@ -97,10 +102,7 @@ SwampSouthGashaArea:connect_one_way_entrance(MiddleSpoolSwamp, function()
 								Has(Bombs20),
 								AccessibilityLevel.SequenceBreak
 							),
-							Any(
-								HardLogic(),
-								AccessibilityLevel.SequenceBreak
-							)
+							HardLogic()
 						)
 					)
 				)

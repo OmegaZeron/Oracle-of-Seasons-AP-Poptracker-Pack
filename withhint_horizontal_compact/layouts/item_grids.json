@@ -64,8 +64,16 @@
 					["suburbs_label_sub", "suburbs_portal", "village_label_sub", "horon_portal"],
 					["swamp_label_sub", "swamp_portal", "remains_label_sub", "remains_portal"],
 					["lake_label_sub", "lake_portal", "d8_label_sub", "upremains_portal"],
-					["mtcucco_label_sub", "mtcucco_portal", "", ""],
-					["", "", "", ""],
+					["mtcucco_label_sub", "mtcucco_portal", "", ""]
+				]
+			},
+			{
+				"type": "itemgrid",
+				"h_alignment": "center",
+				"margin": "-10,10,0,0",
+				"item_size": 50,
+				"item_margin": "10,-14",
+				"rows": [
 					["mountain_label_sub", "mountain_portal", "pirates_label_sub", "pirates_portal"],
 					["market_label_sub", "market_portal", "volcano_label_sub", "volcano_portal"],
 					["furnace_label_sub", "furnace_portal", "d8_label_sub", "d8_portal"],
@@ -166,7 +174,7 @@
 									{
 										"type": "itemgrid",
 										"h_alignment": "center",
-										"margin": "5,5,5,17",
+										"margin": "5,-13,5,17",
 										"item_size": 20,
 										"item_margin": "15,-11",
 										"rows": [
@@ -193,7 +201,7 @@
 							{
 								"type": "itemgrid",
 								"h_alignment": "center",
-								"margin": "0,-10,0,-175",
+								"margin": "0,8,0,-175",
 								"item_size": 200,
 								"rows": [
 									["pedestal_sequence"]

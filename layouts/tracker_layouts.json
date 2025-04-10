@@ -39,6 +39,7 @@
 				},
 				{
 					"type": "group",
+					"header": "Maps",
 					"v_alignment": "stretch",
 					"margin": "0, 0",
 					"content": {
@@ -256,12 +257,12 @@
 		"h_alignment": "left",
 		"content": [
 			{
-			"type": "group",
-			"header": "Settings",
-			"dock": "bottom",
-			"content": {
-			"type": "layout",
-			"key": "settings"
+				"type": "group",
+				"header": "Settings",
+				"dock": "bottom",
+				"content": {
+					"type": "layout",
+					"key": "settings"
 				}	
 			}
 		]

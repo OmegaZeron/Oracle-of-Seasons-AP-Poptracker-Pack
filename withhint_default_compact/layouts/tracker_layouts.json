@@ -1,57 +1,55 @@
 ﻿{
-	"layouts": {
-		"tracker_default": {
-			"type": "container",
-			"background": "#212121",
-			"content": {
-				"type": "dock",
-				"dropshadow": true,
-				"content": [
-					{
-						"type": "array",
-						"v_alignment": "stretch",
-						"margin": "0, 0",
-						"content": [
-							{
-								"type": "tabbed",
-								"dock": "top",
-								"content": [
-									{
-										"title": "Items",
-										"type": "dock",
-										"icon": "images/items/foolsore.png",
-										"dock": "left",
-										"content": [
-											{
-												"type": "dock",
-												"dock": "top",
-												"v_alignment": "stretch",
-												"content": [
-													{
-														"type": "group",
-														"header": "Items",
-														"dock": "top",
-														"content": {
-															"type": "layout",
-															"key": "item_grid"
-														}
-													},
-													{
-														"type": "group",
-														"header": "Dungeon Entrances, Seasons and Portal Shuffles",
-														"dock": "top",
-														"content": {
-															"type": "layout",
-															"key": "dungeon_grid"
-														}
+	"tracker_default": {
+		"type": "container",
+		"background": "#212121",
+		"content": {
+			"type": "dock",
+			"dropshadow": true,
+			"content": [
+				{
+					"type": "array",
+					"v_alignment": "stretch",
+					"margin": "0, 0",
+					"content": [
+						{
+							"type": "tabbed",
+							"dock": "top",
+							"tabs": [
+								{
+									"title": "Items",
+									"icon": "images/items/foolsore.png",
+									"content": [
+										{
+											"type": "dock",
+											"dock": "top",
+											"v_alignment": "stretch",
+											"content": [
+												{
+													"type": "group",
+													"header": "Items",
+													"dock": "top",
+													"content": {
+														"type": "layout",
+														"key": "item_grid"
 													}
-												]
-											}
-										]
-									},
-									{
-										"title": "Holodrum",
-										"icon": "images/items/sword1.png",
+												},
+												{
+													"type": "group",
+													"header": "Dungeon Entrances, Seasons and Portal Shuffles",
+													"dock": "top",
+													"content": {
+														"type": "layout",
+														"key": "dungeon_grid"
+													}
+												}
+											]
+										}
+									]
+								},
+								{
+									"title": "Holodrum",
+									"icon": "images/items/sword1.png",
+									"content": {
 										"type": "tabbed",
 										"tabs": [
 											{
@@ -61,42 +59,38 @@
 													"type": "map",
 													"maps": ["holodrum"]
 												}
-											}
-										]
-									},
-									{
-										"title": "Subrosia",
-										"icon": "images/items/rosa.png",
-										"type": "tabbed",
-										"tabs": [
+											},
 											{
-												"title": "Subrosia",
-												"icon": "images/items/rosa.png",
+												"title": "Natzu",
+												"icon": "images/items/dimitri.png",
 												"content": {
 													"type": "map",
-													"maps": ["subrosia"]
+													"maps": ["natzu"]
 												}
 											}
 										]
-									},
-									{
-										"title": "Gnarled Root Dungeon",
-										"icon": "images/items/d1.png",
-										"type": "tabbed",
-										"tabs": [
-											{
-												"title": "Gnarled Root Dungeon",
-												"icon": "images/items/d1.png",
-												"content": {
-													"type": "map",
-													"maps": ["gnarled_root_dungeon"]
-												}
-											}
-										]
-									},
-									{
-										"title": "Snake's Remains",
-										"icon": "images/items/d2.png",
+									}
+								},
+								{
+									"title": "Subrosia",
+									"icon": "images/items/rosa.png",
+									"content": {
+										"type": "map",
+										"maps": ["subrosia"]
+									}
+								},
+								{
+									"title": "Gnarled Root Dungeon",
+									"icon": "images/items/d1.png",
+									"content": {
+										"type": "map",
+										"maps": ["gnarled_root_dungeon"]
+									}
+								},
+								{
+									"title": "Snake's Remains",
+									"icon": "images/items/d2.png",
+									"content": {
 										"type": "tabbed",
 										"tabs": [
 											{
@@ -116,10 +110,12 @@
 												}
 											}
 										]
-									},
-									{
-										"title": "Poison Moth's Lair",
-										"icon": "images/items/d3.png",
+									}
+								},
+								{
+									"title": "Poison Moth's Lair",
+									"icon": "images/items/d3.png",
+									"content": {
 										"type": "tabbed",
 										"tabs": [
 											{
@@ -139,10 +135,12 @@
 												}
 											}
 										]
-									},
-									{
-										"title": "Dancing Dragon Dungeon",
-										"icon": "images/items/d4.png",
+									}
+								},
+								{
+									"title": "Dancing Dragon Dungeon",
+									"icon": "images/items/d4.png",
+									"content": {
 										"type": "tabbed",
 										"tabs": [
 											{
@@ -162,25 +160,20 @@
 												}
 											}
 										]
-									},
-									{
-										"title": "Unicorn's Cave",
-										"icon": "images/items/d5.png",
-										"type": "tabbed",
-										"tabs": [
-											{
-												"title": "Unicorn's Cave",
-												"icon": "images/items/d5.png",
-												"content": {
-													"type": "map",
-													"maps": ["unicorns_cave"]
-												}
-											}
-										]
-									},
-									{
-										"title": "Ancient Ruins",
-										"icon": "images/items/d6.png",
+									}
+								},
+								{
+									"title": "Unicorn's Cave",
+									"icon": "images/items/d5.png",
+									"content": {
+										"type": "map",
+										"maps": ["unicorns_cave"]
+									}
+								},
+								{
+									"title": "Ancient Ruins",
+									"icon": "images/items/d6.png",
+									"content": {
 										"type": "tabbed",
 										"tabs": [
 											{
@@ -200,10 +193,12 @@
 												}
 											}
 										]
-									},
-									{
-										"title": "Explorer's Crypt",
-										"icon": "images/items/d7.png",
+									}
+								},
+								{
+									"title": "Explorer's Crypt",
+									"icon": "images/items/d7.png",
+									"content": {
 										"type": "tabbed",
 										"tabs": [
 											{
@@ -223,10 +218,12 @@
 												}
 											}
 										]
-									},
-									{
-										"title": "Sword and Shield Maze",
-										"icon": "images/items/d8.png",
+									}
+								},
+								{
+									"title": "Sword and Shield Maze",
+									"icon": "images/items/d8.png",
+									"content": {
 										"type": "tabbed",
 										"tabs": [
 											{
@@ -247,28 +244,28 @@
 											}
 										]
 									}
-								]
-							}
-						]
-					}
-				]
-			}
-		},
-		"settings_popup": {
-			"type": "array",
-			"orientation": "horizontal",
-			"h_alignment": "left",
-			"content": [
-				{
-					"type": "group",
-					"header": "Settings",
-					"dock": "bottom",
-					"content": {
-						"type": "layout",
-						"key": "settings"
-					}	
+								}
+							]
+						}
+					]
 				}
 			]
 		}
+	},
+	"settings_popup": {
+		"type": "array",
+		"orientation": "horizontal",
+		"h_alignment": "left",
+		"content": [
+			{
+				"type": "group",
+				"header": "Settings",
+				"dock": "bottom",
+				"content": {
+					"type": "layout",
+					"key": "settings"
+				}	
+			}
+		]
 	}
 }

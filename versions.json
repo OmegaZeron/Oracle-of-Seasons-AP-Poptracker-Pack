@@ -1,6 +1,12 @@
 {
 	"versions": [
 		{
+			"package_version": "2.2.1",
+			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/v.2.2.1/Oracle-of-Seasons-AP-Poptracker-Pack-v2.2.1.zip",
+			"sha256": "330e801f86fa744bc917cf44664dc6e405553e864ba931e04d752f0e508ebe5f",
+			"changelog": ["Boss master key fix, 'enter dungeon' fix"]
+		},
+		{
 			"package_version": "2.2.0",
 			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/v.2.2.0/Oracle-of-Seasons-AP-Poptracker-Pack-v2.2.0.zip",
 			"sha256": "a2bb76caf6aa34518a364028c4b14613f47b935ad3c55b9353675546f182d68b",

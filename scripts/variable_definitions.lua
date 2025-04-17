@@ -171,8 +171,7 @@ CurrentLocationMapping = {
 	[0x060] = {
 		-- d3
 		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
-		{["type"] = "DungeonEnt", ["dungeon"] = "d3", ["loc"] = "@Spool Swamp/Enter D3/Poison Moth's Lair"},
-		{["type"] = "SeeSeason", ["season"] = SpoolSwampSeason, ["season_hidden"] = SpoolSwampSeasonHidden}
+		{["type"] = "DungeonEnt", ["dungeon"] = "d3", ["loc"] = "@Spool Swamp/Enter D3/Poison Moth's Lair"}
 	},
 	[0x0B0] = {
 		-- portal
@@ -291,6 +290,7 @@ CurrentLocationMapping = {
 	[0x437] = {{["type"] = "Autotab", ["tab"] = {"Snake's Remains", "Snake's Remains Front"}}}, -- alt entrance
 	[0x433] = {{["type"] = "Autotab", ["tab"] = {"Snake's Remains", "Snake's Remains Front"}}}, -- bomb maze
 	[0x432] = {{["type"] = "Autotab", ["tab"] = {"Snake's Remains", "Snake's Remains Front"}}}, -- cracked wall with ropes
+	[0x421] = {{["type"] = "Autotab", ["tab"] = {"Snake's Remains", "Snake's Remains Back"}}}, -- Facade warp
 	[0x61E] = {{["type"] = "Autotab", ["tab"] = {"Snake's Remains", "Snake's Remains Back"}}}, -- 2D section
 	[0x42C] = {{["type"] = "DungeonIn", ["dungeon"] = "d2"}}, -- essence
 	-- D3
@@ -319,6 +319,7 @@ CurrentLocationMapping = {
 	[0x466] = {{["type"] = "Autotab", ["tab"] = {"Dancing Dragon Dungeon", "Dancing Dragon Dungeon 1F"}}}, -- antifairy wizzrobe maze
 	[0x477] = {{["type"] = "Autotab", ["tab"] = {"Dancing Dragon Dungeon", "Dancing Dragon Dungeon 2F"}}}, -- big jump owl
 	[0x465] = {{["type"] = "Autotab", ["tab"] = {"Dancing Dragon Dungeon", "Dancing Dragon Dungeon 1F"}}}, -- pre-minecart
+	[0x46A] = {{["type"] = "Autotab", ["tab"] = {"Dancing Dragon Dungeon", "Dancing Dragon Dungeon 1F"}}}, -- Agunima warp
 	[0x469] = {{["type"] = "Autotab", ["tab"] = {"Dancing Dragon Dungeon", "Dancing Dragon Dungeon 1F"}}}, -- beamos
 	[0x461] = {{["type"] = "Autotab", ["tab"] = {"Dancing Dragon Dungeon", "Dancing Dragon Dungeon 2F"}}}, -- pre-gohma
 	-- D5
@@ -338,8 +339,9 @@ CurrentLocationMapping = {
 	[0x4C6] = {{["type"] = "Autotab", ["tab"] = {"Ancient Ruins", "Ancient Ruins 1F, 2F"}}}, -- indy jones drop
 	[0x4C5] = {{["type"] = "Autotab", ["tab"] = {"Ancient Ruins", "Ancient Ruins 1F, 2F"}}}, -- indy jones stairs
 	[0x4CE] = {{["type"] = "Autotab", ["tab"] = {"Ancient Ruins", "Ancient Ruins 3F, 4F, 5F"}}}, -- hooded stalfos
-	[0x4CB] = {{["type"] = "Autotab", ["tab"] = {"Ancient Ruins", "Ancient Ruins 3F, 4F, 5F"}}}, -- before vire
-	[0x4C1] = {{["type"] = "Autotab", ["tab"] = {"Ancient Ruins", "Ancient Ruins 1F, 2F"}}}, -- below vire
+	[0x4CB] = {{["type"] = "Autotab", ["tab"] = {"Ancient Ruins", "Ancient Ruins 3F, 4F, 5F"}}}, -- before Vire
+	[0x4C8] = {{["type"] = "Autotab", ["tab"] = {"Ancient Ruins", "Ancient Ruins 3F, 4F, 5F"}}}, -- Vire warp
+	[0x4C1] = {{["type"] = "Autotab", ["tab"] = {"Ancient Ruins", "Ancient Ruins 1F, 2F"}}}, -- below Vire
 	-- D7
 	[0x55B] = {
 		-- main entrance
@@ -352,6 +354,7 @@ CurrentLocationMapping = {
 	[0x537] = {{["type"] = "Autotab", ["tab"] = {"Explorer's Crypt", "Explorer's Crypt B2F"}}}, -- magnunesu
 	[0x54C] = {{["type"] = "Autotab", ["tab"] = {"Explorer's Crypt", "Explorer's Crypt 1F, B1F"}}}, -- poe 2 water room
 	[0x543] = {{["type"] = "Autotab", ["tab"] = {"Explorer's Crypt", "Explorer's Crypt B2F"}}}, -- flying tile key block
+	[0x542] = {{["type"] = "Autotab", ["tab"] = {"Explorer's Crypt", "Explorer's Crypt B2F"}}}, -- Poe Sisters warp
 	-- D8
 	[0x587] = {
 		-- main entrance
@@ -372,7 +375,8 @@ CurrentLocationMapping = {
 	[0x58E] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze 1F"}}}, -- trapped by magnet ball
 	[0x571] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze B1F"}}}, -- three eye owl
 	[0x58C] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze 1F"}}}, -- bomb whisps
-	[0x56C] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze B1F"}}}, -- after frypolar
+	[0x572] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze B1F"}}}, -- Frypolar warp
+	[0x56C] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze B1F"}}}, -- after Frypolar
 	[0x58A] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze 1F"}}}, -- after 7 torches
 	[0x584] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze 1F"}}}, -- ice pickup room
 	[0x589] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze 1F"}}}, -- SE ice drop

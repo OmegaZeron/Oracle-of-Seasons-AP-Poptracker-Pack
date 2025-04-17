@@ -131,7 +131,7 @@ Vire:connect_one_way_entrance(AncientBossDoor, function()
 end)
 AncientBossDoor:connect_one_way_entrance(Manhandla, function()
 	return All(
-		Has(D6BossKey),
+		HasD6BossKey(),
 		Has(MagicBoomerang),
 		Any(
 			CanSwordKill(),

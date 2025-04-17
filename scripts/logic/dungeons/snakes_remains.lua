@@ -49,7 +49,7 @@ Facade:connect_one_way_entrance(KingDodongo, function()
 	return All(
 		Has(Bracelet),
 		Has(Bombs),
-		Has(D2BossKey)
+		HasD2BossKey()
 	)
 end)
 

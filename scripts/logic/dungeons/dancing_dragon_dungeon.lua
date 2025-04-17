@@ -160,7 +160,7 @@ DancingBranchingMinecart:connect_one_way_entrance(DancingTorchPit, function()
 end)
 DancingTorchPit:connect_one_way_entrance(DancingPotHeaven, function()
 	return All(
-		Has(D4BossKey),
+		HasD4BossKey(),
 		Any(
 			All(
 				Has(Slingshot),
@@ -198,10 +198,7 @@ DancingPotHeaven:connect_one_way_entrance(Gohma, function()
 			MediumLogic(),
 			Any(
 				Has(NobleSword),
-				All(
-					Has(WoodSword),
-					Has(EnergyRing)
-				)
+				UseEnergyRing()
 			)
 		),
 		All(

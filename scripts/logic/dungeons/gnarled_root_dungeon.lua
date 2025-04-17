@@ -2,7 +2,7 @@
 GnarledFoyer:connect_one_way(GnarledRightStalfosChest, CanKillStalfos)
 GnarledRightStalfosChest:connect_one_way_entrance(GnarledFloormasters, CanLightTorches)
 GnarledFloormasters:connect_one_way(GnarledFloormasterChest)
-GnarledFloormasters:connect_one_way_entrance(Aquamentus, function() return Has(D1BossKey) end)
+GnarledFloormasters:connect_one_way_entrance(Aquamentus, HasD1BossKey)
 Aquamentus:connect_one_way(GnarledEssence, CanArmorKill)
 -- 1 key
 GnarledFoyer:connect_one_way_entrance(GnarledLeftStalfos, function() return D1KeyCount(1) end)

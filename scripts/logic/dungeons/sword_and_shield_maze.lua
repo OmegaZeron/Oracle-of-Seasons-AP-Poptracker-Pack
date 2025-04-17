@@ -135,7 +135,7 @@ end)
 MazeNWIceDrop:connect_one_way_entrance(MazeMedusaDoorstep, function() return D8KeyCount(7) end)
 MazeMedusaDoorstep:connect_one_way_entrance(MedusaHead, function()
 	return All(
-		Has(D8BossKey),
+		HasD8BossKey(),
 		CanSwordKill()
 	)
 end)

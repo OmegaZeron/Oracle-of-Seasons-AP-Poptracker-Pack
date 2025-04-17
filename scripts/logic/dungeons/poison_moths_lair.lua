@@ -63,7 +63,7 @@ Omuai:connect_one_way(PoisonBladeTrapChest, function()
 end)
 Omuai:connect_one_way_entrance(Mothula, function()
 	return All(
-		Has(D3BossKey),
+		HasD3BossKey(),
 		CanNormalKill()
 	)
 end)

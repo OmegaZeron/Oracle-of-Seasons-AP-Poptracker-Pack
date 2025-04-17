@@ -136,7 +136,7 @@ UnicornPostSyger:connect_one_way_entrance(Digdogger, function()
 			)
 		),
 		Has(MagnetGlove),
-		Has(D5BossKey),
+		HasD5BossKey(),
 		Any(
 			Has(Feather),
 			Any(

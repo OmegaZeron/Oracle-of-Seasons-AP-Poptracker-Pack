@@ -917,33 +917,105 @@ end
 function D1KeyCount(count)
 	return Tracker:ProviderCountForCode(D1SmallKey) >= count or Has(D1MasterKey)
 end
+function HasD1BossKey()
+	return Any(
+		Has(D1BossKey),
+		All(
+			Has(MasterKeysBoth),
+			Has(D1MasterKey)
+		)
+	)
+end
 
 function D2KeyCount(count)
 	return Tracker:ProviderCountForCode(D2SmallKey) >= count or Has(D2MasterKey)
+end
+function HasD2BossKey()
+	return Any(
+		Has(D2BossKey),
+		All(
+			Has(MasterKeysBoth),
+			Has(D2MasterKey)
+		)
+	)
 end
 
 function D3KeyCount(count)
 	return Tracker:ProviderCountForCode(D3SmallKey) >= count or Has(D3MasterKey)
 end
+function HasD3BossKey()
+	return Any(
+		Has(D3BossKey),
+		All(
+			Has(MasterKeysBoth),
+			Has(D3MasterKey)
+		)
+	)
+end
 
 function D4KeyCount(count)
 	return Tracker:ProviderCountForCode(D4SmallKey) >= count or Has(D4MasterKey)
+end
+function HasD4BossKey()
+	return Any(
+		Has(D4BossKey),
+		All(
+			Has(MasterKeysBoth),
+			Has(D4MasterKey)
+		)
+	)
 end
 
 function D5KeyCount(count)
 	return Tracker:ProviderCountForCode(D5SmallKey) >= count or Has(D5MasterKey)
 end
+function HasD5BossKey()
+	return Any(
+		Has(D5BossKey),
+		All(
+			Has(MasterKeysBoth),
+			Has(D5MasterKey)
+		)
+	)
+end
 
 function D6KeyCount(count)
 	return Tracker:ProviderCountForCode(D6SmallKey) >= count or Has(D6MasterKey)
+end
+function HasD6BossKey()
+	return Any(
+		Has(D6BossKey),
+		All(
+			Has(MasterKeysBoth),
+			Has(D6MasterKey)
+		)
+	)
 end
 
 function D7KeyCount(count)
 	return Tracker:ProviderCountForCode(D7SmallKey) >= count or Has(D7MasterKey)
 end
+function HasD7BossKey()
+	return Any(
+		Has(D7BossKey),
+		All(
+			Has(MasterKeysBoth),
+			Has(D7MasterKey)
+		)
+	)
+end
 
 function D8KeyCount(count)
 	return Tracker:ProviderCountForCode(D8SmallKey) >= count or Has(D8MasterKey)
+end
+function HasD8BossKey()
+	return Any(
+		Has(D8BossKey),
+		All(
+			Has(MasterKeysBoth),
+			Has(D8MasterKey)
+		)
+	)
 end
 
 function dungeon_settings()
@@ -1195,19 +1267,20 @@ for i = 1, #SeeSeasonVars do
 	end)
 end
 -- "Enter dungeon" locations
-for i = 1, #DungeonSetVars do
-	ScriptHost:AddWatchForCode(DungeonSetVars[i][1], DungeonSetVars[i][2], function()
-		local dungeon = Tracker:FindObjectForCode(DungeonSetVars[i][2])
-		---@cast dungeon JsonItem
-		local location = Tracker:FindObjectForCode(DungeonSetVars[i][3])
-		---@cast location LocationSection
-		if (dungeon.CurrentStage == 0) then
-			location.AvailableChestCount = 1
-		else
-			location.AvailableChestCount = 0
-		end
-	end)
-end
+-- disabling as marking the dungeon doesn't mean you've actually entered it. leave marking these to auto-tracking instead
+-- for i = 1, #DungeonSetVars do
+-- 	ScriptHost:AddWatchForCode(DungeonSetVars[i][1], DungeonSetVars[i][2], function()
+-- 		local dungeon = Tracker:FindObjectForCode(DungeonSetVars[i][2])
+-- 		---@cast dungeon JsonItem
+-- 		local location = Tracker:FindObjectForCode(DungeonSetVars[i][3])
+-- 		---@cast location LocationSection
+-- 		if (dungeon.CurrentStage == 0) then
+-- 			location.AvailableChestCount = 1
+-- 		else
+-- 			location.AvailableChestCount = 0
+-- 		end
+-- 	end)
+-- end
 -- "Enter portal" locations
 for i = 1, #PortalSetVars do
 	ScriptHost:AddWatchForCode(PortalSetVars[i][1], PortalSetVars[i][2], function()

@@ -1,6 +1,12 @@
 {
 	"versions": [
 		{
+			"package_version": "2.2.2",
+			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/v.2.2.2/Oracle-of-Seasons-AP-Poptracker-Pack-v2.2.2.zip",
+			"sha256": "7c01fe1083c399651c238975feba70347d7ec596061c03ad3cacce961e1dd237",
+			"changelog": ["Market->Mountain connection fix, D5 ball drop update"]
+		},
+		{
 			"package_version": "2.2.1",
 			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/v.2.2.1/Oracle-of-Seasons-AP-Poptracker-Pack-v2.2.1.zip",
 			"sha256": "330e801f86fa744bc917cf44664dc6e405553e864ba931e04d752f0e508ebe5f",

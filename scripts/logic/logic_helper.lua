@@ -722,16 +722,21 @@ function CanArmorKill()
 			)
 		),
 		All(
-			Has(SeedSatchel),
-			Any(
-				Has(UpgradedSatchel),
-				AccessibilityLevel.SequenceBreak
-			),
+			Has(UpgradedSatchel),
 			Has(ScentSeeds),
 			Any(
 				Has(Slingshot),
 				MediumLogic()
 			)
+		),
+		All(
+			-- ool version of above without upgraded satchel
+			Any(
+				Has(SeedSatchel),
+				Has(Slingshot)
+			),
+			Has(ScentSeeds),
+			AccessibilityLevel.SequenceBreak
 		),
 		All(
 			Has(CaneOfSomaria),

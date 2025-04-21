@@ -74,6 +74,7 @@ TempleAutumnEntrance:connect_one_way(TempleAutumnFairy, function() return Has(Fe
 TempleOfSeasons:connect_two_ways_entrance(SubrosiaMarket, function() return Has(Feather) end)
 
 -- market
+SubrosiaMarket:connect_one_way_entrance(SubrosiaMountainEast, function() return Has(Ribbon) end)
 SubrosiaMarket:connect_one_way_entrance(SpoolPortal, function()
 	return Any(
 		Has(ShufflePortalsOff),

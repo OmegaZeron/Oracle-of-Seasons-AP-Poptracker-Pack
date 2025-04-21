@@ -8,8 +8,10 @@ end)
 UnicornFoyer:connect_one_way(UnicornSpiralChest, function()
 	return Any(
 		CanArmorKill(),
-		Has(Shield),
-		Has(Bombchus20)
+		All(
+			MediumLogic(),
+			Has(MagnetGlove)
+		)
 	)
 end)
 UnicornFoyer:connect_one_way_entrance(UnicornTerrace, function() return Has(MagnetGlove) end)

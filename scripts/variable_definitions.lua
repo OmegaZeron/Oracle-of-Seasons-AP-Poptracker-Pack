@@ -149,6 +149,7 @@ CurrentLocationMapping = {
 		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
 		{["type"] = "SeeSeason", ["season"] = WoodsOfWinterSeason, ["season_hidden"] = WoodsOfWinterSeasonHidden}
 	},
+	[0x07D] = {{["type"] = "SeeSeason", ["season"] = WoodsOfWinterSeason, ["season_hidden"] = WoodsOfWinterSeasonHidden}}, -- bomb cave
 	[0x07E] = {{["type"] = "SeeSeason", ["season"] = WoodsOfWinterSeason, ["season_hidden"] = WoodsOfWinterSeasonHidden}}, -- from Sunken
 	[0x07F] = {{["type"] = "SeeSeason", ["season"] = WoodsOfWinterSeason, ["season_hidden"] = WoodsOfWinterSeasonHidden}}, -- Holly
 

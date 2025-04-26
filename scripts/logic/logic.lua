@@ -6,6 +6,8 @@ OoSLocation.__index = OoSLocation
 
 NamedLocations = {}
 
+local pendingRechecks = {}
+
 -- creates a lua object for the given name. it acts as a representation of a overworld reagion or indoor location and
 -- tracks its connected objects via the exit-table
 function OoSLocation.New(name)
@@ -105,8 +107,7 @@ function OoSLocation:discover(accessibility)
 	if change then
 		for _, recheck in ipairs(self.exits_to_recheck) do
 			for _, exit in pairs(recheck.exits) do
-				local location, access = CheckAccess(recheck, exit)
-				location:discover(access)
+				table.insert(pendingRechecks, {recheck, exit})
 			end
 		end
 		for _, exit in pairs(self.exits) do
@@ -239,4 +240,19 @@ function Any(...)
 	return max
 end
 
+-- delays "recheck" locations to next frame to prevent hitting execution limit
+function OnUpdate()
+	if #pendingRechecks == 0 then
+		return
+	end
+
+	local locsToRecheck = pendingRechecks
+	for i = 1, #locsToRecheck do
+		local recheck = table.remove(locsToRecheck)
+		local location, access = CheckAccess(recheck[1], recheck[2])
+		location:discover(access)
+	end
+end
+
 ScriptHost:AddWatchForCode("StateChange", "*", SetAsStale)
+ScriptHost:AddOnFrameHandler("Frame Handler", OnUpdate)

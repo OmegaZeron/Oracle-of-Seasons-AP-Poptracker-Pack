@@ -9,18 +9,10 @@ EastWesternCoast:connect_one_way(BlackBeast, function()
 end)
 EastWesternCoast:connect_one_way(GoldenDarknutKill, function()
 	return All(
-		Any(
-			Has(WesternCoastSpring),
-			All(
-				CanReach(WesternCoastStump),
-				Has(Spring),
-				Has(PolishedBell),
-				CanReach(Pirates)
-			)
-		),
-		CanArmorKill()
+		CanArmorKill(),
+		Has(WesternCoastSpring)
 	)
-end, {WesternCoastStump, Pirates})
+end)
 EastWesternCoast:connect_one_way_entrance(HerosCave)
 HerosCave:connect_two_ways_entrance(HerosCaveFoyer, function()
 	return Any(
@@ -74,6 +66,14 @@ WesternCoastHouse:connect_one_way_entrance(WesternCoastStump, function()
 		)
 	)
 end)
+WesternCoastStump:connect_one_way(GoldenDarknutKill, function()
+	return All(
+		CanReach(Pirates),
+		Has(Spring),
+		Has(PolishedBell),
+		CanArmorKill()
+	)
+end, {Pirates})
 WestWesternCoast:connect_one_way_entrance(Graveyard, function()
 	return Any(
 		Has(WesternCoastSummer),

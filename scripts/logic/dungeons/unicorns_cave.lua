@@ -66,7 +66,7 @@ UnicornMinecarts:connect_one_way_entrance(UnicornMinecartPushBlock, function()
 		Any(
 			CanArmorKill(),
 			All(
-				Has(Shield),
+				Has(MagnetGlove),
 				MediumLogic()
 			),
 			Has(Bombchus20)

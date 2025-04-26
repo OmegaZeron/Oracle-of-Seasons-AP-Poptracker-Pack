@@ -73,7 +73,7 @@ CurrentLocationMapping = {
 	[0x096] = {
 		-- D1
 		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
-		{["type"] = "DungeonEnt", ["dungeon"] = "d1", ["loc"] = "@North Horon/Enter D0/Gnarled Root Dungeon"},
+		{["type"] = "DungeonEnt", ["dungeon"] = "d1", ["loc"] = "@North Horon/Enter D1/Gnarled Root Dungeon"},
 		{["type"] = "SeeSeason", ["season"] = NorthHoronSeason, ["season_hidden"] = NorthHoronSeasonHidden}
 	},
 	[0x097] = {{["type"] = "SeeSeason", ["season"] = NorthHoronSeason, ["season_hidden"] = NorthHoronSeasonHidden}}, -- from HP

@@ -1,6 +1,12 @@
 {
 	"versions": [
 		{
+			"package_version": "2.2.3",
+			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/v.2.2.3/Oracle-of-Seasons-AP-Poptracker-Pack-v2.2.3.zip",
+			"sha256": "8110ebfc3f5d4872fce63b39964994f71d62140415875651691a0774cbc554e3",
+			"changelog": ["Autotracking fix, recursion limit error fix, logic updates"]
+		},
+		{
 			"package_version": "2.2.2",
 			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/v.2.2.2/Oracle-of-Seasons-AP-Poptracker-Pack-v2.2.2.zip",
 			"sha256": "7c01fe1083c399651c238975feba70347d7ec596061c03ad3cacce961e1dd237",

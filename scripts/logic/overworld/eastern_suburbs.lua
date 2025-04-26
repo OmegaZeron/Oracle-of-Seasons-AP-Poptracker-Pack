@@ -171,7 +171,7 @@ WoodsOfWinter:connect_one_way(GoldenMoblinKill, function()
 			Has(WoodsOfWinterAutumn)
 		),
 		Any(
-			CanSwordPunchKill(),
+			CanSwordKill(),
 			All(
 				Has(EmberSeeds),
 				CanUseSeeds(),

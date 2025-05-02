@@ -85,14 +85,11 @@
 	"dungeon_grid": {
 		"type": "array",
 		"orientation": "vertical",
-		"margin": "-20,0,0,0",
-		// "v_alignment": "center",
 		"content": [
 			{
 				"type": "itemgrid",
 				"h_alignment": "left",
-				// "v_alignment": "stretch",
-				"margin": "5,-5",
+				"margin": "5,35,0,-40",
 				"item_size": 92,
 				"item_margin": "-4,-27",
 				"rows": [

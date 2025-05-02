@@ -255,9 +255,9 @@
 							{
 								"type": "itemgrid",
 								"h_alignment": "left",
-								"margin": "-60,0,0,0",
+								"margin": "-60,50,0,0",
 								"item_size": 129,
-								"item_margin": "-3,-42",
+								"item_margin": "-3,-41",
 								"rows": [
 									["d0_label"],
 									["d1_label"],

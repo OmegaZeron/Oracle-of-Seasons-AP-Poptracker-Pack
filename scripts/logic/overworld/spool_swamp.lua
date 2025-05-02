@@ -41,7 +41,7 @@ FloodgateLever:connect_one_way_entrance(FloodgateKeyhole, function()
 			Has(Flippers),
 			Has(Feather),
 			All(
-				CanUseSeeds(),
+				Has(SeedSatchel),
 				Has(PegasusSeeds)
 			),
 			Has(CaneOfSomaria)

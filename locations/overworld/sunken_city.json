@@ -86,15 +86,15 @@
 					},
 					{
 						"name": "Sunken City: Syrup Shop #1",
-						"access_rules": ["^$CanReach|Syrup1"]
+						"access_rules": ["^$CanReach|SyrupShop"]
 					},
 					{
 						"name": "Sunken City: Syrup Shop #2",
-						"access_rules": ["^$CanReach|Syrup2"]
+						"access_rules": ["^$CanReach|SyrupShop"]
 					},
 					{
 						"name": "Sunken City: Syrup Shop #3",
-						"access_rules": ["^$CanReach|Syrup3"]
+						"access_rules": ["^$CanReach|SyrupShop"]
 					}
 				],
 				"map_locations": [

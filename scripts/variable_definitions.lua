@@ -73,7 +73,7 @@ CurrentLocationMapping = {
 	[0x096] = {
 		-- D1
 		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
-		{["type"] = "DungeonEnt", ["dungeon"] = "d1", ["loc"] = "@North Horon/Enter D0/Gnarled Root Dungeon"},
+		{["type"] = "DungeonEnt", ["dungeon"] = "d1", ["loc"] = "@North Horon/Enter D1/Gnarled Root Dungeon"},
 		{["type"] = "SeeSeason", ["season"] = NorthHoronSeason, ["season_hidden"] = NorthHoronSeasonHidden}
 	},
 	[0x097] = {{["type"] = "SeeSeason", ["season"] = NorthHoronSeason, ["season_hidden"] = NorthHoronSeasonHidden}}, -- from HP
@@ -467,7 +467,7 @@ PortalDictionary = {
 		['d8 entrance portal'] = 7,
 		['spool swamp portal'] = 8,
 		['eyeglass lake portal'] = 9,
-		['mt. cucco portal'] = 12,
+		['mt. cucco portal'] = 10,
 		['horon village portal'] = 11,
 		['temple remains lower portal'] = 12,
 		['temple remains upper portal'] = 13
@@ -483,7 +483,7 @@ PortalDictionary = {
 		['d8 entrance portal'] = 7,
 		['eastern suburbs portal'] = 8,
 		['eyeglass lake portal'] = 9,
-		['mt. cucco portal'] = 12,
+		['mt. cucco portal'] = 10,
 		['horon village portal'] = 11,
 		['temple remains lower portal'] = 12,
 		['temple remains upper portal'] = 13
@@ -499,7 +499,7 @@ PortalDictionary = {
 		['d8 entrance portal'] = 7,
 		['eastern suburbs portal'] = 8,
 		['spool swamp portal'] = 9,
-		['mt. cucco portal'] = 12,
+		['mt. cucco portal'] = 10,
 		['horon village portal'] = 11,
 		['temple remains lower portal'] = 12,
 		['temple remains upper portal'] = 13

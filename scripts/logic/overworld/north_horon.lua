@@ -17,7 +17,7 @@ LowerNorthHoron:connect_one_way(EyeglassPitsChest, function()
 			)
 		)
 	)
-end, {UpperNorthHoron})
+end)
 LowerNorthHoron:connect_one_way(NorthHoronGasha, CanPlantGasha)
 
 -- exits
@@ -141,15 +141,9 @@ FrozenEyeglassLake:connect_one_way_entrance(EyeglassPortal, function()
 	return Any(
 		Has(Flippers),
 		JumpLiquid5(),
-		All(
-			Dimitri(),
-			Any(
-				Has(Bracelet),
-				CanReach(EasternNorthHoron)
-			)
-		)
+		Dimitri()
 	)
-end, {EasternNorthHoron})
+end)
 
 -- dry
 DryEyeglassLake:connect_one_way_entrance(DryEyeglassBombCave, BombPunchWall)

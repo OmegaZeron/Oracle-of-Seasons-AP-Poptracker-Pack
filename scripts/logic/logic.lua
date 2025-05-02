@@ -89,9 +89,8 @@ end
 function OoSLocation:accessibility()
 	if self.Staleness < Staleness then
 		return AccessibilityLevel.None
-	else
-		return self.accessibility_level
 	end
+	return self.accessibility_level
 end
 
 function OoSLocation:discover(accessibility)

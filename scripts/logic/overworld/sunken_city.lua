@@ -71,25 +71,14 @@ SunkenCity:connect_one_way_entrance(Syrup, function()
 				Has(Winter),
 				Any(
 					Has(Flippers),
-					CanReach(SunkenDimitri)
+					Dimitri(),
+					Has(Bombs)
 				)
 			)
 		)
 	)
-end, {SunkenDimitri})
-Syrup:connect_one_way(Syrup1, function()
-	return Any(
-		HasRupees(ShopPrices[SyrupShopPrice]),
-		AccessibilityLevel.Inspect
-	)
-end, {SnakeRupeeRoom, AncientRupeeRoom})
-Syrup:connect_one_way(Syrup2, function()
-	return Any(
-		HasRupees(ShopPrices[SyrupShopPrice]),
-		AccessibilityLevel.Inspect
-	)
-end, {SnakeRupeeRoom, AncientRupeeRoom})
-Syrup:connect_one_way(Syrup3, function()
+end)
+Syrup:connect_one_way_entrance(SyrupShop, function()
 	return Any(
 		HasRupees(ShopPrices[SyrupShopPrice]),
 		AccessibilityLevel.Inspect

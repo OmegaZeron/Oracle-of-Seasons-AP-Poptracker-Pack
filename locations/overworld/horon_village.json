@@ -295,28 +295,28 @@
 				"sections": [
 					{
 						"name": "Horon Village: Shop #1",
-						"access_rules": ["^$CanReach|HoronShop1"]
+						"access_rules": ["^$CanReach|HoronShop"]
 					},
 					{
 						"name": "Horon Village: Shop #2",
-						"access_rules": ["^$CanReach|HoronShop2"]
+						"access_rules": ["^$CanReach|HoronShop"]
 					},
 					{
 						"name": "Horon Village: Shop #3",
-						"access_rules": ["^$CanReach|HoronShop3"],
+						"access_rules": ["^$CanReach|HoronShop"],
 						"visibility_rules": ["horon_potion_off"]
 					},
 					{
 						"name": "Horon Village: Member's Shop #1",
-						"access_rules": ["^$CanReach|MembersShop1"]
+						"access_rules": ["^$CanReach|MemberShop"]
 					},
 					{
 						"name": "Horon Village: Member's Shop #2",
-						"access_rules": ["^$CanReach|MembersShop2"]
+						"access_rules": ["^$CanReach|MemberShop"]
 					},
 					{
 						"name": "Horon Village: Member's Shop #3",
-						"access_rules": ["^$CanReach|MembersShop3"]
+						"access_rules": ["^$CanReach|MemberShop"]
 					}
 				],
 				"map_locations": [
@@ -333,15 +333,15 @@
 				"sections": [
 					{
 						"name": "Horon Village: Advance Shop #1",
-						"access_rules": ["^$CanReach|AdvanceShop1"]
+						"access_rules": ["^$CanReach|AdvanceShop"]
 					},
 					{
 						"name": "Horon Village: Advance Shop #2",
-						"access_rules": ["^$CanReach|AdvanceShop2"]
+						"access_rules": ["^$CanReach|AdvanceShop"]
 					},
 					{
 						"name": "Horon Village: Advance Shop #3",
-						"access_rules": ["^$CanReach|AdvanceShop3"]
+						"access_rules": ["^$CanReach|AdvanceShop"]
 					}
 				],
 				"map_locations": [

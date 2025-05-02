@@ -72,6 +72,7 @@ SnakeHardhats:connect_one_way(SnakeWildBombs, function()
 end)
 SnakeHardhats:connect_one_way_entrance(SnakeBombMoblins, function()
 	return All(
+		-- hardhats
 		Any(
 			CanSwordKill(),
 			Has(Boomerang),
@@ -95,8 +96,10 @@ SnakeHardhats:connect_one_way_entrance(SnakeBombMoblins, function()
 				HardLogic()
 			)
 		),
+		-- moblins
 		Any(
 			CanSwordKill(),
+			Has(Bombs), -- regrowing bushes are right there
 			CanShootSeedsCombat(),
 			All(
 				Has(Feather),

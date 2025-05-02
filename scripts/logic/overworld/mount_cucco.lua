@@ -92,7 +92,19 @@ TalonCave:connect_one_way_entrance(TalonReward, function()
 	)
 end)
 TalonCave:connect_one_way_entrance(TalonChest, function() return Has(Megaphone) end)
-UpperMtCucco:connect_one_way(MtCuccoDiveSpot, function() return Has(Flippers) end)
+UpperMtCucco:connect_one_way(MtCuccoDiveSpot, function()
+	return All(
+		Has(Flippers),
+		Any(
+			Has(Spring),
+			Has(Summer),
+			Has(Autumn),
+			Has(SunkenCitySpring),
+			Has(SunkenCitySummer),
+			Has(SunkenCityAutumn)
+		)
+	)
+end)
 UpperMtCucco:connect_one_way_entrance(DragonKeyhole, function()
 	return All(
 		Has(Feather),

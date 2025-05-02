@@ -31,7 +31,7 @@ SubrosiaMountainEast:connect_one_way(SmithyBell, function() return Has(RustyBell
 SubrosiaMountainEast:connect_one_way(SmithSecret, function() return Has(Shield) end)
 SubrosiaMountainWest:connect_one_way(SubrosiaChef, function() return Has(IronPot) end)
 SubrosiaMountainWest:connect_two_ways_entrance(SubrosiaWilds, JumpLiquid5)
-SubrosiaMountainWest:connect_one_way(SubrosiaMountainLockedChest, function() return CanReach(RosaDate) end, {RosaDate})
+SubrosiaMountainWest:connect_one_way(SubrosiaMountainLockedChest, function() return Has(Ribbon) end)
 SubrosiaMountainWest:connect_one_way(SubrosiaMountainWestDigSpot, function() return Has(Shovel) end)
 SubrosiaMountainWest:connect_one_way(SubrosiaMountainSouthDigSpot, function() return Has(Shovel) end)
 Volcano:connect_one_way_entrance(Fireworks, function() return Has(Bombs) end)
@@ -88,30 +88,16 @@ SubrosiaMarket:connect_one_way(SubrosiaMarket1, function()
 		AccessibilityLevel.Inspect
 	)
 end)
-SubrosiaMarket:connect_one_way(SubrosiaMarket2, function()
+SubrosiaMarket:connect_one_way_entrance(MarketOrePurchases, function()
 	return Any(
 		HasOreChunks(ShopPrices[SubrosianMarketPrice]),
 		AccessibilityLevel.Inspect
 	)
 end, {SubrosiaMountainEast})
-SubrosiaMarket:connect_one_way(SubrosiaMarket3, function()
-	return Any(
-		HasOreChunks(ShopPrices[SubrosianMarketPrice]),
-		AccessibilityLevel.Inspect
-	)
-end, {SubrosiaMountainEast})
-SubrosiaMarket:connect_one_way(SubrosiaMarket4, function()
-	return Any(
-		HasOreChunks(ShopPrices[SubrosianMarketPrice]),
-		AccessibilityLevel.Inspect
-	)
-end, {SubrosiaMountainEast})
-SubrosiaMarket:connect_one_way(SubrosiaMarket5, function()
-	return Any(
-		HasOreChunks(ShopPrices[SubrosianMarketPrice]),
-		AccessibilityLevel.Inspect
-	)
-end, {SubrosiaMountainEast})
+MarketOrePurchases:connect_one_way(SubrosiaMarket2)
+MarketOrePurchases:connect_one_way(SubrosiaMarket3)
+MarketOrePurchases:connect_one_way(SubrosiaMarket4)
+MarketOrePurchases:connect_one_way(SubrosiaMarket5)
 SubrosiaMarket:connect_one_way(BeachDigSpot, function() return Has(Shovel) end)
 SubrosiaMarket:connect_one_way_entrance(RosaDate, function() return Has(Ribbon) end)
 SubrosiaMarket:connect_one_way(SubrosiaMarketUpperDigSpot, function() return Has(Shovel) end)

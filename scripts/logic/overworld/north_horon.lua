@@ -78,11 +78,7 @@ UpperNorthHoron:connect_one_way_entrance(EyeglassLake, function()
 			Has(Autumn),
 			Has(NorthHoronAutumn)
 		),
-		Any(
-			Has(Feather),
-			Moosh(),
-			Ricky()
-		),
+		Jump1(true),
 		Any(
 			Has(Flippers),
 			All(
@@ -244,7 +240,7 @@ end)
 UpperNorthHoron:connect_one_way_entrance(UnicornCave, function()
 	return All(
 		Has(NorthHoronAutumn),
-		Has(Feather),
+		Jump1(true),
 		CanDestroyMushroom(true),
 		Any(
 			Has(Flippers),
@@ -265,13 +261,14 @@ EyeglassPortal:connect_one_way_entrance(UnicornCave, function()
 end)
 UnicornCave:connect_one_way_entrance(DryEyeglassHiddenStairs, function()
 	return All(
+		Jump1(true),
 		Has(NorthHoronSummer),
 		Has(Bracelet)
 	)
 end)
 UnicornCave:connect_one_way_entrance(EasternNorthHoron, function()
 	return Any(
-		Has(Feather),
+		Jump1(true),
 		All(
 			Has(NorthHoronAutumn),
 			CanDestroyMushroom()

@@ -496,6 +496,22 @@ function MaxJump()
 	return j
 end
 
+function Jump1(allowCompanion)
+	if (allowCompanion == nil) then
+		allowCompanion = false
+	end
+	return Any(
+		MaxJump() >= 1,
+		All(
+			allowCompanion,
+			Any(
+				Ricky(),
+				Moosh()
+			)
+		)
+	)
+end
+
 function Jump2()
 	return Any(
 		MaxJump() >= 2,
@@ -786,11 +802,14 @@ function CanKillSpinyBeetle()
 end
 
 function CanFarmRupees()
-	return Has(Shovel) or HasSword()
+	return Any(
+		Has(Shovel),
+		CanNormalKill(false, false)
+	)
 end
 
 function HasRupees(count)
-	if (not CanFarmRupees()) then
+	if (CanFarmRupees() < 5) then
 		return false
 	end
 

@@ -28,8 +28,7 @@ NorthHolodrumPlain:connect_one_way(NorthHolodrumPlainOldMan, function()
 			All(
 				Has(Summer),
 				Any(
-					Has(Feather),
-					AnyFlute(),
+					Jump1(true),
 					All(
 						CanDestroyBushFlute(true),
 						Has(Flippers)
@@ -77,9 +76,7 @@ end)
 -- exits
 NorthHolodrumPlain:connect_two_ways_entrance(SouthHolodrumPlain, function()
 	return Any(
-		Has(Feather),
-		Ricky(),
-		Moosh(),
+		Jump1(true),
 		Has(HolodrumPlainWinter)
 	)
 end)

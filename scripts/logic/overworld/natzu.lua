@@ -94,7 +94,14 @@ MoblinKeep:connect_one_way_entrance(SunkenDoorstep)
 
 SunkenDoorstep:connect_one_way(EasternSuburbsFindSeason)
 SunkenDoorstep:connect_one_way(SunkenCityFindSeason)
-SunkenDoorstep:connect_one_way_entrance(UpperEasternSuburbs)
+SunkenDoorstep:connect_one_way_entrance(UpperEasternSuburbs, function()
+	return Any(
+		Has(EasternSuburbsSpring),
+		Has(EasternSuburbsSummer),
+		Has(EasternSuburbsAutumn)
+	)
+end)
+SunkenDoorstep:connect_one_way_entrance(UpperEasternSuburbsWinter, function() return Has(EasternSuburbsWinter) end)
 SunkenDoorstep:connect_two_ways_entrance(SunkenCity, function()
 	return Any(
 		Has(Feather),

@@ -15,7 +15,7 @@ Crypt1FLeftOfPoe:connect_one_way_entrance(CryptSurroundedByArmos, function()
 		Has(Bracelet),
 		Has(SeedSatchel),
 		Has(PegasusSeeds),
-		HardLogic()
+		HellLogic()
 	)
 end)
 -- 1 key
@@ -32,8 +32,17 @@ CryptFirstPoe:connect_one_way_entrance(CryptSurroundedByArmos, function()
 		Has(Bracelet),
 		Any(
 			CanArmorKill(),
-			HasRod(),
-			CanShootLongTorches()
+			All(
+				HasRod(),
+				MediumLogic()
+			),
+			All(
+				Has(EmberSeeds),
+				Any(
+					MediumLogic(),
+					Has(UpgradedSatchel)
+				)
+			)
 		)
 	)
 end)
@@ -64,6 +73,15 @@ CryptSurroundedByArmos:connect_one_way_entrance(CryptPoeTrampoline, function()
 	)
 end)
 CryptPoeTrampoline:connect_one_way(CryptQuicksandChest, function() return Has(Feather) end)
+CryptPoeTrampoline:connect_one_way_entrance(CryptDarknutBridge, function()
+	-- poe 2 skip
+	return All(
+		HellLogic(),
+		JumpLiquid6(),
+		Has(Flippers),
+		Has(SwimmersRing)
+	)
+end)
 -- 3 keys
 CryptPoeTrampoline:connect_one_way_entrance(CryptPoe2, function()
 	return All(
@@ -133,7 +151,7 @@ end)
 CryptDarknutBridgeTrampolines:connect_one_way_entrance(CryptFastPlatform, CanKillStalfos)
 CryptFastPlatform:connect_one_way(CryptFastPlatformChest, function() return Has(Feather) end)
 -- 4 keys
-CryptDarknutBridge:connect_one_way_entrance(CryptPrePoeSisters, function()
+CryptDarknutBridge:connect_one_way_entrance(PoeSisters, function()
 	return All(
 		Any(
 			D7KeyCount(4),
@@ -142,12 +160,45 @@ CryptDarknutBridge:connect_one_way_entrance(CryptPrePoeSisters, function()
 				AccessibilityLevel.SequenceBreak
 			)
 		),
-		CanArmorKill(),
-		JumpLiquid3() -- not actually liquid, but diagonal pit
+		Any(
+			-- Has(SwitchHook),
+			All(
+				JumpLiquid3(), -- not actually liquid, but diagonal pit
+				Any(
+					-- Moldorms
+					CanArmorKill(),
+					All(
+						MediumLogic(),
+						Any(
+							Has(Shovel),
+							Has(Shield)
+						)
+					)
+				)
+			)
+		)
 	)
 end)
-CryptPrePoeSisters:connect_one_way_entrance(PoeSisters) -- no rules since you already require everything by this point
-PoeSisters:connect_one_way_entrance(CryptStairMaze) -- no rules since you already require everything by this point
+PoeSisters:connect_one_way_entrance(CryptStairMaze, function()
+	return Any(
+		CanArmorKill(),
+		All(
+			MediumLogic(),
+			Any(
+				HasRod(),
+				All(
+					CanUseSeeds(),
+					Has(EmberSeeds),
+					Any(
+						HardLogic(),
+						Has(Bombs),
+						Has(UpgradedSatchel)
+					)
+				)
+			)
+		)
+	)
+end)
 CryptStairMaze:connect_one_way(CryptStairMazeChest)
 CryptStairMaze:connect_one_way_entrance(CryptWizzrobeStalfosRoom, function()
 	return Any(

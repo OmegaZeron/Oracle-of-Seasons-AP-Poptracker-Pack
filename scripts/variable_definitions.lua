@@ -21,7 +21,7 @@ GashaIDToLocation = {
 	["Tarm Ruins/Tarm Ruins Gasha Spot/Dig It Up"] = TarmGasha
 }
 
-DataStorageTable = {
+DataStorageLocationTable = {
 	["Planted Mount Cucco Gasha Spot"] = "@Mount Cucco/Mount Cucco Gasha Spot/Behind Mushrooms",
 	["Harvested Mount Cucco Gasha Spot"] = "@Mount Cucco/Mount Cucco Gasha Spot/Harvested",
 	["Planted Tarm Ruins Gasha Spot"] = "@Tarm Ruins/Tarm Ruins Gasha Spot/Dig It Up",
@@ -54,6 +54,18 @@ DataStorageTable = {
 	["Harvested Western Coast Gasha Spot"] = "@Western Coast/Western Coast Gasha Spot/Harvested",
 	["Planted Horon Village Gasha Spot"] = "@Horon Village/Horon Village Gasha Spot/Near Mayor",
 	["Harvested Horon Village Gasha Spot"] = "@Horon Village/Horon Village Gasha Spot/Harvested",
+}
+DataStorageItemTable = {
+	["Golden Octorock Beaten"] = GoldenOctorok,
+	["Golden Moblin Beaten"] = GoldenMoblin,
+	["Golden Darknut Beaten"] = GoldenDarknut,
+	["Golden Lynel Beaten"] = GoldenLynel,
+	["Obtained Bombs"] = Bombs,
+	["Obtained Ember"] = EmberSeeds,
+	["Obtained Scent"] = ScentSeeds,
+	["Obtained Pegasus"] = PegasusSeeds,
+	["Obtained Gale"] = GaleSeeds,
+	["Obtained Mystery"] = MysterySeeds,
 }
 
 CurrentTab = nil

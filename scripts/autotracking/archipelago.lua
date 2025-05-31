@@ -29,14 +29,16 @@ function onClear(slot_data)
 			end
 		end
 	end
-	for _, dsLoc in pairs(DataStorageTable) do
+	for _, dsLoc in pairs(DataStorageLocationTable) do
 		local obj = Tracker:FindObjectForCode(dsLoc)
 		if (obj) then
-			if dsLoc:sub(1, 1) == "@" then
-				obj.AvailableChestCount = obj.ChestCount
-			else
-				obj.Active = false
-			end
+			obj.AvailableChestCount = obj.ChestCount
+		end
+	end
+	for _, dsItem in pairs(DataStorageItemTable) do
+		local obj = Tracker:FindObjectForCode(dsItem)
+		if (obj) then
+			obj.Active = false
 		end
 	end
 	-- reset items
@@ -204,7 +206,7 @@ function onClear(slot_data)
 	-- TODO get this from slot_data once it's a setting
 	local startLocation = "impa's house"
 	if (Tracker:FindObjectForCode("autotab").CurrentStage == 1 and startLocation) then
-		OnBounce({["data"] = {["Current room"] = StartLocationMapping[startLocation]}})
+		OnBounce({["data"] = {["Current Room"] = StartLocationMapping[startLocation]}})
 	end
 end
 
@@ -316,11 +318,17 @@ function onNotify(key, value, old_value)
 		for _, hint in ipairs(value) do
 			if not hint.found and hint.finding_player == Archipelago.PlayerNumber then
 				updateHints(hint.location, hint.item_flags)
+			elseif hint.found then
+				clearHints(hint.location)
 			end
 		end
-	elseif key == DATA_STORAGE_ID then
+	elseif key == DATA_STORAGE_ID and value ~= nil then
 		for k, v in pairs(value) do
-			Tracker:FindObjectForCode(DataStorageTable[k]).AvailableChestCount = v and 0 or 1
+			if (DataStorageLocationTable[k]) then
+				Tracker:FindObjectForCode(DataStorageLocationTable[k]).AvailableChestCount = v and 0 or 1
+			elseif (DataStorageItemTable[k]) then
+				Tracker:FindObjectForCode(DataStorageItemTable[k]).Active = v or false
+			end
 		end
 	end
 	Tracker:FindObjectForCode(HiddenSetting).Active = not Tracker:FindObjectForCode(HiddenSetting).Active
@@ -330,22 +338,7 @@ function onNotifyLaunch(key, value)
 	if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
 		print(string.format("called onNotifyLaunch: %s, %s", key, dump(value)))
 	end
-	if key == HINTS_ID then
-		COLLECTED_HINTS = {}
-		for _, hint in ipairs(value) do
-			if not hint.found and hint.finding_player == Archipelago.PlayerNumber then
-				updateHints(hint.location, hint.item_flags)
-			elseif hint.found then
-				clearHints(hint.location)
-			end
-		end
-		Tracker:FindObjectForCode(HiddenSetting).Active = not Tracker:FindObjectForCode(HiddenSetting).Active
-	elseif key == DATA_STORAGE_ID and value ~= nil then
-		for k, v in pairs(value) do
-			Tracker:FindObjectForCode(DataStorageTable[k]).AvailableChestCount = v and 0 or 1
-		end
-		Tracker:FindObjectForCode(HiddenSetting).Active = not Tracker:FindObjectForCode(HiddenSetting).Active
-	end
+	onNotify(key, value)
 end
 
 -- called when a location is hinted
@@ -399,10 +392,9 @@ function OnBounce(json)
 	if not json["data"] then
 		return
 	end
-	if json["data"]["Current room"] then
+	if json["data"]["Current Room"] then
 		local prevRoom = CurrentRoom
-		CurrentRoom = json["data"]["Current room"]
-		print("Current room", CurrentRoom)
+		CurrentRoom = json["data"]["Current Room"]
 		if prevRoom == CurrentRoom or CurrentRoom == nil then
 			return
 		end

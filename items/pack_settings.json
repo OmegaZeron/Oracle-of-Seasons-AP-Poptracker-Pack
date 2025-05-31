@@ -21,6 +21,11 @@
 				"img": "images/labels/hard.png",
 				"codes": "logiclevel, hard",
 				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/hell.png",
+				"codes": "logiclevel, hell",
+				"inherit_codes": false
 			}
 		]
 	},

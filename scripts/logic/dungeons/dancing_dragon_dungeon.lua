@@ -48,13 +48,22 @@ DancingSpikeTrap:connect_one_way(DancingWaterRing, function()
 end)
 DancingSpikeTrap:connect_one_way_entrance(DancingPostWaterRollers, function()
 	return All(
-		Has(Flippers),
-		Has(Feather)
+		Has(Feather),
+		Any(
+			Has(Flippers),
+			All(
+				HellLogic(),
+				JumpLiquid6()
+			)
+		)
 	)
 end)
 DancingPostWaterRollers:connect_one_way(DancingPoolDrop, function()
 	return All(
-		Has(Flippers),
+		Any(
+			Has(Flippers),
+			MediumLogic() -- collect item before it sinks
+		),
 		Any(
 			CanNormalKill(),
 			All(

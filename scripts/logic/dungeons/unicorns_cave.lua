@@ -2,15 +2,20 @@
 UnicornFoyer:connect_one_way(UnicornChestLeftOfEntrance, function()
 	return Any(
 		Has(MagnetGlove),
-		Jump4()
+		Has(Cape),
+		All(
+			HellLogic(),
+			JumpLiquid3()
+		)
 	)
 end)
 UnicornFoyer:connect_one_way(UnicornSpiralChest, function()
 	return Any(
 		CanArmorKill(),
+		Has(Shield),
 		All(
 			MediumLogic(),
-			Has(MagnetGlove)
+			Has(Shovel)
 		)
 	)
 end)

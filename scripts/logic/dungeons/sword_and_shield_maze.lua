@@ -19,7 +19,7 @@ MazeFoyer:connect_one_way(MazeThreeEyeChest, function()
 		Any(
 			Has(HyperSlingshot),
 			All(
-				HardLogic(),
+				HellLogic(),
 				CanUseSeeds(),
 				HasContactSeeds()
 			)
@@ -61,7 +61,7 @@ MazeThreeEyeOwl:connect_one_way(MazeThreeEyeBombChest, function()
 		Any(
 			Has(HyperSlingshot),
 			All(
-				HardLogic(),
+				HellLogic(),
 				CanUseSeeds(),
 				HasContactSeeds()
 			)

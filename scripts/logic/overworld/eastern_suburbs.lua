@@ -6,7 +6,8 @@ LowerEasternSuburbs:connect_one_way(Maple, CanMapleTrade)
 LowerEasternSuburbs:connect_one_way(WindmillHP, function()
 	return Any(
 		Has(EasternSuburbsWinter),
-		Has(Winter)
+		Has(Winter),
+		AccessibilityLevel.Inspect
 	)
 end)
 LowerEasternSuburbs:connect_one_way(WindmillTrade, function()
@@ -36,13 +37,19 @@ LowerEasternSuburbs:connect_one_way_entrance(HoronVillage, function()
 end)
 LowerEasternSuburbs:connect_one_way_entrance(SamasaDesert, function() return CanReach(Pirates) end, {Pirates})
 LowerEasternSuburbs:connect_two_ways_entrance(UpperEasternSuburbs, function()
-	return Any(
-		Has(Feather),
-		Has(Flippers),
-		Dimitri(),
-		All(
-			Ricky(),
-			MediumLogic()
+	return All(
+		Any(
+			Has(Spring),
+			Has(Summer),
+			Has(Autumn),
+			Has(EasternSuburbsSpring),
+			Has(EasternSuburbsSummer),
+			Has(EasternSuburbsAutumn)
+		),
+		Any(
+			Has(Flippers),
+			Dimitri(),
+			Jump1(true)
 		)
 	)
 end)

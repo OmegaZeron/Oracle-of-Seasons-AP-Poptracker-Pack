@@ -31,6 +31,16 @@ SubrosiaMountainEast:connect_one_way(SmithyBell, function() return Has(RustyBell
 SubrosiaMountainEast:connect_one_way(SmithSecret, function() return Has(Shield) end)
 SubrosiaMountainWest:connect_one_way(SubrosiaChef, function() return Has(IronPot) end)
 SubrosiaMountainWest:connect_two_ways_entrance(SubrosiaWilds, JumpLiquid5)
+SubrosiaMountainWest:connect_one_way_entrance(StrangeBrothers, function()
+	-- H&S skip
+	return All(
+		HellLogic(),
+		Has(Feather),
+		Has(PegasusSeeds),
+		Has(SeedSatchel),
+		Has(Bombs)
+	)
+end)
 SubrosiaMountainWest:connect_one_way(SubrosiaMountainLockedChest, function() return Has(Ribbon) end)
 SubrosiaMountainWest:connect_one_way(SubrosiaMountainWestDigSpot, function() return Has(Shovel) end)
 SubrosiaMountainWest:connect_one_way(SubrosiaMountainSouthDigSpot, function() return Has(Shovel) end)
@@ -176,7 +186,11 @@ EastFurnace:connect_two_ways_entrance(WestFurnace, function() return Has(Feather
 WestFurnace:connect_one_way(FurnaceTerrace, function()
 	return Any(
 		Jump4(),
-		Has(MagnetGlove)
+		Has(MagnetGlove),
+		All(
+			HellLogic(),
+			JumpLiquid3()
+		)
 	)
 end)
 WestFurnace:connect_one_way_entrance(SubrosiaMarket, function()

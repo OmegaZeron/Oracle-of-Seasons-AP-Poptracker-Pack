@@ -8,6 +8,13 @@ end
 function HardLogic()
 	return Any(
 		Has(Hard),
+		HellLogic(),
+		AccessibilityLevel.SequenceBreak
+	)
+end
+function HellLogic()
+	return Any(
+		Has(Hell),
 		AccessibilityLevel.SequenceBreak
 	)
 end
@@ -215,23 +222,27 @@ function CanHarvestGasha(count)
 	end
 	-- rules for how many available spots remain
 	-- local ownedGashas = Tracker:ProviderCountForCode(GashaSeeds)
-	local gashasRemaining = 0
-	for i = 1, 16 do
-		local section = Tracker:FindObjectForCode("@Horon Village/Gasha Spots/Gasha Spot #"..i)
-		if (section == nil) then
-			return false
-		end
-		gashasRemaining = gashasRemaining + section.AvailableChestCount
-	end
+	local gashasHarvested = GashasHarvested()
 	local gashasPlanted = GashasPlanted()
 	if (gashasPlanted < tonumber(count)) then
 		return false
 	end
 	local gashaSetting = Tracker:FindObjectForCode(GashaSetting)
-	if (gashaSetting == nil or (16 - gashasRemaining) >= gashaSetting.CurrentStage) then
+	if (gashaSetting == nil or gashasHarvested >= gashaSetting.CurrentStage) then
 		return false
 	end
-	return gashasPlanted > (16 - gashasRemaining)
+	return gashasPlanted > gashasHarvested
+end
+
+function GashasHarvested()
+	local harvested = 0
+	for i = 1, 16 do
+		local section = Tracker:FindObjectForCode("@Horon Village/Gasha Spots/Gasha Spot #"..i)
+		if (section ~= nil) then
+			harvested = harvested + section.AvailableChestCount
+		end
+	end
+	return 16 - harvested
 end
 
 function HasPlanted(code)
@@ -245,7 +256,7 @@ end
 
 function CanSeeGasha(count)
 	local gashaSetting = Tracker:FindObjectForCode(GashaSetting)
-	return gashaSetting ~= nil and gashaSetting.CurrentStage >= tonumber(count)
+	return gashaSetting ~= nil and gashaSetting.CurrentStage >= tonumber(count) and GashasHarvested() < gashaSetting.CurrentStage
 end
 
 function OnSectionChanged(section)
@@ -590,6 +601,14 @@ function JumpLiquid5()
 	return MaxJump() >= 5
 end
 
+function JumpLiquid6()
+	return All(
+		MaxJump() >= 5,
+		Has(Bombs),
+		HardLogic()
+	)
+end
+
 -- KILL RULES
 
 function CanSwordKill()
@@ -623,7 +642,14 @@ function CanGaleKill()
 end
 
 function CanKillWithPit()
-	return Has(Shield) or HasRod()
+	return Any(
+		HasRod(),
+		Has(Shield),
+		All(
+			MediumLogic(),
+			Has(Shovel)
+		)
+	)
 end
 
 function CanNormalKill(pitAvailable, allowGale, allowCane)
@@ -634,7 +660,10 @@ function CanNormalKill(pitAvailable, allowGale, allowCane)
 		allowCane = true
 	end
 	return Any(
-		pitAvailable == true and CanKillWithPit(),
+		All(
+			pitAvailable == true,
+			CanKillWithPit()
+		),
 		CanSwordPunchKill(),
 		CanNormalSatchelKill(allowGale),
 		CanNormalSlingshotKill(allowGale),
@@ -709,10 +738,14 @@ function CanNormalSlingshotKill(allowGale)
 				Has(EmberSeeds),
 				Has(ScentSeeds),
 				All(
-					allowGale,
 					MediumLogic(),
-					Has(MysterySeeds),
-					Has(GaleSeeds)
+					Any(
+						All(
+							allowGale,
+							Has(GaleSeeds)
+						),
+						Has(MysterySeeds)
+					)
 				)
 			)
 		)
@@ -936,6 +969,106 @@ function CanPedestal(allowDefault)
 		end
 	end
 	return true
+end
+
+local availableCuccos = nil
+
+function GetCuccos()
+	if (availableCuccos == nil) then
+		availableCuccos = {
+			["mt. cucco"] = {-1, -1, -1},
+			["horon"] = {-1, -1, -1},
+			["suburbs"] = {-1, -1, -1},
+			["moblin road"] = {-1, -1, -1},
+			["sunken"] = {-1, -1, -1},
+			["swamp"] = {-1, -1, -1},
+		}
+
+		function RegisterCucco(region, cuccos)
+			local oldCuccos = availableCuccos[region]
+			local newCuccos = {}
+			for i = 1, 3, 1 do
+				newCuccos[i] = math.max(oldCuccos[i], cuccos[i])
+			end
+			availableCuccos[region] = newCuccos
+		end
+		function UseAnyCucco(cuccos)
+			return {cuccos[1] - 1, cuccos[2], cuccos[3]}
+		end
+		function UseTopCucco(cuccos)
+			return {cuccos[1] - 1, cuccos[2] - 1, cuccos[3]}
+		end
+		function UseBottomCucco(cuccos)
+			return {cuccos[1] - 1, cuccos[2], cuccos[3] - 1}
+		end
+
+		local top, bottom = 1, 0
+
+		if (Has(Shovel)) then
+			if (Has(Boomerang)) then
+				top = 3
+			else
+				top = 2
+			end
+		elseif (Has(Boomerang) and Has(SeedSatchel) and Has(PegasusSeeds)) then
+			top = 2
+		end
+
+		if ((Has(SunkenCitySpring) or Has(Spring)) and CanDestroyFlower() or Has(SpringBanana)) then
+			bottom = 2
+		end
+
+		availableCuccos["mt. cucco"] = {top + bottom, top, bottom}
+
+		if (Jump3() or Has(Flippers) or Has(Dimitri())) then
+			availableCuccos["horon"] = availableCuccos["mt. cucco"]
+		end
+
+		if (AnyFlute()) then
+			availableCuccos["sunken"] = availableCuccos["horon"]
+		elseif (Has(NatzuIsMoosh)) then
+			if (JumpLiquid4()) then
+				availableCuccos["sunken"] = availableCuccos["horon"]
+			elseif (Jump3()) then
+				availableCuccos["sunken"] = UseTopCucco(availableCuccos["horon"])
+			end
+		elseif (Has(NatzuIsDimitri)) then
+			if (CanDestroyFlower() and Has(Flippers)) then
+				availableCuccos["sunken"] = UseAnyCucco(availableCuccos["mt. cucco"])
+			end
+		elseif (Has(Flippers)) then
+			availableCuccos["sunken"] = availableCuccos["mt. cucco"]
+		end
+
+		availableCuccos["suburbs"] = availableCuccos["sunken"]
+
+		if (Has(SeedSatchel) and Has(EmberSeeds)) then
+			availableCuccos["suburbs"] = availableCuccos["horon"]
+		elseif (Has(NorthHoronWinter) or Has(Winter) or ((Has(SpoolSwampSummer) or Has(SpoolSwampAutumn) or Has(SpoolSwampWinter) or Has(Summer) or Has(Autumn) or Has(Winter)) and (Has(Flippers) or Dimitri()))) then
+			availableCuccos["suburbs"] = UseAnyCucco(availableCuccos["horon"])
+		end
+
+		if (Has(EasternSuburbsSpring) or Has(Spring)) then
+			RegisterCucco("sunken", availableCuccos["suburbs"])
+		end
+
+		if (Has(EasternSuburbsWinter) or Has(Winter)) then
+			availableCuccos["moblin road"] = availableCuccos["suburbs"]
+		else
+			availableCuccos["moblin road"] = UseTopCucco(availableCuccos["sunken"])
+		end
+
+		availableCuccos["swamp"] = UseBottomCucco(availableCuccos["horon"])
+
+		for region in pairs(availableCuccos) do
+			for i = 1, 3, 1 do
+				if (availableCuccos[region][i] < 0) then
+					availableCuccos[region] = {-1, -1, -1}
+				end
+			end
+		end
+	end
+	return availableCuccos
 end
 
 function D1KeyCount(count)

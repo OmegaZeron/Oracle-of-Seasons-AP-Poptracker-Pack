@@ -49,7 +49,7 @@ LowerEasternSuburbs:connect_two_ways_entrance(UpperEasternSuburbs, function()
 		Any(
 			Has(Flippers),
 			Dimitri(),
-			Jump1(true)
+			JumpLiquid1(true)
 		)
 	)
 end)

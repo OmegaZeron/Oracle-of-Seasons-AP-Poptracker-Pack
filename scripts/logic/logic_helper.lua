@@ -512,7 +512,7 @@ function Jump1(allowCompanion)
 		allowCompanion = false
 	end
 	return Any(
-		MaxJump() >= 1,
+		Has(Feather),
 		All(
 			allowCompanion,
 			Any(
@@ -564,6 +564,18 @@ function Jump6()
 	)
 end
 
+function JumpLiquid1(allowCompanion)
+	if (allowCompanion == nil) then
+		allowCompanion = false
+	end
+	return Any(
+		Has(Feather),
+		All(
+			allowCompanion,
+			Ricky()
+		)
+	)
+end
 function JumpLiquid2()
 	return Any(
 		MaxJump() >= 2,

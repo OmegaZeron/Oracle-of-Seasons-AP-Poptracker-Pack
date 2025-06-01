@@ -1,6 +1,12 @@
 {
 	"versions": [
 		{
+			"package_version": "2.3.1",
+			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/v.2.3.1/seasons_ap_2.3.1.zip",
+			"sha256": "6cf3897263458f66097f5dbf01d5c5abfa90b42c537a28411615d86e8d409548",
+			"changelog": ["Moosh Eastern Suburbs logic fix"]
+		},
+		{
 			"package_version": "2.3.0",
 			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/v.2.3.0/seasons_ap_2.3.0.zip",
 			"sha256": "2c9e4822abf7bb20a3e4354753073452bc11ec4985ac96e1c0c6001271143816",

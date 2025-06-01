@@ -1,6 +1,12 @@
 {
 	"versions": [
 		{
+			"package_version": "2.3.0",
+			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/v.2.3.0/seasons_ap_2.3.0.zip",
+			"sha256": "2c9e4822abf7bb20a3e4354753073452bc11ec4985ac96e1c0c6001271143816",
+			"changelog": ["Hell logic, more autotracking, fix slingshot kill and eastern suburbs logic"]
+		},
+		{
 			"package_version": "2.2.5",
 			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/v.2.2.5/Oracle-of-Seasons-AP-Poptracker-Pack-v2.2.5.zip",
 			"sha256": "d52a39bfb638819d67f7a53ba452febc5f095c8c19d4b6d7d49b5f170bc49202",

@@ -118,6 +118,13 @@ DragonKeyhole:connect_one_way_entrance(DancingDragonDungeon, function()
 		Has(Summer)
 	)
 end)
+DancingDragonDungeon:connect_one_way_entrance(DragonKeyhole, function()
+	return All(
+		Has(SunkenCityWinter),
+		Has(Feather),
+		Has(Bracelet)
+	)
+end)
 DancingDragonDungeon:connect_one_way(SunkenCityFindSeason)
 DancingDragonDungeon:connect_one_way_entrance(UpperMtCucco)
 DancingDragonDungeon:connect_two_ways_entrance(DancingFoyer, function()

@@ -118,7 +118,6 @@ end
 function CanBeatOnox()
 	return All(
 		Has(WoodSword),
-		CanArmorKill(),
 		Any(
 			Has(Bombs),
 			Any(
@@ -245,6 +244,8 @@ function GashasHarvested()
 	return 16 - harvested
 end
 
+---@param code string
+---@return integer | boolean
 function HasPlanted(code)
 	local section = Tracker:FindObjectForCode(code)
 	if (not CanSwordKill() or section == nil) then
@@ -259,8 +260,8 @@ function CanSeeGasha(count)
 	return gashaSetting ~= nil and gashaSetting.CurrentStage >= tonumber(count) and GashasHarvested() < gashaSetting.CurrentStage
 end
 
+---@param section LocationSection
 function OnSectionChanged(section)
-	---@cast section LocationSection
 	if (GashaIDToLocation[section.FullID]) then
 		GashaIDToLocation[section.FullID].cleared = section.AccessibilityLevel == AccessibilityLevel.Cleared
 		
@@ -865,7 +866,7 @@ function HasRupees(count)
 	-- rupee rooms
 	local snakeRupees = CanReach(SnakeRupeeRoom)
 	local snakeRupeeAmount = 150
-	if (snakeRupees == AccessibilityLevel.SequenceBreak or (snakeRupees == AccessibilityLevel.Normal and not Has(Medium) and not Has(Hard))) then
+	if (snakeRupees == AccessibilityLevel.SequenceBreak) then
 		oolRupees = oolRupees + snakeRupeeAmount
 	elseif (snakeRupees == AccessibilityLevel.Normal) then
 		bonusRupees = bonusRupees + snakeRupeeAmount
@@ -873,7 +874,7 @@ function HasRupees(count)
 
 	local ancientRupees = CanReach(AncientRupeeRoom)
 	local ancientRupeeAmount = 90
-	if (ancientRupees == AccessibilityLevel.SequenceBreak or (ancientRupees == AccessibilityLevel.Normal and not Has(Medium) and not Has(Hard))) then
+	if (ancientRupees == AccessibilityLevel.SequenceBreak) then
 		oolRupees = oolRupees + ancientRupeeAmount
 	elseif (ancientRupees == AccessibilityLevel.Normal) then
 		bonusRupees = bonusRupees + ancientRupeeAmount
@@ -931,7 +932,10 @@ function HasOreChunks(count)
 end
 
 function CanMapleTrade()
-	return Has(LonLonEgg) and CanNormalKill(false, false)
+	return All(
+		Has(LonLonEgg),
+		CanNormalKill(false, false)
+	)
 end
 
 function CanEnterTarm()
@@ -1056,7 +1060,7 @@ function GetCuccos()
 
 		if (Has(SeedSatchel) and Has(EmberSeeds)) then
 			availableCuccos["suburbs"] = availableCuccos["horon"]
-		elseif (Has(NorthHoronWinter) or Has(Winter) or ((Has(SpoolSwampSummer) or Has(SpoolSwampAutumn) or Has(SpoolSwampWinter) or Has(Summer) or Has(Autumn) or Has(Winter)) and (Has(Flippers) or Dimitri()))) then
+		elseif (Has(NorthHoronWinter) or Has(Winter) or ((Has(NorthHoronSummer) or Has(NorthHoronAutumn) or Has(NorthHoronWinter) or Has(Summer) or Has(Autumn) or Has(Winter)) and (Has(Flippers) or Dimitri()))) then
 			availableCuccos["suburbs"] = UseAnyCucco(availableCuccos["horon"])
 		end
 
@@ -1070,6 +1074,9 @@ function GetCuccos()
 			availableCuccos["moblin road"] = UseTopCucco(availableCuccos["sunken"])
 		end
 
+		if (Has(HolodrumPlainSummer) or Has(Summer) or Jump4() or Ricky() or Moosh()) then
+			availableCuccos["swamp"] = availableCuccos["horon"]
+		end
 		availableCuccos["swamp"] = UseBottomCucco(availableCuccos["horon"])
 
 		for region in pairs(availableCuccos) do

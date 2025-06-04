@@ -54,7 +54,13 @@ end)
 UnicornTerrace:connect_one_way(UnicornArmosPuzzle, function()
 	return Any(
 		CanArmorKill(),
-		Has(Bombchus20)
+		Any(
+			Has(Bombchus20),
+			All(
+				Has(Bombchus),
+				AccessibilityLevel.SequenceBreak
+			)
+		)
 	)
 end)
 UnicornArmosPuzzle:connect_one_way(UnicornArmosPuzzleEmbers, MediumLogic)
@@ -74,7 +80,13 @@ UnicornMinecarts:connect_one_way_entrance(UnicornMinecartPushBlock, function()
 				Has(MagnetGlove),
 				MediumLogic()
 			),
-			Has(Bombchus20)
+			Any(
+				Has(Bombchus20),
+				All(
+					Has(Bombchus),
+					AccessibilityLevel.SequenceBreak
+				)
+			)
 		)
 	)
 end)

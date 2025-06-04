@@ -21,7 +21,13 @@ SnakeAltEntrance:connect_one_way(SnakeBombPuzzle, function()
 		Any(
 			Has(Bombs),
 			All(
-				Has(Bombchus50),
+				Any(
+					Has(Bombchus50),
+					All(
+						Has(Bombchus),
+						AccessibilityLevel.SequenceBreak
+					)
+				),
 				Has(SeedSatchel),
 				Has(PegasusSeeds),
 				MediumLogic()

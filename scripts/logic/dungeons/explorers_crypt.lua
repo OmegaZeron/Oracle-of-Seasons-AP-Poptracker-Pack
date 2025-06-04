@@ -127,7 +127,13 @@ CryptDarknutBridge:connect_one_way_entrance(CryptPastDarknutBridge, function()
 			Any(
 				CanArmorKill(),
 				Has(Shield),
-				Has(Bombchus20),
+				Any(
+					Has(Bombchus20),
+					All(
+						Has(Bombchus),
+						AccessibilityLevel.SequenceBreak
+					)
+				),
 				MediumLogic()
 			)
 		)

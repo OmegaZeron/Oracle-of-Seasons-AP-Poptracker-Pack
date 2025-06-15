@@ -179,6 +179,7 @@ WoodsOfWinter:connect_one_way(GoldenMoblinKill, function()
 		),
 		Any(
 			CanSwordKill(),
+			Dimitri(),
 			All(
 				Has(EmberSeeds),
 				CanUseSeeds(),

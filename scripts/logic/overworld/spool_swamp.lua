@@ -181,7 +181,12 @@ SpoolSwampStump:connect_one_way_entrance(WinterSpoolSwamp, function()
 	)
 end)
 
-SummerSpoolSwamp:connect_one_way(GoldenOctorokKill, CanSwordKill)
+SummerSpoolSwamp:connect_one_way(GoldenOctorokKill, function()
+	return Any(
+		CanSwordKill(),
+		Dimitri()
+	)
+end)
 
 SpringSpoolSwamp:connect_one_way_entrance(SouthSpoolSwamp)
 SummerSpoolSwamp:connect_one_way_entrance(SouthSpoolSwamp)

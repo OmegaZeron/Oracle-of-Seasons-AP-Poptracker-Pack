@@ -9,7 +9,10 @@ EastWesternCoast:connect_one_way(BlackBeast, function()
 end)
 EastWesternCoast:connect_one_way(GoldenDarknutKill, function()
 	return All(
-		CanSwordKill(),
+		Any(
+			CanSwordKill(),
+			Dimitri()
+		),
 		Has(WesternCoastSpring)
 	)
 end)
@@ -71,7 +74,10 @@ WesternCoastStump:connect_one_way(GoldenDarknutKill, function()
 		CanReach(Pirates),
 		Has(Spring),
 		Has(PolishedBell),
-		CanSwordKill()
+		Any(
+			CanSwordKill(),
+			Dimitri()
+		)
 	)
 end, {Pirates})
 WestWesternCoast:connect_one_way_entrance(Graveyard, function()

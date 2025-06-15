@@ -19,7 +19,7 @@ SunkenCity:connect_one_way(SunkenVaseTrade, function() return Has(GoronVase) end
 SunkenDimitri:connect_one_way(SunkenTree, function()
 	-- may not actually have Dimitri's flute, but can use him after saving to get the seeds
 	return All(
-		CanHarvestSeeds(),
+		CanUseSeeds(),
 		MediumLogic()
 	)
 end)

@@ -1,6 +1,12 @@
 {
 	"versions": [
 		{
+			"package_version": "2.3.3",
+			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/v.2.3.3/seasons_ap_2.3.3.zip",
+			"sha256": "7d2e1a619a4ecd987af0d067f6f1baab8e1bad24a2f684234d706e8483357e25",
+			"changelog": ["Dimitri fixes and additions"]
+		},
+		{
 			"package_version": "2.3.2",
 			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/v.2.3.2/seasons_ap_2.3.2.zip",
 			"sha256": "63f2135e0b9bf8ad54e41c0c7423b89a6bcb265959cfe69ad6bfc4ed96402321",

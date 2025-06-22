@@ -31,7 +31,8 @@
 					{
 						"name": "Spool Swamp: Seed Tree",
 						"access_rules": ["^$CanReach|SwampTree"],
-						"hosted_item": "tree_swamp"
+						"chest_unopened_img": "images/items/tree_pegasus.png",
+						"chest_opened_img": "images/items/tree_pegasus_disabled.png"
 					}
 				],
 				"map_locations": [

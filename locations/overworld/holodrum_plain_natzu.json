@@ -31,7 +31,8 @@
 					{
 						"name": "Holodrum Plain: Seed Tree",
 						"access_rules": ["^$CanReach|HolodrumPlainTree"],
-						"hosted_item": "tree_plain"
+						"chest_unopened_img": "images/items/tree_scent.png",
+						"chest_opened_img": "images/items/tree_scent_disabled.png"
 					}
 				],
 				"map_locations": [

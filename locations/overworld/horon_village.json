@@ -47,7 +47,8 @@
 					{
 						"name": "Horon Village: Seed Tree",
 						"access_rules": ["^$CanReach|HoronTree"],
-						"hosted_item": "tree_village"
+						"chest_unopened_img": "images/items/tree_ember.png",
+						"chest_opened_img": "images/items/tree_ember_disabled.png"
 					}
 				],
 				"map_locations": [

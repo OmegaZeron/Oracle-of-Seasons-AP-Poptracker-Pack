@@ -37,7 +37,8 @@
 					{
 						"name": "Sunken City: Seed Tree",
 						"access_rules": ["^$CanReach|SunkenTree"],
-						"hosted_item": "tree_sunken"
+						"chest_unopened_img": "images/items/tree_gale.png",
+						"chest_opened_img": "images/items/tree_gale_disabled.png"
 					}
 				],
 				"map_locations": [

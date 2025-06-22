@@ -192,7 +192,8 @@
 				"sections": [
 					{
 						"access_rules": ["^$CanReach|WoodsOfWinterTree"],
-						"hosted_item": "tree_wow"
+						"chest_unopened_img": "images/items/tree_mystery.png",
+						"chest_opened_img": "images/items/tree_mystery_disabled.png"
 					}
 				],
 				"map_locations": [

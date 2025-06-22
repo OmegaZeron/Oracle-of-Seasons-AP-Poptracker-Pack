@@ -823,42 +823,6 @@
 		"codes": "ring_pegasus"
 	},
 	{
-		"name": "Horon Village tree",
-		"type": "toggle",
-		"img": "images/items/tree_ember.png",
-		"codes": "tree_village"
-	},
-	{
-		"name": "Woods of Winter tree",
-		"type": "toggle",
-		"img": "images/items/tree_mystery.png",
-		"codes": "tree_wow"
-	},
-	{
-		"name": "Holodrum Plain tree",
-		"type": "toggle",
-		"img": "images/items/tree_scent.png",
-		"codes": "tree_plain"
-	},
-	{
-		"name": "Spool Swamp tree",
-		"type": "toggle",
-		"img": "images/items/tree_pegasus.png",
-		"codes": "tree_swamp"
-	},
-	{
-		"name": "Sunken City tree",
-		"type": "toggle",
-		"img": "images/items/tree_gale.png",
-		"codes": "tree_sunken"
-	},
-	{
-		"name": "Tarm Ruins tree",
-		"type": "toggle",
-		"img": "images/items/tree_gale.png",
-		"codes": "tree_tarm"
-	},
-	{
 		"name": "D0 Master Key",
 		"type": "toggle",
 		"img": "images/items/master_key.png",

@@ -1,6 +1,12 @@
 {
 	"versions": [
 		{
+			"package_version": "3.0.1",
+			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/v.3.0.1/seasons_ap_3.0.1.zip",
+			"sha256": "64f2e63029ff7efe6630f76d6048bb72e72e03fed70ee36e3875c3847d4cff79",
+			"changelog": ["Seed Tree + Rooster Adventure fixes"]
+		},
+		{
 			"package_version": "3.0.0",
 			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/v.3.0.0/seasons_ap_3.0.0.zip",
 			"sha256": "f32b25ca10debee1c9fbd2696b67fe536e987744a4e406e6caad61e0c5b13125",

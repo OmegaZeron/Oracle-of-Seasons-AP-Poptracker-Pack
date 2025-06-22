@@ -1060,7 +1060,7 @@ function GetCuccos()
 
 		if (Has(SeedSatchel) and Has(EmberSeeds)) then
 			availableCuccos["suburbs"] = availableCuccos["horon"]
-		elseif (Has(NorthHoronWinter) or Has(Winter) or ((Has(NorthHoronSummer) or Has(NorthHoronAutumn) or Has(NorthHoronWinter) or Has(Summer) or Has(Autumn) or Has(Winter)) and (Has(Flippers) or Dimitri()))) then
+		elseif (Has(NorthHoronWinter) or Has(Winter) or ((Has(NorthHoronSpring) or Has(NorthHoronAutumn) or Has(NorthHoronWinter) or Has(Spring) or Has(Autumn) or Has(Winter)) and (Has(Flippers) or Dimitri()))) then
 			availableCuccos["suburbs"] = UseAnyCucco(availableCuccos["horon"])
 		end
 

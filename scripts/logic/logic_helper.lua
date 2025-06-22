@@ -1377,38 +1377,6 @@ function display_pedestal()
 		end
 	end
 end
-function OnCollectWildItem(item, trackerItem)
-	for _, loc in pairs(WildItemLocationMapping[item]) do
-		local wildSection = Tracker:FindObjectForCode(loc)
-		---@cast wildSection LocationSection
-		if (trackerItem.Active) then
-			wildSection.AvailableChestCount = wildSection.AvailableChestCount - 1
-		else
-			wildSection.AvailableChestCount = wildSection.AvailableChestCount + 1
-		end
-	end
-end
-function OnCollectEmbers()
-	local trackerItem = Tracker:FindObjectForCode(EmberSeeds)
-	if (trackerItem == nil) then
-		return
-	end
-	OnCollectWildItem(EmberSeeds, trackerItem)
-end
-function OnCollectMysteries()
-	local trackerItem = Tracker:FindObjectForCode(MysterySeeds)
-	if (trackerItem == nil) then
-		return
-	end
-	OnCollectWildItem(MysterySeeds, trackerItem)
-end
-function OnCollectBombs()
-	local trackerItem = Tracker:FindObjectForCode(Bombs)
-	if (trackerItem == nil) then
-		return
-	end
-	OnCollectWildItem(Bombs, trackerItem)
-end
 
 function OnFrameHandler()
 	ScriptHost:RemoveOnFrameHandler("load handler")
@@ -1423,9 +1391,6 @@ ScriptHost:AddWatchForCode("portal settings handler", "portalshuffle", vanilla_p
 ScriptHost:AddWatchForCode("portal handler", "fill_portals", display_portals)
 ScriptHost:AddWatchForCode("lost woods handler", "shuffle_lost_woods", display_lost_woods)
 ScriptHost:AddWatchForCode("pedestal handler", "shuffle_pedestal", display_pedestal)
-ScriptHost:AddWatchForCode("wild ember handler", EmberSeeds, OnCollectEmbers)
-ScriptHost:AddWatchForCode("wild mystery handler", MysterySeeds, OnCollectMysteries)
-ScriptHost:AddWatchForCode("wild bombs handler", Bombs, OnCollectBombs)
 ScriptHost:AddOnLocationSectionChangedHandler("section changed handler", OnSectionChanged)
 ScriptHost:AddOnFrameHandler("load handler", OnFrameHandler)
 -- "See the Season" locations
@@ -1442,21 +1407,6 @@ for i = 1, #SeeSeasonVars do
 		end
 	end)
 end
--- "Enter dungeon" locations
--- disabling as marking the dungeon doesn't mean you've actually entered it. leave marking these to auto-tracking instead
--- for i = 1, #DungeonSetVars do
--- 	ScriptHost:AddWatchForCode(DungeonSetVars[i][1], DungeonSetVars[i][2], function()
--- 		local dungeon = Tracker:FindObjectForCode(DungeonSetVars[i][2])
--- 		---@cast dungeon JsonItem
--- 		local location = Tracker:FindObjectForCode(DungeonSetVars[i][3])
--- 		---@cast location LocationSection
--- 		if (dungeon.CurrentStage == 0) then
--- 			location.AvailableChestCount = 1
--- 		else
--- 			location.AvailableChestCount = 0
--- 		end
--- 	end)
--- end
 -- "Enter portal" locations
 for i = 1, #PortalSetVars do
 	ScriptHost:AddWatchForCode(PortalSetVars[i][1], PortalSetVars[i][2], function()

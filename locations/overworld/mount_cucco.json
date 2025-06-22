@@ -35,7 +35,8 @@
 					{
 						"map": "holodrum",
 						"x": 617,
-						"y": 75
+						"y": 75,
+						"shape": "trapezoid"
 					}
 				]
 			},
@@ -134,20 +135,22 @@
 				"sections": [
 					{
 						"name": "Dancing Dragon Dungeon",
-						"access_rules": ["{^$CanReach|DancingDragonDungeon}"]
+						"access_rules": ["{^$CanReach|DancingDragonDungeon}"],
+						"chest_unopened_img": "images/labels/dungeon_eye.png",
+						"chest_opened_img": "images/labels/dungeon_eye_disabled.png"
 					}
 				],
 				"map_locations": [
 					{
 						"map": "holodrum",
 						"x": 558,
-						"y": 68
+						"y": 68,
+						"shape": "trapezoid"
 					}
 				]
 			},
 			{
 				"name": "Dancing Dragon Dungeon",
-				"access_rules": ["^$CanReach|DancingFoyer"],
 				"sections": [
 					{
 						"name": "Dancing Dragon Dungeon (2F): Chest North of Entrance",

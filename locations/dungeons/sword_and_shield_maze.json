@@ -3,7 +3,6 @@
 		"name": "Sword and Shield Maze",
 		"chest_unopened_img": "images/labels/chest.png",
 		"chest_opened_img": "images/labels/chestopen.png",
-		"access_rules": ["^$CanReach|MazeFoyer"],
 		"children": [	
 			{
 				"name": "Eye Drop Near Entrance",
@@ -138,7 +137,8 @@
 				"sections": [
 					{
 						"name": "B1F",
-						"access_rules": ["^$CanReach|MazeWildMysteries"]
+						"access_rules": ["^$CanReach|MazeWildMysteries"],
+						"hosted_item": "mysteryseeds"
 					}
 				],
 				"map_locations": [

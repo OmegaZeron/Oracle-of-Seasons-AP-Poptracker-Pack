@@ -11,14 +11,17 @@
 				"sections": [
 					{
 						"name": "Temple Remains",
-						"access_rules": ["{^$CanReach|TempleRemainsFindSeason}"]
+						"access_rules": ["{^$CanReach|TempleRemainsFindSeason}"],
+						"chest_unopened_img": "images/labels/season_icons.png",
+						"chest_opened_img": "images/labels/season_icons_disabled.png"
 					}
 				],
 				"map_locations": [
 					{
 						"map": "holodrum",
 						"x": 279,
-						"y": 150
+						"y": 150,
+						"shape": "diamond"
 					}
 				]
 			},
@@ -52,7 +55,8 @@
 					{
 						"map": "holodrum",
 						"x": 228,
-						"y": 100
+						"y": 100,
+						"shape": "trapezoid"
 					}
 				]
 			},
@@ -70,7 +74,8 @@
 					{
 						"map": "holodrum",
 						"x": 205,
-						"y": 10
+						"y": 10,
+						"shape": "trapezoid"
 					}
 				]
 			}

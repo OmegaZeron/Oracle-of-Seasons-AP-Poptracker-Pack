@@ -11,7 +11,9 @@
 				"sections": [
 					{
 						"name": "Western Coast",
-						"access_rules": ["{^$CanReach|WesternCoastFindSeason}"]
+						"access_rules": ["{^$CanReach|WesternCoastFindSeason}"],
+						"chest_unopened_img": "images/labels/season_icons.png",
+						"chest_opened_img": "images/labels/season_icons_disabled.png"
 					}
 				],
 				"map_locations": [
@@ -25,17 +27,20 @@
 			{
 				"name": "Enter D0",
 				"visibility_rules": ["ShuffleDungeonOn"],
-				"access_rules": ["{^$CanReach|HerosCave}"],
 				"sections": [
 					{
-						"name": "Hero's Cave"
+						"name": "Hero's Cave",
+						"access_rules": ["{^$CanReach|HerosCave}"],
+						"chest_unopened_img": "images/labels/dungeon_eye.png",
+						"chest_opened_img": "images/labels/dungeon_eye_disabled.png"
 					}
 				],
 				"map_locations": [
 					{
 						"map": "holodrum",
 						"x": 172,
-						"y": 578
+						"y": 578,
+						"shape": "trapezoid"
 					}
 				]
 			},
@@ -224,20 +229,22 @@
 				"sections": [
 					{
 						"name": "Explorer's Crypt",
-						"access_rules": ["{^$CanReach|ExplorersCrypt}"]
+						"access_rules": ["{^$CanReach|ExplorersCrypt}"],
+						"chest_unopened_img": "images/labels/dungeon_eye.png",
+						"chest_opened_img": "images/labels/dungeon_eye_disabled.png"
 					}
 				],
 				"map_locations": [
 					{
 						"map": "holodrum",
 						"x": 20,
-						"y": 593
+						"y": 593,
+						"shape": "trapezoid"
 					}
 				]
 			},
 			{
 				"name": "Explorer's Crypt",
-				"access_rules": ["^$CanReach|CryptFoyer"],
 				"sections": [
 					{
 						"name": "Wild Ember Seeds (1F)",

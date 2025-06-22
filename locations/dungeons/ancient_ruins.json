@@ -3,7 +3,6 @@
 		"name": "Ancient Ruins",
 		"chest_unopened_img": "images/labels/chest.png",
 		"chest_opened_img": "images/labels/chestopen.png",
-		"access_rules": ["^$CanReach|AncientFoyer"],
 		"children": [	
 			{
 				"name": "Crumbling Ground Room Chest",

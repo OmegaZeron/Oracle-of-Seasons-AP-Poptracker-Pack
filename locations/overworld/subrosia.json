@@ -126,7 +126,8 @@
 					{
 						"map": "subrosia",
 						"x": 872,
-						"y": 40
+						"y": 40,
+						"shape": "trapezoid"
 					}
 				]
 			},
@@ -142,7 +143,8 @@
 					{
 						"map": "subrosia",
 						"x": 600,
-						"y": 170
+						"y": 170,
+						"shape": "trapezoid"
 					}
 				]
 			},
@@ -238,7 +240,8 @@
 					{
 						"map": "subrosia",
 						"x": 1160,
-						"y": 680
+						"y": 680,
+						"shape": "trapezoid"
 					}
 				]
 			},
@@ -318,7 +321,8 @@
 					{
 						"map": "subrosia",
 						"x": 1673,
-						"y": 570
+						"y": 570,
+						"shape": "trapezoid"
 					}
 				]
 			},
@@ -398,7 +402,8 @@
 					{
 						"map": "subrosia",
 						"x": 538,
-						"y": 745
+						"y": 745,
+						"shape": "trapezoid"
 					}
 				]
 			},
@@ -494,7 +499,8 @@
 					{
 						"map": "subrosia",
 						"x": 390,
-						"y": 940
+						"y": 940,
+						"shape": "trapezoid"
 					}
 				]
 			},
@@ -510,7 +516,8 @@
 					{
 						"map": "subrosia",
 						"x": 40,
-						"y": 315
+						"y": 315,
+						"shape": "trapezoid"
 					}
 				]
 			},
@@ -655,14 +662,17 @@
 				"sections": [
 					{
 						"name": "Sword and Shield Maze",
-						"access_rules": ["{^$CanReach|SwordAndShieldMaze}"]
+						"access_rules": ["{^$CanReach|SwordAndShieldMaze}"],
+						"chest_unopened_img": "images/labels/dungeon_eye.png",
+						"chest_opened_img": "images/labels/dungeon_eye_disabled.png"
 					}
 				],
 				"map_locations": [
 					{
 						"map": "subrosia",
 						"x": 25,
-						"y": 41
+						"y": 41,
+						"shape": "trapezoid"
 					}
 				]
 			},

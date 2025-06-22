@@ -3,7 +3,6 @@
 		"name": "Dancing Dragon Dungeon",
 		"chest_unopened_img": "images/labels/chest.png",
 		"chest_opened_img": "images/labels/chestopen.png",
-		"access_rules": ["^$CanReach|DancingFoyer"],
 		"children": [	
 			{
 				"name": "Chest North of Entrance",
@@ -155,7 +154,8 @@
 				"sections": [
 					{
 						"name": "1F",
-						"access_rules": ["^$CanReach|DancingWildEmbers"]
+						"access_rules": ["^$CanReach|DancingWildEmbers"],
+						"hosted_item": "emberseeds"
 					}
 				],
 				"map_locations": [

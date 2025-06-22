@@ -11,19 +11,23 @@
 				"sections": [
 					{
 						"name": "Sunken City",
-						"access_rules": ["{^$CanReach|SunkenCityFindSeason}"]
+						"access_rules": ["{^$CanReach|SunkenCityFindSeason}"],
+						"chest_unopened_img": "images/labels/season_icons.png",
+						"chest_opened_img": "images/labels/season_icons_disabled.png"
 					}
 				],
 				"map_locations": [
 					{
 						"map": "holodrum",
 						"x": 585,
-						"y": 257
+						"y": 257,
+						"shape": "diamond"
 					},
 					{
 						"map": "holodrum",
 						"x": 503,
-						"y": 110
+						"y": 110,
+						"shape": "diamond"
 					}
 				]
 			},

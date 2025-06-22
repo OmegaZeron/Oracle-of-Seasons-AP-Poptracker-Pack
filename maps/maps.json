@@ -13,8 +13,8 @@
 	},
 	{
 		"name": "subrosia",
-		"location_size": 28,
-		"location_border_thickness": 2,
+		"location_size": 40,
+		"location_border_thickness": 3,
 		"img": "images/maps/map_subrosia.png"
 	},
 	{

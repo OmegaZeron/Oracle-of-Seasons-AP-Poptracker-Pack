@@ -11,14 +11,17 @@
 				"sections": [
 					{
 						"name": "Woods of Winter",
-						"access_rules": ["{^$CanReach|WoodsOfWinterFindSeason}"]
+						"access_rules": ["{^$CanReach|WoodsOfWinterFindSeason}"],
+						"chest_unopened_img": "images/labels/season_icons.png",
+						"chest_opened_img": "images/labels/season_icons_disabled.png"
 					}
 				],
 				"map_locations": [
 					{
 						"map": "holodrum",
 						"x": 621,
-						"y": 387
+						"y": 387,
+						"shape": "diamond"
 					}
 				]
 			}
@@ -36,14 +39,17 @@
 				"sections": [
 					{
 						"name": "Eastern Suburbs",
-						"access_rules": ["{^$CanReach|EasternSuburbsFindSeason}"]
+						"access_rules": ["{^$CanReach|EasternSuburbsFindSeason}"],
+						"chest_unopened_img": "images/labels/season_icons.png",
+						"chest_opened_img": "images/labels/season_icons_disabled.png"
 					}
 				],
 				"map_locations": [
 					{
 						"map": "holodrum",
 						"x": 510,
-						"y": 460
+						"y": 460,
+						"shape": "diamond"
 					}
 				]
 			},
@@ -336,7 +342,8 @@
 					{
 						"map": "holodrum",
 						"x": 444,
-						"y": 404
+						"y": 404,
+						"shape": "trapezoid"
 					}
 				]
 			},
@@ -346,20 +353,22 @@
 				"sections": [
 					{
 						"name": "Snake's Remains",
-						"access_rules": ["{^$CanReach|SnakesRemains}"]
+						"access_rules": ["{^$CanReach|SnakesRemains}"],
+						"chest_unopened_img": "images/labels/dungeon_eye.png",
+						"chest_opened_img": "images/labels/dungeon_eye_disabled.png"
 					}
 				],
 				"map_locations": [
 					{
-					"map": "holodrum",
-					"x": 558,
-					"y": 364
+						"map": "holodrum",
+						"x": 558,
+						"y": 364,
+						"shape": "trapezoid"
 					}
 				]
 			},
 			{
 				"name": "Snake's Remains",
-				"access_rules": ["^$CanReach|SnakeFoyer", "^$CanReach|SnakeAltEntrance"],
 				"sections": [
 					{
 						"name": "Snake's Remains: Chest Left from Entrance",
@@ -376,6 +385,10 @@
 					{
 						"name": "Snake's Remains: Chest Behind Pots in Hardhat Room",
 						"ref": "Snake's Remains/Chest Behind Pots in Hardhat Room/"
+					},
+					{
+						"name": "Snake's Remains: Wild Bombs",
+						"ref": "Snake's Remains/Wild Bombs/"
 					},
 					{
 						"name": "Snake's Remains: Chest in Distant Moblins Room",

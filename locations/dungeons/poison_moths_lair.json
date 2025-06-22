@@ -3,7 +3,6 @@
 		"name": "Poison Moth's Lair",
 		"chest_unopened_img": "images/labels/chest.png",
 		"chest_opened_img": "images/labels/chestopen.png",
-		"access_rules": ["^$CanReach|PoisonFoyer"],
 		"children": [	
 			{
 				"name": "Chest in Watery Room",

@@ -3,7 +3,6 @@
 		"name": "Unicorn's Cave",
 		"chest_unopened_img": "images/labels/chest.png",
 		"chest_opened_img": "images/labels/chestopen.png",
-		"access_rules": ["^$CanReach|UnicornFoyer"],
 		"children": [	
 			{
 				"name": "Right Cart Chest",
@@ -104,7 +103,8 @@
 					},
 					{
 						"name": "Ember Seeds",
-						"access_rules": ["^$CanReach|UnicornArmosPuzzleEmbers"]
+						"access_rules": ["^$CanReach|UnicornArmosPuzzleEmbers"],
+						"hosted_item": "emberseeds"
 					}
 				],
 				"map_locations": [

@@ -11,14 +11,17 @@
 				"sections": [
 					{
 						"name": "Spool Swamp",
-						"access_rules": ["{^$CanReach|SpoolSwampFindSeason}"]
+						"access_rules": ["{^$CanReach|SpoolSwampFindSeason}"],
+						"chest_unopened_img": "images/labels/season_icons.png",
+						"chest_opened_img": "images/labels/season_icons_disabled.png"
 					}
 				],
 				"map_locations": [
 					{
 						"map": "holodrum",
 						"x": 69,
-						"y": 420
+						"y": 420,
+						"shape": "diamond"
 					}
 				]
 			},
@@ -144,7 +147,8 @@
 					{
 						"map": "holodrum",
 						"x": 25,
-						"y": 490
+						"y": 490,
+						"shape": "trapezoid"
 					}
 				]
 			},
@@ -203,20 +207,22 @@
 				"sections": [
 					{
 						"name": "Poison Moth's Lair",
-						"access_rules": ["{^$CanReach|PoisonMothLair}"]
+						"access_rules": ["{^$CanReach|PoisonMothLair}"],
+						"chest_unopened_img": "images/labels/dungeon_eye.png",
+						"chest_opened_img": "images/labels/dungeon_eye_disabled.png"
 					}
 				],
 				"map_locations": [
 					{
 						"map": "holodrum",
 						"x": 45,
-						"y": 279
+						"y": 279,
+						"shape": "trapezoid"
 					}
 				]
 			},
 			{
 				"name": "Poison Moth's Lair",
-				"access_rules": ["^$CanReach|PoisonFoyer"],
 				"sections": [
 					{
 						"name": "Poison Moth's Lair (B1F): Chest in Roller Room",

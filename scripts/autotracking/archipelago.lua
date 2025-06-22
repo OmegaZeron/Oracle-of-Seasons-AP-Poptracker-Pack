@@ -6,7 +6,6 @@ CUR_INDEX = -1
 SLOT_DATA = nil
 LOCAL_ITEMS = {}
 GLOBAL_ITEMS = {}
-COLLECTED_HINTS = {}
 
 function onClear(slot_data)
 	if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
@@ -72,8 +71,13 @@ function onClear(slot_data)
 		HINTS_ID = "_read_hints_"..TEAM_NUMBER.."_"..PLAYER_ID
 		DATA_STORAGE_ID = "OoS_"..TEAM_NUMBER.."_"..PLAYER_ID
 
-		Archipelago:SetNotify({HINTS_ID, DATA_STORAGE_ID})
-		Archipelago:Get({HINTS_ID, DATA_STORAGE_ID})
+		if Highlight then
+			Archipelago:SetNotify({HINTS_ID, DATA_STORAGE_ID})
+			Archipelago:Get({HINTS_ID, DATA_STORAGE_ID})
+		else
+			Archipelago:SetNotify({DATA_STORAGE_ID})
+			Archipelago:Get({DATA_STORAGE_ID})
+		end
 	end
 
 	if slot_data["required_essences"] then
@@ -211,7 +215,7 @@ function onClear(slot_data)
 end
 
 -- called when an item gets collected
-function onItem(index, item_id, item_name, player_number)
+function OnItem(index, item_id, item_name, player_number)
 	if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
 		print(string.format("called onItem: %s, %s, %s, %s, %s", index, item_id, item_name, player_number, CUR_INDEX))
 	end
@@ -272,7 +276,7 @@ function onItem(index, item_id, item_name, player_number)
 end
 
 -- called when a location gets cleared
-function onLocation(location_id, location_name)
+function OnLocation(location_id, location_name)
 	SetAsStale()
 	local location_array = LOCATION_MAPPING[location_id]
 	if not location_array or not location_array[1] then
@@ -289,7 +293,7 @@ function onLocation(location_id, location_name)
 			else
 				obj.Active = true
 			end
-			clearHints(location_id)
+			ClearHints(location_id)
 		else
 			print(string.format("onLocation: could not find object for code %s", location))
 		end
@@ -297,14 +301,14 @@ function onLocation(location_id, location_name)
 end
 
 -- called when a locations is scouted
-function onScout(location_id, location_name, item_id, item_name, item_player)
-	if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
-		print(string.format("called onScout: %s, %s, %s, %s, %s", location_id, location_name, item_id, item_name,
-			item_player))
-	end
-end
+-- function onScout(location_id, location_name, item_id, item_name, item_player)
+-- 	if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
+-- 		print(string.format("called onScout: %s, %s, %s, %s, %s", location_id, location_name, item_id, item_name,
+-- 			item_player))
+-- 	end
+-- end
 
-function onNotify(key, value, old_value)
+function OnNotify(key, value, old_value)
 	if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
 		print(string.format("called onNotify: %s, %s, %s", key, dump(value), old_value))
 	end
@@ -313,13 +317,12 @@ function onNotify(key, value, old_value)
 		return
 	end
 
-	if key == HINTS_ID then
-		COLLECTED_HINTS = {}
+	if key == HINTS_ID and Highlight then
 		for _, hint in ipairs(value) do
 			if not hint.found and hint.finding_player == Archipelago.PlayerNumber then
-				updateHints(hint.location, hint.item_flags)
-			elseif hint.found then
-				clearHints(hint.location)
+				UpdateHints(hint.location, hint.status)
+			else
+				ClearHints(hint.location)
 			end
 		end
 	elseif key == DATA_STORAGE_ID and value ~= nil then
@@ -330,58 +333,52 @@ function onNotify(key, value, old_value)
 				Tracker:FindObjectForCode(DataStorageItemTable[k]).Active = v or false
 			end
 		end
+		Tracker:FindObjectForCode(HiddenSetting).Active = not Tracker:FindObjectForCode(HiddenSetting).Active
 	end
-	Tracker:FindObjectForCode(HiddenSetting).Active = not Tracker:FindObjectForCode(HiddenSetting).Active
 end
 
-function onNotifyLaunch(key, value)
+function OnNotifyLaunch(key, value)
 	if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
 		print(string.format("called onNotifyLaunch: %s, %s", key, dump(value)))
 	end
-	onNotify(key, value)
+	OnNotify(key, value)
 end
 
--- called when a location is hinted
-function updateHints(locationID, quality)
-	local item_codes = HINT_MAPPING[locationID]
-	-- print("Hint", dump(item_codes), quality)
-	for _, item_code in ipairs(item_codes) do
-		if (QualityToAccess[quality]) then
-			COLLECTED_HINTS[item_code] = QualityToAccess[quality]
-		end
-		local obj = Tracker:FindObjectForCode(item_code)
-		if obj then
-			obj.Active = true
-		else
-			print(string.format("No object found for code: %s", item_code))
-		end
-	end
-end
-
-function clearHints(locationID)
-	local item_codes = HINT_MAPPING[locationID]
-	if (not item_codes) then
+-- called when a location is hinted or the status of a hint is changed
+function UpdateHints(locationID, status)
+	if not Highlight then
 		return
 	end
-	for _, item_code in ipairs(item_codes) do
-		local obj = Tracker:FindObjectForCode(item_code)
-		if obj then
-			obj.Active = false
+	local locations = LOCATION_MAPPING[locationID]
+	-- print("Hint", dump(locations), status)
+	for _, location in ipairs(locations) do
+		local section = Tracker:FindObjectForCode(location)
+		---@cast section LocationSection
+		if section then
+			section.Highlight = PriorityToHighlight[status]
 		else
-			print(string.format("No object found for code: %s", item_code))
+			print(string.format("No object found for code: %s", location))
 		end
 	end
 end
 
-function HasHint(code)
-	if (COLLECTED_HINTS[code]) then
-		return COLLECTED_HINTS[code]
+function ClearHints(locationID)
+	if not Highlight then
+		return
 	end
-	local hintLoc = Tracker:FindObjectForCode(code)
-	if (hintLoc and hintLoc.Active) then
-		hintLoc.Active = false
+	local locations = LOCATION_MAPPING[locationID]
+	if (not locations) then
+		return
 	end
-	return AccessibilityLevel.None
+	for _, location in ipairs(locations) do
+		local section = Tracker:FindObjectForCode(location)
+		---@cast section LocationSection
+		if section then
+			section.Highlight = Highlight.None
+		else
+			print(string.format("No object found for code: %s", location))
+		end
+	end
 end
 
 -- called when a bounce message is received 
@@ -449,11 +446,11 @@ end
 
 Archipelago:AddClearHandler("clear handler", onClear)
 if AUTOTRACKER_ENABLE_ITEM_TRACKING then
-	Archipelago:AddItemHandler("item handler", onItem)
+	Archipelago:AddItemHandler("item handler", OnItem)
 end
 if AUTOTRACKER_ENABLE_LOCATION_TRACKING then
-	Archipelago:AddLocationHandler("location handler", onLocation)
+	Archipelago:AddLocationHandler("location handler", OnLocation)
 end
-Archipelago:AddSetReplyHandler("notify handler", onNotify)
-Archipelago:AddRetrievedHandler("notify launch handler", onNotifyLaunch)
+Archipelago:AddSetReplyHandler("notify handler", OnNotify)
+Archipelago:AddRetrievedHandler("notify launch handler", OnNotifyLaunch)
 Archipelago:AddBouncedHandler("bounce handler", OnBounce)

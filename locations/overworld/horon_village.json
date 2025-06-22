@@ -11,14 +11,17 @@
 				"sections": [
 					{
 						"name": "Horon Village",
-						"access_rules": ["{^$CanReach|HoronVillageFindSeason}"]
+						"access_rules": ["{^$CanReach|HoronVillageFindSeason}"],
+						"chest_unopened_img": "images/labels/season_icons.png",
+						"chest_opened_img": "images/labels/season_icons_disabled.png"
 					}
 				],
 				"map_locations": [
 					{
 						"map": "holodrum",
 						"x": 281,
-						"y": 540
+						"y": 540,
+						"shape": "diamond"
 					}
 				]
 			},
@@ -399,7 +402,8 @@
 					{
 						"map": "holodrum",
 						"x": 315,
-						"y": 660
+						"y": 660,
+						"shape": "trapezoid"
 					}
 				]
 			}

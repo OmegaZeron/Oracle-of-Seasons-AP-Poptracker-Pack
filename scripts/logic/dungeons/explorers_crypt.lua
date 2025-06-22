@@ -95,7 +95,10 @@ CryptPoeTrampoline:connect_one_way_entrance(CryptPoe2, function()
 		CanUseSeeds(),
 		Has(EmberSeeds),
 		Any(
-			Has(PegasusSeeds),
+			All(
+				Has(SeedSatchel),
+				Has(PegasusSeeds)
+			),
 			HardLogic()
 		)
 	)

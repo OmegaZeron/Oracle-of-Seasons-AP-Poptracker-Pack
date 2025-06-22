@@ -3,7 +3,6 @@
 		"name": "Snake's Remains",
 		"chest_unopened_img": "images/labels/chest.png",
 		"chest_opened_img": "images/labels/chestopen.png",
-		"access_rules": ["^$CanReach|SnakeFoyer", "^$CanReach|SnakeAltEntrance"],
 		"children": [	
 			{
 				"name": "Chest Left from Entrance",
@@ -84,7 +83,8 @@
 				"name": "Wild Bombs",
 				"sections": [
 					{
-						"access_rules": ["^$CanReach|SnakeWildBombs"]
+						"access_rules": ["^$CanReach|SnakeWildBombs"],
+						"hosted_item": "bombs"
 					}
 				],
 				"map_locations": [

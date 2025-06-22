@@ -11,14 +11,17 @@
 				"sections": [
 					{
 						"name": "Holodrum Plain",
-						"access_rules": ["{^$CanReach|HolodrumPlainFindSeason}"]
+						"access_rules": ["{^$CanReach|HolodrumPlainFindSeason}"],
+						"chest_unopened_img": "images/labels/season_icons.png",
+						"chest_opened_img": "images/labels/season_icons_disabled.png"
 					}
 				],
 				"map_locations": [
 					{
 						"map": "holodrum",
 						"x": 323,
-						"y": 320
+						"y": 320,
+						"shape": "diamond"
 					}
 				]
 			},

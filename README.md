@@ -1,15 +1,22 @@
-The Legend of Zelda - Oracle of Seasons
-Poptracker Pack for Seasons AP
+![Oracle of Seasons](https://raw.githubusercontent.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/refs/heads/main/OracleOfSeasons_Header.jpg)
+# The Legend of Zelda: Oracle of Seasons Archipelago PopTracker Pack
+Tracker pack for [PopTracker](https://github.com/black-sliver/PopTracker/)</br>
+<b>PopTracker v0.32.1 or higher is recommended.</b>
 
-Tracker pack for [PopTracker](https://github.com/black-sliver/PopTracker/) with Autotracking.
+[Archipelago Setup Guide](https://archipelago.gg/tutorial/Archipelago/setup/en)
 
-PopTracker v0.30.4 or higher is recommended. 
+[Seasons Archipelago Randomizer Setup Guide](https://github.com/Dinopony/ArchipelagoOoS/blob/oos/worlds/tloz_oos/docs/oos_setup_en.md)
 
-Installation:
-Download Poptracker from the link above, and place installation anywhere on your PC. Place this pack inside the "Packs" folder within. 
+## Installation
+Get the [latest pack](https://github.com/OmegaZeron/Hades-AP-Poptracker-Pack/releases/latest) from the releases page. Then drag and drop the .zip file onto the open PopTracker window, or move it into the /poptracker/packs folder.
 
-To use:
-Open Poptracker, click the Folder Icon in the top left corner, and select the "Oracle of Seasons AP Tracker." 
+This pack features auto-update, so you should be prompted to update when you open the pack.
 
-To connect the pack for Autotracking:
-Click the gray "AP" icon at the top. Enter your server address (if hosted on the AP website, this will be archipelago.gg:xxxxx, where xxxxx = your room's port.) Then, enter your slot name, and password (if no password, leave blank.) The "AP" icon should turn green, this means you're good to go!
+## To Use
+Open PopTracker, click the Folder Icon in the top left corner, and select the "Oracle of Seasons Tracker" then choose your preferred layout 
+
+## Connecting to Archipelago
+Click the AP button in the top left of the window. Enter your server:port (most likely archipelago.gg:PORT_NUMBER), then enter your slot name (the name in your YAML file), then the server password (empty if there isn't one). Afterward, the AP button should turn green, which means you're now auto-tracking.
+
+## Special Thanks
+[Seto](https://github.com/seto10987) for her work on the original tracker, and pointers for getting this version set up

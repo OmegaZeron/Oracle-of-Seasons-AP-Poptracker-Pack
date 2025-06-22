@@ -79,22 +79,36 @@ AncientFoyer:connect_one_way(AncientNorthOfSpinnerChest, function()
 				D6KeyCount(2),
 				Any(
 					CanBombWall(),
-					CanReach(Vire)
+					CanSwordKill(),
+					All(
+						Has(Bombs40),
+						MediumLogic()
+					),
+					All(
+						Has(ExpertsRing),
+						MediumLogic()
+					)
 				)
 			),
 			All(
 				D6KeyCount(1),
+				CanBombWall(),
 				Any(
+					CanSwordKill(),
 					All(
-						CanBombWall(),
-						CanReach(Vire)
+						Has(Bombs40),
+						MediumLogic()
+					),
+					All(
+						Has(ExpertsRing),
+						MediumLogic()
 					),
 					AccessibilityLevel.SequenceBreak
 				)
 			)
 		)
 	)
-end, {Vire})
+end)
 AncientVireDoorstep:connect_one_way_entrance(Vire, function()
 	return All(
 		-- only 1 key here because you can't do anything special by getting here

@@ -738,15 +738,6 @@ SeedMapping = {
 	["Pegasus Seeds"] = PegasusSeeds,
 	["Gale Seeds"] = GaleSeeds
 }
-WildItemLocationMapping = {
-	[EmberSeeds] = {
-		"@Dancing Dragon Dungeon/Wild Ember Seeds/1F",
-		"@Unicorn's Cave/Armos Puzzle Room/Ember Seeds",
-		"@Explorer's Crypt/Wild Ember Seeds/1F"
-	},
-	[MysterySeeds] = {"@Sword and Shield Maze/Wild Mystery Seeds/B1F"},
-	[Bombs] = {"@Snake's Remains/Wild Bombs/"}
-}
 
 SeeSeasonVars = {
 	{"see horon village", HoronVillageSeason, "@Horon Village/See the Season/Horon Village"},
@@ -789,9 +780,13 @@ PortalSetVars = {
 	{"d8 entrance portal", D8PortalSelector, "@Subrosia/D8 Portal/"}
 }
 
-QualityToAccess = {
-	[0] = 5, -- normal
-	[1] = 6, -- progression
-	[2] = 3, -- useful
-	-- [3] = 0 -- trap?
-}
+PriorityToHighlight = {}
+if Highlight then
+	PriorityToHighlight = {
+		[0] = Highlight.Unspecified,
+		[10] = Highlight.NoPriority,
+		[20] = Highlight.Avoid,
+		[30] = Highlight.Priority,
+		[40] = Highlight.None -- found
+	}
+end

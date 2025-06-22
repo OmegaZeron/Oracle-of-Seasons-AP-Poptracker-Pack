@@ -11,14 +11,17 @@
 				"sections": [
 					{
 						"name": "Lost Woods",
-						"access_rules": ["{^$CanReach|LostWoodsFindSeason}"]
+						"access_rules": ["{^$CanReach|LostWoodsFindSeason}"],
+						"chest_unopened_img": "images/labels/season_icons.png",
+						"chest_opened_img": "images/labels/season_icons_disabled.png"
 					}
 				],
 				"map_locations": [
 					{
 						"map": "holodrum",
 						"x": 148,
-						"y": 242
+						"y": 242,
+						"shape": "diamond"
 					}
 				]
 			}
@@ -36,14 +39,17 @@
 				"sections": [
 					{
 						"name": "Tarm Ruins",
-						"access_rules": ["{^$CanReach|TarmRuinsFindSeason}"]
+						"access_rules": ["{^$CanReach|TarmRuinsFindSeason}"],
+						"chest_unopened_img": "images/labels/season_icons.png",
+						"chest_opened_img": "images/labels/season_icons_disabled.png"
 					}
 				],
 				"map_locations": [
 					{
 						"map": "holodrum",
 						"x": 70,
-						"y": 100
+						"y": 100,
+						"shape": "diamond"
 					}
 				]
 			},
@@ -115,8 +121,44 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 148,
-						"y": 192
+						"x": 145,
+						"y": 200
+					}
+				]
+			},
+			{
+				"name": "Lost Woods Sequence",
+				"sections": [
+					{
+						"name": "Shield the Scrub",
+						"visibility_rules": ["casual", "lost_woods_randomized"],
+						"access_rules": ["^$CanReach|TarmLostWoodsScrub"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 165,
+						"y": 180,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Pedestal Sequence",
+				"sections": [
+					{
+						"name": "Serenade the Scrub",
+						"visibility_rules": ["casual", "pedestal_randomized"],
+						"access_rules": ["^$CanReach|TarmPedestalScrub"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 70,
+						"y": 240,
+						"shape": "diamond"
 					}
 				]
 			},
@@ -158,14 +200,17 @@
 				"sections": [
 					{
 						"name": "Ancient Ruins",
-						"access_rules": ["{^$CanReach|AncientRuins}"]
+						"access_rules": ["{^$CanReach|AncientRuins}"],
+						"chest_unopened_img": "images/labels/dungeon_eye.png",
+						"chest_opened_img": "images/labels/dungeon_eye_disabled.png"
 					}
 				],
 				"map_locations": [
 					{
 						"map": "holodrum",
 						"x": 40,
-						"y": 25
+						"y": 25,
+						"shape": "trapezoid"
 					}
 				]
 			},

@@ -3,7 +3,6 @@
 		"name": "Gnarled Root Dungeon",
 		"chest_unopened_img": "images/labels/chest.png",
 		"chest_opened_img": "images/labels/chestopen.png",
-		"access_rules": ["^$CanReach|GnarledFoyer"],
 		"children": [	
 			{
 				"name": "Drop in Right Stalfos Room",

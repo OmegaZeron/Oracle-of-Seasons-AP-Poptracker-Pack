@@ -11,14 +11,17 @@
 				"sections": [
 					{
 						"name": "North Horon",
-						"access_rules": ["{^$CanReach|NorthHoronFindSeason}"]
+						"access_rules": ["{^$CanReach|NorthHoronFindSeason}"],
+						"chest_unopened_img": "images/labels/season_icons.png",
+						"chest_opened_img": "images/labels/season_icons_disabled.png"
 					}
 				],
 				"map_locations": [
 					{
 						"map": "holodrum",
 						"x": 363,
-						"y": 408
+						"y": 408,
+						"shape": "diamond"
 					}
 				]
 			},
@@ -191,25 +194,28 @@
 					{
 						"map": "holodrum",
 						"x": 395,
-						"y": 485
+						"y": 485,
+						"shape": "trapezoid"
 					}
 				]
 			},
 			{
 				"name": "Enter D1",
-				"access_rules": ["^$CanReach|GnarledRootDoorstep"],
 				"visibility_rules": ["ShuffleDungeonOn"],
 				"sections": [
 					{
 						"name": "Gnarled Root Dungeon",
-						"access_rules": ["{^$CanReach|GnarledRootDungeon}"]
+						"access_rules": ["{^$CanReach|GnarledRootDungeon}"],
+						"chest_unopened_img": "images/labels/dungeon_eye.png",
+						"chest_opened_img": "images/labels/dungeon_eye_disabled.png"
 					}
 				],
 				"map_locations": [
 					{
 						"map": "holodrum",
 						"x": 261,
-						"y": 407
+						"y": 407,
+						"shape": "trapezoid"
 					}
 				]
 			},
@@ -219,21 +225,23 @@
 				"sections": [
 					{
 						"name": "Unicorn's Cave",
-						"access_rules": ["{^$CanReach|UnicornCave}"]
+						"access_rules": ["{^$CanReach|UnicornCave}"],
+						"chest_unopened_img": "images/labels/dungeon_eye.png",
+						"chest_opened_img": "images/labels/dungeon_eye_disabled.png"
 					}
 				],
 				"map_locations": [
 					{
 						"map": "holodrum",
 						"x": 437,
-						"y": 358
+						"y": 358,
+						"shape": "trapezoid"
 					}
 				]
 			},
 
 			{
 				"name": "Gnarled Root Dungeon",
-				"access_rules": ["^$CanReach|GnarledFoyer"],
 				"sections": [	
 					{
 						"name": "Gnarled Root Dungeon: Drop in Right Stalfos Room",

@@ -109,6 +109,17 @@ RoosterAdventure:connect_one_way_entrance(SpoolWinterCave, function()
         )
     )
 end)
+RoosterAdventure:connect_one_way_entrance(TarmLostWoodsScrub, function()
+    return All(
+        GetCuccos()["swamp"][2] > 0,
+        CanEnterTarm(),
+        Any(
+            Has(Summer),
+            Has(LostWoodsSummer),
+            CanReach(TarmTreeStump)
+        )
+    )
+end, {TarmTreeStump})
 RoosterAdventure:connect_one_way_entrance(TempleRemainsStump, function()
     return All(
         Jump3(),

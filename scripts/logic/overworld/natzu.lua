@@ -24,6 +24,12 @@ NatzuDimitriEast:connect_one_way_entrance(MoblinKeepBridge, function()
 		)
 	)
 end)
+MoblinKeepBridge:connect_one_way_entrance(NatzuDimitriEast, function()
+	return Any(
+		Dimitri(),
+		Has(Flippers)
+	)
+end)
 NatzuDimitriEast:connect_one_way(NatzuScrub, Dimitri)
 NatzuDimitriEast:connect_two_ways_entrance(SunkenDoorstep, function()
 	return All(
@@ -83,7 +89,7 @@ NatzuScrub:connect_one_way(DekuSecret, function()
 	)
 end)
 -- moblin keep
-MoblinKeepBridge:connect_one_way_entrance(MoblinKeep, function()
+MoblinKeepBridge:connect_two_ways_entrance(MoblinKeep, function()
 	return Any(
 		Has(Flippers),
 		JumpLiquid4()
@@ -91,7 +97,7 @@ MoblinKeepBridge:connect_one_way_entrance(MoblinKeep, function()
 end)
 MoblinKeep:connect_one_way(GreatMoblinChest, function() return Has(Bracelet) end)
 MoblinKeep:connect_one_way_entrance(SunkenDoorstep)
-
+SunkenDoorstep:connect_one_way_entrance(MoblinKeep, CanDimitriClip)
 SunkenDoorstep:connect_one_way(EasternSuburbsFindSeason)
 SunkenDoorstep:connect_one_way(SunkenCityFindSeason)
 SunkenDoorstep:connect_one_way_entrance(UpperEasternSuburbs, function()

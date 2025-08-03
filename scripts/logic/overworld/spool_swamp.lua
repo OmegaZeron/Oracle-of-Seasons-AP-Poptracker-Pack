@@ -53,7 +53,7 @@ FloodgateKeyhole:connect_one_way(SwampScrub, function()
 		HasRupees(ShopPrices[SpoolSwampScrubPrice]),
 		AccessibilityLevel.Inspect
 	)
-end, {SnakeRupeeRoom, AncientRupeeRoom})
+end, {SnakeRupeeRoom, AncientRupeeRoom, HoronVillageOldMan, NorthHoronOldMan, SuburbsOldMan, NorthHolodrumPlainOldMan, SouthHolodrumPlainOldMan, GoronMountainOldMan, TarmOldMan, WesternCoastOldMan})
 FloodgateKeyhole:connect_one_way(SwampNorthGashaSpot, CanPlantGasha)
 FloodgateKeyhole:connect_one_way_entrance(SpoolSwampStump, function() return Has(FloodgateKey) end)
 SpoolSwampStump:connect_one_way_entrance(PoisonMothLair, function()

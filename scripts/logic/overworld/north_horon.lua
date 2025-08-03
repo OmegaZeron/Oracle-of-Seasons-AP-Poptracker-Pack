@@ -182,8 +182,13 @@ EyeglassPortal:connect_one_way_entrance(FrozenEyeglassLake, function()
 		)
 	)
 end)
-EyeglassPortal:connect_one_way_entrance(DryEyeglassLake, function()
-	return Has(NorthHoronSummer)
+
+-- special connection from dry portal stairs warping all the way to pedestal
+EyeglassPortal:connect_one_way_entrance(Pedestal, function()
+	return All(
+		Has(NorthHoronSummer),
+		HardLogic()
+	)
 end)
 
 -- eastern

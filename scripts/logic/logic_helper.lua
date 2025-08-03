@@ -87,6 +87,16 @@ function Dimitri()
 	return Has(AnyCompanion) and Has(NatzuIsDimitri)
 end
 
+function CanDimitriClip()
+	return All(
+		Dimitri(),
+		Has(Bracelet),
+		Has(SeedSatchel),
+		Has(GaleSeeds),
+		HellLogic()
+	)
+end
+
 function HasRod()
 	return Has(Winter) or
 	Has(Spring) or
@@ -105,7 +115,7 @@ function CanPunch()
 end
 
 function HasEnoughEssencesForTreehouse()
-	local required = Tracker:FindObjectForCode("oldmanessences").CurrentStage
+	local required = Tracker:FindObjectForCode("treehouse_old_man_requirement").CurrentStage
 	local n = 0
 	for _, e in ipairs(EssenceKeys) do
 		if (Has(e)) then
@@ -175,7 +185,7 @@ function CanGoal()
 end
 
 function HasEnoughEssencesForGoal()
-	local required = Tracker:FindObjectForCode("onox_essences").CurrentStage
+	local required = Tracker:FindObjectForCode("required_essences").CurrentStage
 	local n = 0
 	for _, e in ipairs(EssenceKeys) do
 		if (Has(e)) then
@@ -639,17 +649,16 @@ end
 
 function CanGaleKill()
 	return All(
-		Has(GaleSeeds),
+		Any(
+			Has(GaleSeeds),
+			Has(MysterySeeds)
+		),
+		Has(UpgradedSatchel),
 		MediumLogic(),
 		Any(
 			Has(Slingshot),
-			All(
-				Has(SeedSatchel),
-				Any(
-					HardLogic(),
-					Has(Feather)
-				)
-			)
+			HardLogic(),
+			Has(Feather)
 		)
 	)
 end
@@ -855,7 +864,7 @@ function CanFarmRupees()
 end
 
 function HasRupees(count)
-	if (CanFarmRupees() < 5) then
+	if (CanFarmRupees() < AccessibilityLevel.SequenceBreak) then
 		return false
 	end
 
@@ -880,6 +889,23 @@ function HasRupees(count)
 		bonusRupees = bonusRupees + ancientRupeeAmount
 	end
 
+	if (Tracker:FindObjectForCode("shuffle_old_men").CurrentStage ~= 4) then
+		for _, val in pairs(OldMenValues) do
+			if (val[1] < 0) then
+				-- always subtract rupees even if you can't reach them yet
+				-- otherwise you could "lose" access to a shop if one steals from you
+				rupees = rupees + val[1]
+			else
+				local access = CanReach(val[2])
+				if (access == AccessibilityLevel.SequenceBreak) then
+					oolRupees = oolRupees + val[1]
+				elseif (access == AccessibilityLevel.Normal) then
+					rupees = rupees + val[1]
+				end
+			end
+		end
+	end
+
 	return Any(
 		-- already have the right amount of rupees
 		rupees >= count,
@@ -890,8 +916,8 @@ function HasRupees(count)
 		),
 		-- D2 and D6 rupee rooms are medium+ only
 		All(
-			MediumLogic(),
-			rupees + bonusRupees >= count
+			rupees + bonusRupees >= count,
+			MediumLogic()
 		),
 		All(
 			AccessibilityLevel.SequenceBreak,
@@ -939,7 +965,7 @@ function CanMapleTrade()
 end
 
 function CanEnterTarm()
-	local required = Tracker:FindObjectForCode("jewelreq").CurrentStage
+	local required = Tracker:FindObjectForCode(TarmGateSetting).CurrentStage
 	local n = 0
 	for _, j in ipairs(JewelKeys) do
 		if (Has(j)) then
@@ -956,9 +982,12 @@ local indexToSeason = {
 	[3] = Winter,
 	[4] = UnknownSeason
 }
-function CanLostWoods(allowDefault)
+function CanLostWoods(allowDefault, forceDeku)
 	if (allowDefault == nil) then
 		allowDefault = false
+	end
+	if (forceDeku == nil) then
+		forceDeku = false
 	end
 	local defaultSeason = indexToSeason[Tracker:FindObjectForCode("lost_woods_season").CurrentStage]
 	local canDefault = defaultSeason ~= UnknownSeason
@@ -969,11 +998,23 @@ function CanLostWoods(allowDefault)
 			return false
 		end
 	end
-	return true
+
+	return Any(
+		forceDeku,
+		CanReach(TarmLostWoodsScrub),
+		All(
+			-- know the sequence
+			Has(LostWoodsVanilla),
+			MediumLogic()
+		)
+	)
 end
-function CanPedestal(allowDefault)
+function CanPedestal(allowDefault, forceDeku)
 	if (allowDefault == nil) then
 		allowDefault = false
+	end
+	if (forceDeku == nil) then
+		forceDeku = false
 	end
 	local defaultSeason = indexToSeason[Tracker:FindObjectForCode("lost_woods_season").CurrentStage]
 	local canDefault = defaultSeason ~= UnknownSeason
@@ -984,7 +1025,16 @@ function CanPedestal(allowDefault)
 			return false
 		end
 	end
-	return true
+
+	return Any(
+		forceDeku,
+		CanReach(TarmPedestalScrub),
+		All(
+			-- know the sequence
+			Has(PedestalVanilla),
+			MediumLogic()
+		)
+	)
 end
 
 local availableCuccos = nil
@@ -998,6 +1048,7 @@ function GetCuccos()
 			["moblin road"] = {-1, -1, -1},
 			["sunken"] = {-1, -1, -1},
 			["swamp"] = {-1, -1, -1},
+			["tarm"] = {-1, -1, -1}
 		}
 
 		function RegisterCucco(region, cuccos)
@@ -1076,8 +1127,55 @@ function GetCuccos()
 
 		if (Has(HolodrumPlainSummer) or Has(Summer) or Jump4() or Ricky() or Moosh()) then
 			availableCuccos["swamp"] = availableCuccos["horon"]
+		else
+			availableCuccos["swamp"] = UseBottomCucco(availableCuccos["horon"])
 		end
-		availableCuccos["swamp"] = UseBottomCucco(availableCuccos["horon"])
+
+		if (All(
+			CanEnterTarm(),
+			Any(
+				Has(LostWoodsWinter),
+				Has(Winter)
+			),
+			Any(
+				Has(Spring),
+				Has(Summer),
+				Has(Autumn)
+			),
+			Any(
+				Has(LostWoodsSummer),
+				Has(Summer),
+				All(
+					Any(
+						Has(LostWoodsAutumn),
+						Has(Autumn)
+					),
+					Has(MagicBoomerang)
+				)
+			)
+		) == AccessibilityLevel.Normal) then
+			local canReachDeku = All(
+				Has(Shield),
+				Any(
+					availableCuccos["swamp"][2] > 0,
+					JumpLiquid2(),
+					Has(Flippers)
+				)
+			) == AccessibilityLevel.Normal
+			if (All(
+				Has(Autumn),
+				CanDestroyMushroom(),
+				Any(
+					CanLostWoods(false, canReachDeku),
+					All(
+						CanLostWoods(true, canReachDeku),
+						CanLostWoods(false, CanBurnTrees() and Has(Phonograph))
+					)
+				)
+			) == AccessibilityLevel.Normal) then
+				availableCuccos["tarm"] = availableCuccos["swamp"]
+			end
+		end
 
 		for region in pairs(availableCuccos) do
 			for i = 1, 3, 1 do
@@ -1199,7 +1297,7 @@ function dungeon_settings()
 		return
 	end
 	local dungeon_list = {"d0","d1","d2","d3","d4","d5","d6","d7","d8"}
-	if Tracker:FindObjectForCode("dungeonshuffle").CurrentStage == 0 then
+	if Tracker:FindObjectForCode("shuffle_dungeons").CurrentStage == 0 then
 		for index, dungeon in pairs(dungeon_list) do
 			Tracker:FindObjectForCode(dungeon.."_ent_selector").CurrentStage = index
 		end
@@ -1211,7 +1309,7 @@ function dungeon_settings()
 end
 
 function display_dungeons()
-	if Tracker:FindObjectForCode("dungeonshuffle").CurrentStage == 1 then
+	if Tracker:FindObjectForCode("shuffle_dungeons").CurrentStage == 1 then
 		if Tracker:FindObjectForCode("fill_dungeons").CurrentStage == 1 then
 			Tracker:FindObjectForCode("d0_ent_selector").CurrentStage = Tracker:FindObjectForCode("d0_ent_selector_hidden").CurrentStage
 			Tracker:FindObjectForCode("d1_ent_selector").CurrentStage = Tracker:FindObjectForCode("d1_ent_selector_hidden").CurrentStage
@@ -1309,7 +1407,7 @@ function vanilla_portals()
 	end
 	local hol_portals = {"suburbs","swamp","lake","mtcucco","horon","remains","upremains"}
 	local sub_portals = {"mountain","market","furnace","village","pirates","volcano","d8"}
-	if Tracker:FindObjectForCode("portalshuffle").CurrentStage == 0 then
+	if Tracker:FindObjectForCode("shuffle_portals").CurrentStage == 0 then
 		for index, portal in pairs(hol_portals) do
 			Tracker:FindObjectForCode(portal.."_portal_selector").CurrentStage = index
 		end
@@ -1328,7 +1426,7 @@ end
 
 function display_portals()
 	if Tracker:FindObjectForCode("fill_portals").CurrentStage == 1 then
-		if Tracker:FindObjectForCode("portalshuffle").CurrentStage == 1 or Tracker:FindObjectForCode("portalshuffle").CurrentStage == 2 then
+		if Tracker:FindObjectForCode("shuffle_portals").CurrentStage == 1 or Tracker:FindObjectForCode("shuffle_portals").CurrentStage == 2 then
 			local portal_list = {"suburbs","swamp","lake","mtcucco","horon","remains","upremains","mountain","market","furnace","village","pirates","volcano","d8"}
 			for _, portal in pairs(portal_list) do
 				Tracker:FindObjectForCode(portal.."_portal_selector").CurrentStage = Tracker:FindObjectForCode(portal.."_portal_selector_hidden").CurrentStage
@@ -1383,14 +1481,14 @@ function OnFrameHandler()
 	LOADED = true
 end
 
-ScriptHost:AddWatchForCode("dungeon settings handler", "dungeonshuffle", dungeon_settings)
+ScriptHost:AddWatchForCode("dungeon settings handler", "shuffle_dungeons", dungeon_settings)
 ScriptHost:AddWatchForCode("dungeons handler", "fill_dungeons", display_dungeons)
 ScriptHost:AddWatchForCode("seasons settings handler", "default_seasons", seasons_settings)
 ScriptHost:AddWatchForCode("seasons handler", "fill_seasons", display_seasons)
-ScriptHost:AddWatchForCode("portal settings handler", "portalshuffle", vanilla_portals)
+ScriptHost:AddWatchForCode("portal settings handler", "shuffle_portals", vanilla_portals)
 ScriptHost:AddWatchForCode("portal handler", "fill_portals", display_portals)
-ScriptHost:AddWatchForCode("lost woods handler", "shuffle_lost_woods", display_lost_woods)
-ScriptHost:AddWatchForCode("pedestal handler", "shuffle_pedestal", display_pedestal)
+ScriptHost:AddWatchForCode("lost woods handler", "randomize_lost_woods_main_sequence", display_lost_woods)
+ScriptHost:AddWatchForCode("pedestal handler", "randomize_lost_woods_item_sequence", display_pedestal)
 ScriptHost:AddOnLocationSectionChangedHandler("section changed handler", OnSectionChanged)
 ScriptHost:AddOnFrameHandler("load handler", OnFrameHandler)
 -- "See the Season" locations

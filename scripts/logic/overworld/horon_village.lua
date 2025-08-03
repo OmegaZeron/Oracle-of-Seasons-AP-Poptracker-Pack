@@ -1,13 +1,16 @@
 HoronVillage:connect_one_way(HoronVillageFindSeason)
 -- standing items
 HoronVillage:connect_one_way(HoronMushroomChest, function()
-	return All(
-		CanDestroyMushroom(true),
-		Any(
-			Has(Autumn),
-			Has(HoronVillageAutumn),
-			Has(HoronChaoticSeasons)
-		)
+	return Any(
+		All(
+			CanDestroyMushroom(true),
+			Any(
+				Has(Autumn),
+				Has(HoronVillageAutumn),
+				Has(HoronChaoticSeasons)
+			)
+		),
+		CanDimitriClip()
 	)
 end)
 HoronVillage:connect_one_way(HoronTree, function()
@@ -18,10 +21,8 @@ HoronVillage:connect_one_way(HoronTree, function()
 end)
 HoronVillage:connect_one_way(HoronTreeHP, function()
 	return Any(
-		All(
-			CanUseSeeds(),
-			Has(EmberSeeds)
-		),
+		CanBurnTrees(),
+		CanDimitriClip(),
 		AccessibilityLevel.Inspect
 	)
 end)
@@ -43,7 +44,7 @@ HoronVillage:connect_one_way_entrance(HoronShop, function()
 		HasRupees(ShopPrices[HoronShopPrice]),
 		AccessibilityLevel.Inspect
 	)
-end, {SnakeRupeeRoom, AncientRupeeRoom})
+end, {SnakeRupeeRoom, AncientRupeeRoom, HoronVillageOldMan, NorthHoronOldMan, SuburbsOldMan, NorthHolodrumPlainOldMan, SouthHolodrumPlainOldMan, GoronMountainOldMan, TarmOldMan, WesternCoastOldMan})
 HoronVillage:connect_one_way_entrance(MemberShop, function()
 	return All(
 		Has(MembersCard),
@@ -52,13 +53,13 @@ HoronVillage:connect_one_way_entrance(MemberShop, function()
 			AccessibilityLevel.Inspect
 		)
 	)
-end, {SnakeRupeeRoom, AncientRupeeRoom})
+end, {SnakeRupeeRoom, AncientRupeeRoom, HoronVillageOldMan, NorthHoronOldMan, SuburbsOldMan, NorthHolodrumPlainOldMan, SouthHolodrumPlainOldMan, GoronMountainOldMan, TarmOldMan, WesternCoastOldMan})
 HoronVillage:connect_one_way_entrance(AdvanceShop, function()
 	return Any(
 		HasRupees(ShopPrices[AdvanceShopPrice]),
 		AccessibilityLevel.Inspect
 	)
-end, {SnakeRupeeRoom, AncientRupeeRoom})
+end, {SnakeRupeeRoom, AncientRupeeRoom, HoronVillageOldMan, NorthHoronOldMan, SuburbsOldMan, NorthHolodrumPlainOldMan, SouthHolodrumPlainOldMan, GoronMountainOldMan, TarmOldMan, WesternCoastOldMan})
 
 -- clock shop
 HoronVillage:connect_two_ways_entrance(ClockShop)

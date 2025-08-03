@@ -1,8 +1,14 @@
+TarmEntrance:connect_one_way_entrance(NorthSpoolSwamp, function() return Tracker:FindObjectForCode(TarmGateSetting).CurrentStage == 0 end)
 TarmEntrance:connect_one_way_entrance(TarmTreeStump, function()
 	return All(
 		Any(
 			Has(Winter),
 			Has(LostWoodsWinter)
+		),
+		Any(
+			Has(Spring),
+			Has(Summer),
+			Has(Winter)
 		),
 		Any(
 			Has(Summer),
@@ -28,6 +34,7 @@ TarmTreeStump:connect_one_way(TarmLostWoodsScrub, function()
 	return All(
 		Has(Shield),
 		Has(Autumn),
+		CanDestroyMushroom(),
 		Any(
 			Has(Flippers),
 			JumpLiquid2()
@@ -40,101 +47,86 @@ TarmTreeStump:connect_one_way_entrance(LostWoods, function()
 		Has(Autumn)
 	)
 end)
+LostWoods:connect_one_way(GoldenLynelKill, function()
+	return All(
+		CanSwordKill(),
+		Any(
+			Has(Autumn),
+			Has(LostWoodsAutumn)
+		),
+		CanDestroyMushroom(),
+		Has(Winter)
+	)
+end)
+LostWoods:connect_one_way_entrance(TarmEntrance, function()
+	return All(
+		Any(
+			Has(Autumn),
+			Has(LostWoodsAutumn)
+		),
+		CanDestroyMushroom(),
+		Has(Winter)
+	)
+end)
 LostWoods:connect_one_way(TarmPedestalScrub, function()
 	return All(
 		CanBurnTrees(),
-		Has(Phonograph)
-	)
-end)
-LostWoods:connect_one_way(Pedestal, function()
-	return All(
-		CanPedestal(),
+		Has(Phonograph),
 		Any(
-			All(
-				CanBurnTrees(),
-				Has(Phonograph)
-			),
-			All(
-				-- know the sequence
-				Has(PedestalVanilla),
-				MediumLogic()
-			)
+			Has(Shovel),
+			Has(Spring),
+			Has(Summer),
+			Has(Autumn),
+			Has(LostWoodsSpring),
+			Has(LostWoodsSummer),
+			Has(LostWoodsAutumn)
 		)
 	)
 end)
+LostWoods:connect_one_way(TarmLostWoodsScrub, function()
+	return All(
+		Any(
+			Has(Autumn),
+			Has(LostWoodsAutumn)
+		),
+		CanReach(TarmTreeStump),
+		Any(
+			Jump3(),
+			Has(Flippers)
+		),
+		CanDestroyMushroom(),
+		Has(Shield)
+	)
+end, {TarmTreeStump})
+LostWoods:connect_one_way(Pedestal, CanPedestal)
+Pedestal:connect_one_way_entrance(LostWoods)
 -- special case to get to D6 using default seasons
 Pedestal:connect_one_way_entrance(TarmTree, function()
-	return All(
-		Any(
-			CanLostWoods(),
-			All(
-				CanLostWoods(true),
-				MediumLogic()
-			)
-		),
-		Any(
-			All(
-				Any(
-					Has(Flippers),
-					JumpLiquid2()
-				),
-				Has(Shield)
-			),
-			All(
-				-- know the sequence
-				Has(LostWoodsVanilla),
-				MediumLogic()
-			)
+	return Any(
+		CanLostWoods(),
+		All(
+			CanLostWoods(true),
+			MediumLogic()
 		)
 	)
-end)
+end, {TarmPedestalScrub})
 TarmTree:connect_one_way(TarmSeedTree, function()
 	return Any(
 		CanHarvestSeeds(true),
 		AccessibilityLevel.Inspect
 	)
 end)
-LostWoods:connect_one_way_entrance(TarmTree, function()
-	return All(
-		CanLostWoods(),
-		Any(
-			All(
-				Any(
-					Has(Flippers),
-					JumpLiquid2()
-				),
-				Has(Shield)
-			),
-			All(
-				-- know the sequence
-				Has(LostWoodsVanilla),
-				MediumLogic()
-			)
-		)
-	)
-end)
+LostWoods:connect_one_way_entrance(TarmTree, CanLostWoods)
 -- special case to get to pedestal using default seasons
 TarmTree:connect_one_way(Pedestal, function()
-	return All(
-		Any(
-			CanPedestal(),
-			All(
-				CanPedestal(true),
-				MediumLogic()
-			)
-		),
-		Any(
-			All(
-				CanBurnTrees(),
-				Has(Phonograph)
-			),
-			All(
-				Has(PedestalVanilla),
-				MediumLogic()
-			)
+	return Any(
+		CanPedestal(),
+		All(
+			CanPedestal(true),
+			MediumLogic()
 		)
 	)
-end)
+end, {TarmLostWoodsScrub})
 TarmTree:connect_one_way_entrance(LostWoods)
 TarmTree:connect_one_way(LostWoodsFindSeason)
 TarmTree:connect_one_way(TarmRuinsFindSeason)
@@ -154,6 +146,28 @@ TarmTree:connect_one_way(TarmMushroomTreeChest, function()
 		CanDestroyMushroom()
 	)
 end)
+TarmTree:connect_one_way(TarmOldMan, function()
+	return All(
+		Any(
+			Has(Winter),
+			Has(TarmRuinsWinter)
+		),
+		CanBurnTrees(),
+		Any(
+			All(
+				Any(
+					Has(Spring),
+					Has(TarmRuinsSpring)
+				),
+				CanDestroyFlower()
+			),
+			All(
+				CanReach(RoosterAdventure),
+				GetCuccos()["tarm"][2] > 0
+			)
+		)
+	)
+end, {RoosterAdventure})
 TarmTree:connect_one_way_entrance(UpperTarm, function()
 	return All(
 		Any(
@@ -162,10 +176,14 @@ TarmTree:connect_one_way_entrance(UpperTarm, function()
 		),
 		Any(
 			Has(Shovel),
-			CanBurnTrees()
+			CanBurnTrees(),
+			All(
+				CanReach(RoosterAdventure),
+				GetCuccos()["tarm"][1] > 0
+			)
 		)
 	)
-end)
+end, {RoosterAdventure})
 UpperTarm:connect_one_way(Maple, CanMapleTrade)
 UpperTarm:connect_one_way_entrance(TarmTree)
 UpperTarm:connect_one_way(TarmOldMan, function()

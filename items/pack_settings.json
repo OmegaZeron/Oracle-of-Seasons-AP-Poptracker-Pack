@@ -9,22 +9,22 @@
 		"stages": [
 			{
 				"img": "images/labels/casual.png",
-				"codes": "logiclevel, casual",
+				"codes": "logic_difficulty, casual",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/medium.png",
-				"codes": "logiclevel, medium",
+				"codes": "logic_difficulty, medium",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/hard.png",
-				"codes": "logiclevel, hard",
+				"codes": "logic_difficulty, hard",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/hell.png",
-				"codes": "logiclevel, hell",
+				"codes": "logic_difficulty, hell",
 				"inherit_codes": false
 			}
 		]
@@ -57,12 +57,12 @@
 		"stages": [
 			{
 				"img": "images/labels/vanilla_label.png",
-				"codes": "dungeonshuffle, shuffledungeonoff",
+				"codes": "shuffle_dungeons, shuffledungeonoff",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/shuffled_label.png",
-				"codes": "dungeonshuffle, shuffledungeonon",
+				"codes": "shuffle_dungeons, shuffledungeonon",
 				"inherit_codes": false
 			}
 		]
@@ -76,17 +76,17 @@
 		"stages": [
 			{
 				"img": "images/labels/off.png",
-				"codes": "portalshuffle, portalshuffleoff",
+				"codes": "shuffle_portals, portalshuffleoff",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/out.png",
-				"codes": "portalshuffle, portalshuffleoutward",
+				"codes": "shuffle_portals, portalshuffleoutward",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/on.png",
-				"codes": "portalshuffle, portalshuffleon",
+				"codes": "shuffle_portals, portalshuffleon",
 				"inherit_codes": false
 			}
 		]
@@ -99,47 +99,47 @@
 		"stages": [
 			{
 				"img": "images/labels/0essence.png",
-				"codes": "onox_essences, onox0",
+				"codes": "required_essences, onox0",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/1essence.png",
-				"codes": "onox_essences, onox1",
+				"codes": "required_essences, onox1",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/2essence.png",
-				"codes": "onox_essences, onox2",
+				"codes": "required_essences, onox2",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/3essence.png",
-				"codes": "onox_essences, onox3",
+				"codes": "required_essences, onox3",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/4essence.png",
-				"codes": "onox_essences, onox4",
+				"codes": "required_essences, onox4",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/5essence.png",
-				"codes": "onox_essences, onox5",
+				"codes": "required_essences, onox5",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/6essence.png",
-				"codes": "onox_essences, onox6",
+				"codes": "required_essences, onox6",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/7essence.png",
-				"codes": "onox_essences, onox7",
+				"codes": "required_essences, onox7",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/8essence.png",
-				"codes": "onox_essences, onox8",
+				"codes": "required_essences, onox8",
 				"inherit_codes": false
 			}
 		]
@@ -152,47 +152,47 @@
 		"stages": [
 			{
 				"img": "images/labels/0essence.png",
-				"codes": "oldmanessences, oldman0",
+				"codes": "treehouse_old_man_requirement, oldman0",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/1essence.png",
-				"codes": "oldmanessences, oldman1",
+				"codes": "treehouse_old_man_requirement, oldman1",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/2essence.png",
-				"codes": "oldmanessences, oldman2",
+				"codes": "treehouse_old_man_requirement, oldman2",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/3essence.png",
-				"codes": "oldmanessences, oldman3",
+				"codes": "treehouse_old_man_requirement, oldman3",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/4essence.png",
-				"codes": "oldmanessences, oldman4",
+				"codes": "treehouse_old_man_requirement, oldman4",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/5essence.png",
-				"codes": "oldmanessences, oldman5",
+				"codes": "treehouse_old_man_requirement, oldman5",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/6essence.png",
-				"codes": "oldmanessences, oldman6",
+				"codes": "treehouse_old_man_requirement, oldman6",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/7essence.png",
-				"codes": "oldmanessences, oldman7",
+				"codes": "treehouse_old_man_requirement, oldman7",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/8essence.png",
-				"codes": "oldmanessences, oldman8",
+				"codes": "treehouse_old_man_requirement, oldman8",
 				"inherit_codes": false
 			}
 		]
@@ -224,27 +224,27 @@
 		"stages": [
 			{
 				"img": "images/labels/0golden.png",
-				"codes": "goldenbeastsrequired, golden0",
+				"codes": "golden_beasts_requirement, golden0",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/1golden.png",
-				"codes": "goldenbeastsrequired, golden1",
+				"codes": "golden_beasts_requirement, golden1",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/2golden.png",
-				"codes": "goldenbeastsrequired, golden2",
+				"codes": "golden_beasts_requirement, golden2",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/3golden.png",
-				"codes": "goldenbeastsrequired, golden3",
+				"codes": "golden_beasts_requirement, golden3",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/4golden.png",
-				"codes": "goldenbeastsrequired, golden4",
+				"codes": "golden_beasts_requirement, golden4",
 				"inherit_codes": false
 			}
 		]
@@ -257,87 +257,87 @@
 		"stages": [
 			{
 				"img": "images/labels/0gasha.png",
-				"codes": "gashareq, gashareq0",
+				"codes": "deterministic_gasha_locations, gashareq0",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/1gasha.png",
-				"codes": "gashareq, gashareq1",
+				"codes": "deterministic_gasha_locations, gashareq1",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/2gasha.png",
-				"codes": "gashareq, gashareq2",
+				"codes": "deterministic_gasha_locations, gashareq2",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/3gasha.png",
-				"codes": "gashareq, gashareq3",
+				"codes": "deterministic_gasha_locations, gashareq3",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/4gasha.png",
-				"codes": "gashareq, gashareq4",
+				"codes": "deterministic_gasha_locations, gashareq4",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/5gasha.png",
-				"codes": "gashareq, gashareq5",
+				"codes": "deterministic_gasha_locations, gashareq5",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/6gasha.png",
-				"codes": "gashareq, gashareq6",
+				"codes": "deterministic_gasha_locations, gashareq6",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/7gasha.png",
-				"codes": "gashareq, gashareq7",
+				"codes": "deterministic_gasha_locations, gashareq7",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/8gasha.png",
-				"codes": "gashareq, gashareq8",
+				"codes": "deterministic_gasha_locations, gashareq8",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/9gasha.png",
-				"codes": "gashareq, gashareq9",
+				"codes": "deterministic_gasha_locations, gashareq9",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/10gasha.png",
-				"codes": "gashareq, gashareq10",
+				"codes": "deterministic_gasha_locations, gashareq10",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/11gasha.png",
-				"codes": "gashareq, gashareq11",
+				"codes": "deterministic_gasha_locations, gashareq11",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/12gasha.png",
-				"codes": "gashareq, gashareq12",
+				"codes": "deterministic_gasha_locations, gashareq12",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/13gasha.png",
-				"codes": "gashareq, gashareq13",
+				"codes": "deterministic_gasha_locations, gashareq13",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/14gasha.png",
-				"codes": "gashareq, gashareq14",
+				"codes": "deterministic_gasha_locations, gashareq14",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/15gasha.png",
-				"codes": "gashareq, gashareq15",
+				"codes": "deterministic_gasha_locations, gashareq15",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/16gasha.png",
-				"codes": "gashareq, gashareq16",
+				"codes": "deterministic_gasha_locations, gashareq16",
 				"inherit_codes": false
 			}
 		]
@@ -350,27 +350,27 @@
 		"stages": [
 			{
 				"img": "images/labels/0jewels.png",
-				"codes": "jewelreq, jewelreq0",
+				"codes": "tarm_gate_required_jewels, jewelreq0",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/1jewels.png",
-				"codes": "jewelreq, jewelreq1",
+				"codes": "tarm_gate_required_jewels, jewelreq1",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/2jewels.png",
-				"codes": "jewelreq, jewelreq2",
+				"codes": "tarm_gate_required_jewels, jewelreq2",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/3jewels.png",
-				"codes": "jewelreq, jewelreq3",
+				"codes": "tarm_gate_required_jewels, jewelreq3",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/4jewels.png",
-				"codes": "jewelreq, jewelreq4",
+				"codes": "tarm_gate_required_jewels, jewelreq4",
 				"inherit_codes": false
 			}
 		]
@@ -384,12 +384,12 @@
 		"stages": [
 			{
 				"img": "images/labels/off.png",
-				"codes": "small_keysanity, small_keysanity_off",
+				"codes": "keysanity_small_keys, small_keysanity_off",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/on.png",
-				"codes": "small_keysanity, small_keysanity_on",
+				"codes": "keysanity_small_keys, small_keysanity_on",
 				"inherit_codes": false
 			}
 		]
@@ -403,12 +403,12 @@
 		"stages": [
 			{
 				"img": "images/labels/off.png",
-				"codes": "boss_keysanity, boss_keysanity_off",
+				"codes": "keysanity_boss_keys, boss_keysanity_off",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/on.png",
-				"codes": "boss_keysanity, boss_keysanity_on",
+				"codes": "keysanity_boss_keys, boss_keysanity_on",
 				"inherit_codes": false
 			}
 		]
@@ -446,12 +446,12 @@
 		"stages": [
 			{
 				"img": "images/labels/off.png",
-				"codes": "secrets, secrets_off",
+				"codes": "secret_locations, secrets_off",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/on.png",
-				"codes": "secrets, secrets_on",
+				"codes": "secret_locations, secrets_on",
 				"inherit_codes": false
 			}
 		]
@@ -465,12 +465,12 @@
 		"stages": [
 			{
 				"img": "images/labels/off.png",
-				"codes": "horon_shop_potion, horon_potion_off",
+				"codes": "enforce_potion_in_shop, horon_potion_off",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/on.png",
-				"codes": "horon_shop_potion, horon_potion_on",
+				"codes": "enforce_potion_in_shop, horon_potion_on",
 				"inherit_codes": false
 			}
 		]
@@ -537,12 +537,12 @@
 		"stages": [
 			{
 				"img": "images/labels/vanilla_label.png",
-				"codes": "shuffle_gold_ores, gold_ores_vanilla",
+				"codes": "shuffle_golden_ore_spots, gold_ores_vanilla",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/shuffled_label.png",
-				"codes": "shuffle_gold_ores, gold_ores_shuffled",
+				"codes": "shuffle_golden_ore_spots, gold_ores_shuffled",
 				"inherit_codes": false
 			}
 		]
@@ -619,12 +619,12 @@
 		"stages": [
 			{
 				"img": "images/labels/vanilla_label.png",
-				"codes": "d0_alt_entrance, d0_alt_entrance_vanilla",
+				"codes": "remove_d0_alt_entrance, d0_alt_entrance_vanilla",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/removed_label.png",
-				"codes": "d0_alt_entrance, d0_alt_entrance_removed",
+				"codes": "remove_d0_alt_entrance, d0_alt_entrance_removed",
 				"inherit_codes": false
 			}
 		]
@@ -638,12 +638,12 @@
 		"stages": [
 			{
 				"img": "images/labels/vanilla_label.png",
-				"codes": "d2_alt_entrance, d2_alt_entrance_vanilla",
+				"codes": "remove_d2_alt_entrance, d2_alt_entrance_vanilla",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/removed_label.png",
-				"codes": "d2_alt_entrance, d2_alt_entrance_removed",
+				"codes": "remove_d2_alt_entrance, d2_alt_entrance_removed",
 				"inherit_codes": false
 			}
 		]
@@ -657,12 +657,12 @@
 		"stages": [
 			{
 				"img": "images/labels/vanilla_label.png",
-				"codes": "shuffle_lost_woods, lost_woods_vanilla",
+				"codes": "randomize_lost_woods_main_sequence, lost_woods_vanilla",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/shuffled_label.png",
-				"codes": "shuffle_lost_woods, lost_woods_randomized",
+				"codes": "randomize_lost_woods_main_sequence, lost_woods_randomized",
 				"inherit_codes": false
 			}
 		]
@@ -676,12 +676,12 @@
 		"stages": [
 			{
 				"img": "images/labels/vanilla_label.png",
-				"codes": "shuffle_pedestal, pedestal_vanilla",
+				"codes": "randomize_lost_woods_item_sequence, pedestal_vanilla",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/shuffled_label.png",
-				"codes": "shuffle_pedestal, pedestal_randomized",
+				"codes": "randomize_lost_woods_item_sequence, pedestal_randomized",
 				"inherit_codes": false
 			}
 		]
@@ -695,12 +695,12 @@
 		"stages": [
 			{
 				"img": "images/labels/off.png",
-				"codes": "shufflescrubs, shufflescrubsoff",
+				"codes": "shuffle_business_scrubs, shufflescrubsoff",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/shuffled_label.png",
-				"codes": "shufflescrubs, shufflescrubson",
+				"codes": "shuffle_business_scrubs, shufflescrubson",
 				"inherit_codes": false
 			}
 		]
@@ -752,17 +752,17 @@
 		"stages": [
 			{
 				"img": "images/items/ricky.png",
-				"codes": "natzu_animal, natzu_ricky",
+				"codes": "animal_companion, natzu_ricky",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/items/dimitri.png",
-				"codes": "natzu_animal, natzu_dimitri",
+				"codes": "animal_companion, natzu_dimitri",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/items/moosh.png",
-				"codes": "natzu_animal, natzu_moosh",
+				"codes": "animal_companion, natzu_moosh",
 				"inherit_codes": false
 			}
 		]

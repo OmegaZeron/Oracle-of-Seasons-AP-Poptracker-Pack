@@ -72,13 +72,19 @@ AncientFoyer:connect_one_way(AncientNorthOfSpinnerChest, function()
 	return All(
 		CanDestroyCrystal(),
 		Has(MagnetGlove),
-		Has(Feather),
+		Any(
+			MediumLogic(),
+			Has(Feather)
+		),
 		Any(
 			D6KeyCount(3),
 			All(
 				D6KeyCount(2),
 				Any(
-					CanBombWall(),
+					All(
+						CanBombWall(),
+						Has(Feather)
+					),
 					CanSwordKill(),
 					All(
 						Has(Bombs40),
@@ -93,6 +99,7 @@ AncientFoyer:connect_one_way(AncientNorthOfSpinnerChest, function()
 			All(
 				D6KeyCount(1),
 				CanBombWall(),
+				Has(Feather),
 				Any(
 					CanSwordKill(),
 					All(

@@ -7,6 +7,7 @@ LowerEasternSuburbs:connect_one_way(WindmillHP, function()
 	return Any(
 		Has(EasternSuburbsWinter),
 		Has(Winter),
+		CanDimitriClip(),
 		AccessibilityLevel.Inspect
 	)
 end)
@@ -78,7 +79,7 @@ SamasaDesert:connect_one_way(SamasaScrub, function()
 		HasRupees(ShopPrices[SamasaCaveScrubPrice]),
 		AccessibilityLevel.Inspect
 	)
-end, {SnakeRupeeRoom, AncientRupeeRoom})
+end, {SnakeRupeeRoom, AncientRupeeRoom, HoronVillageOldMan, NorthHoronOldMan, SuburbsOldMan, NorthHolodrumPlainOldMan, SouthHolodrumPlainOldMan, GoronMountainOldMan, TarmOldMan, WesternCoastOldMan})
 
 -- upper suburbs
 UpperEasternSuburbs:connect_one_way(EasternSuburbsFindSeason)
@@ -200,12 +201,15 @@ end)
 WoodsOfWinter:connect_two_ways_entrance(UpperSnakesRemains, function() return Has(Bracelet) end)
 UpperSnakesRemains:connect_two_ways_entrance(SnakeAltEntrance, function() return Has(D2AltVanilla) end)
 WoodsOfWinter:connect_one_way_entrance(WoodsOfWinterMushroomCave, function()
-	return All(
-		Any(
-			Has(Autumn),
-			Has(WoodsOfWinterAutumn)
+	return Any(
+		All(
+			Any(
+				Has(Autumn),
+				Has(WoodsOfWinterAutumn)
+			),
+			CanDestroyMushroom(true)
 		),
-		CanDestroyMushroom(true)
+		CanDimitriClip()
 	)
 end)
 WoodsOfWinterMushroomCave:connect_one_way(WoodsOfWinterMushroomCaveChest, function()

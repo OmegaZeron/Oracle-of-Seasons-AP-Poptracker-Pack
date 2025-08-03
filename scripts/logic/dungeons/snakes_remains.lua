@@ -14,7 +14,7 @@ SnakeAltEntrance:connect_one_way(SnakeScrub, function()
 		HasRupees(ShopPrices[D2ScrubPrice]),
 		AccessibilityLevel.Inspect
 	)
-end, {SnakeRupeeRoom, AncientRupeeRoom})
+end, {SnakeRupeeRoom, AncientRupeeRoom, HoronVillageOldMan, NorthHoronOldMan, SuburbsOldMan, NorthHolodrumPlainOldMan, SouthHolodrumPlainOldMan, GoronMountainOldMan, TarmOldMan, WesternCoastOldMan})
 SnakeAltEntrance:connect_one_way(SnakeBombPuzzle, function()
 	return All(
 		CanDestroyBush(),
@@ -85,6 +85,7 @@ SnakeHardhats:connect_one_way_entrance(SnakeBombMoblins, function()
 			CanKillWithPit(),
 			All(
 				MediumLogic(),
+				Has(UpgradedSatchel),
 				Any(
 					Has(Slingshot),
 					All(
@@ -94,7 +95,8 @@ SnakeHardhats:connect_one_way_entrance(SnakeBombMoblins, function()
 				),
 				Any(
 					Has(ScentSeeds),
-					Has(GaleSeeds)
+					Has(GaleSeeds),
+					Has(MysterySeeds)
 				)
 			),
 			All(

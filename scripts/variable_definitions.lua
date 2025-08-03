@@ -404,28 +404,6 @@ CurrentLocationMapping = {
 JewelKeys = {RoundJewel, SquareJewel, PyramidJewel, XJewel}
 LostWoodsDefault = {3, 2, 0, 1}
 
--- ShopPrices = {
--- 	[HoronShop1Price] = 20,
--- 	[HoronShop2Price] = 30,
--- 	[HoronShop3Price] = 150,
--- 	[AdvanceShop1Price] = 100,
--- 	[AdvanceShop2Price] = 100,
--- 	[AdvanceShop3Price] = 100,
--- 	[MemberShop1Price] = 300,
--- 	[MemberShop2Price] = 300,
--- 	[MemberShop3Price] = 200,
--- 	[SyrupShop1Price] = 100,
--- 	[SyrupShop2Price] = 300,
--- 	[SyrupShop3Price] = 300,
--- 	[SpoolSwampScrubPrice] = 100,
--- 	[SamasaCaveScrubPrice] = 100,
--- 	[D2ScrubPrice] = 30,
--- 	[D4ScrubPrice] = 20,
--- 	[SubrosianMarket2Price] = 30,
--- 	[SubrosianMarket3Price] = 40,
--- 	[SubrosianMarket4Price] = 50,
--- 	[SubrosianMarket5Price] = 60
--- }
 -- With no AP connection, we can't tell how shop logic works, so default to just "CanFarm"
 ShopPrices = {
 	[HoronShopPrice] = 0,
@@ -437,6 +415,16 @@ ShopPrices = {
 	[D2ScrubPrice] = 0,
 	[D4ScrubPrice] = 0,
 	[SubrosianMarketPrice] = 0,
+}
+OldMenValues = {
+	[OldManHoron] = {0, HoronVillageOldMan},
+	[OldManD1] = {0, NorthHoronOldMan},
+	[OldManHolly] = {0, SuburbsOldMan},
+	[OldManBlaino] = {0, NorthHolodrumPlainOldMan},
+	[OldManRuul] = {0, SouthHolodrumPlainOldMan},
+	[OldManGoron] = {0, GoronMountainOldMan},
+	[OldManD6] = {0, TarmOldMan},
+	[OldManWestCoast] = {0, WesternCoastOldMan}
 }
 WildItems = {
 	["Dancing Dragon Dungeon/Wild Ember Seeds/1F"] = EmberSeeds,
@@ -710,33 +698,33 @@ PortalMapping = {
 	["d8 entrance portal"] = D8PortalSelectorHidden
 }
 DungeonDictionary = {
-	["d0 entrance"] = 1,
-	["d1 entrance"] = 2,
-	["d2 entrance"] = 3,
-	["d3 entrance"] = 4,
-	["d4 entrance"] = 5,
-	["d5 entrance"] = 6,
-	["d6 entrance"] = 7,
-	["d7 entrance"] = 8,
-	["d8 entrance"] = 9
+	["d0"] = 1,
+	["d1"] = 2,
+	["d2"] = 3,
+	["d3"] = 4,
+	["d4"] = 5,
+	["d5"] = 6,
+	["d6"] = 7,
+	["d7"] = 8,
+	["d8"] = 9
 }
 DungeonMapping = {
-	["enter d0"] = "d0_ent_selector_hidden",
-	["enter d1"] = "d1_ent_selector_hidden",
-	["enter d2"] = "d2_ent_selector_hidden",
-	["enter d3"] = "d3_ent_selector_hidden",
-	["enter d4"] = "d4_ent_selector_hidden",
-	["enter d5"] = "d5_ent_selector_hidden",
-	["enter d6"] = "d6_ent_selector_hidden",
-	["enter d7"] = "d7_ent_selector_hidden",
-	["enter d8"] = "d8_ent_selector_hidden"
+	["d0"] = "d0_ent_selector_hidden",
+	["d1"] = "d1_ent_selector_hidden",
+	["d2"] = "d2_ent_selector_hidden",
+	["d3"] = "d3_ent_selector_hidden",
+	["d4"] = "d4_ent_selector_hidden",
+	["d5"] = "d5_ent_selector_hidden",
+	["d6"] = "d6_ent_selector_hidden",
+	["d7"] = "d7_ent_selector_hidden",
+	["d8"] = "d8_ent_selector_hidden"
 }
 SeedMapping = {
-	["Ember Seeds"] = EmberSeeds,
-	["Mystery Seeds"] = MysterySeeds,
-	["Scent Seeds"] = ScentSeeds,
-	["Pegasus Seeds"] = PegasusSeeds,
-	["Gale Seeds"] = GaleSeeds
+	[0] = EmberSeeds,
+	[1] = ScentSeeds,
+	[2] = PegasusSeeds,
+	[3] = GaleSeeds,
+	[4] = MysterySeeds
 }
 
 SeeSeasonVars = {

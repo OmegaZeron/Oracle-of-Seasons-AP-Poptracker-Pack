@@ -250,9 +250,13 @@ UpperNorthHoron:connect_one_way_entrance(UnicornCave, function()
 		Any(
 			Has(Flippers),
 			All(
-				MediumLogic(),
 				Dimitri(),
-				Has(Bracelet)
+				Has(Bracelet),
+				MediumLogic()
+			),
+			All(
+				Dimitri(),
+				Has(Winter)
 			)
 		)
 	)

@@ -55,7 +55,15 @@ CryptSurroundedByArmos:connect_one_way_entrance(CryptArmosPuzzle, function()
 end)
 CryptSurroundedByArmos:connect_one_way(CryptMagunesuReward, function() return Has(CaneOfSomaria) end)
 CryptArmosPuzzle:connect_one_way(CryptArmosPuzzleReward)
-CryptArmosPuzzle:connect_one_way_entrance(CryptMagunesu, Jump3)
+CryptArmosPuzzle:connect_one_way_entrance(CryptMagunesu, function()
+	return Any(
+		Jump3(),
+		All(
+			JumpLiquid2(),
+			HellLogic()
+		)
+	)
+end)
 CryptMagunesu:connect_one_way(CryptMagunesuReward, function()
 	return All(
 		CanSwordKill(),

@@ -110,8 +110,6 @@
 			},
 			{
 				"name": "Golden Lynel",
-				"chest_unopened_img": "images/items/golden_lynel.png",
-				"chest_opened_img": "images/items/golden_lynel_defeated.png",
 				"sections": [
 					{
 						"name": "Winter",

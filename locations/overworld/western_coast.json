@@ -106,8 +106,6 @@
 			},
 			{
 				"name": "Golden Darknut",
-				"chest_unopened_img": "images/items/golden_darknut.png",
-				"chest_opened_img": "images/items/golden_darknut_defeated.png",
 				"sections": [
 					{
 						"name": "Spring",

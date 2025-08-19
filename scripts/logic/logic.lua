@@ -6,6 +6,8 @@ OoSLocation.__index = OoSLocation
 
 NamedLocations = {}
 
+DelayedExits = {}
+
 -- creates a lua object for the given name. it acts as a representation of a overworld reagion or indoor location and
 -- tracks its connected objects via the exit-table
 function OoSLocation.New(name)
@@ -105,8 +107,9 @@ function OoSLocation:discover(accessibility)
 		for _, recheck in ipairs(self.exits_to_recheck) do
 			for _, exit in pairs(recheck.exits) do
 				if (exit[1]:accessibility() < accessibility) then
-					local location, access = CheckAccess(recheck, exit)
-					location:discover(access)
+					-- local location, access = CheckAccess(recheck, exit)
+					-- location:discover(access)
+					DelayedExits[#DelayedExits+1] = {recheck, exit}
 				end
 			end
 		end
@@ -127,10 +130,8 @@ function CheckAccess(loc, exit)
 		print("Error in rule for", location.name)
 		access = AccessibilityLevel.None
 	end
-	if access == true then
-		access = AccessibilityLevel.Normal
-	elseif access == false then
-		access = AccessibilityLevel.None
+	if type(access) == "boolean" then
+		access = BoolToAccess(access)
 	end
 
 	-- prevents certain regions from looping back around to turn sequence break locs into normal access
@@ -140,17 +141,15 @@ function CheckAccess(loc, exit)
 	return location, access
 end
 
-function SetAsStale()
-	IsStale = true
+function SetAsStale(code)
+	if (code ~= LocationRefresh) then
+		IsStale = true
+	end
 end
 
 
 function StateChange()
 	-- print("StateChange stated", IsStale)
-	-- if (not IsStale) then
-	-- 	return
-	-- end
-	
 	-- fixes certain CanReach calls permanently marking locs as green, even after removing items
 	for _, location in pairs(NamedLocations) do
 		location.accessibility_level = 0
@@ -161,9 +160,6 @@ function StateChange()
 end
 
 function CanReach(name)
-	-- for k,v in pairs(NamedLocations) do
-	--	 print("NamedLocations", dump(k))
-	-- end
 	if IsStale then
 		StateChange()
 	end
@@ -225,12 +221,11 @@ end
 function Any(...)
 	local args = { ... }
 	local max = AccessibilityLevel.None
-	-- print("any", args)
 	for _, access in ipairs(args) do
-		-- print(i, v)
 		if type(access) == "boolean" then
 			access = BoolToAccess(access)
 		end
+
 		if access > max then
 			if access == AccessibilityLevel.Normal then
 				return AccessibilityLevel.Normal
@@ -243,3 +238,26 @@ function Any(...)
 end
 
 ScriptHost:AddWatchForCode("StateChange", "*", SetAsStale)
+ScriptHost:AddOnFrameHandler("delay recheck exit", function()
+	local changed = false
+	local max = 100
+	local exits = {}
+	if (#DelayedExits < max) then
+		max = #DelayedExits
+	end
+	for i = max, 1, -1 do
+		table.insert(exits, DelayedExits[i])
+		table.remove(DelayedExits, i)
+	end
+
+	for i = #exits, 1, -1 do
+		changed = true
+		local recheck = exits[i][1]
+		local exit = exits[i][2]
+		local location, access = CheckAccess(recheck, exit)
+		location:discover(access)
+	end
+	if (changed and #DelayedExits == 0) then
+		Tracker:FindObjectForCode(LocationRefresh).Active = not Tracker:FindObjectForCode(LocationRefresh).Active
+	end
+end)

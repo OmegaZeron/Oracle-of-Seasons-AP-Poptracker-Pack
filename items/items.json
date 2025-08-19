@@ -983,5 +983,11 @@
 		"type": "toggle",
 		"img": "images/items/compass.png",
 		"codes": "hidden_setting"
+	},
+	{
+		"name": "Location Refresh",
+		"type": "toggle",
+		"img": "images/items/compass.png",
+		"codes": "location_refresh"
 	}
 ]

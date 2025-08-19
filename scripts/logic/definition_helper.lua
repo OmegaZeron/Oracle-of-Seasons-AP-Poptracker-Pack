@@ -152,6 +152,7 @@ ShuffleGoldOresShuffled = "gold_ores_shuffled"
 
 -- Helpers
 HiddenSetting = "hidden_setting"
+LocationRefresh = "location_refresh"
 
 -- Shop Prices
 HoronShopPrice = "horonShop"

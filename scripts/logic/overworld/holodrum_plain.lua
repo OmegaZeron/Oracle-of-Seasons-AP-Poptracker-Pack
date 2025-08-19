@@ -13,13 +13,15 @@ NorthHolodrumPlain:connect_one_way(HolodrumPlainMushroomCave, function()
 	return All(
 		Has(Flippers),
 		Any(
-			CanDestroyMushroom(true),
-			Any(
-				Has(HolodrumPlainAutumn),
-				Has(Autumn)
-			)
-		),
-		CanDimitriClip()
+			All(
+				CanDestroyMushroom(true),
+				Any(
+					Has(HolodrumPlainAutumn),
+					Has(Autumn)
+				)
+			),
+			CanDimitriClip()
+		)
 	)
 end)
 NorthHolodrumPlain:connect_one_way(NorthHolodrumPlainOldMan, function()

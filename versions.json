@@ -1,6 +1,12 @@
 {
 	"versions": [
 		{
+			"package_version": "4.0.0",
+			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/v.4.0.0/seasons_ap_4.0.0.zip",
+			"sha256": "ca4cb8427abae2167871604f7ac66a288ddb7779ec9fe2d680c8b2c1e9d77d4f",
+			"changelog": ["Match new apworld logic, shop logic update, auto-track lost woods sequences, Spring Spool companion fix"]
+		},
+		{
 			"package_version": "3.0.1",
 			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/v.3.0.1/seasons_ap_3.0.1.zip",
 			"sha256": "64f2e63029ff7efe6630f76d6048bb72e72e03fed70ee36e3875c3847d4cff79",

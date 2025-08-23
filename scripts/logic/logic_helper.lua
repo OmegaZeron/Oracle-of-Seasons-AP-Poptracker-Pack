@@ -400,12 +400,18 @@ function CanDestroyPot()
 	Has(BiggoronSword)
 end
 
-function CanDestroyFlower()
+function CanDestroyFlower(allowCompanion)
+	if (allowCompanion == nil) then
+		allowCompanion = false
+	end
 	return Any(
 		HasSword(),
 		Has(MagicBoomerang),
 		All(
-			MediumLogic(),
+			allowCompanion,
+			AnyFlute()
+		),
+		All(
 			Any(
 				Has(Bombs20),
 				All(
@@ -427,7 +433,8 @@ function CanDestroyFlower()
 						AccessibilityLevel.SequenceBreak
 					)
 				)
-			)
+			),
+			MediumLogic()
 		)
 	)
 end

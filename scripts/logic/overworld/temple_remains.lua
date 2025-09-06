@@ -2,44 +2,44 @@ LowerTempleRemains:connect_one_way(Maple, CanMapleTrade)
 LowerTempleRemains:connect_one_way(TempleRemainsFindSeason)
 LowerTempleRemains:connect_one_way_entrance(TempleRemainsStump, function()
 	return All(
-		Has(Feather),
+		HasFeather,
 		Any(
 			CanReach(Fireworks),
 			All(
-				CanDestroyBush(),
+				CanDestroyBush,
 				Any(
 					All(
 						-- spring
 						Any(
-							Has(Spring),
-							Has(TempleRemainsSpring)
+							Has(TempleRemainsSpring),
+							HasSpring
 						),
-						CanDestroyFlower(),
-						Jump6()
+						CanDestroyFlower,
+						Jump6
 					),
 					All(
 						-- summer
 						Any(
-							Has(Summer),
-							Has(TempleRemainsSummer)
+							Has(TempleRemainsSummer),
+							HasSummer
 						),
-						Jump6()
+						Jump6
 					),
 					All(
 						-- autumn
 						Any(
-							Has(Autumn),
-							Has(TempleRemainsAutumn)
+							Has(TempleRemainsAutumn),
+							HasAutumn
 						)
 					),
 					All(
 						-- winter
 						Any(
-							Has(Winter),
-							Has(TempleRemainsWinter)
+							Has(TempleRemainsWinter),
+							HasWinter
 						),
-						Has(Shovel),
-						Jump6()
+						HasShovel,
+						Jump6
 					)
 				)
 			)
@@ -48,40 +48,40 @@ LowerTempleRemains:connect_one_way_entrance(TempleRemainsStump, function()
 end, {Fireworks})
 TempleRemainsStump:connect_one_way_entrance(LowerTempleRemains, function()
 	return All(
-		Has(Feather),
+		HasFeather,
 		Any(
 			CanReach(Fireworks),
 			All(
 				-- spring
 				Any(
-					Has(Spring),
-					Has(TempleRemainsSpring)
+					Has(TempleRemainsSpring),
+					HasSpring
 				),
-				CanDestroyFlower(),
-				CanDestroyBush(),
-				Jump6()
+				CanDestroyFlower,
+				CanDestroyBush,
+				Jump6
 			),
 			All(
 				-- summer
 				Any(
-					Has(Summer),
-					Has(TempleRemainsSummer)
+					Has(TempleRemainsSummer),
+					HasSummer
 				),
-				CanDestroyBush(),
-				Jump6()
+				CanDestroyBush,
+				Jump6
 			),
 			All(
 				-- autumn
 				Any(
-					Has(Autumn),
-					Has(TempleRemainsAutumn)
+					Has(TempleRemainsAutumn),
+					HasAutumn
 				),
-				CanDestroyBush()
+				CanDestroyBush
 			),
 			Any(
 				-- winter
-				Has(Winter),
-				Has(TempleRemainsWinter)
+				Has(TempleRemainsWinter),
+				HasWinter
 			)
 		)
 	)
@@ -89,15 +89,15 @@ end, {Fireworks})
 LowerTempleRemains:connect_one_way_entrance(TempleRemainsLowerPortal, function()
 	return All(
 		CanReach(Fireworks),
-		Has(Feather)
+		HasFeather
 	)
 end, {Fireworks})
 TempleRemainsStump:connect_one_way_entrance(TempleRemainsLowerPortal, function()
 	return All(
-		Has(Feather),
+		HasFeather,
 		Any(
-			Has(Winter),
-			CanReach(Fireworks)
+			CanReach(Fireworks),
+			HasWinter
 		)
 	)
 end, {Fireworks})
@@ -113,20 +113,20 @@ TempleRemainsLowerPortal:connect_one_way_entrance(LowerTempleRemains)
 LowerTempleRemains:connect_one_way(TempleRemainsBombCave, function()
 	return All(
 		CanReach(Fireworks),
-		JumpLiquid2()
+		JumpLiquid2
 	)
 end, {Fireworks})
 LowerTempleRemains:connect_one_way_entrance(TempleRemainsUpperPortal, function()
 	return All(
 		CanReach(Fireworks),
 		Any(
-			Has(Summer),
-			Has(TempleRemainsSummer)
+			Has(TempleRemainsSummer),
+			HasSummer
 		),
-		JumpLiquid2(),
+		JumpLiquid2,
 		Any(
-			Jump6(),
-			Has(MagnetGlove)
+			Jump6,
+			HasMagnetGlove
 		)
 	)
 end, {Fireworks})
@@ -134,13 +134,13 @@ TempleRemainsUpperPortal:connect_one_way(TempleRemainsFindSeason)
 TempleRemainsUpperPortal:connect_one_way_entrance(LowerTempleRemains, function()
 	return All(
 		CanReach(Fireworks),
-		Has(Feather)
+		HasFeather
 	)
 end, {Fireworks})
 TempleRemainsUpperPortal:connect_one_way_entrance(TempleRemainsStump, function() return Has(Feather) end)
 TempleRemainsUpperPortal:connect_one_way_entrance(TempleRemainsLowerPortal, function()
 	return All(
-		Has(Feather),
+		HasFeather,
 		Any(
 			Has(TempleRemainsWinter),
 			CanReach(Fireworks)

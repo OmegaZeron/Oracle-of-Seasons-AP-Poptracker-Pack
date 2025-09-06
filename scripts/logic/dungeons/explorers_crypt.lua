@@ -1,8 +1,8 @@
 -- 0 keys
 CryptFoyer:connect_one_way(CryptWildEmbers, function()
 	return All(
-		CanDestroyRespawningBush(),
-		MediumLogic()
+		CanDestroyRespawningBush,
+		MediumLogic
 	)
 end)
 CryptFoyer:connect_one_way(Crypt1FWizzrobeChest, function() return CanNormalKill(false, true, false) end)
@@ -11,11 +11,11 @@ Crypt1FLeftOfPoe:connect_one_way(Crypt1FLeftOfPoeChest)
 -- poe skip method
 Crypt1FLeftOfPoe:connect_one_way_entrance(CryptSurroundedByArmos, function()
 	return All(
-		Has(Feather),
-		Has(Bracelet),
-		Has(SeedSatchel),
-		Has(PegasusSeeds),
-		HellLogic()
+		HasFeather,
+		HasBracelet,
+		HasSatchel,
+		HasPegasus,
+		HellLogic
 	)
 end)
 -- 1 key
@@ -23,24 +23,24 @@ end)
 CryptFoyer:connect_one_way_entrance(CryptFirstPoe, function()
 	return All(
 		D7KeyCount(1),
-		CanShootLongTorches()
+		CanShootLongTorches
 	)
 end)
 -- kill poe method
 CryptFirstPoe:connect_one_way_entrance(CryptSurroundedByArmos, function()
 	return All(
-		Has(Bracelet),
+		HasBracelet,
 		Any(
-			CanArmorKill(),
+			CanArmorKill,
 			All(
-				HasRod(),
-				MediumLogic()
+				HasRod,
+				MediumLogic
 			),
 			All(
-				Has(EmberSeeds),
+				HasEmbers,
 				Any(
-					MediumLogic(),
-					Has(UpgradedSatchel)
+					HasUpgradedSatchel,
+					MediumLogic
 				)
 			)
 		)
@@ -49,25 +49,25 @@ end)
 CryptSurroundedByArmos:connect_one_way(CryptZolTrampoline, function() return Has(Feather) end)
 CryptSurroundedByArmos:connect_one_way_entrance(CryptArmosPuzzle, function()
 	return Any(
-		Has(MagnetGlove),
-		Jump3()
+		HasMagnetGlove,
+		Jump3
 	)
 end)
 CryptSurroundedByArmos:connect_one_way(CryptMagunesuReward, function() return Has(CaneOfSomaria) end)
 CryptArmosPuzzle:connect_one_way(CryptArmosPuzzleReward)
 CryptArmosPuzzle:connect_one_way_entrance(CryptMagunesu, function()
 	return Any(
-		Jump3(),
+		Jump3,
 		All(
-			JumpLiquid2(),
-			HellLogic()
+			JumpLiquid2,
+			HellLogic
 		)
 	)
 end)
 CryptMagunesu:connect_one_way(CryptMagunesuReward, function()
 	return All(
-		CanSwordKill(),
-		Has(MagnetGlove)
+		CanSwordKill,
+		HasMagnetGlove
 	)
 end)
 -- 2 keys
@@ -84,10 +84,10 @@ CryptPoeTrampoline:connect_one_way(CryptQuicksandChest, function() return Has(Fe
 CryptPoeTrampoline:connect_one_way_entrance(CryptDarknutBridge, function()
 	-- poe 2 skip
 	return All(
-		HellLogic(),
-		JumpLiquid6(),
-		Has(Flippers),
-		Has(SwimmersRing)
+		Has(SwimmersRing),
+		JumpLiquid6,
+		HasFlippers,
+		HellLogic
 	)
 end)
 -- 3 keys
@@ -100,14 +100,14 @@ CryptPoeTrampoline:connect_one_way_entrance(CryptPoe2, function()
 				AccessibilityLevel.SequenceBreak
 			)
 		),
-		CanUseSeeds(),
-		Has(EmberSeeds),
+		CanUseSeeds,
+		HasEmbers,
 		Any(
 			All(
-				Has(SeedSatchel),
-				Has(PegasusSeeds)
+				HasSatchel,
+				HasPegasus
 			),
-			HardLogic()
+			HardLogic
 		)
 	)
 end)
@@ -115,52 +115,52 @@ CryptPoe2:connect_one_way_entrance(CryptDarknutBridge, function() return Has(Fli
 CryptDarknutBridge:connect_one_way_entrance(CryptDarknutBridgeTrampolines, function()
 	return Any(
 		All(
-			Has(MagnetGlove),
-			Has(MagicBoomerang)
+			HasMagnetGlove,
+			HasMagicBoomerang
 		),
 		All(
-			Has(Feather),
-			Has(MagnetGlove),
-			HardLogic()
+			HasFeather,
+			HasMagnetGlove,
+			HardLogic
 		)
 	)
 end)
 CryptDarknutBridge:connect_one_way_entrance(CryptPastDarknutBridge, function()
 	return Any(
-		Jump4(),
+		Jump4,
 		All(
-			Has(Slingshot),
-			Has(ScentSeeds)
+			HasSlingshot,
+			HasScents
 		),
-		UseEnergyRing(),
+		UseEnergyRing,
 		All(
-			Has(MagnetGlove),
+			HasMagnetGlove,
 			Any(
-				CanArmorKill(),
-				Has(Shield),
+				CanArmorKill,
+				HasShield,
 				Any(
-					Has(Bombchus20),
+					HasTraversalBombchus,
 					All(
-						Has(Bombchus),
+						HasBombchus,
 						AccessibilityLevel.SequenceBreak
 					)
 				),
-				MediumLogic()
+				MediumLogic
 			)
 		)
 	)
 end)
 CryptPastDarknutBridge:connect_one_way_entrance(CryptDarknutBridgeTrampolines, function()
 	return Any(
-		Jump3(),
+		Jump3,
 		All(
-			Has(Feather),
-			Has(MagnetGlove),
+			HasFeather,
+			HasMagnetGlove,
 			Any(
-				CanSwordKill(),
-				HasRod(),
-				Has(Bombs),
-				Has(Bombchus)
+				CanSwordKill,
+				HasRod,
+				HasBombs,
+				HasBombchus
 			)
 		)
 	)
@@ -178,18 +178,18 @@ CryptDarknutBridge:connect_one_way_entrance(PoeSisters, function()
 			)
 		),
 		Any(
-			-- Has(SwitchHook),
+			-- HasSwitchHook,
 			All(
-				JumpLiquid3(), -- not actually liquid, but diagonal pit
+				JumpLiquid3, -- not actually liquid, but diagonal pit
 				Any(
 					-- Moldorms
-					CanArmorKill(),
+					CanArmorKill,
 					All(
-						MediumLogic(),
 						Any(
-							Has(Shovel),
-							Has(Shield)
-						)
+							HasShovel,
+							HasShield
+						),
+						MediumLogic
 					)
 				)
 			)
@@ -198,31 +198,31 @@ CryptDarknutBridge:connect_one_way_entrance(PoeSisters, function()
 end)
 PoeSisters:connect_one_way_entrance(CryptStairMaze, function()
 	return Any(
-		CanArmorKill(),
+		CanArmorKill,
 		All(
-			MediumLogic(),
 			Any(
-				HasRod(),
+				HasRod,
 				All(
-					CanUseSeeds(),
-					Has(EmberSeeds),
+					CanUseSeeds,
+					HasEmbers,
 					Any(
-						HardLogic(),
-						Has(Bombs),
-						Has(UpgradedSatchel)
+						HasBombs,
+						HasUpgradedSatchel,
+						HardLogic
 					)
 				)
-			)
+			),
+			MediumLogic
 		)
 	)
 end)
 CryptStairMaze:connect_one_way(CryptStairMazeChest)
 CryptStairMaze:connect_one_way_entrance(CryptWizzrobeStalfosRoom, function()
 	return Any(
-		Has(MagnetGlove),
+		HasMagnetGlove,
 		All(
-			Jump6(),
-			HardLogic()
+			Jump6,
+			HardLogic
 		)
 	)
 end)
@@ -248,10 +248,10 @@ CryptStairMaze:connect_one_way_entrance(CryptJumpingStalfos, function()
 			)
 		),
 		Any(
-			Jump5(),
+			Jump5,
 			All(
-				Has(Feather),
-				HardLogic()
+				HasFeather,
+				HardLogic
 			)
 		)
 	)

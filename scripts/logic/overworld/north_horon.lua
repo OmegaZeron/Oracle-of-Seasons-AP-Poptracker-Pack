@@ -5,13 +5,13 @@ LowerEasternSuburbs:connect_one_way(Maple, CanMapleTrade)
 LowerNorthHoron:connect_one_way(CatInTree, function() return Has(Fish) end)
 LowerNorthHoron:connect_one_way(EyeglassPitsChest, function()
 	return Any(
-		Jump4(),
+		Jump4,
 		All(
-			Has(Feather),
+			HasFeather,
 			Any(
 				All(
-					Has(Autumn),
-					CanDestroyBushFlute(true)
+					CanDestroyBushFlute(true),
+					HasAutumn
 				),
 				Has(NorthHoronAutumn)
 			)
@@ -39,8 +39,8 @@ GnarledRootDoorstep:connect_one_way_entrance(RedRingOldMan, function()
 	return Any(
 		Has(NorthHoronSummer),
 		All(
-			Has(Summer),
-			CanDestroyBushFlute()
+			HasSummer,
+			CanDestroyBushFlute
 		)
 	)
 end)
@@ -60,31 +60,31 @@ end)
 UpperNorthHoron:connect_one_way_entrance(NorthHolodrumPlain, function() return Has(Bracelet) end)
 GnarledRootDoorstep:connect_one_way_entrance(NorthHolodrumPlain, function()
 	return Any(
-		Dimitri(),
-		Has(Flippers)
+		Dimitri,
+		HasFlippers
 	)
 end)
 GnarledRootDoorstep:connect_one_way_entrance(HolodrumPlainSign, function()
 	return Any(
-		Dimitri(),
-		Has(Flippers)
+		Dimitri,
+		HasFlippers
 	)
 end)
 UpperNorthHoron:connect_one_way_entrance(EyeglassLake, function()
 	return All(
 		Any(
-			Has(Spring),
 			Has(NorthHoronSpring),
-			Has(Autumn),
-			Has(NorthHoronAutumn)
+			Has(NorthHoronAutumn),
+			HasSpring,
+			HasAutumn
 		),
 		Jump1(true),
 		Any(
-			Has(Flippers),
+			HasFlippers,
 			All(
-				MediumLogic(),
-				Dimitri(),
-				Has(Bracelet)
+				Dimitri,
+				HasBracelet,
+				MediumLogic
 			)
 		)
 	)
@@ -92,66 +92,44 @@ end)
 UpperNorthHoron:connect_one_way_entrance(FrozenEyeglassLake, function()
 	return All(
 		Any(
-			Has(Winter),
-			Has(NorthHoronWinter)
+			Has(NorthHoronWinter),
+			HasWinter
 		),
-		Any(
-			Has(Feather),
-			Moosh(),
-			Ricky()
-		)
+		Jump1(true)
 	)
 end)
 UpperNorthHoron:connect_one_way_entrance(DryEyeglassLake, function()
 	return All(
 		Any(
-			Has(Summer),
-			Has(NorthHoronSummer)
+			Has(NorthHoronSummer),
+			HasSummer
 		),
-		Any(
-			Has(Feather),
-			Moosh(),
-			Ricky()
-		)
+		Jump1(true)
 	)
 end)
 
 -- eyeglass
 -- normal
-EyeglassLake:connect_one_way_entrance(UpperNorthHoron, function()
-	return Has(Feather)
-end)
+EyeglassLake:connect_one_way_entrance(UpperNorthHoron, function() return Has(Feather) end)
 EyeglassLake:connect_one_way_entrance(EasternNorthHoron)
 EyeglassLake:connect_one_way_entrance(EyeglassPortal)
 
 -- frozen
-FrozenEyeglassLake:connect_one_way_entrance(UpperNorthHoron, function()
-	return Any(
-		Has(Feather),
-		Ricky(),
-		Moosh()
-	)
-end)
+FrozenEyeglassLake:connect_one_way_entrance(UpperNorthHoron, function() return Jump1(true) end)
 FrozenEyeglassLake:connect_one_way_entrance(EasternNorthHoron)
 FrozenEyeglassLake:connect_one_way_entrance(EyeglassPortal, function()
 	return Any(
-		Has(Flippers),
-		JumpLiquid5(),
-		Dimitri()
+		HasFlippers,
+		JumpLiquid5,
+		Dimitri
 	)
 end)
 
 -- dry
 DryEyeglassLake:connect_one_way_entrance(DryEyeglassBombCave, BombPunchWall)
-DryEyeglassBombCave:connect_one_way(DryEyeglassBombCaveChest, function()
-	return Has(Flippers)
-end)
+DryEyeglassBombCave:connect_one_way(DryEyeglassBombCaveChest, function() return Has(Flippers) end)
 DryEyeglassLake:connect_one_way_entrance(UpperNorthHoron, function()
-	return Any(
-		Has(Feather),
-		Ricky(),
-		Moosh()
-	)
+	return Jump1(true)
 end)
 
 -- portal
@@ -165,20 +143,20 @@ end)
 EyeglassPortal:connect_one_way_entrance(EyeglassLake, function()
 	return All(
 		Any(
-			Has(Spring),
 			Has(NorthHoronSpring),
-			Has(Autumn),
-			Has(NorthHoronAutumn)
+			Has(NorthHoronAutumn),
+			HasSpring,
+			HasAutumn
 		),
-		Has(Flippers)
+		HasFlippers
 	)
 end)
 EyeglassPortal:connect_one_way_entrance(FrozenEyeglassLake, function()
 	return All(
 		Has(NorthHoronWinter),
 		Any(
-			Has(Flippers),
-			JumpLiquid5()
+			HasFlippers,
+			JumpLiquid5
 		)
 	)
 end)
@@ -187,7 +165,7 @@ end)
 EyeglassPortal:connect_one_way_entrance(Pedestal, function()
 	return All(
 		Has(NorthHoronSummer),
-		HardLogic()
+		HardLogic
 	)
 end)
 
@@ -195,50 +173,50 @@ end)
 EasternNorthHoron:connect_one_way(Maple, CanMapleTrade)
 EasternNorthHoron:connect_one_way(EyeglassGasha, function()
 	return All(
-		CanPlantGasha(),
-		Has(Shovel)
+		HasShovel,
+		CanPlantGasha
 	)
 end)
 EasternNorthHoron:connect_one_way_entrance(EyeglassLake, function()
 	return All(
 		Any(
-			Has(Spring),
 			Has(NorthHoronSpring),
-			Has(Autumn),
-			Has(NorthHoronAutumn)
+			Has(NorthHoronAutumn),
+			HasSpring,
+			HasAutumn
 		),
 		Any(
-			Has(Flippers),
-			Dimitri()
+			HasFlippers,
+			Dimitri
 		)
 	)
 end)
 EasternNorthHoron:connect_one_way_entrance(FrozenEyeglassLake, function()
 	return Any(
-		Has(Winter),
-		Has(NorthHoronWinter)
+		Has(NorthHoronWinter),
+		HasWinter
 	)
 end)
 EasternNorthHoron:connect_one_way_entrance(DryEyeglassLake, function()
 	return All(
+		HasFlippers,
 		Any(
-			Has(Summer),
-			Has(NorthHoronSummer)
-		),
-		Has(Flippers)
+			Has(NorthHoronSummer),
+			HasSummer
+		)
 	)
 end)
 EasternNorthHoron:connect_one_way_entrance(DryEyeglassHiddenStairs, function()
 	return All(
-		Has(Summer),
-		Has(Bracelet)
+		HasSummer,
+		HasBracelet
 	)
 end)
 DryEyeglassHiddenStairs:connect_one_way(DryEyeglassHiddenStairsChest)
 EasternNorthHoron:connect_one_way_entrance(UnicornCave, function()
 	return All(
-		Has(Autumn),
-		CanDestroyMushroom(true)
+		CanDestroyMushroom(true),
+		HasAutumn
 	)
 end)
 -- special cases to handle default autumn
@@ -248,15 +226,15 @@ UpperNorthHoron:connect_one_way_entrance(UnicornCave, function()
 		Jump1(true),
 		CanDestroyMushroom(true),
 		Any(
-			Has(Flippers),
+			HasFlippers,
 			All(
-				Dimitri(),
-				Has(Bracelet),
-				MediumLogic()
+				Dimitri,
+				HasBracelet,
+				MediumLogic
 			),
 			All(
-				Dimitri(),
-				Has(Winter)
+				Dimitri,
+				HasWinter
 			)
 		)
 	)
@@ -264,15 +242,15 @@ end)
 EyeglassPortal:connect_one_way_entrance(UnicornCave, function()
 	return All(
 		Has(NorthHoronAutumn),
-		Has(Flippers),
-		CanDestroyMushroom(true)
+		CanDestroyMushroom(true),
+		HasFlippers
 	)
 end)
 UnicornCave:connect_one_way_entrance(DryEyeglassHiddenStairs, function()
 	return All(
 		Jump1(true),
 		Has(NorthHoronSummer),
-		Has(Bracelet)
+		HasBracelet
 	)
 end)
 UnicornCave:connect_one_way_entrance(EasternNorthHoron, function()
@@ -280,7 +258,7 @@ UnicornCave:connect_one_way_entrance(EasternNorthHoron, function()
 		Jump1(true),
 		All(
 			Has(NorthHoronAutumn),
-			CanDestroyMushroom()
+			CanDestroyMushroom
 		)
 	)
 end)

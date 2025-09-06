@@ -10,31 +10,31 @@ NatzuRickyEast:connect_two_ways_entrance(SunkenDoorstep, function() return Has(N
 NatzuWest:connect_two_ways_entrance(NatzuDimitriWest, function() return Has(NatzuIsDimitri) end)
 NatzuDimitriWest:connect_two_ways_entrance(NatzuDimitriEast, function()
 	return Any(
-		Has(Flippers),
-		Dimitri()
+		HasFlippers,
+		Dimitri
 	)
 end)
 NatzuDimitriEast:connect_one_way_entrance(MoblinKeepBridge, function()
 	return Any(
-		Dimitri(),
+		Dimitri,
 		All(
-			Has(Flippers),
 			Has(SwimmersRing),
-			MediumLogic()
+			HasFlippers,
+			MediumLogic
 		)
 	)
 end)
 MoblinKeepBridge:connect_one_way_entrance(NatzuDimitriEast, function()
 	return Any(
-		Dimitri(),
-		Has(Flippers)
+		Dimitri,
+		HasFlippers
 	)
 end)
 NatzuDimitriEast:connect_one_way(NatzuScrub, Dimitri)
 NatzuDimitriEast:connect_two_ways_entrance(SunkenDoorstep, function()
 	return All(
 		Has(NatzuIsDimitri),
-		Has(Feather)
+		HasFeather
 	)
 end)
 NatzuDimitriEast:connect_one_way_entrance(NatzuPlatformCave, JumpLiquid5)
@@ -42,30 +42,30 @@ NatzuDimitriEast:connect_one_way_entrance(NatzuPlatformCave, JumpLiquid5)
 NatzuWest:connect_two_ways_entrance(NatzuMooshWest, function() return Has(NatzuIsMoosh) end)
 NatzuMooshWest:connect_two_ways_entrance(NatzuMooshEast, function()
 	return Any(
-		Moosh(),
+		Moosh,
 		All(
-			CanDestroyBush(),
-			Jump3(),
-			MediumLogic()
+			CanDestroyBush,
+			Jump3,
+			MediumLogic
 		)
 	)
 end)
 NatzuMooshWest:connect_one_way(NatzuScrub, function()
 	return Any(
-		Moosh(),
-		JumpLiquid4(),
+		Moosh,
+		JumpLiquid4,
 		All(
-			Jump4(),
-			CanDestroyBush(true)
+			CanDestroyBush(true),
+			Jump4
 		)
 	)
 end)
 NatzuMooshEast:connect_one_way_entrance(MoblinKeepBridge, function()
 	return Any(
-		Moosh(),
+		Moosh,
 		All(
-			CanDestroyBush(),
-			Jump3()
+			CanDestroyBush,
+			Jump3
 		)
 	)
 end)
@@ -73,26 +73,26 @@ NatzuMooshEast:connect_two_ways_entrance(SunkenDoorstep, function()
 	return All(
 		Has(NatzuIsMoosh),
 		Any(
-			Moosh(),
-			JumpLiquid3()
+			Moosh,
+			JumpLiquid3
 		)
 	)
 end)
 NatzuScrub:connect_one_way(DekuSecret, function()
 	return All(
-		CanUseSeeds(),
-		Has(EmberSeeds),
-		Has(ScentSeeds),
-		Has(PegasusSeeds),
-		Has(GaleSeeds),
-		Has(MysterySeeds)
+		CanUseSeeds,
+		HasEmbers,
+		HasScents,
+		HasPegasus,
+		HasGales,
+		HasMysteries
 	)
 end)
 -- moblin keep
 MoblinKeepBridge:connect_two_ways_entrance(MoblinKeep, function()
 	return Any(
-		Has(Flippers),
-		JumpLiquid4()
+		HasFlippers,
+		JumpLiquid4
 	)
 end)
 MoblinKeep:connect_one_way(GreatMoblinChest, function() return Has(Bracelet) end)
@@ -110,9 +110,9 @@ end)
 SunkenDoorstep:connect_one_way_entrance(UpperEasternSuburbsWinter, function() return Has(EasternSuburbsWinter) end)
 SunkenDoorstep:connect_two_ways_entrance(SunkenCity, function()
 	return Any(
-		Has(Feather),
-		Has(Flippers),
-		Dimitri(),
-		Has(SunkenCityWinter)
+		Has(SunkenCityWinter),
+		HasFeather,
+		HasFlippers,
+		Dimitri
 	)
 end)

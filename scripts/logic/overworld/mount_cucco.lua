@@ -10,33 +10,33 @@ LowerMtCucco:connect_one_way(MtCuccoScrubLeft, function() return Has(Shield) end
 LowerMtCucco:connect_one_way(MtCuccoScrubRight, function() return Has(Shield) end)
 LowerMtCucco:connect_one_way_entrance(CuccoRightMountain, function()
 	return All(
-		Has(Bracelet),
+		HasBracelet,
 		Any(
 			All(
 				-- grab normally
 				Any(
-					Has(Spring),
-					Has(SunkenCitySpring)
+					Has(SunkenCitySpring),
+					HasSpring
 				),
 				Any(
-					CanDestroyFlower(),
-					Has(SpringBanana)
+					Has(SpringBanana),
+					CanDestroyFlower
 				)
 			),
-			HardLogic() -- cucco clip
+			HardLogic -- cucco clip
 		)
 	)
 end)
 CuccoRightMountain:connect_one_way(BananaTree, function()
 	return All(
 		Any(
-			Has(Spring),
-			Has(SunkenCitySpring)
+			Has(SunkenCitySpring),
+			HasSpring
 		),
 		Any(
 			All(
-				Has(Feather),
-				CanSwordKill()
+				HasFeather,
+				CanSwordKill
 			),
 			AccessibilityLevel.Inspect
 		)
@@ -45,44 +45,44 @@ end)
 CuccoRightMountain:connect_one_way(MtCuccoPlatformCave)
 LowerMtCucco:connect_one_way_entrance(UpperMtCucco, function()
 	return Any(
-		Has(Spring),
-		Has(SunkenCitySpring)
+		Has(SunkenCitySpring),
+		HasSpring
 	)
 end)
 UpperMtCucco:connect_one_way_entrance(LowerMtCucco)
 LowerMtCucco:connect_one_way(MtCuccoGasha, function()
 	return All(
-		CanPlantGasha(),
-		CanDestroyMushroom(),
+		CanPlantGasha,
+		CanDestroyMushroom,
 		Any(
-			Has(Autumn),
-			Has(SunkenCityAutumn)
+			Has(SunkenCityAutumn),
+			HasAutumn
 		)
 	)
 end)
 LowerMtCucco:connect_one_way(GoronPitsItem, function()
 	return Any(
 		Has(SpringBanana),
-		Jump4(),
+		Jump4,
 		AccessibilityLevel.Inspect
 	)
 end)
 LowerMtCucco:connect_one_way_entrance(CenterGoronMountain, function()
 	return Any(
-		Has(Shovel),
-		Has(SpringBanana)
+		Has(SpringBanana),
+		HasShovel
 	)
 end)
 LowerMtCucco:connect_one_way(MtCuccoLedge, function() return AccessibilityLevel.Inspect end)
 UpperMtCucco:connect_one_way(MtCuccoLedge)
 UpperMtCucco:connect_one_way_entrance(TalonCave, function()
 	return Any(
-		Has(Spring),
-		Has(Summer),
-		Has(Autumn),
 		Has(SunkenCitySpring),
 		Has(SunkenCitySummer),
-		Has(SunkenCityAutumn)
+		Has(SunkenCityAutumn),
+		HasSpring,
+		HasSummer,
+		HasAutumn
 	)
 end)
 TalonCave:connect_one_way_entrance(TalonReward, function()
@@ -94,35 +94,35 @@ end)
 TalonCave:connect_one_way_entrance(TalonChest, function() return Has(Megaphone) end)
 UpperMtCucco:connect_one_way(MtCuccoDiveSpot, function()
 	return All(
-		Has(Flippers),
+		HasFlippers,
 		Any(
-			Has(Spring),
-			Has(Summer),
-			Has(Autumn),
 			Has(SunkenCitySpring),
 			Has(SunkenCitySummer),
-			Has(SunkenCityAutumn)
+			Has(SunkenCityAutumn),
+			HasSpring,
+			HasSummer,
+			HasAutumn
 		)
 	)
 end)
 UpperMtCucco:connect_one_way_entrance(DragonKeyhole, function()
 	return All(
-		Has(Feather),
-		Has(Bracelet),
-		Has(Winter)
+		HasFeather,
+		HasBracelet,
+		HasWinter
 	)
 end)
 DragonKeyhole:connect_one_way_entrance(DancingDragonDungeon, function()
 	return All(
 		Has(DragonKey),
-		Has(Summer)
+		HasSummer
 	)
 end)
 DancingDragonDungeon:connect_one_way_entrance(DragonKeyhole, function()
 	return All(
 		Has(SunkenCityWinter),
-		Has(Feather),
-		Has(Bracelet)
+		HasFeather,
+		HasBracelet
 	)
 end)
 DancingDragonDungeon:connect_one_way(SunkenCityFindSeason)

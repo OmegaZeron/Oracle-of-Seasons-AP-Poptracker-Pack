@@ -1,11 +1,11 @@
 -- 0 keys
 PoisonFoyer:connect_one_way_entrance(PoisonCentral, function()
 	return Any(
-		CanKillSpinyBeetle(),
+		CanKillSpinyBeetle,
 		All(
-			MediumLogic(),
-			CanFlipBeetle(),
-			Has(Bracelet)
+			CanFlipBeetle,
+			HasBracelet,
+			MediumLogic
 		)
 	)
 end)
@@ -13,10 +13,10 @@ PoisonCentral:connect_two_ways_entrance(PoisonWaterRoom, function() return Has(F
 PoisonWaterRoom:connect_one_way(PoisonWaterChest)
 PoisonCentral:connect_two_ways_entrance(PoisonPols, function()
 	return Any(
-		Has(Bracelet),
+		HasBracelet,
 		All(
-			CanDestroyPot(),
-			Has(CaneOfSomaria)
+			CanDestroyPot,
+			HasCane
 		)
 	)
 end)
@@ -39,7 +39,7 @@ PoisonWaterRoom:connect_one_way_entrance(PoisonMimicChest, function()
 				AccessibilityLevel.SequenceBreak
 			)
 		),
-		CanNormalKill()
+		CanNormalKill
 	)
 end)
 PoisonOmuaiDoorstep:connect_one_way_entrance(Omuai, function()
@@ -51,20 +51,20 @@ PoisonOmuaiDoorstep:connect_one_way_entrance(Omuai, function()
 				AccessibilityLevel.SequenceBreak
 			)
 		),
-		Has(Bracelet),
-		CanArmorKill()
+		HasBracelet,
+		CanArmorKill
 	)
 end)
 Omuai:connect_one_way(PoisonBladeTrapChest, function()
 	return Any(
-		Has(Feather),
-		HardLogic()
+		HasFeather,
+		HardLogic
 	)
 end)
 Omuai:connect_one_way_entrance(Mothula, function()
 	return All(
-		HasD3BossKey(),
-		CanNormalKill()
+		HasD3BossKey,
+		CanNormalKill
 	)
 end)
 Mothula:connect_one_way(PoisonEssence)

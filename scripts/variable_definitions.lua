@@ -66,6 +66,7 @@ DataStorageItemTable = {
 	["Obtained Pegasus"] = PegasusSeeds,
 	["Obtained Gale"] = GaleSeeds,
 	["Obtained Mystery"] = MysterySeeds,
+	-- ["Blew Up Volcano"] = nil,
 }
 
 CurrentTab = nil
@@ -725,6 +726,14 @@ SeedMapping = {
 	[2] = PegasusSeeds,
 	[3] = GaleSeeds,
 	[4] = MysterySeeds
+}
+
+IndexToSeason = {
+	[0] = Spring,
+	[1] = Summer,
+	[2] = Autumn,
+	[3] = Winter,
+	[4] = UnknownSeason
 }
 
 SeeSeasonVars = {

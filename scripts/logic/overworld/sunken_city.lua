@@ -7,28 +7,28 @@ SunkenCity:connect_one_way(SunkenTree, function()
 end)
 SunkenCity:connect_one_way(SunkenSummerCave, function()
 	return All(
-		Has(Flippers),
+		HasFlippers,
 		Any(
 			Has(SunkenCitySummer),
-			Has(Summer)
+			HasSummer
 		),
-		CanDestroyBush()
+		CanDestroyBush
 	)
 end)
 SunkenCity:connect_one_way(SunkenVaseTrade, function() return Has(GoronVase) end)
 SunkenDimitri:connect_one_way(SunkenTree, function()
 	-- may not actually have Dimitri's flute, but can use him after saving to get the seeds
 	return All(
-		CanUseSeeds(),
-		MediumLogic()
+		CanUseSeeds,
+		MediumLogic
 	)
 end)
 SunkenDimitri:connect_one_way(MasterChallenge, function()
 	return All(
-		Has(WoodSword),
+		HasSword,
 		Any(
-			Has(Flippers),
-			Has(Feather)
+			HasFlippers,
+			HasFeather
 		)
 	)
 end)
@@ -36,21 +36,21 @@ SunkenDimitri:connect_one_way(MasterDiver, function() return Has(MastersPlaque) 
 SunkenDimitri:connect_one_way(SunkenMasterDiverChest)
 SunkenCity:connect_one_way(SunkenGashaSpot, function()
 	return All(
-		CanPlantGasha(),
-		Has(Flippers),
+		CanPlantGasha,
+		HasFlippers,
 		Any(
 			Has(SunkenCitySummer),
-			Has(Summer)
+			HasSummer
 		)
 	)
 end)
 SunkenDimitri:connect_one_way(SunkenGashaSpot, CanPlantGasha)
 SunkenCity:connect_one_way(DiverSecret, function()
 	return All(
-		Has(Flippers),
+		HasFlippers,
 		Any(
-			CanSwordKill(),
-			MediumLogic()
+			CanSwordKill,
+			MediumLogic
 		)
 	)
 end)
@@ -58,8 +58,8 @@ end)
 -- exits
 SunkenCity:connect_one_way_entrance(SunkenDimitri, function()
 	return Any(
-		Dimitri(),
-		Has(Bombs)
+		Dimitri,
+		HasBombs
 	)
 end)
 SunkenCity:connect_one_way_entrance(Syrup, function()
@@ -68,11 +68,11 @@ SunkenCity:connect_one_way_entrance(Syrup, function()
 		Any(
 			Has(SunkenCityWinter),
 			All(
-				Has(Winter),
+				HasWinter,
 				Any(
-					Has(Flippers),
-					Dimitri(),
-					Has(Bombs)
+					HasFlippers,
+					Dimitri,
+					HasBombs
 				)
 			)
 		)
@@ -86,23 +86,23 @@ Syrup:connect_one_way_entrance(SyrupShop, function()
 end, {SnakeRupeeRoom, AncientRupeeRoom, HoronVillageOldMan, NorthHoronOldMan, SuburbsOldMan, NorthHolodrumPlainOldMan, SouthHolodrumPlainOldMan, GoronMountainOldMan, TarmOldMan, WesternCoastOldMan})
 SunkenCity:connect_one_way_entrance(LowerMtCucco, function()
 	return All(
-		Has(Flippers),
+		HasFlippers,
 		Any(
-			Has(Summer),
-			Has(SunkenCitySummer)
+			Has(SunkenCitySummer),
+			HasSummer
 		)
 	)
 end)
 SunkenCity:connect_one_way_entrance(MoblinRoadWaterfallCaveChest, function()
 	return All(
-		Has(Flippers),
+		HasFlippers,
 		Any(
-			Has(Spring),
-			Has(Summer),
-			Has(Autumn),
 			Has(SunkenCitySpring),
 			Has(SunkenCitySummer),
-			Has(SunkenCityAutumn)
+			Has(SunkenCityAutumn),
+			HasSpring,
+			HasSummer,
+			HasAutumn
 		)
 	)
 end)

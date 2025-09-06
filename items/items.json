@@ -239,6 +239,20 @@
 		"codes": "somaria"
 	},
 	{
+		"name": "Switch Hook",
+		"type": "progressive",
+		"stages": [
+			{
+				"img": "images/items/switchhook1.png",
+				"codes": "hook"
+			},
+			{
+				"img": "images/items/switchhook2.png",
+				"codes": "hook, hook2"
+			}
+		]
+	},
+	{
 		"name": "Season's Rod",
 		"type": "static",
 		"img": "images/items/rod.png",

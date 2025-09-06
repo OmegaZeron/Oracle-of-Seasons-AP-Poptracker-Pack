@@ -2,18 +2,18 @@ EastWesternCoast:connect_one_way(Maple, CanMapleTrade)
 EastWesternCoast:connect_one_way(WesternCoastFindSeason)
 EastWesternCoast:connect_one_way(BlackBeast, function()
 	return All(
-		CanShootLongTorches(),
-		Has(MysterySeeds),
-		CanArmorKill()
+		CanShootLongTorches,
+		HasMysteries,
+		CanArmorKill
 	)
 end)
 EastWesternCoast:connect_one_way(GoldenDarknutKill, function()
 	return All(
+		Has(WesternCoastSpring),
 		Any(
-			CanSwordKill(),
-			Dimitri()
-		),
-		Has(WesternCoastSpring)
+			CanSwordKill,
+			Dimitri
+		)
 	)
 end)
 EastWesternCoast:connect_one_way_entrance(HerosCave)
@@ -34,10 +34,10 @@ HerosCaveLedge:connect_one_way_entrance(HerosCaveFoyer)
 HerosCaveFoyer:connect_one_way(HerosCaveLedge, function() return Has(D0AltRemoved) end)
 HerosCaveFoyer:connect_one_way_entrance(HerosCaveUnderground, function()
 	return Any(
-		CanNormalKill(),
+		CanNormalKill,
 		All(
-			Has(Boomerang),
-			MediumLogic()
+			HasBoomerang,
+			MediumLogic
 		)
 	)
 end)
@@ -62,21 +62,21 @@ WestWesternCoast:connect_one_way_entrance(WesternCoastHouse)
 WesternCoastHouse:connect_one_way(WesternCoastHouseChest)
 WesternCoastHouse:connect_one_way_entrance(WesternCoastStump, function()
 	return All(
-		CanBombWall(),
+		CanBombWall,
 		Any(
-			Has(Feather),
-			HardLogic()
+			HasFeather,
+			HardLogic
 		)
 	)
 end)
 WesternCoastStump:connect_one_way(GoldenDarknutKill, function()
 	return All(
 		CanReach(Pirates),
-		Has(Spring),
 		Has(PolishedBell),
+		HasSpring,
 		Any(
-			CanSwordKill(),
-			Dimitri()
+			CanSwordKill,
+			Dimitri
 		)
 	)
 end, {Pirates})
@@ -84,50 +84,66 @@ WestWesternCoast:connect_one_way_entrance(Graveyard, function()
 	return Any(
 		Has(WesternCoastSummer),
 		All(
-			Has(Summer),
-			CanReach(WesternCoastStump)
+			HasSummer,
+			CanBombWall,
+			Any(
+				HasFeather,
+				HardLogic
+			)
 		),
 		All(
-			Jump3(),
+			Jump3,
 			Any(
 				Has(WesternCoastSpring),
 				All(
-					Has(Spring),
-					CanReach(WesternCoastStump)
+					HasSpring,
+					CanBombWall,
+					Any(
+						HasFeather,
+						HardLogic
+					)
 				)
 			)
 		)
 	)
-end, {WesternCoastStump})
+end)
 WestWesternCoast:connect_one_way_entrance(GraveyardWinter, function()
 	return All(
-		Jump3(),
+		Jump3,
 		Any(
 			Has(WesternCoastWinter),
 			All(
-				Has(Winter),
-				CanReach(WesternCoastStump)
+				HasWinter,
+				CanBombWall,
+				Any(
+					HasFeather,
+					HardLogic
+				)
 			)
 		)
 	)
-end, {WesternCoastStump})
+end)
 WestWesternCoast:connect_one_way_entrance(GraveyardAutumn, function()
 	return All(
-		Jump3(),
+		Jump3,
 		Any(
 			Has(WesternCoastAutumn),
 			All(
-				Has(Autumn),
-				CanReach(WesternCoastStump)
+				HasAutumn,
+				CanBombWall,
+				Any(
+					HasFeather,
+					HardLogic
+				)
 			)
 		)
 	)
-end, {WesternCoastStump})
+end)
 Graveyard:connect_one_way_entrance(ExplorersCrypt)
 GraveyardAutumn:connect_one_way_entrance(ExplorersCrypt)
 GraveyardAutumn:connect_one_way(GraveyardHP, function()
 	return Any(
-		CanDestroyMushroom(),
+		CanDestroyMushroom,
 		AccessibilityLevel.Inspect
 	)
 end)

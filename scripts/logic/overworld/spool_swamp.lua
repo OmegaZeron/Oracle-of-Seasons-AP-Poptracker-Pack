@@ -10,14 +10,14 @@ NorthSpoolSwamp:connect_one_way(SwampTree, function()
 end)
 NorthSpoolSwamp:connect_one_way(SwampVasuDigSpot, function()
 	return All(
-		Has(Shovel),
-		Has(SpoolSwampSummer)
+		Has(SpoolSwampSummer),
+		HasShovel
 	)
 end)
 SpoolSwampStump:connect_one_way(SwampVasuDigSpot, function()
 	return All(
-		Has(Summer),
-		Has(Shovel)
+		HasSummer,
+		HasShovel
 	)
 end)
 
@@ -27,24 +27,24 @@ NorthSpoolSwamp:connect_one_way_entrance(TarmEntrance, CanEnterTarm)
 NorthSpoolSwamp:connect_one_way_entrance(FloodgateKeeper)
 FloodgateKeeper:connect_one_way_entrance(FloodgateLever, function()
 	return Any(
-		CanTriggerLever(),
+		CanTriggerLever,
 		All(
-			Has(Bracelet),
-			HardLogic()
+			HasBracelet,
+			HardLogic
 		)
 	)
 end)
 FloodgateLever:connect_one_way_entrance(FloodgateKeyhole, function()
 	return All(
-		Has(Bracelet),
+		HasBracelet,
 		Any(
-			Has(Flippers),
-			Has(Feather),
+			HasFlippers,
+			HasFeather,
 			All(
-				Has(SeedSatchel),
-				Has(PegasusSeeds)
+				HasSatchel,
+				HasPegasus
 			),
-			Has(CaneOfSomaria)
+			HasCane
 		)
 	)
 end)
@@ -58,8 +58,8 @@ FloodgateKeyhole:connect_one_way(SwampNorthGashaSpot, CanPlantGasha)
 FloodgateKeyhole:connect_one_way_entrance(SpoolSwampStump, function() return Has(FloodgateKey) end)
 SpoolSwampStump:connect_one_way_entrance(PoisonMothLair, function()
 	return Any(
-		Has(Summer),
-		Has(SpoolSwampSummer)
+		Has(SpoolSwampSummer),
+		HasSummer
 	)
 end)
 PoisonMothLair:connect_two_ways_entrance(PoisonFoyer, function()
@@ -73,38 +73,38 @@ SpoolSwampStump:connect_one_way_entrance(MiddleSpoolSwamp, function()
 		Has(SpoolSwampSummer),
 		Has(SpoolSwampAutumn),
 		Has(SpoolSwampWinter),
-		Has(Summer),
-		Has(Autumn),
-		Has(Winter),
-		Has(Flippers),
-		Dimitri()
+		HasSummer,
+		HasAutumn,
+		HasWinter,
+		HasFlippers,
+		Dimitri
 	)
 end)
 MiddleSpoolSwamp:connect_one_way_entrance(SwampSouthGashaArea, Ricky)
 SwampSouthGashaArea:connect_one_way_entrance(MiddleSpoolSwamp, function()
 	return Any(
-		Ricky(),
+		Ricky,
 		All(
-			Has(Feather),
+			HasFeather,
 			Any(
-				Has(MagicBoomerang),
+				HasMagicBoomerang,
 				All(
-					MediumLogic(),
 					Any(
-						HasSword(),
+						HasAnySword,
 						All(
-							Has(Slingshot),
-							Has(EmberSeeds)
+							HasSlingshot,
+							HasEmbers
 						),
 						All(
-							Has(Bombs),
+							HasBombs,
 							All(
-								Has(Bombs20),
+								HasTraversalBombs,
 								AccessibilityLevel.SequenceBreak
 							),
-							HardLogic()
+							HardLogic
 						)
-					)
+					),
+					MediumLogic
 				)
 			)
 		)
@@ -121,10 +121,10 @@ SpoolPortal:connect_two_ways_entrance(SubrosiaMarket, function()
 end)
 MiddleSpoolSwamp:connect_two_ways_entrance(SouthSpoolSwamp, function()
 	return Any(
-		Jump2(),
-		Moosh(),
-		Dimitri(),
-		Has(Flippers)
+		Jump2,
+		Moosh,
+		Dimitri,
+		HasFlippers
 	)
 end)
 SouthSpoolSwamp:connect_one_way(Maple, CanMapleTrade)
@@ -135,56 +135,56 @@ SouthSpoolSwamp:connect_one_way(Maple, CanMapleTrade)
 SouthSpoolSwamp:connect_one_way_entrance(SpringSpoolSwamp, function() return Has(SpoolSwampSpring) end)
 SpoolSwampStump:connect_one_way_entrance(SpringSpoolSwamp, function()
 	return All(
-		Has(Spring),
+		HasSpring,
 		Any(
-			Has(Flippers),
-			Dimitri()
+			HasFlippers,
+			Dimitri
 		),
 		Any(
-			Ricky(),
-			Moosh(),
-			Jump2()
+			Ricky,
+			Moosh,
+			Jump2
 		)
 	)
 end)
 SouthSpoolSwamp:connect_one_way_entrance(SummerSpoolSwamp, function() return Has(SpoolSwampSummer) end)
 SpoolSwampStump:connect_one_way_entrance(SummerSpoolSwamp, function()
 	return All(
-		Has(Summer),
+		HasSummer,
 		Any(
-			Has(Flippers),
-			AnyFlute(),
-			Jump2()
+			HasFlippers,
+			AnyFlute,
+			Jump2
 		)
 	)
 end)
 SouthSpoolSwamp:connect_one_way_entrance(AutumnSpoolSwamp, function() return Has(SpoolSwampAutumn) end)
 SpoolSwampStump:connect_one_way_entrance(AutumnSpoolSwamp, function()
 	return All(
-		Has(Autumn),
+		HasAutumn,
 		Any(
-			Has(Flippers),
-			AnyFlute(),
-			Jump2()
+			HasFlippers,
+			AnyFlute,
+			Jump2
 		)
 	)
 end)
 SouthSpoolSwamp:connect_one_way_entrance(WinterSpoolSwamp, function() return Has(SpoolSwampWinter) end)
 SpoolSwampStump:connect_one_way_entrance(WinterSpoolSwamp, function()
 	return All(
-		Has(Winter),
+		HasWinter,
 		Any(
-			Has(Flippers),
-			AnyFlute(),
-			Jump2()
+			HasFlippers,
+			AnyFlute,
+			Jump2
 		)
 	)
 end)
 
 SummerSpoolSwamp:connect_one_way(GoldenOctorokKill, function()
 	return Any(
-		CanSwordKill(),
-		Dimitri()
+		CanSwordKill,
+		Dimitri
 	)
 end)
 
@@ -197,14 +197,14 @@ SummerSpoolSwamp:connect_one_way_entrance(SwampSouthGashaArea)
 AutumnSpoolSwamp:connect_one_way_entrance(SwampSouthGashaArea)
 WinterSpoolSwamp:connect_one_way_entrance(SwampSouthGashaArea, function()
 	return Any(
-		Has(Shovel),
-		AnyFlute()
+		HasShovel,
+		AnyFlute
 	)
 end)
 SwampSouthGashaArea:connect_one_way(SwampSouthGashaSpot, function()
 	return All(
-		CanPlantGasha(),
-		Has(Bracelet)
+		HasBracelet,
+		CanPlantGasha
 	)
 end)
 SwampSouthGashaArea:connect_one_way_entrance(SpringSpoolSwamp, function()
@@ -219,25 +219,25 @@ SwampSouthGashaArea:connect_one_way_entrance(WinterSpoolSwamp, function()
 	return All(
 		Has(SpoolSwampWinter),
 		Any(
-			Has(Shovel),
-			AnyFlute()
+			HasShovel,
+			AnyFlute
 		)
 	)
 end)
 SpringSpoolSwamp:connect_one_way(SwampFloodedHP, function()
 	return Any(
-		Has(Flippers),
-		Dimitri(),
+		HasFlippers,
+		Dimitri,
 		AccessibilityLevel.Inspect
 	)
 end)
 WinterSpoolSwamp:connect_one_way(SwampBombCave, function()
 	return All(
 		Any(
-			Has(Shovel),
-			AnyFlute()
+			HasShovel,
+			AnyFlute
 		),
-		BombPunchWall()
+		BombPunchWall
 	)
 end)
 

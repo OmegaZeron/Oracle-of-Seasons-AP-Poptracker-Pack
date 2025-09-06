@@ -17,20 +17,20 @@ SnakeAltEntrance:connect_one_way(SnakeScrub, function()
 end, {SnakeRupeeRoom, AncientRupeeRoom, HoronVillageOldMan, NorthHoronOldMan, SuburbsOldMan, NorthHolodrumPlainOldMan, SouthHolodrumPlainOldMan, GoronMountainOldMan, TarmOldMan, WesternCoastOldMan})
 SnakeAltEntrance:connect_one_way(SnakeBombPuzzle, function()
 	return All(
-		CanDestroyBush(),
+		CanDestroyBush,
 		Any(
-			Has(Bombs),
+			HasBombs,
 			All(
 				Any(
-					Has(Bombchus50),
+					HasCombatBombchus,
 					All(
-						Has(Bombchus),
+						HasBombchus,
 						AccessibilityLevel.SequenceBreak
 					)
 				),
-				Has(SeedSatchel),
-				Has(PegasusSeeds),
-				MediumLogic()
+				HasSatchel,
+				HasPegasus,
+				MediumLogic
 			)
 		)
 	)
@@ -47,15 +47,15 @@ FacadeDoorstep:connect_one_way_entrance(Facade, function()
 				AccessibilityLevel.SequenceBreak
 			)
 		),
-		Has(Bombs)
+		HasBombs
 	)
 end)
 Facade:connect_one_way_entrance(SnakeFoyer)
 Facade:connect_one_way_entrance(KingDodongo, function()
 	return All(
-		Has(Bracelet),
-		Has(Bombs),
-		HasD2BossKey()
+		HasD2BossKey,
+		HasBracelet,
+		HasBombs
 	)
 end)
 
@@ -72,56 +72,56 @@ end)
 SnakeHardhats:connect_one_way(SnakeHardhatChest, CanDestroyPot)
 SnakeHardhats:connect_one_way(SnakeWildBombs, function()
 	return All(
-		CanDestroyRespawningBush(),
-		MediumLogic()
+		CanDestroyRespawningBush,
+		MediumLogic
 	)
 end)
 SnakeHardhats:connect_one_way_entrance(SnakeBombMoblins, function()
 	return All(
 		-- hardhats
 		Any(
-			CanSwordKill(),
-			Has(Boomerang),
-			CanKillWithPit(),
+			CanSwordKill,
+			HasBoomerang,
+			CanKillWithPit,
 			All(
-				MediumLogic(),
-				Has(UpgradedSatchel),
+				HasUpgradedSatchel,
 				Any(
-					Has(Slingshot),
+					HasSlingshot,
 					All(
-						Has(SeedSatchel),
-						HardLogic()
+						HasSatchel,
+						HardLogic
 					)
 				),
 				Any(
-					Has(ScentSeeds),
-					Has(GaleSeeds),
-					Has(MysterySeeds)
-				)
+					HasScents,
+					HasGales,
+					HasMysteries
+				),
+				MediumLogic
 			),
 			All(
-				Has(Shovel),
-				HardLogic()
+				HasShovel,
+				HardLogic
 			)
 		),
 		-- moblins
 		Any(
-			CanSwordKill(),
-			Has(Bombs), -- regrowing bushes are right there
-			CanShootSeedsCombat(),
+			CanSwordKill,
+			HasBombs, -- regrowing bushes are right there
+			CanShootSeedsCombat,
 			All(
-				Has(Feather),
-				CanKillWithPit()
+				HasFeather,
+				CanKillWithPit
 			),
 			All(
-				HardLogic(),
 				Any(
 					All(
-						CanUseSeeds(),
-						Has(EmberSeeds)
+						CanUseSeeds,
+						HasEmbers
 					),
-					CanPunch()
-				)
+					CanPunch
+				),
+				HardLogic
 			)
 		)
 	)

@@ -11,18 +11,18 @@ SubrosiaMountainEast:connect_two_ways_entrance(SubrosiaMountainWest, function() 
 SubrosiaMountainEast:connect_two_ways_entrance(StrangeBrothers, JumpLiquid5)
 SubrosiaMountainEast:connect_one_way(SubrosiaMountainMagnetDigSpot, function()
 	return All(
-		Has(Feather),
-		Has(Shovel),
+		HasFeather,
+		HasShovel,
 		Any(
-			Has(MagnetGlove),
-			JumpLiquid3()
+			HasMagnetGlove,
+			JumpLiquid3
 		)
 	)
 end)
 SubrosiaMountainEast:connect_one_way(SubrosianSecret, function()
 	return All(
-		Has(Feather),
-		Has(MagicBoomerang)
+		HasFeather,
+		HasMagicBoomerang
 	)
 end)
 SubrosiaMountainEast:connect_one_way(SubrosiaMountainTempleDigSpot, function() return Has(Shovel) end)
@@ -34,11 +34,11 @@ SubrosiaMountainWest:connect_two_ways_entrance(SubrosiaWilds, JumpLiquid5)
 SubrosiaMountainWest:connect_one_way_entrance(StrangeBrothers, function()
 	-- H&S skip
 	return All(
-		HellLogic(),
-		Has(Feather),
-		Has(PegasusSeeds),
-		Has(SeedSatchel),
-		Has(Bombs)
+		HasFeather,
+		HasPegasus,
+		HasSatchel,
+		HasBombs,
+		HellLogic
 	)
 end)
 SubrosiaMountainWest:connect_one_way(SubrosiaMountainLockedChest, function() return Has(Ribbon) end)
@@ -47,8 +47,8 @@ SubrosiaMountainWest:connect_one_way(SubrosiaMountainSouthDigSpot, function() re
 Volcano:connect_one_way_entrance(Fireworks, function() return Has(Bombs) end)
 Volcano:connect_one_way_entrance(SubrosiaMountainWest, function()
 	return All(
-		Has(Bracelet),
-		JumpLiquid3()
+		HasBracelet,
+		JumpLiquid3
 	)
 end)
 Volcano:connect_one_way_entrance(TempleRemainsLowerPortal, function()
@@ -64,20 +64,14 @@ TempleOfSeasons:connect_one_way(TempleDigSpot, function() return Has(Shovel) end
 TempleOfSeasons:connect_one_way(TempleSecret)
 TempleOfSeasons:connect_one_way(TempleWinterFairy, function()
 	return Any(
-		Has(Feather),
-		CanHitFarSwitch()
+		HasFeather,
+		CanHitFarSwitch
 	)
 end)
-TempleOfSeasons:connect_one_way(TempleSummerFairy, function()
-	return All(
-		Has(Bracelet),
-		CanReach(RosaDate)
-	)
-end, {RosaDate})
 TempleOfSeasons:connect_one_way_entrance(TempleAutumnEntrance, function()
 	return All(
-		Has(Feather),
-		Has(BombFlower)
+		Has(BombFlower),
+		HasFeather
 	)
 end)
 TempleAutumnEntrance:connect_one_way(TempleAutumnFairy, function() return Has(Feather) end)
@@ -110,12 +104,13 @@ MarketOrePurchases:connect_one_way(SubrosiaMarket4)
 MarketOrePurchases:connect_one_way(SubrosiaMarket5)
 SubrosiaMarket:connect_one_way(BeachDigSpot, function() return Has(Shovel) end)
 SubrosiaMarket:connect_one_way_entrance(RosaDate, function() return Has(Ribbon) end)
+RosaDate:connect_one_way(TempleSummerFairy, function() return Has(Bracelet) end)
 SubrosiaMarket:connect_one_way(SubrosiaMarketUpperDigSpot, function() return Has(Shovel) end)
 SubrosiaMarket:connect_one_way(SubrosiaMarketLowerDigSpot, function() return Has(Shovel) end)
 SubrosiaMarket:connect_one_way_entrance(WestFurnace, function()
 	return Any(
-		JumpLiquid3(),
-		Has(MagnetGlove)
+		JumpLiquid3,
+		HasMagnetGlove
 	)
 end)
 
@@ -136,18 +131,18 @@ StrangeBrothers:connect_one_way(TempleSpringFairy, function() return Has(Feather
 StrangeBrothers:connect_two_ways_entrance(SubrosiaWilds)
 SubrosiaWilds:connect_one_way_entrance(SubrosiaWildsMagnet, function()
 	return Any(
-		Jump4(),
-		Has(MagnetGlove)
+		Jump4,
+		HasMagnetGlove
 	)
 end)
 SubrosiaWildsMagnet:connect_one_way(WildsDigSpot, function() return Has(Shovel) end)
 StrangeBrothers:connect_two_ways_entrance(Pirates, function() return Has(Feather) end)
 StrangeBrothers:connect_one_way_entrance(SubrosiaMarket, function()
 	return All(
-		Has(Bracelet),
+		HasBracelet,
 		Any(
-			Has(MagnetGlove),
-			JumpLiquid2()
+			HasMagnetGlove,
+			JumpLiquid2
 		)
 	)
 end)
@@ -172,34 +167,34 @@ EastFurnace:connect_one_way(GreatFurnace, function()
 end, {TempleAutumnEntrance})
 EastFurnace:connect_one_way(SignGuy, function()
 	return Any(
-		DestroySigns(),
-		Has(SignGuyNone)
+		Has(SignGuyNone),
+		DestroySigns
 	)
 end)
 EastFurnace:connect_one_way(BombFlowerPickup, function()
 	return All(
-		Has(Feather),
-		Has(Bracelet)
+		HasFeather,
+		HasBracelet
 	)
 end)
 EastFurnace:connect_two_ways_entrance(WestFurnace, function() return Has(Feather) end)
 WestFurnace:connect_one_way(FurnaceTerrace, function()
 	return Any(
-		Jump4(),
-		Has(MagnetGlove),
+		Jump4,
+		HasMagnetGlove,
 		All(
-			HellLogic(),
-			JumpLiquid3()
+			JumpLiquid3,
+			HellLogic
 		)
 	)
 end)
 WestFurnace:connect_one_way_entrance(SubrosiaMarket, function()
 	return Any(
-		JumpLiquid3(),
-		Has(MagnetGlove),
+		JumpLiquid3,
+		HasMagnetGlove,
 		All(
-			Has(Bracelet),
-			Jump2()
+			HasBracelet,
+			Jump2
 		)
 	)
 end)

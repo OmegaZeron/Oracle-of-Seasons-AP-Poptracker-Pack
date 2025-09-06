@@ -107,9 +107,9 @@ function OoSLocation:discover(accessibility)
 		for _, recheck in ipairs(self.exits_to_recheck) do
 			for _, exit in pairs(recheck.exits) do
 				if (exit[1]:accessibility() < accessibility) then
-					-- local location, access = CheckAccess(recheck, exit)
-					-- location:discover(access)
-					DelayedExits[#DelayedExits+1] = {recheck, exit}
+					local location, access = CheckAccess(recheck, exit)
+					location:discover(access)
+					-- DelayedExits[#DelayedExits+1] = {recheck, exit}
 				end
 			end
 		end
@@ -124,8 +124,7 @@ end
 
 function CheckAccess(loc, exit)
 	local location = exit[1]
-	local rule = exit[2]
-	local access = rule()
+	local access = exit[2]()
 	if (access == nil) then
 		print("Error in rule for", location.name)
 		access = AccessibilityLevel.None
@@ -203,6 +202,9 @@ function All(...)
 	local args = { ... }
 	local min = AccessibilityLevel.Normal
 	for _, access in ipairs(args) do
+		if type(access) == "function" then
+			access = access()
+		end
 		if type(access) == "boolean" then
 			access = BoolToAccess(access)
 		end
@@ -222,6 +224,9 @@ function Any(...)
 	local args = { ... }
 	local max = AccessibilityLevel.None
 	for _, access in ipairs(args) do
+		if type(access) == "function" then
+			access = access()
+		end
 		if type(access) == "boolean" then
 			access = BoolToAccess(access)
 		end
@@ -238,26 +243,26 @@ function Any(...)
 end
 
 ScriptHost:AddWatchForCode("StateChange", "*", SetAsStale)
-ScriptHost:AddOnFrameHandler("delay recheck exit", function()
-	local changed = false
-	local max = 100
-	local exits = {}
-	if (#DelayedExits < max) then
-		max = #DelayedExits
-	end
-	for i = max, 1, -1 do
-		table.insert(exits, DelayedExits[i])
-		table.remove(DelayedExits, i)
-	end
+-- ScriptHost:AddOnFrameHandler("delay recheck exit", function()
+-- 	local changed = false
+-- 	local max = 100
+-- 	local exits = {}
+-- 	if (#DelayedExits < max) then
+-- 		max = #DelayedExits
+-- 	end
+-- 	for i = max, 1, -1 do
+-- 		table.insert(exits, DelayedExits[i])
+-- 		table.remove(DelayedExits, i)
+-- 	end
 
-	for i = #exits, 1, -1 do
-		changed = true
-		local recheck = exits[i][1]
-		local exit = exits[i][2]
-		local location, access = CheckAccess(recheck, exit)
-		location:discover(access)
-	end
-	if (changed and #DelayedExits == 0) then
-		Tracker:FindObjectForCode(LocationRefresh).Active = not Tracker:FindObjectForCode(LocationRefresh).Active
-	end
-end)
+-- 	for i = #exits, 1, -1 do
+-- 		changed = true
+-- 		local recheck = exits[i][1]
+-- 		local exit = exits[i][2]
+-- 		local location, access = CheckAccess(recheck, exit)
+-- 		location:discover(access)
+-- 	end
+-- 	if (changed and #DelayedExits == 0) then
+-- 		Tracker:FindObjectForCode(LocationRefresh).Active = not Tracker:FindObjectForCode(LocationRefresh).Active
+-- 	end
+-- end)

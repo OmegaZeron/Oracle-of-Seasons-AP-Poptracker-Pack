@@ -5,12 +5,12 @@ HoronVillage:connect_one_way(HoronMushroomChest, function()
 		All(
 			CanDestroyMushroom(true),
 			Any(
-				Has(Autumn),
 				Has(HoronVillageAutumn),
-				Has(HoronChaoticSeasons)
+				Has(HoronChaoticSeasons),
+				HasAutumn
 			)
 		),
-		CanDimitriClip()
+		CanDimitriClip
 	)
 end)
 HoronVillage:connect_one_way(HoronTree, function()
@@ -21,8 +21,8 @@ HoronVillage:connect_one_way(HoronTree, function()
 end)
 HoronVillage:connect_one_way(HoronTreeHP, function()
 	return Any(
-		CanBurnTrees(),
-		CanDimitriClip(),
+		CanBurnTrees,
+		CanDimitriClip,
 		AccessibilityLevel.Inspect
 	)
 end)
@@ -66,14 +66,12 @@ HoronVillage:connect_two_ways_entrance(ClockShop)
 ClockShop:connect_one_way(ClockShopTrade, function() return Has(WoodenBird) end)
 HoronVillage:connect_one_way(ClockShopSecret, function()
 	return All(
-		Has(Shovel),
+		HasShovel,
 		Any(
-			Has(NobleSword),
-			Has(BiggoronSword),
-			Has(FoolsOre),
+			HasStrongWeapon,
 			All(
-				Has(WoodSword),
-				MediumLogic()
+				HasSword,
+				MediumLogic
 			)
 		)
 	)
@@ -85,11 +83,11 @@ DrLeft:connect_one_way(DrLeftReward, CanLightTorches)
 DrLeft:connect_one_way_entrance(DrLeftBackyard, CanBombWall)
 DrLeftBackyard:connect_one_way(DrLeftBackyardChest, function()
 	return Any(
-		Has(Flippers),
-		JumpLiquid2(),
-		Has(Winter),
 		Has(HoronChaoticSeasons),
-		Has(HoronVillageWinter)
+		Has(HoronVillageWinter),
+		HasFlippers,
+		JumpLiquid2,
+		HasWinter
 	)
 end)
 
@@ -108,14 +106,14 @@ MakuTree:connect_one_way(MakuSeed, HasEnoughEssencesForGoal)
 HoronVillage:connect_two_ways_entrance(HoronPortalStairs)
 HoronPortalStairs:connect_one_way_entrance(HoronPortal, function()
 	return Any(
-		Jump6(),
-		Has(MagicBoomerang)
+		Jump6,
+		HasMagicBoomerang
 	)
 end)
 HoronPortal:connect_one_way_entrance(HoronPortalStairs, function()
 	return Any(
-		Jump6(),
-		CanTriggerLever()
+		Jump6,
+		CanTriggerLever
 	)
 end)
 HoronPortal:connect_two_ways_entrance(Pirates, function()
@@ -129,12 +127,7 @@ end)
 --exits
 HoronVillage:connect_one_way_entrance(EastWesternCoast)
 HoronVillage:connect_one_way_entrance(LowerNorthHoron)
-HoronVillage:connect_one_way_entrance(LowerEasternSuburbs, function()
-	return All(
-		CanUseSeeds(),
-		Has(EmberSeeds)
-	)
-end)
+HoronVillage:connect_one_way_entrance(LowerEasternSuburbs, CanBurnTrees)
 
 -- portal shuffle
 HoronPortal:connect_one_way_entrance(SuburbsPortal, function()

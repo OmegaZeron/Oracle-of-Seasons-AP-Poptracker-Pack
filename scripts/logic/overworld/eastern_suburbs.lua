@@ -1,29 +1,27 @@
 -- lower suburbs
 LowerEasternSuburbs:connect_one_way(EasternSuburbsFindSeason)
-LowerEasternSuburbs:connect_one_way(HoronVillageFindSeason) -- redundant, but could be relevant with alt starting locations
+LowerEasternSuburbs:connect_one_way(HoronVillageFindSeason)
 --standing items
 LowerEasternSuburbs:connect_one_way(Maple, CanMapleTrade)
 LowerEasternSuburbs:connect_one_way(WindmillHP, function()
 	return Any(
 		Has(EasternSuburbsWinter),
-		Has(Winter),
-		CanDimitriClip(),
+		HasWinter,
+		CanDimitriClip,
 		AccessibilityLevel.Inspect
 	)
 end)
-LowerEasternSuburbs:connect_one_way(WindmillTrade, function()
-	return Has(EngineGrease)
-end)
+LowerEasternSuburbs:connect_one_way(WindmillTrade, function() return Has(EngineGrease) end)
 LowerEasternSuburbs:connect_one_way(SuburbsSpringCave, function()
 	return All(
-		Has(Bracelet),
+		HasBracelet,
 		Any(
-			Has(Spring),
-			Has(EasternSuburbsSpring)
+			Has(EasternSuburbsSpring),
+			HasSpring
 		),
 		Any(
-			Has(MagnetGlove),
-			Jump3()
+			HasMagnetGlove,
+			Jump3
 		)
 	)
 end)
@@ -32,32 +30,33 @@ LowerEasternSuburbs:connect_one_way(SuburbsGasha, CanPlantGasha)
 -- exits
 LowerEasternSuburbs:connect_one_way_entrance(HoronVillage, function()
 	return All(
-		CanUseSeeds(),
-		Has(EmberSeeds)
+		CanUseSeeds,
+		HasEmbers
 	)
 end)
 LowerEasternSuburbs:connect_one_way_entrance(SamasaDesert, function() return CanReach(Pirates) end, {Pirates})
 LowerEasternSuburbs:connect_two_ways_entrance(UpperEasternSuburbs, function()
 	return All(
 		Any(
-			Has(Spring),
-			Has(Summer),
-			Has(Autumn),
 			Has(EasternSuburbsSpring),
 			Has(EasternSuburbsSummer),
-			Has(EasternSuburbsAutumn)
+			Has(EasternSuburbsAutumn),
+			HasSpring,
+			HasSummer,
+			HasAutumn
 		),
 		Any(
-			Has(Flippers),
-			Dimitri(),
-			JumpLiquid1(true)
+			JumpLiquid1(true),
+			HasFlippers,
+			Dimitri
+			-- HasSwitchHook
 		)
 	)
 end)
 LowerEasternSuburbs:connect_two_ways_entrance(UpperEasternSuburbsWinter, function()
 	return Any(
-		Has(Winter),
-		Has(EasternSuburbsWinter)
+		Has(EasternSuburbsWinter),
+		HasWinter
 	)
 end)
 LowerEasternSuburbs:connect_one_way_entrance(SuburbsPortal, CanDestroyBushFlute)
@@ -89,24 +88,24 @@ UpperEasternSuburbs:connect_one_way_entrance(UpperEasternSuburbsWinter, function
 UpperEasternSuburbsWinter:connect_one_way(EasternSuburbsFindSeason)
 UpperEasternSuburbsWinter:connect_one_way_entrance(UpperEasternSuburbs, function()
 	return Any(
-		Has(Spring),
-		Has(Summer),
-		Has(Autumn)
+		HasSpring,
+		HasSummer,
+		HasAutumn
 	)
 end)
 UpperEasternSuburbs:connect_one_way_entrance(SunkenDoorstep, function()
 	return Any(
-		Has(Spring),
-		Has(EasternSuburbsSpring)
+		Has(EasternSuburbsSpring),
+		HasSpring
 	)
 end)
 UpperEasternSuburbsWinter:connect_one_way_entrance(MoblinRoad)
 UpperEasternSuburbs:connect_one_way_entrance(WoodsOfWinter)
 UpperEasternSuburbsWinter:connect_one_way_entrance(WoodsOfWinter, function()
 	return Any(
-		Has(Feather),
-		AnyFlute(),
-		Has(Shovel)
+		HasFeather,
+		AnyFlute,
+		HasShovel
 	)
 end)
 
@@ -116,43 +115,43 @@ MoblinRoad:connect_one_way(WoodsOfWinterFindSeason)
 MoblinRoad:connect_one_way(Maple, CanMapleTrade)
 MoblinRoad:connect_one_way_entrance(UpperEasternSuburbsWinter, function()
 	return Any(
-		Has(Winter),
-		Has(EasternSuburbsWinter)
+		Has(EasternSuburbsWinter),
+		HasWinter
 	)
 end)
 MoblinRoad:connect_one_way_entrance(MoblinRoadBombCave, function()
 	return All(
-		BombPunchWall(),
+		BombPunchWall,
 		Any(
-			Has(Spring),
-			Has(Summer),
-			Has(Autumn),
 			Has(WoodsOfWinterSpring),
 			Has(WoodsOfWinterSummer),
-			Has(WoodsOfWinterAutumn)
+			Has(WoodsOfWinterAutumn),
+			HasSpring,
+			HasSummer,
+			HasAutumn
 		)
 	)
 end)
 MoblinRoadBombCave:connect_one_way(MoblinRoadBombCaveChest, CanDestroyBush)
 MoblinRoad:connect_two_ways_entrance(MoblinRoadWaterfallCaveChest, function()
 	return Any(
-		Has(Flippers),
-		JumpLiquid3()
+		HasFlippers,
+		JumpLiquid3
 	)
 end)
 MoblinRoad:connect_one_way_entrance(Holly, function()
 	return Any(
-		Has(Winter),
-		Has(WoodsOfWinterWinter)
+		Has(WoodsOfWinterWinter),
+		HasWinter
 	)
 end)
 MoblinRoad:connect_one_way(SuburbsOldMan, CanBurnTrees)
 MoblinRoad:connect_one_way(SuburbsHP, function()
 	return Any(
-		Has(Flippers),
-		Dimitri(),
-		Has(Bracelet),
-		Has(Feather),
+		HasFlippers,
+		Dimitri,
+		HasBracelet,
+		HasFeather,
 		AccessibilityLevel.Inspect
 	)
 end)
@@ -175,16 +174,16 @@ end)
 WoodsOfWinter:connect_one_way(GoldenMoblinKill, function()
 	return All(
 		Any(
-			Has(Autumn),
-			Has(WoodsOfWinterAutumn)
+			Has(WoodsOfWinterAutumn),
+			HasAutumn
 		),
 		Any(
-			CanSwordKill(),
-			Dimitri(),
+			CanSwordKill,
+			Dimitri,
 			All(
-				Has(EmberSeeds),
-				CanUseSeeds(),
-				MediumLogic()
+				HasEmbers,
+				CanUseSeeds,
+				MediumLogic
 			)
 		)
 	)
@@ -204,18 +203,18 @@ WoodsOfWinter:connect_one_way_entrance(WoodsOfWinterMushroomCave, function()
 	return Any(
 		All(
 			Any(
-				Has(Autumn),
-				Has(WoodsOfWinterAutumn)
+				Has(WoodsOfWinterAutumn),
+				HasAutumn
 			),
 			CanDestroyMushroom(true)
 		),
-		CanDimitriClip()
+		CanDimitriClip
 	)
 end)
 WoodsOfWinterMushroomCave:connect_one_way(WoodsOfWinterMushroomCaveChest, function()
 	return Any(
-		Has(MagnetGlove),
-		Jump4()
+		HasMagnetGlove,
+		Jump4
 	)
 end)
 

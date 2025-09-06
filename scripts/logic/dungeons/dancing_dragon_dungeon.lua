@@ -1,22 +1,22 @@
 -- 0 keys
 DancingFoyer:connect_one_way_entrance(DancingMinecart, function()
 	return Any(
-		Has(Flippers),
-		Has(Cape)
+		Has(Cape),
+		HasFlippers
 	)
 end)
 DancingMinecart:connect_one_way(DancingPotPush, function()
 	return All(
-		CanBombWall(),
-		Has(Bracelet)
+		CanBombWall,
+		HasBracelet
 	)
 end)
 DancingMinecart:connect_one_way_entrance(DancingAntiFairyMaze, function()
 	return Any(
-		CanHitLeverFromMinecart(),
+		CanHitLeverFromMinecart,
 		All(
-			Has(Bracelet),
-			HardLogic()
+			HasBracelet,
+			HardLogic
 		)
 	)
 end)
@@ -28,32 +28,32 @@ DancingFoyer:connect_one_way_entrance(DancingSpikeTrap, function()
 		Any(
 			Has(Cape),
 			All(
-				Has(Feather),
-				Has(Flippers)
+				HasFeather,
+				HasFlippers
 			)
 		)
 	)
 end)
 DancingSpikeTrap:connect_one_way(DancingWaterRing, function()
 	return All(
-		CanBombWall(),
+		CanBombWall,
 		Any(
-			CanNormalKill(),
+			CanNormalKill,
 			All(
-				Has(Bracelet),
-				MediumLogic()
+				HasBracelet,
+				MediumLogic
 			)
 		)
 	)
 end)
 DancingSpikeTrap:connect_one_way_entrance(DancingPostWaterRollers, function()
 	return All(
-		Has(Feather),
+		HasFeather,
 		Any(
-			Has(Flippers),
+			HasFlippers,
 			All(
-				HellLogic(),
-				JumpLiquid6()
+				JumpLiquid6,
+				HellLogic
 			)
 		)
 	)
@@ -61,21 +61,21 @@ end)
 DancingPostWaterRollers:connect_one_way(DancingPoolDrop, function()
 	return All(
 		Any(
-			Has(Flippers),
-			MediumLogic() -- collect item before it sinks
+			HasFlippers,
+			MediumLogic -- collect item before it sinks
 		),
 		Any(
-			CanNormalKill(),
+			CanNormalKill,
 			All(
-				Has(Bracelet),
-				MediumLogic()
+				HasBracelet,
+				MediumLogic
 			)
 		),
 		Any(
-			CanHitLeverFromMinecart(),
+			CanHitLeverFromMinecart,
 			All(
-				Has(Bracelet),
-				HardLogic()
+				HasBracelet,
+				HardLogic
 			)
 		)
 	)
@@ -85,13 +85,13 @@ DancingPostWaterRollers:connect_one_way_entrance(DancingMinecartTorches, functio
 	return All(
 		D4KeyCount(2),
 		Any(
-			CanKillStalfos(),
+			CanKillStalfos,
 			All(
-				Has(Bracelet),
-				MediumLogic()
+				HasBracelet,
+				MediumLogic
 			)
 		),
-		Jump2()
+		Jump2
 	)
 end)
 DancingMinecartTorches:connect_one_way(DancingScrub, function()
@@ -102,22 +102,22 @@ DancingMinecartTorches:connect_one_way(DancingScrub, function()
 end, {SnakeRupeeRoom, AncientRupeeRoom, HoronVillageOldMan, NorthHoronOldMan, SuburbsOldMan, NorthHolodrumPlainOldMan, SouthHolodrumPlainOldMan, GoronMountainOldMan, TarmOldMan, WesternCoastOldMan})
 DancingMinecartTorches:connect_one_way(DancingTorchChest, function()
 	return All(
-		Has(Slingshot),
-		Has(EmberSeeds)
+		HasSlingshot,
+		HasEmbers
 	)
 end)
 DancingMinecartTorches:connect_one_way_entrance(Agunima)
 Agunima:connect_one_way(DancingWildEmbers, function()
 	return All(
-		CanDestroyRespawningBush(),
-		MediumLogic()
+		CanDestroyRespawningBush,
+		MediumLogic
 	)
 end)
 Agunima:connect_one_way_entrance(DancingBranchingMinecart, function()
 	return All(
-		CanArmorKill(),
-		CanUseSeeds(),
-		Has(EmberSeeds)
+		CanArmorKill,
+		CanUseSeeds,
+		HasEmbers
 	)
 end)
 -- 5 keys
@@ -140,11 +140,11 @@ DancingBranchingMinecart:connect_one_way(DancingEyeDive, function()
 			)
 		),
 		Any(
-			Has(Slingshot),
-			Has(MagicBoomerang)
+			HasSlingshot,
+			HasMagicBoomerang
 		),
-		Jump2(),
-		Has(Flippers)
+		Jump2,
+		HasFlippers
 	)
 end)
 DancingBranchingMinecart:connect_one_way_entrance(DancingTorchPit, function()
@@ -157,30 +157,30 @@ DancingBranchingMinecart:connect_one_way_entrance(DancingTorchPit, function()
 			)
 		),
 		Any(
-			Has(Boomerang),
-			Has(Slingshot),
+			HasBoomerang,
+			HasSlingshot,
 			All(
 				-- jump slash the lever
-				Has(Feather),
-				HardLogic()
+				HasFeather,
+				HardLogic
 			)
 		)
 	)
 end)
 DancingTorchPit:connect_one_way_entrance(DancingPotHeaven, function()
 	return All(
-		HasD4BossKey(),
+		HasD4BossKey,
 		Any(
 			All(
-				Has(Slingshot),
-				Has(EmberSeeds)
+				HasSlingshot,
+				HasEmbers
 			),
-			Jump3(),
+			Jump3,
 			All(
-				Has(Feather),
-				CanUseSeeds(),
-				Has(EmberSeeds),
-				HardLogic()
+				HasFeather,
+				CanUseSeeds,
+				HasEmbers,
+				HardLogic
 			)
 		)
 	)
@@ -189,42 +189,42 @@ DancingPotHeaven:connect_one_way_entrance(Gohma, function()
 	return Any(
 		All(
 			-- don't break claw
-			MediumLogic(),
+			MediumLogic,
 			Any(
-				Has(Slingshot),
-				HardLogic()
+				HasSlingshot,
+				HardLogic
 			),
 			All(
-				CanUseSeeds(),
+				CanUseSeeds,
 				Any(
-					Has(EmberSeeds),
-					Has(ScentSeeds)
+					HasEmbers,
+					HasScents
 				)
 			)
 		),
 		All(
 			-- sword beams
-			MediumLogic(),
 			Any(
 				Has(NobleSword),
-				UseEnergyRing()
-			)
+				UseEnergyRing
+			),
+			MediumLogic
 		),
 		All(
 			-- break claw
-			CanSwordKill(),
-			CanUseSeeds(),
+			CanSwordKill,
+			CanUseSeeds,
 			Any(
-				Has(EmberSeeds),
-				Has(ScentSeeds),
+				HasEmbers,
+				HasScents,
 				All(
-					MediumLogic(),
-					Has(SeedSatchel),
+					HasSatchel,
 					Any(
-						Has(UpgradedSatchel),
+						HasUpgradedSatchel,
 						AccessibilityLevel.SequenceBreak
 					),
-					Has(MysterySeeds)
+					HasMysteries,
+					MediumLogic
 				)
 			)
 		)

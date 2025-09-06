@@ -1,39 +1,39 @@
 -- 0 keys
 AncientFoyer:connect_one_way_entrance(AncientRightOfSpinner, function()
 	return Any(
-		Has(Feather),
-		Has(Bombs),
-		HasSword(),
-		HardLogic()
+		HasFeather,
+		HasBombs,
+		HasAnySword,
+		HardLogic
 	)
 end)
 AncientRightOfSpinner:connect_one_way(AncientRupeeRoom, CanBombWall)
 AncientRightOfSpinner:connect_one_way_entrance(AncientRopeSpinnerWest)
 AncientRopeSpinnerWest:connect_one_way(AncientMagnetBallDrop, function()
 	return Any(
-		Jump4(),
+		Jump4,
 		All(
-			Has(Feather),
-			Has(MagnetGlove)
+			HasFeather,
+			HasMagnetGlove
 		),
 		All(
-			Has(CaneOfSomaria),
-			MediumLogic()
+			HasCane,
+			MediumLogic
 		)
 	)
 end)
 AncientRopeSpinnerWest:connect_one_way_entrance(AncientArrowTrap, function()
 	return All(
-		Has(MagicBoomerang),
-		CanDestroyCrystal()
+		HasMagicBoomerang,
+		CanDestroyCrystal
 	)
 end)
 AncientArrowTrap:connect_one_way_entrance(AncientSpinyTrampoline, function()
 	return All(
-		CanBurnTrees(),
+		CanBurnTrees,
 		Any(
-			Has(Slingshot),
-			MediumLogic()
+			HasSlingshot,
+			MediumLogic
 		)
 	)
 end)
@@ -50,8 +50,8 @@ AncientFoyer:connect_one_way_entrance(AncientRopeSpinnerWest, function()
 			)
 		),
 		Any(
-			Has(MagnetGlove),
-			Has(CaneOfSomaria)
+			HasMagnetGlove,
+			HasCane
 		)
 	)
 end)
@@ -70,11 +70,11 @@ Ancient2FGibdo:connect_one_way_entrance(AncientTrappedChest, CanBombWall)
 AncientTrappedChest:connect_one_way_entrance(AncientArmosDarknutDrop, function() return Has(Feather) end)
 AncientFoyer:connect_one_way(AncientNorthOfSpinnerChest, function()
 	return All(
-		CanDestroyCrystal(),
-		Has(MagnetGlove),
+		CanDestroyCrystal,
+		HasMagnetGlove,
 		Any(
-			MediumLogic(),
-			Has(Feather)
+			HasFeather,
+			MediumLogic
 		),
 		Any(
 			D6KeyCount(3),
@@ -82,33 +82,33 @@ AncientFoyer:connect_one_way(AncientNorthOfSpinnerChest, function()
 				D6KeyCount(2),
 				Any(
 					All(
-						CanBombWall(),
-						Has(Feather)
+						CanBombWall,
+						HasFeather
 					),
-					CanSwordKill(),
+					CanSwordKill,
 					All(
-						Has(Bombs40),
-						MediumLogic()
+						HasCombatBombs,
+						MediumLogic
 					),
 					All(
-						Has(ExpertsRing),
-						MediumLogic()
+						HasGoodPunch,
+						MediumLogic
 					)
 				)
 			),
 			All(
 				D6KeyCount(1),
-				CanBombWall(),
-				Has(Feather),
+				CanBombWall,
+				HasFeather,
 				Any(
-					CanSwordKill(),
+					CanSwordKill,
 					All(
-						Has(Bombs40),
-						MediumLogic()
+						HasCombatBombs,
+						MediumLogic
 					),
 					All(
-						Has(ExpertsRing),
-						MediumLogic()
+						HasGoodPunch,
+						MediumLogic
 					),
 					AccessibilityLevel.SequenceBreak
 				)
@@ -122,8 +122,8 @@ AncientVireDoorstep:connect_one_way_entrance(Vire, function()
 		-- other than opening the miniboss portal, which can get you to spinner north
 		D6KeyCount(1),
 		Any(
-			Has(WoodSword),
-			Has(FoolsOre)
+			Has(FoolsOre),
+			HasSword
 		)
 	)
 end)
@@ -133,30 +133,30 @@ Vire:connect_one_way_entrance(AncientBossDoor, function()
 			D6KeyCount(3),
 			AccessibilityLevel.SequenceBreak
 		),
-		Has(Feather),
+		HasFeather,
 		Any(
-			Has(MagnetGlove),
+			HasMagnetGlove,
 			All(
-				MediumLogic(),
-				Has(GaleSeeds),
+				HasGales,
 				Any(
-					Has(Slingshot),
+					HasSlingshot,
 					All(
-						Has(SeedSatchel),
-						HardLogic()
+						HasSatchel,
+						HardLogic
 					)
-				)
+				),
+				MediumLogic
 			)
 		)
 	)
 end)
 AncientBossDoor:connect_one_way_entrance(Manhandla, function()
 	return All(
-		HasD6BossKey(),
-		Has(MagicBoomerang),
+		HasD6BossKey,
+		HasMagicBoomerang,
 		Any(
-			CanSwordKill(),
-			Has(Slingshot) -- any seed works?
+			CanSwordKill,
+			HasSlingshot -- any seed works?
 		)
 	)
 end)

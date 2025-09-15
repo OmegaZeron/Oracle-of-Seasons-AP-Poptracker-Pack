@@ -7,10 +7,10 @@ SunkenCity:connect_one_way(SunkenTree, function()
 end)
 SunkenCity:connect_one_way(SunkenSummerCave, function()
 	return All(
-		HasFlippers,
+		Flippers,
 		Any(
-			Has(SunkenCitySummer),
-			HasSummer
+			SunkenCitySummer,
+			Summer
 		),
 		CanDestroyBush
 	)
@@ -25,10 +25,10 @@ SunkenDimitri:connect_one_way(SunkenTree, function()
 end)
 SunkenDimitri:connect_one_way(MasterChallenge, function()
 	return All(
-		HasSword,
+		WoodSword,
 		Any(
-			HasFlippers,
-			HasFeather
+			Flippers,
+			Feather
 		)
 	)
 end)
@@ -37,17 +37,17 @@ SunkenDimitri:connect_one_way(SunkenMasterDiverChest)
 SunkenCity:connect_one_way(SunkenGashaSpot, function()
 	return All(
 		CanPlantGasha,
-		HasFlippers,
+		Flippers,
 		Any(
-			Has(SunkenCitySummer),
-			HasSummer
+			SunkenCitySummer,
+			Summer
 		)
 	)
 end)
 SunkenDimitri:connect_one_way(SunkenGashaSpot, CanPlantGasha)
 SunkenCity:connect_one_way(DiverSecret, function()
 	return All(
-		HasFlippers,
+		Flippers,
 		Any(
 			CanSwordKill,
 			MediumLogic
@@ -59,20 +59,20 @@ end)
 SunkenCity:connect_one_way_entrance(SunkenDimitri, function()
 	return Any(
 		Dimitri,
-		HasBombs
+		Bombs
 	)
 end)
 SunkenCity:connect_one_way_entrance(Syrup, function()
 	return All(
-		Has(Mushroom),
+		Mushroom,
 		Any(
-			Has(SunkenCityWinter),
+			SunkenCityWinter,
 			All(
-				HasWinter,
+				Winter,
 				Any(
-					HasFlippers,
+					Flippers,
 					Dimitri,
-					HasBombs
+					Bombs
 				)
 			)
 		)
@@ -86,23 +86,23 @@ Syrup:connect_one_way_entrance(SyrupShop, function()
 end, {SnakeRupeeRoom, AncientRupeeRoom, HoronVillageOldMan, NorthHoronOldMan, SuburbsOldMan, NorthHolodrumPlainOldMan, SouthHolodrumPlainOldMan, GoronMountainOldMan, TarmOldMan, WesternCoastOldMan})
 SunkenCity:connect_one_way_entrance(LowerMtCucco, function()
 	return All(
-		HasFlippers,
+		Flippers,
 		Any(
-			Has(SunkenCitySummer),
-			HasSummer
+			SunkenCitySummer,
+			Summer
 		)
 	)
 end)
 SunkenCity:connect_one_way_entrance(MoblinRoadWaterfallCaveChest, function()
 	return All(
-		HasFlippers,
+		Flippers,
 		Any(
-			Has(SunkenCitySpring),
-			Has(SunkenCitySummer),
-			Has(SunkenCityAutumn),
-			HasSpring,
-			HasSummer,
-			HasAutumn
+			SunkenCitySpring,
+			SunkenCitySummer,
+			SunkenCityAutumn,
+			Spring,
+			Summer,
+			Autumn
 		)
 	)
 end)

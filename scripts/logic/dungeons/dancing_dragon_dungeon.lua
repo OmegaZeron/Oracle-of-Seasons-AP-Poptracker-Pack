@@ -1,21 +1,21 @@
 -- 0 keys
 DancingFoyer:connect_one_way_entrance(DancingMinecart, function()
 	return Any(
-		Has(Cape),
-		HasFlippers
+		Cape,
+		Flippers
 	)
 end)
 DancingMinecart:connect_one_way(DancingPotPush, function()
 	return All(
 		CanBombWall,
-		HasBracelet
+		Bracelet
 	)
 end)
 DancingMinecart:connect_one_way_entrance(DancingAntiFairyMaze, function()
 	return Any(
 		CanHitLeverFromMinecart,
 		All(
-			HasBracelet,
+			Bracelet,
 			HardLogic
 		)
 	)
@@ -26,10 +26,10 @@ DancingFoyer:connect_one_way_entrance(DancingSpikeTrap, function()
 	return All(
 		D4KeyCount(1),
 		Any(
-			Has(Cape),
+			Cape,
 			All(
-				HasFeather,
-				HasFlippers
+				Feather,
+				Flippers
 			)
 		)
 	)
@@ -40,7 +40,7 @@ DancingSpikeTrap:connect_one_way(DancingWaterRing, function()
 		Any(
 			CanNormalKill,
 			All(
-				HasBracelet,
+				Bracelet,
 				MediumLogic
 			)
 		)
@@ -48,9 +48,9 @@ DancingSpikeTrap:connect_one_way(DancingWaterRing, function()
 end)
 DancingSpikeTrap:connect_one_way_entrance(DancingPostWaterRollers, function()
 	return All(
-		HasFeather,
+		Feather,
 		Any(
-			HasFlippers,
+			Flippers,
 			All(
 				JumpLiquid6,
 				HellLogic
@@ -61,20 +61,20 @@ end)
 DancingPostWaterRollers:connect_one_way(DancingPoolDrop, function()
 	return All(
 		Any(
-			HasFlippers,
+			Flippers,
 			MediumLogic -- collect item before it sinks
 		),
 		Any(
 			CanNormalKill,
 			All(
-				HasBracelet,
+				Bracelet,
 				MediumLogic
 			)
 		),
 		Any(
 			CanHitLeverFromMinecart,
 			All(
-				HasBracelet,
+				Bracelet,
 				HardLogic
 			)
 		)
@@ -87,7 +87,7 @@ DancingPostWaterRollers:connect_one_way_entrance(DancingMinecartTorches, functio
 		Any(
 			CanKillStalfos,
 			All(
-				HasBracelet,
+				Bracelet,
 				MediumLogic
 			)
 		),
@@ -102,8 +102,8 @@ DancingMinecartTorches:connect_one_way(DancingScrub, function()
 end, {SnakeRupeeRoom, AncientRupeeRoom, HoronVillageOldMan, NorthHoronOldMan, SuburbsOldMan, NorthHolodrumPlainOldMan, SouthHolodrumPlainOldMan, GoronMountainOldMan, TarmOldMan, WesternCoastOldMan})
 DancingMinecartTorches:connect_one_way(DancingTorchChest, function()
 	return All(
-		HasSlingshot,
-		HasEmbers
+		CanShootSeeds,
+		EmberSeeds
 	)
 end)
 DancingMinecartTorches:connect_one_way_entrance(Agunima)
@@ -117,7 +117,7 @@ Agunima:connect_one_way_entrance(DancingBranchingMinecart, function()
 	return All(
 		CanArmorKill,
 		CanUseSeeds,
-		HasEmbers
+		EmberSeeds
 	)
 end)
 -- 5 keys
@@ -140,11 +140,11 @@ DancingBranchingMinecart:connect_one_way(DancingEyeDive, function()
 			)
 		),
 		Any(
-			HasSlingshot,
-			HasMagicBoomerang
+			CanShootSeeds,
+			MagicBoomerang
 		),
 		Jump2,
-		HasFlippers
+		Flippers
 	)
 end)
 DancingBranchingMinecart:connect_one_way_entrance(DancingTorchPit, function()
@@ -157,11 +157,11 @@ DancingBranchingMinecart:connect_one_way_entrance(DancingTorchPit, function()
 			)
 		),
 		Any(
-			HasBoomerang,
-			HasSlingshot,
+			Boomerang,
+			CanShootSeeds,
 			All(
 				-- jump slash the lever
-				HasFeather,
+				Feather,
 				HardLogic
 			)
 		)
@@ -172,14 +172,14 @@ DancingTorchPit:connect_one_way_entrance(DancingPotHeaven, function()
 		HasD4BossKey,
 		Any(
 			All(
-				HasSlingshot,
-				HasEmbers
+				CanShootSeeds,
+				EmberSeeds
 			),
 			Jump3,
 			All(
-				HasFeather,
+				Feather,
 				CanUseSeeds,
-				HasEmbers,
+				EmberSeeds,
 				HardLogic
 			)
 		)
@@ -191,21 +191,21 @@ DancingPotHeaven:connect_one_way_entrance(Gohma, function()
 			-- don't break claw
 			MediumLogic,
 			Any(
-				HasSlingshot,
+				CanShootSeeds,
 				HardLogic
 			),
 			All(
 				CanUseSeeds,
 				Any(
-					HasEmbers,
-					HasScents
+					EmberSeeds,
+					ScentSeeds
 				)
 			)
 		),
 		All(
 			-- sword beams
 			Any(
-				Has(NobleSword),
+				NobleSword,
 				UseEnergyRing
 			),
 			MediumLogic
@@ -215,15 +215,15 @@ DancingPotHeaven:connect_one_way_entrance(Gohma, function()
 			CanSwordKill,
 			CanUseSeeds,
 			Any(
-				HasEmbers,
-				HasScents,
+				EmberSeeds,
+				ScentSeeds,
 				All(
-					HasSatchel,
+					Satchel,
 					Any(
-						HasUpgradedSatchel,
+						UpgradedSatchel,
 						AccessibilityLevel.SequenceBreak
 					),
-					HasMysteries,
+					MysterySeeds,
 					MediumLogic
 				)
 			)

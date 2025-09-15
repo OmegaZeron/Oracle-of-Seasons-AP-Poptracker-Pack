@@ -99,10 +99,10 @@ ITEM_MAPPING = {
 	[18944] = {"rustybell", "toggle"},
 	[9472] = {"polishedbell", "toggle"},
 	-- [19200] = {"treasuremap", "toggle"},
-	[19456] = {"roundjewel", "toggle"},
-	[19712] = {"pyramidjewel", "toggle"},
-	[19968] = {"squarejewel", "toggle"},
-	[20224] = {"xjewel", "toggle"},
+	[19456] = {"jewels", "consumable"}, -- roundjewel
+	[19712] = {"jewels", "consumable"}, -- pyramidjewel
+	[19968] = {"jewels", "consumable"}, -- squarejewel
+	[20224] = {"jewels", "consumable"}, -- xjewel
 	[20480] = {"redore", "toggle"},
 	[20736] = {"blueore", "toggle"},
 	[20992] = {"hardore", "toggle"},
@@ -124,4 +124,6 @@ ITEM_MAPPING = {
 
 	-- [00000] = {"somaria", "toggle"},
 	-- [00000] = {"bombchus", "progressive"}
+	-- [00000] = {"hook", "progressive"}
+	-- [00000] = {"shooter", "progressive"}
 }

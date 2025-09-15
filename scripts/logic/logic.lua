@@ -204,6 +204,8 @@ function All(...)
 	for _, access in ipairs(args) do
 		if type(access) == "function" then
 			access = access()
+		elseif type(access) == "string" then
+			access = BoolToAccess(Has(access))
 		end
 		if type(access) == "boolean" then
 			access = BoolToAccess(access)
@@ -226,6 +228,8 @@ function Any(...)
 	for _, access in ipairs(args) do
 		if type(access) == "function" then
 			access = access()
+		elseif type(access) == "string" then
+			access = BoolToAccess(Has(access))
 		end
 		if type(access) == "boolean" then
 			access = BoolToAccess(access)
@@ -243,26 +247,3 @@ function Any(...)
 end
 
 ScriptHost:AddWatchForCode("StateChange", "*", SetAsStale)
--- ScriptHost:AddOnFrameHandler("delay recheck exit", function()
--- 	local changed = false
--- 	local max = 100
--- 	local exits = {}
--- 	if (#DelayedExits < max) then
--- 		max = #DelayedExits
--- 	end
--- 	for i = max, 1, -1 do
--- 		table.insert(exits, DelayedExits[i])
--- 		table.remove(DelayedExits, i)
--- 	end
-
--- 	for i = #exits, 1, -1 do
--- 		changed = true
--- 		local recheck = exits[i][1]
--- 		local exit = exits[i][2]
--- 		local location, access = CheckAccess(recheck, exit)
--- 		location:discover(access)
--- 	end
--- 	if (changed and #DelayedExits == 0) then
--- 		Tracker:FindObjectForCode(LocationRefresh).Active = not Tracker:FindObjectForCode(LocationRefresh).Active
--- 	end
--- end)

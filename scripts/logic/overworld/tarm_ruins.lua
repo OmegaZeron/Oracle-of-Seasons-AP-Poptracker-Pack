@@ -2,25 +2,25 @@ TarmEntrance:connect_one_way_entrance(NorthSpoolSwamp, function() return Tracker
 TarmEntrance:connect_one_way_entrance(TarmTreeStump, function()
 	return All(
 		Any(
-			Has(LostWoodsWinter),
-			HasWinter
+			LostWoodsWinter,
+			Winter
 		),
 		Any(
-			HasSpring,
-			HasSummer,
-			HasWinter
+			Spring,
+			Summer,
+			Winter
 		),
 		Any(
-			Has(LostWoodsSummer),
-			HasSummer,
+			LostWoodsSummer,
+			Summer,
 			All(
 				Any(
-					Has(LostWoodsAutumn),
-					HasAutumn
+					LostWoodsAutumn,
+					Autumn
 				),
-				HasMagicBoomerang,
+				MagicBoomerang,
 				Any(
-					HasFeather,
+					Feather,
 					HardLogic
 				),
 				MediumLogic
@@ -32,11 +32,11 @@ TarmTreeStump:connect_one_way(Maple, CanMapleTrade)
 TarmTreeStump:connect_one_way(GoldenLynelKill, CanSwordKill)
 TarmTreeStump:connect_one_way(TarmLostWoodsScrub, function()
 	return All(
-		HasShield,
-		HasAutumn,
+		Shield,
+		Autumn,
 		CanDestroyMushroom,
 		Any(
-			HasFlippers,
+			Flippers,
 			JumpLiquid2
 		)
 	)
@@ -44,58 +44,58 @@ end)
 TarmTreeStump:connect_one_way_entrance(LostWoods, function()
 	return All(
 		CanDestroyMushroom,
-		HasAutumn
+		Autumn
 	)
 end)
 LostWoods:connect_one_way(GoldenLynelKill, function()
 	return All(
 		CanSwordKill,
 		Any(
-			Has(LostWoodsAutumn),
-			HasAutumn
+			LostWoodsAutumn,
+			Autumn
 		),
 		CanDestroyMushroom,
-		HasWinter
+		Winter
 	)
 end)
 LostWoods:connect_one_way_entrance(TarmEntrance, function()
 	return All(
 		Any(
-			Has(LostWoodsAutumn),
-			HasAutumn
+			LostWoodsAutumn,
+			Autumn
 		),
 		CanDestroyMushroom,
-		HasWinter
+		Winter
 	)
 end)
 LostWoods:connect_one_way(TarmPedestalScrub, function()
 	return All(
-		Has(Phonograph),
+		Phonograph,
 		CanBurnTrees,
 		Any(
-			Has(LostWoodsSpring),
-			Has(LostWoodsSummer),
-			Has(LostWoodsAutumn),
-			HasShovel,
-			HasSpring,
-			HasSummer,
-			HasAutumn
+			LostWoodsSpring,
+			LostWoodsSummer,
+			LostWoodsAutumn,
+			Shovel,
+			Spring,
+			Summer,
+			Autumn
 		)
 	)
 end)
 LostWoods:connect_one_way(TarmLostWoodsScrub, function()
 	return All(
 		Any(
-			Has(LostWoodsAutumn),
-			HasAutumn
+			LostWoodsAutumn,
+			Autumn
 		),
 		CanReach(TarmTreeStump),
 		Any(
 			Jump3,
-			HasFlippers
+			Flippers
 		),
 		CanDestroyMushroom,
-		HasShield
+		Shield
 	)
 end, {TarmTreeStump})
 LostWoods:connect_one_way(Pedestal, CanPedestal)
@@ -133,14 +133,14 @@ TarmTree:connect_one_way(TarmRuinsFindSeason)
 TarmTree:connect_one_way(TarmGasha, function()
 	return All(
 		CanPlantGasha,
-		HasShovel
+		Shovel
 	)
 end)
 TarmTree:connect_one_way(TarmMushroomTreeChest, function()
 	return All(
 		Any(
-			Has(TarmRuinsAutumn),
-			HasAutumn
+			TarmRuinsAutumn,
+			Autumn
 		),
 		CanBurnTrees,
 		CanDestroyMushroom
@@ -149,15 +149,15 @@ end)
 TarmTree:connect_one_way(TarmOldMan, function()
 	return All(
 		Any(
-			Has(TarmRuinsWinter),
-			HasWinter
+			TarmRuinsWinter,
+			Winter
 		),
 		CanBurnTrees,
 		Any(
 			All(
 				Any(
-					Has(TarmRuinsSpring),
-					HasSpring
+					TarmRuinsSpring,
+					Spring
 				),
 				CanDestroyFlower
 			),
@@ -171,11 +171,11 @@ end, {RoosterAdventure})
 TarmTree:connect_one_way_entrance(UpperTarm, function()
 	return All(
 		Any(
-			Has(TarmRuinsWinter),
-			HasWinter
+			TarmRuinsWinter,
+			Winter
 		),
 		Any(
-			HasShovel,
+			Shovel,
 			CanBurnTrees,
 			All(
 				CanReach(RoosterAdventure),
@@ -189,8 +189,8 @@ UpperTarm:connect_one_way_entrance(TarmTree)
 UpperTarm:connect_one_way(TarmOldMan, function()
 	return All(
 		Any(
-			Has(TarmRuinsSpring),
-			HasSpring
+			TarmRuinsSpring,
+			Spring
 		),
 		CanDestroyFlower,
 		CanBurnTrees
@@ -199,8 +199,8 @@ end)
 UpperTarm:connect_one_way_entrance(AncientRuins, function()
 	return All(
 		Any(
-			Has(TarmRuinsSpring),
-			HasSpring
+			TarmRuinsSpring,
+			Spring
 		),
 		CanDestroyFlower
 	)
@@ -208,63 +208,63 @@ end)
 AncientRuins:connect_one_way(TarmRuinsFindSeason)
 AncientRuins:connect_one_way_entrance(UpperTarm, function()
 	return All(
-		Has(TarmRuinsSpring),
+		TarmRuinsSpring,
 		CanDestroyFlower
 	)
 end)
 AncientRuins:connect_two_ways_entrance(AncientFoyer, function()
 	return Any(
-		Has(ShuffleDungeonOff),
-		Has(D6LeadsToD6)
+		ShuffleDungeonOff,
+		D6LeadsToD6
 	)
 end)
 
 -- dungeon shuffle
 AncientRuins:connect_two_ways_entrance(HerosCaveFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D6LeadsToD0)
+		ShuffleDungeonOn,
+		D6LeadsToD0
 	)
 end)
 AncientRuins:connect_one_way_entrance(GnarledFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D6LeadsToD1)
+		ShuffleDungeonOn,
+		D6LeadsToD1
 	)
 end)
 AncientRuins:connect_two_ways_entrance(SnakeFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D6LeadsToD2)
+		ShuffleDungeonOn,
+		D6LeadsToD2
 	)
 end)
 AncientRuins:connect_one_way_entrance(PoisonFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D6LeadsToD3)
+		ShuffleDungeonOn,
+		D6LeadsToD3
 	)
 end)
 AncientRuins:connect_one_way_entrance(DancingFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D6LeadsToD4)
+		ShuffleDungeonOn,
+		D6LeadsToD4
 	)
 end)
 AncientRuins:connect_one_way_entrance(UnicornFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D6LeadsToD5)
+		ShuffleDungeonOn,
+		D6LeadsToD5
 	)
 end)
 AncientRuins:connect_one_way_entrance(CryptFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D6LeadsToD7)
+		ShuffleDungeonOn,
+		D6LeadsToD7
 	)
 end)
 AncientRuins:connect_one_way_entrance(MazeFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D6LeadsToD8)
+		ShuffleDungeonOn,
+		D6LeadsToD8
 	)
 end)

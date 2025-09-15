@@ -2,18 +2,18 @@ SouthGoronMountain:connect_one_way(SunkenCityFindSeason)
 SouthGoronMountain:connect_one_way(GoronGashaWest, function()
 	return All(
 		CanPlantGasha,
-		HasShovel
+		Shovel
 	)
 end)
 SouthGoronMountain:connect_one_way(GoronGashaEast, function()
 	return All(
 		CanPlantGasha,
-		HasBracelet
+		Bracelet
 	)
 end)
 SouthGoronMountain:connect_two_ways_entrance(WestGoronMountain, function()
 	return Any(
-		HasFlippers,
+		Flippers,
 		JumpLiquid4
 	)
 end)
@@ -26,8 +26,8 @@ WestGoronMountain:connect_one_way(GoronLavaChest, function()
 end)
 WestGoronMountain:connect_one_way_entrance(Biggoron, function()
 	return All(
-		Has(LavaSoup),
-		HasFeather
+		LavaSoup,
+		Feather
 	)
 end)
 Biggoron:connect_one_way(BiggoronSecret)
@@ -41,7 +41,7 @@ WestGoronMountain:connect_one_way(Maple, CanMapleTrade)
 CenterGoronMountain:connect_one_way(Maple, CanMapleTrade)
 SouthGoronMountain:connect_one_way(NatzuPlatformCave, function()
 	return Any(
-		HasFlippers,
+		Flippers,
 		Dimitri
 	)
 end)

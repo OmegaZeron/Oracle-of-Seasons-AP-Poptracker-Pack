@@ -1,10 +1,10 @@
 DragonKeyhole:connect_one_way_entrance(RoosterAdventure, function()
     return All(
-        HasGales,
-        HasSatchel,
+        GaleSeeds,
+        Satchel,
         Any(
-            Has(SpringBanana),
-            HasShovel
+            SpringBanana,
+            Shovel
         ),
         HellLogic
     )
@@ -14,14 +14,14 @@ RoosterAdventure:connect_one_way_entrance(MoblinKeep, function()
     return Any(
         All(
             GetCuccos()["sunken"][2] > 0,
-            Has(NatzuIsRicky)
+            NatzuIsRicky
         ),
         All(
             GetCuccos()["horon"][2] > 0,
             Any(
-                Has(AnyCompanion),
+                AnyCompanion,
                 All(
-                    Has(NatzuIsMoosh),
+                    NatzuIsMoosh,
                     Jump3
                 )
             )
@@ -34,13 +34,13 @@ RoosterAdventure:connect_one_way_entrance(SunkenGashaSpot, function()
         GetCuccos()["sunken"][3] > 0,
         CanPlantGasha,
         Any(
-            Has(SunkenCityWinter),
+            SunkenCityWinter,
             All(
-                HasWinter,
+                Winter,
                 Any(
-                    HasFlippers,
+                    Flippers,
                     Dimitri,
-                    HasBombs -- save Dimitri
+                    Bombs -- save Dimitri
                 )
             )
         )
@@ -49,7 +49,7 @@ end)
 RoosterAdventure:connect_one_way_entrance(Syrup, function()
     return All(
         GetCuccos()["sunken"][3] > 0,
-        Has(Mushroom)
+        Mushroom
     )
 end)
 
@@ -58,11 +58,11 @@ RoosterAdventure:connect_one_way_entrance(SuburbsSpringCave, function()
     return All(
         GetCuccos()["suburbs"][3] > 0,
         Any(
-            Has(EasternSuburbsSpring),
-            HasSpring
+            EasternSuburbsSpring,
+            Spring
         ),
         Any(
-            HasMagnetGlove,
+            MagnetGlove,
             Jump3
         )
     )
@@ -80,31 +80,31 @@ RoosterAdventure:connect_one_way_entrance(HoronTreeHP, function() return GetCucc
 RoosterAdventure:connect_one_way_entrance(GraveyardHP, function()
     return All(
         GetCuccos()["horon"][2] > 0,
-        Has(PolishedBell),
         CanReach(Pirates),
-        Has(WesternCoastSummer)
+        PolishedBell,
+        WesternCoastSummer
     )
 end, {Pirates})
 RoosterAdventure:connect_one_way_entrance(NorthSpoolSwamp, function() return GetCuccos()["swamp"][1] >= 0 end)
 RoosterAdventure:connect_one_way_entrance(SpoolWinterCave, function()
     return Any(
         All(
+            GetCuccos()["horon"][1] > 0,
             Any(
-                HasFlippers,
+                Flippers,
                 Dimitri
-            ),
-            GetCuccos()["horon"][1] > 0
+            )
         ),
         All(
-            Has(FloodgateKey),
             GetCuccos()["swamp"][1] > 0,
+            FloodgateKey,
             Any(
-                Has(SpoolSwampSummer),
-                Has(SpoolSwampAutumn),
-                Has(SpoolSwampWinter),
-                HasSummer,
-                HasAutumn,
-                HasWinter
+                SpoolSwampSummer,
+                SpoolSwampAutumn,
+                SpoolSwampWinter,
+                Summer,
+                Autumn,
+                Winter
             )
         )
     )
@@ -114,9 +114,9 @@ RoosterAdventure:connect_one_way_entrance(TarmLostWoodsScrub, function()
         GetCuccos()["swamp"][2] > 0,
         CanEnterTarm(),
         Any(
-            Has(LostWoodsSummer),
             CanReach(TarmTreeStump),
-            HasSummer
+            LostWoodsSummer,
+            Summer
         )
     )
 end, {TarmTreeStump})
@@ -125,19 +125,19 @@ RoosterAdventure:connect_one_way_entrance(TempleRemainsStump, function()
         GetCuccos()["mt. cucco"][1] > 0,
         Jump3,
         Any(
-            Has(TempleRemainsSummer),
-            HasSummer,
+            TempleRemainsSummer,
+            Summer,
             All(
                 Any(
-                    Has(TempleRemainsWinter),
-                    HasWinter
+                    TempleRemainsWinter,
+                    Winter
                 ),
-                HasShovel
+                Shovel
             ),
             All(
                 Any(
-                    Has(TempleRemainsSpring),
-                    HasSpring
+                    TempleRemainsSpring,
+                    Spring
                 ),
                 CanDestroyFlower
             )
@@ -150,7 +150,7 @@ RoosterAdventure:connect_one_way_entrance(TempleRemainsUpperPortal, function()
         GetCuccos()["mt. cucco"][2] > 0,
         Jump3,
         Any(
-            HasMagnetGlove,
+            MagnetGlove,
             Jump6
         )
     )

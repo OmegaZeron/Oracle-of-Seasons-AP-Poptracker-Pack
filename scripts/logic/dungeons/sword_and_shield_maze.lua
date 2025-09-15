@@ -3,9 +3,9 @@ MazeFoyer:connect_one_way(MazeEyeDrop, function()
 	return All(
 		CanDestroyPot,
 		Any(
-			HasSlingshot,
+			CanShootSeeds,
 			All(
-				HasFeather,
+				Feather,
 				CanUseSeeds,
 				HasContactSeeds,
 				MediumLogic
@@ -15,9 +15,9 @@ MazeFoyer:connect_one_way(MazeEyeDrop, function()
 end)
 MazeFoyer:connect_one_way(MazeThreeEyeChest, function()
 	return All(
-		HasFeather,
+		Feather,
 		Any(
-			HasHSS,
+			HyperSlingshot,
 			All(
 				CanUseSeeds,
 				HasContactSeeds,
@@ -32,7 +32,7 @@ MazeHardhats:connect_one_way(MazeHardhatDrop, function()
 		CanGaleKill,
 		All(
 			CanBombWall,
-			HasMagnetGlove
+			MagnetGlove
 		)
 	)
 end)
@@ -41,11 +41,11 @@ MazeHardhats:connect_one_way_entrance(MazeBigBladeTrap, function()
 	return All(
 		D8KeyCount(1),
 		Any(
-			Has(Cape),
+			Cape,
 			All(
-				HasFeather,
-				HasSatchel,
-				HasPegasus,
+				Feather,
+				Satchel,
+				PegasusSeeds,
 				HardLogic
 			)
 		)
@@ -59,7 +59,7 @@ MazeThreeEyeOwl:connect_one_way(MazeThreeEyeBombChest, function()
 	return All(
 		CanBombWall,
 		Any(
-			HasHSS,
+			HyperSlingshot,
 			All(
 				CanUseSeeds,
 				HasContactSeeds,
@@ -78,23 +78,23 @@ Frypolar:connect_one_way(MazeWildMysteries, function()
 end)
 Frypolar:connect_one_way_entrance(MazeIcePuzzle, function()
 	return All(
-		HasHSS,
-		HasEmbers,
+		HyperSlingshot,
+		EmberSeeds,
 		Any(
 			All(
 				-- throw ice
-				HasMysteries,
-				HasBracelet
+				MysterySeeds,
+				Bracelet
 			),
 			All(
 				-- upgraded embers
-				HasUpgradedSatchel,
-				HasEmbers,
+				UpgradedSatchel,
+				EmberSeeds,
 				MediumLogic
 			),
 			All(
 				-- embers
-				HasEmbers,
+				EmberSeeds,
 				HardLogic
 			)
 		)
@@ -103,7 +103,7 @@ end)
 MazeIcePuzzle:connect_one_way_entrance(MazeTerrace, function()
 	return Any(
 		Jump6,
-		HasMagicBoomerang
+		MagicBoomerang
 	)
 end)
 -- 4 keys
@@ -112,7 +112,7 @@ MazeNevermeltIce:connect_one_way(MazeGhostArmos, CanBombWall)
 MazeNevermeltIce:connect_one_way(MazeSELavaChest, function() return Has(Bracelet) end)
 MazeNevermeltIce:connect_one_way(MazeSparkPots, function()
 	return All(
-		HasBracelet,
+		Bracelet,
 		CanTriggerLever
 	)
 end)
@@ -120,7 +120,7 @@ end)
 MazeNevermeltIce:connect_one_way_entrance(MazeNWIceDrop, function()
 	return All(
 		D8KeyCount(6),
-		HasBracelet
+		Bracelet
 	)
 end)
 -- 7 keys

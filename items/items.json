@@ -102,12 +102,6 @@
 		"codes": "shovel"
 	},
 	{
-		"name": "Flute",
-		"type": "toggle",
-		"img": "images/items/flute1.png",
-		"codes": "flute"
-	},
-	{
 		"name": "Normal flute",
 		"type": "toggle",
 		"img": "images/items/flute1.png",
@@ -237,6 +231,12 @@
 		"type": "toggle",
 		"img": "images/items/somaria.png",
 		"codes": "somaria"
+	},
+	{
+		"name": "Seed Shooter",
+		"type": "toggle",
+		"img": "images/items/shooter.png",
+		"codes": "shooter"
 	},
 	{
 		"name": "Switch Hook",
@@ -404,13 +404,13 @@
 	{
 		"name": "Blue Ore",
 		"type": "toggle",
-		"img": "images/items/oreblue.png",
+		"img": "images/items/orebluesolo.png",
 		"codes": "blueore"
 	},
 	{
 		"name": "Red Ore",
 		"type": "toggle",
-		"img": "images/items/orered.png",
+		"img": "images/items/oreredsolo.png",
 		"codes": "redore"
 	},
 	{
@@ -475,9 +475,11 @@
 	},
 	{
 		"name": "All Jewels",
-		"type": "toggle",
-		"img": "images/items/jewels.png",
-		"codes": "jewels"
+		"type": "consumable",
+		"img": "images/items/jewelall.png",
+		"codes": "jewels",
+		"max_quantity": 4,
+		"overlay_font_size": 12
 	},
 	{
 		"name": "Round Jewel",

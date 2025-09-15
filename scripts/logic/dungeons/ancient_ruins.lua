@@ -1,8 +1,8 @@
 -- 0 keys
 AncientFoyer:connect_one_way_entrance(AncientRightOfSpinner, function()
 	return Any(
-		HasFeather,
-		HasBombs,
+		Feather,
+		Bombs,
 		HasAnySword,
 		HardLogic
 	)
@@ -13,18 +13,18 @@ AncientRopeSpinnerWest:connect_one_way(AncientMagnetBallDrop, function()
 	return Any(
 		Jump4,
 		All(
-			HasFeather,
-			HasMagnetGlove
+			Feather,
+			MagnetGlove
 		),
 		All(
-			HasCane,
+			CaneOfSomaria,
 			MediumLogic
 		)
 	)
 end)
 AncientRopeSpinnerWest:connect_one_way_entrance(AncientArrowTrap, function()
 	return All(
-		HasMagicBoomerang,
+		MagicBoomerang,
 		CanDestroyCrystal
 	)
 end)
@@ -32,7 +32,7 @@ AncientArrowTrap:connect_one_way_entrance(AncientSpinyTrampoline, function()
 	return All(
 		CanBurnTrees,
 		Any(
-			HasSlingshot,
+			CanShootSeeds,
 			MediumLogic
 		)
 	)
@@ -50,8 +50,8 @@ AncientFoyer:connect_one_way_entrance(AncientRopeSpinnerWest, function()
 			)
 		),
 		Any(
-			HasMagnetGlove,
-			HasCane
+			MagnetGlove,
+			CaneOfSomaria
 		)
 	)
 end)
@@ -71,9 +71,9 @@ AncientTrappedChest:connect_one_way_entrance(AncientArmosDarknutDrop, function()
 AncientFoyer:connect_one_way(AncientNorthOfSpinnerChest, function()
 	return All(
 		CanDestroyCrystal,
-		HasMagnetGlove,
+		MagnetGlove,
 		Any(
-			HasFeather,
+			Feather,
 			MediumLogic
 		),
 		Any(
@@ -83,15 +83,15 @@ AncientFoyer:connect_one_way(AncientNorthOfSpinnerChest, function()
 				Any(
 					All(
 						CanBombWall,
-						HasFeather
+						Feather
 					),
 					CanSwordKill,
 					All(
-						HasCombatBombs,
+						Bombs40,
 						MediumLogic
 					),
 					All(
-						HasGoodPunch,
+						ExpertsRing,
 						MediumLogic
 					)
 				)
@@ -99,15 +99,15 @@ AncientFoyer:connect_one_way(AncientNorthOfSpinnerChest, function()
 			All(
 				D6KeyCount(1),
 				CanBombWall,
-				HasFeather,
+				Feather,
 				Any(
 					CanSwordKill,
 					All(
-						HasCombatBombs,
+						Bombs40,
 						MediumLogic
 					),
 					All(
-						HasGoodPunch,
+						ExpertsRing,
 						MediumLogic
 					),
 					AccessibilityLevel.SequenceBreak
@@ -122,8 +122,8 @@ AncientVireDoorstep:connect_one_way_entrance(Vire, function()
 		-- other than opening the miniboss portal, which can get you to spinner north
 		D6KeyCount(1),
 		Any(
-			Has(FoolsOre),
-			HasSword
+			FoolsOre,
+			WoodSword
 		)
 	)
 end)
@@ -133,15 +133,15 @@ Vire:connect_one_way_entrance(AncientBossDoor, function()
 			D6KeyCount(3),
 			AccessibilityLevel.SequenceBreak
 		),
-		HasFeather,
+		Feather,
 		Any(
-			HasMagnetGlove,
+			MagnetGlove,
 			All(
-				HasGales,
+				GaleSeeds,
 				Any(
-					HasSlingshot,
+					CanShootSeeds,
 					All(
-						HasSatchel,
+						Satchel,
 						HardLogic
 					)
 				),
@@ -153,10 +153,10 @@ end)
 AncientBossDoor:connect_one_way_entrance(Manhandla, function()
 	return All(
 		HasD6BossKey,
-		HasMagicBoomerang,
+		MagicBoomerang,
 		Any(
 			CanSwordKill,
-			HasSlingshot -- any seed works?
+			CanShootSeeds -- any seed works?
 		)
 	)
 end)

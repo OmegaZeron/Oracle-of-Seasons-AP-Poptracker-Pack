@@ -27,10 +27,10 @@
 									"rows": [
 										["sword1", "biggoron_sword"],
 										["bestweapon", "shield"],
-										["bombs", "feather"],
+										["bombs", "bombchus"],
 										["bracelet", "boomerang1"],
 										["satchel", "slingshot1"],
-										["shovel", "glove"],
+										["shooter", "glove"],
 										["flute_generic", "flippers"]
 									]
 								}]
@@ -39,6 +39,23 @@
 								"type": "array",
 								"orientation": "vertical",
 								"content": [
+									{
+										"type": "array",
+										"orientation": "horizontal",
+										"v_alignment": "top",
+										"margin": "10,3,0,0",
+										"content": [{
+											"type": "itemgrid",
+											"item_size": 32,
+											"margin": "0, -5, 0, 0",
+											"item_margin": "6,9",
+											"h_alignment": "center",
+											"rows": [
+												["feather", "shovel"],
+												["somaria", "hook"]
+											]
+										}]
+									},
 									{
 										"type": "array",
 										"orientation": "horizontal",
@@ -74,34 +91,6 @@
 												[""]
 											]
 										}]
-									},
-									{
-										"type": "array",
-										"orientation": "horizontal",
-										"h_alignment": "center",
-										"margin": "4,0,0,0",
-										"content": [
-											{
-												"type": "itemgrid",
-												"item_size": 28,
-												"margin": "5,5,2,5",
-												"item_margin": "5,5",
-												"rows": [
-													["roundjewel"],
-													["squarejewel"]
-												]
-											},
-											{
-												"type": "itemgrid",
-												"item_size": 28,
-												"margin": "5,5,2,5",
-												"item_margin": "5,5",
-												"rows": [
-													["pyramidjewel"],
-													["xjewel"]
-												]
-											}
-										]
 									}
 								]
 							},
@@ -117,7 +106,7 @@
 											["floodkey", "ribbon"],
 											["dragonkey", "starore"],
 											["memberscard", "gashaseeds"],
-											["plaque", "blueredore"],
+											["plaque", "animal_companion"],
 											["banana", "hardore"],
 											["rustybell", "polishedbell"]
 										]
@@ -138,10 +127,12 @@
 									},
 									{
 										"type": "itemgrid",
-										"item_size": 32,"rows": [
-											["somaria"],
-											["bombchus"],
-											[""],
+										"item_size": 32,
+										"margin": "-10,5,0,0",
+										"rows": [
+											["jewels"],
+											["blueore"],
+											["redore"],
 											["ring_fist"],
 											["ring_expert"],
 											["ring_energy"],

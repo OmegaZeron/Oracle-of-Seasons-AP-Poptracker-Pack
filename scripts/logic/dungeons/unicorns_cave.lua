@@ -1,8 +1,8 @@
 -- 0 keys
 UnicornFoyer:connect_one_way(UnicornChestLeftOfEntrance, function()
 	return Any(
-		Has(Cape),
-		HasMagnetGlove,
+		Cape,
+		MagnetGlove,
 		All(
 			JumpLiquid3,
 			HellLogic
@@ -12,9 +12,9 @@ end)
 UnicornFoyer:connect_one_way(UnicornSpiralChest, function()
 	return Any(
 		CanArmorKill,
-		HasShield,
+		Shield,
 		All(
-			HasShovel,
+			Shovel,
 			MediumLogic
 		)
 	)
@@ -22,17 +22,17 @@ end)
 UnicornFoyer:connect_one_way_entrance(UnicornTerrace, function() return Has(MagnetGlove) end)
 UnicornFoyer:connect_one_way_entrance(UnicornMinecarts, function()
 	return Any(
-		HasFlippers,
+		Flippers,
 		JumpLiquid2
 	)
 end)
 UnicornMinecarts:connect_one_way_entrance(UnicornUndergroundPipesRight)
 UnicornUndergroundPipesRight:connect_two_ways_entrance(UnicornPotRoom, function()
 	return Any(
-		HasFeather,
+		Feather,
 		All(
 			CanUseSeeds,
-			HasPegasus,
+			PegasusSeeds,
 			HardLogic
 		)
 	)
@@ -40,14 +40,14 @@ end)
 UnicornPotRoom:connect_one_way(UnicornGibdoZolChest, CanNormalKill)
 UnicornUndergroundPipesRight:connect_one_way_entrance(UnicornPreSyger, function()
 	return Any(
-		HasMagnetGlove,
+		MagnetGlove,
 		Jump4
 	)
 end)
 UnicornPreSyger:connect_one_way(UnicornRightMinecartChest)
 UnicornPotRoom:connect_two_ways_entrance(UnicornTerrace, function()
 	return All(
-		HasFeather,
+		Feather,
 		CanBombWall
 	)
 end)
@@ -55,9 +55,9 @@ UnicornTerrace:connect_one_way(UnicornArmosPuzzle, function()
 	return Any(
 		CanArmorKill,
 		Any(
-			HasTraversalBombchus,
+			Bombchus20,
 			All(
-				HasBombchus,
+				Bombchus,
 				AccessibilityLevel.SequenceBreak
 			)
 		)
@@ -67,7 +67,7 @@ UnicornArmosPuzzle:connect_one_way(UnicornArmosPuzzleEmbers, MediumLogic)
 UnicornMinecarts:connect_one_way(UnicornMiddleMinecartChest, CanHitLeverFromMinecart)
 UnicornMinecarts:connect_one_way(UnicornSpinnerChest, function()
 	return Any(
-		HasMagnetGlove,
+		MagnetGlove,
 		Jump5
 	)
 end)
@@ -77,13 +77,13 @@ UnicornMinecarts:connect_one_way_entrance(UnicornMinecartPushBlock, function()
 		Any(
 			CanArmorKill,
 			All(
-				HasMagnetGlove,
+				MagnetGlove,
 				MediumLogic
 			),
 			Any(
-				HasTraversalBombchus,
+				Bombchus20,
 				All(
-					HasBombchus,
+					Bombchus,
 					AccessibilityLevel.SequenceBreak
 				)
 			)
@@ -101,7 +101,7 @@ UnicornPotRoom:connect_one_way(UnicornMagnetGloveChest, function()
 			)
 		),
 		Any(
-			HasFlippers,
+			Flippers,
 			All(
 				Jump4, -- is liquid, but diagonal makes this effectively a 4 pit for rules
 				MediumLogic -- force medium for lower path
@@ -129,18 +129,18 @@ UnicornPostSyger:connect_one_way(UnicornTreadmillBasement, function()
 			)
 		),
 		CanReach(UnicornMinecartPushBlock),
-		HasMagnetGlove,
+		MagnetGlove,
 		Any(
 			CanSwordPunchKill,
 			All(
-				HasFeather,
+				Feather,
 				MediumLogic
 			),
 			All(
-				HasCane,
-				HasFeather,
-				HasSatchel,
-				HasPegasus
+				CaneOfSomaria,
+				Feather,
+				Satchel,
+				PegasusSeeds
 			)
 		)
 	)
@@ -155,9 +155,9 @@ UnicornPostSyger:connect_one_way_entrance(Digdogger, function()
 				AccessibilityLevel.SequenceBreak
 			)
 		),
-		HasMagnetGlove,
+		MagnetGlove,
 		Any(
-			HasFeather,
+			Feather,
 			MediumLogic
 		)
 	)

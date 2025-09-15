@@ -10,14 +10,14 @@ NorthSpoolSwamp:connect_one_way(SwampTree, function()
 end)
 NorthSpoolSwamp:connect_one_way(SwampVasuDigSpot, function()
 	return All(
-		Has(SpoolSwampSummer),
-		HasShovel
+		SpoolSwampSummer,
+		Shovel
 	)
 end)
 SpoolSwampStump:connect_one_way(SwampVasuDigSpot, function()
 	return All(
-		HasSummer,
-		HasShovel
+		Summer,
+		Shovel
 	)
 end)
 
@@ -29,22 +29,22 @@ FloodgateKeeper:connect_one_way_entrance(FloodgateLever, function()
 	return Any(
 		CanTriggerLever,
 		All(
-			HasBracelet,
+			Bracelet,
 			HardLogic
 		)
 	)
 end)
 FloodgateLever:connect_one_way_entrance(FloodgateKeyhole, function()
 	return All(
-		HasBracelet,
+		Bracelet,
 		Any(
-			HasFlippers,
-			HasFeather,
+			Flippers,
+			Feather,
 			All(
-				HasSatchel,
-				HasPegasus
+				Satchel,
+				PegasusSeeds
 			),
-			HasCane
+			CaneOfSomaria
 		)
 	)
 end)
@@ -58,25 +58,25 @@ FloodgateKeyhole:connect_one_way(SwampNorthGashaSpot, CanPlantGasha)
 FloodgateKeyhole:connect_one_way_entrance(SpoolSwampStump, function() return Has(FloodgateKey) end)
 SpoolSwampStump:connect_one_way_entrance(PoisonMothLair, function()
 	return Any(
-		Has(SpoolSwampSummer),
-		HasSummer
+		SpoolSwampSummer,
+		Summer
 	)
 end)
 PoisonMothLair:connect_two_ways_entrance(PoisonFoyer, function()
 	return Any(
-		Has(ShuffleDungeonOff),
-		Has(D3LeadsToD3)
+		ShuffleDungeonOff,
+		D3LeadsToD3
 	)
 end)
 SpoolSwampStump:connect_one_way_entrance(MiddleSpoolSwamp, function()
 	return Any(
-		Has(SpoolSwampSummer),
-		Has(SpoolSwampAutumn),
-		Has(SpoolSwampWinter),
-		HasSummer,
-		HasAutumn,
-		HasWinter,
-		HasFlippers,
+		SpoolSwampSummer,
+		SpoolSwampAutumn,
+		SpoolSwampWinter,
+		Summer,
+		Autumn,
+		Winter,
+		Flippers,
 		Dimitri
 	)
 end)
@@ -85,20 +85,20 @@ SwampSouthGashaArea:connect_one_way_entrance(MiddleSpoolSwamp, function()
 	return Any(
 		Ricky,
 		All(
-			HasFeather,
+			Feather,
 			Any(
-				HasMagicBoomerang,
+				MagicBoomerang,
 				All(
 					Any(
 						HasAnySword,
 						All(
-							HasSlingshot,
-							HasEmbers
+							CanShootSeeds,
+							EmberSeeds
 						),
 						All(
-							HasBombs,
+							Bombs,
 							All(
-								HasTraversalBombs,
+								Bombs20,
 								AccessibilityLevel.SequenceBreak
 							),
 							HardLogic
@@ -114,9 +114,9 @@ SwampSouthGashaArea:connect_two_ways_entrance(SpoolPortal, function() return Has
 SpoolPortal:connect_one_way(SpoolSwampFindSeason)
 SpoolPortal:connect_two_ways_entrance(SubrosiaMarket, function()
 	return Any(
-		Has(ShufflePortalsOff),
-		Has(SwampLeadsToMarket),
-		Has(MarketLeadsToSwamp)
+		ShufflePortalsOff,
+		SwampLeadsToMarket,
+		MarketLeadsToSwamp
 	)
 end)
 MiddleSpoolSwamp:connect_two_ways_entrance(SouthSpoolSwamp, function()
@@ -124,7 +124,7 @@ MiddleSpoolSwamp:connect_two_ways_entrance(SouthSpoolSwamp, function()
 		Jump2,
 		Moosh,
 		Dimitri,
-		HasFlippers
+		Flippers
 	)
 end)
 SouthSpoolSwamp:connect_one_way(Maple, CanMapleTrade)
@@ -135,9 +135,9 @@ SouthSpoolSwamp:connect_one_way(Maple, CanMapleTrade)
 SouthSpoolSwamp:connect_one_way_entrance(SpringSpoolSwamp, function() return Has(SpoolSwampSpring) end)
 SpoolSwampStump:connect_one_way_entrance(SpringSpoolSwamp, function()
 	return All(
-		HasSpring,
+		Spring,
 		Any(
-			HasFlippers,
+			Flippers,
 			Dimitri
 		),
 		Any(
@@ -150,9 +150,9 @@ end)
 SouthSpoolSwamp:connect_one_way_entrance(SummerSpoolSwamp, function() return Has(SpoolSwampSummer) end)
 SpoolSwampStump:connect_one_way_entrance(SummerSpoolSwamp, function()
 	return All(
-		HasSummer,
+		Summer,
 		Any(
-			HasFlippers,
+			Flippers,
 			AnyFlute,
 			Jump2
 		)
@@ -161,9 +161,9 @@ end)
 SouthSpoolSwamp:connect_one_way_entrance(AutumnSpoolSwamp, function() return Has(SpoolSwampAutumn) end)
 SpoolSwampStump:connect_one_way_entrance(AutumnSpoolSwamp, function()
 	return All(
-		HasAutumn,
+		Autumn,
 		Any(
-			HasFlippers,
+			Flippers,
 			AnyFlute,
 			Jump2
 		)
@@ -172,9 +172,9 @@ end)
 SouthSpoolSwamp:connect_one_way_entrance(WinterSpoolSwamp, function() return Has(SpoolSwampWinter) end)
 SpoolSwampStump:connect_one_way_entrance(WinterSpoolSwamp, function()
 	return All(
-		HasWinter,
+		Winter,
 		Any(
-			HasFlippers,
+			Flippers,
 			AnyFlute,
 			Jump2
 		)
@@ -197,36 +197,36 @@ SummerSpoolSwamp:connect_one_way_entrance(SwampSouthGashaArea)
 AutumnSpoolSwamp:connect_one_way_entrance(SwampSouthGashaArea)
 WinterSpoolSwamp:connect_one_way_entrance(SwampSouthGashaArea, function()
 	return Any(
-		HasShovel,
+		Shovel,
 		AnyFlute
 	)
 end)
 SwampSouthGashaArea:connect_one_way(SwampSouthGashaSpot, function()
 	return All(
-		HasBracelet,
+		Bracelet,
 		CanPlantGasha
 	)
 end)
 SwampSouthGashaArea:connect_one_way_entrance(SpringSpoolSwamp, function()
 	return All(
-		Has(SpoolSwampSpring),
-		CanDestroyFlower(true)
+		CanDestroyFlower(true),
+		SpoolSwampSpring
 	)
 end)
 SwampSouthGashaArea:connect_one_way_entrance(SummerSpoolSwamp, function() return Has(SpoolSwampSummer) end)
 SwampSouthGashaArea:connect_one_way_entrance(AutumnSpoolSwamp, function() return Has(SpoolSwampAutumn) end)
 SwampSouthGashaArea:connect_one_way_entrance(WinterSpoolSwamp, function()
 	return All(
-		Has(SpoolSwampWinter),
+		SpoolSwampWinter,
 		Any(
-			HasShovel,
+			Shovel,
 			AnyFlute
 		)
 	)
 end)
 SpringSpoolSwamp:connect_one_way(SwampFloodedHP, function()
 	return Any(
-		HasFlippers,
+		Flippers,
 		Dimitri,
 		AccessibilityLevel.Inspect
 	)
@@ -234,7 +234,7 @@ end)
 WinterSpoolSwamp:connect_one_way(SwampBombCave, function()
 	return All(
 		Any(
-			HasShovel,
+			Shovel,
 			AnyFlute
 		),
 		BombPunchWall
@@ -244,52 +244,52 @@ end)
 -- dungeon shuffle
 PoisonMothLair:connect_one_way_entrance(HerosCaveFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D3LeadsToD0),
-		Has(D0AltRemoved) -- randomizer prevents this connection, since you could drown forever on exit
+		ShuffleDungeonOn,
+		D3LeadsToD0,
+		D0AltRemoved -- randomizer prevents this connection, since you could drown forever on exit
 	)
 end)
 PoisonMothLair:connect_one_way_entrance(GnarledFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D3LeadsToD1)
+		ShuffleDungeonOn,
+		D3LeadsToD1
 	)
 end)
 PoisonMothLair:connect_one_way_entrance(SnakeFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D3LeadsToD2),
-		Has(D2AltRemoved) -- randomizer prevents this connection, since you could drown forever on exit
+		ShuffleDungeonOn,
+		D3LeadsToD2,
+		D2AltRemoved -- randomizer prevents this connection, since you could drown forever on exit
 	)
 end)
 PoisonMothLair:connect_one_way_entrance(DancingFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D3LeadsToD4)
+		ShuffleDungeonOn,
+		D3LeadsToD4
 	)
 end)
 PoisonMothLair:connect_one_way_entrance(UnicornFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D3LeadsToD5)
+		ShuffleDungeonOn,
+		D3LeadsToD5
 	)
 end)
 PoisonMothLair:connect_one_way_entrance(AncientFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D3LeadsToD6)
+		ShuffleDungeonOn,
+		D3LeadsToD6
 	)
 end)
 PoisonMothLair:connect_one_way_entrance(CryptFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D3LeadsToD7)
+		ShuffleDungeonOn,
+		D3LeadsToD7
 	)
 end)
 PoisonMothLair:connect_one_way_entrance(MazeFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D3LeadsToD8)
+		ShuffleDungeonOn,
+		D3LeadsToD8
 	)
 end)
 
@@ -297,156 +297,156 @@ end)
 SpoolPortal:connect_one_way_entrance(SuburbsPortal, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(SwampLeadsToSuburbs),
-			Has(SuburbsLeadsToSwamp)
+			SwampLeadsToSuburbs,
+			SuburbsLeadsToSwamp
 		)
 	)
 end)
 SpoolPortal:connect_one_way_entrance(EyeglassPortal, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(SwampLeadsToLake),
-			Has(LakeLeadsToSwamp)
+			SwampLeadsToLake,
+			LakeLeadsToSwamp
 		)
 	)
 end)
 SpoolPortal:connect_one_way_entrance(LowerMtCucco, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(SwampLeadsToCucco),
-			Has(CuccoLeadsToSwamp)
+			SwampLeadsToCucco,
+			CuccoLeadsToSwamp
 		)
 	)
 end)
 SpoolPortal:connect_one_way_entrance(HoronPortal, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(SwampLeadsToHoron),
-			Has(HoronLeadsToSwamp)
+			SwampLeadsToHoron,
+			HoronLeadsToSwamp
 		)
 	)
 end)
 SpoolPortal:connect_one_way_entrance(TempleRemainsLowerPortal, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(SwampLeadsToRemains),
-			Has(RemainsLeadsToSwamp)
+			SwampLeadsToRemains,
+			RemainsLeadsToSwamp
 		)
 	)
 end)
 SpoolPortal:connect_one_way_entrance(TempleRemainsUpperPortal, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(SwampLeadsToUpperRemains),
-			Has(UpperRemainsLeadsToSwamp)
+			SwampLeadsToUpperRemains,
+			UpperRemainsLeadsToSwamp
 		)
 	)
 end)
 SpoolPortal:connect_one_way_entrance(SubrosiaMountainEast, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(SwampLeadsToMountain),
-			Has(MountainLeadsToSwamp)
+			SwampLeadsToMountain,
+			MountainLeadsToSwamp
 		)
 	)
 end)
 SpoolPortal:connect_one_way_entrance(SubrosiaMarket, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(SwampLeadsToMarket),
-			Has(MarketLeadsToSwamp)
+			SwampLeadsToMarket,
+			MarketLeadsToSwamp
 		)
 	)
 end)
 SpoolPortal:connect_one_way_entrance(EastFurnace, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(SwampLeadsToFurnace),
-			Has(FurnaceLeadsToSwamp)
+			SwampLeadsToFurnace,
+			FurnaceLeadsToSwamp
 		)
 	)
 end)
 SpoolPortal:connect_one_way_entrance(SubrosiaVillagePortal, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(SwampLeadsToVillage),
-			Has(VillageLeadsToSwamp)
+			SwampLeadsToVillage,
+			VillageLeadsToSwamp
 		)
 	)
 end)
 SpoolPortal:connect_one_way_entrance(Pirates, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(SwampLeadsToPirates),
-			Has(PiratesLeadsToSwamp)
+			SwampLeadsToPirates,
+			PiratesLeadsToSwamp
 		)
 	)
 end)
 SpoolPortal:connect_one_way_entrance(Volcano, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(SwampLeadsToVolcano),
-			Has(VolcanoLeadsToSwamp)
+			SwampLeadsToVolcano,
+			VolcanoLeadsToSwamp
 		)
 	)
 end)
 SpoolPortal:connect_one_way_entrance(SwordAndShieldMaze, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(SwampLeadsToD8),
-			Has(D8LeadsToSwamp)
+			SwampLeadsToD8,
+			D8LeadsToSwamp
 		)
 	)
 end)

@@ -3,13 +3,13 @@ EastWesternCoast:connect_one_way(WesternCoastFindSeason)
 EastWesternCoast:connect_one_way(BlackBeast, function()
 	return All(
 		CanShootLongTorches,
-		HasMysteries,
+		MysterySeeds,
 		CanArmorKill
 	)
 end)
 EastWesternCoast:connect_one_way(GoldenDarknutKill, function()
 	return All(
-		Has(WesternCoastSpring),
+		WesternCoastSpring,
 		Any(
 			CanSwordKill,
 			Dimitri
@@ -19,15 +19,15 @@ end)
 EastWesternCoast:connect_one_way_entrance(HerosCave)
 HerosCave:connect_two_ways_entrance(HerosCaveFoyer, function()
 	return Any(
-		Has(ShuffleDungeonOff),
-		Has(D0LeadsToD0)
+		ShuffleDungeonOff,
+		D0LeadsToD0
 	)
 end)
 
 EastWesternCoast:connect_one_way_entrance(HerosCaveLedge, function()
 	return All(
-		not Has(D0AltRemoved),
-		CanDestroyBushFlute(true)
+		CanDestroyBushFlute(true),
+		D0AltVanilla
 	)
 end)
 HerosCaveLedge:connect_one_way_entrance(HerosCaveFoyer)
@@ -36,15 +36,15 @@ HerosCaveFoyer:connect_one_way_entrance(HerosCaveUnderground, function()
 	return Any(
 		CanNormalKill,
 		All(
-			HasBoomerang,
+			Boomerang,
 			MediumLogic
 		)
 	)
 end)
 HerosCaveFoyer:connect_one_way_entrance(HerosCavePostKey, function()
 	return Any(
-		Has(D0SmallKey),
-		Has(D0MasterKey)
+		D0SmallKey,
+		D0MasterKey
 	)
 end)
 
@@ -52,7 +52,7 @@ EastWesternCoast:connect_one_way_entrance(HoronVillage)
 EastWesternCoast:connect_two_ways_entrance(WestWesternCoast, function()
 	return All(
 		CanReach(Pirates),
-		Has(PolishedBell)
+		PolishedBell
 	)
 end, {Pirates})
 WestWesternCoast:connect_one_way(WesternCoastChest)
@@ -64,7 +64,7 @@ WesternCoastHouse:connect_one_way_entrance(WesternCoastStump, function()
 	return All(
 		CanBombWall,
 		Any(
-			HasFeather,
+			Feather,
 			HardLogic
 		)
 	)
@@ -72,8 +72,8 @@ end)
 WesternCoastStump:connect_one_way(GoldenDarknutKill, function()
 	return All(
 		CanReach(Pirates),
-		Has(PolishedBell),
-		HasSpring,
+		PolishedBell,
+		Spring,
 		Any(
 			CanSwordKill,
 			Dimitri
@@ -82,24 +82,24 @@ WesternCoastStump:connect_one_way(GoldenDarknutKill, function()
 end, {Pirates})
 WestWesternCoast:connect_one_way_entrance(Graveyard, function()
 	return Any(
-		Has(WesternCoastSummer),
+		WesternCoastSummer,
 		All(
-			HasSummer,
+			Summer,
 			CanBombWall,
 			Any(
-				HasFeather,
+				Feather,
 				HardLogic
 			)
 		),
 		All(
 			Jump3,
 			Any(
-				Has(WesternCoastSpring),
+				WesternCoastSpring,
 				All(
-					HasSpring,
+					Spring,
 					CanBombWall,
 					Any(
-						HasFeather,
+						Feather,
 						HardLogic
 					)
 				)
@@ -111,12 +111,12 @@ WestWesternCoast:connect_one_way_entrance(GraveyardWinter, function()
 	return All(
 		Jump3,
 		Any(
-			Has(WesternCoastWinter),
+			WesternCoastWinter,
 			All(
-				HasWinter,
+				Winter,
 				CanBombWall,
 				Any(
-					HasFeather,
+					Feather,
 					HardLogic
 				)
 			)
@@ -127,12 +127,12 @@ WestWesternCoast:connect_one_way_entrance(GraveyardAutumn, function()
 	return All(
 		Jump3,
 		Any(
-			Has(WesternCoastAutumn),
+			WesternCoastAutumn,
 			All(
-				HasAutumn,
+				Autumn,
 				CanBombWall,
 				Any(
-					HasFeather,
+					Feather,
 					HardLogic
 				)
 			)
@@ -158,8 +158,8 @@ ExplorersCrypt:connect_one_way(GraveyardSecret, function() return Has(Shovel) en
 ExplorersCrypt:connect_one_way(WesternCoastFindSeason)
 ExplorersCrypt:connect_one_way_entrance(Graveyard, function()
 	return Any(
-		Has(WesternCoastSpring),
-		Has(WesternCoastSummer)
+		WesternCoastSpring,
+		WesternCoastSummer
 	)
 end)
 ExplorersCrypt:connect_one_way_entrance(GraveyardAutumn, function()
@@ -170,8 +170,8 @@ ExplorersCrypt:connect_one_way_entrance(GraveyardWinter, function()
 end)
 ExplorersCrypt:connect_one_way_entrance(CryptFoyer, function()
 	return Any(
-		Has(ShuffleDungeonOff),
-		Has(D7LeadsToD7)
+		ShuffleDungeonOff,
+		D7LeadsToD7
 	)
 end)
 
@@ -179,99 +179,99 @@ end)
 -- d0
 HerosCave:connect_one_way_entrance(GnarledFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D0LeadsToD1)
+		ShuffleDungeonOn,
+		D0LeadsToD1
 	)
 end)
 HerosCave:connect_two_ways_entrance(SnakeFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D0LeadsToD2)
+		ShuffleDungeonOn,
+		D0LeadsToD2
 	)
 end)
 HerosCave:connect_one_way_entrance(PoisonFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D0LeadsToD3)
+		ShuffleDungeonOn,
+		D0LeadsToD3
 	)
 end)
 HerosCave:connect_one_way_entrance(DancingFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D0LeadsToD4)
+		ShuffleDungeonOn,
+		D0LeadsToD4
 	)
 end)
 HerosCave:connect_one_way_entrance(UnicornFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D0LeadsToD5)
+		ShuffleDungeonOn,
+		D0LeadsToD5
 	)
 end)
 HerosCave:connect_one_way_entrance(AncientFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D0LeadsToD6)
+		ShuffleDungeonOn,
+		D0LeadsToD6
 	)
 end)
 HerosCave:connect_one_way_entrance(CryptFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D0LeadsToD7)
+		ShuffleDungeonOn,
+		D0LeadsToD7
 	)
 end)
 HerosCave:connect_one_way_entrance(MazeFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D0LeadsToD8)
+		ShuffleDungeonOn,
+		D0LeadsToD8
 	)
 end)
 
 -- d7
 ExplorersCrypt:connect_two_ways_entrance(HerosCaveFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D7LeadsToD0)
+		ShuffleDungeonOn,
+		D7LeadsToD0
 	)
 end)
 ExplorersCrypt:connect_one_way_entrance(GnarledFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D7LeadsToD1)
+		ShuffleDungeonOn,
+		D7LeadsToD1
 	)
 end)
 ExplorersCrypt:connect_two_ways_entrance(SnakeFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D7LeadsToD2)
+		ShuffleDungeonOn,
+		D7LeadsToD2
 	)
 end)
 ExplorersCrypt:connect_one_way_entrance(PoisonFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D7LeadsToD3)
+		ShuffleDungeonOn,
+		D7LeadsToD3
 	)
 end)
 ExplorersCrypt:connect_one_way_entrance(DancingFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D7LeadsToD4)
+		ShuffleDungeonOn,
+		D7LeadsToD4
 	)
 end)
 ExplorersCrypt:connect_one_way_entrance(UnicornFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D7LeadsToD5)
+		ShuffleDungeonOn,
+		D7LeadsToD5
 	)
 end)
 ExplorersCrypt:connect_one_way_entrance(AncientFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D7LeadsToD6)
+		ShuffleDungeonOn,
+		D7LeadsToD6
 	)
 end)
 ExplorersCrypt:connect_one_way_entrance(MazeFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D7LeadsToD8)
+		ShuffleDungeonOn,
+		D7LeadsToD8
 	)
 end)

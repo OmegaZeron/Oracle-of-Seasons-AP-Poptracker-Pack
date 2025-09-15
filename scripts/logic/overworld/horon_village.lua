@@ -5,9 +5,9 @@ HoronVillage:connect_one_way(HoronMushroomChest, function()
 		All(
 			CanDestroyMushroom(true),
 			Any(
-				Has(HoronVillageAutumn),
-				Has(HoronChaoticSeasons),
-				HasAutumn
+				HoronVillageAutumn,
+				HoronChaoticSeasons,
+				Autumn
 			)
 		),
 		CanDimitriClip
@@ -47,7 +47,7 @@ HoronVillage:connect_one_way_entrance(HoronShop, function()
 end, {SnakeRupeeRoom, AncientRupeeRoom, HoronVillageOldMan, NorthHoronOldMan, SuburbsOldMan, NorthHolodrumPlainOldMan, SouthHolodrumPlainOldMan, GoronMountainOldMan, TarmOldMan, WesternCoastOldMan})
 HoronVillage:connect_one_way_entrance(MemberShop, function()
 	return All(
-		Has(MembersCard),
+		MembersCard,
 		Any(
 			HasRupees(ShopPrices[MemberShopPrice]),
 			AccessibilityLevel.Inspect
@@ -66,11 +66,13 @@ HoronVillage:connect_two_ways_entrance(ClockShop)
 ClockShop:connect_one_way(ClockShopTrade, function() return Has(WoodenBird) end)
 HoronVillage:connect_one_way(ClockShopSecret, function()
 	return All(
-		HasShovel,
+		Shovel,
 		Any(
-			HasStrongWeapon,
+			NobleSword,
+			BiggoronSword,
+			FoolsOre,
 			All(
-				HasSword,
+				WoodSword,
 				MediumLogic
 			)
 		)
@@ -83,11 +85,11 @@ DrLeft:connect_one_way(DrLeftReward, CanLightTorches)
 DrLeft:connect_one_way_entrance(DrLeftBackyard, CanBombWall)
 DrLeftBackyard:connect_one_way(DrLeftBackyardChest, function()
 	return Any(
-		Has(HoronChaoticSeasons),
-		Has(HoronVillageWinter),
-		HasFlippers,
+		HoronChaoticSeasons,
+		HoronVillageWinter,
+		Flippers,
 		JumpLiquid2,
-		HasWinter
+		Winter
 	)
 end)
 
@@ -107,7 +109,7 @@ HoronVillage:connect_two_ways_entrance(HoronPortalStairs)
 HoronPortalStairs:connect_one_way_entrance(HoronPortal, function()
 	return Any(
 		Jump6,
-		HasMagicBoomerang
+		MagicBoomerang
 	)
 end)
 HoronPortal:connect_one_way_entrance(HoronPortalStairs, function()
@@ -118,9 +120,9 @@ HoronPortal:connect_one_way_entrance(HoronPortalStairs, function()
 end)
 HoronPortal:connect_two_ways_entrance(Pirates, function()
 	return Any(
-		Has(ShufflePortalsOff),
-		Has(HoronLeadsToPirates),
-		Has(PiratesLeadsToHoron)
+		ShufflePortalsOff,
+		HoronLeadsToPirates,
+		PiratesLeadsToHoron
 	)
 end)
 
@@ -133,144 +135,144 @@ HoronVillage:connect_one_way_entrance(LowerEasternSuburbs, CanBurnTrees)
 HoronPortal:connect_one_way_entrance(SuburbsPortal, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(HoronLeadsToSuburbs),
-			Has(SuburbsLeadsToHoron)
+			HoronLeadsToSuburbs,
+			SuburbsLeadsToHoron
 		)
 	)
 end)
 HoronPortal:connect_one_way_entrance(SpoolPortal, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(HoronLeadsToSwamp),
-			Has(SwampLeadsToHoron)
+			HoronLeadsToSwamp,
+			SwampLeadsToHoron
 		)
 	)
 end)
 HoronPortal:connect_one_way_entrance(EyeglassPortal, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(HoronLeadsToLake),
-			Has(LakeLeadsToHoron)
+			HoronLeadsToLake,
+			LakeLeadsToHoron
 		)
 	)
 end)
 HoronPortal:connect_one_way_entrance(LowerMtCucco, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(HoronLeadsToCucco),
-			Has(CuccoLeadsToHoron)
+			HoronLeadsToCucco,
+			CuccoLeadsToHoron
 		)
 	)
 end)
 HoronPortal:connect_one_way_entrance(TempleRemainsLowerPortal, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(HoronLeadsToRemains),
-			Has(RemainsLeadsToHoron)
+			HoronLeadsToRemains,
+			RemainsLeadsToHoron
 		)
 	)
 end)
 HoronPortal:connect_one_way_entrance(TempleRemainsUpperPortal, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(HoronLeadsToUpperRemains),
-			Has(UpperRemainsLeadsToHoron)
+			HoronLeadsToUpperRemains,
+			UpperRemainsLeadsToHoron
 		)
 	)
 end)
 HoronPortal:connect_one_way_entrance(SubrosiaMountainEast, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(HoronLeadsToMountain),
-			Has(MountainLeadsToHoron)
+			HoronLeadsToMountain,
+			MountainLeadsToHoron
 		)
 	)
 end)
 HoronPortal:connect_one_way_entrance(SubrosiaMarket, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(HoronLeadsToMarket),
-			Has(MarketLeadsToHoron)
+			HoronLeadsToMarket,
+			MarketLeadsToHoron
 		)
 	)
 end)
 HoronPortal:connect_one_way_entrance(EastFurnace, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(HoronLeadsToFurnace),
-			Has(FurnaceLeadsToHoron)
+			HoronLeadsToFurnace,
+			FurnaceLeadsToHoron
 		)
 	)
 end)
 HoronPortal:connect_one_way_entrance(SubrosiaVillagePortal, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(HoronLeadsToVillage),
-			Has(VillageLeadsToHoron)
+			HoronLeadsToVillage,
+			VillageLeadsToHoron
 		)
 	)
 end)
 HoronPortal:connect_one_way_entrance(Volcano, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(HoronLeadsToVolcano),
-			Has(VolcanoLeadsToHoron)
+			HoronLeadsToVolcano,
+			VolcanoLeadsToHoron
 		)
 	)
 end)
 HoronPortal:connect_one_way_entrance(SwordAndShieldMaze, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(HoronLeadsToD8),
-			Has(D8LeadsToHoron)
+			HoronLeadsToD8,
+			D8LeadsToHoron
 		)
 	)
 end)

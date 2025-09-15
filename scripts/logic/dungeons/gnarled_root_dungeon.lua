@@ -14,7 +14,7 @@ GnarledZolRoom:connect_one_way_entrance(GnarledPushBlocks, function()
 	return Any(
 		CanNormalKill,
 		All(
-			HasBracelet,
+			Bracelet,
 			HardLogic
 		)
 	)
@@ -24,7 +24,7 @@ GnarledZolRoom:connect_one_way_entrance(GnarledMinecartChest, function()
 	return Any(
 		CanTriggerLever,
 		All(
-			HasBracelet,
+			Bracelet,
 			HardLogic
 		)
 	)

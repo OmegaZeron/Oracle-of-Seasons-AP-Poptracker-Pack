@@ -5,8 +5,8 @@ LowerEasternSuburbs:connect_one_way(HoronVillageFindSeason)
 LowerEasternSuburbs:connect_one_way(Maple, CanMapleTrade)
 LowerEasternSuburbs:connect_one_way(WindmillHP, function()
 	return Any(
-		Has(EasternSuburbsWinter),
-		HasWinter,
+		EasternSuburbsWinter,
+		Winter,
 		CanDimitriClip,
 		AccessibilityLevel.Inspect
 	)
@@ -14,13 +14,13 @@ end)
 LowerEasternSuburbs:connect_one_way(WindmillTrade, function() return Has(EngineGrease) end)
 LowerEasternSuburbs:connect_one_way(SuburbsSpringCave, function()
 	return All(
-		HasBracelet,
+		Bracelet,
 		Any(
-			Has(EasternSuburbsSpring),
-			HasSpring
+			EasternSuburbsSpring,
+			Spring
 		),
 		Any(
-			HasMagnetGlove,
+			MagnetGlove,
 			Jump3
 		)
 	)
@@ -31,40 +31,40 @@ LowerEasternSuburbs:connect_one_way(SuburbsGasha, CanPlantGasha)
 LowerEasternSuburbs:connect_one_way_entrance(HoronVillage, function()
 	return All(
 		CanUseSeeds,
-		HasEmbers
+		EmberSeeds
 	)
 end)
 LowerEasternSuburbs:connect_one_way_entrance(SamasaDesert, function() return CanReach(Pirates) end, {Pirates})
 LowerEasternSuburbs:connect_two_ways_entrance(UpperEasternSuburbs, function()
 	return All(
 		Any(
-			Has(EasternSuburbsSpring),
-			Has(EasternSuburbsSummer),
-			Has(EasternSuburbsAutumn),
-			HasSpring,
-			HasSummer,
-			HasAutumn
+			EasternSuburbsSpring,
+			EasternSuburbsSummer,
+			EasternSuburbsAutumn,
+			Spring,
+			Summer,
+			Autumn
 		),
 		Any(
 			JumpLiquid1(true),
-			HasFlippers,
+			Flippers,
 			Dimitri
-			-- HasSwitchHook
+			-- SwitchHook
 		)
 	)
 end)
 LowerEasternSuburbs:connect_two_ways_entrance(UpperEasternSuburbsWinter, function()
 	return Any(
-		Has(EasternSuburbsWinter),
-		HasWinter
+		EasternSuburbsWinter,
+		Winter
 	)
 end)
 LowerEasternSuburbs:connect_one_way_entrance(SuburbsPortal, CanDestroyBushFlute)
 SuburbsPortal:connect_two_ways_entrance(SubrosiaMountainEast, function()
 	return Any(
-		Has(ShufflePortalsOff),
-		Has(SuburbsLeadsToMountain),
-		Has(MountainLeadsToSuburbs)
+		ShufflePortalsOff,
+		SuburbsLeadsToMountain,
+		MountainLeadsToSuburbs
 	)
 end)
 SuburbsPortal:connect_one_way_entrance(LowerEasternSuburbs, CanDestroyBush)
@@ -88,24 +88,24 @@ UpperEasternSuburbs:connect_one_way_entrance(UpperEasternSuburbsWinter, function
 UpperEasternSuburbsWinter:connect_one_way(EasternSuburbsFindSeason)
 UpperEasternSuburbsWinter:connect_one_way_entrance(UpperEasternSuburbs, function()
 	return Any(
-		HasSpring,
-		HasSummer,
-		HasAutumn
+		Spring,
+		Summer,
+		Autumn
 	)
 end)
 UpperEasternSuburbs:connect_one_way_entrance(SunkenDoorstep, function()
 	return Any(
-		Has(EasternSuburbsSpring),
-		HasSpring
+		EasternSuburbsSpring,
+		Spring
 	)
 end)
 UpperEasternSuburbsWinter:connect_one_way_entrance(MoblinRoad)
 UpperEasternSuburbs:connect_one_way_entrance(WoodsOfWinter)
 UpperEasternSuburbsWinter:connect_one_way_entrance(WoodsOfWinter, function()
 	return Any(
-		HasFeather,
+		Feather,
 		AnyFlute,
-		HasShovel
+		Shovel
 	)
 end)
 
@@ -115,43 +115,43 @@ MoblinRoad:connect_one_way(WoodsOfWinterFindSeason)
 MoblinRoad:connect_one_way(Maple, CanMapleTrade)
 MoblinRoad:connect_one_way_entrance(UpperEasternSuburbsWinter, function()
 	return Any(
-		Has(EasternSuburbsWinter),
-		HasWinter
+		EasternSuburbsWinter,
+		Winter
 	)
 end)
 MoblinRoad:connect_one_way_entrance(MoblinRoadBombCave, function()
 	return All(
 		BombPunchWall,
 		Any(
-			Has(WoodsOfWinterSpring),
-			Has(WoodsOfWinterSummer),
-			Has(WoodsOfWinterAutumn),
-			HasSpring,
-			HasSummer,
-			HasAutumn
+			WoodsOfWinterSpring,
+			WoodsOfWinterSummer,
+			WoodsOfWinterAutumn,
+			Spring,
+			Summer,
+			Autumn
 		)
 	)
 end)
 MoblinRoadBombCave:connect_one_way(MoblinRoadBombCaveChest, CanDestroyBush)
 MoblinRoad:connect_two_ways_entrance(MoblinRoadWaterfallCaveChest, function()
 	return Any(
-		HasFlippers,
+		Flippers,
 		JumpLiquid3
 	)
 end)
 MoblinRoad:connect_one_way_entrance(Holly, function()
 	return Any(
-		Has(WoodsOfWinterWinter),
-		HasWinter
+		WoodsOfWinterWinter,
+		Winter
 	)
 end)
 MoblinRoad:connect_one_way(SuburbsOldMan, CanBurnTrees)
 MoblinRoad:connect_one_way(SuburbsHP, function()
 	return Any(
-		HasFlippers,
+		Flippers,
 		Dimitri,
-		HasBracelet,
-		HasFeather,
+		Bracelet,
+		Feather,
 		AccessibilityLevel.Inspect
 	)
 end)
@@ -159,9 +159,9 @@ WoodsOfWinter:connect_one_way(EasternSuburbsFindSeason)
 WoodsOfWinter:connect_one_way(WoodsOfWinterFindSeason)
 WoodsOfWinter:connect_one_way_entrance(UpperEasternSuburbs, function()
 	return Any(
-		Has(EasternSuburbsSpring),
-		Has(EasternSuburbsSummer),
-		Has(EasternSuburbsAutumn)
+		EasternSuburbsSpring,
+		EasternSuburbsSummer,
+		EasternSuburbsAutumn
 	)
 end)
 WoodsOfWinter:connect_one_way_entrance(UpperEasternSuburbsWinter, function() return Has(EasternSuburbsWinter) end)
@@ -174,14 +174,14 @@ end)
 WoodsOfWinter:connect_one_way(GoldenMoblinKill, function()
 	return All(
 		Any(
-			Has(WoodsOfWinterAutumn),
-			HasAutumn
+			WoodsOfWinterAutumn,
+			Autumn
 		),
 		Any(
 			CanSwordKill,
 			Dimitri,
 			All(
-				HasEmbers,
+				EmberSeeds,
 				CanUseSeeds,
 				MediumLogic
 			)
@@ -193,8 +193,8 @@ SnakesRemains:connect_one_way(WoodsOfWinterFindSeason)
 SnakesRemains:connect_one_way_entrance(WoodsOfWinter, CanDestroyBush)
 SnakesRemains:connect_two_ways_entrance(SnakeFoyer, function()
 	return Any(
-		Has(ShuffleDungeonOff),
-		Has(D2LeadsToD2)
+		ShuffleDungeonOff,
+		D2LeadsToD2
 	)
 end)
 WoodsOfWinter:connect_two_ways_entrance(UpperSnakesRemains, function() return Has(Bracelet) end)
@@ -202,18 +202,18 @@ UpperSnakesRemains:connect_two_ways_entrance(SnakeAltEntrance, function() return
 WoodsOfWinter:connect_one_way_entrance(WoodsOfWinterMushroomCave, function()
 	return Any(
 		All(
+			CanDestroyMushroom(true),
 			Any(
-				Has(WoodsOfWinterAutumn),
-				HasAutumn
-			),
-			CanDestroyMushroom(true)
+				WoodsOfWinterAutumn,
+				Autumn
+			)
 		),
 		CanDimitriClip
 	)
 end)
 WoodsOfWinterMushroomCave:connect_one_way(WoodsOfWinterMushroomCaveChest, function()
 	return Any(
-		HasMagnetGlove,
+		MagnetGlove,
 		Jump4
 	)
 end)
@@ -221,50 +221,50 @@ end)
 -- dungeon shuffle
 SnakesRemains:connect_two_ways_entrance(HerosCaveFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D2LeadsToD0)
+		ShuffleDungeonOn,
+		D2LeadsToD0
 	)
 end)
 SnakesRemains:connect_one_way_entrance(GnarledFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D2LeadsToD1)
+		ShuffleDungeonOn,
+		D2LeadsToD1
 	)
 end)
 SnakesRemains:connect_one_way_entrance(PoisonFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D2LeadsToD3)
+		ShuffleDungeonOn,
+		D2LeadsToD3
 	)
 end)
 SnakesRemains:connect_one_way_entrance(DancingFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D2LeadsToD4)
+		ShuffleDungeonOn,
+		D2LeadsToD4
 	)
 end)
 SnakesRemains:connect_one_way_entrance(UnicornFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D2LeadsToD5)
+		ShuffleDungeonOn,
+		D2LeadsToD5
 	)
 end)
 SnakesRemains:connect_one_way_entrance(AncientFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D2LeadsToD6)
+		ShuffleDungeonOn,
+		D2LeadsToD6
 	)
 end)
 SnakesRemains:connect_one_way_entrance(CryptFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D2LeadsToD7)
+		ShuffleDungeonOn,
+		D2LeadsToD7
 	)
 end)
 SnakesRemains:connect_one_way_entrance(MazeFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D2LeadsToD8)
+		ShuffleDungeonOn,
+		D2LeadsToD8
 	)
 end)
 
@@ -272,156 +272,156 @@ end)
 SuburbsPortal:connect_one_way_entrance(SpoolPortal, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(SuburbsLeadsToSwamp),
-			Has(SwampLeadsToSuburbs)
+			SuburbsLeadsToSwamp,
+			SwampLeadsToSuburbs
 		)
 	)
 end)
 SuburbsPortal:connect_one_way_entrance(EyeglassPortal, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(SuburbsLeadsToLake),
-			Has(LakeLeadsToSuburbs)
+			SuburbsLeadsToLake,
+			LakeLeadsToSuburbs
 		)
 	)
 end)
 SuburbsPortal:connect_one_way_entrance(LowerMtCucco, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(SuburbsLeadsToCucco),
-			Has(CuccoLeadsToSuburbs)
+			SuburbsLeadsToCucco,
+			CuccoLeadsToSuburbs
 		)
 	)
 end)
 SuburbsPortal:connect_one_way_entrance(HoronPortal, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(SuburbsLeadsToHoron),
-			Has(HoronLeadsToSuburbs)
+			SuburbsLeadsToHoron,
+			HoronLeadsToSuburbs
 		)
 	)
 end)
 SuburbsPortal:connect_one_way_entrance(TempleRemainsLowerPortal, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(SuburbsLeadsToRemains),
-			Has(RemainsLeadsToSuburbs)
+			SuburbsLeadsToRemains,
+			RemainsLeadsToSuburbs
 		)
 	)
 end)
 SuburbsPortal:connect_one_way_entrance(TempleRemainsUpperPortal, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(SuburbsLeadsToUpperRemains),
-			Has(UpperRemainsLeadsToSuburbs)
+			SuburbsLeadsToUpperRemains,
+			UpperRemainsLeadsToSuburbs
 		)
 	)
 end)
 SuburbsPortal:connect_one_way_entrance(SubrosiaMountainEast, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(SuburbsLeadsToMountain),
-			Has(MountainLeadsToSuburbs)
+			SuburbsLeadsToMountain,
+			MountainLeadsToSuburbs
 		)
 	)
 end)
 SuburbsPortal:connect_one_way_entrance(SubrosiaMarket, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(SuburbsLeadsToMarket),
-			Has(MarketLeadsToSuburbs)
+			SuburbsLeadsToMarket,
+			MarketLeadsToSuburbs
 		)
 	)
 end)
 SuburbsPortal:connect_one_way_entrance(EastFurnace, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(SuburbsLeadsToFurnace),
-			Has(FurnaceLeadsToSuburbs)
+			SuburbsLeadsToFurnace,
+			FurnaceLeadsToSuburbs
 		)
 	)
 end)
 SuburbsPortal:connect_one_way_entrance(SubrosiaVillagePortal, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(SuburbsLeadsToVillage),
-			Has(VillageLeadsToSuburbs)
+			SuburbsLeadsToVillage,
+			VillageLeadsToSuburbs
 		)
 	)
 end)
 SuburbsPortal:connect_one_way_entrance(Pirates, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(SuburbsLeadsToPirates),
-			Has(PiratesLeadsToSuburbs)
+			SuburbsLeadsToPirates,
+			PiratesLeadsToSuburbs
 		)
 	)
 end)
 SuburbsPortal:connect_one_way_entrance(Volcano, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(SuburbsLeadsToVolcano),
-			Has(VolcanoLeadsToSuburbs)
+			SuburbsLeadsToVolcano,
+			VolcanoLeadsToSuburbs
 		)
 	)
 end)
 SuburbsPortal:connect_one_way_entrance(SwordAndShieldMaze, function()
 return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(SuburbsLeadsToD8),
-			Has(D8LeadsToSuburbs)
+			SuburbsLeadsToD8,
+			D8LeadsToSuburbs
 		)
 	)
 end)

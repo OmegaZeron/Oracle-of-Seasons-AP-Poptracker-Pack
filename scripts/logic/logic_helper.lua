@@ -1,71 +1,37 @@
 function MediumLogic()
 	return Any(
-		Has(Medium),
+		Medium,
 		HardLogic,
 		AccessibilityLevel.SequenceBreak
 	)
 end
 function HardLogic()
 	return Any(
-		Has(Hard),
+		Hard,
 		HellLogic,
 		AccessibilityLevel.SequenceBreak
 	)
 end
 function HellLogic()
 	return Any(
-		Has(Hell),
+		Hell,
 		AccessibilityLevel.SequenceBreak
 	)
 end
 
 -- Individual items
-function HasSword() return Has(WoodSword) end
 function HasAnySword() return Has(WoodSword) or Has(BiggoronSword) end
-function HasBreakingSword() return Has(NobleSword) or Has(BiggoronSword) end
-function HasStrongWeapon() return HasBreakingSword() or Has(FoolsOre) end
-function HasGoodPunch() return Has(ExpertsRing) end
-function HasShield() return Has(Shield) end
-function HasSpring() return Has(Spring) end
-function HasSummer() return Has(Summer) end
-function HasAutumn() return Has(Autumn) end
-function HasWinter() return Has(Winter) end
-function HasBracelet() return Has(Bracelet) end
-function HasBoomerang() return Has(Boomerang) end
-function HasMagicBoomerang() return Has(MagicBoomerang) end
-function HasBombs() return Has(Bombs) end
-function HasTraversalBombs() return Has(Bombs20) end
-function HasCombatBombs() return Has(Bombs40) end
-function HasBombchus() return Has(Bombchus) end
-function HasTraversalBombchus() return Has(Bombchus20) end
-function HasCombatBombchus() return Has(Bombchus50) end
-function HasSatchel() return Has(SeedSatchel) end
-function HasUpgradedSatchel() return Has(UpgradedSatchel) end
-function HasSlingshot() return Has(Slingshot) end
-function HasHSS() return Has(HyperSlingshot) end
-function HasEmbers() return Has(EmberSeeds) end
-function HasScents() return Has(ScentSeeds) end
-function HasPegasus() return Has(PegasusSeeds) end
-function HasGales() return Has(GaleSeeds) end
-function HasMysteries() return Has(MysterySeeds) end
-function HasFeather() return Has(Feather) end
-function HasShovel() return Has(Shovel) end
-function HasFlippers() return Has(Flippers) end
-function HasMagnetGlove() return Has(MagnetGlove) end
-
-function HasCane() return Has(CaneOfSomaria) end
-function HasSwitchHook() return Has(SwitchHook) end
-function HasLongHook() return Has(LongHook) end
+function CanShootSeeds() return Has(Slingshot) or Has(SeedShooter) end
 
 function CanDestroyMushroom(includeDimitri)
 	if (includeDimitri == nil) then
 		includeDimitri = false
 	end
 	return Any(
-		HasBracelet,
+		Bracelet,
 		All(
 			Any(
-				HasMagicBoomerang,
+				MagicBoomerang,
 				All(
 					includeDimitri,
 					Dimitri
@@ -80,7 +46,7 @@ function DestroySigns()
 	return Any(
 		CanDestroyPot,
 		CanBurnTrees,
-		HasMagicBoomerang
+		MagicBoomerang
 	)
 end
 
@@ -90,12 +56,12 @@ end
 
 function CanBombWall()
 	return Any(
-		HasBombs,
+		Bombs,
 		All(
 			Any(
-				HasCombatBombchus,
+				Bombchus50,
 				All(
-					HasBombchus,
+					Bombchus,
 					AccessibilityLevel.SequenceBreak
 				)
 			),
@@ -129,27 +95,27 @@ end
 function CanDimitriClip()
 	return All(
 		Dimitri,
-		HasBracelet,
-		HasSatchel,
-		HasGales,
+		Bracelet,
+		Satchel,
+		GaleSeeds,
 		HellLogic
 	)
 end
 
 function HasRod()
 	return Any(
-		HasSpring,
-		HasSummer,
-		HasAutumn,
-		HasWinter
+		Spring,
+		Summer,
+		Autumn,
+		Winter
 	)
 end
 
 function CanPunch()
 	return All(
 		Any(
-			Has(FistRing),
-			Has(ExpertsRing)
+			FistRing,
+			ExpertsRing
 		),
 		MediumLogic
 	)
@@ -170,16 +136,16 @@ function CanBeatOnox()
 	return All(
 		HasAnySword,
 		Any(
-			HasBombs,
+			Bombs,
 			Any(
-				HasTraversalBombchus,
+				Bombchus20,
 				All(
-					HasBombchus,
+					Bombchus,
 					AccessibilityLevel.SequenceBreak
 				)
 			)
 		),
-		HasFeather,
+		Feather,
 		Any(
 			HasRod,
 			HardLogic
@@ -191,21 +157,21 @@ function CanBeatGanon()
 	return Any(
 		All(
 			-- casual rules
-			Has(NobleSword),
-			HasSlingshot,
-			HasEmbers,
-			HasMysteries
+			NobleSword,
+			CanShootSeeds,
+			EmberSeeds,
+			MysterySeeds
 		),
 		All(
-			HasSword,
+			WoodSword,
 			Any(
 				-- all seeds damage Twinrova phase 2
-				HasSlingshot,
+				CanShootSeeds,
 				All(
-					HasSatchel,
+					Satchel,
 					-- all seeds other than Pegasus damage from satchel
 					HasContactSeeds,
-					HasGales,
+					GaleSeeds,
 					HardLogic
 				)
 			),
@@ -219,7 +185,7 @@ function CanGoal()
 		HasEnoughEssencesForGoal,
 		CanBeatOnox,
 		Any(
-			Has(OnoxGoal),
+			OnoxGoal,
 			CanBeatGanon
 		)
 	)
@@ -341,26 +307,27 @@ end
 
 function CanUseSeeds()
 	return Has(SeedSatchel) or
-	Has(Slingshot)
+	Has(Slingshot) or
+	Has(SeedShooter)
 end
 
 function CanShootSeedsCombat()
 	return All(
-		HasSatchel,
-		HasSlingshot,
+		Satchel,
+		CanShootSeeds,
 		Any(
-			HasEmbers,
-			HasScents,
+			EmberSeeds,
+			ScentSeeds,
 			All(
 				Any(
-					HasMysteries,
-					HasGales
+					MysterySeeds,
+					GaleSeeds
 				),
 				MediumLogic
 			)
 		),
 		Any(
-			HasUpgradedSatchel,
+			UpgradedSatchel,
 			AccessibilityLevel.SequenceBreak
 		)
 	)
@@ -368,22 +335,22 @@ end
 
 function HasContactSeeds()
 	return Any(
-		HasEmbers,
-		HasScents,
-		HasMysteries
+		EmberSeeds,
+		ScentSeeds,
+		MysterySeeds
 	)
 end
 
 function CanLightTorches()
 	return All(
 		Any(
-			HasSatchel,
-			HasSlingshot
+			Satchel,
+			CanShootSeeds
 		),
 		Any(
-			HasEmbers,
+			EmberSeeds,
 			All(
-				HasMysteries,
+				MysterySeeds,
 				MediumLogic
 			)
 		)
@@ -393,39 +360,39 @@ end
 function CanShootLongTorches()
 	return All(
 		CanLightTorches,
-		HasSlingshot
+		CanShootSeeds
 	)
 end
 
 function CanDestroyBush(allowBombchus)
 	return Any(
 		HasAnySword,
-		HasMagicBoomerang,
-		HasBracelet,
+		MagicBoomerang,
+		Bracelet,
 		All(
 			Any(
-				HasTraversalBombs,
+				Bombs20,
 				All(
-					HasBombs,
+					Bombs,
 					AccessibilityLevel.SequenceBreak
 				),
 				All(
 					allowBombchus == true,
 					Any(
-						HasCombatBombchus,
+						Bombchus50,
 						All(
-							HasBombchus,
+							Bombchus,
 							AccessibilityLevel.SequenceBreak
 						)
 					)
 				),
 				All(
 					CanUseSeeds,
-					HasEmbers
+					EmberSeeds
 				),
 				All(
-					HasSlingshot,
-					HasGales
+					CanShootSeeds,
+					GaleSeeds
 				)
 			),
 			MediumLogic
@@ -442,8 +409,9 @@ end
 
 function CanDestroyPot()
 	return Any(
-		HasBreakingSword,
-		HasBracelet
+		Bracelet,
+		NobleSword,
+		BiggoronSword
 	)
 end
 
@@ -453,27 +421,27 @@ function CanDestroyFlower(allowCompanion)
 	end
 	return Any(
 		HasAnySword,
-		HasMagicBoomerang,
+		MagicBoomerang,
 		All(
 			allowCompanion,
 			AnyFlute
 		),
 		All(
 			Any(
-				HasTraversalBombs,
+				Bombs20,
 				All(
-					HasBombs,
+					Bombs,
 					AccessibilityLevel.SequenceBreak
 				),
 				CanBurnTrees,
 				All(
-					HasSlingshot,
-					HasGales
+					CanShootSeeds,
+					GaleSeeds
 				),
 				Any(
-					HasCombatBombchus,
+					Bombchus50,
 					All(
-						HasBombchus,
+						Bombchus,
 						AccessibilityLevel.SequenceBreak
 					)
 				)
@@ -487,9 +455,9 @@ function CanDestroyCrystal()
 	return Any(
 		HasAnySword,
 		CanBombWall,
-		HasBracelet,
+		Bracelet,
 		All(
-			Has(ExpertsRing),
+			ExpertsRing,
 			MediumLogic
 		)
 	)
@@ -499,7 +467,7 @@ function CanDestroyRespawningBush()
 	return Any(
 		CanSwordKill,
 		All(
-			HasBombs,
+			Bombs,
 			MediumLogic
 		)
 	)
@@ -509,7 +477,7 @@ function CanTriggerLever()
 	return Any(
 		CanHitLeverFromMinecart,
 		All(
-			HasShovel,
+			Shovel,
 			MediumLogic
 		)
 	)
@@ -518,9 +486,9 @@ end
 function CanHitLeverFromMinecart()
 	return Any(
 		CanSwordPunchKill,
-		HasBoomerang,
+		Boomerang,
 		HasRod,
-		HasSlingshot,
+		CanShootSeeds,
 		All(
 			CanUseSeeds,
 			HasContactSeeds
@@ -530,17 +498,17 @@ end
 
 function CanHitFarSwitch()
 	return Any(
-		HasSlingshot,
-		HasBoomerang,
-		HasBombs,
+		CanShootSeeds,
+		Boomerang,
+		Bombs,
 		UseEnergyRing
 	)
 end
 
 function UseEnergyRing()
 	return All(
-		Has(EnergyRing),
-		HasSword,
+		EnergyRing,
+		WoodSword,
 		MediumLogic
 	)
 end
@@ -574,7 +542,7 @@ function Jump1(allowCompanion)
 		allowCompanion = false
 	end
 	return Any(
-		HasFeather,
+		Feather,
 		All(
 			allowCompanion,
 			Any(
@@ -631,7 +599,7 @@ function JumpLiquid1(allowCompanion)
 		allowCompanion = false
 	end
 	return Any(
-		HasFeather,
+		Feather,
 		All(
 			allowCompanion,
 			Ricky
@@ -643,7 +611,7 @@ function JumpLiquid2()
 		MaxJump() >= 2,
 		All(
 			MaxJump() >= 1,
-			HasBombs,
+			Bombs,
 			HardLogic
 		)
 	)
@@ -654,7 +622,7 @@ function JumpLiquid3()
 		MaxJump() >= 3,
 		All(
 			MaxJump() >= 2,
-			HasBombs,
+			Bombs,
 			HardLogic
 		)
 	)
@@ -665,7 +633,7 @@ function JumpLiquid4()
 		MaxJump() >= 4,
 		All(
 			MaxJump() >= 3,
-			HasBombs,
+			Bombs,
 			HardLogic
 		)
 	)
@@ -678,7 +646,7 @@ end
 function JumpLiquid6()
 	return All(
 		MaxJump() >= 5,
-		HasBombs,
+		Bombs,
 		HardLogic
 	)
 end
@@ -699,13 +667,13 @@ end
 function CanGaleKill()
 	return All(
 		Any(
-			HasGales,
-			HasMysteries
+			GaleSeeds,
+			MysterySeeds
 		),
-		HasUpgradedSatchel,
+		UpgradedSatchel,
 		Any(
-			HasSlingshot,
-			HasFeather,
+			CanShootSeeds,
+			Feather,
 			HardLogic
 		),
 		MediumLogic
@@ -715,9 +683,9 @@ end
 function CanKillWithPit()
 	return Any(
 		HasRod,
-		HasShield,
+		Shield,
 		All(
-			HasShovel,
+			Shovel,
 			MediumLogic
 		)
 	)
@@ -740,14 +708,14 @@ function CanNormalKill(pitAvailable, allowGale, allowCane)
 		CanSwordPunchKill,
 		All(
 			Any(
-				HasCombatBombs,
+				Bombchus50,
 				All(
-					HasBombs,
+					Bombs,
 					AccessibilityLevel.SequenceBreak
 				),
-				HasTraversalBombchus,
+				Bombchus20,
 				All(
-					HasBombchus,
+					Bombchus,
 					AccessibilityLevel.SequenceBreak
 				)
 			),
@@ -755,7 +723,7 @@ function CanNormalKill(pitAvailable, allowGale, allowCane)
 		),
 		All(
 			allowCane,
-			HasCane,
+			CaneOfSomaria,
 			MediumLogic
 		)
 	)
@@ -766,29 +734,29 @@ function CanNormalSatchelKill(allowGale)
 		allowGale = true
 	end
 	return All(
-		HasSatchel,
+		Satchel,
 		Any(
-			HasEmbers,
+			EmberSeeds,
 			All(
 				Any(
-					HasScents,
-					HasMysteries,
+					ScentSeeds,
+					MysterySeeds,
 					All(
 						allowGale,
-						HasFeather,
-						HasGales
+						Feather,
+						GaleSeeds
 					)
 				),
 				MediumLogic
 			),
 			All(
 				allowGale,
-				HasGales,
+				GaleSeeds,
 				HardLogic
 			)
 		),
 		Any(
-			HasUpgradedSatchel,
+			UpgradedSatchel,
 			AccessibilityLevel.SequenceBreak
 		)
 	)
@@ -799,26 +767,26 @@ function CanNormalSlingshotKill(allowGale)
 		allowGale = true
 	end
 	return All(
-		HasSatchel,
+		Satchel,
 		All(
-			HasSlingshot,
+			CanShootSeeds,
 			Any(
-				HasEmbers,
-				HasScents,
+				EmberSeeds,
+				ScentSeeds,
 				All(
 					Any(
 						All(
 							allowGale,
-							HasGales
+							GaleSeeds
 						),
-						HasMysteries
+						MysterySeeds
 					),
 					MediumLogic
 				)
 			)
 		),
 		Any(
-			HasUpgradedSatchel,
+			UpgradedSatchel,
 			AccessibilityLevel.SequenceBreak
 		)
 	)
@@ -829,35 +797,35 @@ function CanArmorKill()
 		CanSwordPunchKill,
 		All(
 			Any(
-				HasCombatBombs,
-				HasTraversalBombchus,
+				Bombchus50,
+				Bombchus20,
 				All(
-					HasBombs,
+					Bombs,
 					AccessibilityLevel.SequenceBreak
 				),
 				All(
-					HasBombchus,
+					Bombchus,
 					AccessibilityLevel.SequenceBreak
 				)
 			),
 			MediumLogic
 		),
 		All(
-			HasUpgradedSatchel,
-			HasScents,
+			UpgradedSatchel,
+			ScentSeeds,
 			Any(
-				HasSlingshot,
+				CanShootSeeds,
 				MediumLogic
 			)
 		),
 		All(
-			HasCane,
+			CaneOfSomaria,
 			MediumLogic
 		),
 		All(
 			-- ool version of above without upgraded satchel
 			CanUseSeeds,
-			HasScents,
+			ScentSeeds,
 			AccessibilityLevel.SequenceBreak
 		)
 	)
@@ -866,7 +834,7 @@ end
 function CanKillKeese()
 	return Any(
 		CanNormalKill,
-		HasBoomerang
+		Boomerang
 	)
 end
 
@@ -882,9 +850,9 @@ end
 
 function CanFlipBeetle()
 	return Any(
-		HasShield,
+		Shield,
 		All(
-			HasShovel,
+			Shovel,
 			MediumLogic
 		)
 	)
@@ -906,7 +874,7 @@ end
 function CanFarmRupees()
 	return Any(
 		CanNormalKill(false, false),
-		HasShovel
+		Shovel
 	)
 end
 
@@ -963,7 +931,7 @@ function HasRupees(count)
 		),
 		-- shovel is infinite farm, and expected in hard
 		All(
-			HasShovel,
+			Shovel,
 			HardLogic
 		),
 		All(
@@ -975,7 +943,7 @@ end
 
 function CanFarmOreChunks()
 	return Any(
-		HasShovel,
+		Shovel,
 		All(
 			CanReach(SubrosiaMountainEast),
 			HardLogic
@@ -983,8 +951,8 @@ function CanFarmOreChunks()
 		All(
 			Any(
 				HasAnySword,
-				HasBracelet,
-				HasMagicBoomerang
+				Bracelet,
+				MagicBoomerang
 			),
 			MediumLogic
 		)
@@ -1006,20 +974,13 @@ end
 
 function CanMapleTrade()
 	return All(
-		Has(LonLonEgg),
+		LonLonEgg,
 		CanNormalKill(false, false)
 	)
 end
 
 function CanEnterTarm()
-	local required = Tracker:FindObjectForCode(TarmGateSetting).CurrentStage
-	local n = 0
-	for _, j in ipairs(JewelKeys) do
-		if (Has(j)) then
-			n = n + 1
-		end
-	end
-	return n >= required
+	return Tracker:ProviderCountForCode(Jewels) >= Tracker:FindObjectForCode(TarmGateSetting).CurrentStage
 end
 
 function CanLostWoods(allowDefault, forceDeku)
@@ -1044,7 +1005,7 @@ function CanLostWoods(allowDefault, forceDeku)
 		CanReach(TarmLostWoodsScrub),
 		All(
 			-- know the sequence
-			Has(LostWoodsVanilla),
+			LostWoodsVanilla,
 			MediumLogic
 		)
 	)
@@ -1071,7 +1032,7 @@ function CanPedestal(allowDefault, forceDeku)
 		CanReach(TarmPedestalScrub),
 		All(
 			-- know the sequence
-			Has(PedestalVanilla),
+			PedestalVanilla,
 			MediumLogic
 		)
 	)
@@ -1174,36 +1135,36 @@ function GetCuccos()
 		if (All(
 			CanEnterTarm,
 			Any(
-				Has(LostWoodsWinter),
-				HasWinter
+				LostWoodsWinter,
+				Winter
 			),
 			Any(
-				HasSpring,
-				HasSummer,
-				HasAutumn
+				Spring,
+				Summer,
+				Autumn
 			),
 			Any(
-				Has(LostWoodsSummer),
-				HasSummer,
+				LostWoodsSummer,
+				Summer,
 				All(
 					Any(
-						Has(LostWoodsAutumn),
-						HasAutumn
+						LostWoodsAutumn,
+						Autumn
 					),
-					HasMagicBoomerang
+					MagicBoomerang
 				)
 			)
 		) == AccessibilityLevel.Normal) then
 			local canReachDeku = All(
-				HasShield,
+				Shield,
 				Any(
 					availableCuccos["swamp"][2] > 0,
 					JumpLiquid2,
-					HasFlippers
+					Flippers
 				)
 			) == AccessibilityLevel.Normal
 			if (All(
-				HasAutumn,
+				Autumn,
 				CanDestroyMushroom,
 				Any(
 					CanLostWoods(false, canReachDeku),
@@ -1233,10 +1194,10 @@ function D1KeyCount(count)
 end
 function HasD1BossKey()
 	return Any(
-		Has(D1BossKey),
+		D1BossKey,
 		All(
-			Has(MasterKeysBoth),
-			Has(D1MasterKey)
+			MasterKeysBoth,
+			D1MasterKey
 		)
 	)
 end
@@ -1246,10 +1207,10 @@ function D2KeyCount(count)
 end
 function HasD2BossKey()
 	return Any(
-		Has(D2BossKey),
+		D2BossKey,
 		All(
-			Has(MasterKeysBoth),
-			Has(D2MasterKey)
+			MasterKeysBoth,
+			D2MasterKey
 		)
 	)
 end
@@ -1259,10 +1220,10 @@ function D3KeyCount(count)
 end
 function HasD3BossKey()
 	return Any(
-		Has(D3BossKey),
+		D3BossKey,
 		All(
-			Has(MasterKeysBoth),
-			Has(D3MasterKey)
+			MasterKeysBoth,
+			D3MasterKey
 		)
 	)
 end
@@ -1272,10 +1233,10 @@ function D4KeyCount(count)
 end
 function HasD4BossKey()
 	return Any(
-		Has(D4BossKey),
+		D4BossKey,
 		All(
-			Has(MasterKeysBoth),
-			Has(D4MasterKey)
+			MasterKeysBoth,
+			D4MasterKey
 		)
 	)
 end
@@ -1285,10 +1246,10 @@ function D5KeyCount(count)
 end
 function HasD5BossKey()
 	return Any(
-		Has(D5BossKey),
+		D5BossKey,
 		All(
-			Has(MasterKeysBoth),
-			Has(D5MasterKey)
+			MasterKeysBoth,
+			D5MasterKey
 		)
 	)
 end
@@ -1298,10 +1259,10 @@ function D6KeyCount(count)
 end
 function HasD6BossKey()
 	return Any(
-		Has(D6BossKey),
+		D6BossKey,
 		All(
-			Has(MasterKeysBoth),
-			Has(D6MasterKey)
+			MasterKeysBoth,
+			D6MasterKey
 		)
 	)
 end
@@ -1311,10 +1272,10 @@ function D7KeyCount(count)
 end
 function HasD7BossKey()
 	return Any(
-		Has(D7BossKey),
+		D7BossKey,
 		All(
-			Has(MasterKeysBoth),
-			Has(D7MasterKey)
+			MasterKeysBoth,
+			D7MasterKey
 		)
 	)
 end
@@ -1324,10 +1285,10 @@ function D8KeyCount(count)
 end
 function HasD8BossKey()
 	return Any(
-		Has(D8BossKey),
+		D8BossKey,
 		All(
-			Has(MasterKeysBoth),
-			Has(D8MasterKey)
+			MasterKeysBoth,
+			D8MasterKey
 		)
 	)
 end

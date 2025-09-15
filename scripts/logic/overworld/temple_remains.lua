@@ -2,7 +2,7 @@ LowerTempleRemains:connect_one_way(Maple, CanMapleTrade)
 LowerTempleRemains:connect_one_way(TempleRemainsFindSeason)
 LowerTempleRemains:connect_one_way_entrance(TempleRemainsStump, function()
 	return All(
-		HasFeather,
+		Feather,
 		Any(
 			CanReach(Fireworks),
 			All(
@@ -11,8 +11,8 @@ LowerTempleRemains:connect_one_way_entrance(TempleRemainsStump, function()
 					All(
 						-- spring
 						Any(
-							Has(TempleRemainsSpring),
-							HasSpring
+							TempleRemainsSpring,
+							Spring
 						),
 						CanDestroyFlower,
 						Jump6
@@ -20,25 +20,25 @@ LowerTempleRemains:connect_one_way_entrance(TempleRemainsStump, function()
 					All(
 						-- summer
 						Any(
-							Has(TempleRemainsSummer),
-							HasSummer
+							TempleRemainsSummer,
+							Summer
 						),
 						Jump6
 					),
 					All(
 						-- autumn
 						Any(
-							Has(TempleRemainsAutumn),
-							HasAutumn
+							TempleRemainsAutumn,
+							Autumn
 						)
 					),
 					All(
 						-- winter
 						Any(
-							Has(TempleRemainsWinter),
-							HasWinter
+							TempleRemainsWinter,
+							Winter
 						),
-						HasShovel,
+						Shovel,
 						Jump6
 					)
 				)
@@ -48,14 +48,14 @@ LowerTempleRemains:connect_one_way_entrance(TempleRemainsStump, function()
 end, {Fireworks})
 TempleRemainsStump:connect_one_way_entrance(LowerTempleRemains, function()
 	return All(
-		HasFeather,
+		Feather,
 		Any(
 			CanReach(Fireworks),
 			All(
 				-- spring
 				Any(
-					Has(TempleRemainsSpring),
-					HasSpring
+					TempleRemainsSpring,
+					Spring
 				),
 				CanDestroyFlower,
 				CanDestroyBush,
@@ -64,8 +64,8 @@ TempleRemainsStump:connect_one_way_entrance(LowerTempleRemains, function()
 			All(
 				-- summer
 				Any(
-					Has(TempleRemainsSummer),
-					HasSummer
+					TempleRemainsSummer,
+					Summer
 				),
 				CanDestroyBush,
 				Jump6
@@ -73,15 +73,15 @@ TempleRemainsStump:connect_one_way_entrance(LowerTempleRemains, function()
 			All(
 				-- autumn
 				Any(
-					Has(TempleRemainsAutumn),
-					HasAutumn
+					TempleRemainsAutumn,
+					Autumn
 				),
 				CanDestroyBush
 			),
 			Any(
 				-- winter
-				Has(TempleRemainsWinter),
-				HasWinter
+				TempleRemainsWinter,
+				Winter
 			)
 		)
 	)
@@ -89,24 +89,24 @@ end, {Fireworks})
 LowerTempleRemains:connect_one_way_entrance(TempleRemainsLowerPortal, function()
 	return All(
 		CanReach(Fireworks),
-		HasFeather
+		Feather
 	)
 end, {Fireworks})
 TempleRemainsStump:connect_one_way_entrance(TempleRemainsLowerPortal, function()
 	return All(
-		HasFeather,
+		Feather,
 		Any(
 			CanReach(Fireworks),
-			HasWinter
+			Winter
 		)
 	)
 end, {Fireworks})
 TempleRemainsLowerPortal:connect_one_way(TempleRemainsFindSeason)
 TempleRemainsLowerPortal:connect_two_ways_entrance(Volcano, function()
 	return Any(
-		Has(ShufflePortalsOff),
-		Has(RemainsLeadsToVolcano),
-		Has(VolcanoLeadsToRemains)
+		ShufflePortalsOff,
+		RemainsLeadsToVolcano,
+		VolcanoLeadsToRemains
 	)
 end)
 TempleRemainsLowerPortal:connect_one_way_entrance(LowerTempleRemains)
@@ -120,13 +120,13 @@ LowerTempleRemains:connect_one_way_entrance(TempleRemainsUpperPortal, function()
 	return All(
 		CanReach(Fireworks),
 		Any(
-			Has(TempleRemainsSummer),
-			HasSummer
+			TempleRemainsSummer,
+			Summer
 		),
 		JumpLiquid2,
 		Any(
 			Jump6,
-			HasMagnetGlove
+			MagnetGlove
 		)
 	)
 end, {Fireworks})
@@ -134,24 +134,24 @@ TempleRemainsUpperPortal:connect_one_way(TempleRemainsFindSeason)
 TempleRemainsUpperPortal:connect_one_way_entrance(LowerTempleRemains, function()
 	return All(
 		CanReach(Fireworks),
-		HasFeather
+		Feather
 	)
 end, {Fireworks})
 TempleRemainsUpperPortal:connect_one_way_entrance(TempleRemainsStump, function() return Has(Feather) end)
 TempleRemainsUpperPortal:connect_one_way_entrance(TempleRemainsLowerPortal, function()
 	return All(
-		HasFeather,
+		Feather,
 		Any(
-			Has(TempleRemainsWinter),
+			TempleRemainsWinter,
 			CanReach(Fireworks)
 		)
 	)
 end, {Fireworks})
 TempleRemainsUpperPortal:connect_two_ways_entrance(SwordAndShieldMaze, function()
 	return Any(
-		Has(ShufflePortalsOff),
-		Has(UpperRemainsLeadsToD8),
-		Has(D8LeadsToUpperRemains)
+		ShufflePortalsOff,
+		UpperRemainsLeadsToD8,
+		D8LeadsToUpperRemains
 	)
 end)
 
@@ -159,312 +159,312 @@ end)
 TempleRemainsLowerPortal:connect_one_way_entrance(SuburbsPortal, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(RemainsLeadsToSuburbs),
-			Has(SuburbsLeadsToRemains)
+			RemainsLeadsToSuburbs,
+			SuburbsLeadsToRemains
 		)
 	)
 end)
 TempleRemainsLowerPortal:connect_one_way_entrance(SpoolPortal, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(RemainsLeadsToSwamp),
-			Has(SwampLeadsToRemains)
+			RemainsLeadsToSwamp,
+			SwampLeadsToRemains
 		)
 	)
 end)
 TempleRemainsLowerPortal:connect_one_way_entrance(EyeglassPortal, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(RemainsLeadsToLake),
-			Has(LakeLeadsToRemains)
+			RemainsLeadsToLake,
+			LakeLeadsToRemains
 		)
 	)
 end)
 TempleRemainsLowerPortal:connect_one_way_entrance(LowerMtCucco, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(RemainsLeadsToCucco),
-			Has(CuccoLeadsToRemains)
+			RemainsLeadsToCucco,
+			CuccoLeadsToRemains
 		)
 	)
 end)
 TempleRemainsLowerPortal:connect_one_way_entrance(HoronPortal, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(RemainsLeadsToHoron),
-			Has(HoronLeadsToRemains)
+			RemainsLeadsToHoron,
+			HoronLeadsToRemains
 		)
 	)
 end)
 TempleRemainsLowerPortal:connect_one_way_entrance(TempleRemainsUpperPortal, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(RemainsLeadsToUpperRemains),
-			Has(UpperRemainsLeadsToRemains)
+			RemainsLeadsToUpperRemains,
+			UpperRemainsLeadsToRemains
 		)
 	)
 end)
 TempleRemainsLowerPortal:connect_one_way_entrance(SubrosiaMountainEast, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(RemainsLeadsToMountain),
-			Has(MountainLeadsToRemains)
+			RemainsLeadsToMountain,
+			MountainLeadsToRemains
 		)
 	)
 end)
 TempleRemainsLowerPortal:connect_one_way_entrance(SubrosiaMarket, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(RemainsLeadsToMarket),
-			Has(MarketLeadsToRemains)
+			RemainsLeadsToMarket,
+			MarketLeadsToRemains
 		)
 	)
 end)
 TempleRemainsLowerPortal:connect_one_way_entrance(EastFurnace, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(RemainsLeadsToFurnace),
-			Has(FurnaceLeadsToRemains)
+			RemainsLeadsToFurnace,
+			FurnaceLeadsToRemains
 		)
 	)
 end)
 TempleRemainsLowerPortal:connect_one_way_entrance(SubrosiaVillagePortal, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(RemainsLeadsToVillage),
-			Has(VillageLeadsToRemains)
+			RemainsLeadsToVillage,
+			VillageLeadsToRemains
 		)
 	)
 end)
 TempleRemainsLowerPortal:connect_one_way_entrance(Pirates, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(RemainsLeadsToPirates),
-			Has(PiratesLeadsToRemains)
+			RemainsLeadsToPirates,
+			PiratesLeadsToRemains
 		)
 	)
 end)
 TempleRemainsLowerPortal:connect_one_way_entrance(Volcano, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(RemainsLeadsToVolcano),
-			Has(VolcanoLeadsToRemains)
+			RemainsLeadsToVolcano,
+			VolcanoLeadsToRemains
 		)
 	)
 end)
 TempleRemainsLowerPortal:connect_one_way_entrance(SwordAndShieldMaze, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(RemainsLeadsToD8),
-			Has(D8LeadsToRemains)
+			RemainsLeadsToD8,
+			D8LeadsToRemains
 		)
 	)
 end)
 TempleRemainsUpperPortal:connect_one_way_entrance(SuburbsPortal, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(UpperRemainsLeadsToSuburbs),
-			Has(SuburbsLeadsToUpperRemains)
+			UpperRemainsLeadsToSuburbs,
+			SuburbsLeadsToUpperRemains
 		)
 	)
 end)
 TempleRemainsUpperPortal:connect_one_way_entrance(SpoolPortal, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(UpperRemainsLeadsToSwamp),
-			Has(SwampLeadsToUpperRemains)
+			UpperRemainsLeadsToSwamp,
+			SwampLeadsToUpperRemains
 		)
 	)
 end)
 TempleRemainsUpperPortal:connect_one_way_entrance(EyeglassPortal, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(UpperRemainsLeadsToLake),
-			Has(LakeLeadsToUpperRemains)
+			UpperRemainsLeadsToLake,
+			LakeLeadsToUpperRemains
 		)
 	)
 end)
 TempleRemainsUpperPortal:connect_one_way_entrance(LowerMtCucco, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(UpperRemainsLeadsToCucco),
-			Has(CuccoLeadsToUpperRemains)
+			UpperRemainsLeadsToCucco,
+			CuccoLeadsToUpperRemains
 		)
 	)
 end)
 TempleRemainsUpperPortal:connect_one_way_entrance(HoronPortal, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(UpperRemainsLeadsToHoron),
-			Has(HoronLeadsToUpperRemains)
+			UpperRemainsLeadsToHoron,
+			HoronLeadsToUpperRemains
 		)
 	)
 end)
 TempleRemainsUpperPortal:connect_one_way_entrance(TempleRemainsLowerPortal, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(UpperRemainsLeadsToRemains),
-			Has(RemainsLeadsToUpperRemains)
+			UpperRemainsLeadsToRemains,
+			RemainsLeadsToUpperRemains
 		)
 	)
 end)
 TempleRemainsUpperPortal:connect_one_way_entrance(SubrosiaMountainEast, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(UpperRemainsLeadsToMountain),
-			Has(MountainLeadsToUpperRemains)
+			UpperRemainsLeadsToMountain,
+			MountainLeadsToUpperRemains
 		)
 	)
 end)
 TempleRemainsUpperPortal:connect_one_way_entrance(SubrosiaMarket, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(UpperRemainsLeadsToMarket),
-			Has(MarketLeadsToUpperRemains)
+			UpperRemainsLeadsToMarket,
+			MarketLeadsToUpperRemains
 		)
 	)
 end)
 TempleRemainsUpperPortal:connect_one_way_entrance(EastFurnace, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(UpperRemainsLeadsToFurnace),
-			Has(FurnaceLeadsToUpperRemains)
+			UpperRemainsLeadsToFurnace,
+			FurnaceLeadsToUpperRemains
 		)
 	)
 end)
 TempleRemainsUpperPortal:connect_one_way_entrance(SubrosiaVillagePortal, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(UpperRemainsLeadsToVillage),
-			Has(VillageLeadsToUpperRemains)
+			UpperRemainsLeadsToVillage,
+			VillageLeadsToUpperRemains
 		)
 	)
 end)
 TempleRemainsUpperPortal:connect_one_way_entrance(Pirates, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(UpperRemainsLeadsToPirates),
-			Has(PiratesLeadsToUpperRemains)
+			UpperRemainsLeadsToPirates,
+			PiratesLeadsToUpperRemains
 		)
 	)
 end)
 TempleRemainsUpperPortal:connect_one_way_entrance(Volcano, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(UpperRemainsLeadsToVolcano),
-			Has(VolcanoLeadsToUpperRemains)
+			UpperRemainsLeadsToVolcano,
+			VolcanoLeadsToUpperRemains
 		)
 	)
 end)
 TempleRemainsUpperPortal:connect_one_way_entrance(SwordAndShieldMaze, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(UpperRemainsLeadsToD8),
-			Has(D8LeadsToUpperRemains)
+			UpperRemainsLeadsToD8,
+			D8LeadsToUpperRemains
 		)
 	)
 end)

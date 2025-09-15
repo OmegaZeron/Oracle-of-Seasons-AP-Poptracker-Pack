@@ -19,17 +19,17 @@ SnakeAltEntrance:connect_one_way(SnakeBombPuzzle, function()
 	return All(
 		CanDestroyBush,
 		Any(
-			HasBombs,
+			Bombs,
 			All(
 				Any(
-					HasCombatBombchus,
+					Bombchus50,
 					All(
-						HasBombchus,
+						Bombchus,
 						AccessibilityLevel.SequenceBreak
 					)
 				),
-				HasSatchel,
-				HasPegasus,
+				Satchel,
+				PegasusSeeds,
 				MediumLogic
 			)
 		)
@@ -47,15 +47,15 @@ FacadeDoorstep:connect_one_way_entrance(Facade, function()
 				AccessibilityLevel.SequenceBreak
 			)
 		),
-		HasBombs
+		Bombs
 	)
 end)
 Facade:connect_one_way_entrance(SnakeFoyer)
 Facade:connect_one_way_entrance(KingDodongo, function()
 	return All(
 		HasD2BossKey,
-		HasBracelet,
-		HasBombs
+		Bracelet,
+		Bombs
 	)
 end)
 
@@ -81,43 +81,43 @@ SnakeHardhats:connect_one_way_entrance(SnakeBombMoblins, function()
 		-- hardhats
 		Any(
 			CanSwordKill,
-			HasBoomerang,
+			Boomerang,
 			CanKillWithPit,
 			All(
-				HasUpgradedSatchel,
+				UpgradedSatchel,
 				Any(
-					HasSlingshot,
+					CanShootSeeds,
 					All(
-						HasSatchel,
+						Satchel,
 						HardLogic
 					)
 				),
 				Any(
-					HasScents,
-					HasGales,
-					HasMysteries
+					ScentSeeds,
+					GaleSeeds,
+					MysterySeeds
 				),
 				MediumLogic
 			),
 			All(
-				HasShovel,
+				Shovel,
 				HardLogic
 			)
 		),
 		-- moblins
 		Any(
 			CanSwordKill,
-			HasBombs, -- regrowing bushes are right there
+			Bombs, -- regrowing bushes are right there
 			CanShootSeedsCombat,
 			All(
-				HasFeather,
+				Feather,
 				CanKillWithPit
 			),
 			All(
 				Any(
 					All(
 						CanUseSeeds,
-						HasEmbers
+						EmberSeeds
 					),
 					CanPunch
 				),

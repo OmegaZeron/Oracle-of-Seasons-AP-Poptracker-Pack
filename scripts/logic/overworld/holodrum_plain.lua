@@ -11,13 +11,13 @@ end)
 NorthHolodrumPlain:connect_one_way(Blaino, CanFarmRupees)
 NorthHolodrumPlain:connect_one_way(HolodrumPlainMushroomCave, function()
 	return All(
-		HasFlippers,
+		Flippers,
 		Any(
 			All(
 				CanDestroyMushroom(true),
 				Any(
-					Has(HolodrumPlainAutumn),
-					HasAutumn
+					HolodrumPlainAutumn,
+					Autumn
 				)
 			),
 			CanDimitriClip
@@ -28,15 +28,15 @@ NorthHolodrumPlain:connect_one_way(NorthHolodrumPlainOldMan, function()
 	return All(
 		CanBurnTrees,
 		Any(
-			Has(HolodrumPlainSummer),
+			HolodrumPlainSummer,
 			Ricky,
 			All(
-				HasSummer,
+				Summer,
 				Any(
 					Jump1(true),
 					All(
 						CanDestroyBushFlute(true),
-						HasFlippers
+						Flippers
 					)
 				)
 			)
@@ -46,7 +46,7 @@ end)
 NorthHolodrumPlain:connect_one_way(TreehouseOldMan, function()
 	return All(
 		Any(
-			HasFlippers,
+			Flippers,
 			Dimitri
 		),
 		HasEnoughEssencesForTreehouse
@@ -60,7 +60,7 @@ SouthHolodrumPlain:connect_one_way(SouthHolodrumPlainGasha, function()
 	return All(
 		CanPlantGasha,
 		CanDestroyBush,
-		HasShovel
+		Shovel
 	)
 end)
 SouthHolodrumPlain:connect_one_way(SouthHolodrumPlainOldMan, CanBurnTrees)
@@ -68,7 +68,7 @@ NorthHolodrumPlain:connect_one_way(HolodrumPlainIsland, function()
 	return All(
 		CanPlantGasha,
 		Any(
-			HasFlippers,
+			Flippers,
 			Dimitri
 		),
 		Any(
@@ -82,18 +82,18 @@ end)
 NorthHolodrumPlain:connect_two_ways_entrance(SouthHolodrumPlain, function()
 	return Any(
 		Jump1(true),
-		Has(HolodrumPlainWinter)
+		HolodrumPlainWinter
 	)
 end)
 NorthHolodrumPlain:connect_two_ways_entrance(HolodrumPlainSign, function()
 	return Any(
-		HasFlippers,
+		Flippers,
 		Dimitri
 	)
 end)
 NorthHolodrumPlain:connect_two_ways_entrance(SouthGoronMountain, function()
 	return Any(
-		HasFlippers,
+		Flippers,
 		Dimitri
 	)
 end)
@@ -107,8 +107,8 @@ end)
 NorthHolodrumPlain:connect_one_way_entrance(UpperNorthHoron, function() return Has(Bracelet) end)
 SouthHolodrumPlain:connect_one_way_entrance(NorthSpoolSwamp, function()
 	return Any(
-		Has(HolodrumPlainSummer),
-		HasSummer,
+		HolodrumPlainSummer,
+		Summer,
 		Jump4,
 		Ricky,
 		Moosh
@@ -116,13 +116,13 @@ SouthHolodrumPlain:connect_one_way_entrance(NorthSpoolSwamp, function()
 end)
 HolodrumPlainSign:connect_one_way_entrance(SouthSpoolSwamp, function()
 	return Any(
-		HasFlippers,
+		Flippers,
 		Dimitri
 	)
 end)
 NorthHolodrumPlain:connect_two_ways_entrance(SouthGoronMountain, function()
 	return Any(
-		HasFlippers,
+		Flippers,
 		Dimitri
 	)
 end)
@@ -130,7 +130,7 @@ NorthHolodrumPlain:connect_two_ways_entrance(NatzuWest)
 NorthHolodrumPlain:connect_one_way(OnoxGasha, function()
 	return All(
 		CanPlantGasha,
-		HasShovel
+		Shovel
 	)
 end)
 NorthHolodrumPlain:connect_two_ways_entrance(LowerTempleRemains, Jump3)

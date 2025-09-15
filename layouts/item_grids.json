@@ -9,11 +9,11 @@
 				"item_margin": "3,2",
 				"item_size": 38,
 				"rows": [
-					["sword1", "biggoron_sword", "bestweapon", "shield", "bombs", "feather"],
-					["strength", "boomerang1", "slingshot1", "glove", "shovel", "flute_generic"],
+					["sword1", "biggoron_sword", "bestweapon", "shield", "bombs", "bombchus"],
+					["strength", "boomerang1", "slingshot1", "shooter", "glove", "feather"],
 					["satchel1", "emberseeds", "mysteryseeds", "scentseeds", "pegasusseeds", "galeseeds"],
-					["flippers", "bothbell", "spring", "summer", "fall", "winter"],
-					["animal_companion", "golden_darknut", "golden_octorok", "golden_moblin", "golden_lynel", "rupees"]
+					["flippers", "shovel", "spring", "summer", "fall", "winter"],
+					["hook", "somaria", "rustybell", "polishedbell", "flute_generic", "animal_companion"]
 				]
 			},		 
 			{
@@ -22,11 +22,11 @@
 				"item_margin": "3,2",
 				"item_size": 38,
 				"rows": [
-					["gnarledkey", "floodkey", "dragonkey", "memberscard", "plaque", "banana", "roundjewel"],
-					["starore", "ribbon", "bombflower", "gashaseeds", "blueredore", "hardore", "squarejewel"],
-					["cuccodex", "lonlonegg", "ghastlydoll", "ironpot", "lavasoup", "goronvase", "pyramidjewel"],
-					["fish", "megaphone", "mushroom", "woodenbird", "enginegrease", "phonograph", "xjewel"],
-					["orechunks", "somaria", "bombchus", "ring_fist", "ring_expert", "ring_energy", "ring_swimmer"]
+					["gnarledkey", "floodkey", "dragonkey", "memberscard", "plaque", "banana", "jewels"],
+					["starore", "ribbon", "bombflower", "gashaseeds", "blueredore", "hardore", "ring_fist"],
+					["cuccodex", "lonlonegg", "ghastlydoll", "ironpot", "lavasoup", "goronvase", "ring_expert"],
+					["fish", "megaphone", "mushroom", "woodenbird", "enginegrease", "phonograph", "ring_energy"],
+					["rupees", "orechunks", "golden_darknut", "golden_octorok", "golden_moblin", "golden_lynel", "ring_swimmer"]
 				]
 			}
 		]

@@ -10,7 +10,7 @@ NatzuRickyEast:connect_two_ways_entrance(SunkenDoorstep, function() return Has(N
 NatzuWest:connect_two_ways_entrance(NatzuDimitriWest, function() return Has(NatzuIsDimitri) end)
 NatzuDimitriWest:connect_two_ways_entrance(NatzuDimitriEast, function()
 	return Any(
-		HasFlippers,
+		Flippers,
 		Dimitri
 	)
 end)
@@ -18,8 +18,8 @@ NatzuDimitriEast:connect_one_way_entrance(MoblinKeepBridge, function()
 	return Any(
 		Dimitri,
 		All(
-			Has(SwimmersRing),
-			HasFlippers,
+			SwimmersRing,
+			Flippers,
 			MediumLogic
 		)
 	)
@@ -27,14 +27,14 @@ end)
 MoblinKeepBridge:connect_one_way_entrance(NatzuDimitriEast, function()
 	return Any(
 		Dimitri,
-		HasFlippers
+		Flippers
 	)
 end)
 NatzuDimitriEast:connect_one_way(NatzuScrub, Dimitri)
 NatzuDimitriEast:connect_two_ways_entrance(SunkenDoorstep, function()
 	return All(
-		Has(NatzuIsDimitri),
-		HasFeather
+		NatzuIsDimitri,
+		Feather
 	)
 end)
 NatzuDimitriEast:connect_one_way_entrance(NatzuPlatformCave, JumpLiquid5)
@@ -71,7 +71,7 @@ NatzuMooshEast:connect_one_way_entrance(MoblinKeepBridge, function()
 end)
 NatzuMooshEast:connect_two_ways_entrance(SunkenDoorstep, function()
 	return All(
-		Has(NatzuIsMoosh),
+		NatzuIsMoosh,
 		Any(
 			Moosh,
 			JumpLiquid3
@@ -81,17 +81,17 @@ end)
 NatzuScrub:connect_one_way(DekuSecret, function()
 	return All(
 		CanUseSeeds,
-		HasEmbers,
-		HasScents,
-		HasPegasus,
-		HasGales,
-		HasMysteries
+		EmberSeeds,
+		ScentSeeds,
+		PegasusSeeds,
+		GaleSeeds,
+		MysterySeeds
 	)
 end)
 -- moblin keep
 MoblinKeepBridge:connect_two_ways_entrance(MoblinKeep, function()
 	return Any(
-		HasFlippers,
+		Flippers,
 		JumpLiquid4
 	)
 end)
@@ -102,17 +102,17 @@ SunkenDoorstep:connect_one_way(EasternSuburbsFindSeason)
 SunkenDoorstep:connect_one_way(SunkenCityFindSeason)
 SunkenDoorstep:connect_one_way_entrance(UpperEasternSuburbs, function()
 	return Any(
-		Has(EasternSuburbsSpring),
-		Has(EasternSuburbsSummer),
-		Has(EasternSuburbsAutumn)
+		EasternSuburbsSpring,
+		EasternSuburbsSummer,
+		EasternSuburbsAutumn
 	)
 end)
 SunkenDoorstep:connect_one_way_entrance(UpperEasternSuburbsWinter, function() return Has(EasternSuburbsWinter) end)
 SunkenDoorstep:connect_two_ways_entrance(SunkenCity, function()
 	return Any(
-		Has(SunkenCityWinter),
-		HasFeather,
-		HasFlippers,
+		SunkenCityWinter,
+		Feather,
+		Flippers,
 		Dimitri
 	)
 end)

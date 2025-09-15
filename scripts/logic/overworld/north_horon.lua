@@ -7,13 +7,13 @@ LowerNorthHoron:connect_one_way(EyeglassPitsChest, function()
 	return Any(
 		Jump4,
 		All(
-			HasFeather,
+			Feather,
 			Any(
 				All(
 					CanDestroyBushFlute(true),
-					HasAutumn
+					Autumn
 				),
-				Has(NorthHoronAutumn)
+				NorthHoronAutumn
 			)
 		)
 	)
@@ -37,9 +37,9 @@ UpperNorthHoron:connect_one_way(NorthHoronOldMan, CanBurnTrees)
 -- red ring old man
 GnarledRootDoorstep:connect_one_way_entrance(RedRingOldMan, function()
 	return Any(
-		Has(NorthHoronSummer),
+		NorthHoronSummer,
 		All(
-			HasSummer,
+			Summer,
 			CanDestroyBushFlute
 		)
 	)
@@ -51,8 +51,8 @@ GnarledRootDoorstep:connect_one_way_entrance(GnarledRootDungeon, function() retu
 GnarledRootDungeon:connect_one_way_entrance(GnarledRootDoorstep)
 GnarledRootDungeon:connect_two_ways_entrance(GnarledFoyer, function()
 	return Any(
-		Has(ShuffleDungeonOff),
-		Has(D1LeadsToD1)
+		ShuffleDungeonOff,
+		D1LeadsToD1
 	)
 end)
 
@@ -61,29 +61,29 @@ UpperNorthHoron:connect_one_way_entrance(NorthHolodrumPlain, function() return H
 GnarledRootDoorstep:connect_one_way_entrance(NorthHolodrumPlain, function()
 	return Any(
 		Dimitri,
-		HasFlippers
+		Flippers
 	)
 end)
 GnarledRootDoorstep:connect_one_way_entrance(HolodrumPlainSign, function()
 	return Any(
 		Dimitri,
-		HasFlippers
+		Flippers
 	)
 end)
 UpperNorthHoron:connect_one_way_entrance(EyeglassLake, function()
 	return All(
 		Any(
-			Has(NorthHoronSpring),
-			Has(NorthHoronAutumn),
-			HasSpring,
-			HasAutumn
+			NorthHoronSpring,
+			NorthHoronAutumn,
+			Spring,
+			Autumn
 		),
 		Jump1(true),
 		Any(
-			HasFlippers,
+			Flippers,
 			All(
 				Dimitri,
-				HasBracelet,
+				Bracelet,
 				MediumLogic
 			)
 		)
@@ -92,8 +92,8 @@ end)
 UpperNorthHoron:connect_one_way_entrance(FrozenEyeglassLake, function()
 	return All(
 		Any(
-			Has(NorthHoronWinter),
-			HasWinter
+			NorthHoronWinter,
+			Winter
 		),
 		Jump1(true)
 	)
@@ -101,8 +101,8 @@ end)
 UpperNorthHoron:connect_one_way_entrance(DryEyeglassLake, function()
 	return All(
 		Any(
-			Has(NorthHoronSummer),
-			HasSummer
+			NorthHoronSummer,
+			Summer
 		),
 		Jump1(true)
 	)
@@ -119,7 +119,7 @@ FrozenEyeglassLake:connect_one_way_entrance(UpperNorthHoron, function() return J
 FrozenEyeglassLake:connect_one_way_entrance(EasternNorthHoron)
 FrozenEyeglassLake:connect_one_way_entrance(EyeglassPortal, function()
 	return Any(
-		HasFlippers,
+		Flippers,
 		JumpLiquid5,
 		Dimitri
 	)
@@ -135,27 +135,27 @@ end)
 -- portal
 EyeglassPortal:connect_one_way_entrance(EastFurnace, function()
 	return Any(
-		Has(ShufflePortalsOff),
-		Has(LakeLeadsToFurnace),
-		Has(FurnaceLeadsToLake)
+		ShufflePortalsOff,
+		LakeLeadsToFurnace,
+		FurnaceLeadsToLake
 	)
 end)
 EyeglassPortal:connect_one_way_entrance(EyeglassLake, function()
 	return All(
 		Any(
-			Has(NorthHoronSpring),
-			Has(NorthHoronAutumn),
-			HasSpring,
-			HasAutumn
+			NorthHoronSpring,
+			NorthHoronAutumn,
+			Spring,
+			Autumn
 		),
-		HasFlippers
+		Flippers
 	)
 end)
 EyeglassPortal:connect_one_way_entrance(FrozenEyeglassLake, function()
 	return All(
-		Has(NorthHoronWinter),
+		NorthHoronWinter,
 		Any(
-			HasFlippers,
+			Flippers,
 			JumpLiquid5
 		)
 	)
@@ -164,7 +164,7 @@ end)
 -- special connection from dry portal stairs warping all the way to pedestal
 EyeglassPortal:connect_one_way_entrance(Pedestal, function()
 	return All(
-		Has(NorthHoronSummer),
+		NorthHoronSummer,
 		HardLogic
 	)
 end)
@@ -173,99 +173,99 @@ end)
 EasternNorthHoron:connect_one_way(Maple, CanMapleTrade)
 EasternNorthHoron:connect_one_way(EyeglassGasha, function()
 	return All(
-		HasShovel,
+		Shovel,
 		CanPlantGasha
 	)
 end)
 EasternNorthHoron:connect_one_way_entrance(EyeglassLake, function()
 	return All(
 		Any(
-			Has(NorthHoronSpring),
-			Has(NorthHoronAutumn),
-			HasSpring,
-			HasAutumn
+			NorthHoronSpring,
+			NorthHoronAutumn,
+			Spring,
+			Autumn
 		),
 		Any(
-			HasFlippers,
+			Flippers,
 			Dimitri
 		)
 	)
 end)
 EasternNorthHoron:connect_one_way_entrance(FrozenEyeglassLake, function()
 	return Any(
-		Has(NorthHoronWinter),
-		HasWinter
+		NorthHoronWinter,
+		Winter
 	)
 end)
 EasternNorthHoron:connect_one_way_entrance(DryEyeglassLake, function()
 	return All(
-		HasFlippers,
+		Flippers,
 		Any(
-			Has(NorthHoronSummer),
-			HasSummer
+			NorthHoronSummer,
+			Summer
 		)
 	)
 end)
 EasternNorthHoron:connect_one_way_entrance(DryEyeglassHiddenStairs, function()
 	return All(
-		HasSummer,
-		HasBracelet
+		Summer,
+		Bracelet
 	)
 end)
 DryEyeglassHiddenStairs:connect_one_way(DryEyeglassHiddenStairsChest)
 EasternNorthHoron:connect_one_way_entrance(UnicornCave, function()
 	return All(
 		CanDestroyMushroom(true),
-		HasAutumn
+		Autumn
 	)
 end)
 -- special cases to handle default autumn
 UpperNorthHoron:connect_one_way_entrance(UnicornCave, function()
 	return All(
-		Has(NorthHoronAutumn),
 		Jump1(true),
 		CanDestroyMushroom(true),
+		NorthHoronAutumn,
 		Any(
-			HasFlippers,
+			Flippers,
 			All(
 				Dimitri,
-				HasBracelet,
+				Bracelet,
 				MediumLogic
 			),
 			All(
 				Dimitri,
-				HasWinter
+				Winter
 			)
 		)
 	)
 end)
 EyeglassPortal:connect_one_way_entrance(UnicornCave, function()
 	return All(
-		Has(NorthHoronAutumn),
 		CanDestroyMushroom(true),
-		HasFlippers
+		NorthHoronAutumn,
+		Flippers
 	)
 end)
 UnicornCave:connect_one_way_entrance(DryEyeglassHiddenStairs, function()
 	return All(
 		Jump1(true),
-		Has(NorthHoronSummer),
-		HasBracelet
+		NorthHoronSummer,
+		Bracelet
 	)
 end)
 UnicornCave:connect_one_way_entrance(EasternNorthHoron, function()
 	return Any(
 		Jump1(true),
 		All(
-			Has(NorthHoronAutumn),
+			NorthHoronAutumn,
 			CanDestroyMushroom
 		)
 	)
 end)
 UnicornCave:connect_one_way_entrance(UnicornFoyer, function()
 	return Any(
-		Has(ShuffleDungeonOff),
-		Has(D5LeadsToD5)
+		ShuffleDungeonOff,
+		D5LeadsToD5
 	)
 end)
 
@@ -273,100 +273,100 @@ end)
 -- d1
 GnarledRootDungeon:connect_two_ways_entrance(HerosCaveFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D1LeadsToD0)
+		ShuffleDungeonOn,
+		D1LeadsToD0
 	)
 end)
 GnarledRootDungeon:connect_two_ways_entrance(SnakeFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D1LeadsToD2)
+		ShuffleDungeonOn,
+		D1LeadsToD2
 	)
 end)
 GnarledRootDungeon:connect_one_way_entrance(PoisonFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D1LeadsToD3)
+		ShuffleDungeonOn,
+		D1LeadsToD3
 	)
 end)
 GnarledRootDungeon:connect_one_way_entrance(DancingFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D1LeadsToD4)
+		ShuffleDungeonOn,
+		D1LeadsToD4
 	)
 end)
 GnarledRootDungeon:connect_one_way_entrance(UnicornFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D1LeadsToD5)
+		ShuffleDungeonOn,
+		D1LeadsToD5
 	)
 end)
 GnarledRootDungeon:connect_one_way_entrance(AncientFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D1LeadsToD6)
+		ShuffleDungeonOn,
+		D1LeadsToD6
 	)
 end)
 GnarledRootDungeon:connect_one_way_entrance(CryptFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D1LeadsToD7)
+		ShuffleDungeonOn,
+		D1LeadsToD7
 	)
 end)
 GnarledRootDungeon:connect_one_way_entrance(MazeFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D1LeadsToD8)
+		ShuffleDungeonOn,
+		D1LeadsToD8
 	)
 end)
 
 -- d5
 UnicornCave:connect_two_ways_entrance(HerosCaveFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D5LeadsToD0)
+		ShuffleDungeonOn,
+		D5LeadsToD0
 	)
 end)
 UnicornCave:connect_one_way_entrance(GnarledFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D5LeadsToD1)
+		ShuffleDungeonOn,
+		D5LeadsToD1
 	)
 end)
 UnicornCave:connect_two_ways_entrance(SnakeFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D5LeadsToD2)
+		ShuffleDungeonOn,
+		D5LeadsToD2
 	)
 end)
 UnicornCave:connect_one_way_entrance(PoisonFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D5LeadsToD3)
+		ShuffleDungeonOn,
+		D5LeadsToD3
 	)
 end)
 UnicornCave:connect_one_way_entrance(DancingFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D5LeadsToD4)
+		ShuffleDungeonOn,
+		D5LeadsToD4
 	)
 end)
 UnicornCave:connect_one_way_entrance(AncientFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D5LeadsToD6)
+		ShuffleDungeonOn,
+		D5LeadsToD6
 	)
 end)
 UnicornCave:connect_one_way_entrance(CryptFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D5LeadsToD7)
+		ShuffleDungeonOn,
+		D5LeadsToD7
 	)
 end)
 UnicornCave:connect_one_way_entrance(MazeFoyer, function()
 	return All(
-		Has(ShuffleDungeonOn),
-		Has(D5LeadsToD8)
+		ShuffleDungeonOn,
+		D5LeadsToD8
 	)
 end)
 
@@ -374,156 +374,156 @@ end)
 EyeglassPortal:connect_one_way_entrance(SuburbsPortal, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(LakeLeadsToSuburbs),
-			Has(SuburbsLeadsToLake)
+			LakeLeadsToSuburbs,
+			SuburbsLeadsToLake
 		)
 	)
 end)
 EyeglassPortal:connect_one_way_entrance(SpoolPortal, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(LakeLeadsToSwamp),
-			Has(SwampLeadsToLake)
+			LakeLeadsToSwamp,
+			SwampLeadsToLake
 		)
 	)
 end)
 EyeglassPortal:connect_one_way_entrance(LowerMtCucco, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(LakeLeadsToCucco),
-			Has(CuccoLeadsToLake)
+			LakeLeadsToCucco,
+			CuccoLeadsToLake
 		)
 	)
 end)
 EyeglassPortal:connect_one_way_entrance(HoronPortal, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(LakeLeadsToHoron),
-			Has(HoronLeadsToLake)
+			LakeLeadsToHoron,
+			HoronLeadsToLake
 		)
 	)
 end)
 EyeglassPortal:connect_one_way_entrance(TempleRemainsLowerPortal, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(LakeLeadsToRemains),
-			Has(RemainsLeadsToLake)
+			LakeLeadsToRemains,
+			RemainsLeadsToLake
 		)
 	)
 end)
 EyeglassPortal:connect_one_way_entrance(TempleRemainsUpperPortal, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(LakeLeadsToUpperRemains),
-			Has(UpperRemainsLeadsToLake)
+			LakeLeadsToUpperRemains,
+			UpperRemainsLeadsToLake
 		)
 	)
 end)
 EyeglassPortal:connect_one_way_entrance(SubrosiaMountainEast, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(LakeLeadsToMountain),
-			Has(MountainLeadsToLake)
+			LakeLeadsToMountain,
+			MountainLeadsToLake
 		)
 	)
 end)
 EyeglassPortal:connect_one_way_entrance(SubrosiaMarket, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(LakeLeadsToMarket),
-			Has(MarketLeadsToLake)
+			LakeLeadsToMarket,
+			MarketLeadsToLake
 		)
 	)
 end)
 EyeglassPortal:connect_one_way_entrance(EastFurnace, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(LakeLeadsToFurnace),
-			Has(FurnaceLeadsToLake)
+			LakeLeadsToFurnace,
+			FurnaceLeadsToLake
 		)
 	)
 end)
 EyeglassPortal:connect_one_way_entrance(SubrosiaVillagePortal, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(LakeLeadsToVillage),
-			Has(VillageLeadsToLake)
+			LakeLeadsToVillage,
+			VillageLeadsToLake
 		)
 	)
 end)
 EyeglassPortal:connect_one_way_entrance(Pirates, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(LakeLeadsToPirates),
-			Has(PiratesLeadsToLake)
+			LakeLeadsToPirates,
+			PiratesLeadsToLake
 		)
 	)
 end)
 EyeglassPortal:connect_one_way_entrance(Volcano, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(LakeLeadsToVolcano),
-			Has(VolcanoLeadsToLake)
+			LakeLeadsToVolcano,
+			VolcanoLeadsToLake
 		)
 	)
 end)
 EyeglassPortal:connect_one_way_entrance(SwordAndShieldMaze, function()
 	return All(
 		Any(
-			Has(ShufflePortalsOn),
-			Has(ShufflePortalsOutward)
+			ShufflePortalsOn,
+			ShufflePortalsOutward
 		),
 		Any(
-			Has(LakeLeadsToD8),
-			Has(D8LeadsToLake)
+			LakeLeadsToD8,
+			D8LeadsToLake
 		)
 	)
 end)

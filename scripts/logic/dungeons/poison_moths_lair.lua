@@ -4,7 +4,7 @@ PoisonFoyer:connect_one_way_entrance(PoisonCentral, function()
 		CanKillSpinyBeetle,
 		All(
 			CanFlipBeetle,
-			HasBracelet,
+			Bracelet,
 			MediumLogic
 		)
 	)
@@ -13,10 +13,10 @@ PoisonCentral:connect_two_ways_entrance(PoisonWaterRoom, function() return Has(F
 PoisonWaterRoom:connect_one_way(PoisonWaterChest)
 PoisonCentral:connect_two_ways_entrance(PoisonPols, function()
 	return Any(
-		HasBracelet,
+		Bracelet,
 		All(
 			CanDestroyPot,
-			HasCane
+			CaneOfSomaria
 		)
 	)
 end)
@@ -51,13 +51,13 @@ PoisonOmuaiDoorstep:connect_one_way_entrance(Omuai, function()
 				AccessibilityLevel.SequenceBreak
 			)
 		),
-		HasBracelet,
+		Bracelet,
 		CanArmorKill
 	)
 end)
 Omuai:connect_one_way(PoisonBladeTrapChest, function()
 	return Any(
-		HasFeather,
+		Feather,
 		HardLogic
 	)
 end)

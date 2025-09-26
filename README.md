@@ -8,7 +8,7 @@ Tracker pack for [PopTracker](https://github.com/black-sliver/PopTracker/)</br>
 [Seasons Archipelago Randomizer Setup Guide](https://github.com/Dinopony/ArchipelagoOoS/blob/oos/worlds/tloz_oos/docs/oos_setup_en.md)
 
 ## Installation
-Get the [latest pack](https://github.com/OmegaZeron/Hades-AP-Poptracker-Pack/releases/latest) from the releases page. Then drag and drop the .zip file onto the open PopTracker window, or move it into the /poptracker/packs folder.
+Get the [latest pack](https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/latest) from the releases page. Then drag and drop the .zip file onto the open PopTracker window, or move it into the /poptracker/packs folder.
 
 This pack features auto-update, so you should be prompted to update when you open the pack.
 

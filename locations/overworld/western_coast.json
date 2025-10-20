@@ -20,7 +20,8 @@
 					{
 						"map": "holodrum",
 						"x": 152,
-						"y": 537
+						"y": 537,
+						"shape": "diamond"
 					}
 				]
 			},

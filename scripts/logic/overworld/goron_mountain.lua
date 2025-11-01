@@ -11,10 +11,21 @@ SouthGoronMountain:connect_one_way(GoronGashaEast, function()
 		Bracelet
 	)
 end)
-SouthGoronMountain:connect_two_ways_entrance(WestGoronMountain, function()
+SouthGoronMountain:connect_one_way_entrance(WestGoronMountain, function()
 	return Any(
 		Flippers,
-		JumpLiquid4
+		JumpLiquid4,
+		TightSwitchHook
+	)
+end)
+WestGoronMountain:connect_one_way_entrance(SouthGoronMountain, function()
+	return Any(
+		Flippers,
+		JumpLiquid4,
+		All(
+			SwitchHook,
+			MediumLogic
+		)
 	)
 end)
 SouthGoronMountain:connect_two_ways_entrance(LowerTempleRemains, Jump3)

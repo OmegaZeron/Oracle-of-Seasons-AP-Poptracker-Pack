@@ -133,5 +133,11 @@ NorthHolodrumPlain:connect_one_way(OnoxGasha, function()
 		Shovel
 	)
 end)
-NorthHolodrumPlain:connect_two_ways_entrance(LowerTempleRemains, Jump3)
+NorthHolodrumPlain:connect_one_way_entrance(LowerTempleRemains, Jump3)
+LowerTempleRemains:connect_one_way_entrance(NorthHolodrumPlain, function()
+	return Any(
+		Jump3,
+		SwitchHook
+	)
+end)
 NorthHolodrumPlain:connect_one_way_entrance(OnoxCastle, CanGoal)

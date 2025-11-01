@@ -42,6 +42,13 @@ DancingSpikeTrap:connect_one_way(DancingWaterRing, function()
 			All(
 				Bracelet,
 				MediumLogic
+			),
+			All(
+				HasRod,
+				Any(
+					Boomerang,
+					SwitchHook
+				)
 			)
 		)
 	)
@@ -159,6 +166,7 @@ DancingBranchingMinecart:connect_one_way_entrance(DancingTorchPit, function()
 		Any(
 			Boomerang,
 			CanShootSeeds,
+			SwitchHook,
 			All(
 				-- jump slash the lever
 				Feather,

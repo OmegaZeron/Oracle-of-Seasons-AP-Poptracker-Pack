@@ -1,7 +1,17 @@
 -- 0 keys
-SnakeFoyer:connect_one_way(SnakeLeftRopeDrop, CanNormalKill)
+SnakeFoyer:connect_one_way(SnakeLeftRopeDrop, function()
+	return Any(
+		CanNormalKill,
+		SwitchHook
+	)
+end)
 SnakeFoyer:connect_one_way_entrance(SnakeAngryTorches, CanLightTorches)
-SnakeAngryTorches:connect_one_way(SnakeRightRopeChest, CanNormalKill)
+SnakeAngryTorches:connect_one_way(SnakeRightRopeChest, function()
+	return Any(
+		CanNormalKill,
+		SwitchHook
+	)
+end)
 SnakeAngryTorches:connect_one_way_entrance(SnakeFoyer)
 SnakeAngryTorches:connect_one_way_entrance(SnakeMoblinRopeFight)
 SnakeMoblinRopeFight:connect_one_way_entrance(SnakeAngryTorches, CanNormalKill)
@@ -83,6 +93,7 @@ SnakeHardhats:connect_one_way_entrance(SnakeBombMoblins, function()
 			CanSwordKill,
 			Boomerang,
 			CanKillWithPit,
+			SwitchHook,
 			All(
 				UpgradedSatchel,
 				Any(
@@ -110,16 +121,20 @@ SnakeHardhats:connect_one_way_entrance(SnakeBombMoblins, function()
 			Bombs, -- regrowing bushes are right there
 			CanShootSeedsCombat,
 			All(
-				Feather,
-				CanKillWithPit
+				CanNormalKill(true),
+				Any(
+					Feather,
+					All(
+						SwitchHook,
+						MediumLogic
+					)
+				)
 			),
 			All(
 				Any(
-					All(
-						CanUseSeeds,
-						EmberSeeds
-					),
-					CanPunch
+					CanBurnTrees,
+					CanPunch,
+					CaneOfSomaria
 				),
 				HardLogic
 			)

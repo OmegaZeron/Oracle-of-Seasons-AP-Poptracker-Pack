@@ -194,6 +194,28 @@ CurrentLocationMapping = {
 		{["type"] = "SeeSeason", ["season"] = SpoolSwampSeason, ["season_hidden"] = SpoolSwampSeasonHidden}
 	},
 
+	-- Natzu
+	[0x048] = {
+		{["type"] = "Autotab", ["tab"] = {"Holodrum", "Natzu"}},
+		{["type"] = "Natzu"}
+	},
+	[0x04C] = {
+		{["type"] = "Autotab", ["tab"] = {"Holodrum", "Natzu"}},
+		{["type"] = "Natzu"}
+	},
+	[0x056] = {
+		{["type"] = "Autotab", ["tab"] = {"Holodrum", "Natzu"}},
+		{["type"] = "Natzu"}
+	},
+	[0x058] = {
+		{["type"] = "Autotab", ["tab"] = {"Holodrum", "Natzu"}},
+		{["type"] = "Natzu"}
+	},
+	[0x07A] = {
+		{["type"] = "Autotab", ["tab"] = {"Holodrum", "Natzu"}},
+		{["type"] = "Natzu"}
+	},
+
 	-- Sunken City/Mt. Cucco
 	[0x05D] = {{["type"] = "SeeSeason", ["season"] = SunkenCitySeason, ["season_hidden"] = SunkenCitySeasonHidden}}, -- from natzu
 	[0x02B] = {{["type"] = "SeeSeason", ["season"] = SunkenCitySeason, ["season_hidden"] = SunkenCitySeasonHidden}}, -- from Goron Mountain

@@ -19,7 +19,7 @@ RoosterAdventure:connect_one_way_entrance(MoblinKeep, function()
         All(
             GetCuccos()["horon"][2] > 0,
             Any(
-                AnyCompanion,
+                AnyFlute,
                 All(
                     NatzuIsMoosh,
                     Jump3

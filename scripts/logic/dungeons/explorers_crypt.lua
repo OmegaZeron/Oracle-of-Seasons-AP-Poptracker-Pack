@@ -128,6 +128,7 @@ end)
 CryptDarknutBridge:connect_one_way_entrance(CryptPastDarknutBridge, function()
 	return Any(
 		Jump4,
+		TightSwitchHook,
 		All(
 			CanShootSeeds,
 			ScentSeeds
@@ -136,17 +137,14 @@ CryptDarknutBridge:connect_one_way_entrance(CryptPastDarknutBridge, function()
 		All(
 			MagnetGlove,
 			Any(
-				CanArmorKill,
+				CanArmorKill(true, true),
 				Shield,
-				Any(
-					Bombchus20,
-					All(
-						Bombchus,
-						AccessibilityLevel.SequenceBreak
-					)
-				),
 				MediumLogic
 			)
+		),
+		All(
+			MagnetGlove,
+			MediumLogic
 		)
 	)
 end)
@@ -178,21 +176,16 @@ CryptDarknutBridge:connect_one_way_entrance(PoeSisters, function()
 			)
 		),
 		Any(
-			-- HasSwitchHook,
+			CanKillMoldorm,
 			All(
-				JumpLiquid3, -- not actually liquid, but diagonal pit
-				Any(
-					-- Moldorms
-					CanArmorKill,
-					All(
-						Any(
-							Shovel,
-							Shield
-						),
-						MediumLogic
-					)
-				)
-			)
+				CanKillMoldorm(true),
+				MediumLogic
+			),
+			All(
+				SwitchHook,
+				MediumLogic
+			),
+			JumpLiquid3 -- not actually liquid, but diagonal pit
 		)
 	)
 end)

@@ -106,6 +106,12 @@ MazeIcePuzzle:connect_one_way_entrance(MazeTerrace, function()
 		MagicBoomerang
 	)
 end)
+MazeIcePuzzle:connect_one_way(MazeSparkPots, function()
+	return All(
+		SwitchHook,
+		Medium
+	)
+end)
 -- 4 keys
 MazeIcePuzzle:connect_one_way_entrance(MazeNevermeltIce, function() return D8KeyCount(4) end)
 MazeNevermeltIce:connect_one_way(MazeGhostArmos, CanBombWall)

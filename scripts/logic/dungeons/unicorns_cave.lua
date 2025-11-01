@@ -10,13 +10,9 @@ UnicornFoyer:connect_one_way(UnicornChestLeftOfEntrance, function()
 	)
 end)
 UnicornFoyer:connect_one_way(UnicornSpiralChest, function()
-	return Any(
-		CanArmorKill,
-		Shield,
-		All(
-			Shovel,
-			MediumLogic
-		)
+	return All(
+		CanKillMoldorm(true),
+		CanNormalKill(true)
 	)
 end)
 UnicornFoyer:connect_one_way_entrance(UnicornTerrace, function() return Has(MagnetGlove) end)
@@ -52,15 +48,9 @@ UnicornPotRoom:connect_two_ways_entrance(UnicornTerrace, function()
 	)
 end)
 UnicornTerrace:connect_one_way(UnicornArmosPuzzle, function()
-	return Any(
-		CanArmorKill,
-		Any(
-			Bombchus20,
-			All(
-				Bombchus,
-				AccessibilityLevel.SequenceBreak
-			)
-		)
+	return All(
+		CanKillMoldorm,
+		CanNormalKill
 	)
 end)
 UnicornArmosPuzzle:connect_one_way(UnicornArmosPuzzleEmbers, MediumLogic)
@@ -68,24 +58,25 @@ UnicornMinecarts:connect_one_way(UnicornMiddleMinecartChest, CanHitLeverFromMine
 UnicornMinecarts:connect_one_way(UnicornSpinnerChest, function()
 	return Any(
 		MagnetGlove,
-		Jump5
+		Jump5,
+		All(
+			LongHook,
+			MediumLogic
+		),
+		All(
+			SwitchHook,
+			HellLogic
+		)
 	)
 end)
 UnicornMinecarts:connect_one_way_entrance(UnicornMinecartPushBlock, function()
 	return All(
 		CanHitLeverFromMinecart,
 		Any(
-			CanArmorKill,
+			CanArmorKill(true, true),
 			All(
 				MagnetGlove,
 				MediumLogic
-			),
-			Any(
-				Bombchus20,
-				All(
-					Bombchus,
-					AccessibilityLevel.SequenceBreak
-				)
 			)
 		)
 	)

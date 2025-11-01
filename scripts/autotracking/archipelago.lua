@@ -175,10 +175,15 @@ function OnItem(index, item_id, item_name, player_number)
 			else
 				obj.Active = true
 				-- if collecting satchel or slingshot, auto-collect default seed
-				if (v[1] == Satchel or v[1] == Slingshot) then
+				if (v[1] == Satchel or v[1] == Slingshot or v[1] == SeedShooter) then
 					local defaultSeed = Tracker:FindObjectForCode(SeedMapping[SLOT_DATA["options"]["default_seed"]])
 					if (defaultSeed) then
 						defaultSeed.Active = true
+					end
+					local section = Tracker:FindObjectForCode("@Horon Village/Seed Tree/Horon Village: Seed Tree")
+					---@cast section LocationSection
+					if (section) then
+						section.AvailableChestCount = 0
 					end
 				end
 			end
@@ -237,7 +242,7 @@ function OnNotify(key, value, old_value)
 		print(string.format("called onNotify: %s, %s, %s", key, dump(value), old_value))
 	end
 
-	if value == old_value then
+	if value == nil or value == old_value then
 		return
 	end
 
@@ -249,7 +254,7 @@ function OnNotify(key, value, old_value)
 				ClearHints(hint.location)
 			end
 		end
-	elseif key == DATA_STORAGE_ID and value ~= nil then
+	elseif key == DATA_STORAGE_ID then
 		for k, v in pairs(value) do
 			if (DataStorageLocationTable[k]) then
 				Tracker:FindObjectForCode(DataStorageLocationTable[k]).AvailableChestCount = v and 0 or 1
@@ -375,6 +380,8 @@ function OnBounce(json)
 					end
 				elseif roomMap["type"] == "SeeSeason" then
 					Tracker:FindObjectForCode(roomMap["season"]).CurrentStage = Tracker:FindObjectForCode(roomMap["season_hidden"]).CurrentStage
+				elseif roomMap["type"] == "Natzu" then
+					Tracker:FindObjectForCode("companion").CurrentStage = SLOT_DATA["options"]["animal_companion"]
 				end
 			end
 		end

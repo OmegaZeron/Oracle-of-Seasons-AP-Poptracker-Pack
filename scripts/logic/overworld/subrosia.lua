@@ -177,7 +177,16 @@ EastFurnace:connect_one_way(BombFlowerPickup, function()
 		Bracelet
 	)
 end)
-EastFurnace:connect_two_ways_entrance(WestFurnace, function() return Has(Feather) end)
+EastFurnace:connect_one_way_entrance(WestFurnace, function()
+	return Any(
+		Feather,
+		All(
+			SwitchHook,
+			MediumLogic
+		)
+	)
+end)
+WestFurnace:connect_one_way_entrance(EastFurnace, function() return Has(Feather) end)
 WestFurnace:connect_one_way(FurnaceTerrace, function()
 	return Any(
 		Jump4,

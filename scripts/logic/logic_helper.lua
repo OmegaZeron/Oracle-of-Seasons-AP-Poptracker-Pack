@@ -46,7 +46,8 @@ function DestroySigns()
 	return Any(
 		CanDestroyPot,
 		CanBurnTrees,
-		MagicBoomerang
+		MagicBoomerang,
+		SwitchHook
 	)
 end
 
@@ -76,20 +77,20 @@ function BombPunchWall()
 	)
 end
 
-function AnyFlute()
+function HasAnyFlute()
 	return Moosh() or
 	Ricky() or
 	Dimitri()
 end
 
 function Moosh()
-	return Has(AnyCompanion) and Has(NatzuIsMoosh)
+	return Has(AnyFlute) and Has(NatzuIsMoosh)
 end
 function Ricky()
-	return Has(AnyCompanion) and Has(NatzuIsRicky)
+	return Has(AnyFlute) and Has(NatzuIsRicky)
 end
 function Dimitri()
-	return Has(AnyCompanion) and Has(NatzuIsDimitri)
+	return Has(AnyFlute) and Has(NatzuIsDimitri)
 end
 
 function CanDimitriClip()
@@ -121,6 +122,16 @@ function CanPunch()
 	)
 end
 
+function TightSwitchHook()
+	return Any(
+		LongHook,
+		All(
+			SwitchHook,
+			MediumLogic
+		)
+	)
+end
+
 function HasEnoughEssencesForTreehouse()
 	local required = Tracker:FindObjectForCode("treehouse_old_man_requirement").CurrentStage
 	local n = 0
@@ -134,15 +145,13 @@ end
 
 function CanBeatOnox()
 	return All(
-		HasAnySword,
+		WoodSword,
 		Any(
 			Bombs,
-			Any(
-				Bombchus20,
-				All(
-					Bombchus,
-					AccessibilityLevel.SequenceBreak
-				)
+			Bombchus20,
+			All(
+				Bombchus,
+				AccessibilityLevel.SequenceBreak
 			)
 		),
 		Feather,
@@ -232,8 +241,10 @@ function CanPlantGasha()
 	return ownedGashas > gashasPlanted
 end
 
--- similar to above, but for collection
+-- similar to CanPlantGasha, but for collection
 -- used to mark off mayor spots
+---@param count integer
+---@return boolean
 function CanHarvestGasha(count)
 	-- rules for being able to collect the nut
 	if (not CanSwordKill()) then
@@ -265,7 +276,7 @@ function GashasHarvested()
 end
 
 ---@param code string
----@return integer | boolean
+---@return boolean
 function HasPlanted(code)
 	local section = Tracker:FindObjectForCode(code)
 	if (not CanSwordKill() or section == nil) then
@@ -369,6 +380,7 @@ function CanDestroyBush(allowBombchus)
 		HasAnySword,
 		MagicBoomerang,
 		Bracelet,
+		SwitchHook,
 		All(
 			Any(
 				Bombs20,
@@ -411,7 +423,8 @@ function CanDestroyPot()
 	return Any(
 		Bracelet,
 		NobleSword,
-		BiggoronSword
+		BiggoronSword,
+		SwitchHook
 	)
 end
 
@@ -422,6 +435,7 @@ function CanDestroyFlower(allowCompanion)
 	return Any(
 		HasAnySword,
 		MagicBoomerang,
+		SwitchHook,
 		All(
 			allowCompanion,
 			AnyFlute
@@ -476,6 +490,7 @@ end
 function CanTriggerLever()
 	return Any(
 		CanHitLeverFromMinecart,
+		SwitchHook,
 		All(
 			Shovel,
 			MediumLogic
@@ -501,7 +516,8 @@ function CanHitFarSwitch()
 		CanShootSeeds,
 		Boomerang,
 		Bombs,
-		UseEnergyRing
+		UseEnergyRing,
+		SwitchHook
 	)
 end
 
@@ -692,23 +708,21 @@ function CanKillWithPit()
 end
 
 function CanNormalKill(pitAvailable, allowGale, allowCane)
-	if (allowGale == nil) then
-		allowGale = true
-	end
-	if (allowCane == nil) then
-		allowCane = true
-	end
+	pitAvailable = Default(pitAvailable, false)
+	allowGale = Default(allowGale, false)
+	allowCane = Default(allowCane, false)
+
 	return Any(
 		CanNormalSatchelKill(allowGale),
 		CanNormalSlingshotKill(allowGale),
 		All(
-			pitAvailable == true,
+			pitAvailable,
 			CanKillWithPit
 		),
 		CanSwordPunchKill,
 		All(
 			Any(
-				Bombchus50,
+				Bombs40,
 				All(
 					Bombs,
 					AccessibilityLevel.SequenceBreak
@@ -792,12 +806,15 @@ function CanNormalSlingshotKill(allowGale)
 	)
 end
 
-function CanArmorKill()
+function CanArmorKill(allowCane, allowBombchus)
+	allowCane = Default(allowCane, false)
+	allowBombchus = Default(allowBombchus, false)
 	return Any(
 		CanSwordPunchKill,
 		All(
+			allowBombchus,
 			Any(
-				Bombchus50,
+				Bombs40,
 				Bombchus20,
 				All(
 					Bombs,
@@ -819,14 +836,15 @@ function CanArmorKill()
 			)
 		),
 		All(
-			CaneOfSomaria,
-			MediumLogic
-		),
-		All(
 			-- ool version of above without upgraded satchel
 			CanUseSeeds,
 			ScentSeeds,
 			AccessibilityLevel.SequenceBreak
+		),
+		All(
+			allowCane,
+			CaneOfSomaria,
+			MediumLogic
 		)
 	)
 end
@@ -865,7 +883,26 @@ function CanKillSpinyBeetle()
 			Any(
 				CanSwordKill,
 				CanNormalSatchelKill,
-				CanNormalSlingshotKill
+				CanNormalSlingshotKill,
+				SwitchHook
+			)
+		)
+	)
+end
+
+function CanKillMoldorm(pitAvailable)
+	pitAvailable = Default(pitAvailable, false)
+	return Any(
+		CanArmorKill(true, true),
+		SwitchHook,
+		All(
+			pitAvailable,
+			Any(
+				Shield,
+				All(
+					Shovel,
+					MediumLogic
+				)
 			)
 		)
 	)
@@ -945,13 +982,16 @@ function CanFarmOreChunks()
 	return Any(
 		Shovel,
 		All(
-			CanReach(SubrosiaMountainEast),
+			Any(
+				CanReach(SubrosiaMountainEast),
+				Bracelet,
+				SwitchHook
+			),
 			HardLogic
 		),
 		All(
 			Any(
 				HasAnySword,
-				Bracelet,
 				MagicBoomerang
 			),
 			MediumLogic
@@ -1092,7 +1132,7 @@ function GetCuccos()
 			availableCuccos["horon"] = availableCuccos["mt. cucco"]
 		end
 
-		if (AnyFlute()) then
+		if (HasAnyFlute()) then
 			availableCuccos["sunken"] = availableCuccos["horon"]
 		elseif (Has(NatzuIsMoosh)) then
 			if (JumpLiquid4()) then
@@ -1492,6 +1532,17 @@ ScriptHost:AddWatchForCode("lost woods handler", "randomize_lost_woods_main_sequ
 ScriptHost:AddWatchForCode("pedestal handler", "randomize_lost_woods_item_sequence", display_pedestal)
 ScriptHost:AddOnLocationSectionChangedHandler("section changed handler", OnSectionChanged)
 ScriptHost:AddOnFrameHandler("load handler", OnFrameHandler)
+ScriptHost:AddWatchForCode("see companion handler", Companion, function()
+	local companion = Tracker:FindObjectForCode(Companion)
+	---@cast companion JsonItem
+	local location = Tracker:FindObjectForCode("@Holodrum Plain/See Your Companion/")
+	---@cast location LocationSection
+	if (companion.CurrentStage == 3) then
+		location.AvailableChestCount = 1
+	else
+		location.AvailableChestCount = 0
+	end
+end)
 -- "See the Season" locations
 for i = 1, #SeeSeasonVars do
 	ScriptHost:AddWatchForCode(SeeSeasonVars[i][1], SeeSeasonVars[i][2], function()

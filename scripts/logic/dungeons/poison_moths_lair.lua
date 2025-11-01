@@ -25,9 +25,23 @@ PoisonTrampolineOwl:connect_one_way(PoisonTrampolineOwlChest)
 PoisonCentral:connect_one_way(PoisonZolChest, function() return Has(Feather) end)
 PoisonPols:connect_two_ways_entrance(PoisonWaterRoom)
 PoisonPols:connect_one_way(PoisonRollerChest, function() return Has(Bracelet) end)
-PoisonPols:connect_one_way_entrance(PoisonOmuaiDoorstep, function() return Has(Feather) end)
+PoisonPols:connect_one_way_entrance(PoisonOmuaiDoorstep, function()
+	return Any(
+		Feather,
+		All(
+			LongHook,
+			MediumLogic
+		),
+		All(
+			SwitchHook,
+			CanUseSeeds,
+			PegasusSeeds,
+			MediumLogic
+		)
+	)
+end)
 PoisonPols:connect_one_way(PoisonTerraceChest, function() return Has(Feather) end)
-PoisonPols:connect_one_way(PoisonMoldormChest, CanArmorKill)
+PoisonPols:connect_one_way(PoisonMoldormChest, CanKillMoldorm)
 PoisonPols:connect_one_way(PoisonBombWallChest, CanBombWall)
 -- 2 keys
 PoisonWaterRoom:connect_one_way_entrance(PoisonMimicChest, function()
@@ -55,6 +69,7 @@ PoisonOmuaiDoorstep:connect_one_way_entrance(Omuai, function()
 		CanArmorKill
 	)
 end)
+Omuai:connect_one_way(PoisonTerraceChest)
 Omuai:connect_one_way(PoisonBladeTrapChest, function()
 	return Any(
 		Feather,

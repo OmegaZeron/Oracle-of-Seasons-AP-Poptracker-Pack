@@ -26,6 +26,24 @@
 				]
 			},
 			{
+				"name": "See Your Companion",
+				"sections": [
+					{
+						"access_rules": ["{^$CanReach|SunkenDoorstep}", "{^$CanReach|MoblinKeepBridge}", "{^$CanReach|NatzuWest}"],
+						"chest_unopened_img": "images/items/companions.png",
+						"chest_opened_img": "images/items/companions_gray.png"
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 323,
+						"y": 220,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
 				"name": "Holodrum Plain Tree",
 				"sections": [
 					{
@@ -227,6 +245,24 @@
 						"map": "holodrum",
 						"x": 420,
 						"y": 180
+					},
+					{
+						"map": "natzu",
+						"x": 608,
+						"y": 20,
+						"restrict_visibility_rules": ["natzu_ricky"]
+					},
+					{
+						"map": "natzu",
+						"x": 608,
+						"y": 532,
+						"restrict_visibility_rules": ["natzu_dimitri"]
+					},
+					{
+						"map": "natzu",
+						"x": 608,
+						"y": 1044,
+						"restrict_visibility_rules": ["natzu_moosh"]
 					}
 				]
 			},
@@ -278,6 +314,24 @@
 						"map": "holodrum",
 						"x": 490,
 						"y": 230
+					},
+					{
+						"map": "natzu",
+						"x": 871,
+						"y": 160,
+						"restrict_visibility_rules": ["natzu_ricky"]
+					},
+					{
+						"map": "natzu",
+						"x": 871,
+						"y": 671,
+						"restrict_visibility_rules": ["natzu_dimitri"]
+					},
+					{
+						"map": "natzu",
+						"x": 871,
+						"y": 1182,
+						"restrict_visibility_rules": ["natzu_moosh"]
 					}
 				]
 			},

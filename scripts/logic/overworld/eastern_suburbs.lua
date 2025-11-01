@@ -48,8 +48,8 @@ LowerEasternSuburbs:connect_two_ways_entrance(UpperEasternSuburbs, function()
 		Any(
 			JumpLiquid1(true),
 			Flippers,
-			Dimitri
-			-- SwitchHook
+			Dimitri,
+			SwitchHook
 		)
 	)
 end)
@@ -105,7 +105,11 @@ UpperEasternSuburbsWinter:connect_one_way_entrance(WoodsOfWinter, function()
 	return Any(
 		Feather,
 		AnyFlute,
-		Shovel
+		Shovel,
+		All(
+			SwitchHook,
+			MediumLogic
+		)
 	)
 end)
 

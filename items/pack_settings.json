@@ -730,20 +730,26 @@
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
+		"initial_stage_idx": 3,
 		"stages": [
 			{
 				"img": "images/items/ricky.png",
-				"codes": "animal_companion, natzu_ricky",
+				"codes": "companion, natzu_ricky",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/items/dimitri.png",
-				"codes": "animal_companion, natzu_dimitri",
+				"codes": "companion, natzu_dimitri",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/items/moosh.png",
-				"codes": "animal_companion, natzu_moosh",
+				"codes": "companion, natzu_moosh",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/items/companions.png",
+				"codes": "companion",
 				"inherit_codes": false
 			}
 		]

@@ -4,7 +4,7 @@ EastWesternCoast:connect_one_way(BlackBeast, function()
 	return All(
 		CanShootLongTorches,
 		MysterySeeds,
-		CanArmorKill
+		CanKillMoldorm
 	)
 end)
 EastWesternCoast:connect_one_way(GoldenDarknutKill, function()
@@ -35,10 +35,8 @@ HerosCaveFoyer:connect_one_way(HerosCaveLedge, function() return Has(D0AltRemove
 HerosCaveFoyer:connect_one_way_entrance(HerosCaveUnderground, function()
 	return Any(
 		CanNormalKill,
-		All(
-			Boomerang,
-			MediumLogic
-		)
+		Boomerang,
+		SwitchHook
 	)
 end)
 HerosCaveFoyer:connect_one_way_entrance(HerosCavePostKey, function()

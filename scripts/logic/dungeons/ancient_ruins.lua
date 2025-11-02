@@ -24,16 +24,33 @@ AncientRopeSpinnerWest:connect_one_way(AncientMagnetBallDrop, function()
 end)
 AncientRopeSpinnerWest:connect_one_way_entrance(AncientArrowTrap, function()
 	return All(
-		MagicBoomerang,
-		CanDestroyCrystal
+		CanDestroyCrystal,
+		Any(
+			MagicBoomerang,
+			All(
+				SeedShooter,
+				HardLogic
+			)
+		)
 	)
 end)
 AncientArrowTrap:connect_one_way_entrance(AncientSpinyTrampoline, function()
 	return All(
+		Any(
+			MagicBoomerang,
+			All(
+				SeedShooter,
+				Any(
+					HellLogic,
+					Bombchus
+				),
+				HardLogic
+			)
+		),
 		CanBurnTrees,
 		Any(
-			CanShootSeeds,
-			MediumLogic
+			MediumLogic,
+			CanShootSeeds
 		)
 	)
 end)

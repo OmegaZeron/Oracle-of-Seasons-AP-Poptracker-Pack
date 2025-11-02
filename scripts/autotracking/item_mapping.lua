@@ -122,8 +122,8 @@ ITEM_MAPPING = {
 	[16390] = {"d7", "toggle"},
 	[16391] = {"d8", "toggle"},
 
-	-- [00000] = {"somaria", "toggle"},
-	-- [00000] = {"bombchus", "progressive"}
-	-- [00000] = {"hook", "progressive"}
-	-- [00000] = {"shooter", "progressive"}
+	[1024] = {"somaria", "toggle"},
+	[3328] = {"bombchus", "progressive"},
+	[2560] = {"hook", "progressive"},
+	[3840] = {"shooter", "progressive"}
 }

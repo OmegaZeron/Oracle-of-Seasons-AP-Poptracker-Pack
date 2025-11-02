@@ -6,6 +6,8 @@ SLOT_DATA = nil
 LOCAL_ITEMS = {}
 GLOBAL_ITEMS = {}
 
+local AutoCollectLocationTable = {}
+
 function onClear(slot_data)
 	if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
 		print(string.format("called onClear, slot_data:\n%s", dump(slot_data)))
@@ -84,6 +86,13 @@ function onClear(slot_data)
 			Tracker:FindObjectForCode(opt).CurrentStage = val
 		end
 	end
+
+	AutoCollectLocationTable = {
+		["@Tarm Ruins/Lost Woods/Lost Woods: Pedestal Item"] = {"@Tarm Ruins/Pedestal Sequence/Serenade the Scrub"},
+		[SeedSatchel] = {"@Horon Village/Horon Tree/Horon Village: Seed Tree", SeedMapping[slot_data["options"]["default_seed"]]},
+		[Slingshot] = {"@Horon Village/Horon Tree/Horon Village: Seed Tree", SeedMapping[slot_data["options"]["default_seed"]]},
+		[SeedShooter] = {"@Horon Village/Horon Tree/Horon Village: Seed Tree", SeedMapping[slot_data["options"]["default_seed"]]}
+	}
 
 	Tracker:FindObjectForCode("horon_village_season_shuffle").CurrentStage = slot_data["default_seasons"]["HORON_VILLAGE"] == 255 and 0 or 1
 	for region_name, season_id in pairs(slot_data["default_seasons"]) do
@@ -174,18 +183,6 @@ function OnItem(index, item_id, item_name, player_number)
 				obj.CurrentStage = obj.CurrentStage + 1
 			else
 				obj.Active = true
-				-- if collecting satchel or slingshot, auto-collect default seed
-				if (v[1] == Satchel or v[1] == Slingshot or v[1] == SeedShooter) then
-					local defaultSeed = Tracker:FindObjectForCode(SeedMapping[SLOT_DATA["options"]["default_seed"]])
-					if (defaultSeed) then
-						defaultSeed.Active = true
-					end
-					local section = Tracker:FindObjectForCode("@Horon Village/Seed Tree/Horon Village: Seed Tree")
-					---@cast section LocationSection
-					if (section) then
-						section.AvailableChestCount = 0
-					end
-				end
 			end
 		elseif v[2] == "consumable" then
 			local mult = 1
@@ -198,6 +195,21 @@ function OnItem(index, item_id, item_name, player_number)
 			end
 		elseif AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
 			print(string.format("onItem: unknown item type %s for code %s", v[2], v[1]))
+		end
+		if (AutoCollectLocationTable[v[1]]) then
+			for _, autoTable in ipairs(AutoCollectLocationTable[v[1]]) do
+				local toCollect = Tracker:FindObjectForCode(autoTable)
+				if (toCollect) then
+					if autoTable:sub(1, 1) == "@" then
+						---@cast toCollect LocationSection
+						toCollect.AvailableChestCount = toCollect.AvailableChestCount - 1
+					else
+						---@cast toCollect JsonItem
+						toCollect.Active = true
+					end
+				end
+				Tracker:FindObjectForCode(v[1]).AvailableChestCount = 0
+			end
 		end
 	elseif AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
 		print(string.format("onItem: could not find object for code %s", v[1]))
@@ -221,6 +233,21 @@ function OnLocation(location_id, location_name)
 				obj.AvailableChestCount = obj.AvailableChestCount - 1
 			else
 				obj.Active = true
+			end
+			if (AutoCollectLocationTable[location]) then
+				for _, autoTable in ipairs(AutoCollectLocationTable[location]) do
+					local toCollect = Tracker:FindObjectForCode(autoTable)
+					if (toCollect) then
+						if autoTable:sub(1, 1) == "@" then
+							---@cast toCollect LocationSection
+							toCollect.AvailableChestCount = toCollect.AvailableChestCount - 1
+						else
+							---@cast toCollect JsonItem
+							toCollect.Active = true
+						end
+					end
+					Tracker:FindObjectForCode(location).AvailableChestCount = 0
+				end
 			end
 			ClearHints(location_id)
 		else

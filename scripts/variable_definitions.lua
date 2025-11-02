@@ -144,7 +144,11 @@ CurrentLocationMapping = {
 	-- Eastern Suburbs
 	[0x0EA] = {{["type"] = "SeeSeason", ["season"] = EasternSuburbsSeason, ["season_hidden"] = EasternSuburbsSeasonHidden}}, -- from HV
 	[0x09B] = {{["type"] = "SeeSeason", ["season"] = EasternSuburbsSeason, ["season_hidden"] = EasternSuburbsSeasonHidden}}, -- from Suburbs portal
-	[0x07C] = {{["type"] = "SeeSeason", ["season"] = EasternSuburbsSeason, ["season_hidden"] = EasternSuburbsSeasonHidden}}, -- from Sunken/Moblin Road
+	[0x07C] = {
+		-- from Sunken/Moblin Road
+		{["type"] = "SeeSeason", ["season"] = EasternSuburbsSeason, ["season_hidden"] = EasternSuburbsSeasonHidden},
+		{["type"] = "Autotab", ["tab"] = {"Holodrum"}}
+	},
 	[0x08C] = {{["type"] = "SeeSeason", ["season"] = EasternSuburbsSeason, ["season_hidden"] = EasternSuburbsSeasonHidden}}, -- from D2
 	[0x09D] = {{["type"] = "SeeSeason", ["season"] = EasternSuburbsSeason, ["season_hidden"] = EasternSuburbsSeasonHidden}}, -- from WoW tree
 	[0x08F] = {{["type"] = "SeeSeason", ["season"] = EasternSuburbsSeason, ["season_hidden"] = EasternSuburbsSeasonHidden}}, -- from Holly
@@ -174,9 +178,21 @@ CurrentLocationMapping = {
 	[0x0B3] = {{["type"] = "SeeSeason", ["season"] = HolodrumPlainSeason, ["season_hidden"] = HolodrumPlainSeasonHidden}}, -- from lower SS
 	[0x093] = {{["type"] = "SeeSeason", ["season"] = HolodrumPlainSeason, ["season_hidden"] = HolodrumPlainSeasonHidden}}, -- from upper SS
 	[0x045] = {{["type"] = "SeeSeason", ["season"] = HolodrumPlainSeason, ["season_hidden"] = HolodrumPlainSeasonHidden}}, -- from Onox
-	[0x055] = {{["type"] = "SeeSeason", ["season"] = HolodrumPlainSeason, ["season_hidden"] = HolodrumPlainSeasonHidden}}, -- from natzu W
-	[0x066] = {{["type"] = "SeeSeason", ["season"] = HolodrumPlainSeason, ["season_hidden"] = HolodrumPlainSeasonHidden}}, -- from natzu SW
-	[0x068] = {{["type"] = "SeeSeason", ["season"] = HolodrumPlainSeason, ["season_hidden"] = HolodrumPlainSeasonHidden}}, -- from natzu SE
+	[0x055] = {
+		-- from natzu W
+		{["type"] = "SeeSeason", ["season"] = HolodrumPlainSeason, ["season_hidden"] = HolodrumPlainSeasonHidden},
+		{["type"] = "Autotab", ["tab"] = {"Holodrum"}}
+	},
+	[0x066] = {
+		-- from natzu SW
+		{["type"] = "SeeSeason", ["season"] = HolodrumPlainSeason, ["season_hidden"] = HolodrumPlainSeasonHidden},
+		{["type"] = "Autotab", ["tab"] = {"Holodrum"}}
+	},
+	[0x068] = {
+		-- from natzu SE
+		{["type"] = "SeeSeason", ["season"] = HolodrumPlainSeason, ["season_hidden"] = HolodrumPlainSeasonHidden},
+		{["type"] = "Autotab", ["tab"] = {"Holodrum"}}
+	},
 
 	-- Spool Swamp
 	[0x083] = {{["type"] = "SeeSeason", ["season"] = SpoolSwampSeason, ["season_hidden"] = SpoolSwampSeasonHidden}}, -- from upper HP
@@ -196,28 +212,40 @@ CurrentLocationMapping = {
 
 	-- Natzu
 	[0x048] = {
+		-- from Goron Mountain
 		{["type"] = "Autotab", ["tab"] = {"Holodrum", "Natzu"}},
 		{["type"] = "Natzu"}
 	},
 	[0x04C] = {
+		-- from Sunken
 		{["type"] = "Autotab", ["tab"] = {"Holodrum", "Natzu"}},
 		{["type"] = "Natzu"}
 	},
 	[0x056] = {
+		-- from Holodrum Plain West
 		{["type"] = "Autotab", ["tab"] = {"Holodrum", "Natzu"}},
 		{["type"] = "Natzu"}
 	},
 	[0x058] = {
+		-- from Holodrum Plain East
 		{["type"] = "Autotab", ["tab"] = {"Holodrum", "Natzu"}},
 		{["type"] = "Natzu"}
 	},
 	[0x07A] = {
+		-- from Moblin Keep
 		{["type"] = "Autotab", ["tab"] = {"Holodrum", "Natzu"}},
 		{["type"] = "Natzu"}
 	},
 
+	-- Goron Mountain
+	[0x038] = {{["type"] = "Autotab", ["tab"] = {"Holodrum"}}}, -- from Natzu
+
 	-- Sunken City/Mt. Cucco
-	[0x05D] = {{["type"] = "SeeSeason", ["season"] = SunkenCitySeason, ["season_hidden"] = SunkenCitySeasonHidden}}, -- from natzu
+	[0x05D] = {
+		-- from natzu
+		{["type"] = "SeeSeason", ["season"] = SunkenCitySeason, ["season_hidden"] = SunkenCitySeasonHidden},
+		{["type"] = "Autotab", ["tab"] = {"Holodrum"}}
+	},
 	[0x02B] = {{["type"] = "SeeSeason", ["season"] = SunkenCitySeason, ["season_hidden"] = SunkenCitySeasonHidden}}, -- from Goron Mountain
 	[0x03B] = {{["type"] = "SeeSeason", ["season"] = SunkenCitySeason, ["season_hidden"] = SunkenCitySeasonHidden}}, -- lower gasha spot
 	[0x01D] = {

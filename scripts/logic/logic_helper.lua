@@ -686,7 +686,13 @@ function CanGaleKill()
 			GaleSeeds,
 			MysterySeeds
 		),
-		UpgradedSatchel,
+		Any(
+			UpgradedSatchel,
+			All(
+				Satchel,
+				AccessibilityLevel.SequenceBreak
+			)
+		),
 		Any(
 			CanShootSeeds,
 			Feather,

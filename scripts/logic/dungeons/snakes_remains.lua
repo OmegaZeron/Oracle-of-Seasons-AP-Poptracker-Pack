@@ -57,7 +57,10 @@ FacadeDoorstep:connect_one_way_entrance(Facade, function()
 				AccessibilityLevel.SequenceBreak
 			)
 		),
-		Bombs
+		Any(
+			Bombs,
+			Bombchus
+		)
 	)
 end)
 Facade:connect_one_way_entrance(SnakeFoyer)

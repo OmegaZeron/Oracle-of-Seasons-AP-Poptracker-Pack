@@ -89,9 +89,10 @@ function onClear(slot_data)
 
 	AutoCollectLocationTable = {
 		["@Tarm Ruins/Lost Woods/Lost Woods: Pedestal Item"] = {"@Tarm Ruins/Pedestal Sequence/Serenade the Scrub"},
-		[SeedSatchel] = {"@Horon Village/Horon Tree/Horon Village: Seed Tree", SeedMapping[slot_data["options"]["default_seed"]]},
+		[Satchel] = {"@Horon Village/Horon Tree/Horon Village: Seed Tree", SeedMapping[slot_data["options"]["default_seed"]]},
 		[Slingshot] = {"@Horon Village/Horon Tree/Horon Village: Seed Tree", SeedMapping[slot_data["options"]["default_seed"]]},
-		[SeedShooter] = {"@Horon Village/Horon Tree/Horon Village: Seed Tree", SeedMapping[slot_data["options"]["default_seed"]]}
+		[SeedShooter] = {"@Horon Village/Horon Tree/Horon Village: Seed Tree", SeedMapping[slot_data["options"]["default_seed"]]},
+		[AnyFlute] = {function() Tracker:FindObjectForCode(Companion).CurrentStage = SLOT_DATA["options"]["animal_companion"] end}
 	}
 
 	Tracker:FindObjectForCode("horon_village_season_shuffle").CurrentStage = slot_data["default_seasons"]["HORON_VILLAGE"] == 255 and 0 or 1
@@ -142,8 +143,12 @@ function onClear(slot_data)
 	CurrentTab = nil
 	-- TODO get this from slot_data once it's a setting
 	local startLocation = "impa's house"
+	local data = StartLocationMapping[startLocation]
+	if (data[2] ~= nil) then
+		Tracker:FindObjectForCode(data[2]).CurrentStage = slot_data["default_seasons"][data[3]]
+	end
 	if (Tracker:FindObjectForCode("autotab").CurrentStage == 1 and startLocation) then
-		OnBounce({["data"] = {["Current Room"] = StartLocationMapping[startLocation]}})
+		OnBounce({["data"] = {["Current Room"] = data[1]}})
 	end
 end
 
@@ -198,17 +203,20 @@ function OnItem(index, item_id, item_name, player_number)
 		end
 		if (AutoCollectLocationTable[v[1]]) then
 			for _, autoTable in ipairs(AutoCollectLocationTable[v[1]]) do
-				local toCollect = Tracker:FindObjectForCode(autoTable)
-				if (toCollect) then
-					if autoTable:sub(1, 1) == "@" then
-						---@cast toCollect LocationSection
-						toCollect.AvailableChestCount = toCollect.AvailableChestCount - 1
-					else
-						---@cast toCollect JsonItem
-						toCollect.Active = true
+				if (type(autoTable) == "function") then
+					autoTable()
+				else
+					local toCollect = Tracker:FindObjectForCode(autoTable)
+					if (toCollect) then
+						if autoTable:sub(1, 1) == "@" then
+							---@cast toCollect LocationSection
+							toCollect.AvailableChestCount = toCollect.AvailableChestCount - 1
+						else
+							---@cast toCollect JsonItem
+							toCollect.Active = true
+						end
 					end
 				end
-				Tracker:FindObjectForCode(v[1]).AvailableChestCount = 0
 			end
 		end
 	elseif AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
@@ -408,7 +416,7 @@ function OnBounce(json)
 				elseif roomMap["type"] == "SeeSeason" then
 					Tracker:FindObjectForCode(roomMap["season"]).CurrentStage = Tracker:FindObjectForCode(roomMap["season_hidden"]).CurrentStage
 				elseif roomMap["type"] == "Natzu" then
-					Tracker:FindObjectForCode("companion").CurrentStage = SLOT_DATA["options"]["animal_companion"]
+					Tracker:FindObjectForCode(Companion).CurrentStage = SLOT_DATA["options"]["animal_companion"]
 				end
 			end
 		end

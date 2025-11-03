@@ -74,7 +74,7 @@ CurrentRoom = nil
 -- TODO fill this out when alt starting locations are added
 -- used to automatically tab and see seasons when connecting to AP
 StartLocationMapping = {
-	["impa's house"] = 0x0B6
+	["impa's house"] = {0x0B6, NorthHoronSeason, "EYEGLASS_LAKE"}
 }
 CurrentLocationMapping = {
 	-- North Horon
@@ -264,6 +264,7 @@ CurrentLocationMapping = {
 	-- Lost Woods
 	[0x063] = {{["type"] = "SeeSeason", ["season"] = LostWoodsSeason, ["season_hidden"] = LostWoodsSeasonHidden}}, -- from SS
 	[0x020] = {{["type"] = "SeeSeason", ["season"] = LostWoodsSeason, ["season_hidden"] = LostWoodsSeasonHidden}}, -- from tarm
+	[0x040] = {{["type"] = "SeeSeason", ["season"] = LostWoodsSeason, ["season_hidden"] = LostWoodsSeasonHidden}}, -- from pedestal
 
 	-- Tarm Ruins
 	[0x010] = {{["type"] = "SeeSeason", ["season"] = TarmRuinsSeason, ["season_hidden"] = TarmRuinsSeasonHidden}}, -- from LW

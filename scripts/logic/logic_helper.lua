@@ -713,10 +713,9 @@ function CanKillWithPit()
 	)
 end
 
-function CanNormalKill(pitAvailable, allowGale, allowCane)
+function CanNormalKill(pitAvailable, allowGale)
 	pitAvailable = Default(pitAvailable, false)
 	allowGale = Default(allowGale, false)
-	allowCane = Default(allowCane, false)
 
 	return Any(
 		CanNormalSatchelKill(allowGale),
@@ -742,7 +741,6 @@ function CanNormalKill(pitAvailable, allowGale, allowCane)
 			MediumLogic
 		),
 		All(
-			allowCane,
 			CaneOfSomaria,
 			MediumLogic
 		)

@@ -14,11 +14,10 @@ function onClear(slot_data)
 		print(string.format("called onClear, slot_data:\n%s", dump(slot_data)))
 	end
 
+	Tracker:FindObjectForCode(VersionMismatch).Active = false
 	if slot_data["version"] and not slot_data["version"]:find("^"..WORLD_VERSION) then
 		Tracker:FindObjectForCode(VersionMismatch).Active = true
 		return
-	else
-		Tracker:FindObjectForCode(VersionMismatch).Active = false
 	end
 
 	SLOT_DATA = slot_data
@@ -436,6 +435,9 @@ function OnBounce(json)
 end
 
 function OnVersionCheckChanged(code)
+	if not LOADED then
+		return
+	end
 	if Tracker:FindObjectForCode(VersionMismatch).Active then
 		Tracker:AddLayouts("layouts/version_mismatch.json")
 	else

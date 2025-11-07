@@ -59,7 +59,11 @@ FacadeDoorstep:connect_one_way_entrance(Facade, function()
 		),
 		Any(
 			Bombs,
-			Bombchus
+			Bombchus20,
+			All(
+				Bombchus,
+				AccessibilityLevel.SequenceBreak
+			)
 		)
 	)
 end)

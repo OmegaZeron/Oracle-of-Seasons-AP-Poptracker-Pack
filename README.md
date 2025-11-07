@@ -41,6 +41,6 @@ Click the AP button in the top left of the window. Enter your server:port (most 
 |   10.0 - 10.2   |  2.3.0 - 3.0.1  |
 
 ## Special Thanks
-[Seto](https://github.com/seto10987) for her work on the original tracker, and pointers for getting this version set up
-[StripesOO7](https://github.com/stripesoo7) for his help with optimization, and references for setting this up
+[Seto](https://github.com/seto10987) for her work on the original tracker, and pointers for getting this version set up<br/>
+[StripesOO7](https://github.com/stripesoo7) for his help with optimization, and references for setting this up<br/>
 [Ishigh](https://github.com/Ishigh1) for the initial code framework, and work on the apworld

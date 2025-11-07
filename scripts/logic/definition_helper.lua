@@ -156,6 +156,7 @@ ShuffleGoldOresVanilla = "gold_ores_vanilla"
 ShuffleGoldOresShuffled = "gold_ores_shuffled"
 
 -- Helpers
+VersionMismatch = "version_mismatch"
 HiddenSetting = "hidden_setting"
 LocationRefresh = "location_refresh"
 

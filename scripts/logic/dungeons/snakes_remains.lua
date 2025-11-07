@@ -98,13 +98,10 @@ SnakeHardhats:connect_one_way_entrance(SnakeBombMoblins, function()
 			CanKillWithPit,
 			SwitchHook,
 			All(
-				UpgradedSatchel,
+				HasUpgradedSatchel,
 				Any(
 					CanShootSeeds,
-					All(
-						Satchel,
-						HardLogic
-					)
+					HardLogic
 				),
 				Any(
 					ScentSeeds,

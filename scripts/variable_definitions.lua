@@ -74,7 +74,7 @@ CurrentRoom = nil
 -- TODO fill this out when alt starting locations are added
 -- used to automatically tab and see seasons when connecting to AP
 StartLocationMapping = {
-	["impa's house"] = {0x0B6, NorthHoronSeason, "EYEGLASS_LAKE"}
+	["impa's house"] = 0x0B6
 }
 CurrentLocationMapping = {
 	-- North Horon

@@ -5,6 +5,7 @@ CUR_INDEX = -1
 SLOT_DATA = nil
 LOCAL_ITEMS = {}
 GLOBAL_ITEMS = {}
+WORLD_VERSION = "13"
 
 local AutoCollectLocationTable = {}
 
@@ -12,6 +13,14 @@ function onClear(slot_data)
 	if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
 		print(string.format("called onClear, slot_data:\n%s", dump(slot_data)))
 	end
+
+	if slot_data["version"] and not slot_data["version"]:find("^"..WORLD_VERSION) then
+		Tracker:FindObjectForCode(VersionMismatch).Active = true
+		return
+	else
+		Tracker:FindObjectForCode(VersionMismatch).Active = false
+	end
+
 	SLOT_DATA = slot_data
 	CUR_INDEX = -1
 	-- reset locations
@@ -143,12 +152,9 @@ function onClear(slot_data)
 	CurrentTab = nil
 	-- TODO get this from slot_data once it's a setting
 	local startLocation = "impa's house"
-	local data = StartLocationMapping[startLocation]
-	if (data[2] ~= nil) then
-		Tracker:FindObjectForCode(data[2]).CurrentStage = slot_data["default_seasons"][data[3]]
-	end
 	if (Tracker:FindObjectForCode("autotab").CurrentStage == 1 and startLocation) then
-		OnBounce({["data"] = {["Current Room"] = data[1]}})
+		CurrentRoom = nil
+		OnBounce({["data"] = {["Current Room"] = StartLocationMapping[startLocation]}})
 	end
 end
 
@@ -156,6 +162,9 @@ end
 function OnItem(index, item_id, item_name, player_number)
 	if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
 		print(string.format("called onItem: %s, %s, %s, %s, %s", index, item_id, item_name, player_number, CUR_INDEX))
+	end
+	if Tracker:FindObjectForCode(VersionMismatch).Active then
+		return
 	end
 	if not AUTOTRACKER_ENABLE_ITEM_TRACKING then
 		return
@@ -226,6 +235,9 @@ end
 
 -- called when a location gets cleared
 function OnLocation(location_id, location_name)
+	if Tracker:FindObjectForCode(VersionMismatch).Active then
+		return
+	end
 	SetAsStale()
 	local location_array = LOCATION_MAPPING[location_id]
 	if not location_array or not location_array[1] then
@@ -421,7 +433,14 @@ function OnBounce(json)
 			end
 		end
 	end
+end
 
+function OnVersionCheckChanged(code)
+	if Tracker:FindObjectForCode(VersionMismatch).Active then
+		Tracker:AddLayouts("layouts/version_mismatch.json")
+	else
+		Tracker:AddLayouts("layouts/tracker_layouts.json")
+	end
 end
 
 Archipelago:AddClearHandler("clear handler", onClear)
@@ -434,3 +453,5 @@ end
 Archipelago:AddSetReplyHandler("notify handler", OnNotify)
 Archipelago:AddRetrievedHandler("notify launch handler", OnNotifyLaunch)
 Archipelago:AddBouncedHandler("bounce handler", OnBounce)
+
+ScriptHost:AddWatchForCode("version mismatch handler", VersionMismatch, OnVersionCheckChanged)

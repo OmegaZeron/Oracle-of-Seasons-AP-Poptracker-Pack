@@ -1,4 +1,10 @@
 [
+	// version check
+	{
+		"name": "Version Mismatch",
+		"type": "toggle",
+		"codes": "version_mismatch"
+	},
 	// settings menu
 	{
 		"name": "Logic Level",

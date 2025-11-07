@@ -1,5 +1,9 @@
 ﻿[
 	{
+		"name": "version_mismatch",
+		"img": "images/maps/version_mismatch.png"
+	},
+	{
 		"name": "holodrum",
 		"location_size": 18,
 		"location_border_thickness": 2,

@@ -322,10 +322,20 @@ function CanUseSeeds()
 	Has(SeedShooter)
 end
 
+function HasUpgradedSatchel()
+	return Any(
+		UpgradedSatchel,
+		All(
+			Satchel,
+			AccessibilityLevel.SequenceBreak
+		)
+	)
+end
+
 function CanShootSeedsCombat()
 	return All(
-		Satchel,
 		CanShootSeeds,
+		HasUpgradedSatchel,
 		Any(
 			EmberSeeds,
 			ScentSeeds,
@@ -336,10 +346,6 @@ function CanShootSeedsCombat()
 				),
 				MediumLogic
 			)
-		),
-		Any(
-			UpgradedSatchel,
-			AccessibilityLevel.SequenceBreak
 		)
 	)
 end
@@ -686,13 +692,7 @@ function CanGaleKill()
 			GaleSeeds,
 			MysterySeeds
 		),
-		Any(
-			UpgradedSatchel,
-			All(
-				Satchel,
-				AccessibilityLevel.SequenceBreak
-			)
-		),
+		HasUpgradedSatchel,
 		Any(
 			CanShootSeeds,
 			Feather,
@@ -715,7 +715,7 @@ end
 
 function CanNormalKill(pitAvailable, allowGale)
 	pitAvailable = Default(pitAvailable, false)
-	allowGale = Default(allowGale, false)
+	allowGale = Default(allowGale, true)
 
 	return Any(
 		CanNormalSatchelKill(allowGale),
@@ -752,7 +752,7 @@ function CanNormalSatchelKill(allowGale)
 		allowGale = true
 	end
 	return All(
-		Satchel,
+		HasUpgradedSatchel,
 		Any(
 			EmberSeeds,
 			All(
@@ -772,10 +772,6 @@ function CanNormalSatchelKill(allowGale)
 				GaleSeeds,
 				HardLogic
 			)
-		),
-		Any(
-			UpgradedSatchel,
-			AccessibilityLevel.SequenceBreak
 		)
 	)
 end
@@ -785,7 +781,7 @@ function CanNormalSlingshotKill(allowGale)
 		allowGale = true
 	end
 	return All(
-		Satchel,
+		HasUpgradedSatchel,
 		All(
 			CanShootSeeds,
 			Any(
@@ -802,10 +798,6 @@ function CanNormalSlingshotKill(allowGale)
 					MediumLogic
 				)
 			)
-		),
-		Any(
-			UpgradedSatchel,
-			AccessibilityLevel.SequenceBreak
 		)
 	)
 end
@@ -832,18 +824,12 @@ function CanArmorKill(allowCane, allowBombchus)
 			MediumLogic
 		),
 		All(
-			UpgradedSatchel,
 			ScentSeeds,
+			HasUpgradedSatchel,
 			Any(
 				CanShootSeeds,
 				MediumLogic
 			)
-		),
-		All(
-			-- ool version of above without upgraded satchel
-			CanUseSeeds,
-			ScentSeeds,
-			AccessibilityLevel.SequenceBreak
 		),
 		All(
 			allowCane,
@@ -999,6 +985,12 @@ function CanFarmOreChunks()
 				MagicBoomerang
 			),
 			MediumLogic
+		),
+		All(
+			-- burn the sign next to the market
+			-- not in logic because it sucks
+			CanBurnTrees,
+			AccessibilityLevel.SequenceBreak
 		)
 	)
 end

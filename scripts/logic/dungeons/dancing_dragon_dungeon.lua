@@ -226,11 +226,7 @@ DancingPotHeaven:connect_one_way_entrance(Gohma, function()
 				EmberSeeds,
 				ScentSeeds,
 				All(
-					Satchel,
-					Any(
-						UpgradedSatchel,
-						AccessibilityLevel.SequenceBreak
-					),
+					HasUpgradedSatchel,
 					MysterySeeds,
 					MediumLogic
 				)

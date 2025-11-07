@@ -158,7 +158,11 @@ CryptPastDarknutBridge:connect_one_way_entrance(CryptDarknutBridgeTrampolines, f
 				CanSwordKill,
 				HasRod,
 				Bombs,
-				Bombchus
+				Bombchus50,
+				All(
+					Bombchus,
+					AccessibilityLevel.SequenceBreak
+				)
 			)
 		)
 	)

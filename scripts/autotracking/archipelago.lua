@@ -192,14 +192,12 @@ function OnItem(index, item_id, item_name, player_number)
 		if v[2] == "toggle" then
 			obj.Active = true
 		elseif v[2] == "progressive" then
-			if obj.Active then
-				local inc = 1
-				if (v[3]) then
-					inc = v[3]
+			if (v[3]) then
+				if obj.CurrentStage < v[3] then
+					obj.CurrentStage = v[3]
 				end
-				obj.CurrentStage = obj.CurrentStage + inc
 			else
-				obj.Active = true
+				obj.CurrentStage = obj.CurrentStage + 1
 			end
 		elseif v[2] == "consumable" then
 			local mult = 1

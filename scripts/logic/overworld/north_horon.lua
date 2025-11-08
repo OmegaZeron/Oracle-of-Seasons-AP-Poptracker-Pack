@@ -144,9 +144,7 @@ EyeglassPortal:connect_one_way_entrance(EyeglassLake, function()
 	return All(
 		Any(
 			NorthHoronSpring,
-			NorthHoronAutumn,
-			Spring,
-			Autumn
+			NorthHoronAutumn
 		),
 		Flippers
 	)

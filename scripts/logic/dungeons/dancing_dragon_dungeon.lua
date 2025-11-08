@@ -214,7 +214,7 @@ DancingPotHeaven:connect_one_way_entrance(Gohma, function()
 			-- sword beams
 			Any(
 				NobleSword,
-				UseEnergyRing
+				HasSwordBeams
 			),
 			MediumLogic
 		),

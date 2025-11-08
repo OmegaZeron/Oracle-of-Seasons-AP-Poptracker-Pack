@@ -193,7 +193,11 @@ function OnItem(index, item_id, item_name, player_number)
 			obj.Active = true
 		elseif v[2] == "progressive" then
 			if obj.Active then
-				obj.CurrentStage = obj.CurrentStage + 1
+				local inc = 1
+				if (v[3]) then
+					inc = v[3]
+				end
+				obj.CurrentStage = obj.CurrentStage + inc
 			else
 				obj.Active = true
 			end
@@ -203,9 +207,6 @@ function OnItem(index, item_id, item_name, player_number)
 				mult = v[3]
 			end
 			obj.AcquiredCount = obj.AcquiredCount + (obj.Increment * mult)
-			if (obj.MaxCount > 0 and obj.AcquiredCount > obj.MaxCount) then
-				obj.AcquiredCount = obj.MaxCount
-			end
 		elseif AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
 			print(string.format("onItem: unknown item type %s for code %s", v[2], v[1]))
 		end

@@ -133,7 +133,7 @@ CryptDarknutBridge:connect_one_way_entrance(CryptPastDarknutBridge, function()
 			CanShootSeeds,
 			ScentSeeds
 		),
-		UseEnergyRing,
+		HasSwordBeams,
 		All(
 			MagnetGlove,
 			Any(

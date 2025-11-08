@@ -797,16 +797,36 @@
 		"max_quantity": 7
 	},
 	{
-		"name": "Fist Ring",
-		"type": "toggle",
-		"img": "images/items/ring_fist.png",
-		"codes": "ring_fist"
+		"name": "Punch Rings",
+		"type": "progressive",
+		"stages": [
+			{
+				"name": "Fist Ring",
+				"img": "images/items/ring_fist.png",
+				"codes": "ring_fist"
+			},
+			{
+				"name": "Expert's Ring",
+				"img": "images/items/ring_expert.png",
+				"codes": "ring_expert"
+			}
+		]
 	},
 	{
-		"name": "Expert's Ring",
-		"type": "toggle",
-		"img": "images/items/ring_expert.png",
-		"codes": "ring_expert"
+		"name": "Heart Ring",
+		"type": "progressive",
+		"stages": [
+			{
+				"name": "Heart Ring L1",
+				"img": "images/items/ring_heart1.png",
+				"codes": "ring_heart"
+			},
+			{
+				"name": "Heart Ring L2",
+				"img": "images/items/ring_heart2.png",
+				"codes": "ring_heart2"
+			}
+		]
 	},
 	{
 		"name": "Energy Ring",

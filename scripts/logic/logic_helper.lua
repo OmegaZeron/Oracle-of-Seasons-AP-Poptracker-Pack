@@ -522,16 +522,29 @@ function CanHitFarSwitch()
 		CanShootSeeds,
 		Boomerang,
 		Bombs,
-		UseEnergyRing,
+		HasSwordBeams,
 		SwitchHook
 	)
 end
 
-function UseEnergyRing()
-	return All(
-		EnergyRing,
-		WoodSword,
-		MediumLogic
+function HasSwordBeams()
+	return Any(
+		All(
+			EnergyRing,
+			WoodSword,
+			MediumLogic
+		),
+		All(
+			NobleSword,
+			Any(
+				HeartRing2,
+				All(
+					HeartRing1,
+					HardLogic
+				)
+			),
+			MediumLogic
+		)
 	)
 end
 

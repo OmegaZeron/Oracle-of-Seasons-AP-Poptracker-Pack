@@ -45,6 +45,7 @@ Biggoron:connect_one_way(BiggoronSecret)
 WestGoronMountain:connect_one_way(GoronMountainOldMan, CanBurnTrees)
 WestGoronMountain:connect_two_ways_entrance(CenterGoronMountain, function() return Has(Bracelet) end)
 CenterGoronMountain:connect_one_way(LonelyGoron, CanBombWall)
+LonelyGoron:connect_one_way(GoronPitsItem, function() return AccessibilityLevel.Inspect end)
 CenterGoronMountain:connect_one_way_entrance(LowerMtCucco, function() return Has(Shovel) end)
 
 -- items

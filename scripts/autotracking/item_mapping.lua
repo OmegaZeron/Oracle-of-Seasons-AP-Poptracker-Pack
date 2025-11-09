@@ -127,5 +127,5 @@ ITEM_MAPPING = {
 	[1024] = {CaneOfSomaria, "toggle"},
 	[3328] = {Bombchus, "progressive"},
 	[2560] = {SwitchHook, "progressive"},
-	[3840] = {SeedShooter, "progressive"}
+	[3840] = {SeedShooter, "toggle"}
 }

@@ -28,7 +28,7 @@
 				"visibility_rules": ["portalshuffleon", "portalshuffleoutward"],
 				"sections": [
 					{
-						"access_rules": ["^$CanReach|LowerMtCucco"]
+						"access_rules": ["{^$CanReach|LowerMtCucco}"]
 					}
 				],
 				"map_locations": [

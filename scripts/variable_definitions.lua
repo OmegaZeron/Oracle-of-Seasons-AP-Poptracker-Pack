@@ -74,7 +74,7 @@ CurrentRoom = nil
 -- TODO fill this out when alt starting locations are added
 -- used to automatically tab and see seasons when connecting to AP
 StartLocationMapping = {
-	["impa's house"] = 0x0B6
+	[StartImpa] = 0x0B6
 }
 CurrentLocationMapping = {
 	-- North Horon
@@ -338,9 +338,9 @@ CurrentLocationMapping = {
 	[0x404] = {
 		-- main entrance
 		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
-		{["type"] = "DungeonIn", ["dungeon"] = "d0"}
+		{["type"] = "DungeonIn", ["dungeon"] = "d0", ["loc"] = "@Hero's Cave/Exit the Dungeon/"}
 	},
-	[0x406] = {{["type"] = "DungeonIn", ["dungeon"] = "d0"}}, -- sword chest
+	[0x406] = {{["type"] = "DungeonIn", ["dungeon"] = "d0", ["loc"] = "@Hero's Cave/Exit the Dungeon/"}}, -- sword chest
 	-- D1
 	[0x41C] = {
 		{["type"] = "Autotab", ["tab"] = {"Gnarled Root Dungeon"}},
@@ -350,7 +350,7 @@ CurrentLocationMapping = {
 	[0x439] = {
 		-- main entrance
 		{["type"] = "Autotab", ["tab"] = {"Snake's Remains", "Snake's Remains Front"}},
-		{["type"] = "DungeonIn", ["dungeon"] = "d2"}
+		{["type"] = "DungeonIn", ["dungeon"] = "d2", ["loc"] = "@Snake's Remains/Exit the Dungeon/"}
 	},
 	[0x437] = {{["type"] = "Autotab", ["tab"] = {"Snake's Remains", "Snake's Remains Front"}}}, -- alt entrance
 	[0x433] = {{["type"] = "Autotab", ["tab"] = {"Snake's Remains", "Snake's Remains Front"}}}, -- bomb maze

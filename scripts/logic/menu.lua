@@ -1,0 +1,1 @@
+StartLocation:connect_one_way_entrance(LowerNorthHoron, function() return Has(StartImpa) end)

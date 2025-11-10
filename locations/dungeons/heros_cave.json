@@ -1,0 +1,77 @@
+[
+	{
+		"name": "Hero's Cave",
+		"chest_unopened_img": "images/labels/chest.png",
+		"chest_opened_img": "images/labels/chestopen.png",
+		"color": "#00ff08",
+		"children": [
+			{
+				"name": "Exit the Dungeon",
+				"visibility_rules": ["shuffledungeonon, d0_alt_entrance_vanilla"],
+				"chest_unopened_img": "images/labels/dungeon_eye.png",
+				"chest_opened_img": "images/labels/dungeon_eye_disabled.png",
+				"sections": [{"access_rules": ["{^$CanReach|HerosCaveFoyer}"]}],
+				"map_locations": [
+					{
+						"map": "heros_cave",
+						"x": 120,
+						"y": 320,
+						"shape": "trapezoid"
+					}
+				]
+			},
+			{
+				"name": "Topmost Chest",
+				"sections": [
+					{"access_rules": ["^$CanReach|HerosCaveFoyer"]}
+				],
+				"map_locations": [
+					{
+						"map": "heros_cave",
+						"x": 664,
+						"y": 88
+					}
+				]
+			},
+			{
+				"name": "Item in Basement Under Keese Room",
+				"sections": [
+					{"access_rules": ["^$CanReach|HerosCaveUnderground"]}
+				],
+				"map_locations": [
+					{
+						"map": "heros_cave",
+						"x": 135,
+						"y": 75
+					}
+				]
+			},
+			{
+				"name": "Final Chest",
+				"sections": [
+					{"access_rules": ["^$CanReach|HerosCavePostKey"]}
+				],
+				"map_locations": [
+					{
+						"map": "heros_cave",
+						"x": 600,
+						"y": 216
+					}
+				]
+			},
+			{
+				"name": "Alternative Entrance Chest",
+				"sections": [
+					{"access_rules": ["^$CanReach|HerosCaveLedge"]}
+				],
+				"map_locations": [
+					{
+						"map": "heros_cave",
+						"x": 456,
+						"y": 264
+					}
+				]
+			}
+		]
+	}
+]

@@ -50,20 +50,24 @@
 				"access_rules": ["^$CanReach|HerosCaveFoyer"],
 				"sections": [
 					{
+						"name": "Exit the Dungeon",
+						"ref": "Hero's Cave/Exit the Dungeon/"
+					},
+					{
 						"name": "Topmost Chest",
-						"access_rules": ["^$CanReach|HerosCaveFoyer"]
+						"ref": "Hero's Cave/Topmost Chest/"
 					},
 					{
 						"name": "Item in Basement Under Keese Room",
-						"access_rules": ["^$CanReach|HerosCaveUnderground"]
+						"ref": "Hero's Cave/Item in Basement Under Keese Room/"
 					},
 					{
 						"name": "Final Chest",
-						"access_rules": ["^$CanReach|HerosCavePostKey"]
+						"ref": "Hero's Cave/Final Chest/"
 					},
 					{
 						"name": "Alternative Entrance Chest",
-						"access_rules": ["^$CanReach|HerosCaveLedge"]
+						"ref": "Hero's Cave/Alternative Entrance Chest/"
 					}
 				],
 				"map_locations": [

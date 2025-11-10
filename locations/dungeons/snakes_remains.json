@@ -5,6 +5,21 @@
 		"chest_opened_img": "images/labels/chestopen.png",
 		"children": [	
 			{
+				"name": "Exit the Dungeon",
+				"visibility_rules": ["shuffledungeonon, d2_alt_entrance_vanilla"],
+				"chest_unopened_img": "images/labels/dungeon_eye.png",
+				"chest_opened_img": "images/labels/dungeon_eye_disabled.png",
+				"sections": [{"access_rules": ["{^$CanReach|SnakeFoyer}"]}],
+				"map_locations": [
+					{
+						"map": "snakes_remains1",
+						"x": 400,
+						"y": 448,
+						"shape": "trapezoid"
+					}
+				]
+			},
+			{
 				"name": "Chest Left from Entrance",
 				"sections": [
 					{

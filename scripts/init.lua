@@ -20,7 +20,4 @@ Tracker:AddLayouts("layouts/item_grids.json")
 Tracker:AddLayouts("layouts/tracker_layouts.json")
 Tracker:AddLayouts("layouts/broadcast.json")
 
-StartLocation = OoSLocation.New("StartLocation")
-StartLocation:connect_one_way_entrance(LowerNorthHoron)
-
 StateChange()

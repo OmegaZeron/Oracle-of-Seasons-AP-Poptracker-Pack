@@ -150,7 +150,7 @@ function onClear(slot_data)
 	CurrentLocation = nil
 	CurrentTab = nil
 	-- TODO get this from slot_data once it's a setting
-	local startLocation = "impa's house"
+	local startLocation = StartImpa
 	if (Tracker:FindObjectForCode("autotab").CurrentStage == 1 and startLocation) then
 		CurrentRoom = nil
 		OnBounce({["data"] = {["Current Room"] = StartLocationMapping[startLocation]}})
@@ -410,6 +410,9 @@ function OnBounce(json)
 							if prevMap["type"] == "DungeonIn" then
 								Tracker:FindObjectForCode(prevMap["dungeon"].."_ent_selector").CurrentStage = Tracker:FindObjectForCode(prevMap["dungeon"].."_ent_selector_hidden").CurrentStage
 								Tracker:FindObjectForCode(roomMap["loc"]).AvailableChestCount = 0
+								if prevMap["loc"] then
+									Tracker:FindObjectForCode(prevMap["loc"]).AvailableChestCount = 0
+								end
 							end
 						end
 					end
@@ -420,6 +423,9 @@ function OnBounce(json)
 							if prevMap["type"] == "DungeonEnt" then
 								Tracker:FindObjectForCode(roomMap["dungeon"].."_ent_selector").CurrentStage = Tracker:FindObjectForCode(roomMap["dungeon"].."_ent_selector_hidden").CurrentStage
 								Tracker:FindObjectForCode(prevMap["loc"]).AvailableChestCount = 0
+								if roomMap["loc"] then
+									Tracker:FindObjectForCode(roomMap["loc"]).AvailableChestCount = 0
+								end
 							end
 						end
 					end

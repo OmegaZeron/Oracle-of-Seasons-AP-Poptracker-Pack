@@ -80,6 +80,14 @@
 								}
 							},
 							{
+								"title": "Hero's Cave",
+								"icon": "images/labels/link_collect_item.png",
+								"content": {
+									"type": "map",
+									"maps": ["heros_cave"]
+								}
+							},
+							{
 								"title": "Gnarled Root Dungeon",
 								"icon": "images/items/d1.png",
 								"content": {

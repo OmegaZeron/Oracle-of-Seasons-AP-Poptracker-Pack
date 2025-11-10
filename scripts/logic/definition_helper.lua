@@ -157,6 +157,9 @@ SignGuyOnePlus = "sign_1"
 ShuffleGoldOresVanilla = "gold_ores_vanilla"
 ShuffleGoldOresShuffled = "gold_ores_shuffled"
 
+-- Start Locations
+StartImpa = "start_impa"
+
 -- Helpers
 VersionMismatch = "version_mismatch"
 HiddenSetting = "hidden_setting"

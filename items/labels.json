@@ -78,6 +78,12 @@
 		"codes": "horon_shop_potion_label"
 	},
 	{
+		"name": "Starting Location Label",
+		"type": "static",
+		"img": "images/labels/start_location_label.png",
+		"codes": "start_location_label"
+	},
+	{
 		"name": "Master Keys Label",
 		"type": "static",
 		"img": "images/labels/master_keys_label.png",
@@ -118,6 +124,18 @@
 		"type": "static",
 		"img": "images/labels/advance_shop_label.png",
 		"codes": "advance_shop_label"
+	},
+	{
+		"name": "Sign Guy Label",
+		"type": "static",
+		"img": "images/labels/signs_required_label.png",
+		"codes": "signs_required_label"
+	},
+	{
+		"name": "Gashas Label",
+		"type": "static",
+		"img": "images/labels/gasha_seeds_label.png",
+		"codes": "gasha_seeds_label"
 	},
 	{
 		"name": "Tarm Jewels Label",

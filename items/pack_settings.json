@@ -151,6 +151,20 @@
 		]
 	},
 	{
+		"name": "Start Location",
+		"type": "progressive",
+		"allow_disabled": false,
+		"initial_stage_idx": 1,
+		"loop": true,
+		"stages": [
+			{
+				"img": "images/labels/start_impa.png",
+				"codes": "start_location, start_impa",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
 		"name": "Old Man Essences Required",
 		"type": "progressive",
 		"allow_disabled": false,

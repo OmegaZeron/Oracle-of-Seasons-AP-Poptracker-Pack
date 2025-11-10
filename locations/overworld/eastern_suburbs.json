@@ -372,6 +372,10 @@
 				"name": "Snake's Remains",
 				"sections": [
 					{
+						"name": "Snake's Remains: Exit the Dungeon",
+						"ref": "Snake's Remains/Exit the Dungeon/"
+					},
+					{
 						"name": "Snake's Remains: Chest Left from Entrance",
 						"ref": "Snake's Remains/Chest Left from Entrance/"
 					},

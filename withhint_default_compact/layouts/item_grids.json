@@ -114,6 +114,7 @@
 					{
 						"type": "itemgrid",
 						"h_alignment": "center",
+						"margin": "5,5,5,-10",
 						"item_size": 50,
 						"item_margin": "0,-12",
 						"rows": [
@@ -135,7 +136,7 @@
 			{
 				"type": "itemgrid",
 				"h_alignment": "left",
-				"margin": "10,52,-10,0",
+				"margin": "10,52,-10,-50",
 				"item_size": 131,
 				"item_margin": "-3,-34",
 				"rows": [

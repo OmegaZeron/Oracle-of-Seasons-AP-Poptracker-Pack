@@ -9,31 +9,25 @@
 				{
 					"type": "dock",
 					"dock": "left",
+					"v_alignment": "stretch",
 					"content": [
 						{
-							"type": "dock",
+							"type": "group",
+							"header": "Items",
 							"dock": "top",
-							"v_alignment": "stretch",
-							"content": [
-								{
-									"type": "group",
-									"header": "Items",
-									"dock": "top",
-									"content": {
-										"type": "layout",
-										"key": "item_grid"
-									}
-								},
-								{
-									"type": "group",
-									"header": "Dungeon Entrances, Seasons and Portal Shuffles",
-									"dock": "top",
-									"content": {
-										"type": "layout",
-										"key": "dungeon_grid"
-									}
-								}
-							]
+							"content": {
+								"type": "layout",
+								"key": "item_grid"
+							}
+						},
+						{
+							"type": "group",
+							"header": "Dungeon Entrances, Seasons and Portal Shuffles",
+							"dock": "top",
+							"content": {
+								"type": "layout",
+								"key": "dungeon_grid"
+							}
 						}
 					]
 				},

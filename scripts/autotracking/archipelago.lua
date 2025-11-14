@@ -25,14 +25,12 @@ function onClear(slot_data)
 	-- reset locations
 	for _, location_array in pairs(LOCATION_MAPPING) do
 		for _, location in pairs(location_array) do
-			if location then
-				local obj = Tracker:FindObjectForCode(location)
-				if obj then
-					if location:sub(1, 1) == "@" then
-						obj.AvailableChestCount = obj.ChestCount
-					else
-						obj.Active = false
-					end
+			local obj = Tracker:FindObjectForCode(location)
+			if obj then
+				if location:sub(1, 1) == "@" then
+					obj.AvailableChestCount = obj.ChestCount
+				else
+					obj.Active = false
 				end
 			end
 		end
@@ -59,7 +57,7 @@ function onClear(slot_data)
 			if obj then
 				if v[2] == "toggle" then
 					obj.Active = false
-				elseif v[2] == "progressive" then
+				elseif v[2] == "progressive" or v[2] == "progressive_set" then
 					obj.CurrentStage = 0
 					obj.Active = false
 				elseif v[2] == "consumable" then
@@ -172,44 +170,45 @@ function OnItem(index, item_id, item_name, player_number)
 		return
 	end
 	SetAsStale()
-	local is_local = player_number == Archipelago.PlayerNumber
 	CUR_INDEX = index;
-	local v = ITEM_MAPPING[item_id]
-	if not v then
+	local itemData = ITEM_MAPPING[item_id]
+	if not itemData then
 		if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
 			print(string.format("onItem: could not find item mapping for id %s", item_id))
 		end
 		return
 	end
 	if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
-		print(string.format("onItem: code: %s, type %s", v[1], v[2]))
+		print(string.format("onItem: code: %s, type %s", itemData[1], itemData[2]))
 	end
-	if not v[1] then
+	if not itemData[1] then
 		return
 	end
-	local obj = Tracker:FindObjectForCode(v[1])
+	local obj = Tracker:FindObjectForCode(itemData[1])
 	if obj then
-		if v[2] == "toggle" then
+		if itemData[2] == "toggle" then
 			obj.Active = true
-		elseif v[2] == "progressive" then
-			if (v[3]) then
-				if obj.CurrentStage < v[3] then
-					obj.CurrentStage = v[3]
-				end
-			else
-				obj.CurrentStage = obj.CurrentStage + 1
+		elseif itemData[2] == "progressive" then
+			local inc = 1
+			if (itemData[3]) then
+				inc = itemData[3]
 			end
-		elseif v[2] == "consumable" then
+			obj.CurrentStage = obj.CurrentStage + inc
+		elseif itemData[2] == "consumable" then
 			local mult = 1
-			if (v[3]) then
-				mult = v[3]
+			if (itemData[3]) then
+				mult = itemData[3]
 			end
 			obj.AcquiredCount = obj.AcquiredCount + (obj.Increment * mult)
+		elseif itemData[2] == "progressive_set" then
+			if obj.CurrentStage < itemData[3] then
+				obj.CurrentStage = itemData[3]
+			end
 		elseif AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
-			print(string.format("onItem: unknown item type %s for code %s", v[2], v[1]))
+			print(string.format("onItem: unknown item type %s for code %s", itemData[2], itemData[1]))
 		end
-		if (AutoCollectLocationTable[v[1]]) then
-			for _, autoTable in ipairs(AutoCollectLocationTable[v[1]]) do
+		if (AutoCollectLocationTable[itemData[1]]) then
+			for _, autoTable in ipairs(AutoCollectLocationTable[itemData[1]]) do
 				if (type(autoTable) == "function") then
 					autoTable()
 				else
@@ -227,7 +226,7 @@ function OnItem(index, item_id, item_name, player_number)
 			end
 		end
 	elseif AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
-		print(string.format("onItem: could not find object for code %s", v[1]))
+		print(string.format("onItem: could not find object for code %s", itemData[1]))
 	end
 end
 

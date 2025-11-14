@@ -1,6 +1,7 @@
 ITEM_MAPPING = {
 	[256] = {Shield, "progressive"},
 	[768] = {Bombs, "progressive"},
+	[771] = {Bombs, "progressive", 2},
 	[1280] = {WoodSword, "progressive"},
 	[1536] = {Boomerang, "progressive"},
 	[1794] = {Spring, "toggle"},
@@ -108,12 +109,12 @@ ITEM_MAPPING = {
 	[20992] = {HardOre, "toggle"},
 	[21248] = {MembersCard, "toggle"},
 	[21504] = {MastersPlaque, "toggle"},
-	[11535] = {ExpertsRing, "progressive", 2},
-	[11543] = {HeartRing1, "progressive", 1},
-	[11544] = {HeartRing2, "progressive", 2},
+	[11535] = {ExpertsRing, "progressive_set", 2},
+	[11543] = {HeartRing1, "progressiv_set", 1},
+	[11544] = {HeartRing2, "progressive_set", 2},
 	[11545] = {SwimmersRing, "toggle"},
 	[11573] = {EnergyRing, "toggle"},
-	[11585] = {FistRing, "progressive", 1},
+	[11585] = {FistRing, "progressive_set", 1},
 	[18688] = {BombFlower, "toggle"},
 	[16384] = {D1Essence, "toggle"},
 	[16385] = {D2Essence, "toggle"},
@@ -126,6 +127,7 @@ ITEM_MAPPING = {
 
 	[1024] = {CaneOfSomaria, "toggle"},
 	[3328] = {Bombchus, "progressive"},
+	[3329] = {Bombchus, "progressive", 2},
 	[2560] = {SwitchHook, "progressive"},
 	[3840] = {SeedShooter, "toggle"}
 }

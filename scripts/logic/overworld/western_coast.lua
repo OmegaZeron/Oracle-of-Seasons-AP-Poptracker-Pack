@@ -16,7 +16,7 @@ EastWesternCoast:connect_one_way(GoldenDarknutKill, function()
 		)
 	)
 end)
-EastWesternCoast:connect_one_way_entrance(HerosCave)
+EastWesternCoast:connect_two_ways_entrance(HerosCave)
 HerosCave:connect_two_ways_entrance(HerosCaveFoyer, function()
 	return Any(
 		ShuffleDungeonOff,

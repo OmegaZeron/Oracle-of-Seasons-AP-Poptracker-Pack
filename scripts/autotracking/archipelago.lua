@@ -48,25 +48,25 @@ function onClear(slot_data)
 		end
 	end
 	-- reset items
-	for _, v in pairs(ITEM_MAPPING) do
-		if v[1] and v[2] then
+	for _, itemData in pairs(ITEM_MAPPING) do
+		if itemData[1] and itemData[2] then
 			if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
-				print(string.format("onClear: clearing item %s of type %s", v[1], v[2]))
+				print(string.format("onClear: clearing item %s of type %s", itemData[1], itemData[2]))
 			end
-			local obj = Tracker:FindObjectForCode(v[1])
+			local obj = Tracker:FindObjectForCode(itemData[1])
 			if obj then
-				if v[2] == "toggle" then
+				if itemData[2] == "toggle" then
 					obj.Active = false
-				elseif v[2] == "progressive" or v[2] == "progressive_set" then
+				elseif itemData[2] == "progressive" or itemData[2] == "progressive_set" then
 					obj.CurrentStage = 0
 					obj.Active = false
-				elseif v[2] == "consumable" then
+				elseif itemData[2] == "consumable" then
 					obj.AcquiredCount = 0
 				elseif AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
-					print(string.format("onClear: unknown item type %s for code %s", v[2], v[1]))
+					print(string.format("onClear: unknown item type %s for code %s", itemData[2], itemData[1]))
 				end
 			elseif AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
-				print(string.format("onClear: could not find object for code %s", v[1]))
+				print(string.format("onClear: could not find object for code %s", itemData[1]))
 			end
 		end
 	end

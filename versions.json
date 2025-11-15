@@ -1,6 +1,12 @@
 {
 	"versions": [
 		{
+			"package_version": "5.0.0",
+			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/v.5.0.0/seasons_ap.zip",
+			"sha256": "b55a6a3b7f3d52ced8ae856d71bdc067f0a93abe158f207631216b752d42178f",
+			"changelog": ["Cross items update, unknown companion, version check"]
+		},
+		{
 			"package_version": "4.0.0",
 			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/v.4.0.0/seasons_ap_4.0.0.zip",
 			"sha256": "ca4cb8427abae2167871604f7ac66a288ddb7779ec9fe2d680c8b2c1e9d77d4f",

@@ -127,7 +127,18 @@ end)
 MazeIcePuzzle:connect_one_way_entrance(MazeTerrace, function()
 	return Any(
 		Jump6,
-		MagicBoomerang
+		MagicBoomerang,
+		SeedShooter,
+		All(
+			Any(
+				Bombchus20,
+				All(
+					Bombchus,
+					AccessibilityLevel.SequenceBreak
+				)
+			),
+			MediumLogic
+		)
 	)
 end)
 MazeIcePuzzle:connect_one_way(MazeSparkPots, function()

@@ -37,4 +37,4 @@ GnarledMinecartChest:connect_one_way_entrance(GoriyaBros, function()
 		CanBombWall
 	)
 end)
-GoriyaBros:connect_one_way(GnarledPostGoriyaBros, CanArmorKill)
+GoriyaBros:connect_one_way(GnarledPostGoriyaBros, function() return CanArmorKill(false, true) end)

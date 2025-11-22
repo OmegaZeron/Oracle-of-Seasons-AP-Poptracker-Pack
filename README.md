@@ -5,7 +5,7 @@ Tracker pack for [PopTracker](https://github.com/black-sliver/PopTracker/)</br>
 
 [Archipelago Setup Guide](https://archipelago.gg/tutorial/Archipelago/setup/en)
 
-[Seasons Archipelago Randomizer Setup Guide](https://github.com/Dinopony/ArchipelagoOoS/blob/oos/worlds/tloz_oos/docs/oos_setup_en.md)
+[Seasons Archipelago Randomizer Setup Guide](https://github.com/Dinopony/ArchipelagoOoS/blob/oos/worlds/tloz_oos/docs/oos_setup_en.md)<br/>
 [Randomizer FAQ and Logic Info](https://github.com/Dinopony/ArchipelagoOoS/blob/oos/worlds/tloz_oos/docs/en_The%20Legend%20of%20Zelda%20-%20Oracle%20of%20Seasons.md)
 
 ## Installation

@@ -225,6 +225,14 @@ function OnItem(index, item_id, item_name, player_number)
 				end
 			end
 		end
+		local dungeon = tonumber(itemData[1]:match("d(%d)_map"))
+		if dungeon then
+			for i = 1, 8 do
+				if Tracker:FindObjectForCode("d"..i.."_ent_selector_hidden").CurrentStage + 1 == dungeon then
+					Tracker:FindObjectForCode("d"..i.."_ent_selector").CurrentStage = Tracker:FindObjectForCode("d"..i.."_ent_selector_hidden").CurrentStage
+				end
+			end
+		end
 	elseif AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
 		print(string.format("onItem: could not find object for code %s", itemData[1]))
 	end

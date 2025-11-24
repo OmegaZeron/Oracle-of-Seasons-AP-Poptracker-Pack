@@ -60,7 +60,7 @@ function CanBombWall()
 		Bombs,
 		All(
 			Any(
-				Bombchus50,
+				Bombchus40,
 				All(
 					Bombchus,
 					AccessibilityLevel.SequenceBreak
@@ -397,7 +397,7 @@ function CanDestroyBush(allowBombchus)
 				All(
 					allowBombchus == true,
 					Any(
-						Bombchus50,
+						Bombchus40,
 						All(
 							Bombchus,
 							AccessibilityLevel.SequenceBreak
@@ -459,7 +459,7 @@ function CanDestroyFlower(allowCompanion)
 					GaleSeeds
 				),
 				Any(
-					Bombchus50,
+					Bombchus40,
 					All(
 						Bombchus,
 						AccessibilityLevel.SequenceBreak
@@ -474,10 +474,14 @@ end
 function CanDestroyCrystal()
 	return Any(
 		HasAnySword,
-		CanBombWall,
+		Bombs,
 		Bracelet,
 		All(
 			ExpertsRing,
+			MediumLogic
+		),
+		All(
+			Bombchus40,
 			MediumLogic
 		)
 	)

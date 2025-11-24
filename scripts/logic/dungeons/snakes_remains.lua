@@ -32,7 +32,7 @@ SnakeAltEntrance:connect_one_way(SnakeBombPuzzle, function()
 			Bombs,
 			All(
 				Any(
-					Bombchus50,
+					Bombchus40,
 					All(
 						Bombchus,
 						AccessibilityLevel.SequenceBreak

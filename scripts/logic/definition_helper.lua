@@ -90,7 +90,7 @@ SwitchHook = "hook"
 LongHook = "hook2"
 Bombchus = "bombchus"
 Bombchus20 = "bombchus20"
-Bombchus50 = "bombchus50"
+Bombchus40 = "bombchus40"
 
 D0SmallKey = "d0sk"
 D0MasterKey = "d0_master_key"

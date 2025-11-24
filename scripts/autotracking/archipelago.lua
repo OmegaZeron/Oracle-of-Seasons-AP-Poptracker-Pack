@@ -141,6 +141,7 @@ function onClear(slot_data)
 		for i = 1, 8 do
 			Tracker:FindObjectForCode("d"..i.."_map").Active = true
 			Tracker:FindObjectForCode("d"..i.."_compass").Active = true
+			RevealDungeon(i)
 		end
 	end
 
@@ -227,11 +228,7 @@ function OnItem(index, item_id, item_name, player_number)
 		end
 		local dungeon = tonumber(itemData[1]:match("d(%d)_map"))
 		if dungeon then
-			for i = 1, 8 do
-				if Tracker:FindObjectForCode("d"..i.."_ent_selector_hidden").CurrentStage + 1 == dungeon then
-					Tracker:FindObjectForCode("d"..i.."_ent_selector").CurrentStage = Tracker:FindObjectForCode("d"..i.."_ent_selector_hidden").CurrentStage
-				end
-			end
+			RevealDungeon(dungeon)
 		end
 	elseif AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
 		print(string.format("onItem: could not find object for code %s", itemData[1]))
@@ -456,6 +453,14 @@ function OnVersionCheckChanged(code)
 		Tracker:AddLayouts("layouts/version_mismatch.json")
 	else
 		Tracker:AddLayouts("layouts/tracker_layouts.json")
+	end
+end
+
+function RevealDungeon(dungeon)
+	for i = 1, 8 do
+		if Tracker:FindObjectForCode("d"..i.."_ent_selector_hidden").CurrentStage + 1 == dungeon then
+			Tracker:FindObjectForCode("d"..i.."_ent_selector").CurrentStage = Tracker:FindObjectForCode("d"..i.."_ent_selector_hidden").CurrentStage
+		end
 	end
 end
 

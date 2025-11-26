@@ -88,7 +88,13 @@ AncientTrappedChest:connect_one_way_entrance(AncientArmosDarknutDrop, function()
 AncientFoyer:connect_one_way(AncientNorthOfSpinnerChest, function()
 	return All(
 		CanDestroyCrystal,
-		MagnetGlove,
+		Any(
+			MagnetGlove,
+			All(
+				CaneOfSomaria,
+				HardLogic
+			)
+		),
 		Any(
 			Feather,
 			MediumLogic

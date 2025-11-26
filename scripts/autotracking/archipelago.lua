@@ -30,16 +30,10 @@ function PreOnClear()
     print(Archipelago.Seed)
     local manualStorageItem = Tracker:FindObjectForCode(ManualStorageCode)
 
-    if manualStorageItem and (ROOM_SEED == "default" or (
-		ROOM_SEED ~= (Archipelago.Seed and Archipelago.Seed or "").."_"..Archipelago.TeamNumber.."_"..Archipelago.PlayerNumber and
-		ROOM_SEED ~= #ALL_LOCATIONS.."_"..Archipelago.TeamNumber.."_"..Archipelago.PlayerNumber
-	)) then
+	local seedBase = (Archipelago.Seed or #ALL_LOCATIONS).."_"..Archipelago.TeamNumber.."_"..Archipelago.PlayerNumber
+    if manualStorageItem and (ROOM_SEED == "default" or ROOM_SEED ~= seedBase) then
 		-- seed is default or from previous connection
-        if PopVersion and PopVersion >= "0.33.0" then
-            ROOM_SEED = Archipelago.Seed.."_"..Archipelago.TeamNumber.."_"..Archipelago.PlayerNumber
-        else
-            ROOM_SEED = #ALL_LOCATIONS.."_"..Archipelago.TeamNumber.."_"..Archipelago.PlayerNumber
-        end
+        ROOM_SEED = seedBase
         if #manualStorageItem.ItemState.ManualLocations > 10 then
             manualStorageItem.ItemState.ManualLocations[manualStorageItem.ItemState.ManualLocationsOrder[1]] = nil
             table.remove(manualStorageItem.ItemState.ManualLocationsOrder, 1)
@@ -508,11 +502,10 @@ function ManualLocationHandler(location)
             if ROOM_SEED ~= "default" then -- seed is from previous connection
                 ROOM_SEED = "default"
                 manualStorageitem.ItemState.ManualLocations["default"] = {}
-            else -- seed is default
             end
         end
         local fullID = location.FullID
-        if manualStorageitem.ItemState.ManualLocations[ROOM_SEED][fullID] then --not in list for curretn seed
+        if manualStorageitem.ItemState.ManualLocations[ROOM_SEED][fullID] then --not in list for current seed
             if location.AvailableChestCount < location.ChestCount then --add to list
                 manualStorageitem.ItemState.ManualLocations[ROOM_SEED][fullID] = location.AvailableChestCount
             else --remove from list of set back to max chestcount

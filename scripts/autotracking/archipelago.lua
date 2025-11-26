@@ -3,24 +3,75 @@ ScriptHost:LoadScript("scripts/autotracking/location_mapping.lua")
 
 CUR_INDEX = -1
 SLOT_DATA = nil
-LOCAL_ITEMS = {}
-GLOBAL_ITEMS = {}
 WORLD_VERSION = "13"
+ALL_LOCATIONS = {}
+MANUAL_CHECKED = true
+ROOM_SEED = "default"
 
 local AutoCollectLocationTable = {}
 
-function onClear(slot_data)
+function PreOnClear()
+    PLAYER_ID = Archipelago.PlayerNumber or -1
+    TEAM_NUMBER = Archipelago.TeamNumber or 0
+
+    if Archipelago.PlayerNumber > -1 then
+        if #ALL_LOCATIONS > 0 then
+            ALL_LOCATIONS = {}
+        end
+        for _, value in pairs(Archipelago.MissingLocations) do
+            table.insert(ALL_LOCATIONS, #ALL_LOCATIONS + 1, value)
+        end
+
+        for _, value in pairs(Archipelago.CheckedLocations) do
+            table.insert(ALL_LOCATIONS, #ALL_LOCATIONS + 1, value)
+        end
+    end
+
+    print(Archipelago.Seed)
+    local manualStorageItem = Tracker:FindObjectForCode(ManualStorageCode)
+
+    if manualStorageItem and (ROOM_SEED == "default" or (
+		ROOM_SEED ~= (Archipelago.Seed and Archipelago.Seed or "").."_"..Archipelago.TeamNumber.."_"..Archipelago.PlayerNumber and
+		ROOM_SEED ~= #ALL_LOCATIONS.."_"..Archipelago.TeamNumber.."_"..Archipelago.PlayerNumber
+	)) then
+		-- seed is default or from previous connection
+        if PopVersion and PopVersion >= "0.33.0" then
+            ROOM_SEED = Archipelago.Seed.."_"..Archipelago.TeamNumber.."_"..Archipelago.PlayerNumber
+        else
+            ROOM_SEED = #ALL_LOCATIONS.."_"..Archipelago.TeamNumber.."_"..Archipelago.PlayerNumber
+        end
+        if #manualStorageItem.ItemState.ManualLocations > 10 then
+            manualStorageItem.ItemState.ManualLocations[manualStorageItem.ItemState.ManualLocationsOrder[1]] = nil
+            table.remove(manualStorageItem.ItemState.ManualLocationsOrder, 1)
+		end
+		if manualStorageItem.ItemState.ManualLocations[ROOM_SEED] == nil then
+			manualStorageItem.ItemState.ManualLocations[ROOM_SEED] = {}
+			table.insert(manualStorageItem.ItemState.ManualLocationsOrder, ROOM_SEED)
+		end
+    end
+end
+
+function OnClear(slotData)
 	if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
-		print(string.format("called onClear, slot_data:\n%s", dump(slot_data)))
+		print(string.format("called OnClear, slot_data:\n%s", dump(slotData)))
 	end
 
 	Tracker:FindObjectForCode(VersionMismatch).Active = false
-	if slot_data["version"] and not slot_data["version"]:find("^"..WORLD_VERSION) then
+	if slotData["version"] and not slotData["version"]:find("^"..WORLD_VERSION) then
 		Tracker:FindObjectForCode(VersionMismatch).Active = true
 		return
 	end
 
-	SLOT_DATA = slot_data
+	MANUAL_CHECKED = false
+    local manualStorageItem = Tracker:FindObjectForCode(ManualStorageCode)
+    if manualStorageItem == nil then
+        CreateLuaManualLocationStorage(ManualStorageCode)
+        manualStorageItem = Tracker:FindObjectForCode(ManualStorageCode)
+    end
+
+	PreOnClear()
+
+	SLOT_DATA = slotData
 	CUR_INDEX = -1
 	-- reset locations
 	for _, location_array in pairs(LOCATION_MAPPING) do
@@ -28,8 +79,14 @@ function onClear(slot_data)
 			local obj = Tracker:FindObjectForCode(location)
 			if obj then
 				if location:sub(1, 1) == "@" then
-					obj.AvailableChestCount = obj.ChestCount
+					---@cast obj LocationSection
+					if manualStorageItem and manualStorageItem.ItemState.ManualLocations[ROOM_SEED][obj.FullID] then
+						obj.AvailableChestCount = manualStorageItem.ItemState.ManualLocations[ROOM_SEED][obj.FullID]
+					else
+						obj.AvailableChestCount = obj.ChestCount
+					end
 				else
+					---@cast obj JsonItem
 					obj.Active = false
 				end
 			end
@@ -59,7 +116,6 @@ function onClear(slot_data)
 					obj.Active = false
 				elseif itemData[2] == "progressive" or itemData[2] == "progressive_set" then
 					obj.CurrentStage = 0
-					obj.Active = false
 				elseif itemData[2] == "consumable" then
 					obj.AcquiredCount = 0
 				elseif AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
@@ -70,9 +126,6 @@ function onClear(slot_data)
 			end
 		end
 	end
-
-	PLAYER_ID = Archipelago.PlayerNumber or -1
-	TEAM_NUMBER = Archipelago.TeamNumber or 0
 
 	if Archipelago.PlayerNumber > -1 then
 		HINTS_ID = "_read_hints_"..TEAM_NUMBER.."_"..PLAYER_ID
@@ -87,7 +140,7 @@ function onClear(slot_data)
 		end
 	end
 
-	for opt, val in pairs(slot_data["options"]) do
+	for opt, val in pairs(slotData["options"]) do
 		if (Tracker:ProviderCountForCode(opt) > 0) then
 			Tracker:FindObjectForCode(opt).CurrentStage = val
 		end
@@ -95,49 +148,49 @@ function onClear(slot_data)
 
 	AutoCollectLocationTable = {
 		["@Tarm Ruins/Lost Woods/Lost Woods: Pedestal Item"] = {"@Tarm Ruins/Pedestal Sequence/Serenade the Scrub"},
-		[Satchel] = {"@Horon Village/Horon Tree/Horon Village: Seed Tree", SeedMapping[slot_data["options"]["default_seed"]]},
-		[Slingshot] = {"@Horon Village/Horon Tree/Horon Village: Seed Tree", SeedMapping[slot_data["options"]["default_seed"]]},
-		[SeedShooter] = {"@Horon Village/Horon Tree/Horon Village: Seed Tree", SeedMapping[slot_data["options"]["default_seed"]]},
+		[Satchel] = {"@Horon Village/Horon Tree/Horon Village: Seed Tree", SeedMapping[slotData["options"]["default_seed"]]},
+		[Slingshot] = {"@Horon Village/Horon Tree/Horon Village: Seed Tree", SeedMapping[slotData["options"]["default_seed"]]},
+		[SeedShooter] = {"@Horon Village/Horon Tree/Horon Village: Seed Tree", SeedMapping[slotData["options"]["default_seed"]]},
 		[AnyFlute] = {function() Tracker:FindObjectForCode(Companion).CurrentStage = SLOT_DATA["options"]["animal_companion"] end}
 	}
 
-	Tracker:FindObjectForCode("horon_village_season_shuffle").CurrentStage = slot_data["default_seasons"]["HORON_VILLAGE"] == 255 and 0 or 1
-	for region_name, season_id in pairs(slot_data["default_seasons"]) do
+	Tracker:FindObjectForCode("horon_village_season_shuffle").CurrentStage = slotData["default_seasons"]["HORON_VILLAGE"] == 255 and 0 or 1
+	for region_name, season_id in pairs(slotData["default_seasons"]) do
 		if (region_name ~= "HORON_VILLAGE" or Tracker:FindObjectForCode("horon_village_season_shuffle").CurrentStage == 1) then
 			Tracker:FindObjectForCode(RegionToSeasonMapping[region_name]).CurrentStage = season_id
 		end
 	end
 
-	for region_name, portal_name in pairs(slot_data["subrosia_portals"]) do
+	for region_name, portal_name in pairs(slotData["subrosia_portals"]) do
 		Tracker:FindObjectForCode(PortalMapping[region_name]).CurrentStage = PortalDictionary[region_name][portal_name]
 		Tracker:FindObjectForCode(PortalMapping[portal_name]).CurrentStage = PortalDictionary[portal_name][region_name]
 	end
 
-	for dungeon_entrance, dungeon_interior in pairs(slot_data["dungeon_entrances"]) do
+	for dungeon_entrance, dungeon_interior in pairs(slotData["dungeon_entrances"]) do
 		Tracker:FindObjectForCode(DungeonMapping[dungeon_interior]).CurrentStage = DungeonDictionary[dungeon_entrance]
 	end
 
 	-- shop prices
-	if (slot_data["shop_rupee_requirements"]) then
-		for shop, price in pairs(slot_data["shop_rupee_requirements"]) do
+	if (slotData["shop_rupee_requirements"]) then
+		for shop, price in pairs(slotData["shop_rupee_requirements"]) do
 			ShopPrices[shop] = math.floor(price / 2)
 		end
 	end
-	if (slot_data["shop_costs"]) then
-		for k, v in pairs(slot_data["shop_costs"]) do
+	if (slotData["shop_costs"]) then
+		for k, v in pairs(slotData["shop_costs"]) do
 			if (k:find("^subrosia")) then
 				ShopPrices[SubrosianMarketPrice] = ShopPrices[SubrosianMarketPrice] + v
 			end
 		end
 	end
-	if (slot_data["old_man_rupee_values"]) then
-		for man, value in pairs(slot_data["old_man_rupee_values"]) do
+	if (slotData["old_man_rupee_values"]) then
+		for man, value in pairs(slotData["old_man_rupee_values"]) do
 			OldMenValues[man][1] = value
 		end
 	end
 
 	-- if starting maps/compasses, auto collect
-	if (slot_data["options"]["starting_maps_compasses"] == 1) then
+	if (slotData["options"]["starting_maps_compasses"] == 1) then
 		for i = 1, 8 do
 			Tracker:FindObjectForCode("d"..i.."_map").Active = true
 			Tracker:FindObjectForCode("d"..i.."_compass").Active = true
@@ -153,6 +206,8 @@ function onClear(slot_data)
 		CurrentRoom = nil
 		OnBounce({["data"] = {["Current Room"] = StartLocationMapping[startLocation]}})
 	end
+
+	MANUAL_CHECKED = true
 end
 
 -- called when an item gets collected
@@ -235,6 +290,7 @@ function OnLocation(location_id, location_name)
 	if Tracker:FindObjectForCode(VersionMismatch).Active then
 		return
 	end
+	MANUAL_CHECKED = false
 	SetAsStale()
 	local location_array = LOCATION_MAPPING[location_id]
 	if not location_array or not location_array[1] then
@@ -271,6 +327,8 @@ function OnLocation(location_id, location_name)
 			print(string.format("onLocation: could not find object for code %s", location))
 		end
 	end
+
+	MANUAL_CHECKED = true
 end
 
 -- called when a locations is scouted
@@ -440,6 +498,33 @@ function OnBounce(json)
 	end
 end
 
+function ManualLocationHandler(location)
+    if MANUAL_CHECKED then
+        local manualStorageitem = Tracker:FindObjectForCode(ManualStorageCode)
+		if not manualStorageitem then
+			return
+		end
+        if Archipelago.PlayerNumber == -1 then -- not connected
+            if ROOM_SEED ~= "default" then -- seed is from previous connection
+                ROOM_SEED = "default"
+                manualStorageitem.ItemState.ManualLocations["default"] = {}
+            else -- seed is default
+            end
+        end
+        local fullID = location.FullID
+        if manualStorageitem.ItemState.ManualLocations[ROOM_SEED][fullID] then --not in list for curretn seed
+            if location.AvailableChestCount < location.ChestCount then --add to list
+                manualStorageitem.ItemState.ManualLocations[ROOM_SEED][fullID] = location.AvailableChestCount
+            else --remove from list of set back to max chestcount
+                manualStorageitem.ItemState.ManualLocations[ROOM_SEED][fullID] = nil
+            end
+        elseif location.AvailableChestCount < location.ChestCount then -- not in list and not set back to its max chest count
+            manualStorageitem.ItemState.ManualLocations[ROOM_SEED][fullID] = location.AvailableChestCount
+        else
+        end
+    end
+end
+
 function OnVersionCheckChanged(code)
 	if not LOADED then
 		return
@@ -451,7 +536,7 @@ function OnVersionCheckChanged(code)
 	end
 end
 
-Archipelago:AddClearHandler("clear handler", onClear)
+Archipelago:AddClearHandler("clear handler", OnClear)
 if AUTOTRACKER_ENABLE_ITEM_TRACKING then
 	Archipelago:AddItemHandler("item handler", OnItem)
 end

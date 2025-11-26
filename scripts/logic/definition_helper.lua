@@ -164,6 +164,7 @@ StartImpa = "start_impa"
 VersionMismatch = "version_mismatch"
 HiddenSetting = "hidden_setting"
 LocationRefresh = "location_refresh"
+ManualStorageCode = "manual_location_storage"
 
 -- Shop Prices
 HoronShopPrice = "horonShop"

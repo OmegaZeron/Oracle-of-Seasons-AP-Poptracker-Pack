@@ -119,7 +119,10 @@ UnicornPostSyger:connect_one_way(UnicornTreadmillBasement, function()
 				AccessibilityLevel.SequenceBreak
 			)
 		),
-		CanReach(UnicornMinecartPushBlock),
+		Any(
+			CanReach(UnicornMinecartPushBlock),
+			CaneOfSomaria
+		),
 		MagnetGlove,
 		Any(
 			CanSwordPunchKill,

@@ -5,8 +5,9 @@ CUR_INDEX = -1
 SLOT_DATA = nil
 WORLD_VERSION = "13"
 ALL_LOCATIONS = {}
-MANUAL_CHECKED = true
-ROOM_SEED = "default"
+IS_MANUAL_CLICK = true
+DEFAULT_SEED = "default"
+ROOM_SEED = DEFAULT_SEED
 
 local AutoCollectLocationTable = {}
 
@@ -31,7 +32,7 @@ function PreOnClear()
     local manualStorageItem = Tracker:FindObjectForCode(ManualStorageCode)
 
 	local seedBase = (Archipelago.Seed or #ALL_LOCATIONS).."_"..Archipelago.TeamNumber.."_"..Archipelago.PlayerNumber
-    if manualStorageItem and (ROOM_SEED == "default" or ROOM_SEED ~= seedBase) then
+    if manualStorageItem and (ROOM_SEED == DEFAULT_SEED or ROOM_SEED ~= seedBase) then
 		-- seed is default or from previous connection
         ROOM_SEED = seedBase
         if #manualStorageItem.ItemState.ManualLocations > 10 then
@@ -56,7 +57,7 @@ function OnClear(slotData)
 		return
 	end
 
-	MANUAL_CHECKED = false
+	IS_MANUAL_CLICK = false
     local manualStorageItem = Tracker:FindObjectForCode(ManualStorageCode)
     if manualStorageItem == nil then
         CreateLuaManualLocationStorage(ManualStorageCode)
@@ -201,7 +202,7 @@ function OnClear(slotData)
 		OnBounce({["data"] = {["Current Room"] = StartLocationMapping[startLocation]}})
 	end
 
-	MANUAL_CHECKED = true
+	IS_MANUAL_CLICK = true
 end
 
 -- called when an item gets collected
@@ -284,7 +285,7 @@ function OnLocation(location_id, location_name)
 	if Tracker:FindObjectForCode(VersionMismatch).Active then
 		return
 	end
-	MANUAL_CHECKED = false
+	IS_MANUAL_CLICK = false
 	SetAsStale()
 	local location_array = LOCATION_MAPPING[location_id]
 	if not location_array or not location_array[1] then
@@ -322,7 +323,7 @@ function OnLocation(location_id, location_name)
 		end
 	end
 
-	MANUAL_CHECKED = true
+	IS_MANUAL_CLICK = true
 end
 
 -- called when a locations is scouted
@@ -493,28 +494,24 @@ function OnBounce(json)
 end
 
 function ManualLocationHandler(location)
-    if MANUAL_CHECKED then
-        local manualStorageitem = Tracker:FindObjectForCode(ManualStorageCode)
-		if not manualStorageitem then
+    if IS_MANUAL_CLICK then
+        local manualStorageItem = Tracker:FindObjectForCode(ManualStorageCode)
+		if not manualStorageItem then
 			return
 		end
-        if Archipelago.PlayerNumber == -1 then -- not connected
-            if ROOM_SEED ~= "default" then -- seed is from previous connection
-                ROOM_SEED = "default"
-                manualStorageitem.ItemState.ManualLocations["default"] = {}
-            end
+        if Archipelago.PlayerNumber == -1 and ROOM_SEED ~= DEFAULT_SEED then
+			-- seed is from previous connection
+			ROOM_SEED = DEFAULT_SEED
+			manualStorageItem.ItemState.ManualLocations[ROOM_SEED] = {}
         end
         local fullID = location.FullID
-        if manualStorageitem.ItemState.ManualLocations[ROOM_SEED][fullID] then --not in list for current seed
-            if location.AvailableChestCount < location.ChestCount then --add to list
-                manualStorageitem.ItemState.ManualLocations[ROOM_SEED][fullID] = location.AvailableChestCount
-            else --remove from list of set back to max chestcount
-                manualStorageitem.ItemState.ManualLocations[ROOM_SEED][fullID] = nil
-            end
-        elseif location.AvailableChestCount < location.ChestCount then -- not in list and not set back to its max chest count
-            manualStorageitem.ItemState.ManualLocations[ROOM_SEED][fullID] = location.AvailableChestCount
-        else
-        end
+		if location.AvailableChestCount < location.ChestCount then
+			-- add to list
+			manualStorageItem.ItemState.ManualLocations[ROOM_SEED][fullID] = location.AvailableChestCount
+		else
+			-- remove from list of set back to max chestcount
+			manualStorageItem.ItemState.ManualLocations[ROOM_SEED][fullID] = nil
+		end
     end
 end
 

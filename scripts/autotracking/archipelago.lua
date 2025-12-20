@@ -29,16 +29,19 @@ function PreOnClear()
 	end
 
 	local manualStorageItem = Tracker:FindObjectForCode(ManualStorageCode)
-	local seedBase = (Archipelago.Seed or #ALL_LOCATIONS).."_"..Archipelago.TeamNumber.."_"..Archipelago.PlayerNumber
-	ROOM_SEED = seedBase
 	if manualStorageItem then
-		if #manualStorageItem.ItemState.ManualLocations > 10 then
-			manualStorageItem.ItemState.ManualLocations[manualStorageItem.ItemState.ManualLocationsOrder[1]] = nil
-			table.remove(manualStorageItem.ItemState.ManualLocationsOrder, 1)
+		manualStorageItem = manualStorageItem.ItemState
+	end
+	local seedBase = (Archipelago.Seed or #ALL_LOCATIONS).."_"..Archipelago.TeamNumber.."_"..Archipelago.PlayerNumber
+	if manualStorageItem and (ROOM_SEED == DEFAULT_SEED or ROOM_SEED ~= seedBase) then
+		ROOM_SEED = seedBase
+		if #manualStorageItem.ManualLocations > 10 then
+			manualStorageItem.ManualLocations[manualStorageItem.ManualLocationsOrder[1]] = nil
+			table.remove(manualStorageItem.ManualLocationsOrder, 1)
 		end
-		if manualStorageItem.ItemState.ManualLocations[ROOM_SEED] == nil then
-			manualStorageItem.ItemState.ManualLocations[ROOM_SEED] = {}
-			table.insert(manualStorageItem.ItemState.ManualLocationsOrder, ROOM_SEED)
+		if manualStorageItem.ManualLocations[ROOM_SEED] == nil then
+			manualStorageItem.ManualLocations[ROOM_SEED] = {}
+			table.insert(manualStorageItem.ManualLocationsOrder, ROOM_SEED)
 		end
 	end
 end
@@ -58,8 +61,8 @@ function OnClear(slotData)
 	local manualStorageItem = Tracker:FindObjectForCode(ManualStorageCode)
 	if manualStorageItem == nil then
 		CreateLuaManualLocationStorage(ManualStorageCode)
-		manualStorageItem = Tracker:FindObjectForCode(ManualStorageCode)
 	end
+	manualStorageItem = Tracker:FindObjectForCode(ManualStorageCode).ItemState
 
 	PreOnClear()
 
@@ -72,8 +75,8 @@ function OnClear(slotData)
 			if obj then
 				if location:sub(1, 1) == "@" then
 					---@cast obj LocationSection
-					if manualStorageItem and manualStorageItem.ItemState.ManualLocations[ROOM_SEED] and manualStorageItem.ItemState.ManualLocations[ROOM_SEED][obj.FullID] then
-						obj.AvailableChestCount = manualStorageItem.ItemState.ManualLocations[ROOM_SEED][obj.FullID]
+					if manualStorageItem and manualStorageItem.ManualLocations[ROOM_SEED] and manualStorageItem.ManualLocations[ROOM_SEED][obj.FullID] then
+						obj.AvailableChestCount = manualStorageItem.ManualLocations[ROOM_SEED][obj.FullID]
 					else
 						obj.AvailableChestCount = obj.ChestCount
 					end
@@ -496,21 +499,25 @@ function ManualLocationHandler(location)
 		if not manualStorageItem then
 			return
 		end
+		manualStorageItem = manualStorageItem.ItemState
+		if not manualStorageItem then
+			return
+		end
 		if Archipelago.PlayerNumber == -1 and ROOM_SEED ~= DEFAULT_SEED then
 			-- seed is from previous connection
 			ROOM_SEED = DEFAULT_SEED
-			manualStorageItem.ItemState.ManualLocations[ROOM_SEED] = {}
+			manualStorageItem.ManualLocations[ROOM_SEED] = {}
 		end
 		local fullID = location.FullID
-		if manualStorageItem.ItemState.ManualLocations[ROOM_SEED] == nil then
-			return
+		if not manualStorageItem.ManualLocations[ROOM_SEED] then
+			manualStorageItem.ManualLocations[ROOM_SEED] = {}
 		end
 		if location.AvailableChestCount < location.ChestCount then
 			-- add to list
-			manualStorageItem.ItemState.ManualLocations[ROOM_SEED][fullID] = location.AvailableChestCount
+			manualStorageItem.ManualLocations[ROOM_SEED][fullID] = location.AvailableChestCount
 		else
 			-- remove from list of set back to max chestcount
-			manualStorageItem.ItemState.ManualLocations[ROOM_SEED][fullID] = nil
+			manualStorageItem.ManualLocations[ROOM_SEED][fullID] = nil
 		end
 	end
 end

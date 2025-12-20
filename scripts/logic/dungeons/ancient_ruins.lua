@@ -59,13 +59,7 @@ AncientIndyJones:connect_one_way_entrance(AncientVireDoorstep, CanKillStalfos)
 -- 2 keys
 AncientFoyer:connect_one_way_entrance(AncientRopeSpinnerWest, function()
 	return All(
-		Any(
-			D6KeyCount(2),
-			All(
-				D6KeyCount(1),
-				AccessibilityLevel.SequenceBreak
-			)
-		),
+		D6KeyCount(2, 1),
 		Any(
 			MagnetGlove,
 			CaneOfSomaria
@@ -73,15 +67,7 @@ AncientFoyer:connect_one_way_entrance(AncientRopeSpinnerWest, function()
 	)
 end)
 -- 3 keys
-AncientFoyer:connect_one_way_entrance(AncientBeamosPlatforms, function()
-	return Any(
-		D6KeyCount(3),
-		All(
-			D6KeyCount(1),
-			AccessibilityLevel.SequenceBreak
-		)
-	)
-end)
+AncientFoyer:connect_one_way_entrance(AncientBeamosPlatforms, function() return D6KeyCount(3, 1) end)
 AncientBeamosPlatforms:connect_one_way_entrance(Ancient2FGibdo)
 Ancient2FGibdo:connect_one_way_entrance(AncientTrappedChest, CanBombWall)
 AncientTrappedChest:connect_one_way_entrance(AncientArmosDarknutDrop, function() return Has(Feather) end)

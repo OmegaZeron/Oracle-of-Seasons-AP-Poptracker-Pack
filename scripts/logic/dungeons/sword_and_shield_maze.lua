@@ -61,7 +61,17 @@ MazeHardhats:connect_one_way_entrance(MazeBigBladeTrap, function()
 end)
 -- 2 keys
 MazeBigBladeTrap:connect_one_way_entrance(MazeSpinner, function() return D8KeyCount(2) end)
-MazeSpinner:connect_one_way_entrance(MazeArmosChest, function() return Has(MagnetGlove) end)
+MazeSpinner:connect_one_way_entrance(MazeArmosChest, function()
+	return Any(
+		MagnetGlove,
+		All(
+			CaneOfSomaria,
+			SeedSatchel,
+			PegasusSeeds,
+			HardLogic
+		)
+	)
+end)
 MazeArmosChest:connect_one_way_entrance(MazeThreeEyeOwl, function() return Has(MagnetGlove) end)
 MazeThreeEyeOwl:connect_one_way(MazeThreeEyeBombChest, function()
 	return All(

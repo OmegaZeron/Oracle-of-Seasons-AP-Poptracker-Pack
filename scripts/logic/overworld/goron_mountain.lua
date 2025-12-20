@@ -31,8 +31,16 @@ end)
 SouthGoronMountain:connect_two_ways_entrance(LowerTempleRemains, Jump3)
 WestGoronMountain:connect_one_way(GoronLavaChest, function()
 	return All(
-		CanBombWall,
-		JumpLiquid3
+		JumpLiquid3,
+		Any(
+			Bombs,
+			All(
+				Bombchus40,
+				SeedSatchel,
+				PegasusSeeds,
+				MediumLogic
+			)
+		)
 	)
 end)
 WestGoronMountain:connect_one_way_entrance(Biggoron, function()

@@ -457,11 +457,7 @@ function OnVersionCheckChanged(code)
 end
 
 function RevealDungeon(dungeon)
-	for i = 1, 8 do
-		if Tracker:FindObjectForCode("d"..i.."_ent_selector_hidden").CurrentStage + 1 == dungeon then
-			Tracker:FindObjectForCode("d"..i.."_ent_selector").CurrentStage = Tracker:FindObjectForCode("d"..i.."_ent_selector_hidden").CurrentStage
-		end
-	end
+	Tracker:FindObjectForCode("d"..dungeon.."_ent_selector").CurrentStage = Tracker:FindObjectForCode("d"..dungeon.."_ent_selector_hidden").CurrentStage
 end
 
 Archipelago:AddClearHandler("clear handler", onClear)

@@ -5,7 +5,7 @@ CUR_INDEX = -1
 SLOT_DATA = nil
 LOCAL_ITEMS = {}
 GLOBAL_ITEMS = {}
-WORLD_VERSION = "13"
+WORLD_VERSION = "14"
 
 local AutoCollectLocationTable = {}
 

@@ -71,15 +71,7 @@ CryptMagunesu:connect_one_way(CryptMagunesuReward, function()
 	)
 end)
 -- 2 keys
-CryptSurroundedByArmos:connect_one_way_entrance(CryptPoeTrampoline, function()
-	return Any(
-		D7KeyCount(2),
-		All(
-			D7KeyCount(1),
-			AccessibilityLevel.SequenceBreak
-		)
-	)
-end)
+CryptSurroundedByArmos:connect_one_way_entrance(CryptPoeTrampoline, function() return D7KeyCount(2, 1) end)
 CryptPoeTrampoline:connect_one_way(CryptQuicksandChest, function() return Has(Feather) end)
 CryptPoeTrampoline:connect_one_way_entrance(CryptDarknutBridge, function()
 	-- poe 2 skip
@@ -93,13 +85,7 @@ end)
 -- 3 keys
 CryptPoeTrampoline:connect_one_way_entrance(CryptPoe2, function()
 	return All(
-		Any(
-			D7KeyCount(3),
-			All(
-				D7KeyCount(2),
-				AccessibilityLevel.SequenceBreak
-			)
-		),
+		D7KeyCount(3, 2),
 		CanUseSeeds,
 		EmberSeeds,
 		Any(
@@ -158,7 +144,7 @@ CryptPastDarknutBridge:connect_one_way_entrance(CryptDarknutBridgeTrampolines, f
 				CanSwordKill,
 				HasRod,
 				Bombs,
-				Bombchus50,
+				Bombchus40,
 				All(
 					Bombchus,
 					AccessibilityLevel.SequenceBreak
@@ -172,19 +158,15 @@ CryptFastPlatform:connect_one_way(CryptFastPlatformChest, function() return Has(
 -- 4 keys
 CryptDarknutBridge:connect_one_way_entrance(PoeSisters, function()
 	return All(
-		Any(
-			D7KeyCount(4),
-			All(
-				D7KeyCount(3),
-				AccessibilityLevel.SequenceBreak
-			)
-		),
+		D7KeyCount(4, 3),
 		Any(
 			CanKillMoldorm,
 			All(
 				CanKillMoldorm(true),
 				MediumLogic
-			),
+			)
+		),
+		Any(
 			All(
 				SwitchHook,
 				MediumLogic
@@ -225,25 +207,11 @@ CryptStairMaze:connect_one_way_entrance(CryptWizzrobeStalfosRoom, function()
 end)
 CryptWizzrobeStalfosRoom:connect_one_way(CryptWizzrobeStalfosChest) -- no rules since you already require everything by this point
 -- 5 keys
-CryptFoyer:connect_one_way_entrance(Crypt1FKeyRoom, function()
-	return Any(
-		D7KeyCount(5),
-		All(
-			D7KeyCount(1),
-			AccessibilityLevel.SequenceBreak
-		)
-	)
-end)
+CryptFoyer:connect_one_way_entrance(Crypt1FKeyRoom, function() return D7KeyCount(5, 1) end)
 Crypt1FKeyRoom:connect_one_way(Crypt1FKeyRoomChest, CanNormalKill)
 CryptStairMaze:connect_one_way_entrance(CryptJumpingStalfos, function()
 	return All(
-		Any(
-			D7KeyCount(5),
-			All(
-				D7KeyCount(4),
-				AccessibilityLevel.SequenceBreak
-			)
-		),
+		D7KeyCount(5, 4),
 		Any(
 			Jump5,
 			All(

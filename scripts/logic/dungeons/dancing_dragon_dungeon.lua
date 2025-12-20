@@ -128,24 +128,10 @@ Agunima:connect_one_way_entrance(DancingBranchingMinecart, function()
 	)
 end)
 -- 5 keys
-DancingBranchingMinecart:connect_one_way(DancingPitRace, function()
-	return Any(
-		D4KeyCount(5),
-		All(
-			D4KeyCount(3),
-			AccessibilityLevel.SequenceBreak
-		)
-	)
-end)
+DancingBranchingMinecart:connect_one_way(DancingPitRace, function() return D4KeyCount(5, 3) end)
 DancingBranchingMinecart:connect_one_way(DancingEyeDive, function()
 	return All(
-		Any(
-			D4KeyCount(5),
-			All(
-				D4KeyCount(3),
-				AccessibilityLevel.SequenceBreak
-			)
-		),
+		D4KeyCount(5, 3),
 		Any(
 			CanShootSeeds,
 			MagicBoomerang
@@ -156,13 +142,7 @@ DancingBranchingMinecart:connect_one_way(DancingEyeDive, function()
 end)
 DancingBranchingMinecart:connect_one_way_entrance(DancingTorchPit, function()
 	return All(
-		Any(
-			D4KeyCount(5),
-			All(
-				D4KeyCount(3),
-				AccessibilityLevel.SequenceBreak
-			)
-		),
+		D4KeyCount(5, 3),
 		Any(
 			Boomerang,
 			CanShootSeeds,

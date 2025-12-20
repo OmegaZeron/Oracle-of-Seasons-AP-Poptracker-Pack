@@ -20,6 +20,7 @@ Tracker:AddLayouts("layouts/item_grids.json")
 Tracker:AddLayouts("layouts/tracker_layouts.json")
 Tracker:AddLayouts("layouts/broadcast.json")
 
+require("scripts.autotracking.manual_override")
 CreateLuaManualLocationStorage(ManualStorageCode)
 ScriptHost:AddOnLocationSectionChangedHandler("manual location handler", ManualLocationHandler)
 

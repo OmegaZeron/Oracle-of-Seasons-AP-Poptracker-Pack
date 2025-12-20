@@ -1248,8 +1248,7 @@ function D1KeyCount(needed, ool)
 		currentKeys >= needed,
 		D1MasterKey,
 		All(
-			ool ~= nil,
-			currentKeys >= ool,
+			ool ~= nil and currentKeys >= ool,
 			AccessibilityLevel.SequenceBreak
 		)
 	)
@@ -1270,8 +1269,7 @@ function D2KeyCount(needed, ool)
 		currentKeys >= needed,
 		D2MasterKey,
 		All(
-			ool ~= nil,
-			currentKeys >= ool,
+			ool ~= nil and currentKeys >= ool,
 			AccessibilityLevel.SequenceBreak
 		)
 	)
@@ -1292,8 +1290,7 @@ function D3KeyCount(needed, ool)
 		currentKeys >= needed,
 		D3MasterKey,
 		All(
-			ool ~= nil,
-			currentKeys >= ool,
+			ool ~= nil and currentKeys >= ool,
 			AccessibilityLevel.SequenceBreak
 		)
 	)
@@ -1314,8 +1311,7 @@ function D4KeyCount(needed, ool)
 		currentKeys >= needed,
 		D4MasterKey,
 		All(
-			ool ~= nil,
-			currentKeys >= ool,
+			ool ~= nil and currentKeys >= ool,
 			AccessibilityLevel.SequenceBreak
 		)
 	)
@@ -1336,8 +1332,7 @@ function D5KeyCount(needed, ool)
 		currentKeys >= needed,
 		D5MasterKey,
 		All(
-			ool ~= nil,
-			currentKeys >= ool,
+			ool ~= nil and currentKeys >= ool,
 			AccessibilityLevel.SequenceBreak
 		)
 	)
@@ -1358,8 +1353,7 @@ function D6KeyCount(needed, ool)
 		currentKeys >= needed,
 		D6MasterKey,
 		All(
-			ool ~= nil,
-			currentKeys >= ool,
+			ool ~= nil and currentKeys >= ool,
 			AccessibilityLevel.SequenceBreak
 		)
 	)
@@ -1380,8 +1374,7 @@ function D7KeyCount(needed, ool)
 		currentKeys >= needed,
 		D7MasterKey,
 		All(
-			ool ~= nil,
-			currentKeys >= ool,
+			ool ~= nil and currentKeys >= ool,
 			AccessibilityLevel.SequenceBreak
 		)
 	)
@@ -1390,7 +1383,7 @@ function HasD7BossKey()
 	return Any(
 		D7BossKey,
 		All(
-		MasterKeysBoth,
+			MasterKeysBoth,
 			D7MasterKey
 		)
 	)
@@ -1402,8 +1395,7 @@ function D8KeyCount(needed, ool)
 		currentKeys >= needed,
 		D8MasterKey,
 		All(
-			ool ~= nil,
-			currentKeys >= ool,
+			ool ~= nil and currentKeys >= ool,
 			AccessibilityLevel.SequenceBreak
 		)
 	)

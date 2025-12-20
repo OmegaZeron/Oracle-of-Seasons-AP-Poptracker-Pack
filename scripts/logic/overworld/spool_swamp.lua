@@ -248,8 +248,15 @@ end)
 PoisonMothLair:connect_one_way_entrance(HerosCaveFoyer, function()
 	return All(
 		ShuffleDungeonOn,
+		D3LeadsToD0
+	)
+end)
+-- exit from alt entrance
+HerosCaveFoyer:connect_one_way_entrance(NorthSpoolSwamp, function()
+	return All(
+		ShuffleDungeonOn,
 		D3LeadsToD0,
-		D0AltRemoved -- randomizer prevents this connection, since you could drown forever on exit
+		Flippers
 	)
 end)
 PoisonMothLair:connect_one_way_entrance(GnarledFoyer, function()
@@ -261,8 +268,15 @@ end)
 PoisonMothLair:connect_one_way_entrance(SnakeFoyer, function()
 	return All(
 		ShuffleDungeonOn,
+		D3LeadsToD2
+	)
+end)
+-- exit from alt entrance
+SnakeFoyer:connect_one_way_entrance(NorthSpoolSwamp, function()
+	return All(
+		ShuffleDungeonOn,
 		D3LeadsToD2,
-		D2AltRemoved -- randomizer prevents this connection, since you could drown forever on exit
+		Flippers
 	)
 end)
 PoisonMothLair:connect_one_way_entrance(DancingFoyer, function()

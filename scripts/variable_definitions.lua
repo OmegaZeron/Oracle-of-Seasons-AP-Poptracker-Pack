@@ -340,6 +340,7 @@ CurrentLocationMapping = {
 		{["type"] = "Autotab", ["tab"] = {"Hero's Cave"}},
 		{["type"] = "DungeonIn", ["dungeon"] = "d0", ["loc"] = "@Hero's Cave/Exit the Dungeon/"}
 	},
+	[0x405] = {{["type"] = "Autotab", ["tab"] = {"Hero's Cave"}}}, -- alt entrance
 	[0x406] = {{["type"] = "DungeonIn", ["dungeon"] = "d0", ["loc"] = "@Hero's Cave/Exit the Dungeon/"}}, -- sword chest
 	-- D1
 	[0x41C] = {

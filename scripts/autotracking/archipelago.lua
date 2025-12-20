@@ -3,7 +3,7 @@ ScriptHost:LoadScript("scripts/autotracking/location_mapping.lua")
 
 CUR_INDEX = -1
 SLOT_DATA = nil
-WORLD_VERSION = "13"
+WORLD_VERSION = "14"
 ALL_LOCATIONS = {}
 IS_MANUAL_CLICK = true
 DEFAULT_SEED = "default"

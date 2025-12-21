@@ -1,6 +1,8 @@
 ﻿[
 	{
 		"name": "version_mismatch",
+		"location_size": 10,
+		"location_border_thickness": 2,
 		"img": "images/maps/version_mismatch.png"
 	},
 	{

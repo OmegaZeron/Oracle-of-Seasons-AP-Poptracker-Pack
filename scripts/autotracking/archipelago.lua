@@ -1,9 +1,10 @@
-ScriptHost:LoadScript("scripts/autotracking/item_mapping.lua")
-ScriptHost:LoadScript("scripts/autotracking/location_mapping.lua")
+require("scripts.autotracking.item_mapping")
+require("scripts.autotracking.location_mapping")
 
 CUR_INDEX = -1
 SLOT_DATA = nil
 WORLD_VERSION = "14"
+IGNORE_VERSION = false
 ALL_LOCATIONS = {}
 IS_MANUAL_CLICK = true
 DEFAULT_SEED = "default"
@@ -51,8 +52,10 @@ function OnClear(slotData)
 		print(string.format("called OnClear, slot_data:\n%s", dump(slotData)))
 	end
 
+	SLOT_DATA = slotData
+
 	Tracker:FindObjectForCode(VersionMismatch).Active = false
-	if slotData["version"] and not slotData["version"]:find("^"..WORLD_VERSION) then
+	if not IGNORE_VERSION and slotData["version"] and not slotData["version"]:find("^"..WORLD_VERSION) then
 		Tracker:FindObjectForCode(VersionMismatch).Active = true
 		return
 	end
@@ -66,7 +69,6 @@ function OnClear(slotData)
 
 	PreOnClear()
 
-	SLOT_DATA = slotData
 	CUR_INDEX = -1
 	-- reset locations
 	for _, location_array in pairs(LOCATION_MAPPING) do
@@ -527,9 +529,23 @@ function OnVersionCheckChanged(code)
 		return
 	end
 	if Tracker:FindObjectForCode(VersionMismatch).Active then
+		ScriptHost:AddOnLocationSectionChangedHandler("version mismatch ignore handler", OnIgnoreVersionMismatch)
 		Tracker:AddLayouts("layouts/version_mismatch.json")
 	else
 		Tracker:AddLayouts("layouts/tracker_layouts.json")
+		if IGNORE_VERSION then
+			OnClear(SLOT_DATA)
+		end
+	end
+end
+
+---@param section LocationSection
+function OnIgnoreVersionMismatch(section)
+	if section.FullID == "Version Mismatch/Ignore One Time/" then
+		Tracker:FindObjectForCode("@Version Mismatch/Ignore One Time/").AvailableChestCount = 1
+		IGNORE_VERSION = true
+		Tracker:FindObjectForCode(VersionMismatch).Active = false
+		ScriptHost:RemoveOnLocationSectionHandler("version mismatch ignore handler")
 	end
 end
 

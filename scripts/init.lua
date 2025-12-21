@@ -1,14 +1,14 @@
 if (PopVersion >= "0.30.4") then
 	Tracker.AllowDeferredLogicUpdate = true
 end
-ScriptHost:LoadScript("scripts/utils.lua")
-ScriptHost:LoadScript("scripts/logic/definition_helper.lua")
-ScriptHost:LoadScript("scripts/logic/logic.lua")
-ScriptHost:LoadScript("scripts/logic/location_definitions.lua")
-ScriptHost:LoadScript("scripts/variable_definitions.lua")
-ScriptHost:LoadScript("scripts/logic/logic_helper.lua")
-ScriptHost:LoadScript("scripts/autotracking.lua")
-ScriptHost:LoadScript("scripts/locations.lua")
+require("scripts.utils")
+require("scripts.logic.definition_helper")
+require("scripts.logic.logic")
+require("scripts.logic.location_definitions")
+require("scripts.variable_definitions")
+require("scripts.logic.logic_helper")
+require("scripts.autotracking")
+require("scripts.locations")
 
 Tracker:AddItems("items/items.json")
 

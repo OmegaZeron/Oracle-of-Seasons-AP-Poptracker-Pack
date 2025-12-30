@@ -829,7 +829,6 @@ PortalSetVars = {
 	{"d8 entrance portal", D8PortalSelector, "@Subrosia/D8 Portal/"}
 }
 
-PriorityToHighlight = {}
 if Highlight then
 	PriorityToHighlight = {
 		[0] = Highlight.Unspecified,

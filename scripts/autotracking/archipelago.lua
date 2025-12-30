@@ -47,15 +47,15 @@ function PreOnClear()
 	end
 end
 
-function OnClear(slotData)
+function OnClear(slot_data)
 	if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
-		print(string.format("called OnClear, slot_data:\n%s", dump(slotData)))
+		print(string.format("called OnClear, slot_data:\n%s", dump(slot_data)))
 	end
 
-	SLOT_DATA = slotData
+	SLOT_DATA = slot_data
 
 	Tracker:FindObjectForCode(VersionMismatch).Active = false
-	if not IGNORE_VERSION and slotData["version"] and not slotData["version"]:find("^"..WORLD_VERSION) then
+	if not IGNORE_VERSION and slot_data["version"] and not slot_data["version"]:find("^"..WORLD_VERSION) then
 		Tracker:FindObjectForCode(VersionMismatch).Active = true
 		return
 	end
@@ -137,7 +137,7 @@ function OnClear(slotData)
 		end
 	end
 
-	for opt, val in pairs(slotData["options"]) do
+	for opt, val in pairs(slot_data["options"]) do
 		if (Tracker:ProviderCountForCode(opt) > 0) then
 			Tracker:FindObjectForCode(opt).CurrentStage = val
 		end
@@ -145,49 +145,49 @@ function OnClear(slotData)
 
 	AutoCollectLocationTable = {
 		["@Tarm Ruins/Lost Woods/Lost Woods: Pedestal Item"] = {"@Tarm Ruins/Pedestal Sequence/Serenade the Scrub"},
-		[Satchel] = {"@Horon Village/Horon Tree/Horon Village: Seed Tree", SeedMapping[slotData["options"]["default_seed"]]},
-		[Slingshot] = {"@Horon Village/Horon Tree/Horon Village: Seed Tree", SeedMapping[slotData["options"]["default_seed"]]},
-		[SeedShooter] = {"@Horon Village/Horon Tree/Horon Village: Seed Tree", SeedMapping[slotData["options"]["default_seed"]]},
+		[Satchel] = {"@Horon Village/Horon Tree/Horon Village: Seed Tree", SeedMapping[slot_data["options"]["default_seed"]]},
+		[Slingshot] = {"@Horon Village/Horon Tree/Horon Village: Seed Tree", SeedMapping[slot_data["options"]["default_seed"]]},
+		[SeedShooter] = {"@Horon Village/Horon Tree/Horon Village: Seed Tree", SeedMapping[slot_data["options"]["default_seed"]]},
 		[AnyFlute] = {function() Tracker:FindObjectForCode(Companion).CurrentStage = SLOT_DATA["options"]["animal_companion"] end}
 	}
 
-	Tracker:FindObjectForCode("horon_village_season_shuffle").CurrentStage = slotData["default_seasons"]["HORON_VILLAGE"] == 255 and 0 or 1
-	for region_name, season_id in pairs(slotData["default_seasons"]) do
+	Tracker:FindObjectForCode("horon_village_season_shuffle").CurrentStage = slot_data["default_seasons"]["HORON_VILLAGE"] == 255 and 0 or 1
+	for region_name, season_id in pairs(slot_data["default_seasons"]) do
 		if (region_name ~= "HORON_VILLAGE" or Tracker:FindObjectForCode("horon_village_season_shuffle").CurrentStage == 1) then
 			Tracker:FindObjectForCode(RegionToSeasonMapping[region_name]).CurrentStage = season_id
 		end
 	end
 
-	for region_name, portal_name in pairs(slotData["subrosia_portals"]) do
+	for region_name, portal_name in pairs(slot_data["subrosia_portals"]) do
 		Tracker:FindObjectForCode(PortalMapping[region_name]).CurrentStage = PortalDictionary[region_name][portal_name]
 		Tracker:FindObjectForCode(PortalMapping[portal_name]).CurrentStage = PortalDictionary[portal_name][region_name]
 	end
 
-	for dungeon_entrance, dungeon_interior in pairs(slotData["dungeon_entrances"]) do
+	for dungeon_entrance, dungeon_interior in pairs(slot_data["dungeon_entrances"]) do
 		Tracker:FindObjectForCode(DungeonMapping[dungeon_interior]).CurrentStage = DungeonDictionary[dungeon_entrance]
 	end
 
 	-- shop prices
-	if (slotData["shop_rupee_requirements"]) then
-		for shop, price in pairs(slotData["shop_rupee_requirements"]) do
+	if (slot_data["shop_rupee_requirements"]) then
+		for shop, price in pairs(slot_data["shop_rupee_requirements"]) do
 			ShopPrices[shop] = math.floor(price / 2)
 		end
 	end
-	if (slotData["shop_costs"]) then
-		for k, v in pairs(slotData["shop_costs"]) do
+	if (slot_data["shop_costs"]) then
+		for k, v in pairs(slot_data["shop_costs"]) do
 			if (k:find("^subrosia")) then
 				ShopPrices[SubrosianMarketPrice] = ShopPrices[SubrosianMarketPrice] + v
 			end
 		end
 	end
-	if (slotData["old_man_rupee_values"]) then
-		for man, value in pairs(slotData["old_man_rupee_values"]) do
+	if (slot_data["old_man_rupee_values"]) then
+		for man, value in pairs(slot_data["old_man_rupee_values"]) do
 			OldMenValues[man][1] = value
 		end
 	end
 
 	-- if starting maps/compasses, auto collect
-	if (slotData["options"]["starting_maps_compasses"] == 1) then
+	if (slot_data["options"]["starting_maps_compasses"] == 1) then
 		for i = 1, 8 do
 			Tracker:FindObjectForCode("d"..i.."_map").Active = true
 			Tracker:FindObjectForCode("d"..i.."_compass").Active = true
@@ -236,37 +236,37 @@ function OnItem(index, item_id, item_name, player_number)
 	if not itemData[1] then
 		return
 	end
-	local obj = Tracker:FindObjectForCode(itemData[1])
-	if obj then
+	local item = Tracker:FindObjectForCode(itemData[1])
+	if item then
 		if itemData[2] == "toggle" then
-			obj.Active = true
+			item.Active = true
 		elseif itemData[2] == "progressive" then
 			local inc = 1
 			if (itemData[3]) then
 				inc = itemData[3]
 			end
-			obj.CurrentStage = obj.CurrentStage + inc
+			item.CurrentStage = item.CurrentStage + inc
 		elseif itemData[2] == "consumable" then
 			local mult = 1
 			if (itemData[3]) then
 				mult = itemData[3]
 			end
-			obj.AcquiredCount = obj.AcquiredCount + (obj.Increment * mult)
+			item.AcquiredCount = item.AcquiredCount + (item.Increment * mult)
 		elseif itemData[2] == "progressive_set" then
-			if obj.CurrentStage < itemData[3] then
-				obj.CurrentStage = itemData[3]
+			if item.CurrentStage < itemData[3] then
+				item.CurrentStage = itemData[3]
 			end
 		elseif AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
 			print(string.format("onItem: unknown item type %s for code %s", itemData[2], itemData[1]))
 		end
 		if (AutoCollectLocationTable[itemData[1]]) then
-			for _, autoTable in ipairs(AutoCollectLocationTable[itemData[1]]) do
-				if (type(autoTable) == "function") then
-					autoTable()
+			for _, autoCollectData in ipairs(AutoCollectLocationTable[itemData[1]]) do
+				if (type(autoCollectData) == "function") then
+					autoCollectData()
 				else
-					local toCollect = Tracker:FindObjectForCode(autoTable)
+					local toCollect = Tracker:FindObjectForCode(autoCollectData)
 					if (toCollect) then
-						if autoTable:sub(1, 1) == "@" then
+						if autoCollectData:sub(1, 1) == "@" then
 							---@cast toCollect LocationSection
 							toCollect.AvailableChestCount = toCollect.AvailableChestCount - 1
 						else
@@ -319,7 +319,7 @@ function OnLocation(location_id, location_name)
 					Tracker:FindObjectForCode(location).AvailableChestCount = 0
 				end
 			end
-			ClearHints(location_id)
+			UpdateHints(location_id, Highlight.None)
 		else
 			print(string.format("onLocation: could not find object for code %s", location))
 		end
@@ -327,14 +327,6 @@ function OnLocation(location_id, location_name)
 
 	IS_MANUAL_CLICK = true
 end
-
--- called when a locations is scouted
--- function onScout(location_id, location_name, item_id, item_name, item_player)
--- 	if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
--- 		print(string.format("called onScout: %s, %s, %s, %s, %s", location_id, location_name, item_id, item_name,
--- 			item_player))
--- 	end
--- end
 
 function OnNotify(key, value, old_value)
 	if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
@@ -348,9 +340,9 @@ function OnNotify(key, value, old_value)
 	if key == HINTS_ID and Highlight then
 		for _, hint in ipairs(value) do
 			if not hint.found and hint.finding_player == Archipelago.PlayerNumber then
-				UpdateHints(hint.location, hint.status)
+				UpdateHints(hint.location, PriorityToHighlight[hint.status])
 			else
-				ClearHints(hint.location)
+				UpdateHints(hint.location, Highlight.None)
 			end
 		end
 	elseif key == DATA_STORAGE_ID then
@@ -389,6 +381,8 @@ function OnNotifyLaunch(key, value)
 end
 
 -- called when a location is hinted or the status of a hint is changed
+---@param locationID number
+---@param status highlight
 function UpdateHints(locationID, status)
 	if not Highlight then
 		return
@@ -397,28 +391,9 @@ function UpdateHints(locationID, status)
 	-- print("Hint", dump(locations), status)
 	for _, location in ipairs(locations) do
 		local section = Tracker:FindObjectForCode(location)
-		---@cast section LocationSection
 		if section then
+			---@cast section LocationSection
 			section.Highlight = PriorityToHighlight[status]
-		else
-			print(string.format("No object found for code: %s", location))
-		end
-	end
-end
-
-function ClearHints(locationID)
-	if not Highlight then
-		return
-	end
-	local locations = LOCATION_MAPPING[locationID]
-	if (not locations) then
-		return
-	end
-	for _, location in ipairs(locations) do
-		local section = Tracker:FindObjectForCode(location)
-		---@cast section LocationSection
-		if section then
-			section.Highlight = Highlight.None
 		else
 			print(string.format("No object found for code: %s", location))
 		end
@@ -495,6 +470,7 @@ function OnBounce(json)
 	end
 end
 
+---@param location LocationSection
 function ManualLocationHandler(location)
 	if IS_MANUAL_CLICK then
 		local manualStorageItem = Tracker:FindObjectForCode(ManualStorageCode)
@@ -517,9 +493,16 @@ function ManualLocationHandler(location)
 		if location.AvailableChestCount < location.ChestCount then
 			-- add to list
 			manualStorageItem.ManualLocations[ROOM_SEED][fullID] = location.AvailableChestCount
+			if Highlight then
+				location.Highlight = Highlight.None
+			end
 		else
 			-- remove from list of set back to max chestcount
 			manualStorageItem.ManualLocations[ROOM_SEED][fullID] = nil
+			if Highlight then
+				-- re-grab hints since it was cleared earlier
+				Archipelago:Get({HINTS_ID})
+			end
 		end
 	end
 end
@@ -545,6 +528,7 @@ function OnIgnoreVersionMismatch(section)
 		Tracker:FindObjectForCode("@Version Mismatch/Ignore One Time/").AvailableChestCount = 1
 		IGNORE_VERSION = true
 		Tracker:FindObjectForCode(VersionMismatch).Active = false
+		-- deprecated, change this to RemoveOnLocationSectionChangedHandler eventually
 		ScriptHost:RemoveOnLocationSectionHandler("version mismatch ignore handler")
 	end
 end

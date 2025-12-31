@@ -393,7 +393,7 @@ function UpdateHints(locationID, status)
 		local section = Tracker:FindObjectForCode(location)
 		if section then
 			---@cast section LocationSection
-			section.Highlight = PriorityToHighlight[status]
+			section.Highlight = status
 		else
 			print(string.format("No object found for code: %s", location))
 		end

@@ -375,6 +375,8 @@ CurrentLocationMapping = {
 	[0x459] = {{["type"] = "Autotab", ["tab"] = {"Poison Moth's Lair", "Poison Moth's Lair 1F"}}}, -- pol's voice room
 	[0x448] = {{["type"] = "Autotab", ["tab"] = {"Poison Moth's Lair", "Poison Moth's Lair B1F"}}}, -- omuai
 	[0x457] = {{["type"] = "Autotab", ["tab"] = {"Poison Moth's Lair", "Poison Moth's Lair 1F"}}}, -- peahat after omuai
+	[0x453] = {{["type"] = "Autotab", ["tab"] = {"Poison Moth's Lair", "Poison Moth's Lair 1F"}}}, -- mothula
+	[0x443] = {{["type"] = "Autotab", ["tab"] = {"Poison Moth's Lair", "Poison Moth's Lair B1F"}}}, -- essence
 	-- D4
 	[0x481] = {
 		-- main entrance

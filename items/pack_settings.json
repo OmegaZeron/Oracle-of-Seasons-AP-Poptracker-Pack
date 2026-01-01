@@ -650,6 +650,44 @@
 		]
 	},
 	{
+		"name": "Linked Hero's Cave",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 0,
+		"stages": [
+			{
+				"img": "images/labels/off.png",
+				"codes": "linked_cave, linked_cave_off",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/samasa_desert.png",
+				"codes": "linked_cave, linked_cave_on, linked_cave_desert",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Linked Cave Alt Entrance selector",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 0,
+		"stages": [
+			{
+				"img": "images/labels/vanilla_label.png",
+				"codes": "remove_lc_alt_entrance, lc_alt_entrance_vanilla",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/removed_label.png",
+				"codes": "remove_lc_alt_entrance, lc_alt_entrance_removed",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
 		"name": "D2 Alt Entrance selector",
 		"type": "progressive",
 		"allow_disabled": false,
@@ -4300,6 +4338,11 @@
 				"inherit_codes": false
 			},
 			{
+				"img": "images/labels/LC_entrance.png",
+				"codes": "d0_ent_selector, lc_d0",
+				"inherit_codes": false
+			},
+			{
 				"img": "images/labels/D1_entrance.png",
 				"codes": "d0_ent_selector, d1_d0",
 				"inherit_codes": false
@@ -4349,53 +4392,164 @@
 		"initial_stage_idx": 1,
 		"stages": [
 			{
-				"img": "images/labels/DX_unknown.png",
 				"codes": "d0_ent_selector_hidden, d0_ent_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D0_entrance_toggle.png",
 				"codes": "d0_ent_selector_hidden, d0_d0_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D1_entrance_toggle.png",
+				"codes": "d0_ent_selector_hidden, lc_d0_hidden",
+				"inherit_codes": false
+			},
+			{
 				"codes": "d0_ent_selector_hidden, d1_d0_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D2_entrance_toggle.png",
 				"codes": "d0_ent_selector_hidden, d2_d0_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D3_entrance_toggle.png",
 				"codes": "d0_ent_selector_hidden, d3_d0_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D4_entrance_toggle.png",
 				"codes": "d0_ent_selector_hidden, d4_d0_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D5_entrance_toggle.png",
 				"codes": "d0_ent_selector_hidden, d5_d0_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D6_entrance_toggle.png",
 				"codes": "d0_ent_selector_hidden, d6_d0_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D7_entrance_toggle.png",
 				"codes": "d0_ent_selector_hidden, d7_d0_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D8_entrance_toggle.png",
 				"codes": "d0_ent_selector_hidden, d8_d0_hidden",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Hero's Cave Dungeon Entrance",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 2,
+		"stages": [
+			{
+				"img": "images/labels/DX_unknown.png",
+				"codes": "lc_ent_selector, lc_ent",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D0_entrance.png",
+				"codes": "lc_ent_selector, d0_lc",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/LC_entrance.png",
+				"codes": "lc_ent_selector, lc_lc",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D1_entrance.png",
+				"codes": "lc_ent_selector, d1_lc",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D2_entrance.png",
+				"codes": "lc_ent_selector, d2_lc",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D3_entrance.png",
+				"codes": "lc_ent_selector, d3_lc",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D4_entrance.png",
+				"codes": "lc_ent_selector, d4_lc",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D5_entrance.png",
+				"codes": "lc_ent_selector, d5_lc",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D6_entrance.png",
+				"codes": "lc_ent_selector, d6_lc",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D7_entrance.png",
+				"codes": "lc_ent_selector, d7_lc",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/D8_entrance.png",
+				"codes": "lc_ent_selector, d8_lc",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Hero's Cave Dungeon Entrance Hidden",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 2,
+		"stages": [
+			{
+				"codes": "lc_ent_selector_hidden, lc_ent_hidden",
+				"inherit_codes": false
+			},
+			{
+				"codes": "lc_ent_selector_hidden, d0_lc_hidden",
+				"inherit_codes": false
+			},
+			{
+				"codes": "lc_ent_selector_hidden, lc_lc_hidden",
+				"inherit_codes": false
+			},
+			{
+				"codes": "lc_ent_selector_hidden, d1_lc_hidden",
+				"inherit_codes": false
+			},
+			{
+				"codes": "lc_ent_selector_hidden, d2_lc_hidden",
+				"inherit_codes": false
+			},
+			{
+				"codes": "lc_ent_selector_hidden, d3_lc_hidden",
+				"inherit_codes": false
+			},
+			{
+				"codes": "lc_ent_selector_hidden, d4_lc_hidden",
+				"inherit_codes": false
+			},
+			{
+				"codes": "lc_ent_selector_hidden, d5_lc_hidden",
+				"inherit_codes": false
+			},
+			{
+				"codes": "lc_ent_selector_hidden, d6_lc_hidden",
+				"inherit_codes": false
+			},
+			{
+				"codes": "lc_ent_selector_hidden, d7_lc_hidden",
+				"inherit_codes": false
+			},
+			{
+				"codes": "lc_ent_selector_hidden, d8_lc_hidden",
 				"inherit_codes": false
 			}
 		]
@@ -4405,7 +4559,7 @@
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
-		"initial_stage_idx": 2,
+		"initial_stage_idx": 3,
 		"stages": [
 			{
 				"img": "images/labels/DX_unknown.png",
@@ -4415,6 +4569,11 @@
 			{
 				"img": "images/labels/D0_entrance.png",
 				"codes": "d1_ent_selector, d0_d1",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/LC_entrance.png",
+				"codes": "d1_ent_selector, lc_d1",
 				"inherit_codes": false
 			},
 			{
@@ -4464,55 +4623,49 @@
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
-		"initial_stage_idx": 2,
+		"initial_stage_idx": 3,
 		"stages": [
 			{
-				"img": "images/labels/DX_unknown.png",
 				"codes": "d1_ent_selector_hidden, d1_ent_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D0_entrance_toggle.png",
 				"codes": "d1_ent_selector_hidden, d0_d1_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D1_entrance_toggle.png",
+				"codes": "d1_ent_selector_hidden, lc_d1_hidden",
+				"inherit_codes": false
+			},
+			{
 				"codes": "d1_ent_selector_hidden, d1_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D2_entrance_toggle.png",
 				"codes": "d1_ent_selector_hidden, d2_d1_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D3_entrance_toggle.png",
 				"codes": "d1_ent_selector_hidden, d3_d1_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D4_entrance_toggle.png",
 				"codes": "d1_ent_selector_hidden, d4_d1_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D5_entrance_toggle.png",
 				"codes": "d1_ent_selector_hidden, d5_d1_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D6_entrance_toggle.png",
 				"codes": "d1_ent_selector_hidden, d6_d1_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D7_entrance_toggle.png",
 				"codes": "d1_ent_selector_hidden, d7_d1_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D8_entrance_toggle.png",
 				"codes": "d1_ent_selector_hidden, d8_d1_hidden",
 				"inherit_codes": false
 			}
@@ -4523,7 +4676,7 @@
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
-		"initial_stage_idx": 3,
+		"initial_stage_idx": 4,
 		"stages": [
 			{
 				"img": "images/labels/DX_unknown.png",
@@ -4533,6 +4686,11 @@
 			{
 				"img": "images/labels/D0_entrance.png",
 				"codes": "d2_ent_selector, d0_d2",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/LC_entrance.png",
+				"codes": "d2_ent_selector, lc_d2",
 				"inherit_codes": false
 			},
 			{
@@ -4582,55 +4740,49 @@
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
-		"initial_stage_idx": 3,
+		"initial_stage_idx": 4,
 		"stages": [
 			{
-				"img": "images/labels/DX_unknown.png",
 				"codes": "d2_ent_selector_hidden, d2_ent_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D0_entrance_toggle.png",
 				"codes": "d2_ent_selector_hidden, d0_d2_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D1_entrance_toggle.png",
+				"codes": "d2_ent_selector_hidden, lc_d2_hidden",
+				"inherit_codes": false
+			},
+			{
 				"codes": "d2_ent_selector_hidden, d1_d2_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D2_entrance_toggle.png",
 				"codes": "d2_ent_selector_hidden, d2_d2_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D3_entrance_toggle.png",
 				"codes": "d2_ent_selector_hidden, d3_d2_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D4_entrance_toggle.png",
 				"codes": "d2_ent_selector_hidden, d4_d2_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D5_entrance_toggle.png",
 				"codes": "d2_ent_selector_hidden, d5_d2_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D6_entrance_toggle.png",
 				"codes": "d2_ent_selector_hidden, d6_d2_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D7_entrance_toggle.png",
 				"codes": "d2_ent_selector_hidden, d7_d2_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D8_entrance_toggle.png",
 				"codes": "d2_ent_selector_hidden, d8_d2_hidden",
 				"inherit_codes": false
 			}
@@ -4641,7 +4793,7 @@
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
-		"initial_stage_idx": 4,
+		"initial_stage_idx": 5,
 		"stages": [
 			{
 				"img": "images/labels/DX_unknown.png",
@@ -4651,6 +4803,11 @@
 			{
 				"img": "images/labels/D0_entrance.png",
 				"codes": "d3_ent_selector, d0_d3",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/LC_entrance.png",
+				"codes": "d3_ent_selector, lc_d3",
 				"inherit_codes": false
 			},
 			{
@@ -4700,55 +4857,49 @@
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
-		"initial_stage_idx": 4,
+		"initial_stage_idx": 5,
 		"stages": [
 			{
-				"img": "images/labels/DX_unknown.png",
 				"codes": "d3_ent_selector_hidden, d3_ent_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D0_entrance_toggle.png",
 				"codes": "d3_ent_selector_hidden, d0_d3_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D1_entrance_toggle.png",
+				"codes": "d3_ent_selector_hidden, lc_d3_hidden",
+				"inherit_codes": false
+			},
+			{
 				"codes": "d3_ent_selector_hidden, d1_d3_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D2_entrance_toggle.png",
 				"codes": "d3_ent_selector_hidden, d2_d3_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D3_entrance_toggle.png",
 				"codes": "d3_ent_selector_hidden, d3_d3_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D4_entrance_toggle.png",
 				"codes": "d3_ent_selector_hidden, d4_d3_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D5_entrance_toggle.png",
 				"codes": "d3_ent_selector_hidden, d5_d3_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D6_entrance_toggle.png",
 				"codes": "d3_ent_selector_hidden, d6_d3_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D7_entrance_toggle.png",
 				"codes": "d3_ent_selector_hidden, d7_d3_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D8_entrance_toggle.png",
 				"codes": "d3_ent_selector_hidden, d8_d3_hidden",
 				"inherit_codes": false
 			}
@@ -4759,7 +4910,7 @@
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
-		"initial_stage_idx": 5,
+		"initial_stage_idx": 6,
 		"stages": [
 			{
 				"img": "images/labels/DX_unknown.png",
@@ -4769,6 +4920,11 @@
 			{
 				"img": "images/labels/D0_entrance.png",
 				"codes": "d4_ent_selector, d0_d4",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/LC_entrance.png",
+				"codes": "d4_ent_selector, lc_d4",
 				"inherit_codes": false
 			},
 			{
@@ -4818,55 +4974,49 @@
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
-		"initial_stage_idx": 5,
+		"initial_stage_idx": 6,
 		"stages": [
 			{
-				"img": "images/labels/DX_unknown.png",
 				"codes": "d4_ent_selector_hidden, d4_ent_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D0_entrance_toggle.png",
 				"codes": "d4_ent_selector_hidden, d0_d4_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D1_entrance_toggle.png",
+				"codes": "d4_ent_selector_hidden, lc_d4_hidden",
+				"inherit_codes": false
+			},
+			{
 				"codes": "d4_ent_selector_hidden, d1_d4_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D2_entrance_toggle.png",
 				"codes": "d4_ent_selector_hidden, d2_d4_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D3_entrance_toggle.png",
 				"codes": "d4_ent_selector_hidden, 3_d4_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D4_entrance_toggle.png",
 				"codes": "d4_ent_selector_hidden, d4_d4_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D5_entrance_toggle.png",
 				"codes": "d4_ent_selector_hidden, d5_d4_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D6_entrance_toggle.png",
 				"codes": "d4_ent_selector_hidden, d6_d4_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D7_entrance_toggle.png",
 				"codes": "d4_ent_selector_hidden, d7_d4_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D8_entrance_toggle.png",
 				"codes": "d4_ent_selector_hidden, d8_d4_hidden",
 				"inherit_codes": false
 			}
@@ -4877,7 +5027,7 @@
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
-		"initial_stage_idx": 6,
+		"initial_stage_idx": 7,
 		"stages": [
 			{
 				"img": "images/labels/DX_unknown.png",
@@ -4887,6 +5037,11 @@
 			{
 				"img": "images/labels/D0_entrance.png",
 				"codes": "d5_ent_selector, d0_d5",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/LC_entrance.png",
+				"codes": "d5_ent_selector, lc_d5",
 				"inherit_codes": false
 			},
 			{
@@ -4936,55 +5091,49 @@
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
-		"initial_stage_idx": 6,
+		"initial_stage_idx": 7,
 		"stages": [
 			{
-				"img": "images/labels/DX_unknown.png",
 				"codes": "d5_ent_selector_hidden, d5_ent_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D0_entrance_toggle.png",
 				"codes": "d5_ent_selector_hidden, d0_d5_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D1_entrance_toggle.png",
+				"codes": "d5_ent_selector_hidden, lc_d5_hidden",
+				"inherit_codes": false
+			},
+			{
 				"codes": "d5_ent_selector_hidden, d1_d5_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D2_entrance_toggle.png",
 				"codes": "d5_ent_selector_hidden, d2_d5_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D3_entrance_toggle.png",
 				"codes": "d5_ent_selector_hidden, d3_d5_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D4_entrance_toggle.png",
 				"codes": "d5_ent_selector_hidden, d4_d5_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D5_entrance_toggle.png",
 				"codes": "d5_ent_selector_hidden, d5_d5_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D6_entrance_toggle.png",
 				"codes": "d5_ent_selector_hidden, d6_d5_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D7_entrance_toggle.png",
 				"codes": "d5_ent_selector_hidden, d7_d5_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D8_entrance_toggle.png",
 				"codes": "d5_ent_selector_hidden, d8_d5_hidden",
 				"inherit_codes": false
 			}
@@ -4995,7 +5144,7 @@
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
-		"initial_stage_idx": 7,
+		"initial_stage_idx": 8,
 		"stages": [
 			{
 				"img": "images/labels/DX_unknown.png",
@@ -5005,6 +5154,11 @@
 			{
 				"img": "images/labels/D0_entrance.png",
 				"codes": "d6_ent_selector, d0_d6",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/LC_entrance.png",
+				"codes": "d6_ent_selector, lc_d6",
 				"inherit_codes": false
 			},
 			{
@@ -5054,55 +5208,49 @@
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
-		"initial_stage_idx": 7,
+		"initial_stage_idx": 8,
 		"stages": [
 			{
-				"img": "images/labels/DX_unknown.png",
 				"codes": "d6_ent_selector_hidden, d6_ent_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D0_entrance_toggle.png",
 				"codes": "d6_ent_selector_hidden, d0_d6_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D1_entrance_toggle.png",
+				"codes": "d6_ent_selector_hidden, lc_d6_hidden",
+				"inherit_codes": false
+			},
+			{
 				"codes": "d6_ent_selector_hidden, d1_d6_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D2_entrance_toggle.png",
 				"codes": "d6_ent_selector_hidden, d2_d6_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D3_entrance_toggle.png",
 				"codes": "d6_ent_selector_hidden, d3_d6_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D4_entrance_toggle.png",
 				"codes": "d6_ent_selector_hidden, d4_d6_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D5_entrance_toggle.png",
 				"codes": "d6_ent_selector_hidden, d5_d6_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D6_entrance_toggle.png",
 				"codes": "d6_ent_selector_hidden, d6_d6_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D7_entrance_toggle.png",
 				"codes": "d6_ent_selector_hidden, d7_d6_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D8_entrance_toggle.png",
 				"codes": "d6_ent_selector_hidden, d8_d6_hidden",
 				"inherit_codes": false
 			}
@@ -5113,7 +5261,7 @@
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
-		"initial_stage_idx": 8,
+		"initial_stage_idx": 9,
 		"stages": [
 			{
 				"img": "images/labels/DX_unknown.png",
@@ -5123,6 +5271,11 @@
 			{
 				"img": "images/labels/D0_entrance.png",
 				"codes": "d7_ent_selector, d0_d7",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/LC_entrance.png",
+				"codes": "d7_ent_selector, lc_d7",
 				"inherit_codes": false
 			},
 			{
@@ -5172,55 +5325,49 @@
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
-		"initial_stage_idx": 8,
+		"initial_stage_idx": 9,
 		"stages": [
 			{
-				"img": "images/labels/DX_unknown.png",
 				"codes": "d7_ent_selector_hidden, d7_ent_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D0_entrance_toggle.png",
 				"codes": "d7_ent_selector_hidden, d0_d7_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D1_entrance_toggle.png",
+				"codes": "d7_ent_selector_hidden, lc_d7_hidden",
+				"inherit_codes": false
+			},
+			{
 				"codes": "d7_ent_selector_hidden, d1_d7_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D2_entrance_toggle.png",
 				"codes": "d7_ent_selector_hidden, d2_d7_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D3_entrance_toggle.png",
 				"codes": "d7_ent_selector_hidden, d3_d7_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D4_entrance_toggle.png",
 				"codes": "d7_ent_selector_hidden, d4_d7_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D5_entrance_toggle.png",
 				"codes": "d7_ent_selector_hidden, d5_d7_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D6_entrance_toggle.png",
 				"codes": "d7_ent_selector_hidden, d6_d7_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D7_entrance_toggle.png",
 				"codes": "d7_ent_selector_hidden, d7_d7_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D8_entrance_toggle.png",
 				"codes": "d7_ent_selector_hidden, d8_d7_hidden",
 				"inherit_codes": false
 			}
@@ -5231,7 +5378,7 @@
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
-		"initial_stage_idx": 9,
+		"initial_stage_idx": 10,
 		"stages": [
 			{
 				"img": "images/labels/DX_unknown.png",
@@ -5241,6 +5388,11 @@
 			{
 				"img": "images/labels/D0_entrance.png",
 				"codes": "d8_ent_selector, d0_d8",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/LC_entrance.png",
+				"codes": "d8_ent_selector, lc_d8",
 				"inherit_codes": false
 			},
 			{
@@ -5290,55 +5442,49 @@
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
-		"initial_stage_idx": 9,
+		"initial_stage_idx": 10,
 		"stages": [
 			{
-				"img": "images/labels/DX_unknown.png",
 				"codes": "d8_ent_selector_hidden, d8_ent_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D0_entrance_toggle.png",
 				"codes": "d8_ent_selector_hidden, d0_d8_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D1_entrance_toggle.png",
+				"codes": "d8_ent_selector_hidden, lc_d8_hidden",
+				"inherit_codes": false
+			},
+			{
 				"codes": "d8_ent_selector_hidden, d1_d8_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D2_entrance_toggle.png",
 				"codes": "d8_ent_selector_hidden, d2_d8_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D3_entrance_toggle.png",
 				"codes": "d8_ent_selector_hidden, d3_d8_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D4_entrance_toggle.png",
 				"codes": "d8_ent_selector_hidden, d4_d8_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D5_entrance_toggle.png",
 				"codes": "d8_ent_selector_hidden, d5_d8_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D6_entrance_toggle.png",
 				"codes": "d8_ent_selector_hidden, d6_d8_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D7_entrance_toggle.png",
 				"codes": "d8_ent_selector_hidden, d7_d8_hidden",
 				"inherit_codes": false
 			},
 			{
-				"img": "images/labels/D8_entrance_toggle.png",
 				"codes": "d8_ent_selector_hidden, d8_d8_hidden",
 				"inherit_codes": false
 			}

@@ -160,6 +160,12 @@ end)
 
 -- Dungeon shuffle
 -- d0
+HerosCave:connect_two_ways_entrance(LinkedCaveFoyer, function()
+	return All(
+		ShuffleDungeonOn,
+		D0LeadsToLC
+	)
+end)
 HerosCave:connect_one_way_entrance(GnarledFoyer, function()
 	return All(
 		ShuffleDungeonOn,
@@ -209,11 +215,73 @@ HerosCave:connect_one_way_entrance(MazeFoyer, function()
 	)
 end)
 
+-- d0 linked
+LinkedCave:connect_two_ways_entrance(HerosCaveFoyer, function()
+	return All(
+		ShuffleDungeonOn,
+		LCLeadsToD0
+	)
+end)
+LinkedCave:connect_one_way_entrance(GnarledFoyer, function()
+	return All(
+		ShuffleDungeonOn,
+		LCLeadsToD1
+	)
+end)
+LinkedCave:connect_two_ways_entrance(SnakeFoyer, function()
+	return All(
+		ShuffleDungeonOn,
+		LCLeadsToD2
+	)
+end)
+LinkedCave:connect_one_way_entrance(PoisonFoyer, function()
+	return All(
+		ShuffleDungeonOn,
+		LCLeadsToD3
+	)
+end)
+LinkedCave:connect_one_way_entrance(DancingFoyer, function()
+	return All(
+		ShuffleDungeonOn,
+		LCLeadsToD4
+	)
+end)
+LinkedCave:connect_one_way_entrance(UnicornFoyer, function()
+	return All(
+		ShuffleDungeonOn,
+		LCLeadsToD5
+	)
+end)
+LinkedCave:connect_one_way_entrance(AncientFoyer, function()
+	return All(
+		ShuffleDungeonOn,
+		LCLeadsToD6
+	)
+end)
+LinkedCave:connect_one_way_entrance(CryptFoyer, function()
+	return All(
+		ShuffleDungeonOn,
+		LCLeadsToD7
+	)
+end)
+LinkedCave:connect_one_way_entrance(MazeFoyer, function()
+	return All(
+		ShuffleDungeonOn,
+		LCLeadsToD8
+	)
+end)
+
 -- d7
 ExplorersCrypt:connect_two_ways_entrance(HerosCaveFoyer, function()
 	return All(
 		ShuffleDungeonOn,
 		D7LeadsToD0
+	)
+end)
+ExplorersCrypt:connect_two_ways_entrance(LinkedCaveFoyer, function()
+	return All(
+		ShuffleDungeonOn,
+		D7LeadsToLC
 	)
 end)
 ExplorersCrypt:connect_one_way_entrance(GnarledFoyer, function()

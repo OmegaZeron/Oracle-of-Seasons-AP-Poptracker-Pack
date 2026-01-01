@@ -142,6 +142,12 @@ DancingDragonDungeon:connect_two_ways_entrance(HerosCaveFoyer, function()
 		D4LeadsToD0
 	)
 end)
+DancingDragonDungeon:connect_two_ways_entrance(LinkedCaveFoyer, function()
+	return All(
+		ShuffleDungeonOn,
+		D4LeadsToLC
+	)
+end)
 DancingDragonDungeon:connect_one_way_entrance(GnarledFoyer, function()
 	return All(
 		ShuffleDungeonOn,

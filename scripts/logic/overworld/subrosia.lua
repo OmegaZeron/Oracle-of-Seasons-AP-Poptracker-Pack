@@ -8,7 +8,7 @@ SubrosiaMountainEast:connect_one_way_entrance(SuburbsPortal, function()
 end)
 SubrosiaMountainEast:connect_two_ways_entrance(TempleOfSeasons)
 SubrosiaMountainEast:connect_two_ways_entrance(SubrosiaMountainWest, function() return Has(Feather) end)
-SubrosiaMountainEast:connect_two_ways_entrance(StrangeBrothers, JumpLiquid5)
+SubrosiaMountainEast:connect_two_ways_entrance(StrangeBrothers, JumpLiquid4)
 SubrosiaMountainEast:connect_one_way(SubrosiaMountainMagnetDigSpot, function()
 	return All(
 		Feather,
@@ -30,7 +30,6 @@ SubrosiaMountainEast:connect_one_way(SmithyHardOre, function() return Has(HardOr
 SubrosiaMountainEast:connect_one_way(SmithyBell, function() return Has(RustyBell) end)
 SubrosiaMountainEast:connect_one_way(SmithSecret, function() return Has(Shield) end)
 SubrosiaMountainWest:connect_one_way(SubrosiaChef, function() return Has(IronPot) end)
-SubrosiaMountainWest:connect_two_ways_entrance(SubrosiaWilds, JumpLiquid4)
 SubrosiaMountainWest:connect_one_way_entrance(StrangeBrothers, function()
 	-- H&S skip
 	return All(
@@ -228,6 +227,12 @@ SwordAndShieldMaze:connect_two_ways_entrance(HerosCaveFoyer, function()
 	return All(
 		ShuffleDungeonOn,
 		D8LeadsToD0
+	)
+end)
+SwordAndShieldMaze:connect_two_ways_entrance(LinkedCaveFoyer, function()
+	return All(
+		ShuffleDungeonOn,
+		D8LeadsToLC
 	)
 end)
 SwordAndShieldMaze:connect_one_way_entrance(GnarledFoyer, function()

@@ -32,7 +32,7 @@ SnakeAltEntrance:connect_one_way(SnakeBombPuzzle, function()
 			Bombs,
 			All(
 				Any(
-					Bombchus50,
+					Bombchus40,
 					All(
 						Bombchus,
 						AccessibilityLevel.SequenceBreak
@@ -50,13 +50,7 @@ SnakeBombBlockStairs:connect_one_way_entrance(FacadeDoorstep, function() return 
 -- 2 keys
 FacadeDoorstep:connect_one_way_entrance(Facade, function()
 	return All(
-		Any(
-			D2KeyCount(2),
-			All(
-				D2KeyCount(1),
-				AccessibilityLevel.SequenceBreak
-			)
-		),
+		D2KeyCount(2, 1),
 		Any(
 			Bombs,
 			Bombchus20,
@@ -77,15 +71,7 @@ Facade:connect_one_way_entrance(KingDodongo, function()
 end)
 
 -- 3 keys
-SnakeMoblinRopeFight:connect_one_way_entrance(SnakeHardhats, function()
-	return Any(
-		D2KeyCount(3),
-		All(
-			D2KeyCount(1),
-			AccessibilityLevel.SequenceBreak
-		)
-	)
-end)
+SnakeMoblinRopeFight:connect_one_way_entrance(SnakeHardhats, function() return D2KeyCount(3, 1) end)
 SnakeHardhats:connect_one_way(SnakeHardhatChest, CanDestroyPot)
 SnakeHardhats:connect_one_way(SnakeWildBombs, function()
 	return All(
@@ -145,12 +131,4 @@ SnakeHardhats:connect_one_way_entrance(SnakeBombMoblins, function()
 		)
 	)
 end)
-Facade:connect_one_way(SnakeTerrace, function()
-	return Any(
-		D2KeyCount(3),
-		All(
-			D2KeyCount(2),
-			AccessibilityLevel.SequenceBreak
-		)
-	)
-end)
+Facade:connect_one_way(SnakeTerrace, function() return D2KeyCount(3, 2) end)

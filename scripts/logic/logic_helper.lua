@@ -60,7 +60,7 @@ function CanBombWall()
 		Bombs,
 		All(
 			Any(
-				Bombchus50,
+				Bombchus40,
 				All(
 					Bombchus,
 					AccessibilityLevel.SequenceBreak
@@ -397,7 +397,7 @@ function CanDestroyBush(allowBombchus)
 				All(
 					allowBombchus == true,
 					Any(
-						Bombchus50,
+						Bombchus40,
 						All(
 							Bombchus,
 							AccessibilityLevel.SequenceBreak
@@ -459,7 +459,7 @@ function CanDestroyFlower(allowCompanion)
 					GaleSeeds
 				),
 				Any(
-					Bombchus50,
+					Bombchus40,
 					All(
 						Bombchus,
 						AccessibilityLevel.SequenceBreak
@@ -474,10 +474,14 @@ end
 function CanDestroyCrystal()
 	return Any(
 		HasAnySword,
-		CanBombWall,
+		Bombs,
 		Bracelet,
 		All(
 			ExpertsRing,
+			MediumLogic
+		),
+		All(
+			Bombchus40,
 			MediumLogic
 		)
 	)
@@ -911,6 +915,16 @@ function CanKillMoldorm(pitAvailable)
 	)
 end
 
+function CanCompleteLinkedPuzzle()
+	local foundDungeons = 0
+	for i = 1, 8 do
+		if Tracker:FindObjectForCode("d"..i.."_ent_selector").CurrentStage ~= 0 then
+			foundDungeons = foundDungeons + 1
+		end
+	end
+	return foundDungeons >= 7
+end
+
 function CanFarmRupees()
 	return Any(
 		CanNormalKill(false, false),
@@ -919,6 +933,9 @@ function CanFarmRupees()
 end
 
 function HasRupees(count)
+	if (count == 0 or Has(Shovel) and HardLogic() == AccessibilityLevel.Normal) then
+		return true
+	end
 	if (CanFarmRupees() < AccessibilityLevel.SequenceBreak) then
 		return false
 	end
@@ -1238,8 +1255,24 @@ function GetCuccos()
 	return availableCuccos
 end
 
-function D1KeyCount(count)
-	return Tracker:ProviderCountForCode(D1SmallKey) >= count or Has(D1MasterKey)
+function LCKeyCount(needed)
+	local currentKeys = Tracker:ProviderCountForCode(LCSmallKey)
+	return Any(
+		currentKeys >= needed,
+		LCMasterKey
+	)
+end
+
+function D1KeyCount(needed, ool)
+	local currentKeys = Tracker:ProviderCountForCode(D1SmallKey)
+	return Any(
+		currentKeys >= needed,
+		D1MasterKey,
+		All(
+			ool ~= nil and currentKeys >= ool,
+			AccessibilityLevel.SequenceBreak
+		)
+	)
 end
 function HasD1BossKey()
 	return Any(
@@ -1251,8 +1284,16 @@ function HasD1BossKey()
 	)
 end
 
-function D2KeyCount(count)
-	return Tracker:ProviderCountForCode(D2SmallKey) >= count or Has(D2MasterKey)
+function D2KeyCount(needed, ool)
+	local currentKeys = Tracker:ProviderCountForCode(D2SmallKey)
+	return Any(
+		currentKeys >= needed,
+		D2MasterKey,
+		All(
+			ool ~= nil and currentKeys >= ool,
+			AccessibilityLevel.SequenceBreak
+		)
+	)
 end
 function HasD2BossKey()
 	return Any(
@@ -1264,8 +1305,16 @@ function HasD2BossKey()
 	)
 end
 
-function D3KeyCount(count)
-	return Tracker:ProviderCountForCode(D3SmallKey) >= count or Has(D3MasterKey)
+function D3KeyCount(needed, ool)
+	local currentKeys = Tracker:ProviderCountForCode(D3SmallKey)
+	return Any(
+		currentKeys >= needed,
+		D3MasterKey,
+		All(
+			ool ~= nil and currentKeys >= ool,
+			AccessibilityLevel.SequenceBreak
+		)
+	)
 end
 function HasD3BossKey()
 	return Any(
@@ -1277,8 +1326,16 @@ function HasD3BossKey()
 	)
 end
 
-function D4KeyCount(count)
-	return Tracker:ProviderCountForCode(D4SmallKey) >= count or Has(D4MasterKey)
+function D4KeyCount(needed, ool)
+	local currentKeys = Tracker:ProviderCountForCode(D4SmallKey)
+	return Any(
+		currentKeys >= needed,
+		D4MasterKey,
+		All(
+			ool ~= nil and currentKeys >= ool,
+			AccessibilityLevel.SequenceBreak
+		)
+	)
 end
 function HasD4BossKey()
 	return Any(
@@ -1290,8 +1347,16 @@ function HasD4BossKey()
 	)
 end
 
-function D5KeyCount(count)
-	return Tracker:ProviderCountForCode(D5SmallKey) >= count or Has(D5MasterKey)
+function D5KeyCount(needed, ool)
+	local currentKeys = Tracker:ProviderCountForCode(D5SmallKey)
+	return Any(
+		currentKeys >= needed,
+		D5MasterKey,
+		All(
+			ool ~= nil and currentKeys >= ool,
+			AccessibilityLevel.SequenceBreak
+		)
+	)
 end
 function HasD5BossKey()
 	return Any(
@@ -1303,8 +1368,16 @@ function HasD5BossKey()
 	)
 end
 
-function D6KeyCount(count)
-	return Tracker:ProviderCountForCode(D6SmallKey) >= count or Has(D6MasterKey)
+function D6KeyCount(needed, ool)
+	local currentKeys = Tracker:ProviderCountForCode(D6SmallKey)
+	return Any(
+		currentKeys >= needed,
+		D6MasterKey,
+		All(
+			ool ~= nil and currentKeys >= ool,
+			AccessibilityLevel.SequenceBreak
+		)
+	)
 end
 function HasD6BossKey()
 	return Any(
@@ -1316,8 +1389,16 @@ function HasD6BossKey()
 	)
 end
 
-function D7KeyCount(count)
-	return Tracker:ProviderCountForCode(D7SmallKey) >= count or Has(D7MasterKey)
+function D7KeyCount(needed, ool)
+	local currentKeys = Tracker:ProviderCountForCode(D7SmallKey)
+	return Any(
+		currentKeys >= needed,
+		D7MasterKey,
+		All(
+			ool ~= nil and currentKeys >= ool,
+			AccessibilityLevel.SequenceBreak
+		)
+	)
 end
 function HasD7BossKey()
 	return Any(
@@ -1329,8 +1410,16 @@ function HasD7BossKey()
 	)
 end
 
-function D8KeyCount(count)
-	return Tracker:ProviderCountForCode(D8SmallKey) >= count or Has(D8MasterKey)
+function D8KeyCount(needed, ool)
+	local currentKeys = Tracker:ProviderCountForCode(D8SmallKey)
+	return Any(
+		currentKeys >= needed,
+		D8MasterKey,
+		All(
+			ool ~= nil and currentKeys >= ool,
+			AccessibilityLevel.SequenceBreak
+		)
+	)
 end
 function HasD8BossKey()
 	return Any(
@@ -1346,30 +1435,21 @@ function dungeon_settings()
 	if (not LOADED) then
 		return
 	end
-	local dungeon_list = {"d0","d1","d2","d3","d4","d5","d6","d7","d8"}
 	if Tracker:FindObjectForCode("shuffle_dungeons").CurrentStage == 0 then
-		for index, dungeon in pairs(dungeon_list) do
+		for index, dungeon in ipairs(DungeonList) do
 			Tracker:FindObjectForCode(dungeon.."_ent_selector").CurrentStage = index
 		end
 	else
-		for index, dungeon in pairs(dungeon_list) do
+		for _, dungeon in ipairs(DungeonList) do
 			Tracker:FindObjectForCode(dungeon.."_ent_selector").CurrentStage = 0
 		end
 	end
 end
 
 function display_dungeons()
-	if Tracker:FindObjectForCode("shuffle_dungeons").CurrentStage == 1 then
-		if Tracker:FindObjectForCode("fill_dungeons").CurrentStage == 1 then
-			Tracker:FindObjectForCode("d0_ent_selector").CurrentStage = Tracker:FindObjectForCode("d0_ent_selector_hidden").CurrentStage
-			Tracker:FindObjectForCode("d1_ent_selector").CurrentStage = Tracker:FindObjectForCode("d1_ent_selector_hidden").CurrentStage
-			Tracker:FindObjectForCode("d2_ent_selector").CurrentStage = Tracker:FindObjectForCode("d2_ent_selector_hidden").CurrentStage
-			Tracker:FindObjectForCode("d3_ent_selector").CurrentStage = Tracker:FindObjectForCode("d3_ent_selector_hidden").CurrentStage
-			Tracker:FindObjectForCode("d4_ent_selector").CurrentStage = Tracker:FindObjectForCode("d4_ent_selector_hidden").CurrentStage
-			Tracker:FindObjectForCode("d5_ent_selector").CurrentStage = Tracker:FindObjectForCode("d5_ent_selector_hidden").CurrentStage
-			Tracker:FindObjectForCode("d6_ent_selector").CurrentStage = Tracker:FindObjectForCode("d6_ent_selector_hidden").CurrentStage
-			Tracker:FindObjectForCode("d7_ent_selector").CurrentStage = Tracker:FindObjectForCode("d7_ent_selector_hidden").CurrentStage
-			Tracker:FindObjectForCode("d8_ent_selector").CurrentStage = Tracker:FindObjectForCode("d8_ent_selector_hidden").CurrentStage
+	if Tracker:FindObjectForCode("shuffle_dungeons").CurrentStage == 1 and Tracker:FindObjectForCode("fill_dungeons").CurrentStage == 1 then
+		for _, dungeon in ipairs(DungeonList) do
+			Tracker:FindObjectForCode(dungeon.."_ent_selector").CurrentStage = Tracker:FindObjectForCode(dungeon.."_ent_selector_hidden").CurrentStage
 		end
 	end
 end
@@ -1391,8 +1471,7 @@ function seasons_settings()
 		Tracker:FindObjectForCode("coast_season").CurrentStage = 3
 		Tracker:FindObjectForCode("remains_season").CurrentStage = 3
 		Tracker:FindObjectForCode("horon_village_season").CurrentStage = 4
-	end
-	if Tracker:FindObjectForCode("default_seasons").CurrentStage == 1 then
+	elseif Tracker:FindObjectForCode("default_seasons").CurrentStage == 1 then
 		for _, region in pairs(region_list) do
 			Tracker:FindObjectForCode(region.."_season").CurrentStage = 4
 			Tracker:FindObjectForCode("horon_village_season").CurrentStage = 4

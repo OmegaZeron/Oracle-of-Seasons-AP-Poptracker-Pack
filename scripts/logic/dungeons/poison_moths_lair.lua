@@ -46,25 +46,13 @@ PoisonPols:connect_one_way(PoisonBombWallChest, CanBombWall)
 -- 2 keys
 PoisonWaterRoom:connect_one_way_entrance(PoisonMimicChest, function()
 	return All(
-		Any(
-			D3KeyCount(2),
-			All(
-				D3KeyCount(1),
-				AccessibilityLevel.SequenceBreak
-			)
-		),
+		D3KeyCount(2, 1),
 		CanNormalKill
 	)
 end)
 PoisonOmuaiDoorstep:connect_one_way_entrance(Omuai, function()
 	return All(
-		Any(
-			D3KeyCount(2),
-			All(
-				D3KeyCount(1),
-				AccessibilityLevel.SequenceBreak
-			)
-		),
+		D3KeyCount(2, 1),
 		Bracelet,
 		CanArmorKill
 	)

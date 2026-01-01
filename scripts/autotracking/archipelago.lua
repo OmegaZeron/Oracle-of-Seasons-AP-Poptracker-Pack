@@ -1,26 +1,74 @@
-ScriptHost:LoadScript("scripts/autotracking/item_mapping.lua")
-ScriptHost:LoadScript("scripts/autotracking/location_mapping.lua")
+require("scripts.autotracking.item_mapping")
+require("scripts.autotracking.location_mapping")
 
 CUR_INDEX = -1
 SLOT_DATA = nil
-LOCAL_ITEMS = {}
-GLOBAL_ITEMS = {}
-WORLD_VERSION = "13"
+WORLD_VERSION = "15"
+IGNORE_VERSION = false
+ALL_LOCATIONS = {}
+IS_MANUAL_CLICK = true
+DEFAULT_SEED = "default"
+ROOM_SEED = DEFAULT_SEED
 
 local AutoCollectLocationTable = {}
 
-function onClear(slot_data)
-	if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
-		print(string.format("called onClear, slot_data:\n%s", dump(slot_data)))
+function PreOnClear()
+	PLAYER_ID = Archipelago.PlayerNumber or -1
+	TEAM_NUMBER = Archipelago.TeamNumber or 0
+
+	if Archipelago.PlayerNumber > -1 then
+		if #ALL_LOCATIONS > 0 then
+			ALL_LOCATIONS = {}
+		end
+		for _, value in pairs(Archipelago.MissingLocations) do
+			table.insert(ALL_LOCATIONS, #ALL_LOCATIONS + 1, value)
+		end
+
+		for _, value in pairs(Archipelago.CheckedLocations) do
+			table.insert(ALL_LOCATIONS, #ALL_LOCATIONS + 1, value)
+		end
 	end
 
+	local manualStorageItem = Tracker:FindObjectForCode(ManualStorageCode)
+	if manualStorageItem then
+		manualStorageItem = manualStorageItem.ItemState
+	end
+	local seedBase = (Archipelago.Seed or #ALL_LOCATIONS).."_"..Archipelago.TeamNumber.."_"..Archipelago.PlayerNumber
+	if manualStorageItem and (ROOM_SEED == DEFAULT_SEED or ROOM_SEED ~= seedBase) then
+		ROOM_SEED = seedBase
+		if #manualStorageItem.ManualLocations > 10 then
+			manualStorageItem.ManualLocations[manualStorageItem.ManualLocationsOrder[1]] = nil
+			table.remove(manualStorageItem.ManualLocationsOrder, 1)
+		end
+		if manualStorageItem.ManualLocations[ROOM_SEED] == nil then
+			manualStorageItem.ManualLocations[ROOM_SEED] = {}
+			table.insert(manualStorageItem.ManualLocationsOrder, ROOM_SEED)
+		end
+	end
+end
+
+function OnClear(slot_data)
+	if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
+		print(string.format("called OnClear, slot_data:\n%s", dump(slot_data)))
+	end
+
+	SLOT_DATA = slot_data
+
 	Tracker:FindObjectForCode(VersionMismatch).Active = false
-	if slot_data["version"] and not slot_data["version"]:find("^"..WORLD_VERSION) then
+	if not IGNORE_VERSION and slot_data["version"] and not slot_data["version"]:find("^"..WORLD_VERSION) then
 		Tracker:FindObjectForCode(VersionMismatch).Active = true
 		return
 	end
 
-	SLOT_DATA = slot_data
+	IS_MANUAL_CLICK = false
+	local manualStorageItem = Tracker:FindObjectForCode(ManualStorageCode)
+	if manualStorageItem == nil then
+		CreateLuaManualLocationStorage(ManualStorageCode)
+	end
+	manualStorageItem = Tracker:FindObjectForCode(ManualStorageCode).ItemState
+
+	PreOnClear()
+
 	CUR_INDEX = -1
 	-- reset locations
 	for _, location_array in pairs(LOCATION_MAPPING) do
@@ -28,8 +76,14 @@ function onClear(slot_data)
 			local obj = Tracker:FindObjectForCode(location)
 			if obj then
 				if location:sub(1, 1) == "@" then
-					obj.AvailableChestCount = obj.ChestCount
+					---@cast obj LocationSection
+					if manualStorageItem and manualStorageItem.ManualLocations[ROOM_SEED] and manualStorageItem.ManualLocations[ROOM_SEED][obj.FullID] then
+						obj.AvailableChestCount = manualStorageItem.ManualLocations[ROOM_SEED][obj.FullID]
+					else
+						obj.AvailableChestCount = obj.ChestCount
+					end
 				else
+					---@cast obj JsonItem
 					obj.Active = false
 				end
 			end
@@ -59,7 +113,6 @@ function onClear(slot_data)
 					obj.Active = false
 				elseif itemData[2] == "progressive" or itemData[2] == "progressive_set" then
 					obj.CurrentStage = 0
-					obj.Active = false
 				elseif itemData[2] == "consumable" then
 					obj.AcquiredCount = 0
 				elseif AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
@@ -70,9 +123,6 @@ function onClear(slot_data)
 			end
 		end
 	end
-
-	PLAYER_ID = Archipelago.PlayerNumber or -1
-	TEAM_NUMBER = Archipelago.TeamNumber or 0
 
 	if Archipelago.PlayerNumber > -1 then
 		HINTS_ID = "_read_hints_"..TEAM_NUMBER.."_"..PLAYER_ID
@@ -160,6 +210,8 @@ function onClear(slot_data)
 		CurrentRoom = nil
 		OnBounce({["data"] = {["Current Room"] = StartLocationMapping[startLocation]}})
 	end
+
+	IS_MANUAL_CLICK = true
 end
 
 -- called when an item gets collected
@@ -191,37 +243,37 @@ function OnItem(index, item_id, item_name, player_number)
 	if not itemData[1] then
 		return
 	end
-	local obj = Tracker:FindObjectForCode(itemData[1])
-	if obj then
+	local item = Tracker:FindObjectForCode(itemData[1])
+	if item then
 		if itemData[2] == "toggle" then
-			obj.Active = true
+			item.Active = true
 		elseif itemData[2] == "progressive" then
 			local inc = 1
 			if (itemData[3]) then
 				inc = itemData[3]
 			end
-			obj.CurrentStage = obj.CurrentStage + inc
+			item.CurrentStage = item.CurrentStage + inc
 		elseif itemData[2] == "consumable" then
 			local mult = 1
 			if (itemData[3]) then
 				mult = itemData[3]
 			end
-			obj.AcquiredCount = obj.AcquiredCount + (obj.Increment * mult)
+			item.AcquiredCount = item.AcquiredCount + (item.Increment * mult)
 		elseif itemData[2] == "progressive_set" then
-			if obj.CurrentStage < itemData[3] then
-				obj.CurrentStage = itemData[3]
+			if item.CurrentStage < itemData[3] then
+				item.CurrentStage = itemData[3]
 			end
 		elseif AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
 			print(string.format("onItem: unknown item type %s for code %s", itemData[2], itemData[1]))
 		end
 		if (AutoCollectLocationTable[itemData[1]]) then
-			for _, autoTable in ipairs(AutoCollectLocationTable[itemData[1]]) do
-				if (type(autoTable) == "function") then
-					autoTable()
+			for _, autoCollectData in ipairs(AutoCollectLocationTable[itemData[1]]) do
+				if (type(autoCollectData) == "function") then
+					autoCollectData()
 				else
-					local toCollect = Tracker:FindObjectForCode(autoTable)
+					local toCollect = Tracker:FindObjectForCode(autoCollectData)
 					if (toCollect) then
-						if autoTable:sub(1, 1) == "@" then
+						if autoCollectData:sub(1, 1) == "@" then
 							---@cast toCollect LocationSection
 							toCollect.AvailableChestCount = toCollect.AvailableChestCount - 1
 						else
@@ -250,6 +302,7 @@ function OnLocation(location_id, location_name)
 	if Tracker:FindObjectForCode(VersionMismatch).Active then
 		return
 	end
+	IS_MANUAL_CLICK = false
 	SetAsStale()
 	local location_array = LOCATION_MAPPING[location_id]
 	if not location_array or not location_array[1] then
@@ -281,20 +334,14 @@ function OnLocation(location_id, location_name)
 					Tracker:FindObjectForCode(location).AvailableChestCount = 0
 				end
 			end
-			ClearHints(location_id)
+			UpdateHints(location_id, Highlight.None)
 		else
 			print(string.format("onLocation: could not find object for code %s", location))
 		end
 	end
-end
 
--- called when a locations is scouted
--- function onScout(location_id, location_name, item_id, item_name, item_player)
--- 	if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
--- 		print(string.format("called onScout: %s, %s, %s, %s, %s", location_id, location_name, item_id, item_name,
--- 			item_player))
--- 	end
--- end
+	IS_MANUAL_CLICK = true
+end
 
 function OnNotify(key, value, old_value)
 	if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
@@ -308,9 +355,9 @@ function OnNotify(key, value, old_value)
 	if key == HINTS_ID and Highlight then
 		for _, hint in ipairs(value) do
 			if not hint.found and hint.finding_player == Archipelago.PlayerNumber then
-				UpdateHints(hint.location, hint.status)
+				UpdateHints(hint.location, PriorityToHighlight[hint.status])
 			else
-				ClearHints(hint.location)
+				UpdateHints(hint.location, Highlight.None)
 			end
 		end
 	elseif key == DATA_STORAGE_ID then
@@ -349,6 +396,8 @@ function OnNotifyLaunch(key, value)
 end
 
 -- called when a location is hinted or the status of a hint is changed
+---@param locationID number
+---@param status highlight
 function UpdateHints(locationID, status)
 	if not Highlight then
 		return
@@ -357,28 +406,9 @@ function UpdateHints(locationID, status)
 	-- print("Hint", dump(locations), status)
 	for _, location in ipairs(locations) do
 		local section = Tracker:FindObjectForCode(location)
-		---@cast section LocationSection
 		if section then
-			section.Highlight = PriorityToHighlight[status]
-		else
-			print(string.format("No object found for code: %s", location))
-		end
-	end
-end
-
-function ClearHints(locationID)
-	if not Highlight then
-		return
-	end
-	local locations = LOCATION_MAPPING[locationID]
-	if (not locations) then
-		return
-	end
-	for _, location in ipairs(locations) do
-		local section = Tracker:FindObjectForCode(location)
-		---@cast section LocationSection
-		if section then
-			section.Highlight = Highlight.None
+			---@cast section LocationSection
+			section.Highlight = status
 		else
 			print(string.format("No object found for code: %s", location))
 		end
@@ -455,22 +485,80 @@ function OnBounce(json)
 	end
 end
 
+---@param location LocationSection
+function ManualLocationHandler(location)
+	if IS_MANUAL_CLICK then
+		local manualStorageItem = Tracker:FindObjectForCode(ManualStorageCode)
+		if not manualStorageItem then
+			return
+		end
+		manualStorageItem = manualStorageItem.ItemState
+		if not manualStorageItem then
+			return
+		end
+		if Archipelago.PlayerNumber == -1 and ROOM_SEED ~= DEFAULT_SEED then
+			-- seed is from previous connection
+			ROOM_SEED = DEFAULT_SEED
+			manualStorageItem.ManualLocations[ROOM_SEED] = {}
+		end
+		local fullID = location.FullID
+		if not manualStorageItem.ManualLocations[ROOM_SEED] then
+			manualStorageItem.ManualLocations[ROOM_SEED] = {}
+		end
+		if location.AvailableChestCount < location.ChestCount then
+			-- add to list
+			manualStorageItem.ManualLocations[ROOM_SEED][fullID] = location.AvailableChestCount
+			if Highlight then
+				location.Highlight = Highlight.None
+			end
+		else
+			-- remove from list of set back to max chestcount
+			manualStorageItem.ManualLocations[ROOM_SEED][fullID] = nil
+			if Highlight then
+				-- re-grab hints since it was cleared earlier
+				Archipelago:Get({HINTS_ID})
+			end
+		end
+	end
+end
+
 function OnVersionCheckChanged(code)
 	if not LOADED then
 		return
 	end
 	if Tracker:FindObjectForCode(VersionMismatch).Active then
+		ScriptHost:AddOnLocationSectionChangedHandler("version mismatch ignore handler", OnIgnoreVersionMismatch)
 		Tracker:AddLayouts("layouts/version_mismatch.json")
 	else
 		Tracker:AddLayouts("layouts/tracker_layouts.json")
+		if IGNORE_VERSION then
+			OnClear(SLOT_DATA)
+		end
+	end
+end
+
+---@param section LocationSection
+function OnIgnoreVersionMismatch(section)
+	if section.FullID == "Version Mismatch/Ignore One Time/" then
+		Tracker:FindObjectForCode("@Version Mismatch/Ignore One Time/").AvailableChestCount = 1
+		IGNORE_VERSION = true
+		Tracker:FindObjectForCode(VersionMismatch).Active = false
+		-- deprecated, change this to RemoveOnLocationSectionChangedHandler eventually
+		ScriptHost:RemoveOnLocationSectionHandler("version mismatch ignore handler")
 	end
 end
 
 function RevealDungeon(dungeon)
-	for i = 1, 8 do
-		if Tracker:FindObjectForCode("d"..i.."_ent_selector_hidden").CurrentStage + 1 == dungeon then
-			Tracker:FindObjectForCode("d"..i.."_ent_selector").CurrentStage = Tracker:FindObjectForCode("d"..i.."_ent_selector_hidden").CurrentStage
-		end
+	Tracker:FindObjectForCode("d"..dungeon.."_ent_selector").CurrentStage = Tracker:FindObjectForCode("d"..dungeon.."_ent_selector_hidden").CurrentStage
+end
+
+function RevealEssence(dungeon)
+	if SLOT_DATA["options"]["shuffle_essences"] or SLOT_DATA["options"]["show_dungeons_with_essence"] == 0 then
+		return
+	end
+	-- get the following from slot_data
+	if SLOT_DATA["essence?"] then
+		Tracker:FindObjectForCode("d"..dungeon.."_label").Active = true
 	end
 end
 
@@ -484,7 +572,7 @@ function RevealEssence(dungeon)
 	end
 end
 
-Archipelago:AddClearHandler("clear handler", onClear)
+Archipelago:AddClearHandler("clear handler", OnClear)
 if AUTOTRACKER_ENABLE_ITEM_TRACKING then
 	Archipelago:AddItemHandler("item handler", OnItem)
 end

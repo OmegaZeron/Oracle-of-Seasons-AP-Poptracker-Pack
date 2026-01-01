@@ -79,6 +79,89 @@
 				]
 			},
 			{
+				"name": "Enter D0 (Linked)",
+				"visibility_rules": ["linked_cave_on"],
+				"sections": [
+					{
+						"name": "Hero's Cave (Linked)",
+						"access_rules": ["{^$CanReach|LinkedCave}"],
+						"chest_unopened_img": "images/labels/dungeon_eye.png",
+						"chest_opened_img": "images/labels/dungeon_eye_disabled.png"
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 651,
+						"y": 537,
+						"shape": "trapezoid",
+						"restrict_visibility_rules": ["linked_cave_desert"]
+					}
+				]
+			},
+			{
+				"name": "Hero's Cave (Linked)",
+				"visibility_rules": ["linked_cave_on"],
+				"sections": [
+					{
+						"name": "Exit the Dungeon",
+						"ref": "Hero's Cave (Linked)/Exit the Dungeon/"
+					},
+					{
+						"name": "Alternative Entrance Chest",
+						"ref": "Hero's Cave (Linked)/Alternative Entrance Chest/"
+					},
+					{
+						"name": "F1 Chest Chest",
+						"ref": "Hero's Cave (Linked)/F1 Chest/"
+					},
+					{
+						"name": "F2 Keydrop",
+						"ref": "Hero's Cave (Linked)/F2 Keydrop/"
+					},
+					{
+						"name": "F2 Chest",
+						"ref": "Hero's Cave (Linked)/F2 Chest/"
+					},
+					{
+						"name": "F3 Torch Keydrop",
+						"ref": "Hero's Cave (Linked)/F3 Torch Keydrop/"
+					},
+					{
+						"name": "F3 Flooded Keydrop",
+						"ref": "Hero's Cave (Linked)/F3 Flooded Keydrop/"
+					},
+					{
+						"name": "F3 Chest",
+						"ref": "Hero's Cave (Linked)/F3 Chest/"
+					},
+					{
+						"name": "F4 Chest",
+						"ref": "Hero's Cave (Linked)/F4 Chest/"
+					},
+					{
+						"name": "F5 Gauntlet",
+						"ref": "Hero's Cave (Linked)/F5 Gauntlet/"
+					},
+					{
+						"name": "F5 Boomerang Maze",
+						"ref": "Hero's Cave (Linked)/F5 Boomerang Maze/"
+					},
+					{
+						"name": "Final Chest",
+						"ref": "Hero's Cave (Linked)/Final Chest/"
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 671,
+						"y": 537,
+						"restrict_visibility_rules": ["linked_cave_desert"]
+					}
+				]
+			},
+			{
 				"name": "Maple",
 				"sections": [
 					{

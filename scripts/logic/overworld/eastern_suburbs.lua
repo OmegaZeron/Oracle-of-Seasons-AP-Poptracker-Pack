@@ -79,6 +79,22 @@ SamasaDesert:connect_one_way(SamasaScrub, function()
 		AccessibilityLevel.Inspect
 	)
 end, {SnakeRupeeRoom, AncientRupeeRoom, HoronVillageOldMan, NorthHoronOldMan, SuburbsOldMan, NorthHolodrumPlainOldMan, SouthHolodrumPlainOldMan, GoronMountainOldMan, TarmOldMan, WesternCoastOldMan})
+SamasaDesert:connect_two_ways_entrance(LinkedCave, function()
+	return All(
+		LinkedCaveDesert,
+		Any(
+			ShuffleDungeonOff,
+			LCLeadsToLC
+		)
+	)
+end)
+SamasaDesert:connect_one_way_entrance(LinkedCaveLedge, function()
+	return All(
+		LinkedCaveDesert,
+		LCAltVanilla,
+		CanDestroyBushFlute(true)
+	)
+end)
 
 -- upper suburbs
 UpperEasternSuburbs:connect_one_way(EasternSuburbsFindSeason)
@@ -227,6 +243,12 @@ SnakesRemains:connect_two_ways_entrance(HerosCaveFoyer, function()
 	return All(
 		ShuffleDungeonOn,
 		D2LeadsToD0
+	)
+end)
+SnakesRemains:connect_two_ways_entrance(LinkedCaveFoyer, function()
+	return All(
+		ShuffleDungeonOn,
+		D2LeadsToLC
 	)
 end)
 SnakesRemains:connect_one_way_entrance(GnarledFoyer, function()

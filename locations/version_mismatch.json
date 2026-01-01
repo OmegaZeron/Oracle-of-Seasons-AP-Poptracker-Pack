@@ -1,0 +1,21 @@
+[
+	{
+		"name": "Version Mismatch",
+		"chest_unopened_img": "images/labels/chest.png",
+		"chest_opened_img": "images/labels/chestopen.png",
+		"color": "#00ff08",
+		"children": [
+			{
+				"name": "Ignore One Time",
+				"sections": [{}],
+				"map_locations": [
+					{
+						"map": "version_mismatch",
+						"x": 149,
+						"y": 133
+					}
+				]
+			}
+        ]
+    }
+]

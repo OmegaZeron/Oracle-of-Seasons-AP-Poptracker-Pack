@@ -229,6 +229,12 @@ SwordAndShieldMaze:connect_two_ways_entrance(HerosCaveFoyer, function()
 		D8LeadsToD0
 	)
 end)
+SwordAndShieldMaze:connect_two_ways_entrance(LinkedCaveFoyer, function()
+	return All(
+		ShuffleDungeonOn,
+		D8LeadsToLC
+	)
+end)
 SwordAndShieldMaze:connect_one_way_entrance(GnarledFoyer, function()
 	return All(
 		ShuffleDungeonOn,

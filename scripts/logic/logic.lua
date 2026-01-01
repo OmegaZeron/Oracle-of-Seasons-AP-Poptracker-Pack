@@ -158,6 +158,9 @@ function StateChange()
 	StartLocation:discover(AccessibilityLevel.Normal)
 end
 
+---comment
+---@param name any
+---@return accessibilityLevel
 function CanReach(name)
 	if IsStale then
 		StateChange()

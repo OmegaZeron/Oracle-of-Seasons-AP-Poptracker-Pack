@@ -96,6 +96,18 @@
 		"codes": "d0_alt_entrance_label"
 	},
 	{
+		"name": "Linked Hero's Cave Label",
+		"type": "static",
+		"img": "images/labels/linked_cave_label.png",
+		"codes": "linked_cave_label"
+	},
+	{
+		"name": "Linked Hero's Cave Alt Entrance Label",
+		"type": "static",
+		"img": "images/labels/lc_alt_entrance_label.png",
+		"codes": "lc_alt_entrance_label"
+	},
+	{
 		"name": "D2 Alt Entrance Label",
 		"type": "static",
 		"img": "images/labels/d2_alt_entrance_label.png",
@@ -357,6 +369,12 @@
 		"codes": "d0_label"
 	},
 	{
+		"name": "LC Label",
+		"type": "toggle",
+		"img": "images/labels/LC_label.png",
+		"codes": "lc_label"
+	},
+	{
 		"name": "D1 Label",
 		"type": "toggle",
 		"img": "images/labels/D1_label.png",
@@ -409,6 +427,12 @@
 		"type": "toggle",
 		"img": "images/labels/D0_entrance.png",
 		"codes": "d0_icon"
+	},
+	{
+		"name": "LC Icon",
+		"type": "toggle",
+		"img": "images/labels/LC_entrance.png",
+		"codes": "lc_icon"
 	},
 	{
 		"name": "D1 Icon",

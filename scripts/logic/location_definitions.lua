@@ -341,6 +341,22 @@ HerosCaveLedge = OoSLocation.New("HerosCaveLedge")
 HerosCaveUnderground = OoSLocation.New("HerosCaveUnderground")
 HerosCavePostKey = OoSLocation.New("HerosCavePostKey")
 
+-- Linked Hero's Cave
+LinkedCave = OoSLocation.New("LinkedCave")
+LinkedCaveFoyer = OoSLocation.New("LinkedCaveFoyer")
+LinkedCaveLedge = OoSLocation.New("LinkedCaveLedge")
+LinkedCaveF1Chest = OoSLocation.New("LinkedCaveF1Chest")
+LinkedCaveF2Keydrop = OoSLocation.New("LinkedCaveF2Keydrop")
+LinkedCaveF2Chest = OoSLocation.New("LinkedCaveF2Chest")
+LinkedCaveF3TorchKeyDrop = OoSLocation.New("LinkedCaveF3TorchKeyDrop")
+LinkedCaveF3FloodedRoom = OoSLocation.New("LinkedCaveF3FloodedRoom")
+LinkedCaveF3FloodedKeydrop = OoSLocation.New("LinkedCaveF3FloodedKeydrop")
+LinkedCaveF3Chest = OoSLocation.New("LinkedCaveF3Chest")
+LinkedCaveF4Chest = OoSLocation.New("LinkedCaveF4Chest")
+LinkedCaveF5Gauntlet = OoSLocation.New("LinkedCaveF5Gauntlet")
+LinkedCaveF5BoomerangMaze = OoSLocation.New("LinkedCaveF5BoomerangMaze")
+LinkedCaveFinalChest = OoSLocation.New("LinkedCaveFinalChest")
+
 -- Gnarled Root Dungeon
 GnarledFoyer = OoSLocation.New("GnarledFoyer")
 GnarledFloormasters = OoSLocation.New("GnarledFloormasters")

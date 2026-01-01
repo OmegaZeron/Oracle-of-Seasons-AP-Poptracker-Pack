@@ -44,7 +44,7 @@ DancingSpikeTrap:connect_one_way(DancingWaterRing, function()
 				MediumLogic
 			),
 			All(
-				HasRod,
+				CanKillWithPit,
 				Any(
 					Boomerang,
 					SwitchHook
@@ -76,6 +76,10 @@ DancingPostWaterRollers:connect_one_way(DancingPoolDrop, function()
 			All(
 				Bracelet,
 				MediumLogic
+			),
+			All(
+				CanKillWithPit,
+				SwitchHook
 			)
 		),
 		Any(

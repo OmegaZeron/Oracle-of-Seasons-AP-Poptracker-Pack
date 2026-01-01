@@ -30,6 +30,12 @@
 		"img": "images/maps/heros_cave.png"
 	},
 	{
+		"name": "linked_cave",
+		"location_size": 22,
+		"location_border_thickness": 2,
+		"img": "images/maps/linked_cave.png"
+	},
+	{
 		"name": "gnarled_root_dungeon",
 		"location_size": 16,
 		"location_border_thickness": 1,

@@ -645,6 +645,13 @@
 		"max_quantity": 1
 	},
 	{
+		"name": "LC Small Key",
+		"type": "consumable",
+		"img": "images/items/key.png",
+		"codes": "lcsk",
+		"max_quantity": 4
+	},
+	{
 		"name": "Fertile Soil",
 		"type": "toggle",
 		"img": "images/items/D1.png",
@@ -863,6 +870,12 @@
 		"type": "toggle",
 		"img": "images/items/master_key.png",
 		"codes": "d0_master_key"
+	},
+	{
+		"name": "LC Master Key",
+		"type": "toggle",
+		"img": "images/items/master_key.png",
+		"codes": "lc_master_key"
 	},
 	{
 		"name": "D1 Master Key",

@@ -259,6 +259,20 @@ HerosCaveFoyer:connect_one_way_entrance(NorthSpoolSwamp, function()
 		Flippers
 	)
 end)
+PoisonMothLair:connect_one_way_entrance(LinkedCaveFoyer, function()
+	return All(
+		ShuffleDungeonOn,
+		D3LeadsToLC
+	)
+end)
+-- exit from alt entrance
+LinkedCaveFoyer:connect_one_way_entrance(NorthSpoolSwamp, function()
+	return All(
+		ShuffleDungeonOn,
+		D3LeadsToLC,
+		Flippers
+	)
+end)
 PoisonMothLair:connect_one_way_entrance(GnarledFoyer, function()
 	return All(
 		ShuffleDungeonOn,

@@ -275,6 +275,12 @@ GnarledRootDungeon:connect_two_ways_entrance(HerosCaveFoyer, function()
 		D1LeadsToD0
 	)
 end)
+GnarledRootDungeon:connect_two_ways_entrance(LinkedCaveFoyer, function()
+	return All(
+		ShuffleDungeonOn,
+		D1LeadsToLC
+	)
+end)
 GnarledRootDungeon:connect_two_ways_entrance(SnakeFoyer, function()
 	return All(
 		ShuffleDungeonOn,
@@ -323,6 +329,12 @@ UnicornCave:connect_two_ways_entrance(HerosCaveFoyer, function()
 	return All(
 		ShuffleDungeonOn,
 		D5LeadsToD0
+	)
+end)
+UnicornCave:connect_two_ways_entrance(LinkedCaveFoyer, function()
+	return All(
+		ShuffleDungeonOn,
+		D5LeadsToLC
 	)
 end)
 UnicornCave:connect_one_way_entrance(GnarledFoyer, function()

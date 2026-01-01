@@ -3,7 +3,7 @@ require("scripts.autotracking.location_mapping")
 
 CUR_INDEX = -1
 SLOT_DATA = nil
-WORLD_VERSION = "14"
+WORLD_VERSION = "15"
 IGNORE_VERSION = false
 ALL_LOCATIONS = {}
 IS_MANUAL_CLICK = true

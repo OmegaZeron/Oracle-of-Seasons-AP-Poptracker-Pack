@@ -342,6 +342,14 @@ CurrentLocationMapping = {
 	},
 	[0x405] = {{["type"] = "Autotab", ["tab"] = {"Hero's Cave"}}}, -- alt entrance
 	[0x406] = {{["type"] = "DungeonIn", ["dungeon"] = "d0", ["loc"] = "@Hero's Cave/Exit the Dungeon/"}}, -- sword chest
+	-- Linked Cave
+	[0x530] = {
+		-- main entrance
+		{["type"] = "Autotab", ["tab"] = {"Hero's Cave (Linked)"}},
+		{["type"] = "DungeonIn", ["dungeon"] = "lc", ["loc"] = "@Hero's Cave (Linked)/Exit the Dungeon/"}
+	},
+	[0x52C] = {{["type"] = "Autotab", ["tab"] = {"Hero's Cave (Linked)"}}}, -- alt entrance
+	[0x534] = {{["type"] = "DungeonIn", ["dungeon"] = "lc", ["loc"] = "@Hero's Cave (Linked)/Exit the Dungeon/"}},
 	-- D1
 	[0x41C] = {
 		{["type"] = "Autotab", ["tab"] = {"Gnarled Root Dungeon"}},
@@ -754,17 +762,20 @@ PortalMapping = {
 }
 DungeonDictionary = {
 	["d0"] = 1,
-	["d1"] = 2,
-	["d2"] = 3,
-	["d3"] = 4,
-	["d4"] = 5,
-	["d5"] = 6,
-	["d6"] = 7,
-	["d7"] = 8,
-	["d8"] = 9
+	["d11"] = 2,
+	["d1"] = 3,
+	["d2"] = 4,
+	["d3"] = 5,
+	["d4"] = 6,
+	["d5"] = 7,
+	["d6"] = 8,
+	["d7"] = 9,
+	["d8"] = 10
 }
+DungeonList = {"d0","lc","d1","d2","d3","d4","d5","d6","d7","d8"}
 DungeonMapping = {
 	["d0"] = "d0_ent_selector_hidden",
+	["d11"] = "lc_ent_selector_hidden",
 	["d1"] = "d1_ent_selector_hidden",
 	["d2"] = "d2_ent_selector_hidden",
 	["d3"] = "d3_ent_selector_hidden",
@@ -805,6 +816,7 @@ SeeSeasonVars = {
 }
 DungeonSetVars = {
 	{"d0 entrance selector", D0EntranceSelector, "@Western Coast/Enter D0/Hero's Cave"},
+	{"lc entrance selector", LCEntranceSelector, "@Western Coast/Enter D0 (Linked)/Hero's Cave (Linked)"},
 	{"d1 entrance selector", D1EntranceSelector, "@North Horon/Enter D1/Gnarled Root Dungeon"},
 	{"d2 entrance selector", D2EntranceSelector, "@Eastern Suburbs/Enter D2/Snake's Remains"},
 	{"d3 entrance selector", D3EntranceSelector, "@Spool Swamp/Enter D3/Poison Moth's Lair"},

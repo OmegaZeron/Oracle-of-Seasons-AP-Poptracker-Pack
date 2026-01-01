@@ -73,5 +73,173 @@
 				]
 			}
 		]
+	},
+	{
+		"name": "Hero's Cave (Linked)",
+		"chest_unopened_img": "images/labels/chest.png",
+		"chest_opened_img": "images/labels/chestopen.png",
+		"color": "#00ff08",
+		"visibility_rules": ["linked_cave_on"],
+		"children": [
+			{
+				"name": "Exit the Dungeon",
+				"visibility_rules": ["shuffledungeonon, lc_alt_entrance_vanilla"],
+				"chest_unopened_img": "images/labels/dungeon_eye.png",
+				"chest_opened_img": "images/labels/dungeon_eye_disabled.png",
+				"sections": [{"access_rules": ["{^$CanReach|LinkedCaveFoyer}"]}],
+				"map_locations": [
+					{
+						"map": "linked_cave",
+						"x": 120,
+						"y": 1035,
+						"shape": "trapezoid",
+						"size": 24
+					}
+				]
+			},
+			{
+				"name": "Alternative Entrance Chest",
+				"sections": [
+					{"access_rules": ["^$CanReach|LinkedCaveLedge"]}
+				],
+				"map_locations": [
+					{
+						"map": "linked_cave",
+						"x": 23,
+						"y": 744
+					}
+				]
+			},
+			{
+				"name": "F1 Chest",
+				"sections": [
+					{"access_rules": ["^$CanReach|LinkedCaveF1Chest"]}
+				],
+				"map_locations": [
+					{
+						"map": "linked_cave",
+						"x": 439,
+						"y": 1000
+					}
+				]
+			},
+			{
+				"name": "F2 Keydrop",
+				"sections": [
+					{"access_rules": ["^$CanReach|LinkedCaveF2Keydrop"]}
+				],
+				"map_locations": [
+					{
+						"map": "linked_cave",
+						"x": 544,
+						"y": 920
+					}
+				]
+			},
+			{
+				"name": "F2 Chest",
+				"sections": [
+					{"access_rules": ["^$CanReach|LinkedCaveF2Chest"]}
+				],
+				"map_locations": [
+					{
+						"map": "linked_cave",
+						"x": 848,
+						"y": 840
+					}
+				]
+			},
+			{
+				"name": "F3 Torch Keydrop",
+				"sections": [
+					{"access_rules": ["^$CanReach|LinkedCaveF3TorchKeyDrop"]}
+				],
+				"map_locations": [
+					{
+						"map": "linked_cave",
+						"x": 279,
+						"y": 464
+					}
+				]
+			},
+			{
+				"name": "F3 Flooded Keydrop",
+				"sections": [
+					{"access_rules": ["^$CanReach|LinkedCaveF3FloodedKeydrop"]}
+				],
+				"map_locations": [
+					{
+						"map": "linked_cave",
+						"x": 121,
+						"y": 624
+					}
+				]
+			},
+			{
+				"name": "F3 Chest",
+				"sections": [
+					{"access_rules": ["^$CanReach|LinkedCaveF3Chest"]}
+				],
+				"map_locations": [
+					{
+						"map": "linked_cave",
+						"x": 215,
+						"y": 383
+					}
+				]
+			},
+			{
+				"name": "F4 Chest",
+				"sections": [
+					{"access_rules": ["^$CanReach|LinkedCaveF4Chest"]}
+				],
+				"map_locations": [
+					{
+						"map": "linked_cave",
+						"x": 136,
+						"y": 231
+					}
+				]
+			},
+			{
+				"name": "F5 Gauntlet",
+				"sections": [
+					{"access_rules": ["^$CanReach|LinkedCaveF5Gauntlet"]}
+				],
+				"map_locations": [
+					{
+						"map": "linked_cave",
+						"x": 607,
+						"y": 87
+					}
+				]
+			},
+			{
+				"name": "F5 Boomerang Maze",
+				"sections": [
+					{"access_rules": ["^$CanReach|LinkedCaveF5BoomerangMaze"]}
+				],
+				"map_locations": [
+					{
+						"map": "linked_cave",
+						"x": 832,
+						"y": 136
+					}
+				]
+			},
+			{
+				"name": "Final Chest",
+				"sections": [
+					{"access_rules": ["^$CanReach|LinkedCaveFinalChest"]}
+				],
+				"map_locations": [
+					{
+						"map": "linked_cave",
+						"x": 848,
+						"y": 392
+					}
+				]
+			}
+		]
 	}
 ]

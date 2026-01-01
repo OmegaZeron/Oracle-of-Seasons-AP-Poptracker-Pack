@@ -915,6 +915,16 @@ function CanKillMoldorm(pitAvailable)
 	)
 end
 
+function CanCompleteLinkedPuzzle()
+	local foundDungeons = 0
+	for i = 1, 8 do
+		if Tracker:FindObjectForCode("d"..i.."_ent_selector").CurrentStage ~= 0 then
+			foundDungeons = foundDungeons + 1
+		end
+	end
+	return foundDungeons >= 7
+end
+
 function CanFarmRupees()
 	return Any(
 		CanNormalKill(false, false),
@@ -923,6 +933,9 @@ function CanFarmRupees()
 end
 
 function HasRupees(count)
+	if (count == 0 or Has(Shovel) and HardLogic() == AccessibilityLevel.Normal) then
+		return true
+	end
 	if (CanFarmRupees() < AccessibilityLevel.SequenceBreak) then
 		return false
 	end
@@ -1242,6 +1255,14 @@ function GetCuccos()
 	return availableCuccos
 end
 
+function LCKeyCount(needed)
+	local currentKeys = Tracker:ProviderCountForCode(LCSmallKey)
+	return Any(
+		currentKeys >= needed,
+		LCMasterKey
+	)
+end
+
 function D1KeyCount(needed, ool)
 	local currentKeys = Tracker:ProviderCountForCode(D1SmallKey)
 	return Any(
@@ -1414,13 +1435,12 @@ function dungeon_settings()
 	if (not LOADED) then
 		return
 	end
-	local dungeon_list = {"d0","d1","d2","d3","d4","d5","d6","d7","d8"}
 	if Tracker:FindObjectForCode("shuffle_dungeons").CurrentStage == 0 then
-		for index, dungeon in pairs(dungeon_list) do
+		for index, dungeon in ipairs(DungeonList) do
 			Tracker:FindObjectForCode(dungeon.."_ent_selector").CurrentStage = index
 		end
 	else
-		for index, dungeon in pairs(dungeon_list) do
+		for _, dungeon in ipairs(DungeonList) do
 			Tracker:FindObjectForCode(dungeon.."_ent_selector").CurrentStage = 0
 		end
 	end
@@ -1428,8 +1448,8 @@ end
 
 function display_dungeons()
 	if Tracker:FindObjectForCode("shuffle_dungeons").CurrentStage == 1 and Tracker:FindObjectForCode("fill_dungeons").CurrentStage == 1 then
-		for i = 0, 8 do
-			Tracker:FindObjectForCode("d"..i.."_ent_selector").CurrentStage = Tracker:FindObjectForCode("d"..i.."_ent_selector_hidden").CurrentStage
+		for _, dungeon in ipairs(DungeonList) do
+			Tracker:FindObjectForCode(dungeon.."_ent_selector").CurrentStage = Tracker:FindObjectForCode(dungeon.."_ent_selector_hidden").CurrentStage
 		end
 	end
 end

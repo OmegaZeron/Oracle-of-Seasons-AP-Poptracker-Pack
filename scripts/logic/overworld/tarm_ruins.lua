@@ -226,6 +226,12 @@ AncientRuins:connect_two_ways_entrance(HerosCaveFoyer, function()
 		D6LeadsToD0
 	)
 end)
+AncientRuins:connect_two_ways_entrance(LinkedCaveFoyer, function()
+	return All(
+		ShuffleDungeonOn,
+		D6LeadsToLC
+	)
+end)
 AncientRuins:connect_one_way_entrance(GnarledFoyer, function()
 	return All(
 		ShuffleDungeonOn,

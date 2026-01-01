@@ -159,19 +159,22 @@ CryptFastPlatform:connect_one_way(CryptFastPlatformChest, function() return Has(
 CryptDarknutBridge:connect_one_way_entrance(PoeSisters, function()
 	return All(
 		D7KeyCount(4, 3),
+		Jump3,
 		Any(
-			CanKillMoldorm,
 			All(
-				CanKillMoldorm(true),
-				MediumLogic
-			)
-		),
-		Any(
+				Any(
+					CanKillMoldorm,
+					All(
+						CanKillMoldorm(true),
+						MediumLogic
+					)
+				),
+				JumpLiquid3 -- not actually liquid, but diagonal pit
+			),
 			All(
 				SwitchHook,
 				MediumLogic
-			),
-			JumpLiquid3 -- not actually liquid, but diagonal pit
+			)
 		)
 	)
 end)

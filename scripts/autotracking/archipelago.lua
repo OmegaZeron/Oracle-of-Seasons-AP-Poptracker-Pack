@@ -197,7 +197,9 @@ function OnClear(slot_data)
 			Tracker:FindObjectForCode("d"..i.."_map").Active = true
 			Tracker:FindObjectForCode("d"..i.."_compass").Active = true
 			RevealDungeon(i)
-			RevealEssence(i)
+			if (slot_data["options"]["show_dungeons_with_essence"] == 1) then
+				RevealEssence(i)
+			end
 		end
 	end
 
@@ -550,16 +552,6 @@ end
 
 function RevealDungeon(dungeon)
 	Tracker:FindObjectForCode("d"..dungeon.."_ent_selector").CurrentStage = Tracker:FindObjectForCode("d"..dungeon.."_ent_selector_hidden").CurrentStage
-end
-
-function RevealEssence(dungeon)
-	if SLOT_DATA["options"]["shuffle_essences"] or SLOT_DATA["options"]["show_dungeons_with_essence"] == 0 then
-		return
-	end
-	-- get the following from slot_data
-	if SLOT_DATA["essence?"] then
-		Tracker:FindObjectForCode("d"..dungeon.."_label").Active = true
-	end
 end
 
 function RevealEssence(dungeon)

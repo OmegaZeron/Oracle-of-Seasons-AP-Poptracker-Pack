@@ -57,6 +57,14 @@
 									}
 								},
 								{
+									"title": "Hero's Cave (Linked)",
+									"icon": "images/labels/old_man.png",
+									"content": {
+										"type": "map",
+										"maps": ["linked_cave"]
+									}
+								},
+								{
 									"title": "Gnarled Root Dungeon",
 									"icon": "images/items/d1.png",
 									"content": {

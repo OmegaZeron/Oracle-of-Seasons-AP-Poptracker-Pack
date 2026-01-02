@@ -251,6 +251,7 @@
 								"item_margin": "-3,-41",
 								"rows": [
 									["d0_label"],
+									["lc_label"],
 									["d1_label"],
 									["d2_label"],
 									["d3_label"],
@@ -268,6 +269,7 @@
 								"item_margin": "14,1",
 								"rows": [
 									["d0_ent"],
+									["lc_ent"],
 									["d1_ent"],
 									["d2_ent"],
 									["d3_ent"],
@@ -284,6 +286,7 @@
 								"item_size": 44,
 								"item_margin": "-14,1",
 								"rows": [
+									["", "", "", "", ""],
 									["", "", "", "", ""],
 									["d1_map", "", "", "d1_compass", ""],
 									["d2_map", "", "", "d2_compass", ""],
@@ -302,6 +305,7 @@
 								"item_margin": "-4,1",
 								"rows": [
 									["d0_master_key", "d0sk", "fill_dungeons"],
+									["lc_master_key", "lcsk", ""],
 									["d1_master_key", "d1sk", "d1bk"],
 									["d2_master_key", "d2sk", "d2bk"],
 									["d3_master_key", "d3sk", "d3bk"],

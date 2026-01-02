@@ -785,6 +785,26 @@ DungeonMapping = {
 	["d7"] = "d7_ent_selector_hidden",
 	["d8"] = "d8_ent_selector_hidden"
 }
+EssencesInWorld = {
+	["Fertile Soil"] = false,
+	["Gift of Time"] = false,
+	["Bright Sun"] = false,
+	["Soothing Rain"] = false,
+	["Nurturing Warmth"] = false,
+	["Blowing Wind"] = false,
+	["Seed of Life"] = false,
+	["Changing Seasons"] = false
+}
+EssenceMapping = {
+	{"Fertile Soil", "d1_label"},
+	{"Gift of Time", "d2_label"},
+	{"Bright Sun", "d3_label"},
+	{"Soothing Rain", "d4_label"},
+	{"Nurturing Warmth", "d5_label"},
+	{"Blowing Wind", "d6_label"},
+	{"Seed of Life", "d7_label"},
+	{"Changing Seasons", "d8_label"}
+}
 SeedMapping = {
 	[0] = EmberSeeds,
 	[1] = ScentSeeds,

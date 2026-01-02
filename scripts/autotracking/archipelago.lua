@@ -124,6 +124,14 @@ function OnClear(slot_data)
 		end
 	end
 
+	-- reset "dungeons with essence" data
+	for k, _ in pairs(EssencesInWorld) do
+		EssencesInWorld[k] = false
+	end
+	for i = 1, 8 do
+		Tracker:FindObjectForCode("d"..i.."_label").Active = false
+	end
+
 	if Archipelago.PlayerNumber > -1 then
 		HINTS_ID = "_read_hints_"..TEAM_NUMBER.."_"..PLAYER_ID
 		DATA_STORAGE_ID = "OoS_"..TEAM_NUMBER.."_"..PLAYER_ID
@@ -183,6 +191,12 @@ function OnClear(slot_data)
 	if (slot_data["old_man_rupee_values"]) then
 		for man, value in pairs(slot_data["old_man_rupee_values"]) do
 			OldMenValues[man][1] = value
+		end
+	end
+
+	if slot_data["essences_in_game"] then
+		for _, v in ipairs(slot_data["essences_in_game"]) do
+			EssencesInWorld[v] = true
 		end
 	end
 
@@ -550,17 +564,19 @@ function OnIgnoreVersionMismatch(section)
 	end
 end
 
+---@param dungeon number
 function RevealDungeon(dungeon)
 	Tracker:FindObjectForCode("d"..dungeon.."_ent_selector").CurrentStage = Tracker:FindObjectForCode("d"..dungeon.."_ent_selector_hidden").CurrentStage
 end
 
+---@param dungeon number
 function RevealEssence(dungeon)
-	if SLOT_DATA["options"]["shuffle_essences"] or SLOT_DATA["options"]["show_dungeons_with_essence"] == 0 then
+	if SLOT_DATA["options"]["shuffle_essences"] ~= 0 or SLOT_DATA["options"]["show_dungeons_with_essence"] == 0 then
 		return
 	end
-	-- get the following from slot_data
-	if SLOT_DATA["essence?"] then
-		Tracker:FindObjectForCode("d"..dungeon.."_label").Active = true
+	if EssencesInWorld[EssenceMapping[dungeon][1]] then
+		Tracker:FindObjectForCode(EssenceMapping[dungeon][2]).Active = true
+		RevealDungeon(dungeon)
 	end
 end
 

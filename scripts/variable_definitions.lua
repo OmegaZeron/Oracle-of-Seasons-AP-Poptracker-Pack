@@ -153,6 +153,12 @@ CurrentLocationMapping = {
 	[0x09D] = {{["type"] = "SeeSeason", ["season"] = EasternSuburbsSeason, ["season_hidden"] = EasternSuburbsSeasonHidden}}, -- from WoW tree
 	[0x08F] = {{["type"] = "SeeSeason", ["season"] = EasternSuburbsSeason, ["season_hidden"] = EasternSuburbsSeasonHidden}}, -- from Holly
 
+	[0x0CF] = {
+		-- Samasa Desert entrance to Linked Cave
+		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
+		{["type"] = "DungeonEnt", ["dungeon"] = "lc", ["loc"] = "@Eastern Suburbs/Enter D0 (Linked)/Hero's Cave (Linked)"}
+	},
+
 	-- Woods of Winter
 	[0x09E] = {{["type"] = "SeeSeason", ["season"] = WoodsOfWinterSeason, ["season_hidden"] = WoodsOfWinterSeasonHidden}}, -- tree
 	[0x08D] = {

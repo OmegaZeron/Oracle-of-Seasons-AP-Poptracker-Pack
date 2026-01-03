@@ -3,6 +3,12 @@ PoisonFoyer:connect_one_way_entrance(PoisonCentral, function()
 	return Any(
 		CanKillSpinyBeetle,
 		All(
+			CanUseSeeds,
+			MysterySeeds,
+			CanDestroyPot,
+			MediumLogic
+		),
+		All(
 			CanFlipBeetle,
 			Bracelet,
 			MediumLogic

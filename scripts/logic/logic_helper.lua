@@ -1154,7 +1154,7 @@ function GetCuccos()
 
 		availableCuccos["mt. cucco"] = {top + bottom, top, bottom}
 
-		if (Jump3() or Has(Flippers) or Has(Dimitri())) then
+		if (Jump3() or Has(Flippers) or Dimitri()) then
 			availableCuccos["horon"] = availableCuccos["mt. cucco"]
 		end
 

@@ -524,6 +524,18 @@ DefaultSeasonOptionMapping = {
 	["autumn_singularity"] = 5,
 	["winter_singularity"] = 6
 }
+---@enum linkedCave
+LinkedEnum = {
+	Disabled = 0x00, -- 0b0000
+	Samasa = 0x01, -- 0b0001
+	NoAltEnt = 0x02, -- 0b0010
+}
+-- value is the stage of the setting
+LinkedCaveMapping = {
+	[LinkedEnum.Disabled] = 0,
+	[LinkedEnum.Samasa] = 1,
+	[LinkedEnum.NoAltEnt] = 1,
+}
 PortalDictionary = {
 	['eastern suburbs portal'] = {
 		['unknown'] = 0,

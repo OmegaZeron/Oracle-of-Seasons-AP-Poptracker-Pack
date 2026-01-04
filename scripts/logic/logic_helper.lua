@@ -916,6 +916,9 @@ function CanKillMoldorm(pitAvailable)
 end
 
 function CanCompleteLinkedPuzzle()
+	if Has(ShuffleDungeonOff) then
+		return true
+	end
 	local foundDungeons = 0
 	for i = 1, 8 do
 		if Tracker:FindObjectForCode("d"..i.."_ent_selector").CurrentStage ~= 0 then

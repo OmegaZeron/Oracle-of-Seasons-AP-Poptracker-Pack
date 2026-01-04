@@ -175,6 +175,9 @@ function OnClear(slot_data)
 		Tracker:FindObjectForCode(DungeonMapping[dungeon_interior]).CurrentStage = DungeonDictionary[dungeon_entrance]
 	end
 
+	Tracker:FindObjectForCode("linked_cave").CurrentStage = LinkedCaveMapping[slot_data["options"]["linked_heros_cave"] & (LinkedEnum.Samasa)] -- OR all locations together as they get added
+	Tracker:FindObjectForCode("remove_lc_alt_entrance").CurrentStage = LinkedCaveMapping[slot_data["options"]["linked_heros_cave"] & LinkedEnum.NoAltEnt]
+
 	-- shop prices
 	if (slot_data["shop_rupee_requirements"]) then
 		for shop, price in pairs(slot_data["shop_rupee_requirements"]) do

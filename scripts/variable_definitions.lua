@@ -156,7 +156,7 @@ CurrentLocationMapping = {
 	[0x0CF] = {
 		-- Samasa Desert entrance to Linked Cave
 		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
-		{["type"] = "DungeonEnt", ["dungeon"] = "lc", ["loc"] = "@Eastern Suburbs/Enter D0 (Linked)/Hero's Cave (Linked)"}
+		{["type"] = "DungeonEnt", ["dungeon"] = "lc", ["loc"] = "@Western Coast/Enter D0 (Linked)/Hero's Cave (Linked)"}
 	},
 
 	-- Woods of Winter

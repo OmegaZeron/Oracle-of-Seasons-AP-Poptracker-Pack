@@ -216,6 +216,15 @@ HerosCave:connect_one_way_entrance(MazeFoyer, function()
 end)
 
 -- d0 linked
+LinkedCave:connect_two_ways_entrance(LinkedCaveFoyer, function()
+	return All(
+		LinkedCaveEnabled,
+		Any(
+			ShuffleDungeonOff,
+			LCLeadsToLC
+		)
+	)
+end)
 LinkedCave:connect_two_ways_entrance(HerosCaveFoyer, function()
 	return All(
 		ShuffleDungeonOn,

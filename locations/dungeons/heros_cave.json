@@ -111,9 +111,12 @@
 				]
 			},
 			{
-				"name": "F1 Chest",
+				"name": "First Reward",
 				"sections": [
-					{"access_rules": ["^$CanReach|LinkedCaveF1Chest"]}
+					{
+						"name": "1F",
+						"access_rules": ["^$CanReach|LinkedCaveF1Chest"]
+					}
 				],
 				"map_locations": [
 					{
@@ -124,9 +127,12 @@
 				]
 			},
 			{
-				"name": "F2 Keydrop",
+				"name": "Checkerboard Drop",
 				"sections": [
-					{"access_rules": ["^$CanReach|LinkedCaveF2Keydrop"]}
+					{
+						"name": "2F",
+						"access_rules": ["^$CanReach|LinkedCaveF2Keydrop"]
+					}
 				],
 				"map_locations": [
 					{
@@ -137,9 +143,12 @@
 				]
 			},
 			{
-				"name": "F2 Chest",
+				"name": "Second Reward",
 				"sections": [
-					{"access_rules": ["^$CanReach|LinkedCaveF2Chest"]}
+					{
+						"name": "2F",
+						"access_rules": ["^$CanReach|LinkedCaveF2Chest"]
+					}
 				],
 				"map_locations": [
 					{
@@ -150,9 +159,12 @@
 				]
 			},
 			{
-				"name": "F3 Torch Keydrop",
+				"name": "Torch Chest",
 				"sections": [
-					{"access_rules": ["^$CanReach|LinkedCaveF3TorchKeyDrop"]}
+					{
+						"name": "3F",
+						"access_rules": ["^$CanReach|LinkedCaveF3TorchKeyDrop"]
+					}
 				],
 				"map_locations": [
 					{
@@ -163,9 +175,12 @@
 				]
 			},
 			{
-				"name": "F3 Flooded Keydrop",
+				"name": "Flooded Room Drop",
 				"sections": [
-					{"access_rules": ["^$CanReach|LinkedCaveF3FloodedKeydrop"]}
+					{
+						"name": "3F",
+						"access_rules": ["^$CanReach|LinkedCaveF3FloodedKeydrop"]
+					}
 				],
 				"map_locations": [
 					{
@@ -176,9 +191,12 @@
 				]
 			},
 			{
-				"name": "F3 Chest",
+				"name": "Third Reward",
 				"sections": [
-					{"access_rules": ["^$CanReach|LinkedCaveF3Chest"]}
+					{
+						"name": "3F",
+						"access_rules": ["^$CanReach|LinkedCaveF3Chest"]
+					}
 				],
 				"map_locations": [
 					{
@@ -189,9 +207,12 @@
 				]
 			},
 			{
-				"name": "F4 Chest",
+				"name": "Fourth Reward",
 				"sections": [
-					{"access_rules": ["^$CanReach|LinkedCaveF4Chest"]}
+					{
+						"name": "4F",
+						"access_rules": ["^$CanReach|LinkedCaveF4Chest"]
+					}
 				],
 				"map_locations": [
 					{
@@ -202,9 +223,12 @@
 				]
 			},
 			{
-				"name": "F5 Gauntlet",
+				"name": "Gauntlet",
 				"sections": [
-					{"access_rules": ["^$CanReach|LinkedCaveF5Gauntlet"]}
+					{
+						"name": "5F",
+						"access_rules": ["^$CanReach|LinkedCaveF5Gauntlet"]
+					}
 				],
 				"map_locations": [
 					{
@@ -215,9 +239,12 @@
 				]
 			},
 			{
-				"name": "F5 Boomerang Maze",
+				"name": "Boomerang Maze",
 				"sections": [
-					{"access_rules": ["^$CanReach|LinkedCaveF5BoomerangMaze"]}
+					{
+						"name": "5F",
+						"access_rules": ["^$CanReach|LinkedCaveF5BoomerangMaze"]
+					}
 				],
 				"map_locations": [
 					{
@@ -228,9 +255,11 @@
 				]
 			},
 			{
-				"name": "Final Chest",
+				"name": "Final Reward",
 				"sections": [
-					{"access_rules": ["^$CanReach|LinkedCaveFinalChest"]}
+					{
+						"access_rules": ["^$CanReach|LinkedCaveFinalChest"]
+					}
 				],
 				"map_locations": [
 					{

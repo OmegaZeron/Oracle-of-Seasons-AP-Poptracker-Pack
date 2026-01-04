@@ -112,44 +112,44 @@
 						"ref": "Hero's Cave (Linked)/Alternative Entrance Chest/"
 					},
 					{
-						"name": "F1 Chest Chest",
-						"ref": "Hero's Cave (Linked)/F1 Chest/"
+						"name": "First Reward",
+						"ref": "Hero's Cave (Linked)/First Reward/1F"
 					},
 					{
-						"name": "F2 Keydrop",
-						"ref": "Hero's Cave (Linked)/F2 Keydrop/"
+						"name": "Checkerboard Drop",
+						"ref": "Hero's Cave (Linked)/Checkerboard Drop/2F"
 					},
 					{
-						"name": "F2 Chest",
-						"ref": "Hero's Cave (Linked)/F2 Chest/"
+						"name": "Second Reward",
+						"ref": "Hero's Cave (Linked)/Second Reward/2F"
 					},
 					{
-						"name": "F3 Torch Keydrop",
-						"ref": "Hero's Cave (Linked)/F3 Torch Keydrop/"
+						"name": "Torch Chest",
+						"ref": "Hero's Cave (Linked)/Torch Chest/3F"
 					},
 					{
-						"name": "F3 Flooded Keydrop",
-						"ref": "Hero's Cave (Linked)/F3 Flooded Keydrop/"
+						"name": "Flooded Room Drop",
+						"ref": "Hero's Cave (Linked)/Flooded Room Drop/3F"
 					},
 					{
-						"name": "F3 Chest",
-						"ref": "Hero's Cave (Linked)/F3 Chest/"
+						"name": "Third Reward",
+						"ref": "Hero's Cave (Linked)/Third Reward/3F"
 					},
 					{
-						"name": "F4 Chest",
-						"ref": "Hero's Cave (Linked)/F4 Chest/"
+						"name": "Fourth Reward",
+						"ref": "Hero's Cave (Linked)/Fourth Reward/4F"
 					},
 					{
-						"name": "F5 Gauntlet",
-						"ref": "Hero's Cave (Linked)/F5 Gauntlet/"
+						"name": "Gauntlet",
+						"ref": "Hero's Cave (Linked)/Gauntlet/5F"
 					},
 					{
-						"name": "F5 Boomerang Maze",
-						"ref": "Hero's Cave (Linked)/F5 Boomerang Maze/"
+						"name": "Boomerang Maze",
+						"ref": "Hero's Cave (Linked)/Boomerang Maze/5F"
 					},
 					{
-						"name": "Final Chest",
-						"ref": "Hero's Cave (Linked)/Final Chest/"
+						"name": "Final Reward",
+						"ref": "Hero's Cave (Linked)/Final Reward/"
 					}
 				],
 				"map_locations": [

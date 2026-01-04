@@ -19,7 +19,15 @@ end)
 LinkedCaveLedge:connect_one_way_entrance(LinkedCaveFoyer)
 LinkedCaveFoyer:connect_one_way(LinkedCaveLedge, function() return Has(LCAltRemoved) end)
 LinkedCaveFoyer:connect_one_way_entrance(LinkedCaveF1Chest, function() return Has(Bracelet) end)
-LinkedCaveF1Chest:connect_one_way_entrance(LinkedCaveF2Keydrop, Jump2)
+LinkedCaveF1Chest:connect_one_way_entrance(LinkedCaveF2Keydrop, function()
+	return Any(
+		Jump2,
+		All(
+			SwitchHook,
+			MediumLogic
+		)
+	)
+end)
 LinkedCaveF2Keydrop:connect_one_way_entrance(LinkedCaveF2Chest, function() return LCKeyCount(1) end)
 LinkedCaveF2Chest:connect_one_way(LinkedCaveF3TorchKeyDrop, function()
 	return All(

@@ -76,398 +76,438 @@ CurrentRoom = nil
 StartLocationMapping = {
 	[StartImpa] = 0x0B6
 }
+
+--- constructor for CurrentLocationMapping data
+---@param tab table
+---@return table
+function Autotab(tab)
+	return {["type"] = "Autotab", ["tab"] = tab}
+end
+--- constructor for CurrentLocationMapping data
+---@param season string
+---@param seasonHidden string
+---@return table
+function SeeSeason(season, seasonHidden)
+	return {["type"] = "SeeSeason", ["season"] = season, ["season_hidden"] = seasonHidden}
+end
+--- constructor for CurrentLocationMapping data
+---@param dungeon string
+---@param loc string
+---@return table
+function DungeonEnt(dungeon, loc)
+	return {["type"] = "DungeonEnt", ["dungeon"] = dungeon, ["loc"] = loc}
+end
+--- constructor for CurrentLocationMapping data
+---@param dungeon string
+---@param loc string?
+---@return table
+function DungeonIn(dungeon, loc)
+	return {["type"] = "DungeonIn", ["dungeon"] = dungeon, ["loc"] = loc}
+end
+--- constructor for CurrentLocationMapping data
+---@param portal string
+---@param portalHidden string
+---@return table
+function Portal(portal, portalHidden)
+	return {["type"] = "Portal", ["portal"] = portal, ["portal_hidden"] = portalHidden}
+end
+--- constructor for CurrentLocationMapping data
+---@return table
+function Natzu()
+	return {["type"] = "Natzu"}
+end
 CurrentLocationMapping = {
 	-- North Horon
 	[0x0B6] = {
 		-- from HV
-		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
-		{["type"] = "SeeSeason", ["season"] = NorthHoronSeason, ["season_hidden"] = NorthHoronSeasonHidden}
+		Autotab({"Holodrum"}),
+		SeeSeason(NorthHoronSeason, NorthHoronSeasonHidden)
 	},
 	[0x096] = {
 		-- D1
-		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
-		{["type"] = "DungeonEnt", ["dungeon"] = "d1", ["loc"] = "@North Horon/Enter D1/Gnarled Root Dungeon"},
-		{["type"] = "SeeSeason", ["season"] = NorthHoronSeason, ["season_hidden"] = NorthHoronSeasonHidden}
+		Autotab({"Holodrum"}),
+		DungeonEnt("d1", "@North Horon/Enter D1/Gnarled Root Dungeon"),
+		SeeSeason(NorthHoronSeason, NorthHoronSeasonHidden)
 	},
-	[0x097] = {{["type"] = "SeeSeason", ["season"] = NorthHoronSeason, ["season_hidden"] = NorthHoronSeasonHidden}}, -- from HP
-	[0x0A6] = {{["type"] = "SeeSeason", ["season"] = NorthHoronSeason, ["season_hidden"] = NorthHoronSeasonHidden}}, -- red ring old man
+	[0x097] = {SeeSeason(NorthHoronSeason, NorthHoronSeasonHidden)}, -- from HP
+	[0x0A6] = {SeeSeason(NorthHoronSeason, NorthHoronSeasonHidden)}, -- red ring old man
 	[0x08A] = {
 		-- D5
-		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
-		{["type"] = "DungeonEnt", ["dungeon"] = "d5", ["loc"] = "@North Horon/Enter D5/Unicorn's Cave"},
-		{["type"] = "SeeSeason", ["season"] = NorthHoronSeason, ["season_hidden"] = NorthHoronSeasonHidden}
+		Autotab({"Holodrum"}),
+		DungeonEnt("d5", "@North Horon/Enter D5/Unicorn's Cave"),
+		SeeSeason(NorthHoronSeason, NorthHoronSeasonHidden)
 	},
 	[0x0B9] = {
 		-- lake portal
-		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
-		{["type"] = "Portal", ["portal"] = EyeglassLakePortalSelector, ["portal_hidden"] = EyeglassLakePortalSelectorHidden},
-		{["type"] = "SeeSeason", ["season"] = NorthHoronSeason, ["season_hidden"] = NorthHoronSeasonHidden}
+		Autotab({"Holodrum"}),
+		Portal(EyeglassLakePortalSelector, EyeglassLakePortalSelectorHidden),
+		SeeSeason(NorthHoronSeason, NorthHoronSeasonHidden)
 	},
 	[0x09A] = {
 		-- suburbs portal
-		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
-		{["type"] = "Portal", ["portal"] = EasternSuburbsPortalSelector, ["portal_hidden"] = EasternSuburbsPortalSelectorHidden},
-		{["type"] = "SeeSeason", ["season"] = NorthHoronSeason, ["season_hidden"] = NorthHoronSeasonHidden}
+		Autotab({"Holodrum"}),
+		Portal(EasternSuburbsPortalSelector, EasternSuburbsPortalSelectorHidden),
+		SeeSeason(NorthHoronSeason, NorthHoronSeasonHidden)
 	},
 
 	-- Horon Village
-	[0x0C6] = {{["type"] = "SeeSeason", ["season"] = HoronVillageSeason, ["season_hidden"] = HoronVillageSeasonHidden}}, -- from NH
-	[0x0C5] = {{["type"] = "SeeSeason", ["season"] = HoronVillageSeason, ["season_hidden"] = HoronVillageSeasonHidden}}, -- from WC
-	[0x0F7] = {{["type"] = "SeeSeason", ["season"] = HoronVillageSeason, ["season_hidden"] = HoronVillageSeasonHidden}}, -- Subrosia portal
-	[0x0E9] = {{["type"] = "SeeSeason", ["season"] = HoronVillageSeason, ["season_hidden"] = HoronVillageSeasonHidden}}, -- from ES
+	[0x0C6] = {SeeSeason(HoronVillageSeason, HoronVillageSeasonHidden)}, -- from NH
+	[0x0C5] = {SeeSeason(HoronVillageSeason, HoronVillageSeasonHidden)}, -- from WC
+	[0x0F7] = {SeeSeason(HoronVillageSeason, HoronVillageSeasonHidden)}, -- Subrosia portal
+	[0x0E9] = {SeeSeason(HoronVillageSeason, HoronVillageSeasonHidden)}, -- from ES
 	[0x3AB] = {
 		-- Subrosia lever
-		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
-		{["type"] = "Portal", ["portal"] = HoronVillagePortalSelector, ["portal_hidden"] = HoronVillagePortalSelectorHidden}
+		Autotab({"Holodrum"}),
+		Portal(HoronVillagePortalSelector, HoronVillagePortalSelectorHidden)
 	},
 
 	-- Western Coast
-	[0x0C4] = {{["type"] = "SeeSeason", ["season"] = WesternCoastSeason, ["season_hidden"] = WesternCoastSeasonHidden}}, -- from HV
+	[0x0C4] = {SeeSeason(WesternCoastSeason, WesternCoastSeasonHidden)}, -- from HV
 	[0x0D4] = {
 		-- D0
-		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
-		{["type"] = "DungeonEnt", ["dungeon"] = "d0", ["loc"] = "@Western Coast/Enter D0/Hero's Cave"},
-		{["type"] = "SeeSeason", ["season"] = WesternCoastSeason, ["season_hidden"] = WesternCoastSeasonHidden}
+		Autotab({"Holodrum"}),
+		DungeonEnt("d0", "@Western Coast/Enter D0/Hero's Cave"),
+		SeeSeason(WesternCoastSeason, WesternCoastSeasonHidden)
 	},
 	[0x0D0] = {
 		-- D7
-		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
-		{["type"] = "DungeonEnt", ["dungeon"] = "d7", ["loc"] = "@Western Coast/Enter D7/Explorer's Crypt"},
-		{["type"] = "SeeSeason", ["season"] = WesternCoastSeason, ["season_hidden"] = WesternCoastSeasonHidden}
+		Autotab({"Holodrum"}),
+		DungeonEnt("d7", "@Western Coast/Enter D7/Explorer's Crypt"),
+		SeeSeason(WesternCoastSeason, WesternCoastSeasonHidden)
 	},
 	[0x0E2] = {
 		-- warp from turning in the pirate bell
-		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
-		{["type"] = "SeeSeason", ["season"] = WesternCoastSeason, ["season_hidden"] = WesternCoastSeasonHidden}
+		Autotab({"Holodrum"}),
+		SeeSeason(WesternCoastSeason, WesternCoastSeasonHidden)
 	},
 
 	-- Eastern Suburbs
-	[0x0EA] = {{["type"] = "SeeSeason", ["season"] = EasternSuburbsSeason, ["season_hidden"] = EasternSuburbsSeasonHidden}}, -- from HV
-	[0x09B] = {{["type"] = "SeeSeason", ["season"] = EasternSuburbsSeason, ["season_hidden"] = EasternSuburbsSeasonHidden}}, -- from Suburbs portal
+	[0x0EA] = {SeeSeason(EasternSuburbsSeason, EasternSuburbsSeasonHidden)}, -- from HV
+	[0x09B] = {SeeSeason(EasternSuburbsSeason, EasternSuburbsSeasonHidden)}, -- from Suburbs portal
 	[0x07C] = {
 		-- from Sunken/Moblin Road
-		{["type"] = "SeeSeason", ["season"] = EasternSuburbsSeason, ["season_hidden"] = EasternSuburbsSeasonHidden},
-		{["type"] = "Autotab", ["tab"] = {"Holodrum"}}
+		SeeSeason(EasternSuburbsSeason, EasternSuburbsSeasonHidden),
+		Autotab({"Holodrum"})
 	},
-	[0x08C] = {{["type"] = "SeeSeason", ["season"] = EasternSuburbsSeason, ["season_hidden"] = EasternSuburbsSeasonHidden}}, -- from D2
-	[0x09D] = {{["type"] = "SeeSeason", ["season"] = EasternSuburbsSeason, ["season_hidden"] = EasternSuburbsSeasonHidden}}, -- from WoW tree
-	[0x08F] = {{["type"] = "SeeSeason", ["season"] = EasternSuburbsSeason, ["season_hidden"] = EasternSuburbsSeasonHidden}}, -- from Holly
+	[0x08C] = {SeeSeason(EasternSuburbsSeason, EasternSuburbsSeasonHidden)}, -- from D2
+	[0x09D] = {SeeSeason(EasternSuburbsSeason, EasternSuburbsSeasonHidden)}, -- from WoW tree
+	[0x08F] = {SeeSeason(EasternSuburbsSeason, EasternSuburbsSeasonHidden)}, -- from Holly
 
 	[0x0CF] = {
 		-- Samasa Desert entrance to Linked Cave
-		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
-		{["type"] = "DungeonEnt", ["dungeon"] = "lc", ["loc"] = "@Western Coast/Enter D0 (Linked)/Hero's Cave (Linked)"}
+		Autotab({"Holodrum"}),
+		DungeonEnt("lc", "@Western Coast/Enter D0 (Linked)/Hero's Cave (Linked)")
 	},
 
 	-- Woods of Winter
-	[0x09E] = {{["type"] = "SeeSeason", ["season"] = WoodsOfWinterSeason, ["season_hidden"] = WoodsOfWinterSeasonHidden}}, -- tree
+	[0x09E] = {SeeSeason(WoodsOfWinterSeason, WoodsOfWinterSeasonHidden)}, -- tree
 	[0x08D] = {
 		-- D2
-		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
-		{["type"] = "DungeonEnt", ["dungeon"] = "d2", ["loc"] = "@Eastern Suburbs/Enter D2/Snake's Remains"},
-		{["type"] = "SeeSeason", ["season"] = WoodsOfWinterSeason, ["season_hidden"] = WoodsOfWinterSeasonHidden}
+		Autotab({"Holodrum"}),
+		DungeonEnt("d2", "@Eastern Suburbs/Enter D2/Snake's Remains"),
+		SeeSeason(WoodsOfWinterSeason, WoodsOfWinterSeasonHidden)
 	},
 	[0x08E] = {
 		-- D2 alt
-		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
-		{["type"] = "SeeSeason", ["season"] = WoodsOfWinterSeason, ["season_hidden"] = WoodsOfWinterSeasonHidden}
+		Autotab({"Holodrum"}),
+		SeeSeason(WoodsOfWinterSeason, WoodsOfWinterSeasonHidden)
 	},
-	[0x07D] = {{["type"] = "SeeSeason", ["season"] = WoodsOfWinterSeason, ["season_hidden"] = WoodsOfWinterSeasonHidden}}, -- bomb cave
-	[0x07E] = {{["type"] = "SeeSeason", ["season"] = WoodsOfWinterSeason, ["season_hidden"] = WoodsOfWinterSeasonHidden}}, -- from Sunken
-	[0x07F] = {{["type"] = "SeeSeason", ["season"] = WoodsOfWinterSeason, ["season_hidden"] = WoodsOfWinterSeasonHidden}}, -- Holly
+	[0x07D] = {SeeSeason(WoodsOfWinterSeason, WoodsOfWinterSeasonHidden)}, -- bomb cave
+	[0x07E] = {SeeSeason(WoodsOfWinterSeason, WoodsOfWinterSeasonHidden)}, -- from Sunken
+	[0x07F] = {SeeSeason(WoodsOfWinterSeason, WoodsOfWinterSeasonHidden)}, -- Holly
 
 	-- Holodrum Plain
-	[0x087] = {{["type"] = "SeeSeason", ["season"] = HolodrumPlainSeason, ["season_hidden"] = HolodrumPlainSeasonHidden}}, -- from NH
-	[0x086] = {{["type"] = "SeeSeason", ["season"] = HolodrumPlainSeason, ["season_hidden"] = HolodrumPlainSeasonHidden}}, -- from D1 north
-	[0x095] = {{["type"] = "SeeSeason", ["season"] = HolodrumPlainSeason, ["season_hidden"] = HolodrumPlainSeasonHidden}}, -- from D1 west
-	[0x0A5] = {{["type"] = "SeeSeason", ["season"] = HolodrumPlainSeason, ["season_hidden"] = HolodrumPlainSeasonHidden}}, -- from red ring old man
-	[0x0B3] = {{["type"] = "SeeSeason", ["season"] = HolodrumPlainSeason, ["season_hidden"] = HolodrumPlainSeasonHidden}}, -- from lower SS
-	[0x093] = {{["type"] = "SeeSeason", ["season"] = HolodrumPlainSeason, ["season_hidden"] = HolodrumPlainSeasonHidden}}, -- from upper SS
-	[0x045] = {{["type"] = "SeeSeason", ["season"] = HolodrumPlainSeason, ["season_hidden"] = HolodrumPlainSeasonHidden}}, -- from Onox
+	[0x087] = {SeeSeason(HolodrumPlainSeason, HolodrumPlainSeasonHidden)}, -- from NH
+	[0x086] = {SeeSeason(HolodrumPlainSeason, HolodrumPlainSeasonHidden)}, -- from D1 north
+	[0x095] = {SeeSeason(HolodrumPlainSeason, HolodrumPlainSeasonHidden)}, -- from D1 west
+	[0x0A5] = {SeeSeason(HolodrumPlainSeason, HolodrumPlainSeasonHidden)}, -- from red ring old man
+	[0x0B3] = {SeeSeason(HolodrumPlainSeason, HolodrumPlainSeasonHidden)}, -- from lower SS
+	[0x093] = {SeeSeason(HolodrumPlainSeason, HolodrumPlainSeasonHidden)}, -- from upper SS
+	[0x045] = {SeeSeason(HolodrumPlainSeason, HolodrumPlainSeasonHidden)}, -- from Onox
 	[0x055] = {
 		-- from natzu W
-		{["type"] = "SeeSeason", ["season"] = HolodrumPlainSeason, ["season_hidden"] = HolodrumPlainSeasonHidden},
-		{["type"] = "Autotab", ["tab"] = {"Holodrum"}}
+		SeeSeason(HolodrumPlainSeason, HolodrumPlainSeasonHidden),
+		Autotab({"Holodrum"})
 	},
 	[0x066] = {
 		-- from natzu SW
-		{["type"] = "SeeSeason", ["season"] = HolodrumPlainSeason, ["season_hidden"] = HolodrumPlainSeasonHidden},
-		{["type"] = "Autotab", ["tab"] = {"Holodrum"}}
+		SeeSeason(HolodrumPlainSeason, HolodrumPlainSeasonHidden),
+		Autotab({"Holodrum"})
 	},
 	[0x068] = {
 		-- from natzu SE
-		{["type"] = "SeeSeason", ["season"] = HolodrumPlainSeason, ["season_hidden"] = HolodrumPlainSeasonHidden},
-		{["type"] = "Autotab", ["tab"] = {"Holodrum"}}
+		SeeSeason(HolodrumPlainSeason, HolodrumPlainSeasonHidden),
+		Autotab({"Holodrum"})
 	},
 
 	-- Spool Swamp
-	[0x083] = {{["type"] = "SeeSeason", ["season"] = SpoolSwampSeason, ["season_hidden"] = SpoolSwampSeasonHidden}}, -- from upper HP
-	[0x073] = {{["type"] = "SeeSeason", ["season"] = SpoolSwampSeason, ["season_hidden"] = SpoolSwampSeasonHidden}}, -- from tarm
-	[0x0B2] = {{["type"] = "SeeSeason", ["season"] = SpoolSwampSeason, ["season_hidden"] = SpoolSwampSeasonHidden}}, -- from lower HP
+	[0x083] = {SeeSeason(SpoolSwampSeason, SpoolSwampSeasonHidden)}, -- from upper HP
+	[0x073] = {SeeSeason(SpoolSwampSeason, SpoolSwampSeasonHidden)}, -- from tarm
+	[0x0B2] = {SeeSeason(SpoolSwampSeason, SpoolSwampSeasonHidden)}, -- from lower HP
 	[0x060] = {
 		-- d3
-		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
-		{["type"] = "DungeonEnt", ["dungeon"] = "d3", ["loc"] = "@Spool Swamp/Enter D3/Poison Moth's Lair"}
+		Autotab({"Holodrum"}),
+		DungeonEnt("d3", "@Spool Swamp/Enter D3/Poison Moth's Lair")
 	},
 	[0x0B0] = {
 		-- portal
-		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
-		{["type"] = "Portal", ["portal"] = SpoolSwampPortalSelector, ["portal_hidden"] = SpoolSwampPortalSelectorHidden},
-		{["type"] = "SeeSeason", ["season"] = SpoolSwampSeason, ["season_hidden"] = SpoolSwampSeasonHidden}
+		Autotab({"Holodrum"}),
+		Portal(SpoolSwampPortalSelector, SpoolSwampPortalSelectorHidden),
+		SeeSeason(SpoolSwampSeason, SpoolSwampSeasonHidden)
 	},
 
 	-- Natzu
 	[0x048] = {
 		-- from Goron Mountain
-		{["type"] = "Autotab", ["tab"] = {"Holodrum", "Natzu"}},
-		{["type"] = "Natzu"}
+		Autotab({"Holodrum", "Natzu"}),
+		Natzu()
 	},
 	[0x04C] = {
 		-- from Sunken
-		{["type"] = "Autotab", ["tab"] = {"Holodrum", "Natzu"}},
-		{["type"] = "Natzu"}
+		Autotab({"Holodrum", "Natzu"}),
+		Natzu()
 	},
 	[0x056] = {
 		-- from Holodrum Plain West
-		{["type"] = "Autotab", ["tab"] = {"Holodrum", "Natzu"}},
-		{["type"] = "Natzu"}
+		Autotab({"Holodrum", "Natzu"}),
+		Natzu()
 	},
 	[0x058] = {
 		-- from Holodrum Plain East
-		{["type"] = "Autotab", ["tab"] = {"Holodrum", "Natzu"}},
-		{["type"] = "Natzu"}
+		Autotab({"Holodrum", "Natzu"}),
+		Natzu()
 	},
 	[0x07A] = {
 		-- from Moblin Keep
-		{["type"] = "Autotab", ["tab"] = {"Holodrum", "Natzu"}},
-		{["type"] = "Natzu"}
+		Autotab({"Holodrum", "Natzu"}),
+		Natzu()
 	},
 
 	-- Goron Mountain
-	[0x038] = {{["type"] = "Autotab", ["tab"] = {"Holodrum"}}}, -- from Natzu
+	[0x038] = {Autotab({"Holodrum"})}, -- from Natzu
 
 	-- Sunken City/Mt. Cucco
 	[0x05D] = {
 		-- from natzu
-		{["type"] = "SeeSeason", ["season"] = SunkenCitySeason, ["season_hidden"] = SunkenCitySeasonHidden},
-		{["type"] = "Autotab", ["tab"] = {"Holodrum"}}
+		SeeSeason(SunkenCitySeason, SunkenCitySeasonHidden),
+		Autotab({"Holodrum"})
 	},
-	[0x02B] = {{["type"] = "SeeSeason", ["season"] = SunkenCitySeason, ["season_hidden"] = SunkenCitySeasonHidden}}, -- from Goron Mountain
-	[0x03B] = {{["type"] = "SeeSeason", ["season"] = SunkenCitySeason, ["season_hidden"] = SunkenCitySeasonHidden}}, -- lower gasha spot
+	[0x02B] = {SeeSeason(SunkenCitySeason, SunkenCitySeasonHidden)}, -- from Goron Mountain
+	[0x03B] = {SeeSeason(SunkenCitySeason, SunkenCitySeasonHidden)}, -- lower gasha spot
 	[0x01D] = {
 		-- d4
-		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
-		{["type"] = "DungeonEnt", ["dungeon"] = "d4", ["loc"] = "@Mount Cucco/Enter D4/Dancing Dragon Dungeon"},
-		{["type"] = "SeeSeason", ["season"] = SunkenCitySeason, ["season_hidden"] = SunkenCitySeasonHidden}
+		Autotab({"Holodrum"}),
+		DungeonEnt("d4", "@Mount Cucco/Enter D4/Dancing Dragon Dungeon"),
+		SeeSeason(SunkenCitySeason, SunkenCitySeasonHidden)
 	},
 	[0x01E] = {
 		-- portal
-		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
-		{["type"] = "Portal", ["portal"] = MtCuccoPortalSelector, ["portal_hidden"] = MtCuccoPortalSelectorHidden},
-		{["type"] = "SeeSeason", ["season"] = SunkenCitySeason, ["season_hidden"] = SunkenCitySeasonHidden}
+		Autotab({"Holodrum"}),
+		Portal(MtCuccoPortalSelector, MtCuccoPortalSelectorHidden),
+		SeeSeason(SunkenCitySeason, SunkenCitySeasonHidden)
 	},
 
 	-- Lost Woods
-	[0x063] = {{["type"] = "SeeSeason", ["season"] = LostWoodsSeason, ["season_hidden"] = LostWoodsSeasonHidden}}, -- from SS
-	[0x020] = {{["type"] = "SeeSeason", ["season"] = LostWoodsSeason, ["season_hidden"] = LostWoodsSeasonHidden}}, -- from tarm
-	[0x040] = {{["type"] = "SeeSeason", ["season"] = LostWoodsSeason, ["season_hidden"] = LostWoodsSeasonHidden}}, -- from pedestal
+	[0x063] = {SeeSeason(LostWoodsSeason, LostWoodsSeasonHidden)}, -- from SS
+	[0x020] = {SeeSeason(LostWoodsSeason, LostWoodsSeasonHidden)}, -- from tarm
+	[0x040] = {SeeSeason(LostWoodsSeason, LostWoodsSeasonHidden)}, -- from pedestal
 
 	-- Tarm Ruins
-	[0x010] = {{["type"] = "SeeSeason", ["season"] = TarmRuinsSeason, ["season_hidden"] = TarmRuinsSeasonHidden}}, -- from LW
+	[0x010] = {SeeSeason(TarmRuinsSeason, TarmRuinsSeasonHidden)}, -- from LW
 	[0x000] = {
 		-- d6
-		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
-		{["type"] = "DungeonEnt", ["dungeon"] = "d6", ["loc"] = "@Tarm Ruins/Enter D6/Ancient Ruins"},
-		{["type"] = "SeeSeason", ["season"] = TarmRuinsSeason, ["season_hidden"] = TarmRuinsSeasonHidden}
+		Autotab({"Holodrum"}),
+		DungeonEnt("d6", "@Tarm Ruins/Enter D6/Ancient Ruins"),
+		SeeSeason(TarmRuinsSeason, TarmRuinsSeasonHidden)
 	},
 
 	-- Temple Remains
-	[0x035] = {{["type"] = "SeeSeason", ["season"] = TempleRemainsSeason, ["season_hidden"] = TempleRemainsSeasonHidden}}, -- from HP
-	[0x037] = {{["type"] = "SeeSeason", ["season"] = TempleRemainsSeason, ["season_hidden"] = TempleRemainsSeasonHidden}}, -- from Goron Mountain
+	[0x035] = {SeeSeason(TempleRemainsSeason, TempleRemainsSeasonHidden)}, -- from HP
+	[0x037] = {SeeSeason(TempleRemainsSeason, TempleRemainsSeasonHidden)}, -- from Goron Mountain
 	[0x025] = {
 		-- lower portal
-		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
-		{["type"] = "Portal", ["portal"] = LowerRemainsPortalSelector, ["portal_hidden"] = LowerRemainsPortalSelectorHidden},
-		{["type"] = "SeeSeason", ["season"] = TempleRemainsSeason, ["season_hidden"] = TempleRemainsSeasonHidden}
+		Autotab({"Holodrum"}),
+		Portal(LowerRemainsPortalSelector, LowerRemainsPortalSelectorHidden),
+		SeeSeason(TempleRemainsSeason, TempleRemainsSeasonHidden)
 	},
-	[0x004] = {{["type"] = "SeeSeason", ["season"] = TempleRemainsSeason, ["season_hidden"] = TempleRemainsSeasonHidden}}, -- upper remains
+	[0x004] = {SeeSeason(TempleRemainsSeason, TempleRemainsSeasonHidden)}, -- upper remains
 	[0x3A8] = {
 		-- upper portal
-		{["type"] = "Autotab", ["tab"] = {"Holodrum"}},
-		{["type"] = "Portal", ["portal"] = UpperRemainsPortalSelector, ["portal_hidden"] = UpperRemainsPortalSelectorHidden},
+		Autotab({"Holodrum"}),
+		Portal(UpperRemainsPortalSelector, UpperRemainsPortalSelectorHidden),
 	},
 
 	-- Subrosia
 	[0x105] = {
 		-- mountain
-		{["type"] = "Autotab", ["tab"] = {"Subrosia"}},
-		{["type"] = "Portal", ["portal"] = MountainPortalSelector, ["portal_hidden"] = MountainPortalSelectorHidden}
+		Autotab({"Subrosia"}),
+		Portal(MountainPortalSelector, MountainPortalSelectorHidden)
 	},
 	[0x157] = {
 		-- market
-		{["type"] = "Autotab", ["tab"] = {"Subrosia"}},
-		{["type"] = "Portal", ["portal"] = MarketPortalSelector, ["portal_hidden"] = MarketPortalSelectorHidden}
+		Autotab({"Subrosia"}),
+		Portal(MarketPortalSelector, MarketPortalSelectorHidden)
 	},
 	[0x153] = {
 		-- village
-		{["type"] = "Autotab", ["tab"] = {"Subrosia"}},
-		{["type"] = "Portal", ["portal"] = SubrosiaVillagePortalSelector, ["portal_hidden"] = SubrosiaVillagePortalSelectorHidden}
+		Autotab({"Subrosia"}),
+		Portal(SubrosiaVillagePortalSelector, SubrosiaVillagePortalSelectorHidden)
 	},
 	[0x172] = {
 		-- pirates
-		{["type"] = "Autotab", ["tab"] = {"Subrosia"}},
-		{["type"] = "Portal", ["portal"] = PiratesPortalSelector, ["portal_hidden"] = PiratesPortalSelectorHidden}
+		Autotab({"Subrosia"}),
+		Portal(PiratesPortalSelector, PiratesPortalSelectorHidden)
 	},
-	[0x174] = {{["type"] = "Autotab", ["tab"] = {"Subrosia"}}}, -- from pirate ship
+	[0x174] = {Autotab({"Subrosia"})}, -- from pirate ship
 	[0x14A] = {
 		-- furnace
-		{["type"] = "Autotab", ["tab"] = {"Subrosia"}},
-		{["type"] = "Portal", ["portal"] = FurnacePortalSelector, ["portal_hidden"] = FurnacePortalSelectorHidden}
+		Autotab({"Subrosia"}),
+		Portal(FurnacePortalSelector, FurnacePortalSelectorHidden)
 	},
 	[0x113] = {
 		-- volcano
-		{["type"] = "Autotab", ["tab"] = {"Subrosia"}},
-		{["type"] = "Portal", ["portal"] = VolcanoPortalSelector, ["portal_hidden"] = VolcanoPortalSelectorHidden}
+		Autotab({"Subrosia"}),
+		Portal(VolcanoPortalSelector, VolcanoPortalSelectorHidden)
 	},
 	[0x120] = {
 		-- d8 portal
-		{["type"] = "Autotab", ["tab"] = {"Subrosia"}},
-		{["type"] = "Portal", ["portal"] = D8PortalSelector, ["portal_hidden"] = D8PortalSelectorHidden}
+		Autotab({"Subrosia"}),
+		Portal(D8PortalSelector, D8PortalSelectorHidden)
 	},
 	[0x100] = {
 		-- d8
-		{["type"] = "Autotab", ["tab"] = {"Subrosia"}},
-		{["type"] = "DungeonEnt", ["dungeon"] = "d8", ["loc"] = "@Subrosia/Enter D8/Sword and Shield Maze"}
+		Autotab({"Subrosia"}),
+		DungeonEnt("d8", "@Subrosia/Enter D8/Sword and Shield Maze")
 	},
 
 	-- D0
 	[0x404] = {
 		-- main entrance
-		{["type"] = "Autotab", ["tab"] = {"Hero's Cave"}},
-		{["type"] = "DungeonIn", ["dungeon"] = "d0", ["loc"] = "@Hero's Cave/Exit the Dungeon/"}
+		Autotab({"Hero's Cave"}),
+		DungeonIn("d0", "@Hero's Cave/Exit the Dungeon/")
 	},
-	[0x405] = {{["type"] = "Autotab", ["tab"] = {"Hero's Cave"}}}, -- alt entrance
-	[0x406] = {{["type"] = "DungeonIn", ["dungeon"] = "d0", ["loc"] = "@Hero's Cave/Exit the Dungeon/"}}, -- sword chest
+	[0x405] = {Autotab({"Hero's Cave"})}, -- alt entrance
+	[0x406] = {DungeonIn("d0", "@Hero's Cave/Exit the Dungeon/")}, -- sword chest
 	-- Linked Cave
 	[0x530] = {
 		-- main entrance
-		{["type"] = "Autotab", ["tab"] = {"Hero's Cave (Linked)"}},
-		{["type"] = "DungeonIn", ["dungeon"] = "lc", ["loc"] = "@Hero's Cave (Linked)/Exit the Dungeon/"}
+		Autotab({"Hero's Cave (Linked)"}),
+		DungeonIn("lc", "@Hero's Cave (Linked)/Exit the Dungeon/")
 	},
-	[0x52C] = {{["type"] = "Autotab", ["tab"] = {"Hero's Cave (Linked)"}}}, -- alt entrance
-	[0x534] = {{["type"] = "DungeonIn", ["dungeon"] = "lc", ["loc"] = "@Hero's Cave (Linked)/Exit the Dungeon/"}},
+	[0x52C] = {Autotab({"Hero's Cave (Linked)"})}, -- alt entrance
+	[0x534] = {DungeonIn("lc", "@Hero's Cave (Linked)/Exit the Dungeon/")},
 	-- D1
 	[0x41C] = {
-		{["type"] = "Autotab", ["tab"] = {"Gnarled Root Dungeon"}},
-		{["type"] = "DungeonIn", ["dungeon"] = "d1"}
+		Autotab({"Gnarled Root Dungeon"}),
+		DungeonIn("d1")
 	},
 	-- D2
 	[0x439] = {
 		-- main entrance
-		{["type"] = "Autotab", ["tab"] = {"Snake's Remains", "Snake's Remains Front"}},
-		{["type"] = "DungeonIn", ["dungeon"] = "d2", ["loc"] = "@Snake's Remains/Exit the Dungeon/"}
+		Autotab({"Snake's Remains", "Snake's Remains Front"}),
+		DungeonIn("d2", "@Snake's Remains/Exit the Dungeon/")
 	},
-	[0x437] = {{["type"] = "Autotab", ["tab"] = {"Snake's Remains", "Snake's Remains Front"}}}, -- alt entrance
-	[0x433] = {{["type"] = "Autotab", ["tab"] = {"Snake's Remains", "Snake's Remains Front"}}}, -- bomb maze
-	[0x432] = {{["type"] = "Autotab", ["tab"] = {"Snake's Remains", "Snake's Remains Front"}}}, -- cracked wall with ropes
-	[0x421] = {{["type"] = "Autotab", ["tab"] = {"Snake's Remains", "Snake's Remains Back"}}}, -- Facade warp
-	[0x61E] = {{["type"] = "Autotab", ["tab"] = {"Snake's Remains", "Snake's Remains Back"}}}, -- 2D section
-	[0x42C] = {{["type"] = "DungeonIn", ["dungeon"] = "d2"}}, -- essence
+	[0x437] = {Autotab({"Snake's Remains", "Snake's Remains Front"})}, -- alt entrance
+	[0x433] = {Autotab({"Snake's Remains", "Snake's Remains Front"})}, -- bomb maze
+	[0x432] = {Autotab({"Snake's Remains", "Snake's Remains Front"})}, -- cracked wall with ropes
+	[0x421] = {Autotab({"Snake's Remains", "Snake's Remains Back"})}, -- Facade warp
+	[0x61E] = {Autotab({"Snake's Remains", "Snake's Remains Back"})}, -- 2D section
+	[0x42C] = {DungeonIn("d2")}, -- essence
 	-- D3
 	[0x44B] = {
 		-- main entrance
-		{["type"] = "Autotab", ["tab"] = {"Poison Moth's Lair", "Poison Moth's Lair B1F"}},
-		{["type"] = "DungeonIn", ["dungeon"] = "d3"}
+		Autotab({"Poison Moth's Lair", "Poison Moth's Lair B1F"}),
+		DungeonIn("d3")
 	},
-	[0x441] = {{["type"] = "Autotab", ["tab"] = {"Poison Moth's Lair", "Poison Moth's Lair B1F"}}}, -- water room
-	[0x452] = {{["type"] = "Autotab", ["tab"] = {"Poison Moth's Lair", "Poison Moth's Lair 1F"}}}, -- above water room
-	[0x63B] = {{["type"] = "Autotab", ["tab"] = {"Poison Moth's Lair", "Poison Moth's Lair B1F"}}}, -- trampoline owl 2D section
-	[0x43E] = {{["type"] = "Autotab", ["tab"] = {"Poison Moth's Lair", "Poison Moth's Lair 1F"}}}, -- trampoline owl
-	[0x63D] = {{["type"] = "Autotab", ["tab"] = {"Poison Moth's Lair", "Poison Moth's Lair B1F"}}}, -- trampoline 2D section
-	[0x43F] = {{["type"] = "Autotab", ["tab"] = {"Poison Moth's Lair", "Poison Moth's Lair 1F"}}}, -- trampoline
-	[0x44A] = {{["type"] = "Autotab", ["tab"] = {"Poison Moth's Lair", "Poison Moth's Lair B1F"}}}, -- mimic room
-	[0x459] = {{["type"] = "Autotab", ["tab"] = {"Poison Moth's Lair", "Poison Moth's Lair 1F"}}}, -- pol's voice room
-	[0x448] = {{["type"] = "Autotab", ["tab"] = {"Poison Moth's Lair", "Poison Moth's Lair B1F"}}}, -- omuai
-	[0x457] = {{["type"] = "Autotab", ["tab"] = {"Poison Moth's Lair", "Poison Moth's Lair 1F"}}}, -- peahat after omuai
-	[0x453] = {{["type"] = "Autotab", ["tab"] = {"Poison Moth's Lair", "Poison Moth's Lair 1F"}}}, -- mothula
-	[0x443] = {{["type"] = "Autotab", ["tab"] = {"Poison Moth's Lair", "Poison Moth's Lair B1F"}}}, -- essence
+	[0x441] = {Autotab({"Poison Moth's Lair", "Poison Moth's Lair B1F"})}, -- water room
+	[0x452] = {Autotab({"Poison Moth's Lair", "Poison Moth's Lair 1F"})}, -- above water room
+	[0x63B] = {Autotab({"Poison Moth's Lair", "Poison Moth's Lair B1F"})}, -- trampoline owl 2D section
+	[0x43E] = {Autotab({"Poison Moth's Lair", "Poison Moth's Lair 1F"})}, -- trampoline owl
+	[0x63D] = {Autotab({"Poison Moth's Lair", "Poison Moth's Lair B1F"})}, -- trampoline 2D section
+	[0x43F] = {Autotab({"Poison Moth's Lair", "Poison Moth's Lair 1F"})}, -- trampoline
+	[0x44A] = {Autotab({"Poison Moth's Lair", "Poison Moth's Lair B1F"})}, -- mimic room
+	[0x459] = {Autotab({"Poison Moth's Lair", "Poison Moth's Lair 1F"})}, -- pol's voice room
+	[0x448] = {Autotab({"Poison Moth's Lair", "Poison Moth's Lair B1F"})}, -- omuai
+	[0x457] = {Autotab({"Poison Moth's Lair", "Poison Moth's Lair 1F"})}, -- peahat after omuai
+	[0x453] = {Autotab({"Poison Moth's Lair", "Poison Moth's Lair 1F"})}, -- mothula
+	[0x443] = {Autotab({"Poison Moth's Lair", "Poison Moth's Lair B1F"})}, -- essence
 	-- D4
 	[0x481] = {
 		-- main entrance
-		{["type"] = "Autotab", ["tab"] = {"Dancing Dragon Dungeon", "Dancing Dragon Dungeon 2F"}},
-		{["type"] = "DungeonIn", ["dungeon"] = "d4"}
+		Autotab({"Dancing Dragon Dungeon", "Dancing Dragon Dungeon 2F"}),
+		DungeonIn("d4")
 	},
-	[0x479] = {{["type"] = "Autotab", ["tab"] = {"Dancing Dragon Dungeon", "Dancing Dragon Dungeon 2F"}}}, -- left water stairs
-	[0x466] = {{["type"] = "Autotab", ["tab"] = {"Dancing Dragon Dungeon", "Dancing Dragon Dungeon 1F"}}}, -- antifairy wizzrobe maze
-	[0x477] = {{["type"] = "Autotab", ["tab"] = {"Dancing Dragon Dungeon", "Dancing Dragon Dungeon 2F"}}}, -- big jump owl
-	[0x465] = {{["type"] = "Autotab", ["tab"] = {"Dancing Dragon Dungeon", "Dancing Dragon Dungeon 1F"}}}, -- pre-minecart
-	[0x46A] = {{["type"] = "Autotab", ["tab"] = {"Dancing Dragon Dungeon", "Dancing Dragon Dungeon 1F"}}}, -- Agunima warp
-	[0x469] = {{["type"] = "Autotab", ["tab"] = {"Dancing Dragon Dungeon", "Dancing Dragon Dungeon 1F"}}}, -- beamos
-	[0x461] = {{["type"] = "Autotab", ["tab"] = {"Dancing Dragon Dungeon", "Dancing Dragon Dungeon 2F"}}}, -- pre-gohma
+	[0x479] = {Autotab({"Dancing Dragon Dungeon", "Dancing Dragon Dungeon 2F"})}, -- left water stairs
+	[0x466] = {Autotab({"Dancing Dragon Dungeon", "Dancing Dragon Dungeon 1F"})}, -- antifairy wizzrobe maze
+	[0x477] = {Autotab({"Dancing Dragon Dungeon", "Dancing Dragon Dungeon 2F"})}, -- big jump owl
+	[0x465] = {Autotab({"Dancing Dragon Dungeon", "Dancing Dragon Dungeon 1F"})}, -- pre-minecart
+	[0x46A] = {Autotab({"Dancing Dragon Dungeon", "Dancing Dragon Dungeon 1F"})}, -- Agunima warp
+	[0x469] = {Autotab({"Dancing Dragon Dungeon", "Dancing Dragon Dungeon 1F"})}, -- beamos
+	[0x461] = {Autotab({"Dancing Dragon Dungeon", "Dancing Dragon Dungeon 2F"})}, -- pre-gohma
 	-- D5
 	[0x4A7] = {
-		{["type"] = "Autotab", ["tab"] = {"Unicorn's Cave"}},
-		{["type"] = "DungeonIn", ["dungeon"] = "d5"}
+		Autotab({"Unicorn's Cave"}),
+		DungeonIn("d5")
 	},
 	-- D6
 	[0x4BA] = {
 		-- main entrance
-		{["type"] = "Autotab", ["tab"] = {"Ancient Ruins", "Ancient Ruins 1F, 2F"}},
-		{["type"] = "DungeonIn", ["dungeon"] = "d6"}
+		Autotab({"Ancient Ruins", "Ancient Ruins 1F, 2F"}),
+		DungeonIn("d6")
 	},
-	[0x4C2] = {{["type"] = "Autotab", ["tab"] = {"Ancient Ruins", "Ancient Ruins 1F, 2F"}}}, -- spiny beetle trampoline
-	[0x4CC] = {{["type"] = "Autotab", ["tab"] = {"Ancient Ruins", "Ancient Ruins 3F, 4F, 5F"}}}, -- darknuts
-	[0x4CF] = {{["type"] = "Autotab", ["tab"] = {"Ancient Ruins", "Ancient Ruins 3F, 4F, 5F"}}}, -- ball and chain trooper
-	[0x4C6] = {{["type"] = "Autotab", ["tab"] = {"Ancient Ruins", "Ancient Ruins 1F, 2F"}}}, -- indy jones drop
-	[0x4C5] = {{["type"] = "Autotab", ["tab"] = {"Ancient Ruins", "Ancient Ruins 1F, 2F"}}}, -- indy jones stairs
-	[0x4CE] = {{["type"] = "Autotab", ["tab"] = {"Ancient Ruins", "Ancient Ruins 3F, 4F, 5F"}}}, -- hooded stalfos
-	[0x4CB] = {{["type"] = "Autotab", ["tab"] = {"Ancient Ruins", "Ancient Ruins 3F, 4F, 5F"}}}, -- before Vire
-	[0x4C8] = {{["type"] = "Autotab", ["tab"] = {"Ancient Ruins", "Ancient Ruins 3F, 4F, 5F"}}}, -- Vire warp
-	[0x4C1] = {{["type"] = "Autotab", ["tab"] = {"Ancient Ruins", "Ancient Ruins 1F, 2F"}}}, -- below Vire
+	[0x4C2] = {Autotab({"Ancient Ruins", "Ancient Ruins 1F, 2F"})}, -- spiny beetle trampoline
+	[0x4CC] = {Autotab({"Ancient Ruins", "Ancient Ruins 3F, 4F, 5F"})}, -- darknuts
+	[0x4CF] = {Autotab({"Ancient Ruins", "Ancient Ruins 3F, 4F, 5F"})}, -- ball and chain trooper
+	[0x4C6] = {Autotab({"Ancient Ruins", "Ancient Ruins 1F, 2F"})}, -- indy jones drop
+	[0x4C5] = {Autotab({"Ancient Ruins", "Ancient Ruins 1F, 2F"})}, -- indy jones stairs
+	[0x4CE] = {Autotab({"Ancient Ruins", "Ancient Ruins 3F, 4F, 5F"})}, -- hooded stalfos
+	[0x4CB] = {Autotab({"Ancient Ruins", "Ancient Ruins 3F, 4F, 5F"})}, -- before Vire
+	[0x4C8] = {Autotab({"Ancient Ruins", "Ancient Ruins 3F, 4F, 5F"})}, -- Vire warp
+	[0x4C1] = {Autotab({"Ancient Ruins", "Ancient Ruins 1F, 2F"})}, -- below Vire
 	-- D7
 	[0x55B] = {
 		-- main entrance
-		{["type"] = "Autotab", ["tab"] = {"Explorer's Crypt", "Explorer's Crypt 1F, B1F"}},
-		{["type"] = "DungeonIn", ["dungeon"] = "d7"}
+		Autotab({"Explorer's Crypt", "Explorer's Crypt 1F, B1F"}),
+		DungeonIn("d7")
 	},
-	[0x54A] = {{["type"] = "Autotab", ["tab"] = {"Explorer's Crypt", "Explorer's Crypt 1F, B1F"}}}, -- quicksand antifairy
-	[0x539] = {{["type"] = "Autotab", ["tab"] = {"Explorer's Crypt", "Explorer's Crypt B2F"}}}, -- moving platform keese
-	[0x547] = {{["type"] = "Autotab", ["tab"] = {"Explorer's Crypt", "Explorer's Crypt 1F, B1F"}}}, -- magnet chest
-	[0x537] = {{["type"] = "Autotab", ["tab"] = {"Explorer's Crypt", "Explorer's Crypt B2F"}}}, -- magnunesu
-	[0x54C] = {{["type"] = "Autotab", ["tab"] = {"Explorer's Crypt", "Explorer's Crypt 1F, B1F"}}}, -- poe 2 water room
-	[0x543] = {{["type"] = "Autotab", ["tab"] = {"Explorer's Crypt", "Explorer's Crypt B2F"}}}, -- flying tile key block
-	[0x542] = {{["type"] = "Autotab", ["tab"] = {"Explorer's Crypt", "Explorer's Crypt B2F"}}}, -- Poe Sisters warp
+	[0x54A] = {Autotab({"Explorer's Crypt", "Explorer's Crypt 1F, B1F"})}, -- quicksand antifairy
+	[0x539] = {Autotab({"Explorer's Crypt", "Explorer's Crypt B2F"})}, -- moving platform keese
+	[0x547] = {Autotab({"Explorer's Crypt", "Explorer's Crypt 1F, B1F"})}, -- magnet chest
+	[0x537] = {Autotab({"Explorer's Crypt", "Explorer's Crypt B2F"})}, -- magnunesu
+	[0x54C] = {Autotab({"Explorer's Crypt", "Explorer's Crypt 1F, B1F"})}, -- poe 2 water room
+	[0x543] = {Autotab({"Explorer's Crypt", "Explorer's Crypt B2F"})}, -- flying tile key block
+	[0x542] = {Autotab({"Explorer's Crypt", "Explorer's Crypt B2F"})}, -- Poe Sisters warp
 	-- D8
 	[0x587] = {
 		-- main entrance
-		{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze 1F"}},
-		{["type"] = "DungeonIn", ["dungeon"] = "d8"}
+		Autotab({"Sword and Shield Maze", "Sword and Shield Maze 1F"}),
+		DungeonIn("d8")
 	},
-	[0x577] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze 1F"}}}, -- green zol key block
-	[0x55E] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze B1F"}}}, -- rope pots
-	[0x563] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze B1F"}}}, -- big blade trap
-	[0x75D] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze 1F"}}}, -- lava 2D section right
-	[0x75C] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze 1F"}}}, -- lava 2D section left
-	[0x569] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze B1F"}}}, -- lava roller
-	[0x56E] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze B1F"}}}, -- magunesu and gels
-	[0x58B] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze 1F"}}}, -- ice spike room
-	[0x573] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze B1F"}}}, -- silent watch
-	[0x58D] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze 1F"}}}, -- below armos chest
-	[0x574] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze B1F"}}}, -- ball and chain trooper
-	[0x58E] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze 1F"}}}, -- trapped by magnet ball
-	[0x571] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze B1F"}}}, -- three eye owl
-	[0x58C] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze 1F"}}}, -- bomb whisps
-	[0x572] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze B1F"}}}, -- Frypolar warp
-	[0x56C] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze B1F"}}}, -- after Frypolar
-	[0x58A] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze 1F"}}}, -- after 7 torches
-	[0x584] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze 1F"}}}, -- ice pickup room
-	[0x589] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze 1F"}}}, -- SE ice drop
-	[0x588] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze 1F"}}}, -- SW ice drop
-	[0x583] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze 1F"}}}, -- beamos
-	[0x56B] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze B1F"}}}, -- SE lava flow
-	[0x568] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze B1F"}}}, -- lava trapped stairs
-	[0x56A] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze B1F"}}}, -- SW lava flow
-	[0x567] = {{["type"] = "Autotab", ["tab"] = {"Sword and Shield Maze", "Sword and Shield Maze B1F"}}}, -- stairs below beamos
+	[0x577] = {Autotab({"Sword and Shield Maze", "Sword and Shield Maze 1F"})}, -- green zol key block
+	[0x55E] = {Autotab({"Sword and Shield Maze", "Sword and Shield Maze B1F"})}, -- rope pots
+	[0x563] = {Autotab({"Sword and Shield Maze", "Sword and Shield Maze B1F"})}, -- big blade trap
+	[0x75D] = {Autotab({"Sword and Shield Maze", "Sword and Shield Maze 1F"})}, -- lava 2D section right
+	[0x75C] = {Autotab({"Sword and Shield Maze", "Sword and Shield Maze 1F"})}, -- lava 2D section left
+	[0x569] = {Autotab({"Sword and Shield Maze", "Sword and Shield Maze B1F"})}, -- lava roller
+	[0x56E] = {Autotab({"Sword and Shield Maze", "Sword and Shield Maze B1F"})}, -- magunesu and gels
+	[0x58B] = {Autotab({"Sword and Shield Maze", "Sword and Shield Maze 1F"})}, -- ice spike room
+	[0x573] = {Autotab({"Sword and Shield Maze", "Sword and Shield Maze B1F"})}, -- silent watch
+	[0x58D] = {Autotab({"Sword and Shield Maze", "Sword and Shield Maze 1F"})}, -- below armos chest
+	[0x574] = {Autotab({"Sword and Shield Maze", "Sword and Shield Maze B1F"})}, -- ball and chain trooper
+	[0x58E] = {Autotab({"Sword and Shield Maze", "Sword and Shield Maze 1F"})}, -- trapped by magnet ball
+	[0x571] = {Autotab({"Sword and Shield Maze", "Sword and Shield Maze B1F"})}, -- three eye owl
+	[0x58C] = {Autotab({"Sword and Shield Maze", "Sword and Shield Maze 1F"})}, -- bomb whisps
+	[0x572] = {Autotab({"Sword and Shield Maze", "Sword and Shield Maze B1F"})}, -- Frypolar warp
+	[0x56C] = {Autotab({"Sword and Shield Maze", "Sword and Shield Maze B1F"})}, -- after Frypolar
+	[0x58A] = {Autotab({"Sword and Shield Maze", "Sword and Shield Maze 1F"})}, -- after 7 torches
+	[0x584] = {Autotab({"Sword and Shield Maze", "Sword and Shield Maze 1F"})}, -- ice pickup room
+	[0x589] = {Autotab({"Sword and Shield Maze", "Sword and Shield Maze 1F"})}, -- SE ice drop
+	[0x588] = {Autotab({"Sword and Shield Maze", "Sword and Shield Maze 1F"})}, -- SW ice drop
+	[0x583] = {Autotab({"Sword and Shield Maze", "Sword and Shield Maze 1F"})}, -- beamos
+	[0x56B] = {Autotab({"Sword and Shield Maze", "Sword and Shield Maze B1F"})}, -- SE lava flow
+	[0x568] = {Autotab({"Sword and Shield Maze", "Sword and Shield Maze B1F"})}, -- lava trapped stairs
+	[0x56A] = {Autotab({"Sword and Shield Maze", "Sword and Shield Maze B1F"})}, -- SW lava flow
+	[0x567] = {Autotab({"Sword and Shield Maze", "Sword and Shield Maze B1F"})}, -- stairs below beamos
 }
 
 JewelKeys = {RoundJewel, SquareJewel, PyramidJewel, XJewel}

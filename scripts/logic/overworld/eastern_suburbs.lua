@@ -79,6 +79,7 @@ SamasaDesert:connect_one_way(SamasaScrub, function()
 		AccessibilityLevel.Inspect
 	)
 end)
+SamasaDesert:connect_one_way_entrance(Pirates)
 SamasaDesert:connect_two_ways_entrance(LinkedCave, function() return Has(LinkedCaveDesert) end)
 SamasaDesert:connect_one_way_entrance(LinkedCaveLedge, function()
 	return All(

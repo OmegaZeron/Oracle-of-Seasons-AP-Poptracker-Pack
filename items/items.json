@@ -649,7 +649,7 @@
 		"type": "consumable",
 		"img": "images/items/key.png",
 		"codes": "lcsk",
-		"max_quantity": 4
+		"max_quantity": 5
 	},
 	{
 		"name": "Fertile Soil",

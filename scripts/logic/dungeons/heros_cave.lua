@@ -59,7 +59,12 @@ LinkedCaveF3FloodedRoom:connect_one_way(LinkedCaveF3FloodedKeydrop, function()
 		SwitchHook
 	)
 end)
-LinkedCaveF3FloodedRoom:connect_one_way_entrance(LinkedCaveF3Chest, CanBombWall)
+LinkedCaveF3FloodedRoom:connect_one_way_entrance(LinkedCaveF3Chest, function()
+	return All(
+		LCKeyCount(3),
+		CanBombWall
+	)
+end)
 LinkedCaveF3Chest:connect_one_way_entrance(LinkedCaveF4Chest, function() return Has(MagnetGlove) end)
 LinkedCaveF4Chest:connect_one_way(LinkedCaveF5Gauntlet, function()
 	return All(
@@ -86,7 +91,7 @@ LinkedCaveF4Chest:connect_one_way(LinkedCaveF5Gauntlet, function()
 end)
 LinkedCaveF4Chest:connect_one_way(LinkedCaveF5BoomerangMaze, function()
 	return All(
-		LCKeyCount(3),
+		LCKeyCount(4),
 		Any(
 			MagicBoomerang,
 			Bombchus20
@@ -96,7 +101,7 @@ LinkedCaveF4Chest:connect_one_way(LinkedCaveF5BoomerangMaze, function()
 end)
 LinkedCaveF4Chest:connect_one_way(LinkedCaveFinalChest, function()
 	return All(
-		LCKeyCount(4),
+		LCKeyCount(5),
 		HasRupees(80),
 		Jump3,
 		Any(

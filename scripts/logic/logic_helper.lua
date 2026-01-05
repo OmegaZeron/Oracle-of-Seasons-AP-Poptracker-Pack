@@ -326,7 +326,7 @@ function HasUpgradedSatchel()
 	return Any(
 		UpgradedSatchel,
 		All(
-			Satchel,
+			CanUseSeeds,
 			AccessibilityLevel.SequenceBreak
 		)
 	)

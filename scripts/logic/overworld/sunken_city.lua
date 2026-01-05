@@ -83,7 +83,7 @@ Syrup:connect_one_way_entrance(SyrupShop, function()
 		HasRupees(ShopPrices[SyrupShopPrice]),
 		AccessibilityLevel.Inspect
 	)
-end, {SnakeRupeeRoom, AncientRupeeRoom, HoronVillageOldMan, NorthHoronOldMan, SuburbsOldMan, NorthHolodrumPlainOldMan, SouthHolodrumPlainOldMan, GoronMountainOldMan, TarmOldMan, WesternCoastOldMan})
+end)
 SunkenCity:connect_one_way_entrance(LowerMtCucco, function()
 	return All(
 		Flippers,

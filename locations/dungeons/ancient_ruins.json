@@ -21,6 +21,23 @@
 				]
 			},
 			{
+				"name": "Reach the Rupee Room",
+				"sections": [
+					{
+						"name": "1F",
+						"access_rules": ["{^$CanReach|AncientRupeeRoom}"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "ancient_ruins1",
+						"x": 867,
+						"y": 940,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
 				"name": "Magnet Ball Puzzle Drop",
 				"sections": [
 					{

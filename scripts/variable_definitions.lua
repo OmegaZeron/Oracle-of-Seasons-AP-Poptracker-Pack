@@ -66,7 +66,21 @@ DataStorageItemTable = {
 	["Obtained Pegasus"] = PegasusSeeds,
 	["Obtained Gale"] = GaleSeeds,
 	["Obtained Mystery"] = MysterySeeds,
-	-- ["Blew Up Volcano"] = nil,
+	["Blew Up Volcano"] = EventFireworks,
+}
+
+EventTable = {
+	["@Snake's Remains/Reach the Rupee Room/"] = EventSnakeRupees,
+	["@Ancient Ruins/Reach the Rupee Room/1F"] = EventAncientRupees,
+	["@Horon Village/Horon Old Man/Horon Village: Old Man"] = EventHoronOldMan,
+	["@North Horon/Old Man Near D1/North Horon: Old Man Near D1"] = EventNorthHoronOldMan,
+	["@Holodrum Plain/Old Man Near Blaino's Gym/Holodrum Plain: Old Man Near Blaino's Gym"] = EventNorthHolPlainOldMan,
+	["@Holodrum Plain/Old Man Near Mrs. Ruul's House/Holodrum Plain: Old Man Near Mrs. Ruul's House"] = EventSouthHolPlainOldMan,
+	["@Goron Mountain/Goron Mountain Old Man/Goron Mountain: Old Man"] = EventGoronOldMan,
+	["@Western Coast/Western Coast Old Man/Western Coast: Old Man"] = EventCoastOldMan,
+	["@Eastern Suburbs/Woods of Winter Old Man/"] = EventSuburbsOldMan,
+	["@Tarm Ruins/Tarm Ruins Old Man/"] = EventTarmOldMan,
+	["@Subrosia/Blow Up the Volcano/"] = EventFireworks,
 }
 
 CurrentTab = nil
@@ -115,6 +129,12 @@ end
 ---@return table
 function Natzu()
 	return {["type"] = "Natzu"}
+end
+--- constructor for CurrentLocationMapping data
+---@param func function
+---@return table
+function Custom(func)
+	return {["type"] = "Custom", ["function"] = func}
 end
 CurrentLocationMapping = {
 	-- North Horon
@@ -407,6 +427,11 @@ CurrentLocationMapping = {
 		Autotab({"Snake's Remains", "Snake's Remains Front"}),
 		DungeonIn("d2", "@Snake's Remains/Exit the Dungeon/")
 	},
+	-- rupee room
+	[0x42E] = {Custom(function()
+		Tracker:FindObjectForCode(EventSnakeRupees).Active = true
+		Tracker:FindObjectForCode("@Snake's Remains/Reach the Rupee Room/").AvailableChestCount = 0
+	end)},
 	[0x437] = {Autotab({"Snake's Remains", "Snake's Remains Front"})}, -- alt entrance
 	[0x433] = {Autotab({"Snake's Remains", "Snake's Remains Front"})}, -- bomb maze
 	[0x432] = {Autotab({"Snake's Remains", "Snake's Remains Front"})}, -- cracked wall with ropes
@@ -455,6 +480,11 @@ CurrentLocationMapping = {
 		Autotab({"Ancient Ruins", "Ancient Ruins 1F, 2F"}),
 		DungeonIn("d6")
 	},
+	-- rupee room
+	[0x4BB] = {Custom(function()
+		Tracker:FindObjectForCode(EventAncientRupees).Active = true
+		Tracker:FindObjectForCode("@Ancient Ruins/Reach the Rupee Room/1F").AvailableChestCount = 0
+	end)},
 	[0x4C2] = {Autotab({"Ancient Ruins", "Ancient Ruins 1F, 2F"})}, -- spiny beetle trampoline
 	[0x4CC] = {Autotab({"Ancient Ruins", "Ancient Ruins 3F, 4F, 5F"})}, -- darknuts
 	[0x4CF] = {Autotab({"Ancient Ruins", "Ancient Ruins 3F, 4F, 5F"})}, -- ball and chain trooper
@@ -526,14 +556,14 @@ ShopPrices = {
 	[SubrosianMarketPrice] = 0,
 }
 OldMenValues = {
-	[OldManHoron] = {0, HoronVillageOldMan},
-	[OldManD1] = {0, NorthHoronOldMan},
-	[OldManHolly] = {0, SuburbsOldMan},
-	[OldManBlaino] = {0, NorthHolodrumPlainOldMan},
-	[OldManRuul] = {0, SouthHolodrumPlainOldMan},
-	[OldManGoron] = {0, GoronMountainOldMan},
-	[OldManD6] = {0, TarmOldMan},
-	[OldManWestCoast] = {0, WesternCoastOldMan}
+	[OldManHoron] = {0, EventHoronOldMan},
+	[OldManD1] = {0, EventNorthHoronOldMan},
+	[OldManHolly] = {0, EventSuburbsOldMan},
+	[OldManBlaino] = {0, EventNorthHolPlainOldMan},
+	[OldManRuul] = {0, EventSouthHolPlainOldMan},
+	[OldManGoron] = {0, EventGoronOldMan},
+	[OldManD6] = {0, EventTarmOldMan},
+	[OldManWestCoast] = {0, EventCoastOldMan}
 }
 WildItems = {
 	["Dancing Dragon Dungeon/Wild Ember Seeds/1F"] = EmberSeeds,

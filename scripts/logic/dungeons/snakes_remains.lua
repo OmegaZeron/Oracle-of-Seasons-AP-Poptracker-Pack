@@ -24,7 +24,7 @@ SnakeAltEntrance:connect_one_way(SnakeScrub, function()
 		HasRupees(ShopPrices[D2ScrubPrice]),
 		AccessibilityLevel.Inspect
 	)
-end, {SnakeRupeeRoom, AncientRupeeRoom, HoronVillageOldMan, NorthHoronOldMan, SuburbsOldMan, NorthHolodrumPlainOldMan, SouthHolodrumPlainOldMan, GoronMountainOldMan, TarmOldMan, WesternCoastOldMan})
+end)
 SnakeAltEntrance:connect_one_way(SnakeBombPuzzle, function()
 	return All(
 		CanDestroyBush,

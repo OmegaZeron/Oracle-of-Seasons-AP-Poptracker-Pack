@@ -318,6 +318,8 @@
 				"visibility_rules": ["old_men_locations"],
 				"sections": [
 					{
+						"hosted_item": "event_suburbs_oldman",
+						"item_count": 1,
 						"access_rules": ["^$CanReach|SuburbsOldMan"]
 					}
 				],

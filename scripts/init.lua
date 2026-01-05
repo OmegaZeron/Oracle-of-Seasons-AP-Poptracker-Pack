@@ -11,6 +11,7 @@ require("scripts.autotracking")
 require("scripts.locations")
 
 Tracker:AddItems("items/items.json")
+Tracker:AddItems("items/events.json")
 
 Tracker:AddItems("items/pack_settings.json")
 Tracker:AddItems("items/labels.json")

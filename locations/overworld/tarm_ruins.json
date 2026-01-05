@@ -97,6 +97,8 @@
 				"visibility_rules": ["old_men_locations"],
 				"sections": [
 					{
+						"hosted_item": "event_tarm_oldman",
+						"item_count": 1,
 						"access_rules": ["^$CanReach|TarmOldMan"]
 					}
 				],

@@ -98,6 +98,8 @@
 				"sections": [
 					{
 						"name": "Holodrum Plain: Old Man Near Blaino's Gym",
+						"hosted_item": "event_northholplain_oldman",
+						"item_count": 1,
 						"access_rules": ["^$CanReach|NorthHolodrumPlainOldMan"]
 					}
 				],
@@ -179,6 +181,8 @@
 				"sections": [
 					{
 						"name": "Holodrum Plain: Old Man Near Mrs. Ruul's House",
+						"hosted_item": "event_southholplain_oldman",
+						"item_count": 1,
 						"access_rules": ["^$CanReach|SouthHolodrumPlainOldMan"]
 					}
 				],

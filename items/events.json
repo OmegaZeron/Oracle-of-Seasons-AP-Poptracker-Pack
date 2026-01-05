@@ -1,0 +1,57 @@
+[
+	{
+		"name": "Reached Snake Rupee Room",
+		"type": "toggle",
+		"codes": "event_snake_rupee"
+	},
+	{
+		"name": "Reached Ancient Rupee Room",
+		"type": "toggle",
+		"codes": "event_ancient_rupee"
+	},
+	{
+		"name": "Reached Horon Old Man",
+		"type": "toggle",
+		"codes": "event_horon_oldman"
+	},
+	{
+		"name": "Reached North Horon Old Man",
+		"type": "toggle",
+		"codes": "event_northhoron_oldman"
+	},
+	{
+		"name": "Reached North Holodrum Plain Old Man",
+		"type": "toggle",
+		"codes": "event_northholplain_oldman"
+	},
+	{
+		"name": "Reached South Holodrum Plain Old Man",
+		"type": "toggle",
+		"codes": "event_southholplain_oldman"
+	},
+	{
+		"name": "Reached Goron Mountan Old Man",
+		"type": "toggle",
+		"codes": "event_goron_oldman"
+	},
+	{
+		"name": "Reached Western Coast Old Man",
+		"type": "toggle",
+		"codes": "event_coast_oldman"
+	},
+	{
+		"name": "Reached Suburbs Old Man",
+		"type": "toggle",
+		"codes": "event_suburbs_oldman"
+	},
+	{
+		"name": "Reached Tarm Old Man",
+		"type": "toggle",
+		"codes": "event_tarm_oldman"
+	},
+	{
+		"name": "Reached Fireworks",
+		"type": "toggle",
+		"codes": "event_fireworks"
+	}
+]

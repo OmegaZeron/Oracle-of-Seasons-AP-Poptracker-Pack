@@ -948,19 +948,13 @@ function HasRupees(count)
 	local oolRupees = 0
 
 	-- rupee rooms
-	local snakeRupees = CanReach(SnakeRupeeRoom)
 	local snakeRupeeAmount = 150
-	if (snakeRupees == AccessibilityLevel.SequenceBreak) then
-		oolRupees = oolRupees + snakeRupeeAmount
-	elseif (snakeRupees == AccessibilityLevel.Normal) then
+	if (Has(EventSnakeRupees)) then
 		bonusRupees = bonusRupees + snakeRupeeAmount
 	end
 
-	local ancientRupees = CanReach(AncientRupeeRoom)
 	local ancientRupeeAmount = 90
-	if (ancientRupees == AccessibilityLevel.SequenceBreak) then
-		oolRupees = oolRupees + ancientRupeeAmount
-	elseif (ancientRupees == AccessibilityLevel.Normal) then
+	if (Has(EventAncientRupees)) then
 		bonusRupees = bonusRupees + ancientRupeeAmount
 	end
 
@@ -971,10 +965,7 @@ function HasRupees(count)
 				-- otherwise you could "lose" access to a shop if one steals from you
 				rupees = rupees + val[1]
 			else
-				local access = CanReach(val[2])
-				if (access == AccessibilityLevel.SequenceBreak) then
-					oolRupees = oolRupees + val[1]
-				elseif (access == AccessibilityLevel.Normal) then
+				if (Has(val[2])) then
 					rupees = rupees + val[1]
 				end
 			end

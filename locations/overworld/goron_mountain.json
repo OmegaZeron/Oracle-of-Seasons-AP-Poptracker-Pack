@@ -53,6 +53,8 @@
 				"sections": [
 					{
 						"name": "Goron Mountain: Old Man",
+						"hosted_item": "event_goron_oldman",
+						"item_count": 1,
 						"access_rules": ["^$CanReach|GoronMountainOldMan"]
 					}
 				],

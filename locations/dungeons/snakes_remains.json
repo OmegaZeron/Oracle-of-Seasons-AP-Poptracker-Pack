@@ -65,6 +65,24 @@
 				]
 			},
 			{
+				"name": "Reach the Rupee Room",
+				"sections": [
+					{
+						"hosted_item": "event_snake_rupee",
+						"item_count": 1,
+						"access_rules": ["{^$CanReach|SnakeRupeeRoom}"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "snakes_remains1",
+						"x": 239,
+						"y": 175,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
 				"name": "Chest Behind Pots in Hardhat Room",
 				"sections": [
 					{

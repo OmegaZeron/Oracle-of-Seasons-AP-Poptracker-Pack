@@ -266,6 +266,8 @@
 				"sections": [
 					{
 						"name": "Western Coast: Old Man",
+						"hosted_item": "event_coast_oldman",
+						"item_count": 1,
 						"access_rules": ["^$CanReach|WesternCoastOldMan"]
 					}
 				],

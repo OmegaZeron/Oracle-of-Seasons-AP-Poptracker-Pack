@@ -104,4 +104,4 @@ LinkedCaveF4Chest:connect_one_way(LinkedCaveFinalChest, function()
 			AccessibilityLevel.SequenceBreak
 		)
 	)
-end, {SnakeRupeeRoom, AncientRupeeRoom, HoronVillageOldMan, NorthHoronOldMan, SuburbsOldMan, NorthHolodrumPlainOldMan, SouthHolodrumPlainOldMan, GoronMountainOldMan, TarmOldMan, WesternCoastOldMan})
+end)

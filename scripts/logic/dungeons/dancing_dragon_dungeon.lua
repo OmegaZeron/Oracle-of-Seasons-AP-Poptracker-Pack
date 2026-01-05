@@ -110,7 +110,7 @@ DancingMinecartTorches:connect_one_way(DancingScrub, function()
 		HasRupees(ShopPrices[D4ScrubPrice]),
 		AccessibilityLevel.Inspect
 	)
-end, {SnakeRupeeRoom, AncientRupeeRoom, HoronVillageOldMan, NorthHoronOldMan, SuburbsOldMan, NorthHolodrumPlainOldMan, SouthHolodrumPlainOldMan, GoronMountainOldMan, TarmOldMan, WesternCoastOldMan})
+end)
 DancingMinecartTorches:connect_one_way(DancingTorchChest, function()
 	return All(
 		CanShootSeeds,

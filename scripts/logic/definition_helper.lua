@@ -130,6 +130,19 @@ D8BossKey = "d8bk"
 D8Essence = "d8"
 Essences = "essences"
 
+-- Events
+EventSnakeRupees = "event_snake_rupee"
+EventAncientRupees = "event_ancient_rupee"
+EventHoronOldMan = "event_horon_oldman"
+EventNorthHoronOldMan = "event_northhoron_oldman"
+EventNorthHolPlainOldMan = "event_northholplain_oldman"
+EventSouthHolPlainOldMan = "event_southholplain_oldman"
+EventGoronOldMan = "event_goron_oldman"
+EventCoastOldMan = "event_coast_oldman"
+EventSuburbsOldMan = "event_suburbs_oldman"
+EventTarmOldMan = "event_tarm_oldman"
+EventFireworks = "event_fireworks"
+
 -- Settings
 Casual = "casual"
 Medium = "medium"

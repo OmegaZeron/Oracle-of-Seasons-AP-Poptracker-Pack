@@ -149,6 +149,24 @@
 				]
 			},
 			{
+				"name": "Blow Up the Volcano",
+				"sections": [
+					{
+						"hosted_item": "event_fireworks",
+						"item_count": 1,
+						"access_rules": ["{^$CanReach|Volcano}"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "subrosia",
+						"x": 600,
+						"y": 110,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
 				"name": "Subrosian Secret",
 				"sections": [
 					{

@@ -4,7 +4,7 @@ LowerTempleRemains:connect_one_way_entrance(TempleRemainsStump, function()
 	return All(
 		Feather,
 		Any(
-			CanReach(Fireworks),
+			EventFireworks,
 			All(
 				CanDestroyBush,
 				Any(
@@ -45,12 +45,12 @@ LowerTempleRemains:connect_one_way_entrance(TempleRemainsStump, function()
 			)
 		)
 	)
-end, {Fireworks})
+end)
 TempleRemainsStump:connect_one_way_entrance(LowerTempleRemains, function()
 	return All(
 		Feather,
 		Any(
-			CanReach(Fireworks),
+			EventFireworks,
 			All(
 				-- spring
 				Any(
@@ -85,22 +85,22 @@ TempleRemainsStump:connect_one_way_entrance(LowerTempleRemains, function()
 			)
 		)
 	)
-end, {Fireworks})
+end)
 LowerTempleRemains:connect_one_way_entrance(TempleRemainsLowerPortal, function()
 	return All(
-		CanReach(Fireworks),
+		EventFireworks,
 		Feather
 	)
-end, {Fireworks})
+end)
 TempleRemainsStump:connect_one_way_entrance(TempleRemainsLowerPortal, function()
 	return All(
 		Feather,
 		Any(
-			CanReach(Fireworks),
+			EventFireworks,
 			Winter
 		)
 	)
-end, {Fireworks})
+end)
 TempleRemainsLowerPortal:connect_one_way(TempleRemainsFindSeason)
 TempleRemainsLowerPortal:connect_two_ways_entrance(Volcano, function()
 	return Any(
@@ -112,13 +112,13 @@ end)
 TempleRemainsLowerPortal:connect_one_way_entrance(LowerTempleRemains)
 LowerTempleRemains:connect_one_way(TempleRemainsBombCave, function()
 	return All(
-		CanReach(Fireworks),
+		EventFireworks,
 		JumpLiquid2
 	)
-end, {Fireworks})
+end)
 LowerTempleRemains:connect_one_way_entrance(TempleRemainsUpperPortal, function()
 	return All(
-		CanReach(Fireworks),
+		EventFireworks,
 		Any(
 			TempleRemainsSummer,
 			Summer
@@ -129,24 +129,24 @@ LowerTempleRemains:connect_one_way_entrance(TempleRemainsUpperPortal, function()
 			MagnetGlove
 		)
 	)
-end, {Fireworks})
+end)
 TempleRemainsUpperPortal:connect_one_way(TempleRemainsFindSeason)
 TempleRemainsUpperPortal:connect_one_way_entrance(LowerTempleRemains, function()
 	return All(
-		CanReach(Fireworks),
+		EventFireworks,
 		Feather
 	)
-end, {Fireworks})
+end)
 TempleRemainsUpperPortal:connect_one_way_entrance(TempleRemainsStump, function() return Has(Feather) end)
 TempleRemainsUpperPortal:connect_one_way_entrance(TempleRemainsLowerPortal, function()
 	return All(
 		Feather,
 		Any(
 			TempleRemainsWinter,
-			CanReach(Fireworks)
+			EventFireworks
 		)
 	)
-end, {Fireworks})
+end)
 TempleRemainsUpperPortal:connect_two_ways_entrance(SwordAndShieldMaze, function()
 	return Any(
 		ShufflePortalsOff,

@@ -44,7 +44,7 @@ HoronVillage:connect_one_way_entrance(HoronShop, function()
 		HasRupees(ShopPrices[HoronShopPrice]),
 		AccessibilityLevel.Inspect
 	)
-end, {SnakeRupeeRoom, AncientRupeeRoom, HoronVillageOldMan, NorthHoronOldMan, SuburbsOldMan, NorthHolodrumPlainOldMan, SouthHolodrumPlainOldMan, GoronMountainOldMan, TarmOldMan, WesternCoastOldMan})
+end)
 HoronVillage:connect_one_way_entrance(MemberShop, function()
 	return All(
 		MembersCard,
@@ -53,13 +53,13 @@ HoronVillage:connect_one_way_entrance(MemberShop, function()
 			AccessibilityLevel.Inspect
 		)
 	)
-end, {SnakeRupeeRoom, AncientRupeeRoom, HoronVillageOldMan, NorthHoronOldMan, SuburbsOldMan, NorthHolodrumPlainOldMan, SouthHolodrumPlainOldMan, GoronMountainOldMan, TarmOldMan, WesternCoastOldMan})
+end)
 HoronVillage:connect_one_way_entrance(AdvanceShop, function()
 	return Any(
 		HasRupees(ShopPrices[AdvanceShopPrice]),
 		AccessibilityLevel.Inspect
 	)
-end, {SnakeRupeeRoom, AncientRupeeRoom, HoronVillageOldMan, NorthHoronOldMan, SuburbsOldMan, NorthHolodrumPlainOldMan, SouthHolodrumPlainOldMan, GoronMountainOldMan, TarmOldMan, WesternCoastOldMan})
+end)
 
 -- clock shop
 HoronVillage:connect_two_ways_entrance(ClockShop)

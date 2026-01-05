@@ -78,7 +78,7 @@ SamasaDesert:connect_one_way(SamasaScrub, function()
 		HasRupees(ShopPrices[SamasaCaveScrubPrice]),
 		AccessibilityLevel.Inspect
 	)
-end, {SnakeRupeeRoom, AncientRupeeRoom, HoronVillageOldMan, NorthHoronOldMan, SuburbsOldMan, NorthHolodrumPlainOldMan, SouthHolodrumPlainOldMan, GoronMountainOldMan, TarmOldMan, WesternCoastOldMan})
+end)
 SamasaDesert:connect_two_ways_entrance(LinkedCave, function() return Has(LinkedCaveDesert) end)
 SamasaDesert:connect_one_way_entrance(LinkedCaveLedge, function()
 	return All(

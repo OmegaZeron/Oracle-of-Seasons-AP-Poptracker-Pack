@@ -201,6 +201,8 @@ function BoolToAccess(result)
 	end
 end
 
+---@param ... boolean|string|function|accessibilityLevel
+---@return accessibilityLevel
 function All(...)
 	local args = { ... }
 	local min = AccessibilityLevel.Normal
@@ -225,6 +227,8 @@ function All(...)
 	return min
 end
 
+---@param ... boolean|string|function|accessibilityLevel
+---@return accessibilityLevel
 function Any(...)
 	local args = { ... }
 	local max = AccessibilityLevel.None

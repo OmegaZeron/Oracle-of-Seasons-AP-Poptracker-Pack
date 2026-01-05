@@ -591,7 +591,9 @@ end
 
 ---@param dungeon number
 function RevealDungeon(dungeon)
-	Tracker:FindObjectForCode("d"..dungeon.."_ent_selector").CurrentStage = Tracker:FindObjectForCode("d"..dungeon.."_ent_selector_hidden").CurrentStage
+	if (SLOT_DATA["options"]["show_dungeons_with_map"] == 1) then
+		Tracker:FindObjectForCode("d"..dungeon.."_ent_selector").CurrentStage = Tracker:FindObjectForCode("d"..dungeon.."_ent_selector_hidden").CurrentStage
+	end
 end
 
 ---@param dungeon number

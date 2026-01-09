@@ -71,16 +71,7 @@ DataStorageItemTable = {
 
 EventTable = {
 	["@Snake's Remains/Reach the Rupee Room/"] = EventSnakeRupees,
-	["@Ancient Ruins/Reach the Rupee Room/1F"] = EventAncientRupees,
-	["@Horon Village/Horon Old Man/Horon Village: Old Man"] = EventHoronOldMan,
-	["@North Horon/Old Man Near D1/North Horon: Old Man Near D1"] = EventNorthHoronOldMan,
-	["@Holodrum Plain/Old Man Near Blaino's Gym/Holodrum Plain: Old Man Near Blaino's Gym"] = EventNorthHolPlainOldMan,
-	["@Holodrum Plain/Old Man Near Mrs. Ruul's House/Holodrum Plain: Old Man Near Mrs. Ruul's House"] = EventSouthHolPlainOldMan,
-	["@Goron Mountain/Goron Mountain Old Man/Goron Mountain: Old Man"] = EventGoronOldMan,
-	["@Western Coast/Western Coast Old Man/Western Coast: Old Man"] = EventCoastOldMan,
-	["@Eastern Suburbs/Woods of Winter Old Man/"] = EventSuburbsOldMan,
-	["@Tarm Ruins/Tarm Ruins Old Man/"] = EventTarmOldMan,
-	["@Subrosia/Blow Up the Volcano/"] = EventFireworks,
+	["@Ancient Ruins/Reach the Rupee Room/1F"] = EventAncientRupees
 }
 
 CurrentTab = nil

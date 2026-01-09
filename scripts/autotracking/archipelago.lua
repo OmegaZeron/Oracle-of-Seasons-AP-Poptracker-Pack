@@ -162,15 +162,7 @@ function OnClear(slot_data)
 		[Satchel] = {"@Horon Village/Horon Tree/Horon Village: Seed Tree", SeedMapping[slot_data["options"]["default_seed"]]},
 		[Slingshot] = {"@Horon Village/Horon Tree/Horon Village: Seed Tree", SeedMapping[slot_data["options"]["default_seed"]]},
 		[SeedShooter] = {"@Horon Village/Horon Tree/Horon Village: Seed Tree", SeedMapping[slot_data["options"]["default_seed"]]},
-		[AnyFlute] = {function() Tracker:FindObjectForCode(Companion).CurrentStage = SLOT_DATA["options"]["animal_companion"] end},
-		["@Horon Village/Horon Old Man/Horon Village: Old Man"] = {EventHoronOldMan},
-		["@North Horon/Old Man Near D1/North Horon/Old Man Near D1"] = {EventNorthHoronOldMan},
-		["@Holodrum Plain/Old Man Near Blaino's Gym/Holodrum Plain: Old Man Near Blaino's Gym"] = {EventNorthHolPlainOldMan},
-		["@Holodrum Plain/Old Man Near Mrs. Ruul's House/Holodrum Plain: Old Man Near Mrs. Ruul's House"] = {EventSouthHolPlainOldMan},
-		["@Goron Mountain/Goron Mountain Old Man/Goron Mountain: Old Man"] = {EventGoronOldMan},
-		["@Western Coast/Western Coast Old Man/Western Coast: Old Man"] = {EventCoastOldMan},
-		["@Eastern Suburbs/Woods of Winter Old Man/"] = {EventSuburbsOldMan},
-		["@Tarm Ruins/Tarm Ruins Old Man/"] = {EventTarmOldMan},
+		[AnyFlute] = {function() Tracker:FindObjectForCode(Companion).CurrentStage = SLOT_DATA["options"]["animal_companion"] end}
 	}
 
 	Tracker:FindObjectForCode("horon_village_season_shuffle").CurrentStage = slot_data["default_seasons"]["HORON_VILLAGE"] == 255 and 0 or 1

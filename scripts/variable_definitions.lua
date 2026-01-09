@@ -74,6 +74,12 @@ EventTable = {
 	["@Ancient Ruins/Reach the Rupee Room/1F"] = EventAncientRupees
 }
 
+DefaultAutoCollectLocationTable = {
+	["Tarm Ruins/Lost Woods/Lost Woods: Pedestal Item"] = {"@Tarm Ruins/Pedestal Sequence/Serenade the Scrub"},
+	["North Horon/Golden Beasts Reward/North Horon: Golden Beasts Old Man"] = {GoldenDarknut, GoldenLynel, GoldenOctorok, GoldenMoblin}
+}
+AutoCollectLocationTable = {["Any"] = DefaultAutoCollectLocationTable}
+
 CurrentTab = nil
 CurrentRoom = nil
 -- TODO fill this out when alt starting locations are added
@@ -324,7 +330,13 @@ CurrentLocationMapping = {
 	[0x040] = {SeeSeason(LostWoodsSeason, LostWoodsSeasonHidden)}, -- from pedestal
 
 	-- Tarm Ruins
-	[0x010] = {SeeSeason(TarmRuinsSeason, TarmRuinsSeasonHidden)}, -- from LW
+	[0x010] = {
+		-- from Lost Woods
+		SeeSeason(TarmRuinsSeason, TarmRuinsSeasonHidden),
+		Custom(function()
+			Tracker:FindObjectForCode("@Tarm Ruins/Lost Woods Sequence/Shield the Scrub").AvailableChestCount = 0
+		end)
+	},
 	[0x000] = {
 		-- d6
 		Autotab({"Holodrum"}),

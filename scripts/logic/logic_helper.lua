@@ -301,6 +301,14 @@ function OnSectionChanged(section)
 		hiddenSetting.Active = not hiddenSetting.Active
 	elseif (WildItems[section.FullID] and section.AccessibilityLevel == AccessibilityLevel.Cleared) then
 		Tracker:FindObjectForCode(WildItems[section.FullID]).Active = true
+	elseif (AutoCollectLocationTable["Any"][section.FullID] and section.AccessibilityLevel == AccessibilityLevel.Cleared) then
+		for _, v in ipairs(AutoCollectLocationTable["Any"][section.FullID]) do
+			if v:sub(1, 1) == "@" then
+				Tracker:FindObjectForCode(v).AvailableChestCount = 0
+			else
+				Tracker:FindObjectForCode(v).Active = true
+			end
+		end
 	end
 end
 

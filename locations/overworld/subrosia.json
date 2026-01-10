@@ -153,7 +153,6 @@
 				"sections": [
 					{
 						"hosted_item": "event_fireworks",
-						"item_count": 1,
 						"access_rules": ["{^$CanReach|Volcano}"]
 					}
 				],

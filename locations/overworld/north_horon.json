@@ -101,7 +101,6 @@
 					{
 						"name": "North Horon: Old Man Near D1",
 						"hosted_item": "event_northhoron_oldman",
-						"item_count": 1,
 						"access_rules": ["^$CanReach|NorthHoronOldMan"]
 					}
 				],

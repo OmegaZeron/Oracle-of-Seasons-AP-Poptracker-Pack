@@ -69,7 +69,6 @@
 				"sections": [
 					{
 						"hosted_item": "event_snake_rupee",
-						"item_count": 1,
 						"access_rules": ["{^$CanReach|SnakeRupeeRoom}"]
 					}
 				],

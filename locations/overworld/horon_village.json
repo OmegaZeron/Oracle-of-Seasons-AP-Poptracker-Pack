@@ -284,7 +284,6 @@
 					{
 						"name": "Horon Village: Old Man",
 						"hosted_item": "event_horon_oldman",
-						"item_count": 1,
 						"access_rules": ["^$CanReach|HoronVillageOldMan"]
 					}
 				],

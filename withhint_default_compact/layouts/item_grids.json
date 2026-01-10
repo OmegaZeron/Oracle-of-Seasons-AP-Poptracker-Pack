@@ -6,8 +6,9 @@
 			{
 				"type": "itemgrid",
 				"h_alignment": "left",
-				"item_margin": "3,2",
-				"item_size": 38,
+				"margin": "5, 1, 5, 1",
+				"item_margin": "2,1",
+				"item_size": 33,
 				"rows": [
 					["sword1", "biggoron_sword", "bestweapon", "shield", "bombs", "bombchus"],
 					["strength", "boomerang1", "slingshot1", "shooter", "glove", "feather"],
@@ -19,8 +20,9 @@
 			{
 				"type": "itemgrid",
 				"h_alignment": "left",
-				"item_margin": "3,2",
-				"item_size": 38,
+				"margin": "5, 1, -10, 1",
+				"item_margin": "2,1",
+				"item_size": 33,
 				"rows": [
 					["gnarledkey", "floodkey", "dragonkey", "memberscard", "plaque", "banana", "jewels"],
 					["starore", "ribbon", "bombflower", "gashaseeds", "blueredore", "hardore", "ring_fist"],
@@ -43,8 +45,8 @@
 					{
 						"type": "itemgrid",
 						"h_alignment": "center",
-						"margin": "5,10,5,5",
-						"item_size": 50,
+						"margin": "1,10,0,5",
+						"item_size": 47,
 						"item_margin": "0,-11",
 						"rows": [
 							["fill_seasons", "", "lost_woods_season_label", "lost_woods_season"],
@@ -58,8 +60,8 @@
 					{
 						"type": "itemgrid",
 						"h_alignment": "center",
-						"margin": "0,-20,0,-175",
-						"item_size": 200,
+						"margin": "0,-5,0,-165",
+						"item_size": 190,
 						"rows": [
 							["lost_woods_main"]
 						]
@@ -68,7 +70,7 @@
 						"type": "itemgrid",
 						"h_alignment": "center",
 						"margin": "5,5,5,17",
-						"item_size": 20,
+						"item_size": 17,
 						"item_margin": "15,-11",
 						"rows": [
 							["lost_woods_d_1", "lost_woods_d_2", "lost_woods_d_3", "lost_woods_d_4"]
@@ -77,7 +79,7 @@
 					{
 						"type": "itemgrid",
 						"h_alignment": "center",
-						"item_size": 50,
+						"item_size": 47,
 						"item_margin": "0,-11",
 						"rows": [
 							["lost_woods_1", "lost_woods_2", "lost_woods_3", "lost_woods_4"]
@@ -86,8 +88,8 @@
 					{
 						"type": "itemgrid",
 						"h_alignment": "center",
-						"margin": "0,-20,0,-175",
-						"item_size": 200,
+						"margin": "0,-20,0,-165",
+						"item_size": 190,
 						"rows": [
 							["pedestal_sequence"]
 						]
@@ -96,7 +98,7 @@
 						"type": "itemgrid",
 						"h_alignment": "center",
 						"margin": "5,5,5,17",
-						"item_size": 20,
+						"item_size": 17,
 						"item_margin": "15,-11",
 						"rows": [
 							["pedestal_d_1", "pedestal_d_2", "pedestal_d_3", "pedestal_d_4"]
@@ -105,7 +107,7 @@
 					{
 						"type": "itemgrid",
 						"h_alignment": "center",
-						"item_size": 50,
+						"item_size": 47,
 						"item_margin": "0,-11",
 						"rows": [
 							["pedestal_1", "pedestal_2", "pedestal_3", "pedestal_4"]
@@ -114,7 +116,7 @@
 					{
 						"type": "itemgrid",
 						"h_alignment": "center",
-						"margin": "5,5,5,-10",
+						"margin": "0,15,5,0",
 						"item_size": 50,
 						"item_margin": "0,-12",
 						"rows": [
@@ -123,8 +125,16 @@
 							["suburbs_label_sub", "suburbs_portal", "horon_label_sub", "horon_portal"],
 							["swamp_label_sub", "swamp_portal", "remains_label_sub", "remains_portal"],
 							["lake_label_sub", "lake_portal", "upremains_label_sub", "upremains_portal"],
-							["mtcucco_label_sub", "mtcucco_portal", "", ""],
-							// ["", "", "", ""],
+							["mtcucco_label_sub", "mtcucco_portal", "", ""]
+						]
+					},
+					{
+						"type": "itemgrid",
+						"h_alignment": "center",
+						"margin": "0,10,5,0",
+						"item_size": 50,
+						"item_margin": "0,-12",
+						"rows": [
 							["mountain_label_sub", "mountain_portal", "pirates_label_sub", "pirates_portal"],
 							["market_label_sub", "market_portal", "volcano_label_sub", "volcano_portal"],
 							["furnace_label_sub", "furnace_portal", "d8_label_sub", "d8_portal"],
@@ -136,8 +146,8 @@
 			{
 				"type": "itemgrid",
 				"h_alignment": "left",
-				"margin": "10,52,-10,-50",
-				"item_size": 131,
+				"margin": "-7,46,-10,-50",
+				"item_size": 126,
 				"item_margin": "-3,-34",
 				"rows": [
 					["d0_label"],
@@ -155,7 +165,8 @@
 			{
 				"type": "itemgrid",
 				"h_alignment": "left",
-				"item_size": 60,
+				"margin": "0, 0, 1, 0",
+				"item_size": 56,
 				"item_margin": "14,1",
 				"rows": [
 					["d0_ent"],
@@ -172,58 +183,56 @@
 			},
 			{
 				"type": "itemgrid",
-				"h_alignment": "left",
-				"margin": "-10,5,-5,0",
-				"item_size": 32,
-				"item_margin": "0,15",
+				"v_alignment": "top",
+				"margin": "-13,0,-7,0",
+				"item_size": 29,
+				"item_margin": "-1,0",
 				"rows": [
+					["fill_dungeons", ""],
+					["d0_master_key", "d0sk"],
 					["", ""],
-					["", ""],
+					["lc_master_key", "lcsk"],
 					["d1_map", "d1_compass"],
+					["d1_master_key", "d1sk"],
 					["d2_map", "d2_compass"],
+					["d2_master_key", "d2sk"],
 					["d3_map", "d3_compass"],
+					["d3_master_key", "d3sk"],
 					["d4_map", "d4_compass"],
+					["d4_master_key", "d4sk"],
 					["d5_map", "d5_compass"],
+					["d5_master_key", "d5sk"],
 					["d6_map", "d6_compass"],
+					["d6_master_key", "d6sk"],
 					["d7_map", "d7_compass"],
-					["d8_map", "d8_compass"]
+					["d7_master_key", "d7sk"],
+					["d8_map", "d8_compass"],
+					["d8_master_key", "d8sk"]
 				]
 			},
 			{
-				"type": "itemgrid",
+				"type": "array",
 				"h_alignment": "left",
-				"margin": "12,5",
-				"item_size": 32,
-				"item_margin": "-4,15",
-				"rows": [
-					["d0_master_key", "d0sk", ""],
-					["lc_master_key", "lcsk", ""],
-					["d1_master_key", "d1sk", "d1bk"],
-					["d2_master_key", "d2sk", "d2bk"],
-					["d3_master_key", "d3sk", "d3bk"],
-					["d4_master_key", "d4sk", "d4bk"],
-					["d5_master_key", "d5sk", "d5bk"],
-					["d6_master_key", "d6sk", "d6bk"],
-					["d7_master_key", "d7sk", "d7bk"],
-					["d8_master_key", "d8sk", "d8bk"]
-				]
-			},
-			{
-				"type": "itemgrid",
-				"h_alignment": "left",
-				"item_size": 32,
-				"item_margin": "0,15",
-				"rows": [
-					["fill_dungeons"],
-					[""],
-					["d1"],
-					["d2"],
-					["d3"],
-					["d4"],
-					["d5"],
-					["d6"],
-					["d7"],
-					["d8"]
+				"content": [
+					{
+						"type": "itemgrid",
+						"h_alignment": "left",
+						"margin": "2, 2, 0, 0",
+						"item_size": 32,
+						"item_margin": "0,13",
+						"rows": [
+							[""],
+							[""],
+							["d1bk", "d1"],
+							["d2bk", "d2"],
+							["d3bk", "d3"],
+							["d4bk", "d4"],
+							["d5bk", "d5"],
+							["d6bk", "d6"],
+							["d7bk", "d7"],
+							["d8bk", "d8"]
+						]
+					}
 				]
 			}
 		]

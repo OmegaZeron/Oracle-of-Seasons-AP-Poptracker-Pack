@@ -17,7 +17,7 @@
 							"dock": "top",
 							"content": {
 								"type": "layout",
-								"key": "item_grid"
+								"key": "v_item_grid"
 							}
 						},
 						{
@@ -26,7 +26,7 @@
 							"dock": "top",
 							"content": {
 								"type": "layout",
-								"key": "dungeon_grid"
+								"key": "v_dungeon_grid"
 							}
 						}
 					]

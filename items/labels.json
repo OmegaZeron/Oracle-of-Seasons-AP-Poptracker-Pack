@@ -13,8 +13,9 @@
 	},
 	{
 		"name": "Entrance label",
-		"type": "toggle",
+		"type": "static",
 		"img": "images/labels/entrance_label2.png",
+		"img_mods": "brightness|1.25, saturation|0",
 		"codes": "entrance_label2"
 	},
 	{
@@ -265,14 +266,16 @@
 	},
 	{
 		"name": "Lost Woods Main Sequence label",
-		"type": "toggle",
+		"type": "static",
 		"img": "images/labels/lost_woods_sequence_label.png",
+		"img_mods": "brightness|1.25, saturation|0",
 		"codes": "lost_woods_main"
 	},
 	{
 		"name": "Pedestal Sequence label",
-		"type": "toggle",
+		"type": "static",
 		"img": "images/labels/pedestal_item_sequence_label.png",
+		"img_mods": "brightness|1.25, saturation|0",
 		"codes": "pedestal_sequence"
 	},
 	// holodrum portals
@@ -280,42 +283,49 @@
 		"name": "Suburbs label",
 		"type": "toggle",
 		"img": "images/labels/suburbs_label_sub.png",
+		"disabled_img_mods": "grey",
 		"codes": "suburbs_label_sub"
 	},
 	{
 		"name": "Swamp label",
 		"type": "toggle",
 		"img": "images/labels/swamp_label_sub.png",
+		"disabled_img_mods": "grey",
 		"codes": "swamp_label_sub"
 	},
 	{
 		"name": "Lake label",
 		"type": "toggle",
 		"img": "images/labels/lake_label_sub.png",
+		"disabled_img_mods": "grey",
 		"codes": "lake_label_sub"
 	},
 	{
 		"name": "Mt. Cucco label",
 		"type": "toggle",
 		"img": "images/labels/mtcucco_label_sub.png",
+		"disabled_img_mods": "grey",
 		"codes": "mtcucco_label_sub"
 	},
 	{
 		"name": "Horon Village label",
 		"type": "toggle",
 		"img": "images/labels/horon_label_sub.png",
+		"disabled_img_mods": "grey",
 		"codes": "horon_label_sub"
 	},
 	{
 		"name": "Temple Remains label",
 		"type": "toggle",
 		"img": "images/labels/remains_label_sub.png",
+		"disabled_img_mods": "grey",
 		"codes": "remains_label_sub"
 	},
 	{
 		"name": "Sword and Shield Maze label",
 		"type": "toggle",
 		"img": "images/labels/upremains_label_sub.png",
+		"disabled_img_mods": "grey",
 		"codes": "upremains_label_sub"
 	},
 	// subrosia portals
@@ -323,42 +333,49 @@
 		"name": "Mountain label",
 		"type": "toggle",
 		"img": "images/labels/mountain_label_sub.png",
+		"disabled_img_mods": "grey",
 		"codes": "mountain_label_sub"
 	},
 	{
 		"name": "Market label",
 		"type": "toggle",
 		"img": "images/labels/market_label_sub.png",
+		"disabled_img_mods": "grey",
 		"codes": "market_label_sub"
 	},
 	{
 		"name": "Furnace label",
 		"type": "toggle",
 		"img": "images/labels/furnace_label_sub.png",
+		"disabled_img_mods": "grey",
 		"codes": "furnace_label_sub"
 	},
 	{
 		"name": "Subrosian Village label",
 		"type": "toggle",
 		"img": "images/labels/village_label_sub.png",
+		"disabled_img_mods": "grey",
 		"codes": "village_label_sub"
 	},
 	{
 		"name": "Pirates label",
 		"type": "toggle",
 		"img": "images/labels/pirates_label_sub.png",
+		"disabled_img_mods": "grey",
 		"codes": "pirates_label_sub"
 	},
 	{
 		"name": "Volcano label",
 		"type": "toggle",
 		"img": "images/labels/volcano_label_sub.png",
+		"disabled_img_mods": "grey",
 		"codes": "volcano_label_sub"
 	},
 	{
 		"name": "Sword and Shield Maze label",
 		"type": "toggle",
 		"img": "images/labels/d8_label_sub.png",
+		"disabled_img_mods": "grey",
 		"codes": "d8_label_sub"
 	},
 	// end portals

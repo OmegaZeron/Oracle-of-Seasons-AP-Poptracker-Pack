@@ -1,5 +1,6 @@
 {
-	"item_grid": {
+	// vertical
+	"v_item_grid": {
 		"type": "array",
 		"orientation": "horizontal",
 		"content": [
@@ -33,7 +34,7 @@
 			}
 		]
 	},
-	"dungeon_grid": {
+	"v_dungeon_grid": {
 		"type": "array",
 		"orientation": "horizontal",
 		"v_alignment": "center",
@@ -146,7 +147,7 @@
 			{
 				"type": "itemgrid",
 				"h_alignment": "left",
-				"margin": "-7,46,-10,-50",
+				"margin": "-5,46,-10,-50",
 				"item_size": 126,
 				"item_margin": "-3,-34",
 				"rows": [
@@ -217,7 +218,7 @@
 					{
 						"type": "itemgrid",
 						"h_alignment": "left",
-						"margin": "2, 2, -5, 0",
+						"margin": "2, 2, -3, 0",
 						"item_size": 32,
 						"item_margin": "0,13",
 						"rows": [
@@ -237,6 +238,274 @@
 			}
 		]
 	},
+
+	// horizontal
+	"h_item_grid_2": {
+		"type": "array",
+		"orientation": "vertical",
+		"content": [
+			{
+				"type": "itemgrid",
+				"h_alignment": "left",
+				"margin": "-2,6,0,0",
+				"item_margin": "0,0",
+				"item_size": 33,
+				"rows": [
+					["sword1", "biggoron_sword", "bestweapon", "shield", "bombs", "bombchus"],
+					["strength", "boomerang1", "slingshot1", "shooter", "glove", "feather"],
+					["satchel1", "emberseeds", "mysteryseeds", "scentseeds", "pegasusseeds", "galeseeds"],
+					["flippers", "shovel", "spring", "summer", "fall", "winter"],
+					["hook", "somaria", "rustybell", "polishedbell", "flute_generic", "companion"]
+				]
+			},
+			{
+				"type": "itemgrid",
+				"h_alignment": "center",
+				"margin": "0,0,0,0",
+				"item_size": 50,
+				"item_margin": "1,-12",
+				"rows": [
+					[""],
+					["entrance_label2", "", "fill_portals", ""],
+					["suburbs_label_sub", "suburbs_portal", "village_label_sub", "horon_portal"],
+					["swamp_label_sub", "swamp_portal", "remains_label_sub", "remains_portal"],
+					["lake_label_sub", "lake_portal", "upremains_label_sub", "upremains_portal"],
+					["mtcucco_label_sub", "mtcucco_portal", "", ""]
+				]
+			}
+		]
+	},
+	"h_item_grid_3": {
+		"type": "array",
+		"orientation": "vertical",
+		"content": [		 
+			{
+				"type": "itemgrid",
+				"h_alignment": "left",
+				"margin": "-5,6,0,0",
+				"item_margin": "0,0",
+				"item_size": 33,
+				"rows": [
+					["gnarledkey", "floodkey", "dragonkey", "memberscard", "plaque", "banana", "jewels"],
+					["starore", "ribbon", "bombflower", "gashaseeds", "blueredore", "hardore", "ring_fist"],
+					["cuccodex", "lonlonegg", "ghastlydoll", "ironpot", "lavasoup", "goronvase", "ring_heart"],
+					["fish", "megaphone", "mushroom", "woodenbird", "enginegrease", "phonograph", "ring_energy"],
+					["rupees", "orechunks", "golden_darknut", "golden_octorok", "golden_moblin", "golden_lynel", "ring_swimmer"]
+				]
+			},
+			{
+				"type": "itemgrid",
+				"h_alignment": "center",
+				"margin": "0,2,0,-15",
+				"item_size": 50,
+				"item_margin": "1,-12",
+				"rows": [
+					[],
+					[],
+					["mountain_label_sub", "mountain_portal", "pirates_label_sub", "pirates_portal"],
+					["market_label_sub", "market_portal", "volcano_label_sub", "volcano_portal"],
+					["furnace_label_sub", "furnace_portal", "d8_label_sub", "d8_portal"],
+					["village_label_sub", "village_portal", "", ""]
+				]
+			}
+		]
+	},
+	"h_season_grid": {
+		"type": "array",
+		"content": [
+			{
+				"type": "itemgrid",
+				"h_alignment": "center",
+				"margin": "-5,-5,5,5",
+				"item_size": 45,
+				"item_margin": "0,-11",
+				"rows": [
+					[""],
+					["fill_seasons", "", "lost_woods_season_label", "lost_woods_season"],
+					["horon_village_label", "horon_village_season", "tarm_ruins_label", "tarm_ruins_season"],
+					["north_label", "north_horon_season", "swamp_label", "swamp_season"],
+					["suburbs_label", "suburbs_season", "sunken_label", "sunken_season"],
+					["wow_label", "wow_season", "coast_label", "coast_season"],
+					["plain_label", "plain_season", "temple_label", "remains_season"]
+				]
+			},
+			{
+				"type": "array",
+				"margin": "-10, 5, 0, 5",
+				"content": [
+					{
+						"type": "itemgrid",
+						"h_alignment": "center",
+						"margin": "0,-5,0,-155",
+						"item_size": 180,
+						"rows": [
+							["lost_woods_main"]
+						]
+					},
+					{
+						"type": "itemgrid",
+						"h_alignment": "center",
+						"margin": "5,5,5,17",
+						"item_size": 15,
+						"item_margin": "15,-11",
+						"rows": [
+							["lost_woods_d_1", "lost_woods_d_2", "lost_woods_d_3", "lost_woods_d_4"]
+						]
+					},
+					{
+						"type": "itemgrid",
+						"h_alignment": "center",
+						"item_size": 45,
+						"item_margin": "0,-11",
+						"rows": [
+							["lost_woods_1", "lost_woods_2", "lost_woods_3", "lost_woods_4"]
+						]
+					},
+					{
+						"type": "itemgrid",
+						"h_alignment": "center",
+						"margin": "0,-10,0,-155",
+						"item_size": 180,
+						"rows": [
+							["pedestal_sequence"]
+						]
+					},
+					{
+						"type": "itemgrid",
+						"h_alignment": "center",
+						"margin": "5,5,5,17",
+						"item_size": 15,
+						"item_margin": "15,-11",
+						"rows": [
+							["pedestal_d_1", "pedestal_d_2", "pedestal_d_3", "pedestal_d_4"]
+						]
+					},
+					{
+						"type": "itemgrid",
+						"h_alignment": "center",
+						"item_size": 45,
+						"item_margin": "0,-11",
+						"rows": [
+							["pedestal_1", "pedestal_2", "pedestal_3", "pedestal_4"]
+						]
+					}
+				]
+			}
+		]
+	},
+	"h_essence_grid": {
+		"type": "itemgrid",
+		"margin": "-5, 5",
+		"item_margin": "5, 3",
+		"rows": [
+			["d1"],
+			["d2"],
+			["d3"],
+			["d4"],
+			["d5"],
+			["d6"],
+			["d7"],
+			["d8"]
+		]
+	},
+	"h_dungeon_grid": {
+		"type": "array",
+		"content": [
+			{
+				"type": "array",
+				"orientation": "vertical",
+				"margin": "-5, -5, -15, 5",
+				"content": [
+					{
+						"type": "itemgrid",
+						"h_alignment": "left",
+						"margin": "5,35,0,-40",
+						"item_size": 90,
+						"item_margin": "-7,-27",
+						"rows": [
+							["d0_label", "d1_label", "d3_label", "d5_label", "d7_label"]
+						]
+					},
+					{
+						"type": "itemgrid",
+						"h_alignment": "left",
+						"item_size": 68,
+						"item_margin": "4,-1",
+						"rows": [
+							["d0_ent", "d1_ent", "d3_ent", "d5_ent", "d7_ent"]
+						]
+					},
+					{
+						"type": "itemgrid",
+						"h_alignment": "left",
+						"margin": "13, -10, 0,0",
+						"item_size": 32,
+						"item_margin": "-3,10",
+						"rows": [
+							["fill_dungeons", "", "", "d1_map", "d1_compass", "", "d3_map", "d3_compass", "", "d5_map", "d5_compass", "", "d7_map", "d7_compass", ""]
+						]
+					},
+					{
+						"type": "itemgrid",
+						"h_alignment": "left",
+						"margin": "15, -10, 0, 0",
+						"item_size": 29,
+						"item_margin": "-5,-2",
+						"rows": [
+							["d0_master_key", "d0sk", "", "", "d1_master_key", "d1sk", "d1bk", "", "d3_master_key", "d3sk", "d3bk", "", "d5_master_key", "d5sk", "d5bk", "", "d7_master_key", "d7sk", "d7bk"]
+						]
+					}
+				]
+			},
+			{
+				"type": "array",
+				"orientation": "vertical",
+				"margin": "-5, 0, -15, 5",
+				"content": [
+					{
+						"type": "itemgrid",
+						"h_alignment": "left",
+						"margin": "5,35,0,-40",
+						"item_size": 90,
+						"item_margin": "-7,-27",
+						"rows": [
+							["lc_label", "d2_label", "d4_label", "d6_label", "d8_label"]
+						]
+					},
+					{
+						"type": "itemgrid",
+						"h_alignment": "left",
+						"item_size": 68,
+						"item_margin": "4,-1",
+						"rows": [
+							["lc_ent", "d2_ent", "d4_ent", "d6_ent", "d8_ent"]
+						]
+					},
+					{
+						"type": "itemgrid",
+						"h_alignment": "left",
+						"margin": "13, -10, 0,0",
+						"item_size": 32,
+						"item_margin": "-3,10",
+						"rows": [
+							["", "", "", "d2_map", "d2_compass", "", "d4_map", "d4_compass", "", "d6_map", "d6_compass", "", "d8_map", "d8_compass"]
+						]
+					},
+					{
+						"type": "itemgrid",
+						"h_alignment": "left",
+						"margin": "15, -10, 0, -10",
+						"item_size": 29,
+						"item_margin": "-5,-2",
+						"rows": [
+							["lc_master_key", "lcsk", "", "", "d2_master_key", "d2sk", "d2bk", "", "d4_master_key", "d4sk", "d4bk", "", "d6_master_key", "d6sk", "d6bk", "", "d8_master_key", "d8sk", "d8bk"]
+						]
+					}
+				]
+			}
+		]
+	},
+
 	"settings": {
 		"type": "array",
 		"orientation": "horizontal",

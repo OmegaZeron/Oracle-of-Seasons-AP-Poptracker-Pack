@@ -244,7 +244,7 @@
 							"dock": "left",
 							"content": {
 								"type": "layout",
-								"key": "item_grid_2"
+								"key": "h_item_grid_2"
 							}
 						},
 						{
@@ -252,7 +252,23 @@
 							"dock": "left",
 							"content": {
 								"type": "layout",
-								"key": "item_grid_3"
+								"key": "h_item_grid_3"
+							}
+						},
+						{
+							"type": "group",
+							"dock": "left",
+							"content": {
+								"type": "layout",
+								"key": "h_season_grid"
+							}
+						},
+						{
+							"type": "group",
+							"dock": "left",
+							"content": {
+								"type": "layout",
+								"key": "h_essence_grid"
 							}
 						},
 						{
@@ -261,7 +277,7 @@
 							"dock": "left",
 							"content": {
 								"type": "layout",
-								"key": "dungeon_grid"
+								"key": "h_dungeon_grid"
 							}
 						}
 					]

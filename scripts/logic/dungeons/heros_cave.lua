@@ -70,16 +70,8 @@ LinkedCaveF4Chest:connect_one_way(LinkedCaveF5Gauntlet, function()
 				CanKillSpinyBeetle,
 				Any(
 					AnyFlute,
-					Bombs40,
-					All(
-						Bombs,
-						AccessibilityLevel.SequenceBreak
-					),
-					Bombchus20,
-					All(
-						Bombchus,
-						AccessibilityLevel.SequenceBreak
-					)
+					HasBombs(4),
+					HasBombchus(2)
 				)
 			),
 			All(
@@ -102,15 +94,10 @@ LinkedCaveF4Chest:connect_one_way(LinkedCaveF5Gauntlet, function()
 				-- Now there are two waves left, 4 and 2, which can be beaten by cane
 				-- A route can be wave 4 -> wave 5 (skip 3) -> wave 7 (skip 6) -> wave 1 (skip 0) -> wave 2
 				-- (With enough bombs left, it's probably easier to switch wave 6 and wave 4 as lynels hurt a lot)
-
 				CaneOfSomaria,
 				Any(
 					CanArmorKill(false, true),
-					UpgradedSatchel,
-					All(
-						Satchel,
-						AccessibilityLevel.SequenceBreak
-					)
+					HasUpgradedSatchel
 				),
 				HardLogic
 			)
@@ -122,11 +109,7 @@ LinkedCaveF4Chest:connect_one_way(LinkedCaveF5BoomerangMaze, function()
 		LCKeyCount(4),
 		Any(
 			MagicBoomerang,
-			Bombchus20,
-			All(
-				Bombchus,
-				AccessibilityLevel.SequenceBreak
-			),
+			HasBombchus(2),
 			All(
 				HasAnySword,
 				MediumLogic

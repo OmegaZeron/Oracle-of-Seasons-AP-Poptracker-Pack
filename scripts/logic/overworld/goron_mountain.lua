@@ -35,7 +35,7 @@ WestGoronMountain:connect_one_way(GoronLavaChest, function()
 		Any(
 			Bombs,
 			All(
-				Bombchus40,
+				HasBombchus(4),
 				SeedSatchel,
 				PegasusSeeds,
 				MediumLogic

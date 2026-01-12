@@ -32,11 +32,7 @@ SnakeAltEntrance:connect_one_way(SnakeBombPuzzle, function()
 			Bombs,
 			All(
 				Any(
-					Bombchus40,
-					All(
-						Bombchus,
-						AccessibilityLevel.SequenceBreak
-					)
+					HasBombchus(4)
 				),
 				Satchel,
 				PegasusSeeds,
@@ -53,11 +49,7 @@ FacadeDoorstep:connect_one_way_entrance(Facade, function()
 		D2KeyCount(2, 1),
 		Any(
 			Bombs,
-			Bombchus20,
-			All(
-				Bombchus,
-				AccessibilityLevel.SequenceBreak
-			)
+			HasBombchus(2)
 		)
 	)
 end)

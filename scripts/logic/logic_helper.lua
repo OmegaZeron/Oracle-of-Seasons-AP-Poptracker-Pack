@@ -55,17 +55,30 @@ function CanBurnTrees()
 	return CanUseSeeds() and Has(EmberSeeds)
 end
 
+function HasBombs(count)
+	return Any(
+		Tracker:FindObjectForCode(Bombs).CurrentStage >= count,
+		All(
+			Bombs,
+			AccessibilityLevel.SequenceBreak
+		)
+	)
+end
+function HasBombchus(count)
+	return Any(
+		Tracker:FindObjectForCode(Bombchus).CurrentStage >= count,
+		All(
+			Bombchus,
+			AccessibilityLevel.SequenceBreak
+		)
+	)
+end
+
 function CanBombWall()
 	return Any(
 		Bombs,
 		All(
-			Any(
-				Bombchus40,
-				All(
-					Bombchus,
-					AccessibilityLevel.SequenceBreak
-				)
-			),
+			HasBombchus(4),
 			MediumLogic
 		)
 	)
@@ -148,11 +161,7 @@ function CanBeatOnox()
 		WoodSword,
 		Any(
 			Bombs,
-			Bombchus20,
-			All(
-				Bombchus,
-				AccessibilityLevel.SequenceBreak
-			)
+			HasBombchus(2)
 		),
 		Feather,
 		Any(
@@ -397,20 +406,10 @@ function CanDestroyBush(allowBombchus)
 		SwitchHook,
 		All(
 			Any(
-				Bombs20,
-				All(
-					Bombs,
-					AccessibilityLevel.SequenceBreak
-				),
+				HasBombs(2),
 				All(
 					allowBombchus == true,
-					Any(
-						Bombchus40,
-						All(
-							Bombchus,
-							AccessibilityLevel.SequenceBreak
-						)
-					)
+					HasBombchus(4)
 				),
 				All(
 					CanUseSeeds,
@@ -456,23 +455,13 @@ function CanDestroyFlower(allowCompanion)
 		),
 		All(
 			Any(
-				Bombs20,
-				All(
-					Bombs,
-					AccessibilityLevel.SequenceBreak
-				),
+				HasBombs(2),
 				CanBurnTrees,
 				All(
 					CanShootSeeds,
 					GaleSeeds
 				),
-				Any(
-					Bombchus40,
-					All(
-						Bombchus,
-						AccessibilityLevel.SequenceBreak
-					)
-				)
+				HasBombchus(4)
 			),
 			MediumLogic
 		)
@@ -489,7 +478,7 @@ function CanDestroyCrystal()
 			MediumLogic
 		),
 		All(
-			Bombchus40,
+			HasBombchus(4),
 			MediumLogic
 		)
 	)
@@ -752,16 +741,8 @@ function CanNormalKill(pitAvailable, allowGale)
 		CanSwordPunchKill,
 		All(
 			Any(
-				Bombs40,
-				All(
-					Bombs,
-					AccessibilityLevel.SequenceBreak
-				),
-				Bombchus20,
-				All(
-					Bombchus,
-					AccessibilityLevel.SequenceBreak
-				)
+				HasBombs(4),
+				HasBombchus(2)
 			),
 			MediumLogic
 		),
@@ -833,17 +814,11 @@ function CanArmorKill(allowCane, allowBombchus)
 	return Any(
 		CanSwordPunchKill,
 		All(
-			allowBombchus,
 			Any(
-				Bombs40,
-				Bombchus20,
+				HasBombs(4),
 				All(
-					Bombs,
-					AccessibilityLevel.SequenceBreak
-				),
-				All(
-					Bombchus,
-					AccessibilityLevel.SequenceBreak
+					allowBombchus,
+					HasBombchus(2)
 				)
 			),
 			MediumLogic
@@ -861,13 +836,6 @@ function CanArmorKill(allowCane, allowBombchus)
 			CaneOfSomaria,
 			MediumLogic
 		)
-	)
-end
-
-function CanKillKeese()
-	return Any(
-		CanNormalKill,
-		Boomerang
 	)
 end
 

@@ -140,13 +140,7 @@ MazeIcePuzzle:connect_one_way_entrance(MazeTerrace, function()
 		MagicBoomerang,
 		SeedShooter,
 		All(
-			Any(
-				Bombchus20,
-				All(
-					Bombchus,
-					AccessibilityLevel.SequenceBreak
-				)
-			),
+			HasBombchus(2),
 			MediumLogic
 		)
 	)

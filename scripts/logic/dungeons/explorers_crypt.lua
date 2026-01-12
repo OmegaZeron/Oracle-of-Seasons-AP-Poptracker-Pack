@@ -39,7 +39,7 @@ CryptFirstPoe:connect_one_way_entrance(CryptSurroundedByArmos, function()
 			All(
 				EmberSeeds,
 				Any(
-					UpgradedSatchel,
+					HasUpgradedSatchel,
 					MediumLogic
 				)
 			)
@@ -144,11 +144,7 @@ CryptPastDarknutBridge:connect_one_way_entrance(CryptDarknutBridgeTrampolines, f
 				CanSwordKill,
 				HasRod,
 				Bombs,
-				Bombchus40,
-				All(
-					Bombchus,
-					AccessibilityLevel.SequenceBreak
-				)
+				HasBombchus(4)
 			)
 		)
 	)

@@ -96,11 +96,7 @@ SwampSouthGashaArea:connect_one_way_entrance(MiddleSpoolSwamp, function()
 							EmberSeeds
 						),
 						All(
-							Bombs,
-							All(
-								Bombs20,
-								AccessibilityLevel.SequenceBreak
-							),
+							HasBombs(2),
 							HardLogic
 						)
 					),

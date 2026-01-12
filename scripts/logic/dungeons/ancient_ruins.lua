@@ -46,7 +46,7 @@ AncientArrowTrap:connect_one_way_entrance(AncientSpinyTrampoline, function()
 				HellLogic
 			),
 			All(
-				Bombchus20,
+				HasBombchus(2),
 				HardLogic
 			)
 		),
@@ -99,7 +99,7 @@ AncientFoyer:connect_one_way(AncientNorthOfSpinnerChest, function()
 					),
 					CanSwordKill,
 					All(
-						Bombs40,
+						HasBombs(4),
 						MediumLogic
 					),
 					All(
@@ -115,7 +115,7 @@ AncientFoyer:connect_one_way(AncientNorthOfSpinnerChest, function()
 				Any(
 					CanSwordKill,
 					All(
-						Bombs40,
+						HasBombs(4),
 						MediumLogic
 					),
 					All(

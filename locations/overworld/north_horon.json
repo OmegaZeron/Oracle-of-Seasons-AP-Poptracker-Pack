@@ -63,10 +63,14 @@
 				"sections": [
 					{
 						"name": "Near Impa",
+						"chest_unopened_img": "images/items/gasha_spot.png",
+						"chest_opened_img": "images/items/gasha_spot_gray.png",
 						"access_rules": ["^$CanReach|NorthHoronGasha"]
 					},
 					{
 						"name": "Harvested",
+						"chest_unopened_img": "images/items/gasha_nut.png",
+						"chest_opened_img": "images/items/gasha_nut_gray.png",
 						"access_rules": ["^$HasPlanted|@North Horon/North Horon Gasha Spot/Near Impa"]
 					}
 				],
@@ -150,10 +154,14 @@
 				"sections": [
 					{
 						"name": "Near D5",
+						"chest_unopened_img": "images/items/gasha_spot.png",
+						"chest_opened_img": "images/items/gasha_spot_gray.png",
 						"access_rules": ["^$CanReach|EyeglassGasha"]
 					},
 					{
 						"name": "Harvested",
+						"chest_unopened_img": "images/items/gasha_nut.png",
+						"chest_opened_img": "images/items/gasha_nut_gray.png",
 						"access_rules": ["^$HasPlanted|@North Horon/Eyeglass Lake Gasha Spot/Near D5"]
 					}
 				],

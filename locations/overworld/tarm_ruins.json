@@ -77,10 +77,14 @@
 				"sections": [
 					{
 						"name": "Dig It Up",
+						"chest_unopened_img": "images/items/gasha_spot.png",
+						"chest_opened_img": "images/items/gasha_spot_gray.png",
 						"access_rules": ["^$CanReach|TarmGasha"]
 					},
 					{
 						"name": "Harvested",
+						"chest_unopened_img": "images/items/gasha_nut.png",
+						"chest_opened_img": "images/items/gasha_nut_gray.png",
 						"access_rules": ["^$HasPlanted|@Tarm Ruins/Tarm Ruins Gasha Spot/Dig It Up"]
 					}
 				],

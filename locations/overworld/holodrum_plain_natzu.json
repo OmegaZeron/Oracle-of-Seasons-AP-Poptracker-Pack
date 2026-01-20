@@ -198,10 +198,14 @@
 				"sections": [
 					{
 						"name": "Dig It Up",
+						"chest_unopened_img": "images/items/gasha_spot.png",
+						"chest_opened_img": "images/items/gasha_spot_gray.png",
 						"access_rules": ["^$CanReach|SouthHolodrumPlainGasha"]
 					},
 					{
 						"name": "Harvested",
+						"chest_unopened_img": "images/items/gasha_nut.png",
+						"chest_opened_img": "images/items/gasha_nut_gray.png",
 						"access_rules": ["^$HasPlanted|@Holodrum Plain/Lower Holodrum Plain Gasha Spot/Dig It Up"]
 					}
 				],
@@ -219,10 +223,14 @@
 				"sections": [
 					{
 						"name": "Under Bushes",
+						"chest_unopened_img": "images/items/gasha_spot.png",
+						"chest_opened_img": "images/items/gasha_spot_gray.png",
 						"access_rules": ["^$CanReach|HolodrumPlainIsland"]
 					},
 					{
 						"name": "Harvested",
+						"chest_unopened_img": "images/items/gasha_nut.png",
+						"chest_opened_img": "images/items/gasha_nut_gray.png",
 						"access_rules": ["^$HasPlanted|@Holodrum Plain/Holodrum Plain Island Gasha Spot/Under Bushes"]
 					}
 				],
@@ -343,10 +351,14 @@
 				"sections": [
 					{
 						"name": "Dig It Up",
+						"chest_unopened_img": "images/items/gasha_spot.png",
+						"chest_opened_img": "images/items/gasha_spot_gray.png",
 						"access_rules": ["^$CanReach|OnoxGasha"]
 					},
 					{
 						"name": "Harvested",
+						"chest_unopened_img": "images/items/gasha_nut.png",
+						"chest_opened_img": "images/items/gasha_nut_gray.png",
 						"access_rules": ["^$HasPlanted|@Holodrum Plain/Onox Gasha Spot/Dig It Up"]
 					}
 				],

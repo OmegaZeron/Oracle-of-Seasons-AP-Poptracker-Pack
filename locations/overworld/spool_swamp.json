@@ -81,10 +81,14 @@
 				"sections": [
 					{
 						"name": "Near Keyhole",
+						"chest_unopened_img": "images/items/gasha_spot.png",
+						"chest_opened_img": "images/items/gasha_spot_gray.png",
 						"access_rules": ["^$CanReach|SwampNorthGashaSpot"]
 					},
 					{
 						"name": "Harvested",
+						"chest_unopened_img": "images/items/gasha_nut.png",
+						"chest_opened_img": "images/items/gasha_nut_gray.png",
 						"access_rules": ["^$HasPlanted|@Spool Swamp/Spool Swamp North Gasha Spot/Near Keyhole"]
 					}
 				],
@@ -119,10 +123,14 @@
 				"sections": [
 					{
 						"name": "Near Portal",
+						"chest_unopened_img": "images/items/gasha_spot.png",
+						"chest_opened_img": "images/items/gasha_spot_gray.png",
 						"access_rules": ["^$CanReach|SwampSouthGashaSpot"]
 					},
 					{
 						"name": "Harvested",
+						"chest_unopened_img": "images/items/gasha_nut.png",
+						"chest_opened_img": "images/items/gasha_nut_gray.png",
 						"access_rules": ["^$HasPlanted|@Spool Swamp/Spool Swamp South Gasha Spot/Near Portal"]
 					}
 				],

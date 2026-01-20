@@ -513,7 +513,7 @@
 			{
 				"type": "itemgrid",
 				"h_alignment": "left",
-				"margin": "5, 15, -10, -35",
+				"margin": "5, 15, 0, -35",
 				"item_size": 90,
 				"item_margin": "-5,-18",
 				"rows": [
@@ -522,8 +522,8 @@
 					["gasha_seeds_label", "deterministic_gasha_locations", "tarm_jewels_label", "tarm_gate_required_jewels", "start_location_label", "start_location", "secret_locations_label", "secret_locations"],
 					["horon_shop_potion_label", "enforce_potion_in_shop", "advance_shop_label", "advance_shop", "shuffle_old_men_label", "shuffle_old_men", "gold_ore_label", "shuffle_golden_ore_spots"],
 					["default_seasons_label", "default_seasons", "horon_village_season_label", "horon_village_season_shuffle", "d0_alt_entrance_label", "remove_d0_alt_entrance", "d2_alt_entrance_label", "remove_d2_alt_entrance"],
-					["lost_woods_label", "randomize_lost_woods_main_sequence", "pedestal_label", "randomize_lost_woods_item_sequence", "shuffle_scrub_label", "shuffle_business_scrubs", "autotab_label", "autotab"],
-					["linked_cave_label", "linked_cave", "lc_alt_entrance_label", "remove_lc_alt_entrance"]
+					["lost_woods_label", "randomize_lost_woods_main_sequence", "pedestal_label", "randomize_lost_woods_item_sequence", "shuffle_scrub_label", "shuffle_business_scrubs", "master_keys_label", "master_keys"],
+					["linked_cave_label", "linked_cave", "lc_alt_entrance_label", "remove_lc_alt_entrance", "autotab_label", "autotab"]
 				]
 			}
 		]

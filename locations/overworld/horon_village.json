@@ -226,10 +226,14 @@
 				"sections": [
 					{
 						"name": "Near Mayor",
+						"chest_unopened_img": "images/items/gasha_spot.png",
+						"chest_opened_img": "images/items/gasha_spot_gray.png",
 						"access_rules": ["^$CanReach|HoronGasha"]
 					},
 					{
 						"name": "Harvested",
+						"chest_unopened_img": "images/items/gasha_nut.png",
+						"chest_opened_img": "images/items/gasha_nut_gray.png",
 						"access_rules": ["^$HasPlanted|@Horon Village/Horon Village Gasha Spot/Near Mayor"]
 					}
 				],

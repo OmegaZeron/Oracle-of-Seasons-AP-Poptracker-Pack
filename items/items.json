@@ -52,7 +52,7 @@
 		"type": "progressive",
 		"stages": [
 			{
-				"img": "images/items/feather1.png",
+				"img": "images/items/feather.png",
 				"codes": "feather1, feather, rocfeather"
 			},
 			{

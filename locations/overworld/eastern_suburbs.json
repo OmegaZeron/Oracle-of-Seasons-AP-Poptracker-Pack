@@ -116,10 +116,14 @@
 				"sections": [
 					{
 						"name": "Surrounded by Cacti",
+						"chest_unopened_img": "images/items/gasha_spot.png",
+						"chest_opened_img": "images/items/gasha_spot_gray.png",
 						"access_rules": ["^$CanReach|SamasaDesertGasha"]
 					},
 					{
 						"name": "Harvested",
+						"chest_unopened_img": "images/items/gasha_nut.png",
+						"chest_opened_img": "images/items/gasha_nut_gray.png",
 						"access_rules": ["^$HasPlanted|@Eastern Suburbs/Samasa Desert Gasha Spot/Surrounded by Cacti"]
 					}
 				],
@@ -172,10 +176,14 @@
 				"sections": [
 					{
 						"name": "Under Bushes",
+						"chest_unopened_img": "images/items/gasha_spot.png",
+						"chest_opened_img": "images/items/gasha_spot_gray.png",
 						"access_rules": ["^$CanReach|SuburbsGasha"]
 					},
 					{
 						"name": "Harvested",
+						"chest_unopened_img": "images/items/gasha_nut.png",
+						"chest_opened_img": "images/items/gasha_nut_gray.png",
 						"access_rules": ["^$HasPlanted|@Eastern Suburbs/Eastern Suburbs Gasha Spot/Under Bushes"]
 					}
 				],

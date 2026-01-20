@@ -392,6 +392,18 @@
 		"codes": "lc_label"
 	},
 	{
+		"name": "D0 Short Label",
+		"type": "static",
+		"img": "images/labels/d0_short.png",
+		"codes": "d0_short"
+	},
+	{
+		"name": "LC Short Label",
+		"type": "static",
+		"img": "images/labels/lc_short.png",
+		"codes": "lc_short"
+	},
+	{
 		"name": "D1 Label",
 		"type": "toggle",
 		"img": "images/labels/D1_label.png",

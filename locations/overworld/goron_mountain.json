@@ -11,10 +11,14 @@
 				"sections": [
 					{
 						"name": "Dig It Up",
+						"chest_unopened_img": "images/items/gasha_spot.png",
+						"chest_opened_img": "images/items/gasha_spot_gray.png",
 						"access_rules": ["^$CanReach|GoronGashaWest"]
 					},
 					{
 						"name": "Harvested",
+						"chest_unopened_img": "images/items/gasha_nut.png",
+						"chest_opened_img": "images/items/gasha_nut_gray.png",
 						"access_rules": ["^$HasPlanted|@Goron Mountain/Goron Mountain West Gasha Spot/Dig It Up"]
 					}
 				],
@@ -32,10 +36,14 @@
 				"sections": [
 					{
 						"name": "Under Rocks",
+						"chest_unopened_img": "images/items/gasha_spot.png",
+						"chest_opened_img": "images/items/gasha_spot_gray.png",
 						"access_rules": ["^$CanReach|GoronGashaEast"]
 					},
 					{
 						"name": "Harvested",
+						"chest_unopened_img": "images/items/gasha_nut.png",
+						"chest_opened_img": "images/items/gasha_nut_gray.png",
 						"access_rules": ["^$HasPlanted|@Goron Mountain/Goron Mountain East Gasha Spot/Under Rocks"]
 					}
 				],

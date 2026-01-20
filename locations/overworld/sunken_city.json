@@ -152,10 +152,14 @@
 				"sections": [
 					{
 						"name": "Near Master Diver",
+						"chest_unopened_img": "images/items/gasha_spot.png",
+						"chest_opened_img": "images/items/gasha_spot_gray.png",
 						"access_rules": ["^$CanReach|SunkenGashaSpot"]
 					},
 					{
 						"name": "Harvested",
+						"chest_unopened_img": "images/items/gasha_nut.png",
+						"chest_opened_img": "images/items/gasha_nut_gray.png",
 						"access_rules": ["^$HasPlanted|@Sunken City/Sunken City Gasha Spot/Near Master Diver"]
 					}
 				],

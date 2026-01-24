@@ -136,7 +136,7 @@
 					{
 						"name": "Shield the Scrub",
 						"visibility_rules": ["casual", "lost_woods_randomized"],
-						"access_rules": ["^$CanReach|TarmLostWoodsScrub"]
+						"access_rules": ["{^$CanReach|TarmLostWoodsScrub}"]
 					}
 				],
 				"map_locations": [
@@ -154,7 +154,7 @@
 					{
 						"name": "Serenade the Scrub",
 						"visibility_rules": ["casual", "pedestal_randomized"],
-						"access_rules": ["^$CanReach|TarmPedestalScrub"]
+						"access_rules": ["{^$CanReach|TarmPedestalScrub}"]
 					}
 				],
 				"map_locations": [

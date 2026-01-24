@@ -515,7 +515,7 @@
 				"h_alignment": "left",
 				"margin": "5, 15, 0, -35",
 				"item_size": 90,
-				"item_margin": "-5,-18",
+				"item_margin": "-4,-18",
 				"rows": [
 					["logic_label", "logic_difficulty", "goal_label", "goal", "dungeon_shuffle_label", "shuffle_dungeons", "portal_shuffle_label", "shuffle_portals"],
 					["onox_essences_label", "required_essences", "old_man_essences_label", "treehouse_old_man_requirement", "signs_required_label", "sign_guy_requirement", "golden_beasts_label", "golden_beasts_requirement"],

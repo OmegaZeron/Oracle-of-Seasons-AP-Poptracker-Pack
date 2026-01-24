@@ -886,7 +886,7 @@ EssencesInWorld = {
 	["Seed of Life"] = false,
 	["Changing Seasons"] = false
 }
-EssenceMapping = {
+EssenceTable = {
 	{"Fertile Soil", "d1_label"},
 	{"Gift of Time", "d2_label"},
 	{"Bright Sun", "d3_label"},
@@ -895,6 +895,16 @@ EssenceMapping = {
 	{"Blowing Wind", "d6_label"},
 	{"Seed of Life", "d7_label"},
 	{"Changing Seasons", "d8_label"}
+}
+EssenceMapping = {
+	[D1Essence] = 1,
+	[D2Essence] = 2,
+	[D3Essence] = 3,
+	[D4Essence] = 4,
+	[D5Essence] = 5,
+	[D6Essence] = 6,
+	[D7Essence] = 7,
+	[D8Essence] = 8
 }
 SeedMapping = {
 	[0] = EmberSeeds,

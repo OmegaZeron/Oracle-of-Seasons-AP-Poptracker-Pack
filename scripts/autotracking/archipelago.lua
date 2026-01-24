@@ -310,12 +310,13 @@ function OnItem(index, item_id, item_name, player_number)
 			end
 		end
 		local mDungeon = tonumber(itemData[1]:match("d(%d)_map"))
+		local cDungeon = tonumber(itemData[1]:match("d(%d)_compass"))
 		if mDungeon then
 			RevealDungeon(mDungeon)
-		end
-		local cDungeon = tonumber(itemData[1]:match("d(%d)_compass"))
-		if cDungeon then
+		elseif cDungeon then
 			RevealEssence(cDungeon)
+		elseif EssenceMapping[itemData[1]] then
+			RevealEssence(EssenceMapping[itemData[1]])
 		end
 	elseif AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
 		print(string.format("onItem: could not find object for code %s", itemData[1]))
@@ -584,7 +585,10 @@ end
 ---@param dungeon number
 function RevealDungeon(dungeon)
 	if (SLOT_DATA["options"]["show_dungeons_with_map"] == 1) then
-		Tracker:FindObjectForCode("d"..dungeon.."_ent_selector").CurrentStage = Tracker:FindObjectForCode("d"..dungeon.."_ent_selector_hidden").CurrentStage
+		local hiddenStage = Tracker:FindObjectForCode("d"..dungeon.."_ent_selector_hidden").CurrentStage
+		Tracker:FindObjectForCode("d"..dungeon.."_ent_selector").CurrentStage = hiddenStage
+		-- clear the "enter dungeon" location
+		Tracker:FindObjectForCode(DungeonSetVars[hiddenStage][3]).AvailableChestCount = 0
 	end
 end
 
@@ -593,8 +597,8 @@ function RevealEssence(dungeon)
 	if SLOT_DATA["options"]["shuffle_essences"] ~= 0 or SLOT_DATA["options"]["show_dungeons_with_essence"] == 0 then
 		return
 	end
-	if EssencesInWorld[EssenceMapping[dungeon][1]] then
-		Tracker:FindObjectForCode(EssenceMapping[dungeon][2]).Active = true
+	if EssencesInWorld[EssenceTable[dungeon][1]] then
+		Tracker:FindObjectForCode(EssenceTable[dungeon][2]).Active = true
 		RevealDungeon(dungeon)
 	end
 end

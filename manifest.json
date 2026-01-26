@@ -1,26 +1,26 @@
 ﻿{
 	"name": "Oracle of Seasons Tracker",
 	"game_name": "The Legend of Zelda: Oracle of Seasons",
-	"package_version": "6.0.4",
+	"package_version": "6.0.5",
 	"package_uid": "seasons_ap",
 	"platform": "gbc",
 	"author": "OmegaZeron",
 	"min_poptracker_version": "0.32.0",
 	"variants": {
 		"standard": {
-			"display_name": "AP Autotracker v6.0.4 - Vertical",
+			"display_name": "AP Autotracker v6.0.5 - Vertical",
 			"flags": ["ap"]
 		},
 		"withhint_horizontal": {
-			"display_name": "AP Autotracker v6.0.4 - Horizontal",
+			"display_name": "AP Autotracker v6.0.5 - Horizontal",
 			"flags": ["ap"]
 		},
 		"withhint_default_compact": {
-			"display_name": "AP Autotracker v6.0.4 - Vertical (Compact)",
+			"display_name": "AP Autotracker v6.0.5 - Vertical (Compact)",
 			"flags": ["ap"]
 		},
 		"withhint_horizontal_compact": {
-			"display_name": "AP Autotracker v6.0.4 - Horizontal (Compact)",
+			"display_name": "AP Autotracker v6.0.5 - Horizontal (Compact)",
 			"flags": ["ap"]
 		}
 	},

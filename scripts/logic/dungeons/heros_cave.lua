@@ -121,7 +121,6 @@ end)
 LinkedCaveF4Chest:connect_one_way(LinkedCaveFinalChest, function()
 	return All(
 		LCKeyCount(5),
-		HasRupees(80),
 		Jump3,
 		Any(
 			CanCompleteLinkedPuzzle,

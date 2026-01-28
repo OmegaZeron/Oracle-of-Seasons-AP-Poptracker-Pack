@@ -1,14 +1,14 @@
 require("scripts.autotracking.item_mapping")
 require("scripts.autotracking.location_mapping")
 
-CUR_INDEX = -1
-SLOT_DATA = nil
-WORLD_VERSION = "17"
-IGNORE_VERSION = false
-ALL_LOCATIONS = {}
-IS_MANUAL_CLICK = true
-DEFAULT_SEED = "default"
-ROOM_SEED = DEFAULT_SEED
+local CUR_INDEX = -1
+local SLOT_DATA = {}
+local WORLD_VERSION <const> = "17"
+local IGNORE_VERSION = false
+local ALL_LOCATIONS = {}
+local IS_MANUAL_CLICK = true
+local DEFAULT_SEED <const> = "default"
+local ROOM_SEED = DEFAULT_SEED
 
 function PreOnClear()
 	PLAYER_ID = Archipelago.PlayerNumber or -1

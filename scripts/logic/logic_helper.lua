@@ -442,9 +442,7 @@ function CanDestroyPot()
 end
 
 function CanDestroyFlower(allowCompanion)
-	if (allowCompanion == nil) then
-		allowCompanion = false
-	end
+	allowCompanion = allowCompanion or false
 	return Any(
 		HasAnySword,
 		MagicBoomerang,
@@ -574,9 +572,7 @@ function MaxJump()
 end
 
 function Jump1(allowCompanion)
-	if (allowCompanion == nil) then
-		allowCompanion = false
-	end
+	allowCompanion = allowCompanion or false
 	return Any(
 		Feather,
 		All(
@@ -631,9 +627,7 @@ function Jump6()
 end
 
 function JumpLiquid1(allowCompanion)
-	if (allowCompanion == nil) then
-		allowCompanion = false
-	end
+	allowCompanion = allowCompanion or false
 	return Any(
 		Feather,
 		All(
@@ -728,8 +722,8 @@ function CanKillWithPit()
 end
 
 function CanNormalKill(pitAvailable, allowGale)
-	pitAvailable = Default(pitAvailable, false)
-	allowGale = Default(allowGale, true)
+	pitAvailable = pitAvailable or false
+	allowGale = allowGale or true
 
 	return Any(
 		CanNormalSatchelKill(allowGale),
@@ -809,8 +803,8 @@ function CanNormalSlingshotKill(allowGale)
 end
 
 function CanArmorKill(allowCane, allowBombchus)
-	allowCane = Default(allowCane, false)
-	allowBombchus = Default(allowBombchus, false)
+	allowCane = allowCane or false
+	allowBombchus = allowBombchus or false
 	return Any(
 		CanSwordPunchKill,
 		All(
@@ -874,7 +868,7 @@ function CanKillSpinyBeetle()
 end
 
 function CanKillMoldorm(pitAvailable)
-	pitAvailable = Default(pitAvailable, false)
+	pitAvailable = pitAvailable or false
 	return Any(
 		CanArmorKill(true, true),
 		SwitchHook,
@@ -1401,7 +1395,7 @@ function HasD8BossKey()
 	)
 end
 
-function dungeon_settings()
+function DungeonSettings()
 	if (not LOADED) then
 		return
 	end
@@ -1416,7 +1410,7 @@ function dungeon_settings()
 	end
 end
 
-function display_dungeons()
+function DisplayDungeons()
 	if Tracker:FindObjectForCode("shuffle_dungeons").CurrentStage == 1 and Tracker:FindObjectForCode("fill_dungeons").CurrentStage == 1 then
 		for _, dungeon in ipairs(DungeonList) do
 			Tracker:FindObjectForCode(dungeon.."_ent_selector").CurrentStage = Tracker:FindObjectForCode(dungeon.."_ent_selector_hidden").CurrentStage
@@ -1424,83 +1418,41 @@ function display_dungeons()
 	end
 end
 
-function seasons_settings()
+function SeasonSettings()
 	if (not LOADED) then
 		return
 	end
-	local region_list = {"north_horon", "suburbs", "wow", "plain", "swamp", "sunken", "lost_woods", "tarm_ruins", "coast", "remains"}
+	local regionList = {"north_horon_season", "suburbs_season", "wow_season", "plain_season", "swamp_season", "sunken_season", "lost_woods_season", "tarm_ruins_season", "coast_season", "remains_season"}
 	if Tracker:FindObjectForCode("default_seasons").CurrentStage == 0 then
-		Tracker:FindObjectForCode("north_horon_season").CurrentStage = 3
-		Tracker:FindObjectForCode("suburbs_season").CurrentStage = 2
-		Tracker:FindObjectForCode("wow_season").CurrentStage = 1
-		Tracker:FindObjectForCode("plain_season").CurrentStage = 0
-		Tracker:FindObjectForCode("swamp_season").CurrentStage = 2
-		Tracker:FindObjectForCode("sunken_season").CurrentStage = 1
-		Tracker:FindObjectForCode("lost_woods_season").CurrentStage = 2
-		Tracker:FindObjectForCode("tarm_ruins_season").CurrentStage = 0
-		Tracker:FindObjectForCode("coast_season").CurrentStage = 3
-		Tracker:FindObjectForCode("remains_season").CurrentStage = 3
-		Tracker:FindObjectForCode("horon_village_season").CurrentStage = 4
-	elseif Tracker:FindObjectForCode("default_seasons").CurrentStage == 1 then
-		for _, region in pairs(region_list) do
-			Tracker:FindObjectForCode(region.."_season").CurrentStage = 4
+		for _, region in ipairs(regionList) do
+			Tracker:FindObjectForCode(region).CurrentStage = DefaultSeasons[region]
+		end
+	elseif Tracker:FindObjectForCode("default_seasons").CurrentStage == 1 or Tracker:FindObjectForCode("default_seasons").CurrentStage == 2 then
+		for _, region in ipairs(regionList) do
+			Tracker:FindObjectForCode(region).CurrentStage = 4
 			Tracker:FindObjectForCode("horon_village_season").CurrentStage = 4
 		end
-	elseif Tracker:FindObjectForCode("default_seasons").CurrentStage == 2 then
-		for _, region in pairs(region_list) do
-			Tracker:FindObjectForCode(region.."_season").CurrentStage = 4
-			Tracker:FindObjectForCode("horon_village_season").CurrentStage = 4
-		end
-	elseif Tracker:FindObjectForCode("default_seasons").CurrentStage == 3 then
-		for _, region in pairs(region_list) do
-			Tracker:FindObjectForCode(region.."_season").CurrentStage = 0
+	elseif Tracker:FindObjectForCode("default_seasons").CurrentStage >= 3 then
+		local season = Tracker:FindObjectForCode("default_seasons").CurrentStage - 3
+		for _, region in ipairs(regionList) do
+			Tracker:FindObjectForCode(region).CurrentStage = season
 			if Tracker:FindObjectForCode("horon_village_season_shuffle").CurrentStage == 1 then
-				Tracker:FindObjectForCode("horon_village_season").CurrentStage = 0
-			end
-		end
-	elseif Tracker:FindObjectForCode("default_seasons").CurrentStage == 4 then
-		for _, region in pairs(region_list) do
-			Tracker:FindObjectForCode(region.."_season").CurrentStage = 1
-			if Tracker:FindObjectForCode("horon_village_season_shuffle").CurrentStage == 1 then
-				Tracker:FindObjectForCode("horon_village_season").CurrentStage = 1
-			end
-		end
-	elseif Tracker:FindObjectForCode("default_seasons").CurrentStage == 5 then
-		for _, region in pairs(region_list) do
-			Tracker:FindObjectForCode(region.."_season").CurrentStage = 2
-			if Tracker:FindObjectForCode("horon_village_season_shuffle").CurrentStage == 1 then
-				Tracker:FindObjectForCode("horon_village_season").CurrentStage = 2
-			end
-		end
-	elseif Tracker:FindObjectForCode("default_seasons").CurrentStage == 6 then
-		for _, region in pairs(region_list) do
-			Tracker:FindObjectForCode(region.."_season").CurrentStage = 3
-			if Tracker:FindObjectForCode("horon_village_season_shuffle").CurrentStage == 1 then
-				Tracker:FindObjectForCode("horon_village_season").CurrentStage = 3
+				Tracker:FindObjectForCode("horon_village_season").CurrentStage = season
 			end
 		end
 	end
 end
 
-function display_seasons()
-	if Tracker:FindObjectForCode("default_seasons").CurrentStage == 1 or Tracker:FindObjectForCode("default_seasons").CurrentStage == 2 then
-		if Tracker:FindObjectForCode("fill_seasons").CurrentStage == 1 then
-			Tracker:FindObjectForCode("north_horon_season").CurrentStage = Tracker:FindObjectForCode("north_horon_season_hidden").CurrentStage
-			Tracker:FindObjectForCode("horon_village_season").CurrentStage = Tracker:FindObjectForCode("horon_village_season_hidden").CurrentStage
-			Tracker:FindObjectForCode("suburbs_season").CurrentStage = Tracker:FindObjectForCode("suburbs_season_hidden").CurrentStage
-			Tracker:FindObjectForCode("wow_season").CurrentStage = Tracker:FindObjectForCode("wow_season_hidden").CurrentStage
-			Tracker:FindObjectForCode("plain_season").CurrentStage = Tracker:FindObjectForCode("plain_season_hidden").CurrentStage
-			Tracker:FindObjectForCode("swamp_season").CurrentStage = Tracker:FindObjectForCode("swamp_season_hidden").CurrentStage
-			Tracker:FindObjectForCode("sunken_season").CurrentStage = Tracker:FindObjectForCode("sunken_season_hidden").CurrentStage
-			Tracker:FindObjectForCode("lost_woods_season").CurrentStage = Tracker:FindObjectForCode("lost_woods_season_hidden").CurrentStage
-			Tracker:FindObjectForCode("tarm_ruins_season").CurrentStage = Tracker:FindObjectForCode("tarm_ruins_season_hidden").CurrentStage
-			Tracker:FindObjectForCode("coast_season").CurrentStage = Tracker:FindObjectForCode("coast_season_hidden").CurrentStage
-			Tracker:FindObjectForCode("remains_season").CurrentStage = Tracker:FindObjectForCode("remains_season_hidden").CurrentStage
+function DisplaySeasons()
+	if (Tracker:FindObjectForCode("default_seasons").CurrentStage == 1 or Tracker:FindObjectForCode("default_seasons").CurrentStage == 2) and Tracker:FindObjectForCode("fill_seasons").CurrentStage == 1 then
+		local regionList = {"horon_village_season", "north_horon_season", "suburbs_season", "wow_season", "plain_season", "swamp_season", "sunken_season", "lost_woods_season", "tarm_ruins_season", "coast_season", "remains_season"}
+		for _, region in ipairs(regionList) do
+			Tracker:FindObjectForCode(region).CurrentStage = Tracker:FindObjectForCode(region.."_hidden").CurrentStage
 		end
 	end
 end
 
-function vanilla_portals()
+function VanillaPortals()
 	if (not LOADED) then
 		return
 	end
@@ -1523,7 +1475,7 @@ function vanilla_portals()
 	end
 end
 
-function display_portals()
+function DisplayPortals()
 	if Tracker:FindObjectForCode("fill_portals").CurrentStage == 1 then
 		if Tracker:FindObjectForCode("shuffle_portals").CurrentStage == 1 or Tracker:FindObjectForCode("shuffle_portals").CurrentStage == 2 then
 			local portal_list = {"suburbs","swamp","lake","mtcucco","horon","remains","upremains","mountain","market","furnace","village","pirates","volcano","d8"}
@@ -1534,7 +1486,7 @@ function display_portals()
 	end
 end
 
-function display_lost_woods()
+function DisplayLostWoods()
 	if (not LOADED) then
 		return
 	end
@@ -1554,7 +1506,7 @@ function display_lost_woods()
 		end
 	end
 end
-function display_pedestal()
+function DisplayPedestal()
 	if (not LOADED) then
 		return
 	end
@@ -1580,14 +1532,14 @@ function OnFrameHandler()
 	LOADED = true
 end
 
-ScriptHost:AddWatchForCode("dungeon settings handler", "shuffle_dungeons", dungeon_settings)
-ScriptHost:AddWatchForCode("dungeons handler", "fill_dungeons", display_dungeons)
-ScriptHost:AddWatchForCode("seasons settings handler", "default_seasons", seasons_settings)
-ScriptHost:AddWatchForCode("seasons handler", "fill_seasons", display_seasons)
-ScriptHost:AddWatchForCode("portal settings handler", "shuffle_portals", vanilla_portals)
-ScriptHost:AddWatchForCode("portal handler", "fill_portals", display_portals)
-ScriptHost:AddWatchForCode("lost woods handler", "randomize_lost_woods_main_sequence", display_lost_woods)
-ScriptHost:AddWatchForCode("pedestal handler", "randomize_lost_woods_item_sequence", display_pedestal)
+ScriptHost:AddWatchForCode("dungeon settings handler", "shuffle_dungeons", DungeonSettings)
+ScriptHost:AddWatchForCode("dungeons handler", "fill_dungeons", DisplayDungeons)
+ScriptHost:AddWatchForCode("seasons settings handler", "default_seasons", SeasonSettings)
+ScriptHost:AddWatchForCode("seasons handler", "fill_seasons", DisplaySeasons)
+ScriptHost:AddWatchForCode("portal settings handler", "shuffle_portals", VanillaPortals)
+ScriptHost:AddWatchForCode("portal handler", "fill_portals", DisplayPortals)
+ScriptHost:AddWatchForCode("lost woods handler", "randomize_lost_woods_main_sequence", DisplayLostWoods)
+ScriptHost:AddWatchForCode("pedestal handler", "randomize_lost_woods_item_sequence", DisplayPedestal)
 ScriptHost:AddOnLocationSectionChangedHandler("section changed handler", OnSectionChanged)
 ScriptHost:AddOnFrameHandler("load handler", OnFrameHandler)
 ScriptHost:AddWatchForCode("see companion handler", Companion, function()

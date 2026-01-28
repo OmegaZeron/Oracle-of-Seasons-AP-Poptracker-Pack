@@ -1,6 +1,3 @@
-if (PopVersion >= "0.30.4") then
-	Tracker.AllowDeferredLogicUpdate = true
-end
 require("scripts.utils")
 require("scripts.logic.definition_helper")
 require("scripts.logic.logic")

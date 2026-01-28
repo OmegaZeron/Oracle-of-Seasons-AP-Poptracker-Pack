@@ -1,12 +1,12 @@
-IsStale = true
-Staleness = 0
+local IsStale = true
+local Staleness = 0
 
 OoSLocation = {}
 OoSLocation.__index = OoSLocation
 
-NamedLocations = {}
+local NamedLocations = {}
 
-DelayedExits = {}
+-- DelayedExits = {}
 
 -- creates a lua object for the given name. it acts as a representation of a overworld reagion or indoor location and
 -- tracks its connected objects via the exit-table
@@ -190,9 +190,11 @@ function Has(item, amount)
 	end
 	local count = Tracker:ProviderCountForCode(item)
 	amount = tonumber(amount)
-	return count >= amount
+	return amount and count >= amount
 end
 
+---@param result boolean
+---@return accessibilityLevel
 function BoolToAccess(result)
 	if result then
 		return AccessibilityLevel.Normal

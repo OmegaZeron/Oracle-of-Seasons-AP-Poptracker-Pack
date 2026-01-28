@@ -1,4 +1,4 @@
-function ItemID(base, sub)
+local function ItemID(base, sub)
 	return base * 0x100 + sub
 end
 ITEM_MAPPING = {

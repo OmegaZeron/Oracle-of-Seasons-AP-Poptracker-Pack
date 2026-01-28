@@ -78,6 +78,21 @@ DefaultAutoCollectLocationTable = {
 	["Tarm Ruins/Lost Woods/Lost Woods: Pedestal Item"] = {"@Tarm Ruins/Pedestal Sequence/Serenade the Scrub"},
 	["North Horon/Golden Beasts Reward/North Horon: Golden Beasts Old Man"] = {GoldenDarknut, GoldenLynel, GoldenOctorok, GoldenMoblin}
 }
+
+DefaultSeasons = {
+	["north_horon_season"] = 3,
+	["suburbs_season"] = 2,
+	["wow_season"] = 1,
+	["plain_season"] = 0,
+	["swamp_season"] = 2,
+	["sunken_season"] = 1,
+	["lost_woods_season"] = 2,
+	["tarm_ruins_season"] = 0,
+	["coast_season"] = 3,
+	["remains_season"] = 3,
+	["horon_village_season"] = 4
+}
+
 AutoCollectLocationTable = {["Any"] = DefaultAutoCollectLocationTable}
 
 CurrentTab = nil

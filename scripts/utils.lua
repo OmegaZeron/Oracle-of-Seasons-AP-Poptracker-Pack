@@ -26,10 +26,3 @@ function TableContains(table, value)
 	end
 	return false
 end
-
-function Default(value, default)
-	if (value == nil) then
-		return default
-	end
-	return value
-end

@@ -3,7 +3,7 @@
 ---@param bitMask number?
 ---@param id number?
 ---@return number
-function LocationID(room, flagByte, bitMask, id)
+local function LocationID(room, flagByte, bitMask, id)
 	if id then
 		return id
 	end

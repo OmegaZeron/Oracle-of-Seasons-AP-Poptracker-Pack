@@ -39,7 +39,10 @@ FloodgateLever:connect_one_way_entrance(FloodgateKeyhole, function()
 		Bracelet,
 		Any(
 			Flippers,
-			Feather,
+			All(
+				Feather,
+				MediumLogic
+			),
 			All(
 				Satchel,
 				PegasusSeeds

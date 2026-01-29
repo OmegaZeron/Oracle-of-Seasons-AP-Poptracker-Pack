@@ -39,6 +39,7 @@ FloodgateLever:connect_one_way_entrance(FloodgateKeyhole, function()
 		Bracelet,
 		Any(
 			Flippers,
+			Cape,
 			All(
 				Feather,
 				MediumLogic

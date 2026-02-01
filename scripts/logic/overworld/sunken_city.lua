@@ -49,8 +49,12 @@ SunkenCity:connect_one_way(DiverSecret, function()
 	return All(
 		Flippers,
 		Any(
+			All(
+				SwimmersRing,
+				MediumLogic
+			),
 			CanSwordKill,
-			MediumLogic
+			HardLogic
 		)
 	)
 end)

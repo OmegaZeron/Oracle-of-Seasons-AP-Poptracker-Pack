@@ -267,7 +267,7 @@
 				"rows": [
 					[""],
 					["entrance_label2", "", "fill_portals", ""],
-					["suburbs_label_sub", "suburbs_portal", "village_label_sub", "horon_portal"],
+					["suburbs_label_sub", "suburbs_portal", "horon_label_sub", "horon_portal"],
 					["swamp_label_sub", "swamp_portal", "remains_label_sub", "remains_portal"],
 					["lake_label_sub", "lake_portal", "upremains_label_sub", "upremains_portal"],
 					["mtcucco_label_sub", "mtcucco_portal", "", ""]

@@ -24,9 +24,7 @@ function HasAnySword() return Has(WoodSword) or Has(BiggoronSword) end
 function CanShootSeeds() return Has(Slingshot) or Has(SeedShooter) end
 
 function CanDestroyMushroom(includeDimitri)
-	if (includeDimitri == nil) then
-		includeDimitri = false
-	end
+	includeDimitri = includeDimitri or false
 	return Any(
 		Bracelet,
 		All(
@@ -1014,14 +1012,12 @@ function CanEnterTarm()
 end
 
 function CanLostWoods(allowDefault, forceDeku)
-	if (allowDefault == nil) then
-		allowDefault = false
-	end
-	if (forceDeku == nil) then
-		forceDeku = false
-	end
+	allowDefault = allowDefault or false
+	forceDeku = forceDeku or false
+
 	local defaultSeason = IndexToSeason[Tracker:FindObjectForCode("lost_woods_season").CurrentStage]
 	local canDefault = defaultSeason ~= UnknownSeason
+
 	for i=1, 4 do
 		local season = IndexToSeason[Tracker:FindObjectForCode("lost_woods_"..i).CurrentStage]
 		canDefault = allowDefault and canDefault and defaultSeason == season
@@ -1041,14 +1037,12 @@ function CanLostWoods(allowDefault, forceDeku)
 	)
 end
 function CanPedestal(allowDefault, forceDeku)
-	if (allowDefault == nil) then
-		allowDefault = false
-	end
-	if (forceDeku == nil) then
-		forceDeku = false
-	end
+	allowDefault = allowDefault or false
+	forceDeku = forceDeku or false
+
 	local defaultSeason = IndexToSeason[Tracker:FindObjectForCode("lost_woods_season").CurrentStage]
 	local canDefault = defaultSeason ~= UnknownSeason
+
 	for i=1, 4 do
 		local season = IndexToSeason[Tracker:FindObjectForCode("pedestal_"..i).CurrentStage]
 		canDefault = allowDefault and canDefault and defaultSeason == season
@@ -1068,154 +1062,151 @@ function CanPedestal(allowDefault, forceDeku)
 	)
 end
 
-local availableCuccos = nil
-
 function GetCuccos()
-	if (availableCuccos == nil) then
-		availableCuccos = {
-			["mt. cucco"] = {-1, -1, -1},
-			["horon"] = {-1, -1, -1},
-			["suburbs"] = {-1, -1, -1},
-			["moblin road"] = {-1, -1, -1},
-			["sunken"] = {-1, -1, -1},
-			["swamp"] = {-1, -1, -1},
-			["tarm"] = {-1, -1, -1}
-		}
+	local availableCuccos = {
+		["mt. cucco"] = {-1, -1, -1},
+		["horon"] = {-1, -1, -1},
+		["suburbs"] = {-1, -1, -1},
+		["moblin road"] = {-1, -1, -1},
+		["sunken"] = {-1, -1, -1},
+		["swamp"] = {-1, -1, -1},
+		["tarm"] = {-1, -1, -1}
+	}
 
-		function RegisterCucco(region, cuccos)
-			local oldCuccos = availableCuccos[region]
-			local newCuccos = {}
-			for i = 1, 3, 1 do
-				newCuccos[i] = math.max(oldCuccos[i], cuccos[i])
-			end
-			availableCuccos[region] = newCuccos
+	local function RegisterCucco(region, cuccos)
+		local oldCuccos = availableCuccos[region]
+		local newCuccos = {}
+		for i = 1, 3, 1 do
+			newCuccos[i] = math.max(oldCuccos[i], cuccos[i])
 		end
-		function UseAnyCucco(cuccos)
-			return {cuccos[1] - 1, cuccos[2], cuccos[3]}
-		end
-		function UseTopCucco(cuccos)
-			return {cuccos[1] - 1, cuccos[2] - 1, cuccos[3]}
-		end
-		function UseBottomCucco(cuccos)
-			return {cuccos[1] - 1, cuccos[2], cuccos[3] - 1}
-		end
+		availableCuccos[region] = newCuccos
+	end
+	local function UseAnyCucco(cuccos)
+		return {cuccos[1] - 1, cuccos[2], cuccos[3]}
+	end
+	local function UseTopCucco(cuccos)
+		return {cuccos[1] - 1, cuccos[2] - 1, cuccos[3]}
+	end
+	local function UseBottomCucco(cuccos)
+		return {cuccos[1] - 1, cuccos[2], cuccos[3] - 1}
+	end
 
-		local top, bottom = 1, 0
+	local top, bottom = 1, 0
 
-		if (Has(Shovel)) then
-			if (Has(Boomerang)) then
-				top = 3
-			else
-				top = 2
-			end
-		elseif (Has(Boomerang) and Has(SeedSatchel) and Has(PegasusSeeds)) then
+	if (Has(Shovel)) then
+		if (Has(Boomerang)) then
+			top = 3
+		else
 			top = 2
 		end
+	elseif (Has(Boomerang) and Has(SeedSatchel) and Has(PegasusSeeds)) then
+		top = 2
+	end
 
-		if ((Has(SunkenCitySpring) or Has(Spring)) and CanDestroyFlower() or Has(SpringBanana)) then
-			bottom = 2
-		end
+	if ((Has(SunkenCitySpring) or Has(Spring)) and CanDestroyFlower() == AccessibilityLevel.Normal or Has(SpringBanana)) then
+		bottom = 2
+	end
 
-		availableCuccos["mt. cucco"] = {top + bottom, top, bottom}
+	availableCuccos["mt. cucco"] = {top + bottom, top, bottom}
 
-		if (Jump3() or Has(Flippers) or Dimitri()) then
-			availableCuccos["horon"] = availableCuccos["mt. cucco"]
-		end
+	if (Jump3() == AccessibilityLevel.Normal or Has(Flippers) or Dimitri()) then
+		availableCuccos["horon"] = availableCuccos["mt. cucco"]
+	end
 
-		if (HasAnyFlute()) then
+	if (HasAnyFlute()) then
+		availableCuccos["sunken"] = availableCuccos["horon"]
+	elseif (Has(NatzuIsMoosh)) then
+		if (JumpLiquid4() == AccessibilityLevel.Normal) then
 			availableCuccos["sunken"] = availableCuccos["horon"]
-		elseif (Has(NatzuIsMoosh)) then
-			if (JumpLiquid4()) then
-				availableCuccos["sunken"] = availableCuccos["horon"]
-			elseif (Jump3()) then
-				availableCuccos["sunken"] = UseTopCucco(availableCuccos["horon"])
-			end
-		elseif (Has(NatzuIsDimitri)) then
-			if (CanDestroyFlower() and Has(Flippers)) then
-				availableCuccos["sunken"] = UseAnyCucco(availableCuccos["mt. cucco"])
-			end
-		elseif (Has(Flippers)) then
-			availableCuccos["sunken"] = availableCuccos["mt. cucco"]
+		elseif (Jump3() == AccessibilityLevel.Normal) then
+			availableCuccos["sunken"] = UseTopCucco(availableCuccos["horon"])
 		end
-
-		availableCuccos["suburbs"] = availableCuccos["sunken"]
-
-		if (Has(SeedSatchel) and Has(EmberSeeds)) then
-			availableCuccos["suburbs"] = availableCuccos["horon"]
-		elseif (Has(NorthHoronWinter) or Has(Winter) or ((Has(NorthHoronSpring) or Has(NorthHoronAutumn) or Has(NorthHoronWinter) or Has(Spring) or Has(Autumn) or Has(Winter)) and (Has(Flippers) or Dimitri()))) then
-			availableCuccos["suburbs"] = UseAnyCucco(availableCuccos["horon"])
+	elseif (Has(NatzuIsDimitri)) then
+		if (CanDestroyFlower() == AccessibilityLevel.Normal and Has(Flippers)) then
+			availableCuccos["sunken"] = UseAnyCucco(availableCuccos["mt. cucco"])
 		end
+	elseif (Has(Flippers)) then
+		availableCuccos["sunken"] = availableCuccos["mt. cucco"]
+	end
 
-		if (Has(EasternSuburbsSpring) or Has(Spring)) then
-			RegisterCucco("sunken", availableCuccos["suburbs"])
-		end
+	availableCuccos["suburbs"] = availableCuccos["sunken"]
 
-		if (Has(EasternSuburbsWinter) or Has(Winter)) then
-			availableCuccos["moblin road"] = availableCuccos["suburbs"]
-		else
-			availableCuccos["moblin road"] = UseTopCucco(availableCuccos["sunken"])
-		end
+	if (Has(SeedSatchel) and Has(EmberSeeds)) then
+		availableCuccos["suburbs"] = availableCuccos["horon"]
+	elseif (Has(NorthHoronWinter) or Has(Winter) or ((Has(NorthHoronSpring) or Has(NorthHoronAutumn) or Has(NorthHoronWinter) or Has(Spring) or Has(Autumn) or Has(Winter)) and (Has(Flippers) or Dimitri()))) then
+		availableCuccos["suburbs"] = UseAnyCucco(availableCuccos["horon"])
+	end
 
-		if (Has(HolodrumPlainSummer) or Has(Summer) or Jump4() or Ricky() or Moosh()) then
-			availableCuccos["swamp"] = availableCuccos["horon"]
-		else
-			availableCuccos["swamp"] = UseBottomCucco(availableCuccos["horon"])
-		end
+	if (Has(EasternSuburbsSpring) or Has(Spring)) then
+		RegisterCucco("sunken", availableCuccos["suburbs"])
+	end
 
+	if (Has(EasternSuburbsWinter) or Has(Winter)) then
+		availableCuccos["moblin road"] = availableCuccos["suburbs"]
+	else
+		availableCuccos["moblin road"] = UseTopCucco(availableCuccos["sunken"])
+	end
+
+	if (Has(HolodrumPlainSummer) or Has(Summer) or Jump4() or Ricky() or Moosh()) then
+		availableCuccos["swamp"] = availableCuccos["horon"]
+	else
+		availableCuccos["swamp"] = UseBottomCucco(availableCuccos["horon"])
+	end
+
+	if (All(
+		CanEnterTarm,
+		Any(
+			LostWoodsWinter,
+			Winter
+		),
+		Any(
+			Spring,
+			Summer,
+			Autumn
+		),
+		Any(
+			LostWoodsSummer,
+			Summer,
+			All(
+				Any(
+					LostWoodsAutumn,
+					Autumn
+				),
+				MagicBoomerang
+			)
+		)
+	) >= AccessibilityLevel.SequenceBreak) then
+		local canReachDeku = All(
+			Shield,
+			Any(
+				availableCuccos["swamp"][2] > 0,
+				JumpLiquid2,
+				Flippers
+			)
+		) == AccessibilityLevel.Normal
 		if (All(
-			CanEnterTarm,
+			Autumn,
+			CanDestroyMushroom,
 			Any(
-				LostWoodsWinter,
-				Winter
-			),
-			Any(
-				Spring,
-				Summer,
-				Autumn
-			),
-			Any(
-				LostWoodsSummer,
-				Summer,
+				CanLostWoods(false, canReachDeku),
 				All(
-					Any(
-						LostWoodsAutumn,
-						Autumn
-					),
-					MagicBoomerang
+					CanLostWoods(true, canReachDeku),
+					CanLostWoods(false, CanBurnTrees() and Has(Phonograph))
 				)
 			)
-		) == AccessibilityLevel.Normal) then
-			local canReachDeku = All(
-				Shield,
-				Any(
-					availableCuccos["swamp"][2] > 0,
-					JumpLiquid2,
-					Flippers
-				)
-			) == AccessibilityLevel.Normal
-			if (All(
-				Autumn,
-				CanDestroyMushroom,
-				Any(
-					CanLostWoods(false, canReachDeku),
-					All(
-						CanLostWoods(true, canReachDeku),
-						CanLostWoods(false, CanBurnTrees() and Has(Phonograph))
-					)
-				)
-			) == AccessibilityLevel.Normal) then
-				availableCuccos["tarm"] = availableCuccos["swamp"]
-			end
+		) >= AccessibilityLevel.SequenceBreak) then
+			availableCuccos["tarm"] = availableCuccos["swamp"]
 		end
+	end
 
-		for region in pairs(availableCuccos) do
-			for i = 1, 3, 1 do
-				if (availableCuccos[region][i] < 0) then
-					availableCuccos[region] = {-1, -1, -1}
-				end
+	for region in pairs(availableCuccos) do
+		for i = 1, 3 do
+			if (availableCuccos[region][i] < 0) then
+				availableCuccos[region] = {-1, -1, -1}
 			end
 		end
 	end
+
 	return availableCuccos
 end
 
@@ -1395,7 +1386,7 @@ function HasD8BossKey()
 	)
 end
 
-function DungeonSettings()
+local function DungeonSettings()
 	if (not LOADED) then
 		return
 	end
@@ -1410,7 +1401,7 @@ function DungeonSettings()
 	end
 end
 
-function DisplayDungeons()
+local function DisplayDungeons()
 	if Tracker:FindObjectForCode("shuffle_dungeons").CurrentStage == 1 and Tracker:FindObjectForCode("fill_dungeons").CurrentStage == 1 then
 		for _, dungeon in ipairs(DungeonList) do
 			Tracker:FindObjectForCode(dungeon.."_ent_selector").CurrentStage = Tracker:FindObjectForCode(dungeon.."_ent_selector_hidden").CurrentStage
@@ -1418,7 +1409,7 @@ function DisplayDungeons()
 	end
 end
 
-function SeasonSettings()
+local function SeasonSettings()
 	if (not LOADED) then
 		return
 	end
@@ -1443,7 +1434,7 @@ function SeasonSettings()
 	end
 end
 
-function DisplaySeasons()
+local function DisplaySeasons()
 	if (Tracker:FindObjectForCode("default_seasons").CurrentStage == 1 or Tracker:FindObjectForCode("default_seasons").CurrentStage == 2) and Tracker:FindObjectForCode("fill_seasons").CurrentStage == 1 then
 		local regionList = {"horon_village_season", "north_horon_season", "suburbs_season", "wow_season", "plain_season", "swamp_season", "sunken_season", "lost_woods_season", "tarm_ruins_season", "coast_season", "remains_season"}
 		for _, region in ipairs(regionList) do
@@ -1452,7 +1443,7 @@ function DisplaySeasons()
 	end
 end
 
-function VanillaPortals()
+local function VanillaPortals()
 	if (not LOADED) then
 		return
 	end
@@ -1475,7 +1466,7 @@ function VanillaPortals()
 	end
 end
 
-function DisplayPortals()
+local function DisplayPortals()
 	if Tracker:FindObjectForCode("fill_portals").CurrentStage == 1 then
 		if Tracker:FindObjectForCode("shuffle_portals").CurrentStage == 1 or Tracker:FindObjectForCode("shuffle_portals").CurrentStage == 2 then
 			local portal_list = {"suburbs","swamp","lake","mtcucco","horon","remains","upremains","mountain","market","furnace","village","pirates","volcano","d8"}
@@ -1486,7 +1477,7 @@ function DisplayPortals()
 	end
 end
 
-function DisplayLostWoods()
+local function DisplayLostWoods()
 	if (not LOADED) then
 		return
 	end
@@ -1506,7 +1497,7 @@ function DisplayLostWoods()
 		end
 	end
 end
-function DisplayPedestal()
+local function DisplayPedestal()
 	if (not LOADED) then
 		return
 	end
@@ -1527,7 +1518,7 @@ function DisplayPedestal()
 	end
 end
 
-function OnFrameHandler()
+local function OnFrameHandler()
 	ScriptHost:RemoveOnFrameHandler("load handler")
 	LOADED = true
 end

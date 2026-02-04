@@ -162,7 +162,7 @@ function OnClear(slot_data)
 			[SeedShooter] = {"@Horon Village/Horon Tree/Horon Village: Seed Tree", SeedMapping[slot_data["options"]["default_seed"]]},
 			[AnyFlute] = {function() Tracker:FindObjectForCode(Companion).CurrentStage = SLOT_DATA["options"]["animal_companion"] end}
 		},
-		["Any"] = {table.unpack(DefaultAutoCollectLocationTable)}
+		["Any"] = {DefaultAutoCollectLocationTable}
 	}
 
 	Tracker:FindObjectForCode("horon_village_season_shuffle").CurrentStage = slot_data["default_seasons"]["HORON_VILLAGE"] == 255 and 0 or 1

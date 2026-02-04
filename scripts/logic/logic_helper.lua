@@ -485,7 +485,6 @@ function CanDestroyRespawningBush()
 		CanSwordKill,
 		All(
 			Any(
-
 				Bombs,
 				Bombchus
 			),

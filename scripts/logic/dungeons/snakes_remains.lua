@@ -95,6 +95,14 @@ SnakeHardhats:connect_one_way_entrance(SnakeBombMoblins, function()
 			All(
 				Shovel,
 				HardLogic
+			),
+			All(
+				-- bomb them into the pit
+				Any(
+					Bombs,
+					Bombchus
+				),
+				AccessibilityLevel.SequenceBreak
 			)
 		),
 		-- moblins

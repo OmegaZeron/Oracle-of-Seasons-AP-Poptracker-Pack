@@ -100,7 +100,7 @@
 				"name": "Chest in Distant Moblins Room",
 				"sections": [
 					{
-						"access_rules": ["^$CanReach|SnakeBombMoblins"]
+						"access_rules": ["^$CanReach|SnakeBombMoblinChest"]
 					}
 				],
 				"map_locations": [

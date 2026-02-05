@@ -483,11 +483,9 @@ end
 function CanDestroyRespawningBush()
 	return Any(
 		CanSwordKill,
+		Bombs,
 		All(
-			Any(
-				Bombs,
-				Bombchus
-			),
+			HasBombchus(4),
 			MediumLogic
 		)
 	)

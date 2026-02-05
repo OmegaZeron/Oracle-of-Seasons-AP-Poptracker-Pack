@@ -65,69 +65,62 @@ end)
 -- 3 keys
 SnakeMoblinRopeFight:connect_one_way_entrance(SnakeHardhats, function() return D2KeyCount(3, 1) end)
 SnakeHardhats:connect_one_way(SnakeHardhatChest, CanDestroyPot)
-SnakeHardhats:connect_one_way(SnakeWildBombs, function()
+SnakeHardhats:connect_one_way_entrance(SnakeBombMoblins, function()
+	return Any(
+		CanSwordKill,
+		Boomerang,
+		CanKillWithPit,
+		SwitchHook,
+		All(
+			HasUpgradedSatchel,
+			Any(
+				CanShootSeeds,
+				HardLogic
+			),
+			Any(
+				ScentSeeds,
+				GaleSeeds,
+				MysterySeeds
+			),
+			MediumLogic
+		),
+		-- bomb them into the pit
+		HasBombchus(2),
+		-- OoL of above with regular bombs
+		All(
+			Bombs,
+			AccessibilityLevel.SequenceBreak
+		)
+	)
+end)
+SnakeBombMoblins:connect_one_way(SnakeWildBombs, function()
 	return All(
 		CanDestroyRespawningBush,
 		MediumLogic
 	)
 end)
-SnakeHardhats:connect_one_way_entrance(SnakeBombMoblins, function()
-	return All(
-		-- hardhats
-		Any(
-			CanSwordKill,
-			Boomerang,
-			CanKillWithPit,
-			SwitchHook,
-			All(
-				HasUpgradedSatchel,
-				Any(
-					CanShootSeeds,
-					HardLogic
-				),
-				Any(
-					ScentSeeds,
-					GaleSeeds,
-					MysterySeeds
-				),
-				MediumLogic
-			),
-			All(
-				Shovel,
-				HardLogic
-			),
-			All(
-				-- bomb them into the pit
-				Any(
-					Bombs,
-					Bombchus
-				),
-				AccessibilityLevel.SequenceBreak
+SnakeBombMoblins:connect_one_way(SnakeBombMoblinChest, function()
+	Any(
+		CanSwordKill,
+		Bombs, -- regrowing bushes are right there
+		CanShootSeedsCombat,
+		All(
+			CanNormalKill(true),
+			Any(
+				Feather,
+				All(
+					SwitchHook,
+					MediumLogic
+				)
 			)
 		),
-		-- moblins
-		Any(
-			CanSwordKill,
-			Bombs, -- regrowing bushes are right there
-			CanShootSeedsCombat,
-			All(
-				CanNormalKill(true),
-				Any(
-					Feather,
-					All(
-						SwitchHook,
-						MediumLogic
-					)
-				)
+		All(
+			Any(
+				CanBurnTrees,
+				CanPunch,
+				CaneOfSomaria
 			),
-			All(
-				Any(
-					CanBurnTrees,
-					CanPunch,
-					CaneOfSomaria
-				),
-				HardLogic
-			)
+			HardLogic
 		)
 	)
 end)

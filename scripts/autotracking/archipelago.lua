@@ -224,7 +224,7 @@ function OnClear(slot_data)
 			Tracker:FindObjectForCode("d"..i.."_compass").Active = true
 			RevealDungeon(i)
 			if (slot_data["options"]["show_dungeons_with_essence"] == 1) then
-				RevealEssence(i)
+				RevealEssence(i, true)
 			end
 		end
 	end
@@ -598,13 +598,15 @@ function RevealDungeon(dungeon)
 end
 
 ---@param dungeon number
-function RevealEssence(dungeon)
+function RevealEssence(dungeon, skipEntrance)
 	if SLOT_DATA["options"]["shuffle_essences"] ~= 0 or SLOT_DATA["options"]["show_dungeons_with_essence"] == 0 or not EssenceTable[dungeon] then
 		return
 	end
 	if EssencesInWorld[EssenceTable[dungeon][1]] then
 		Tracker:FindObjectForCode(EssenceTable[dungeon][2]).Active = true
-		RevealDungeon(dungeon)
+		if not skipEntrance then
+			RevealDungeon(dungeon)
+		end
 	end
 end
 

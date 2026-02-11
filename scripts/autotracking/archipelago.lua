@@ -216,7 +216,10 @@ function OnClear(slot_data)
 	end
 	-- if starting maps/compasses, auto collect
 	if (slot_data["options"]["starting_maps_compasses"] == 1) then
-		for i = 1, 8 do
+		for i = 0, 9 do
+			if i == 9 then
+				i = 11
+			end
 			Tracker:FindObjectForCode("d"..i.."_map").Active = true
 			Tracker:FindObjectForCode("d"..i.."_compass").Active = true
 			RevealDungeon(i)
@@ -588,13 +591,15 @@ function RevealDungeon(dungeon)
 		local hiddenStage = Tracker:FindObjectForCode("d"..dungeon.."_ent_selector_hidden").CurrentStage
 		Tracker:FindObjectForCode("d"..dungeon.."_ent_selector").CurrentStage = hiddenStage
 		-- clear the "enter dungeon" location
-		Tracker:FindObjectForCode(DungeonSetVars[hiddenStage][3]).AvailableChestCount = 0
+		if DungeonSetVars[hiddenStage] then
+			Tracker:FindObjectForCode(DungeonSetVars[hiddenStage][3]).AvailableChestCount = 0
+		end
 	end
 end
 
 ---@param dungeon number
 function RevealEssence(dungeon)
-	if SLOT_DATA["options"]["shuffle_essences"] ~= 0 or SLOT_DATA["options"]["show_dungeons_with_essence"] == 0 then
+	if SLOT_DATA["options"]["shuffle_essences"] ~= 0 or SLOT_DATA["options"]["show_dungeons_with_essence"] == 0 or not EssenceTable[dungeon] then
 		return
 	end
 	if EssencesInWorld[EssenceTable[dungeon][1]] then

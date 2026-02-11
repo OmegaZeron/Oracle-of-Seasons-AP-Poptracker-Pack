@@ -925,12 +925,18 @@
 		"img": "images/items/master_key.png",
 		"codes": "d8_master_key"
 	},
-	// {
-	// 	"name": "D0 Map",
-	// 	"type": "toggle",
-	// 	"img": "images/items/map.png",
-	// 	"codes": "d0_map"
-	// },
+	{
+		"name": "D0 Map",
+		"type": "toggle",
+		"img": "images/items/map.png",
+		"codes": "d0_map"
+	},
+	{
+		"name": "LC Map",
+		"type": "toggle",
+		"img": "images/items/map.png",
+		"codes": "d11_map, lc_map"
+	},
 	{
 		"name": "D1 Map",
 		"type": "toggle",
@@ -978,6 +984,18 @@
 		"type": "toggle",
 		"img": "images/items/map.png",
 		"codes": "d8_map"
+	},
+	{
+		"name": "D0 Compass",
+		"type": "toggle",
+		"img": "images/items/compass.png",
+		"codes": "d0_compass"
+	},
+	{
+		"name": "LC Compass",
+		"type": "toggle",
+		"img": "images/items/compass.png",
+		"codes": "d11_compass, lc_compass"
 	},
 	{
 		"name": "D1 Compass",

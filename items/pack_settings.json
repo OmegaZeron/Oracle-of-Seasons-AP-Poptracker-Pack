@@ -4446,57 +4446,57 @@
 		"stages": [
 			{
 				"img": "images/labels/DX_unknown.png",
-				"codes": "lc_ent_selector, lc_ent",
+				"codes": "d11_ent_selector, lc_ent_selector, lc_ent",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/D0_entrance.png",
-				"codes": "lc_ent_selector, d0_lc",
+				"codes": "d11_ent_selector, lc_ent_selector, d0_lc",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/LC_entrance.png",
-				"codes": "lc_ent_selector, lc_lc",
+				"codes": "d11_ent_selector, lc_ent_selector, lc_lc",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/D1_entrance.png",
-				"codes": "lc_ent_selector, d1_lc",
+				"codes": "d11_ent_selector, lc_ent_selector, d1_lc",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/D2_entrance.png",
-				"codes": "lc_ent_selector, d2_lc",
+				"codes": "d11_ent_selector, lc_ent_selector, d2_lc",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/D3_entrance.png",
-				"codes": "lc_ent_selector, d3_lc",
+				"codes": "d11_ent_selector, lc_ent_selector, d3_lc",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/D4_entrance.png",
-				"codes": "lc_ent_selector, d4_lc",
+				"codes": "d11_ent_selector, lc_ent_selector, d4_lc",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/D5_entrance.png",
-				"codes": "lc_ent_selector, d5_lc",
+				"codes": "d11_ent_selector, lc_ent_selector, d5_lc",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/D6_entrance.png",
-				"codes": "lc_ent_selector, d6_lc",
+				"codes": "d11_ent_selector, lc_ent_selector, d6_lc",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/D7_entrance.png",
-				"codes": "lc_ent_selector, d7_lc",
+				"codes": "d11_ent_selector, lc_ent_selector, d7_lc",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/D8_entrance.png",
-				"codes": "lc_ent_selector, d8_lc",
+				"codes": "d11_ent_selector, lc_ent_selector, d8_lc",
 				"inherit_codes": false
 			}
 		]
@@ -4509,47 +4509,47 @@
 		"initial_stage_idx": 2,
 		"stages": [
 			{
-				"codes": "lc_ent_selector_hidden, lc_ent_hidden",
+				"codes": "d11_ent_selector_hidden, lc_ent_selector_hidden, lc_ent_hidden",
 				"inherit_codes": false
 			},
 			{
-				"codes": "lc_ent_selector_hidden, d0_lc_hidden",
+				"codes": "d11_ent_selector_hidden, lc_ent_selector_hidden, d0_lc_hidden",
 				"inherit_codes": false
 			},
 			{
-				"codes": "lc_ent_selector_hidden, lc_lc_hidden",
+				"codes": "d11_ent_selector_hidden, lc_ent_selector_hidden, lc_lc_hidden",
 				"inherit_codes": false
 			},
 			{
-				"codes": "lc_ent_selector_hidden, d1_lc_hidden",
+				"codes": "d11_ent_selector_hidden, lc_ent_selector_hidden, d1_lc_hidden",
 				"inherit_codes": false
 			},
 			{
-				"codes": "lc_ent_selector_hidden, d2_lc_hidden",
+				"codes": "d11_ent_selector_hidden, lc_ent_selector_hidden, d2_lc_hidden",
 				"inherit_codes": false
 			},
 			{
-				"codes": "lc_ent_selector_hidden, d3_lc_hidden",
+				"codes": "d11_ent_selector_hidden, lc_ent_selector_hidden, d3_lc_hidden",
 				"inherit_codes": false
 			},
 			{
-				"codes": "lc_ent_selector_hidden, d4_lc_hidden",
+				"codes": "d11_ent_selector_hidden, lc_ent_selector_hidden, d4_lc_hidden",
 				"inherit_codes": false
 			},
 			{
-				"codes": "lc_ent_selector_hidden, d5_lc_hidden",
+				"codes": "d11_ent_selector_hidden, lc_ent_selector_hidden, d5_lc_hidden",
 				"inherit_codes": false
 			},
 			{
-				"codes": "lc_ent_selector_hidden, d6_lc_hidden",
+				"codes": "d11_ent_selector_hidden, lc_ent_selector_hidden, d6_lc_hidden",
 				"inherit_codes": false
 			},
 			{
-				"codes": "lc_ent_selector_hidden, d7_lc_hidden",
+				"codes": "d11_ent_selector_hidden, lc_ent_selector_hidden, d7_lc_hidden",
 				"inherit_codes": false
 			},
 			{
-				"codes": "lc_ent_selector_hidden, d8_lc_hidden",
+				"codes": "d11_ent_selector_hidden, lc_ent_selector_hidden, d8_lc_hidden",
 				"inherit_codes": false
 			}
 		]

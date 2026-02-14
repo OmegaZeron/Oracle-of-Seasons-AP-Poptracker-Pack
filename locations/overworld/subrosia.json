@@ -119,7 +119,8 @@
 				"visibility_rules": ["portalshuffleon", "portalshuffleoutward"],
 				"sections": [
 					{
-						"access_rules": ["{^$CanReach|SubrosiaMountainEast}"]
+						"access_rules": ["{^$CanReach|SubrosiaMountainEast}"],
+						"inspectable_sequence_break": true
 					}
 				],
 				"map_locations": [
@@ -136,7 +137,8 @@
 				"visibility_rules": ["portalshuffleon", "portalshuffleoutward"],
 				"sections": [
 					{
-						"access_rules": ["{^$CanReach|Volcano}"]
+						"access_rules": ["{^$CanReach|Volcano}"],
+						"inspectable_sequence_break": true
 					}
 				],
 				"map_locations": [
@@ -250,7 +252,8 @@
 				"visibility_rules": ["portalshuffleon", "portalshuffleoutward"],
 				"sections": [
 					{
-						"access_rules": ["{^$CanReach|SubrosiaMarket}"]
+						"access_rules": ["{^$CanReach|SubrosiaMarket}"],
+						"inspectable_sequence_break": true
 					}
 				],
 				"map_locations": [
@@ -331,7 +334,8 @@
 				"visibility_rules": ["portalshuffleon", "portalshuffleoutward"],
 				"sections": [
 					{
-						"access_rules": ["{^$CanReach|EastFurnace}"]
+						"access_rules": ["{^$CanReach|EastFurnace}"],
+						"inspectable_sequence_break": true
 					}
 				],
 				"map_locations": [
@@ -412,7 +416,8 @@
 				"visibility_rules": ["portalshuffleon", "portalshuffleoutward"],
 				"sections": [
 					{
-					"access_rules": ["{^$CanReach|SubrosiaVillagePortal}"]
+					"access_rules": ["{^$CanReach|SubrosiaVillagePortal}"],
+						"inspectable_sequence_break": true
 					}
 				],
 				"map_locations": [
@@ -509,7 +514,8 @@
 				"visibility_rules": ["portalshuffleon", "portalshuffleoutward"],
 				"sections": [
 					{
-						"access_rules": ["{^$CanReach|Pirates}"]
+						"access_rules": ["{^$CanReach|Pirates}"],
+						"inspectable_sequence_break": true
 					}
 				],
 				"map_locations": [
@@ -526,7 +532,8 @@
 				"visibility_rules": ["portalshuffleon", "portalshuffleoutward"],
 				"sections": [
 					{
-						"access_rules": ["{^$CanReach|SwordAndShieldMaze}"]
+						"access_rules": ["{^$CanReach|SwordAndShieldMaze}"],
+						"inspectable_sequence_break": true
 					}
 				],
 				"map_locations": [
@@ -681,7 +688,8 @@
 						"name": "Sword and Shield Maze",
 						"access_rules": ["{^$CanReach|SwordAndShieldMaze}"],
 						"chest_unopened_img": "images/labels/dungeon_eye.png",
-						"chest_opened_img": "images/labels/dungeon_eye_disabled.png"
+						"chest_opened_img": "images/labels/dungeon_eye_disabled.png",
+						"inspectable_sequence_break": true
 					}
 				],
 				"map_locations": [

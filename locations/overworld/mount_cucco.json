@@ -28,7 +28,8 @@
 				"visibility_rules": ["portalshuffleon", "portalshuffleoutward"],
 				"sections": [
 					{
-						"access_rules": ["{^$CanReach|LowerMtCucco}"]
+						"access_rules": ["{^$CanReach|LowerMtCucco}"],
+						"inspectable_sequence_break": true
 					}
 				],
 				"map_locations": [
@@ -141,7 +142,8 @@
 						"name": "Dancing Dragon Dungeon",
 						"access_rules": ["{^$CanReach|DancingDragonDungeon}"],
 						"chest_unopened_img": "images/labels/dungeon_eye.png",
-						"chest_opened_img": "images/labels/dungeon_eye_disabled.png"
+						"chest_opened_img": "images/labels/dungeon_eye_disabled.png",
+						"inspectable_sequence_break": true
 					}
 				],
 				"map_locations": [

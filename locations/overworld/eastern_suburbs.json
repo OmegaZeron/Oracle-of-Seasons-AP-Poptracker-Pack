@@ -256,7 +256,8 @@
 					{
 						"map": "holodrum",
 						"x": 578,
-						"y": 372
+						"y": 372,
+						"shape": "diamond"
 					}
 				]
 			},
@@ -345,7 +346,8 @@
 				"visibility_rules": ["portalshuffleon", "portalshuffleoutward"],
 				"sections": [
 					{
-						"access_rules": ["{^$CanReach|SuburbsPortal}"]
+						"access_rules": ["{^$CanReach|SuburbsPortal}"],
+						"inspectable_sequence_break": true
 					}
 				],
 				"map_locations": [
@@ -365,7 +367,8 @@
 						"name": "Snake's Remains",
 						"access_rules": ["{^$CanReach|SnakesRemains}"],
 						"chest_unopened_img": "images/labels/dungeon_eye.png",
-						"chest_opened_img": "images/labels/dungeon_eye_disabled.png"
+						"chest_opened_img": "images/labels/dungeon_eye_disabled.png",
+						"inspectable_sequence_break": true
 					}
 				],
 				"map_locations": [

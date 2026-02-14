@@ -126,7 +126,8 @@
 					{
 						"map": "holodrum",
 						"x": 145,
-						"y": 200
+						"y": 200,
+						"shape": "diamond"
 					}
 				]
 			},
@@ -206,7 +207,8 @@
 						"name": "Ancient Ruins",
 						"access_rules": ["{^$CanReach|AncientRuins}"],
 						"chest_unopened_img": "images/labels/dungeon_eye.png",
-						"chest_opened_img": "images/labels/dungeon_eye_disabled.png"
+						"chest_opened_img": "images/labels/dungeon_eye_disabled.png",
+						"inspectable_sequence_break": true
 					}
 				],
 				"map_locations": [

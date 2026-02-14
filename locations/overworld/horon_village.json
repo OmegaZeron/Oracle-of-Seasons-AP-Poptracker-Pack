@@ -401,7 +401,8 @@
 				"visibility_rules": ["portalshuffleon", "portalshuffleoutward"],
 				"sections": [
 					{
-						"access_rules": ["{^$CanReach|HoronPortal}"]
+						"access_rules": ["{^$CanReach|HoronPortal}"],
+						"inspectable_sequence_break": true
 					}
 				],
 				"map_locations": [

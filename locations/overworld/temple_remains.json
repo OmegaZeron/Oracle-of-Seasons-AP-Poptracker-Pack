@@ -48,7 +48,8 @@
 				"visibility_rules": ["portalshuffleon", "portalshuffleoutward"],
 				"sections": [
 					{
-						"access_rules": ["{^$CanReach|TempleRemainsLowerPortal}"]
+						"access_rules": ["{^$CanReach|TempleRemainsLowerPortal}"],
+						"inspectable_sequence_break": true
 					}
 				],
 				"map_locations": [
@@ -67,7 +68,8 @@
 				"visibility_rules": ["portalshuffleon", "portalshuffleoutward"],
 				"sections": [
 					{
-						"access_rules": ["{^$CanReach|TempleRemainsUpperPortal}"]
+						"access_rules": ["{^$CanReach|TempleRemainsUpperPortal}"],
+						"inspectable_sequence_break": true
 					}
 				],
 				"map_locations": [

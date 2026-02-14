@@ -149,7 +149,8 @@
 				"visibility_rules": ["portalshuffleon", "portalshuffleoutward"],
 				"sections": [
 					{
-						"access_rules": ["{^$CanReach|SpoolPortal}"]
+						"access_rules": ["{^$CanReach|SpoolPortal}"],
+						"inspectable_sequence_break": true
 					}
 				],
 				"map_locations": [
@@ -206,7 +207,8 @@
 					{
 						"map": "holodrum",
 						"x": 20,
-						"y": 525
+						"y": 525,
+						"shape": "diamond"
 					}
 				]
 			},
@@ -218,7 +220,8 @@
 						"name": "Poison Moth's Lair",
 						"access_rules": ["{^$CanReach|PoisonMothLair}"],
 						"chest_unopened_img": "images/labels/dungeon_eye.png",
-						"chest_opened_img": "images/labels/dungeon_eye_disabled.png"
+						"chest_opened_img": "images/labels/dungeon_eye_disabled.png",
+						"inspectable_sequence_break": true
 					}
 				],
 				"map_locations": [

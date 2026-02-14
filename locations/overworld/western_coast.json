@@ -33,7 +33,8 @@
 						"name": "Hero's Cave",
 						"access_rules": ["{^$CanReach|HerosCave}"],
 						"chest_unopened_img": "images/labels/dungeon_eye.png",
-						"chest_opened_img": "images/labels/dungeon_eye_disabled.png"
+						"chest_opened_img": "images/labels/dungeon_eye_disabled.png",
+						"inspectable_sequence_break": true
 					}
 				],
 				"map_locations": [
@@ -86,7 +87,8 @@
 						"name": "Hero's Cave (Linked)",
 						"access_rules": ["{^$CanReach|LinkedCave}"],
 						"chest_unopened_img": "images/labels/dungeon_eye.png",
-						"chest_opened_img": "images/labels/dungeon_eye_disabled.png"
+						"chest_opened_img": "images/labels/dungeon_eye_disabled.png",
+						"inspectable_sequence_break": true
 					}
 				],
 				"map_locations": [
@@ -205,7 +207,8 @@
 					{
 						"map": "holodrum",
 						"x": 234,
-						"y": 578
+						"y": 578,
+						"shape": "diamond"
 					}
 				]
 			},
@@ -322,7 +325,8 @@
 						"name": "Explorer's Crypt",
 						"access_rules": ["{^$CanReach|ExplorersCrypt}"],
 						"chest_unopened_img": "images/labels/dungeon_eye.png",
-						"chest_opened_img": "images/labels/dungeon_eye_disabled.png"
+						"chest_opened_img": "images/labels/dungeon_eye_disabled.png",
+						"inspectable_sequence_break": true
 					}
 				],
 				"map_locations": [

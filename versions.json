@@ -1,6 +1,12 @@
 {
 	"versions": [
 		{
+			"package_version": "6.0.9",
+			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/6.0.9/seasons_ap.zip",
+			"sha256": "95b2652ac738ba8638c95bf29f41fd8005fbe548b1b8ee33b8d7b5108b3f009a",
+			"changelog": ["Hints not displaying right, and causing infinite loop"]
+		},
+		{
 			"package_version": "6.0.8",
 			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/6.0.8/seasons_ap.zip",
 			"sha256": "b5b2d8fecaa8697b65af6f2ce21a94222d184024bdbd86e7730b79a592c4c371",

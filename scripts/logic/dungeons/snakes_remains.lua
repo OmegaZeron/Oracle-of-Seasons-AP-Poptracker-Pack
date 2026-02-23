@@ -72,21 +72,25 @@ SnakeHardhats:connect_one_way_entrance(SnakeBombMoblins, function()
 		CanKillWithPit,
 		SwitchHook,
 		All(
-			HasUpgradedSatchel,
 			Any(
-				CanShootSeeds,
-				HardLogic
-			),
-			Any(
-				ScentSeeds,
-				GaleSeeds,
-				MysterySeeds
+				All(
+					HasUpgradedSatchel,
+					Any(
+						CanShootSeeds,
+						HardLogic
+					),
+					Any(
+						ScentSeeds,
+						GaleSeeds,
+						MysterySeeds
+					)
+				),
+				-- bomb them into the pit
+				HasBombchus(2)
 			),
 			MediumLogic
 		),
-		-- bomb them into the pit
-		HasBombchus(2),
-		-- OoL of above with regular bombs
+		-- bombs-only is OoL for now
 		All(
 			Bombs,
 			AccessibilityLevel.SequenceBreak

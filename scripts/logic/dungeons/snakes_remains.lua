@@ -100,7 +100,7 @@ SnakeBombMoblins:connect_one_way(SnakeWildBombs, function()
 	)
 end)
 SnakeBombMoblins:connect_one_way(SnakeBombMoblinChest, function()
-	Any(
+	return Any(
 		CanSwordKill,
 		Bombs, -- regrowing bushes are right there
 		CanShootSeedsCombat,

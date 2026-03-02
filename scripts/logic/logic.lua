@@ -155,6 +155,7 @@ function StateChange()
 	end
 	IsStale = false
 	Staleness = Staleness + 1
+	InvalidateCache()
 	StartLocation:discover(AccessibilityLevel.Normal)
 end
 

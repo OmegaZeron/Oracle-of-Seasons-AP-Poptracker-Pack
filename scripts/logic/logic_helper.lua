@@ -1,3 +1,8 @@
+local CachedValues = {}
+function InvalidateCache()
+	CachedValues = {}
+end
+
 function MediumLogic()
 	return Any(
 		Medium,
@@ -73,13 +78,19 @@ function HasBombchus(count)
 end
 
 function CanBombWall()
-	return Any(
+	if CachedValues["CanBombWall"] then
+		return CachedValues["CanBombWall"]
+	end
+	local val = Any(
 		Bombs,
 		All(
 			HasBombchus(4),
 			MediumLogic
 		)
 	)
+
+	CachedValues["CanBombWall"] = val
+	return val
 end
 function BombPunchWall()
 	return Any(
@@ -303,11 +314,11 @@ function OnSectionChanged(section)
 	if (GashaIDToLocation[section.FullID]) then
 		GashaIDToLocation[section.FullID].cleared = section.AccessibilityLevel == AccessibilityLevel.Cleared
 
-		local hiddenSetting = Tracker:FindObjectForCode(HiddenSetting)
-		---@cast hiddenSetting JsonItem
-		hiddenSetting.Active = not hiddenSetting.Active
-	elseif (WildItems[section.FullID] and section.AccessibilityLevel == AccessibilityLevel.Cleared) then
-		Tracker:FindObjectForCode(WildItems[section.FullID]).Active = true
+		if PopVersion < "0.34.0" then
+			local hiddenSetting = Tracker:FindObjectForCode(HiddenSetting)
+			---@cast hiddenSetting JsonItem
+			hiddenSetting.Active = not hiddenSetting.Active
+		end
 	elseif (AutoCollectLocationTable["Any"][section.FullID] and section.AccessibilityLevel == AccessibilityLevel.Cleared) then
 		for _, v in ipairs(AutoCollectLocationTable["Any"][section.FullID]) do
 			if v:sub(1, 1) == "@" then
@@ -348,7 +359,10 @@ function HasUpgradedSatchel()
 end
 
 function CanShootSeedsCombat()
-	return All(
+	if CachedValues["CanShootSeedsCombat"] then
+		return CachedValues["CanShootSeedsCombat"]
+	end
+	local val = All(
 		CanShootSeeds,
 		HasUpgradedSatchel,
 		Any(
@@ -363,6 +377,9 @@ function CanShootSeedsCombat()
 			)
 		)
 	)
+
+	CachedValues["CanShootSeedsCombat"] = val
+	return val
 end
 
 function HasContactSeeds()
@@ -397,7 +414,10 @@ function CanShootLongTorches()
 end
 
 function CanDestroyBush(allowBombchus)
-	return Any(
+	if CachedValues["CanDestroyBush"..tostring(allowBombchus)] then
+		return CachedValues["CanDestroyBush"..tostring(allowBombchus)]
+	end
+	local val = Any(
 		HasAnySword,
 		MagicBoomerang,
 		Bracelet,
@@ -421,6 +441,9 @@ function CanDestroyBush(allowBombchus)
 			MediumLogic
 		)
 	)
+
+	CachedValues["CanDestroyBush"..tostring(allowBombchus)] = val
+	return val
 end
 
 function CanDestroyBushFlute(allowBombchus)
@@ -555,6 +578,9 @@ function AreEnoughGoldenBeastsSlain()
 end
 
 function MaxJump()
+	if CachedValues["MaxJump"] then
+		return CachedValues["MaxJump"]
+	end
 	local j = 0
 
 	if (Has(Cape) and Has(SeedSatchel) and Has(PegasusSeeds)) then
@@ -567,6 +593,7 @@ function MaxJump()
 		j = 1
 	end
 
+	CachedValues["MaxJump"] = j
 	return j
 end
 
@@ -724,7 +751,11 @@ function CanNormalKill(pitAvailable, allowGale)
 	pitAvailable = pitAvailable or false
 	allowGale = allowGale or true
 
-	return Any(
+	if CachedValues["CanNormalKill"..tostring(pitAvailable)..tostring(allowGale)] then
+		return CachedValues["CanNormalKill"..tostring(pitAvailable)..tostring(allowGale)]
+	end
+
+	local val = Any(
 		CanNormalSatchelKill(allowGale),
 		CanNormalSlingshotKill(allowGale),
 		All(
@@ -744,13 +775,18 @@ function CanNormalKill(pitAvailable, allowGale)
 			MediumLogic
 		)
 	)
+
+	CachedValues["CanNormalKill"..tostring(pitAvailable)..tostring(allowGale)] = val
+	return val
 end
 
 function CanNormalSatchelKill(allowGale)
-	if (allowGale == nil) then
-		allowGale = true
+	allowGale = allowGale or true
+
+	if CachedValues["CanNormalSatchelKill"..tostring(allowGale)] then
+		return CachedValues["CanNormalSatchelKill"..tostring(allowGale)]
 	end
-	return All(
+	local val = All(
 		HasUpgradedSatchel,
 		Any(
 			EmberSeeds,
@@ -773,13 +809,18 @@ function CanNormalSatchelKill(allowGale)
 			)
 		)
 	)
+
+	CachedValues["CanNormalSatchelKill"..tostring(allowGale)] = val
+	return val
 end
 
 function CanNormalSlingshotKill(allowGale)
-	if (allowGale == nil) then
-		allowGale = true
+	allowGale = allowGale or true
+
+	if CachedValues["CanNormalSlingshotKill"..tostring(allowGale)] then
+		return CachedValues["CanNormalSlingshotKill"..tostring(allowGale)]
 	end
-	return All(
+	local val = All(
 		HasUpgradedSatchel,
 		All(
 			CanShootSeeds,
@@ -799,12 +840,19 @@ function CanNormalSlingshotKill(allowGale)
 			)
 		)
 	)
+
+	CachedValues["CanNormalSlingshotKill"..tostring(allowGale)] = val
+	return val
 end
 
 function CanArmorKill(allowCane, allowBombchus)
 	allowCane = allowCane or false
 	allowBombchus = allowBombchus or false
-	return Any(
+
+	if CachedValues["CanArmorKill"..tostring(allowCane)..tostring(allowBombchus)] then
+		return CachedValues["CanArmorKill"..tostring(allowCane)..tostring(allowBombchus)]
+	end
+	local val = Any(
 		CanSwordPunchKill,
 		All(
 			Any(
@@ -830,6 +878,9 @@ function CanArmorKill(allowCane, allowBombchus)
 			MediumLogic
 		)
 	)
+
+	CachedValues["CanArmorKill"..tostring(allowCane)..tostring(allowBombchus)] = val
+	return val
 end
 
 function CanKillStalfos()
@@ -912,34 +963,47 @@ function HasRupees(count)
 		return false
 	end
 
-	local rupees = Tracker:FindObjectForCode(RupeeCount).AcquiredCount
-	local bonusRupees = 0
-	local oolRupees = 0
+	local rupees
+	local bonusRupees
+	local oolRupees
 
-	-- rupee rooms
-	local snakeRupeeAmount = 150
-	if (Has(EventSnakeRupees)) then
-		bonusRupees = bonusRupees + snakeRupeeAmount
-	end
+	if CachedValues["HasRupees"] then
+		rupees = CachedValues["HasRupees"][1]
+		bonusRupees = CachedValues["HasRupees"][2]
+		oolRupees = CachedValues["HasRupees"][3]
+	else
+		rupees = Tracker:FindObjectForCode(RupeeCount).AcquiredCount
+		bonusRupees = 0
+		oolRupees = 0
 
-	local ancientRupeeAmount = 90
-	if (Has(EventAncientRupees)) then
-		bonusRupees = bonusRupees + ancientRupeeAmount
-	end
+		-- rupee rooms
+		local snakeRupeeAmount = 150
+		if (Has(EventSnakeRupees)) then
+			bonusRupees = bonusRupees + snakeRupeeAmount
+		end
 
-	if (Tracker:FindObjectForCode("shuffle_old_men").CurrentStage ~= 4) then
-		for _, val in pairs(OldMenValues) do
-			if (val[1] < 0) then
-				-- always subtract rupees even if you can't reach them yet
-				-- otherwise you could "lose" access to a shop if one steals from you
-				rupees = rupees + val[1]
-			else
-				if (Has(val[2])) then
+		local ancientRupeeAmount = 90
+		if (Has(EventAncientRupees)) then
+			bonusRupees = bonusRupees + ancientRupeeAmount
+		end
+
+		if (Tracker:FindObjectForCode("shuffle_old_men").CurrentStage ~= 4) then
+			for _, val in pairs(OldMenValues) do
+				if (val[1] < 0) then
+					-- always subtract rupees even if you can't reach them yet
+					-- otherwise you could "lose" access to a shop if one steals from you
 					rupees = rupees + val[1]
+				else
+					if (Has(val[2])) then
+						rupees = rupees + val[1]
+					end
 				end
 			end
 		end
+
+		CachedValues["HasRupees"] = {rupees, bonusRupees, oolRupees}
 	end
+
 
 	return Any(
 		-- already have the right amount of rupees
@@ -1064,6 +1128,9 @@ function CanPedestal(allowDefault, forceDeku)
 end
 
 function GetCuccos()
+	if CachedValues["GetCuccos"] then
+		return CachedValues["GetCuccos"]
+	end
 	local availableCuccos = {
 		["mt. cucco"] = {-1, -1, -1},
 		["horon"] = {-1, -1, -1},
@@ -1208,6 +1275,7 @@ function GetCuccos()
 		end
 	end
 
+	CachedValues["GetCuccos"] = availableCuccos
 	return availableCuccos
 end
 

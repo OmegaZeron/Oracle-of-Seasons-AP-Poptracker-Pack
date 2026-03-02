@@ -146,7 +146,7 @@ RoosterAdventure:connect_one_way_entrance(TempleRemainsStump, function()
 end)
 RoosterAdventure:connect_one_way_entrance(TempleRemainsUpperPortal, function()
 	return All(
-		CanReach(Fireworks),
+		EventFireworks,
 		GetCuccos()["mt. cucco"][2] > 0,
 		Jump3,
 		Any(
@@ -154,4 +154,4 @@ RoosterAdventure:connect_one_way_entrance(TempleRemainsUpperPortal, function()
 			Jump6
 		)
 	)
-end, {Fireworks})
+end)

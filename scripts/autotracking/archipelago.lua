@@ -416,7 +416,9 @@ function OnNotify(key, value, old_value)
 				Tracker:FindObjectForCode("@Tarm Ruins/Lost Woods Sequence/Shield the Scrub").AvailableChestCount = 0
 			end
 		end
-		Tracker:FindObjectForCode(HiddenSetting).Active = not Tracker:FindObjectForCode(HiddenSetting).Active
+		if PopVersion < "0.34.0" then
+			Tracker:FindObjectForCode(HiddenSetting).Active = not Tracker:FindObjectForCode(HiddenSetting).Active
+		end
 	end
 end
 

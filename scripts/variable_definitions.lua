@@ -583,13 +583,6 @@ OldMenValues = {
 	[OldManD6] = {0, EventTarmOldMan},
 	[OldManWestCoast] = {0, EventCoastOldMan}
 }
-WildItems = {
-	["Dancing Dragon Dungeon/Wild Ember Seeds/1F"] = EmberSeeds,
-	["Unicorn's Cave/Armos Puzzle Room/Ember Seeds"] = EmberSeeds,
-	["Explorer's Crypt/Wild Ember Seeds/1F"] = EmberSeeds,
-	["Sword and Shield Maze/Wild Mystery Seeds/B1F"] = MysterySeeds,
-	["Snake's Remains/Wild Bombs/"] = Bombs
-}
 RegionToSeasonMapping = {
 	["EYEGLASS_LAKE"] = NorthHoronSeasonHidden,
 	["EASTERN_SUBURBS"] = EasternSuburbsSeasonHidden,

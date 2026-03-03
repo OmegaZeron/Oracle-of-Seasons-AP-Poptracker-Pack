@@ -31,9 +31,7 @@ SnakeAltEntrance:connect_one_way(SnakeBombPuzzle, function()
 		Any(
 			Bombs,
 			All(
-				Any(
-					HasBombchus(4)
-				),
+				HasBombchusForTiles,
 				Satchel,
 				PegasusSeeds,
 				MediumLogic
@@ -48,12 +46,24 @@ FacadeDoorstep:connect_one_way_entrance(Facade, function()
 	return All(
 		D2KeyCount(2, 1),
 		Any(
-			Bombs,
-			HasBombchus(2)
+			HasBombsToFight,
+			HasBombchusToFight
 		)
 	)
 end)
 Facade:connect_one_way_entrance(SnakeFoyer)
+Facade:connect_one_way_entrance(SnakeWildBombsPolsVoice, function()
+	return All(
+		Any(
+			CanBombWall,
+			D2KeyCount(3, 2)
+		),
+		Any(
+			Bombs,
+			CanHarvestRegrowingBush
+		)
+	)
+end)
 Facade:connect_one_way_entrance(KingDodongo, function()
 	return All(
 		HasD2BossKey,
@@ -86,27 +96,26 @@ SnakeHardhats:connect_one_way_entrance(SnakeBombMoblins, function()
 					)
 				),
 				-- bomb them into the pit
-				HasBombchus(2)
+				HasBombchusToFight,
+				HasBombsToFight
 			),
 			MediumLogic
-		),
-		-- bombs-only is OoL for now
-		All(
-			Bombs,
-			AccessibilityLevel.SequenceBreak
 		)
 	)
 end)
-SnakeBombMoblins:connect_one_way(SnakeWildBombs, function()
-	return All(
-		CanDestroyRespawningBush,
-		MediumLogic
+SnakeBombMoblins:connect_one_way(SnakeWildBombsHardhat, function()
+	return Any(
+		Bombs,
+		CanHarvestRegrowingBush
 	)
 end)
 SnakeBombMoblins:connect_one_way(SnakeBombMoblinChest, function()
 	return Any(
 		CanSwordKill,
-		Bombs, -- regrowing bushes are right there
+		Any(
+			Bombs, -- regrowing bushes are right there
+			HasBombchusForTiles
+		),
 		CanShootSeedsCombat,
 		All(
 			CanNormalKill(true),

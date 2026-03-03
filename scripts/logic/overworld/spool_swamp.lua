@@ -48,7 +48,10 @@ FloodgateLever:connect_one_way_entrance(FloodgateKeyhole, function()
 				Satchel,
 				PegasusSeeds
 			),
-			CaneOfSomaria
+			All(
+				CaneOfSomaria,
+				MediumLogic
+			)
 		)
 	)
 end)
@@ -100,7 +103,7 @@ SwampSouthGashaArea:connect_one_way_entrance(MiddleSpoolSwamp, function()
 							EmberSeeds
 						),
 						All(
-							HasBombs(2),
+							HasBombsForTiles,
 							HardLogic
 						)
 					),
@@ -192,7 +195,7 @@ SpringSpoolSwamp:connect_one_way_entrance(SouthSpoolSwamp)
 SummerSpoolSwamp:connect_one_way_entrance(SouthSpoolSwamp)
 AutumnSpoolSwamp:connect_one_way_entrance(SouthSpoolSwamp)
 WinterSpoolSwamp:connect_one_way_entrance(SouthSpoolSwamp)
-SpringSpoolSwamp:connect_one_way_entrance(SwampSouthGashaArea, function() return CanDestroyFlower(true) end)
+SpringSpoolSwamp:connect_one_way_entrance(SwampSouthGashaArea, function() return CanBreakFlowers(true) end)
 SummerSpoolSwamp:connect_one_way_entrance(SwampSouthGashaArea)
 AutumnSpoolSwamp:connect_one_way_entrance(SwampSouthGashaArea)
 WinterSpoolSwamp:connect_one_way_entrance(SwampSouthGashaArea, function()
@@ -209,7 +212,7 @@ SwampSouthGashaArea:connect_one_way(SwampSouthGashaSpot, function()
 end)
 SwampSouthGashaArea:connect_one_way_entrance(SpringSpoolSwamp, function()
 	return All(
-		CanDestroyFlower(true),
+		CanBreakFlowers(true),
 		SpoolSwampSpring
 	)
 end)

@@ -139,7 +139,7 @@ RoosterAdventure:connect_one_way_entrance(TempleRemainsStump, function()
 					TempleRemainsSpring,
 					Spring
 				),
-				CanDestroyFlower
+				CanBreakFlowers
 			)
 		)
 	)

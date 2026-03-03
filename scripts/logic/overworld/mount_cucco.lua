@@ -20,7 +20,7 @@ LowerMtCucco:connect_one_way_entrance(CuccoRightMountain, function()
 				),
 				Any(
 					SpringBanana,
-					CanDestroyFlower
+					CanBreakFlowers
 				)
 			),
 			HardLogic -- cucco clip
@@ -63,7 +63,11 @@ end)
 LowerMtCucco:connect_one_way(GoronPitsItem, function()
 	return Any(
 		SpringBanana,
-		Jump4,
+		All(
+			Jump4,
+			HardLogic
+		),
+		Jump5,
 		AccessibilityLevel.Inspect
 	)
 end)

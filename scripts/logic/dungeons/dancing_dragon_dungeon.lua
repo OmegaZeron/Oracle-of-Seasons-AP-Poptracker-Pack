@@ -120,7 +120,7 @@ end)
 DancingMinecartTorches:connect_one_way_entrance(Agunima)
 Agunima:connect_one_way(DancingWildEmbers, function()
 	return All(
-		CanDestroyRespawningBush,
+		CanHarvestRegrowingBush,
 		MediumLogic
 	)
 end)

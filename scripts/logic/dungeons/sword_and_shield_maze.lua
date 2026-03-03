@@ -106,7 +106,7 @@ end)
 MazeThreeEyeOwl:connect_one_way_entrance(Frypolar, function() return D8KeyCount(3) end)
 Frypolar:connect_one_way(MazeWildMysteries, function()
 	return All(
-		CanDestroyRespawningBush,
+		CanHarvestRegrowingBush,
 		MediumLogic
 	)
 end)
@@ -140,7 +140,7 @@ MazeIcePuzzle:connect_one_way_entrance(MazeTerrace, function()
 		MagicBoomerang,
 		SeedShooter,
 		All(
-			HasBombchus(2),
+			HasBombchusToFight,
 			MediumLogic
 		)
 	)

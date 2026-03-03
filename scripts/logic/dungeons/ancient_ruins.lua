@@ -2,8 +2,12 @@
 AncientFoyer:connect_one_way_entrance(AncientRightOfSpinner, function()
 	return Any(
 		Feather,
-		Bombs,
 		HasAnySword,
+		HasBombsForTiles,
+		All(
+			ExpertsRing,
+			MediumLogic
+		),
 		HardLogic
 	)
 end)
@@ -24,7 +28,7 @@ AncientRopeSpinnerWest:connect_one_way(AncientMagnetBallDrop, function()
 end)
 AncientRopeSpinnerWest:connect_one_way_entrance(AncientArrowTrap, function()
 	return All(
-		CanDestroyCrystal,
+		CanBreakCrystal,
 		Any(
 			MagicBoomerang,
 			All(
@@ -46,7 +50,7 @@ AncientArrowTrap:connect_one_way_entrance(AncientSpinyTrampoline, function()
 				HellLogic
 			),
 			All(
-				HasBombchus(2),
+				HasBombchusToFight,
 				HardLogic
 			)
 		),
@@ -76,17 +80,17 @@ Ancient2FGibdo:connect_one_way_entrance(AncientTrappedChest, CanBombWall)
 AncientTrappedChest:connect_one_way_entrance(AncientArmosDarknutDrop, function() return Has(Feather) end)
 AncientFoyer:connect_one_way(AncientNorthOfSpinnerChest, function()
 	return All(
-		CanDestroyCrystal,
+		CanBreakCrystal,
 		Any(
 			MagnetGlove,
 			All(
-				CaneOfSomaria,
+				CaneOfSomaria, -- clip into the blocks
 				HardLogic
 			)
 		),
 		Any(
 			Feather,
-			MediumLogic
+			MediumLogic -- i-frame through the spikes
 		),
 		Any(
 			D6KeyCount(3),
@@ -94,12 +98,14 @@ AncientFoyer:connect_one_way(AncientNorthOfSpinnerChest, function()
 				D6KeyCount(2),
 				Any(
 					All(
+						-- beamos room
 						CanBombWall,
 						Feather
 					),
+					-- fight vire for miniboss warp
 					CanSwordKill,
 					All(
-						HasBombs(4),
+						HasBombsToFight,
 						MediumLogic
 					),
 					All(
@@ -110,12 +116,14 @@ AncientFoyer:connect_one_way(AncientNorthOfSpinnerChest, function()
 			),
 			All(
 				D6KeyCount(1),
+				-- beamos room
 				CanBombWall,
 				Feather,
+				-- fight vire for miniboss warp
 				Any(
 					CanSwordKill,
 					All(
-						HasBombs(4),
+						HasBombsToFight,
 						MediumLogic
 					),
 					All(
@@ -134,8 +142,15 @@ AncientVireDoorstep:connect_one_way_entrance(Vire, function()
 		-- other than opening the miniboss portal, which can get you to spinner north
 		D6KeyCount(1),
 		Any(
-			FoolsOre,
-			WoodSword
+			CanSwordKill,
+			All(
+				HasBombsToFight,
+				MediumLogic
+			),
+			All(
+				ExpertsRing,
+				MediumLogic
+			)
 		)
 	)
 end)

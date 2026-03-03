@@ -58,18 +58,46 @@ function CanBurnTrees()
 	return CanUseSeeds() and Has(EmberSeeds)
 end
 
-function HasBombs(count)
+function HasBombsToFight()
 	return Any(
-		Tracker:FindObjectForCode(Bombs).CurrentStage >= count,
+		Bombs40,
 		All(
 			Bombs,
 			AccessibilityLevel.SequenceBreak
 		)
 	)
 end
-function HasBombchus(count)
+function HasBombsForTiles()
 	return Any(
-		Tracker:FindObjectForCode(Bombchus).CurrentStage >= count,
+		Bombs20,
+		All(
+			Bombs,
+			AccessibilityLevel.SequenceBreak
+		)
+	)
+end
+function HasBombsForBombJump()
+	return Any(
+		Bombs20,
+		All(
+			Bombs,
+			AccessibilityLevel.SequenceBreak
+		)
+	)
+end
+
+function HasBombchusToFight()
+	return Any(
+		Bombchus20,
+		All(
+			Bombchus,
+			AccessibilityLevel.SequenceBreak
+		)
+	)
+end
+function HasBombchusForTiles()
+	return Any(
+		Bombchus40,
 		All(
 			Bombchus,
 			AccessibilityLevel.SequenceBreak
@@ -84,7 +112,7 @@ function CanBombWall()
 	local val = Any(
 		Bombs,
 		All(
-			HasBombchus(4),
+			HasBombchusForTiles,
 			MediumLogic
 		)
 	)
@@ -169,8 +197,8 @@ function CanBeatOnox()
 	return All(
 		WoodSword,
 		Any(
-			Bombs,
-			HasBombchus(2)
+			HasBombsToFight,
+			HasBombchusToFight
 		),
 		Feather,
 		Any(
@@ -414,41 +442,18 @@ function CanShootLongTorches()
 end
 
 function CanDestroyBush(allowBombchus)
-	if CachedValues["CanDestroyBush"..tostring(allowBombchus)] then
-		return CachedValues["CanDestroyBush"..tostring(allowBombchus)]
-	end
-	local val = Any(
-		HasAnySword,
-		MagicBoomerang,
-		Bracelet,
-		SwitchHook,
-		All(
-			Any(
-				HasBombs(2),
-				All(
-					allowBombchus == true,
-					HasBombchus(4)
-				),
-				All(
-					CanUseSeeds,
-					EmberSeeds
-				),
-				All(
-					CanShootSeeds,
-					GaleSeeds
-				)
-			),
-			MediumLogic
-		)
-	)
+	allowBombchus = allowBombchus or false
 
-	CachedValues["CanDestroyBush"..tostring(allowBombchus)] = val
-	return val
+	return Any(
+		CanBreakFlowers(false, allowBombchus),
+		Bracelet
+	)
 end
 
 function CanDestroyBushFlute(allowBombchus)
 	return Any(
-		CanDestroyBush(allowBombchus),
+		CanBreakFlowers(true, allowBombchus),
+		Bracelet,
 		AnyFlute
 	)
 end
@@ -462,9 +467,15 @@ function CanDestroyPot()
 	)
 end
 
-function CanDestroyFlower(allowCompanion)
+function CanBreakFlowers(allowCompanion, allowBombchus)
 	allowCompanion = allowCompanion or false
-	return Any(
+	allowBombchus = allowBombchus or false
+
+	if CachedValues["CanBreakFlowers"..tostring(allowCompanion)..tostring(allowBombchus)] then
+		return CachedValues["CanBreakFlowers"..tostring(allowCompanion)..tostring(allowBombchus)]
+	end
+
+	local val = Any(
 		HasAnySword,
 		MagicBoomerang,
 		SwitchHook,
@@ -474,41 +485,47 @@ function CanDestroyFlower(allowCompanion)
 		),
 		All(
 			Any(
-				HasBombs(2),
+				HasBombsForTiles,
 				CanBurnTrees,
 				All(
 					CanShootSeeds,
 					GaleSeeds
 				),
-				HasBombchus(4)
+				All(
+					allowBombchus,
+					HasBombchusForTiles
+				)
 			),
 			MediumLogic
 		)
 	)
+
+	CachedValues["CanBreakFlowers"..tostring(allowCompanion)..tostring(allowBombchus)] = val
+	return val
 end
 
-function CanDestroyCrystal()
+function CanBreakCrystal()
 	return Any(
 		HasAnySword,
-		Bombs,
+		HasBombsForTiles,
 		Bracelet,
 		All(
 			ExpertsRing,
 			MediumLogic
 		),
 		All(
-			HasBombchus(4),
+			HasBombchusForTiles,
 			MediumLogic
 		)
 	)
 end
 
-function CanDestroyRespawningBush()
+function CanHarvestRegrowingBush()
 	return Any(
 		CanSwordKill,
-		Bombs,
+		HasBombsForTiles,
 		All(
-			HasBombchus(4),
+			HasBombchusForTiles,
 			MediumLogic
 		)
 	)
@@ -667,7 +684,7 @@ function JumpLiquid2()
 		MaxJump() >= 2,
 		All(
 			MaxJump() >= 1,
-			Bombs,
+			HasBombsForBombJump,
 			HardLogic
 		)
 	)
@@ -678,7 +695,7 @@ function JumpLiquid3()
 		MaxJump() >= 3,
 		All(
 			MaxJump() >= 2,
-			Bombs,
+			HasBombsForBombJump,
 			HardLogic
 		)
 	)
@@ -689,7 +706,7 @@ function JumpLiquid4()
 		MaxJump() >= 4,
 		All(
 			MaxJump() >= 3,
-			Bombs,
+			HasBombsForBombJump,
 			HardLogic
 		)
 	)
@@ -702,7 +719,7 @@ end
 function JumpLiquid6()
 	return All(
 		MaxJump() >= 5,
-		Bombs,
+		HasBombsForBombJump,
 		HardLogic
 	)
 end
@@ -747,12 +764,13 @@ function CanKillWithPit()
 	)
 end
 
-function CanNormalKill(pitAvailable, allowGale)
+function CanNormalKill(pitAvailable, allowGale, allowCane)
 	pitAvailable = pitAvailable or false
 	allowGale = allowGale or true
+	allowCane = allowCane or true
 
-	if CachedValues["CanNormalKill"..tostring(pitAvailable)..tostring(allowGale)] then
-		return CachedValues["CanNormalKill"..tostring(pitAvailable)..tostring(allowGale)]
+	if CachedValues["CanNormalKill"..tostring(pitAvailable)..tostring(allowGale)..tostring(allowCane)] then
+		return CachedValues["CanNormalKill"..tostring(pitAvailable)..tostring(allowGale)..tostring(allowCane)]
 	end
 
 	local val = Any(
@@ -764,19 +782,18 @@ function CanNormalKill(pitAvailable, allowGale)
 		),
 		CanSwordPunchKill,
 		All(
-			Any(
-				HasBombs(4),
-				HasBombchus(2)
-			),
+			HasBombsToFight,
 			MediumLogic
 		),
+		HasBombchusToFight,
 		All(
+			allowCane,
 			CaneOfSomaria,
 			MediumLogic
 		)
 	)
 
-	CachedValues["CanNormalKill"..tostring(pitAvailable)..tostring(allowGale)] = val
+	CachedValues["CanNormalKill"..tostring(pitAvailable)..tostring(allowGale)..tostring(allowCane)] = val
 	return val
 end
 
@@ -852,17 +869,16 @@ function CanArmorKill(allowCane, allowBombchus)
 	if CachedValues["CanArmorKill"..tostring(allowCane)..tostring(allowBombchus)] then
 		return CachedValues["CanArmorKill"..tostring(allowCane)..tostring(allowBombchus)]
 	end
+
 	local val = Any(
 		CanSwordPunchKill,
 		All(
-			Any(
-				HasBombs(4),
-				All(
-					allowBombchus,
-					HasBombchus(2)
-				)
-			),
+			HasBombsToFight,
 			MediumLogic
+		),
+		All(
+			allowBombchus,
+			HasBombchusToFight
 		),
 		All(
 			ScentSeeds,
@@ -1171,7 +1187,7 @@ function GetCuccos()
 		top = 2
 	end
 
-	if ((Has(SunkenCitySpring) or Has(Spring)) and CanDestroyFlower() == AccessibilityLevel.Normal or Has(SpringBanana)) then
+	if ((Has(SunkenCitySpring) or Has(Spring)) and CanBreakFlowers() == AccessibilityLevel.Normal or Has(SpringBanana)) then
 		bottom = 2
 	end
 
@@ -1190,7 +1206,7 @@ function GetCuccos()
 			availableCuccos["sunken"] = UseTopCucco(availableCuccos["horon"])
 		end
 	elseif (Has(NatzuIsDimitri)) then
-		if (CanDestroyFlower() == AccessibilityLevel.Normal and Has(Flippers)) then
+		if (CanBreakFlowers() == AccessibilityLevel.Normal and Has(Flippers)) then
 			availableCuccos["sunken"] = UseAnyCucco(availableCuccos["mt. cucco"])
 		end
 	elseif (Has(Flippers)) then

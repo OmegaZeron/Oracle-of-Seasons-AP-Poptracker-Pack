@@ -70,8 +70,8 @@ LinkedCaveF4Chest:connect_one_way(LinkedCaveF5Gauntlet, function()
 				CanKillSpinyBeetle,
 				Any(
 					AnyFlute,
-					HasBombs(4),
-					HasBombchus(2)
+					HasBombsToFight,
+					HasBombchusToFight
 				)
 			),
 			All(
@@ -109,7 +109,7 @@ LinkedCaveF4Chest:connect_one_way(LinkedCaveF5BoomerangMaze, function()
 		LCKeyCount(4),
 		Any(
 			MagicBoomerang,
-			HasBombchus(2),
+			HasBombchusToFight,
 			All(
 				HasAnySword,
 				MediumLogic

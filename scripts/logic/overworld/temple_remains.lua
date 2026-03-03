@@ -14,7 +14,7 @@ LowerTempleRemains:connect_one_way_entrance(TempleRemainsStump, function()
 							TempleRemainsSpring,
 							Spring
 						),
-						CanDestroyFlower,
+						CanBreakFlowers,
 						Jump6
 					),
 					All(
@@ -57,7 +57,7 @@ TempleRemainsStump:connect_one_way_entrance(LowerTempleRemains, function()
 					TempleRemainsSpring,
 					Spring
 				),
-				CanDestroyFlower,
+				CanBreakFlowers,
 				CanDestroyBush,
 				Jump6
 			),

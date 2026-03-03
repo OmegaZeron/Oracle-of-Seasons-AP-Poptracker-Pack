@@ -1,11 +1,11 @@
 -- 0 keys
 CryptFoyer:connect_one_way(CryptWildEmbers, function()
 	return All(
-		CanDestroyRespawningBush,
+		CanHarvestRegrowingBush,
 		MediumLogic
 	)
 end)
-CryptFoyer:connect_one_way(Crypt1FWizzrobeChest, CanNormalKill)
+CryptFoyer:connect_one_way(Crypt1FWizzrobeChest, function() return CanNormalKill(false, true, false) end)
 CryptFoyer:connect_one_way_entrance(Crypt1FLeftOfPoe, CanBombWall)
 Crypt1FLeftOfPoe:connect_one_way(Crypt1FLeftOfPoeChest)
 -- poe skip method
@@ -143,8 +143,8 @@ CryptPastDarknutBridge:connect_one_way_entrance(CryptDarknutBridgeTrampolines, f
 			Any(
 				CanSwordKill,
 				HasRod,
-				Bombs,
-				HasBombchus(4)
+				HasBombsForTiles,
+				HasBombchusForTiles
 			)
 		)
 	)

@@ -112,10 +112,10 @@
 				]
 			},
 			{
-				"name": "Wild Bombs",
+				"name": "Wild Bombs (Hardhat)",
 				"sections": [
 					{
-						"access_rules": ["^$CanReach|SnakeWildBombs"],
+						"access_rules": ["^$CanReach|SnakeWildBombsHardhat"],
 						"hosted_item": "bombs"
 					}
 				],
@@ -190,6 +190,37 @@
 						"map": "snakes_remains2",
 						"x": 144,
 						"y": 80
+					}
+				]
+			},
+			{
+				"name": "Wild Bombs (Pol's Voice)",
+				"sections": [
+					{
+						"access_rules": ["^$CanReach|SnakeWildBombsPolsVoice"],
+						"hosted_item": "bombs"
+					}
+				],
+				"map_locations": [
+					{
+						"map": "snakes_remains2",
+						"x": 475,
+						"y": 250
+					},
+					{
+						"map": "snakes_remains2",
+						"x": 368,
+						"y": 250
+					},
+					{
+						"map": "snakes_remains2",
+						"x": 368,
+						"y": 335
+					},
+					{
+						"map": "snakes_remains2",
+						"x": 475,
+						"y": 335
 					}
 				]
 			},

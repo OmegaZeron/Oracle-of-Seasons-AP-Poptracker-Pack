@@ -342,11 +342,9 @@ function OnSectionChanged(section)
 	if (GashaIDToLocation[section.FullID]) then
 		GashaIDToLocation[section.FullID].cleared = section.AccessibilityLevel == AccessibilityLevel.Cleared
 
-		if PopVersion < "0.34.0" then
-			local hiddenSetting = Tracker:FindObjectForCode(HiddenSetting)
-			---@cast hiddenSetting JsonItem
-			hiddenSetting.Active = not hiddenSetting.Active
-		end
+		local hiddenSetting = Tracker:FindObjectForCode(HiddenSetting)
+		---@cast hiddenSetting JsonItem
+		hiddenSetting.Active = not hiddenSetting.Active
 	elseif (AutoCollectLocationTable["Any"][section.FullID] and section.AccessibilityLevel == AccessibilityLevel.Cleared) then
 		for _, v in ipairs(AutoCollectLocationTable["Any"][section.FullID]) do
 			if v:sub(1, 1) == "@" then

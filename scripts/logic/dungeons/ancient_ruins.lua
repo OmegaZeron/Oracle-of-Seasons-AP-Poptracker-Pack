@@ -156,10 +156,7 @@ AncientVireDoorstep:connect_one_way_entrance(Vire, function()
 end)
 Vire:connect_one_way_entrance(AncientBossDoor, function()
 	return All(
-		Any(
-			D6KeyCount(3),
-			AccessibilityLevel.SequenceBreak
-		),
+		D6KeyCount(3, 1),
 		Feather,
 		Any(
 			MagnetGlove,

@@ -186,8 +186,8 @@ end)
 
 SummerSpoolSwamp:connect_one_way(GoldenOctorokKill, function()
 	return Any(
-		CanSwordKill,
-		Dimitri
+		Dimitri,
+		CanBeatGoldenBeast
 	)
 end)
 

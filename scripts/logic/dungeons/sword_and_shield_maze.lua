@@ -72,7 +72,19 @@ MazeSpinner:connect_one_way_entrance(MazeArmosChest, function()
 		)
 	)
 end)
-MazeArmosChest:connect_one_way_entrance(MazeThreeEyeOwl, function() return Has(MagnetGlove) end)
+MazeArmosChest:connect_one_way(MazeSpinnerChest, function() return Has(MagnetGlove) end)
+MazeSpinner:connect_one_way_entrance(MazeThreeEyeOwl, function()
+	return Any(
+		MagnetGlove,
+		All(
+			SeedSatchel,
+			PegasusSeeds,
+			Cape,
+			HasBombsForBombJump,
+			HellLogic
+		)
+	)
+end)
 MazeThreeEyeOwl:connect_one_way(MazeThreeEyeBombChest, function()
 	return All(
 		CanBombWall,
@@ -103,35 +115,40 @@ MazeThreeEyeOwl:connect_one_way(MazeThreeEyeBombChest, function()
 	)
 end)
 -- 3 keys
-MazeThreeEyeOwl:connect_one_way_entrance(Frypolar, function() return D8KeyCount(3) end)
-Frypolar:connect_one_way(MazeWildMysteries, function()
+MazeThreeEyeOwl:connect_one_way_entrance(MazeFrypolarRoom, function() return D8KeyCount(3) end)
+MazeFrypolarRoom:connect_one_way(MazeWildMysteries, function()
 	return All(
 		CanHarvestRegrowingBush,
 		MediumLogic
 	)
 end)
+MazeFrypolarRoom:connect_one_way_entrance(Frypolar, function()
+	return Any(
+		All(
+			-- throw ice (casual method)
+			MysterySeeds,
+			Bracelet,
+			CanUseSeeds
+		),
+		All(
+			-- upgraded embers
+			UpgradedSatchel,
+			EmberSeeds,
+			MediumLogic
+		),
+		All(
+			-- embers
+			EmberSeeds,
+			CanUseSeeds,
+			HardLogic
+		)
+	)
+end)
+Frypolar:connect_one_way(MazeSpinnerChest) -- use the miniboss warp
 Frypolar:connect_one_way_entrance(MazeIcePuzzle, function()
 	return All(
 		HyperSlingshot,
-		EmberSeeds,
-		Any(
-			All(
-				-- throw ice
-				MysterySeeds,
-				Bracelet
-			),
-			All(
-				-- upgraded embers
-				UpgradedSatchel,
-				EmberSeeds,
-				MediumLogic
-			),
-			All(
-				-- embers
-				EmberSeeds,
-				HardLogic
-			)
-		)
+		EmberSeeds
 	)
 end)
 MazeIcePuzzle:connect_one_way_entrance(MazeTerrace, function()

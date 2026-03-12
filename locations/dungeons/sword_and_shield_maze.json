@@ -105,7 +105,7 @@
 				"sections": [
 					{
 						"name": "B1F",
-						"access_rules": ["^$CanReach|MazeArmosChest"]
+						"access_rules": ["^$CanReach|MazeSpinnerChest"]
 					}
 				],
 				"map_locations": [

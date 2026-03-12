@@ -19,7 +19,7 @@ MazeFoyer:connect_one_way(MazeThreeEyeChest, function()
 		Any(
 			HyperSlingshot,
 			All(
-				SeedSatchel,
+				Satchel,
 				HasContactSeeds,
 				HellLogic
 			),
@@ -66,7 +66,7 @@ MazeSpinner:connect_one_way_entrance(MazeArmosChest, function()
 		MagnetGlove,
 		All(
 			CaneOfSomaria,
-			SeedSatchel,
+			Satchel,
 			PegasusSeeds,
 			HardLogic
 		)
@@ -79,7 +79,7 @@ MazeThreeEyeOwl:connect_one_way(MazeThreeEyeBombChest, function()
 		Any(
 			HyperSlingshot,
 			All(
-				SeedSatchel,
+				Satchel,
 				HasContactSeeds,
 				HellLogic
 			),

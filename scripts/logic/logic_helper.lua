@@ -369,7 +369,7 @@ end
 -- INTERACT RULES
 
 function CanUseSeeds()
-	return Has(SeedSatchel) or
+	return Has(Satchel) or
 	Has(Slingshot) or
 	Has(SeedShooter)
 end
@@ -584,6 +584,60 @@ function HasSwordBeams()
 	)
 end
 
+function CanBeatGoldenBeast()
+	return Any(
+		CanSwordKill,
+		All(
+			CaneOfSomaria,
+			HardLogic
+		),
+		All(
+			-- golden beasts have 52 HP
+			CountConsumableDamage() >= 52,
+			AccessibilityLevel.SequenceBreak
+		)
+	)
+end
+function CountConsumableDamage()
+	if CachedValues["CountConsumableDamage"] then
+		return CachedValues["CountConsumableDamage"]
+	end
+
+	local seedCountMapping = {
+		[0] = 0,
+		[1] = 20,
+		[2] = 50,
+		[3] = 99
+	}
+	local hasSeeds = Tracker:ProviderCountForCode(Satchel) > 0 or Tracker:ProviderCountForCode(Slingshot) > 0 or Tracker:ProviderCountForCode(SeedShooter) > 0
+	local seedCount = seedCountMapping[Tracker:FindObjectForCode(Satchel).CurrentStage]
+	if seedCount == 0 then
+		seedCount = hasSeeds and 20 or 0
+	end
+	local bombCount = Tracker:FindObjectForCode(Bombs).CurrentStage * 10
+	if bombCount == 100 then
+		bombCount = 99
+	end
+	local bombchuCount = Tracker:FindObjectForCode(Bombchus).CurrentStage * 10
+	if bombchuCount == 100 then
+		bombchuCount = 99
+	end
+
+	local emberDamage = 1
+	local scentDamage = 2
+	local bombDamage = 4
+	-- local bombDamage = Tracker:ProviderCountForCode(BlastRing) == 1 and 6 or 4
+
+	local damage =
+		(seedCount * Tracker:ProviderCountForCode(EmberSeeds) * emberDamage) +
+		(seedCount * Tracker:ProviderCountForCode(ScentSeeds) * scentDamage) +
+		(bombCount * bombDamage) +
+		(bombchuCount * bombDamage)
+
+	CachedValues["CountConsumableDamage"] = damage
+	return damage
+end
+
 function AreEnoughGoldenBeastsSlain()
 	local goldenBeastsSetting = Tracker:FindObjectForCode(GoldenBeastsSetting)
 	if (goldenBeastsSetting == nil or goldenBeastsSetting.CurrentStage > Tracker:ProviderCountForCode(GoldenBeasts)) then
@@ -598,11 +652,11 @@ function MaxJump()
 	end
 	local j = 0
 
-	if (Has(Cape) and Has(SeedSatchel) and Has(PegasusSeeds)) then
+	if (Has(Cape) and Has(Satchel) and Has(PegasusSeeds)) then
 		j = 5
 	elseif Has(Cape) then
 		j = 3
-	elseif (Has(Feather) and Has(SeedSatchel) and Has(PegasusSeeds)) then
+	elseif (Has(Feather) and Has(Satchel) and Has(PegasusSeeds)) then
 		j = 2
 	elseif Has(Feather) then
 		j = 1
@@ -1181,7 +1235,7 @@ function GetCuccos()
 		else
 			top = 2
 		end
-	elseif (Has(Boomerang) and Has(SeedSatchel) and Has(PegasusSeeds)) then
+	elseif (Has(Boomerang) and Has(Satchel) and Has(PegasusSeeds)) then
 		top = 2
 	end
 
@@ -1213,7 +1267,7 @@ function GetCuccos()
 
 	availableCuccos["suburbs"] = availableCuccos["sunken"]
 
-	if (Has(SeedSatchel) and Has(EmberSeeds)) then
+	if (Has(Satchel) and Has(EmberSeeds)) then
 		availableCuccos["suburbs"] = availableCuccos["horon"]
 	elseif (Has(NorthHoronWinter) or Has(Winter) or ((Has(NorthHoronSpring) or Has(NorthHoronAutumn) or Has(NorthHoronWinter) or Has(Spring) or Has(Autumn) or Has(Winter)) and (Has(Flippers) or Dimitri()))) then
 		availableCuccos["suburbs"] = UseAnyCucco(availableCuccos["horon"])

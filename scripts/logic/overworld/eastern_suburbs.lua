@@ -191,13 +191,13 @@ WoodsOfWinter:connect_one_way(GoldenMoblinKill, function()
 			Autumn
 		),
 		Any(
-			CanSwordKill,
-			Dimitri,
 			All(
 				EmberSeeds,
 				CanUseSeeds,
 				MediumLogic
-			)
+			),
+			Dimitri,
+			CanBeatGoldenBeast
 		)
 	)
 end)

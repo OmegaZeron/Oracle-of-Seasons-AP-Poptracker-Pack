@@ -29,7 +29,7 @@ TarmEntrance:connect_one_way_entrance(TarmTreeStump, function()
 	)
 end)
 TarmTreeStump:connect_one_way(Maple, CanMapleTrade)
-TarmTreeStump:connect_one_way(GoldenLynelKill, CanSwordKill)
+TarmTreeStump:connect_one_way(GoldenLynelKill, CanBeatGoldenBeast)
 TarmTreeStump:connect_one_way(TarmLostWoodsScrub, function()
 	return All(
 		Shield,
@@ -49,13 +49,13 @@ TarmTreeStump:connect_one_way_entrance(LostWoods, function()
 end)
 LostWoods:connect_one_way(GoldenLynelKill, function()
 	return All(
-		CanSwordKill,
 		Any(
 			LostWoodsAutumn,
 			Autumn
 		),
-		CanDestroyMushroom,
-		Winter
+		Winter,
+		CanBeatGoldenBeast,
+		CanDestroyMushroom
 	)
 end)
 LostWoods:connect_one_way_entrance(TarmEntrance, function()

@@ -11,8 +11,8 @@ EastWesternCoast:connect_one_way(GoldenDarknutKill, function()
 	return All(
 		WesternCoastSpring,
 		Any(
-			CanSwordKill,
-			Dimitri
+			Dimitri,
+			CanBeatGoldenBeast
 		)
 	)
 end)
@@ -58,8 +58,8 @@ WesternCoastStump:connect_one_way(GoldenDarknutKill, function()
 		PolishedBell,
 		Spring,
 		Any(
-			CanSwordKill,
-			Dimitri
+			Dimitri,
+			CanBeatGoldenBeast
 		)
 	)
 end, {Pirates})

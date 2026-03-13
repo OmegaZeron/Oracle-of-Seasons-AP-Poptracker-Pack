@@ -99,23 +99,32 @@ Syger:connect_one_way_entrance(UnicornPostSyger, CanArmorKill)
 UnicornPostSyger:connect_one_way(UnicornTreadmillBasement, function()
 	return All(
 		D5KeyCount(5, 3),
+		-- button
 		Any(
-			CanReach(UnicornMinecartPushBlock),
+			All(
+				CanReach(UnicornMinecartPushBlock),
+				MagnetGlove
+			),
 			CaneOfSomaria
 		),
-		MagnetGlove,
+		-- flame wall
 		Any(
-			CanSwordPunchKill,
+			All(
+				MagnetGlove,
+				CanSwordKill
+			),
 			All(
 				Feather,
 				MediumLogic
-			),
+			)
+		),
+		-- basement
+		Any(
 			All(
 				CaneOfSomaria,
-				Feather,
-				Satchel,
-				PegasusSeeds
-			)
+				Jump3
+			),
+			MagnetGlove
 		)
 	)
 end, {UnicornMinecartPushBlock})

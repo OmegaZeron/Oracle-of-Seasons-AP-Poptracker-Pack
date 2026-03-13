@@ -77,7 +77,7 @@ MazeSpinner:connect_one_way_entrance(MazeThreeEyeOwl, function()
 	return Any(
 		MagnetGlove,
 		All(
-			SeedSatchel,
+			Satchel,
 			PegasusSeeds,
 			Cape,
 			HasBombsForBombJump,

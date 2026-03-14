@@ -127,12 +127,6 @@ function BombPunchWall()
 	)
 end
 
-function HasAnyFlute()
-	return Moosh() or
-	Ricky() or
-	Dimitri()
-end
-
 function Moosh()
 	return Has(AnyFlute) and Has(NatzuIsMoosh)
 end
@@ -141,6 +135,13 @@ function Ricky()
 end
 function Dimitri()
 	return Has(AnyFlute) and Has(NatzuIsDimitri)
+end
+
+function CanRemoveSnow()
+	return Any(
+		Shovel,
+		AnyFlute
+	)
 end
 
 function CanDimitriClip()
@@ -1249,7 +1250,7 @@ function GetCuccos()
 		availableCuccos["horon"] = availableCuccos["mt. cucco"]
 	end
 
-	if (HasAnyFlute()) then
+	if (Has(AnyFlute)) then
 		availableCuccos["sunken"] = availableCuccos["horon"]
 	elseif (Has(NatzuIsMoosh)) then
 		if (JumpLiquid4() == AccessibilityLevel.Normal) then

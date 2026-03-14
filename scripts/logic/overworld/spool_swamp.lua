@@ -198,12 +198,7 @@ WinterSpoolSwamp:connect_one_way_entrance(SouthSpoolSwamp)
 SpringSpoolSwamp:connect_one_way_entrance(SwampSouthGashaArea, function() return CanBreakFlowers(true) end)
 SummerSpoolSwamp:connect_one_way_entrance(SwampSouthGashaArea)
 AutumnSpoolSwamp:connect_one_way_entrance(SwampSouthGashaArea)
-WinterSpoolSwamp:connect_one_way_entrance(SwampSouthGashaArea, function()
-	return Any(
-		Shovel,
-		AnyFlute
-	)
-end)
+WinterSpoolSwamp:connect_one_way_entrance(SwampSouthGashaArea, CanRemoveSnow)
 SwampSouthGashaArea:connect_one_way(SwampSouthGashaSpot, function()
 	return All(
 		Bracelet,
@@ -221,10 +216,7 @@ SwampSouthGashaArea:connect_one_way_entrance(AutumnSpoolSwamp, function() return
 SwampSouthGashaArea:connect_one_way_entrance(WinterSpoolSwamp, function()
 	return All(
 		SpoolSwampWinter,
-		Any(
-			Shovel,
-			AnyFlute
-		)
+		CanRemoveSnow
 	)
 end)
 SpringSpoolSwamp:connect_one_way(SwampFloodedHP, function()
@@ -239,10 +231,7 @@ AutumnSpoolSwamp:connect_one_way(SwampFloodedHP, function() return Accessibility
 WinterSpoolSwamp:connect_one_way(SwampFloodedHP, function() return AccessibilityLevel.Inspect end)
 WinterSpoolSwamp:connect_one_way(SwampBombCave, function()
 	return All(
-		Any(
-			Shovel,
-			AnyFlute
-		),
+		CanRemoveSnow,
 		BombPunchWall
 	)
 end)

@@ -177,7 +177,23 @@ WoodsOfWinter:connect_one_way_entrance(UpperEasternSuburbs, function()
 		EasternSuburbsAutumn
 	)
 end)
-WoodsOfWinter:connect_one_way_entrance(UpperEasternSuburbsWinter, function() return Has(EasternSuburbsWinter) end)
+WoodsOfWinter:connect_one_way_entrance(UpperEasternSuburbsWinter, function()
+	return All(
+		EasternSuburbsWinter,
+		Any(
+			All(
+				Jump1(true),
+				Bracelet
+			),
+			All(
+				SwitchHook,
+				Bracelet,
+				MediumLogic
+			),
+			CanRemoveSnow
+		)
+	)
+end)
 WoodsOfWinter:connect_one_way(WoodsOfWinterTree, function()
 	return Any(
 		CanHarvestSeeds(true),

@@ -191,6 +191,34 @@ SummerSpoolSwamp:connect_one_way(GoldenOctorokKill, function()
 	)
 end)
 
+SpringSpoolSwamp:connect_one_way_entrance(HolodrumPlainSign, function()
+	return Any(
+		Dimitri,
+		All(
+			Flippers,
+			SwimmersRing,
+			MediumLogic
+		)
+	)
+end)
+SummerSpoolSwamp:connect_one_way_entrance(HolodrumPlainSign, function()
+	return Any(
+		Flippers,
+		Dimitri
+	)
+end)
+AutumnSpoolSwamp:connect_one_way_entrance(HolodrumPlainSign, function()
+	return Any(
+		Flippers,
+		Dimitri
+	)
+end)
+WinterSpoolSwamp:connect_one_way_entrance(HolodrumPlainSign, function()
+	return Any(
+		Flippers,
+		Dimitri
+	)
+end)
 SpringSpoolSwamp:connect_one_way_entrance(SouthSpoolSwamp)
 SummerSpoolSwamp:connect_one_way_entrance(SouthSpoolSwamp)
 AutumnSpoolSwamp:connect_one_way_entrance(SouthSpoolSwamp)

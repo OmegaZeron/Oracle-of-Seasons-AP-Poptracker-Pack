@@ -112,13 +112,17 @@ UpperEasternSuburbsWinter:connect_one_way_entrance(MoblinRoad)
 UpperEasternSuburbs:connect_one_way_entrance(WoodsOfWinter)
 UpperEasternSuburbsWinter:connect_one_way_entrance(WoodsOfWinter, function()
 	return Any(
-		Feather,
-		AnyFlute,
-		Shovel,
+		All(
+			Jump1(true),
+			AnyFlute,
+			Bracelet
+		),
 		All(
 			SwitchHook,
+			Bracelet,
 			MediumLogic
-		)
+		),
+		Shovel
 	)
 end)
 

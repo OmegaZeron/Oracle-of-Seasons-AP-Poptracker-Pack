@@ -64,7 +64,7 @@ GnarledRootDoorstep:connect_one_way_entrance(NorthHolodrumPlain, function()
 		Flippers
 	)
 end)
-GnarledRootDoorstep:connect_one_way_entrance(HolodrumPlainSign, function()
+GnarledRootDoorstep:connect_two_ways_entrance(HolodrumPlainSign, function()
 	return Any(
 		Dimitri,
 		Flippers

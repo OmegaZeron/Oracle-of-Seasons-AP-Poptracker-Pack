@@ -455,7 +455,7 @@ CurrentLocationMapping = {
 	[0x432] = {Autotab({"Snake's Remains", "Snake's Remains Front"})}, -- cracked wall with ropes
 	[0x421] = {Autotab({"Snake's Remains", "Snake's Remains Back"})}, -- Facade warp
 	[0x61E] = {Autotab({"Snake's Remains", "Snake's Remains Back"})}, -- 2D section
-	[0x42C] = {DungeonIn("d2")}, -- essence
+	[0x42C] = {DungeonIn("d2", "@Snake's Remains/Exit the Dungeon/")}, -- essence
 	-- D3
 	[0x44B] = {
 		-- main entrance

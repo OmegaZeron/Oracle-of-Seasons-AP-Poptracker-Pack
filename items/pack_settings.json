@@ -665,6 +665,11 @@
 				"img": "images/labels/samasa_desert.png",
 				"codes": "linked_cave, linked_cave_on, linked_cave_desert",
 				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/heros_cave.png",
+				"codes": "linked_cave, linked_cave_on, linked_cave_hero",
+				"inherit_codes": false
 			}
 		]
 	},

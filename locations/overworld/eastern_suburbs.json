@@ -404,8 +404,8 @@
 						"ref": "Snake's Remains/Chest Behind Pots in Hardhat Room/"
 					},
 					{
-						"name": "Snake's Remains: Wild Bombs",
-						"ref": "Snake's Remains/Wild Bombs/"
+						"name": "Snake's Remains: Wild Bombs (Hardhat)",
+						"ref": "Snake's Remains/Wild Bombs (Hardhat)/"
 					},
 					{
 						"name": "Snake's Remains: Chest in Distant Moblins Room",
@@ -426,6 +426,10 @@
 					{
 						"name": "Snake's Remains: Chest in Rollers Section",
 						"ref": "Snake's Remains/Chest in Rollers Section/"
+					},
+					{
+						"name": "Snake's Remains: Wild Bombs",
+						"ref": "Snake's Remains/Wild Bombs (Pol's Voice)/"
 					},
 					{
 						"name": "Snake's Remains: Chest on Terrace",

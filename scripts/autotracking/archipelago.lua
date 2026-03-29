@@ -3,7 +3,7 @@ require("scripts.autotracking.location_mapping")
 
 local CUR_INDEX = -1
 local SLOT_DATA = {}
-local WORLD_VERSION <const> = "18"
+local WORLD_VERSION <const> = "20"
 local IGNORE_VERSION = false
 local ALL_LOCATIONS = {}
 local IS_MANUAL_CLICK = true
@@ -181,8 +181,12 @@ function OnClear(slot_data)
 	for dungeon_entrance, dungeon_interior in pairs(slot_data["dungeon_entrances"]) do
 		Tracker:FindObjectForCode(DungeonMapping[dungeon_interior]).CurrentStage = DungeonDictionary[dungeon_entrance]
 	end
+	-- special case when linked cave is at hero's cave
+	if slot_data["options"]["linked_heros_cave"] & LinkedEnum.HerosCave then
+		Tracker:FindObjectForCode(LCEntranceSelectorHidden).CurrentStage = Tracker:FindObjectForCode(D0EntranceSelectorHidden).CurrentStage
+	end
 
-	Tracker:FindObjectForCode("linked_cave").CurrentStage = LinkedCaveMapping[slot_data["options"]["linked_heros_cave"] & (LinkedEnum.Samasa)] -- OR all locations together as they get added
+	Tracker:FindObjectForCode("linked_cave").CurrentStage = LinkedCaveMapping[slot_data["options"]["linked_heros_cave"] & (LinkedEnum.Samasa | LinkedEnum.HerosCave)] -- OR all locations together as they get added
 	Tracker:FindObjectForCode("remove_lc_alt_entrance").CurrentStage = LinkedCaveMapping[slot_data["options"]["linked_heros_cave"] & LinkedEnum.NoAltEnt]
 
 	-- shop prices

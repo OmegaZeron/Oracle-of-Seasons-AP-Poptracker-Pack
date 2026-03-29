@@ -1,5 +1,6 @@
 -- base
 HerosCaveLedge:connect_one_way_entrance(HerosCaveFoyer)
+HerosCaveFoyer:connect_one_way_entrance(LinkedCaveFoyer, function() return Has(LinkedCaveHero) end)
 HerosCaveFoyer:connect_one_way(HerosCaveLedge, function() return Has(D0AltRemoved) end)
 HerosCaveFoyer:connect_one_way_entrance(HerosCaveUnderground, function()
 	return Any(

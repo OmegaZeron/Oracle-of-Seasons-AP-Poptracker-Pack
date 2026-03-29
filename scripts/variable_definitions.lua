@@ -610,12 +610,14 @@ LinkedEnum = {
 	Disabled = 0x00, -- 0b0000
 	Samasa = 0x01, -- 0b0001
 	NoAltEnt = 0x02, -- 0b0010
+	HerosCave = 0x04, -- 0b0100
 }
 -- value is the stage of the setting
 LinkedCaveMapping = {
 	[LinkedEnum.Disabled] = 0,
 	[LinkedEnum.Samasa] = 1,
 	[LinkedEnum.NoAltEnt] = 1,
+	[LinkedEnum.HerosCave] = 2,
 }
 PortalDictionary = {
 	['eastern suburbs portal'] = {

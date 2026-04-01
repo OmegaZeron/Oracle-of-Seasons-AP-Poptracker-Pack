@@ -1,6 +1,12 @@
 {
 	"versions": [
 		{
+			"package_version": "7.1.0",
+			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/7.1.0/seasons_ap.zip",
+			"sha256": "26ef36bf3d628da31cdfe2e1efaa382cd03536b042053b907637b8eea3e9f8cb",
+			"changelog": ["Logic updates, new LC option, OoL Golden Beast fights"]
+		},
+		{
 			"package_version": "6.0.10",
 			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/6.0.10/seasons_ap.zip",
 			"sha256": "d09095302996b457bbd307a2ce43bfe636fbcb5d36ac307cd177eb58f004bd97",

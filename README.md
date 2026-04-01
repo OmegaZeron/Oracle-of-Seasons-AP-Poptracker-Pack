@@ -36,7 +36,8 @@ Click the AP button in the top left of the window. Enter your server:port (most 
 ## Archipelago Compatibility Chart
 | apworld Version |   Pack Version  |
 |:---------------:|:---------------:|
-|     17.0.0+     |     6.0.5+      |
+|     20.0.2+     |     7.1.0+      |
+| 17.0.0 - 17.0.5 |  6.0.5 - 6.0.10 |
 | 13.6.0 - 13.7.4 |     5.0.0       |
 |   12.0 - 12.4   |     4.0.0       |
 |   10.0 - 10.2   |  2.3.0 - 3.0.1  |

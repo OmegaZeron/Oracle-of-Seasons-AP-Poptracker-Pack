@@ -1,6 +1,12 @@
 {
 	"versions": [
 		{
+			"package_version": "7.1.2",
+			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/7.1.2/seasons_ap.zip",
+			"sha256": "ffd9139a74dccaa88b7b9dc09a94f2d843c850e4820d3555c73c122f9cfcb3a1",
+			"changelog": ["Dr. Left, Linked Cave fixes"]
+		},
+		{
 			"package_version": "7.1.1",
 			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/7.1.1/seasons_ap.zip",
 			"sha256": "86ea6bd5a542303de1d78e9894073239e4eb135a059c44b047b8d2c90117e9ea",

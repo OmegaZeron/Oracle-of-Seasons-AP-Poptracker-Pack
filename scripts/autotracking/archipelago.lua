@@ -182,7 +182,7 @@ function OnClear(slot_data)
 		Tracker:FindObjectForCode(DungeonMapping[dungeon_interior]).CurrentStage = DungeonDictionary[dungeon_entrance]
 	end
 	-- special case when linked cave is at hero's cave
-	if slot_data["options"]["linked_heros_cave"] & LinkedEnum.HerosCave then
+	if slot_data["options"]["linked_heros_cave"] & LinkedEnum.HerosCave == LinkedEnum.HerosCave then
 		Tracker:FindObjectForCode(LCEntranceSelectorHidden).CurrentStage = Tracker:FindObjectForCode(D0EntranceSelectorHidden).CurrentStage
 	end
 

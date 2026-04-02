@@ -1,6 +1,12 @@
 {
 	"versions": [
 		{
+			"package_version": "7.1.1",
+			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/7.1.1/seasons_ap.zip",
+			"sha256": "86ea6bd5a542303de1d78e9894073239e4eb135a059c44b047b8d2c90117e9ea",
+			"changelog": ["Holodrum map update"]
+		},
+		{
 			"package_version": "7.1.0",
 			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/7.1.0/seasons_ap.zip",
 			"sha256": "26ef36bf3d628da31cdfe2e1efaa382cd03536b042053b907637b8eea3e9f8cb",

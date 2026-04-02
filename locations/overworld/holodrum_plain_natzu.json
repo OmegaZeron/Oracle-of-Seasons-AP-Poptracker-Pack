@@ -305,20 +305,20 @@
 					},
 					{
 						"map": "natzu",
-						"x": 2268,
-						"y": 59,
+						"x": 608,
+						"y": 20,
 						"restrict_visibility_rules": ["natzu_ricky"]
 					},
 					{
 						"map": "natzu",
-						"x": 2268,
-						"y": 1588,
+						"x": 608,
+						"y": 532,
 						"restrict_visibility_rules": ["natzu_dimitri"]
 					},
 					{
 						"map": "natzu",
-						"x": 2268,
-						"y": 3116,
+						"x": 608,
+						"y": 1044,
 						"restrict_visibility_rules": ["natzu_moosh"]
 					}
 				]
@@ -340,20 +340,20 @@
 					},
 					{
 						"map": "natzu",
-						"x": 2295,
-						"y": 1358,
+						"x": 615,
+						"y": 455,
 						"restrict_visibility_rules": ["natzu_ricky"]
 					},
 					{
 						"map": "natzu",
-						"x": 2660,
-						"y": 2089,
+						"x": 713,
+						"y": 700,
 						"restrict_visibility_rules": ["natzu_dimitri"]
 					},
 					{
 						"map": "natzu",
-						"x": 2127,
-						"y": 3701,
+						"x": 570,
+						"y": 1240,
 						"restrict_visibility_rules": ["natzu_moosh"]
 					}
 				]
@@ -369,20 +369,20 @@
 					},
 					{
 						"map": "natzu",
-						"x": 3250,
-						"y": 477,
+						"x": 871,
+						"y": 160,
 						"restrict_visibility_rules": ["natzu_ricky"]
 					},
 					{
 						"map": "natzu",
-						"x": 3250,
-						"y": 2003,
+						"x": 871,
+						"y": 671,
 						"restrict_visibility_rules": ["natzu_dimitri"]
 					},
 					{
 						"map": "natzu",
-						"x": 3250,
-						"y": 3528,
+						"x": 871,
+						"y": 1182,
 						"restrict_visibility_rules": ["natzu_moosh"]
 					}
 				]

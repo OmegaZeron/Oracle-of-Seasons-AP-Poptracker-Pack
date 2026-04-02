@@ -265,7 +265,7 @@
 				]
 			},
 			{
-				"name": "Dr. Left's Reward",
+				"name": "Dr. Left Reward",
 				"sections": [{"access_rules": ["^$CanReach|DrLeftReward"]}],
 				"map_locations": [
 					{

@@ -7,7 +7,10 @@
 		"children": [
 			{
 				"name": "See the Season",
-				"visibility_rules": ["defaultseasonsoff", "singularity_random"],
+				"visibility_rules": [
+					"defaultseasonsoff",
+					"singularity_random"
+				],
 				"sections": [
 					{
 						"name": "Lost Woods",
@@ -19,9 +22,91 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 148,
-						"y": 242,
+						"x": 560,
+						"y": 832,
 						"shape": "diamond"
+					},
+					{
+						"map": "holodrum",
+						"x": 80,
+						"y": 344,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Golden Lynel",
+				"sections": [
+					{
+						"name": "Winter",
+						"access_rules": ["^$CanReach|GoldenLynelKill"],
+						"hosted_item": "golden_lynel"
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 536,
+						"y": 584,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Lost Woods Sequence",
+				"sections": [
+					{
+						"name": "Shield the Scrub",
+						"visibility_rules": [
+							"casual",
+							"lost_woods_randomized"
+						],
+						"access_rules": ["{^$CanReach|TarmLostWoodsScrub}"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 616,
+						"y": 537,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Pedestal Sequence",
+				"sections": [
+					{
+						"name": "Serenade the Scrub",
+						"visibility_rules": [
+							"casual",
+							"pedestal_randomized"
+						],
+						"access_rules": ["{^$CanReach|TarmPedestalScrub}"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 264,
+						"y": 728,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Lost Woods",
+				"sections": [
+					{
+						"name": "Lost Woods: Pedestal Item",
+						"access_rules": ["^$CanReach|Pedestal"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 30,
+						"y": 576
 					}
 				]
 			}
@@ -35,7 +120,10 @@
 		"children": [
 			{
 				"name": "See the Season",
-				"visibility_rules": ["defaultseasonsoff", "singularity_random"],
+				"visibility_rules": [
+					"defaultseasonsoff",
+					"singularity_random"
+				],
 				"sections": [
 					{
 						"name": "Tarm Ruins",
@@ -47,8 +135,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 70,
-						"y": 100,
+						"x": 261,
+						"y": 320,
 						"shape": "diamond"
 					}
 				]
@@ -66,8 +154,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 22,
-						"y": 57
+						"x": 80,
+						"y": 162
 					}
 				]
 			},
@@ -91,8 +179,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 110,
-						"y": 110
+						"x": 408,
+						"y": 328
 					}
 				]
 			},
@@ -108,78 +196,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 120,
-						"y": 10
-					}
-				]
-			},
-			{
-				"name": "Golden Lynel",
-				"sections": [
-					{
-						"name": "Winter",
-						"access_rules": ["^$CanReach|GoldenLynelKill"],
-						"hosted_item": "golden_lynel"
-					}
-				],
-				"map_locations": [
-					{
-						"map": "holodrum",
-						"x": 145,
-						"y": 200,
-						"shape": "diamond"
-					}
-				]
-			},
-			{
-				"name": "Lost Woods Sequence",
-				"sections": [
-					{
-						"name": "Shield the Scrub",
-						"visibility_rules": ["casual", "lost_woods_randomized"],
-						"access_rules": ["{^$CanReach|TarmLostWoodsScrub}"]
-					}
-				],
-				"map_locations": [
-					{
-						"map": "holodrum",
-						"x": 165,
-						"y": 180,
-						"shape": "diamond"
-					}
-				]
-			},
-			{
-				"name": "Pedestal Sequence",
-				"sections": [
-					{
-						"name": "Serenade the Scrub",
-						"visibility_rules": ["casual", "pedestal_randomized"],
-						"access_rules": ["{^$CanReach|TarmPedestalScrub}"]
-					}
-				],
-				"map_locations": [
-					{
-						"map": "holodrum",
-						"x": 70,
-						"y": 240,
-						"shape": "diamond"
-					}
-				]
-			},
-			{
-				"name": "Lost Woods",
-				"sections": [
-					{
-						"name": "Lost Woods: Pedestal Item",
-						"access_rules": ["^$CanReach|Pedestal"]
-					}
-				],
-				"map_locations": [
-					{
-						"map": "holodrum",
-						"x": 22,
-						"y": 192
+						"x": 456,
+						"y": 24
 					}
 				]
 			},
@@ -194,8 +212,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 15,
-						"y": 85
+						"x": 30,
+						"y": 232
 					}
 				]
 			},
@@ -214,8 +232,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 40,
-						"y": 25,
+						"x": 134,
+						"y": 56,
 						"shape": "trapezoid"
 					}
 				]
@@ -280,8 +298,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 20,
-						"y": 25
+						"x": 72,
+						"y": 56
 					}
 				]
 			}

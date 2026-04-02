@@ -7,7 +7,10 @@
 		"children": [
 			{
 				"name": "See the Season",
-				"visibility_rules": ["defaultseasonsoff", "singularity_random"],
+				"visibility_rules": [
+					"defaultseasonsoff",
+					"singularity_random"
+				],
 				"sections": [
 					{
 						"name": "Spool Swamp",
@@ -19,8 +22,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 69,
-						"y": 420,
+						"x": 257,
+						"y": 1253,
 						"shape": "diamond"
 					}
 				]
@@ -38,8 +41,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 107,
-						"y": 322
+						"x": 400,
+						"y": 944
 					}
 				]
 			},
@@ -54,8 +57,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 109,
-						"y": 279
+						"x": 392,
+						"y": 826
 					}
 				]
 			},
@@ -70,8 +73,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 119,
-						"y": 349
+						"x": 440,
+						"y": 1067
 					}
 				]
 			},
@@ -95,8 +98,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 12,
-						"y": 375
+						"x": 56,
+						"y": 1112
 					}
 				]
 			},
@@ -112,8 +115,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 35,
-						"y": 350
+						"x": 130,
+						"y": 1044
 					}
 				]
 			},
@@ -137,8 +140,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 10,
-						"y": 545
+						"x": 30,
+						"y": 1640
 					}
 				]
 			},
@@ -146,7 +149,10 @@
 				"name": "Spool Swamp Portal",
 				"chest_unopened_img": "images/labels/portal.png",
 				"chest_opened_img": "images/labels/portalgray.png",
-				"visibility_rules": ["portalshuffleon", "portalshuffleoutward"],
+				"visibility_rules": [
+					"portalshuffleon",
+					"portalshuffleoutward"
+				],
 				"sections": [
 					{
 						"access_rules": ["{^$CanReach|SpoolPortal}"],
@@ -156,8 +162,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 25,
-						"y": 490,
+						"x": 90,
+						"y": 1464,
 						"shape": "trapezoid"
 					}
 				]
@@ -173,8 +179,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 74,
-						"y": 489
+						"x": 279,
+						"y": 1479
 					}
 				]
 			},
@@ -189,8 +195,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 109,
-						"y": 534
+						"x": 440,
+						"y": 1544
 					}
 				]
 			},
@@ -206,8 +212,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 20,
-						"y": 525,
+						"x": 94,
+						"y": 1612,
 						"shape": "diamond"
 					}
 				]
@@ -227,8 +233,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 45,
-						"y": 279,
+						"x": 148,
+						"y": 808,
 						"shape": "trapezoid"
 					}
 				]
@@ -284,8 +290,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 25,
-						"y": 279
+						"x": 88,
+						"y": 808
 					}
 				]
 			}

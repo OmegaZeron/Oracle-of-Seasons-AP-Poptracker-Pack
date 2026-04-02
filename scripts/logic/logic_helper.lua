@@ -1674,7 +1674,7 @@ ScriptHost:AddOnFrameHandler("load handler", OnFrameHandler)
 ScriptHost:AddWatchForCode("see companion handler", Companion, function()
 	local companion = Tracker:FindObjectForCode(Companion)
 	---@cast companion JsonItem
-	local location = Tracker:FindObjectForCode("@Holodrum Plain/See Your Companion/")
+	local location = Tracker:FindObjectForCode("@Natzu/See Your Companion/")
 	---@cast location LocationSection
 	if (companion.CurrentStage == 3) then
 		location.AvailableChestCount = 1

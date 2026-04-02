@@ -7,7 +7,10 @@
 		"children": [
 			{
 				"name": "See the Season",
-				"visibility_rules": ["defaultseasonsoff", "singularity_random"],
+				"visibility_rules": [
+					"defaultseasonsoff",
+					"singularity_random"
+				],
 				"sections": [
 					{
 						"name": "Western Coast",
@@ -19,8 +22,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 152,
-						"y": 537,
+						"x": 567,
+						"y": 1603,
 						"shape": "diamond"
 					}
 				]
@@ -40,8 +43,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 172,
-						"y": 578,
+						"x": 648,
+						"y": 1750,
 						"shape": "trapezoid"
 					}
 				]
@@ -74,8 +77,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 192,
-						"y": 578
+						"x": 712,
+						"y": 1750
 					}
 				]
 			},
@@ -94,8 +97,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 651,
-						"y": 537,
+						"x": 2440,
+						"y": 1602,
 						"shape": "trapezoid",
 						"restrict_visibility_rules": ["linked_cave_desert"]
 					}
@@ -157,9 +160,15 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 671,
-						"y": 537,
+						"x": 2504,
+						"y": 1602,
 						"restrict_visibility_rules": ["linked_cave_desert"]
+					},
+					{
+						"map": "holodrum",
+						"x": 776,
+						"y": 1750,
+						"restrict_visibility_rules": ["linked_cave_hero"]
 					}
 				]
 			},
@@ -174,23 +183,19 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 194,
-						"y": 537
+						"x": 723,
+						"y": 1603
 					}
 				]
 			},
 			{
 				"name": "The Black Beast",
-				"sections": [
-					{
-						"access_rules": ["^$CanReach|BlackBeast"]
-					}
-				],
+				"sections": [{"access_rules": ["^$CanReach|BlackBeast"]}],
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 194,
-						"y": 662
+						"x": 728,
+						"y": 1990
 					}
 				]
 			},
@@ -206,24 +211,20 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 234,
-						"y": 578,
+						"x": 890,
+						"y": 1704,
 						"shape": "diamond"
 					}
 				]
 			},
 			{
 				"name": "Western Coast: Chest on Beach",
-				"sections": [
-					{
-						"access_rules": ["^$CanReach|WesternCoastChest"]
-					}
-				],
+				"sections": [{"access_rules": ["^$CanReach|WesternCoastChest"]}],
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 138,
-						"y": 610
+						"x": 504,
+						"y": 1816
 					}
 				]
 			},
@@ -247,23 +248,19 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 12,
-						"y": 658
+						"x": 40,
+						"y": 1960
 					}
 				]
 			},
 			{
 				"name": "Western Coast: Chest in House",
-				"sections": [
-					{
-						"access_rules": ["^$CanReach|WesternCoastHouseChest"]
-					}
-				],
+				"sections": [{"access_rules": ["^$CanReach|WesternCoastHouseChest"]}],
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 110,
-						"y": 568
+						"x": 404,
+						"y": 1704
 					}
 				]
 			},
@@ -280,8 +277,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 90,
-						"y": 568
+						"x": 340,
+						"y": 1688
 					}
 				]
 			},
@@ -297,23 +294,19 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 12,
-						"y": 614
+						"x": 72,
+						"y": 1816
 					}
 				]
 			},
 			{
 				"name": "Graveyard Mushroom Item",
-				"sections": [
-					{
-						"access_rules": ["^$CanReach|GraveyardHP"]
-					}
-				],
+				"sections": [{"access_rules": ["^$CanReach|GraveyardHP"]}],
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 50,
-						"y": 568
+						"x": 184,
+						"y": 1688
 					}
 				]
 			},
@@ -332,8 +325,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 20,
-						"y": 593,
+						"x": 72,
+						"y": 1762,
 						"shape": "trapezoid"
 					}
 				]
@@ -401,8 +394,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 20,
-						"y": 573
+						"x": 72,
+						"y": 1700
 					}
 				]
 			}

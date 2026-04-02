@@ -7,7 +7,10 @@
 		"children": [
 			{
 				"name": "See the Season",
-				"visibility_rules": ["defaultseasonsoff", "singularity_random"],
+				"visibility_rules": [
+					"defaultseasonsoff",
+					"singularity_random"
+				],
 				"sections": [
 					{
 						"name": "North Horon",
@@ -19,8 +22,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 363,
-						"y": 408,
+						"x": 1390,
+						"y": 1218,
 						"shape": "diamond"
 					}
 				]
@@ -36,8 +39,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 320,
-						"y": 500
+						"x": 1198,
+						"y": 1496
 					}
 				]
 			},
@@ -52,8 +55,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 366,
-						"y": 492
+						"x": 1335,
+						"y": 1464
 					}
 				]
 			},
@@ -77,8 +80,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 274,
-						"y": 458
+						"x": 1032,
+						"y": 1370
 					}
 				]
 			},
@@ -93,8 +96,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 360,
-						"y": 352
+						"x": 1336,
+						"y": 1048
 					}
 				]
 			},
@@ -111,8 +114,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 315,
-						"y": 399
+						"x": 1176,
+						"y": 1192
 					}
 				]
 			},
@@ -127,8 +130,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 289,
-						"y": 438
+						"x": 1078,
+						"y": 1312
 					}
 				]
 			},
@@ -143,8 +146,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 338,
-						"y": 440
+						"x": 1254,
+						"y": 1319
 					}
 				]
 			},
@@ -168,8 +171,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 405,
-						"y": 357
+						"x": 1512,
+						"y": 1064
 					}
 				]
 			},
@@ -184,8 +187,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 449,
-						"y": 448
+						"x": 1720,
+						"y": 1337
 					}
 				]
 			},
@@ -193,7 +196,10 @@
 				"name": "Eyeglass Lake Portal",
 				"chest_unopened_img": "images/labels/portal.png",
 				"chest_opened_img": "images/labels/portalgray.png",
-				"visibility_rules": ["portalshuffleon", "portalshuffleoutward"],
+				"visibility_rules": [
+					"portalshuffleon",
+					"portalshuffleoutward"
+				],
 				"sections": [
 					{
 						"access_rules": ["{^$CanReach|EyeglassPortal}"],
@@ -203,8 +209,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 395,
-						"y": 485,
+						"x": 1480,
+						"y": 1447,
 						"shape": "trapezoid"
 					}
 				]
@@ -224,8 +230,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 261,
-						"y": 407,
+						"x": 968,
+						"y": 1221,
 						"shape": "trapezoid"
 					}
 				]
@@ -245,16 +251,15 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 437,
-						"y": 358,
+						"x": 1624,
+						"y": 1064,
 						"shape": "trapezoid"
 					}
 				]
 			},
-
 			{
 				"name": "Gnarled Root Dungeon",
-				"sections": [	
+				"sections": [
 					{
 						"name": "Gnarled Root Dungeon: Drop in Right Stalfos Room",
 						"ref": "Gnarled Root Dungeon/Drop in Right Stalfos Room/"
@@ -303,8 +308,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 281,
-						"y": 407
+						"x": 1032,
+						"y": 1221
 					}
 				]
 			},
@@ -368,8 +373,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 457,
-						"y": 358
+						"x": 1687,
+						"y": 1064
 					}
 				]
 			}

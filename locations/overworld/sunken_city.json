@@ -7,7 +7,10 @@
 		"children": [
 			{
 				"name": "See the Season",
-				"visibility_rules": ["defaultseasonsoff", "singularity_random"],
+				"visibility_rules": [
+					"defaultseasonsoff",
+					"singularity_random"
+				],
 				"sections": [
 					{
 						"name": "Sunken City",
@@ -19,14 +22,14 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 585,
-						"y": 257,
+						"x": 2183,
+						"y": 767,
 						"shape": "diamond"
 					},
 					{
 						"map": "holodrum",
-						"x": 503,
-						"y": 110,
+						"x": 1830,
+						"y": 324,
 						"shape": "diamond"
 					}
 				]
@@ -44,8 +47,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 661,
-						"y": 235
+						"x": 2464,
+						"y": 688
 					}
 				]
 			},
@@ -61,8 +64,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 585,
-						"y": 230
+						"x": 2184,
+						"y": 690
 					}
 				]
 			},
@@ -77,8 +80,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 570,
-						"y": 187
+						"x": 2104,
+						"y": 538
 					}
 				]
 			},
@@ -105,8 +108,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 620,
-						"y": 237
+						"x": 2312,
+						"y": 712
 					}
 				]
 			},
@@ -121,8 +124,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 605,
-						"y": 120
+						"x": 2268,
+						"y": 344
 					}
 				]
 			},
@@ -141,8 +144,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 625,
-						"y": 120
+						"x": 2332,
+						"y": 360
 					}
 				]
 			},
@@ -166,8 +169,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 660,
-						"y": 155
+						"x": 2472,
+						"y": 456
 					}
 				]
 			},
@@ -182,8 +185,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 652,
-						"y": 185
+						"x": 2440,
+						"y": 534
 					}
 				]
 			}

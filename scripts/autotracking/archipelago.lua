@@ -409,7 +409,7 @@ function OnNotify(key, value, old_value)
 					end
 					Tracker:FindObjectForCode("pedestal_"..i).CurrentStage = pair[2]
 				end
-				Tracker:FindObjectForCode("@Tarm Ruins/Pedestal Sequence/Serenade the Scrub").AvailableChestCount = 0
+				Tracker:FindObjectForCode("@Lost Woods/Pedestal Sequence/Serenade the Scrub").AvailableChestCount = 0
 			elseif (k == "Learned Lost Woods Sequence" and v) then
 				for i, pair in ipairs(SLOT_DATA["lost_woods_main_sequence"]) do
 					if (i < 4) then
@@ -417,7 +417,7 @@ function OnNotify(key, value, old_value)
 					end
 					Tracker:FindObjectForCode("lost_woods_"..i).CurrentStage = pair[2]
 				end
-				Tracker:FindObjectForCode("@Tarm Ruins/Lost Woods Sequence/Shield the Scrub").AvailableChestCount = 0
+				Tracker:FindObjectForCode("@Lost Woods/Lost Woods Sequence/Shield the Scrub").AvailableChestCount = 0
 			end
 		end
 		if PopVersion < "0.34.0" then

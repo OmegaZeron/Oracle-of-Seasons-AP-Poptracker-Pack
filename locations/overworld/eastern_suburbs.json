@@ -1,27 +1,89 @@
 [
 	{
-		"name": "Woods of Winter",
+		"name": "Samasa Desert",
 		"chest_unopened_img": "images/labels/chest.png",
 		"chest_opened_img": "images/labels/chestopen.png",
 		"color": "#00ff08",
 		"children": [
 			{
-				"name": "See the Season",
-				"visibility_rules": ["defaultseasonsoff", "singularity_random"],
+				"name": "Samasa Desert: One of Four Pits",
 				"sections": [
 					{
-						"name": "Woods of Winter",
-						"access_rules": ["{^$CanReach|WoodsOfWinterFindSeason}"],
-						"chest_unopened_img": "images/labels/season_icons.png",
-						"chest_opened_img": "images/labels/season_icons_disabled.png"
+						"name": "Rusty Bell (With Skull)",
+						"access_rules": ["^$CanReach|SamasaDesertPit"]
+					},
+					{
+						"name": "Business Scrub (Without Skull)",
+						"visibility_rules": ["shufflescrubson"],
+						"access_rules": ["^$CanReach|SamasaScrub"]
 					}
 				],
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 621,
-						"y": 387,
-						"shape": "diamond"
+						"x": 1970,
+						"y": 1725
+					},
+					{
+						"map": "holodrum",
+						"x": 2119,
+						"y": 1740
+					},
+					{
+						"map": "holodrum",
+						"x": 2455,
+						"y": 1740
+					},
+					{
+						"map": "holodrum",
+						"x": 2127,
+						"y": 1507
+					}
+				]
+			},
+			{
+				"name": "Samasa Desert: Cliff Chest",
+				"sections": [
+					{
+						"name": "Bottom Left Pit",
+						"access_rules": ["^$CanReach|SamasaDesertChest"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 2534,
+						"y": 1950
+					},
+					{
+						"map": "holodrum",
+						"x": 2178,
+						"y": 2000
+					}
+				]
+			},
+			{
+				"name": "Samasa Desert Gasha Spot",
+				"visibility_rules": ["^$CanSeeGasha|1"],
+				"sections": [
+					{
+						"name": "Surrounded by Cacti",
+						"chest_unopened_img": "images/items/gasha_spot.png",
+						"chest_opened_img": "images/items/gasha_spot_gray.png",
+						"access_rules": ["^$CanReach|SamasaDesertGasha"]
+					},
+					{
+						"name": "Harvested",
+						"chest_unopened_img": "images/items/gasha_nut.png",
+						"chest_opened_img": "images/items/gasha_nut_gray.png",
+						"access_rules": ["^$HasPlanted|@Samasa Desert/Samasa Desert Gasha Spot/Surrounded by Cacti"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 2505,
+						"y": 1890
 					}
 				]
 			}
@@ -47,91 +109,9 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 510,
-						"y": 460,
+						"x": 1903,
+						"y": 1350,
 						"shape": "diamond"
-					}
-				]
-			},
-			{
-				"name": "Samasa Desert: One of Four Pits",
-				"sections": [
-					{
-						"name": "Rusty Bell (With Skull)",
-						"access_rules": ["^$CanReach|SamasaDesertPit"]
-					},
-					{
-						"name": "Business Scrub (Without Skull)",
-						"visibility_rules": ["shufflescrubson"],
-						"access_rules": ["^$CanReach|SamasaScrub"]
-					}
-				],
-				"map_locations": [
-					{
-						"map": "holodrum",
-						"x": 528,
-						"y": 578
-					},
-					{
-						"map": "holodrum",
-						"x": 568,
-						"y": 583
-					},
-					{
-						"map": "holodrum",
-						"x": 658,
-						"y": 583
-					},
-					{
-						"map": "holodrum",
-						"x": 570,
-						"y": 505
-					}
-				]
-			},
-			{
-				"name": "Samasa Desert: Cliff Chest",
-				"sections": [
-					{
-						"name": "Bottom Left Pit",
-						"access_rules": ["^$CanReach|SamasaDesertChest"]
-					}
-				],
-				"map_locations": [
-					{
-						"map": "holodrum",
-						"x": 670,
-						"y": 660
-					},
-					{
-						"map": "holodrum",
-						"x": 580,
-						"y": 670
-					}
-				]
-			},
-			{
-				"name": "Samasa Desert Gasha Spot",
-				"visibility_rules": ["^$CanSeeGasha|1"],
-				"sections": [
-					{
-						"name": "Surrounded by Cacti",
-						"chest_unopened_img": "images/items/gasha_spot.png",
-						"chest_opened_img": "images/items/gasha_spot_gray.png",
-						"access_rules": ["^$CanReach|SamasaDesertGasha"]
-					},
-					{
-						"name": "Harvested",
-						"chest_unopened_img": "images/items/gasha_nut.png",
-						"chest_opened_img": "images/items/gasha_nut_gray.png",
-						"access_rules": ["^$HasPlanted|@Eastern Suburbs/Samasa Desert Gasha Spot/Surrounded by Cacti"]
-					}
-				],
-				"map_locations": [
-					{
-						"map": "holodrum",
-						"x": 670,
-						"y": 635
 					}
 				]
 			},
@@ -150,23 +130,19 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 460,
-						"y": 584
+						"x": 1688,
+						"y": 1753
 					}
 				]
 			},
 			{
 				"name": "Chest in Spring Cave",
-				"sections": [
-					{
-						"access_rules": ["^$CanReach|SuburbsSpringCave"]
-					}
-				],
+				"sections": [{"access_rules": ["^$CanReach|SuburbsSpringCave"]}],
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 534,
-						"y": 534
+						"x": 1944,
+						"y": 1560
 					}
 				]
 			},
@@ -190,152 +166,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 540,
-						"y": 430
-					}
-				]
-			},
-			{
-				"name": "Woods of Winter Tree",
-				"sections": [
-					{
-						"access_rules": ["^$CanReach|WoodsOfWinterTree"],
-						"chest_unopened_img": "images/items/tree_mystery.png",
-						"chest_opened_img": "images/items/tree_mystery_disabled.png"
-					}
-				],
-				"map_locations": [
-					{
-						"map": "holodrum",
-						"x": 621,
-						"y": 407
-					}
-				]
-			},
-			{
-				"name": "Chest on D2 Roof",
-				"sections": [
-					{
-						"access_rules": ["^$CanReach|UpperSnakesRemains"]
-					}
-				],
-				"map_locations": [
-					{
-						"map": "holodrum",
-						"x": 610,
-						"y": 355
-					}
-				]
-			},
-			{
-				"name": "Mushroom Cave",
-				"sections": [
-					{
-						"name": "Woods of Winter",
-						"access_rules": ["^$CanReach|WoodsOfWinterMushroomCaveChest"]
-					}
-				],
-				"map_locations": [
-					{
-						"map": "holodrum",
-						"x": 631,
-						"y": 364
-					}
-				]
-			},
-			{
-				"name": "Golden Moblin",
-				"sections": [
-					{
-						"name": "Autumn",
-						"access_rules": ["^$CanReach|GoldenMoblinKill"],
-						"hosted_item": "golden_moblin"
-					}
-				],
-				"map_locations": [
-					{
-						"map": "holodrum",
-						"x": 578,
-						"y": 372,
-						"shape": "diamond"
-					}
-				]
-			},
-			{
-				"name": "Moblin Road Bomb Cave",
-				"sections": [
-					{
-						"access_rules": ["^$CanReach|MoblinRoadBombCaveChest"]
-					}
-				],
-				"map_locations": [
-					{
-						"map": "holodrum",
-						"x": 578,
-						"y": 322
-					}
-				]
-			},
-			{
-				"name": "Woods of Winter Heart Piece",
-				"sections": [
-					{
-						"access_rules": ["^$CanReach|SuburbsHP"]
-					}
-				],
-				"map_locations": [
-					{
-						"map": "holodrum",
-						"x": 673,
-						"y": 462
-					}
-				]
-			},
-			{
-				"name": "Holly's House",
-				"sections": [
-					{
-						"name": "Holly's Gift",
-						"access_rules": ["^$CanReach|Holly"]
-					}
-				],
-				"map_locations": [
-					{
-						"map": "holodrum",
-						"x": 663,
-						"y": 322
-					}
-				]
-			},
-			{
-				"name": "Waterfall Cave",
-				"sections": [
-					{
-						"access_rules": ["^$CanReach|MoblinRoadWaterfallCaveChest"]
-					}
-				],
-				"map_locations": [
-					{
-						"map": "holodrum",
-						"x": 621,
-						"y": 300
-					}
-				]
-			},
-			{
-				"name": "Woods of Winter Old Man",
-				"visibility_rules": ["old_men_locations"],
-				"sections": [
-					{
-						"hosted_item": "event_suburbs_oldman",
-						"access_rules": ["^$CanReach|SuburbsOldMan"]
-					}
-				],
-				"map_locations": [
-					{
-						"map": "holodrum",
-						"x": 658,
-						"y": 360
+						"x": 2040,
+						"y": 1319
 					}
 				]
 			},
@@ -353,9 +185,165 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 444,
-						"y": 404,
+						"x": 1656,
+						"y": 1206,
 						"shape": "trapezoid"
+					}
+				]
+			}
+		]
+	},
+	{
+		"name": "Woods of Winter",
+		"chest_unopened_img": "images/labels/chest.png",
+		"chest_opened_img": "images/labels/chestopen.png",
+		"color": "#00ff08",
+		"children": [
+			{
+				"name": "See the Season",
+				"visibility_rules": ["defaultseasonsoff", "singularity_random"],
+				"sections": [
+					{
+						"name": "Woods of Winter",
+						"access_rules": ["{^$CanReach|WoodsOfWinterFindSeason}"],
+						"chest_unopened_img": "images/labels/season_icons.png",
+						"chest_opened_img": "images/labels/season_icons_disabled.png"
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 2320,
+						"y": 1141,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Woods of Winter Tree",
+				"sections": [
+					{
+						"access_rules": ["^$CanReach|WoodsOfWinterTree"],
+						"chest_unopened_img": "images/items/tree_mystery.png",
+						"chest_opened_img": "images/items/tree_mystery_disabled.png"
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 2320,
+						"y": 1201
+					}
+				]
+			},
+			{
+				"name": "Chest on D2 Roof",
+				"sections": [{"access_rules": ["^$CanReach|UpperSnakesRemains"]}],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 2264,
+						"y": 1048
+					}
+				]
+			},
+			{
+				"name": "Mushroom Cave",
+				"sections": [
+					{
+						"name": "Woods of Winter",
+						"access_rules": ["^$CanReach|WoodsOfWinterMushroomCaveChest"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 2376,
+						"y": 1096
+					}
+				]
+			},
+			{
+				"name": "Golden Moblin",
+				"sections": [
+					{
+						"name": "Autumn",
+						"access_rules": ["^$CanReach|GoldenMoblinKill"],
+						"hosted_item": "golden_moblin"
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 2152,
+						"y": 1128,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Moblin Road Bomb Cave",
+				"sections": [{"access_rules": ["^$CanReach|MoblinRoadBombCaveChest"]}],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 2120,
+						"y": 920
+					}
+				]
+			},
+			{
+				"name": "Woods of Winter Heart Piece",
+				"sections": [{"access_rules": ["^$CanReach|SuburbsHP"]}],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 2536,
+						"y": 1384
+					}
+				]
+			},
+			{
+				"name": "Holly's House",
+				"sections": [
+					{
+						"name": "Holly's Gift",
+						"access_rules": ["^$CanReach|Holly"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 2520,
+						"y": 965
+					}
+				]
+			},
+			{
+				"name": "Waterfall Cave",
+				"sections": [{"access_rules": ["^$CanReach|MoblinRoadWaterfallCaveChest"]}],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 2265,
+						"y": 918
+					}
+				]
+			},
+			{
+				"name": "Woods of Winter Old Man",
+				"visibility_rules": ["old_men_locations"],
+				"sections": [
+					{
+						"hosted_item": "event_suburbs_oldman",
+						"access_rules": ["^$CanReach|SuburbsOldMan"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 2440,
+						"y": 1080
 					}
 				]
 			},
@@ -374,8 +362,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 558,
-						"y": 364,
+						"x": 2092,
+						"y": 1065,
 						"shape": "trapezoid"
 					}
 				]
@@ -447,8 +435,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 578,
-						"y": 352
+						"x": 2152,
+						"y": 1065
 					}
 				]
 			}

@@ -16,8 +16,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 672,
-						"y": 15
+						"x": 2513,
+						"y": 38
 					}
 				]
 			},
@@ -25,7 +25,10 @@
 				"name": "Mt. Cucco Portal",
 				"chest_unopened_img": "images/labels/portal.png",
 				"chest_opened_img": "images/labels/portalgray.png",
-				"visibility_rules": ["portalshuffleon", "portalshuffleoutward"],
+				"visibility_rules": [
+					"portalshuffleon",
+					"portalshuffleoutward"
+				],
 				"sections": [
 					{
 						"access_rules": ["{^$CanReach|LowerMtCucco}"],
@@ -35,8 +38,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 617,
-						"y": 75,
+						"x": 2312,
+						"y": 215,
 						"shape": "trapezoid"
 					}
 				]
@@ -52,8 +55,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 672,
-						"y": 68
+						"x": 2519,
+						"y": 183
 					}
 				]
 			},
@@ -77,8 +80,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 650,
-						"y": 55
+						"x": 2424,
+						"y": 168
 					}
 				]
 			},
@@ -97,8 +100,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 503,
-						"y": 58
+						"x": 1880,
+						"y": 170
 					}
 				]
 			},
@@ -113,8 +116,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 598,
-						"y": 50
+						"x": 2217,
+						"y": 152
 					}
 				]
 			},
@@ -129,8 +132,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 575,
-						"y": 98
+						"x": 2136,
+						"y": 280
 					}
 				]
 			},
@@ -149,8 +152,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 558,
-						"y": 68,
+						"x": 2078,
+						"y": 152,
 						"shape": "trapezoid"
 					}
 				]
@@ -218,8 +221,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 578,
-						"y": 68
+						"x": 2136,
+						"y": 152
 					}
 				]
 			}

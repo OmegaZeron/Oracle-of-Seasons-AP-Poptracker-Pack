@@ -7,7 +7,10 @@
 		"children": [
 			{
 				"name": "See the Season",
-				"visibility_rules": ["horon_seasons_normalized, defaultseasonsoff", "horon_seasons_normalized, singularity_random"],
+				"visibility_rules": [
+					"horon_seasons_normalized, defaultseasonsoff",
+					"horon_seasons_normalized, singularity_random"
+				],
 				"sections": [
 					{
 						"name": "Horon Village",
@@ -19,8 +22,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 281,
-						"y": 540,
+						"x": 1048,
+						"y": 1612,
 						"shape": "diamond"
 					}
 				]
@@ -36,8 +39,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 237,
-						"y": 662
+						"x": 824,
+						"y": 1944
 					}
 				]
 			},
@@ -54,8 +57,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 364,
-						"y": 654
+						"x": 1358,
+						"y": 1952
 					}
 				]
 			},
@@ -82,8 +85,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 407,
-						"y": 534
+						"x": 1518,
+						"y": 1594
 					}
 				]
 			},
@@ -107,8 +110,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 367,
-						"y": 530
+						"x": 1369,
+						"y": 1582
 					}
 				]
 			},
@@ -199,8 +202,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 347,
-						"y": 530
+						"x": 1308,
+						"y": 1582
 					}
 				]
 			},
@@ -215,8 +218,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 367,
-						"y": 614
+						"x": 1369,
+						"y": 1848
 					}
 				]
 			},
@@ -240,8 +243,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 375,
-						"y": 552
+						"x": 1399,
+						"y": 1647
 					}
 				]
 			},
@@ -256,28 +259,30 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 375,
-						"y": 574
+						"x": 1399,
+						"y": 1713
 					}
 				]
 			},
 			{
-				"name": "Dr. Left's House",
-				"sections": [
-					{
-						"name": "Horon Village: Dr. Left Reward",
-						"access_rules": ["^$CanReach|DrLeftReward"]
-					},
-					{
-						"name": "Horon Village: Chest in Dr. Left's Backyard",
-						"access_rules": ["^$CanReach|DrLeftBackyardChest"]
-					}
-				],
+				"name": "Dr. Left's Reward",
+				"sections": [{"access_rules": ["^$CanReach|DrLeftReward"]}],
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 407,
-						"y": 652
+						"x": 1496,
+						"y": 1964
+					}
+				]
+			},
+			{
+				"name": "Chest in Dr. Left's Backyard",
+				"sections": [{"access_rules": ["^$CanReach|DrLeftBackyardChest"]}],
+				"map_locations": [
+					{
+						"map": "holodrum",
+						"x": 1576,
+						"y": 2007
 					}
 				]
 			},
@@ -294,8 +299,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 392,
-						"y": 672
+						"x": 1480,
+						"y": 2024
 					}
 				]
 			},
@@ -331,8 +336,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 281,
-						"y": 620
+						"x": 1048,
+						"y": 1850
 					}
 				]
 			},
@@ -356,8 +361,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 234,
-						"y": 523
+						"x": 873,
+						"y": 1561
 					}
 				]
 			},
@@ -372,8 +377,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 315,
-						"y": 575
+						"x": 1175,
+						"y": 1716
 					}
 				]
 			},
@@ -389,8 +394,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 325,
-						"y": 555
+						"x": 1212,
+						"y": 1656
 					}
 				]
 			},
@@ -398,7 +403,10 @@
 				"name": "Horon Portal",
 				"chest_unopened_img": "images/labels/portal.png",
 				"chest_opened_img": "images/labels/portalgray.png",
-				"visibility_rules": ["portalshuffleon", "portalshuffleoutward"],
+				"visibility_rules": [
+					"portalshuffleon",
+					"portalshuffleoutward"
+				],
 				"sections": [
 					{
 						"access_rules": ["{^$CanReach|HoronPortal}"],
@@ -408,8 +416,8 @@
 				"map_locations": [
 					{
 						"map": "holodrum",
-						"x": 315,
-						"y": 660,
+						"x": 1176,
+						"y": 1974,
 						"shape": "trapezoid"
 					}
 				]

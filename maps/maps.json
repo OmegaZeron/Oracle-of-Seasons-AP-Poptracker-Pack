@@ -7,8 +7,8 @@
 	},
 	{
 		"name": "holodrum",
-		"location_size": 18,
-		"location_border_thickness": 2,
+		"location_size": 54,
+		"location_border_thickness": 6,
 		"img": "images/maps/map_holodrum.png"
 	},
 	{

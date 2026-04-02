@@ -17,7 +17,7 @@ GashaIDToLocation = {
 	["Mount Cucco/Mount Cucco Gasha Spot/Behind Mushrooms"] = MtCuccoGasha,
 	["Goron Mountain/Goron Mountain West Gasha Spot/Dig It Up"] = GoronGashaWest,
 	["Goron Mountain/Goron Mountain East Gasha Spot/Under Rocks"] = GoronGashaEast,
-	["Eastern Suburbs/Samasa Desert Gasha Spot/Surrounded by Cacti"] = SamasaDesertGasha,
+	["Samasa Desert/Samasa Desert Gasha Spot/Surrounded by Cacti"] = SamasaDesertGasha,
 	["Tarm Ruins/Tarm Ruins Gasha Spot/Dig It Up"] = TarmGasha
 }
 
@@ -48,8 +48,8 @@ DataStorageLocationTable = {
 	["Harvested Eastern Suburbs Gasha Spot"] = "@Eastern Suburbs/Eastern Suburbs Gasha Spot/Harvested",
 	["Planted Spool Swamp South Gasha Spot"] = "@Spool Swamp/Spool Swamp South Gasha Spot/Near Portal",
 	["Harvested Spool Swamp South Gasha Spot"] = "@Spool Swamp/Spool Swamp South Gasha Spot/Harvested",
-	["Planted Samasa Desert Gasha Spot"] = "@Eastern Suburbs/Samasa Desert Gasha Spot/Surrounded by Cacti",
-	["Harvested Samasa Desert Gasha Spot"] = "@Eastern Suburbs/Samasa Desert Gasha Spot/Harvested",
+	["Planted Samasa Desert Gasha Spot"] = "@Samasa Desert/Samasa Desert Gasha Spot/Surrounded by Cacti",
+	["Harvested Samasa Desert Gasha Spot"] = "@Samasa Desert/Samasa Desert Gasha Spot/Harvested",
 	["Planted Western Coast Gasha Spot"] = "@Western Coast/Western Coast Gasha Spot/Near Graveyard",
 	["Harvested Western Coast Gasha Spot"] = "@Western Coast/Western Coast Gasha Spot/Harvested",
 	["Planted Horon Village Gasha Spot"] = "@Horon Village/Horon Village Gasha Spot/Near Mayor",
@@ -75,7 +75,7 @@ EventTable = {
 }
 
 DefaultAutoCollectLocationTable = {
-	["Tarm Ruins/Lost Woods/Lost Woods: Pedestal Item"] = {"@Tarm Ruins/Pedestal Sequence/Serenade the Scrub"},
+	["Lost Woods/Lost Woods/Lost Woods: Pedestal Item"] = {"@Lost Woods/Pedestal Sequence/Serenade the Scrub"},
 	["North Horon/Golden Beasts Reward/North Horon: Golden Beasts Old Man"] = {GoldenDarknut, GoldenLynel, GoldenOctorok, GoldenMoblin}
 }
 
@@ -236,7 +236,7 @@ CurrentLocationMapping = {
 	[0x08D] = {
 		-- D2
 		Autotab({"Holodrum"}),
-		DungeonEnt("d2", "@Eastern Suburbs/Enter D2/Snake's Remains"),
+		DungeonEnt("d2", "@Woods of Winter/Enter D2/Snake's Remains"),
 		SeeSeason(WoodsOfWinterSeason, WoodsOfWinterSeasonHidden)
 	},
 	[0x08E] = {
@@ -349,7 +349,7 @@ CurrentLocationMapping = {
 		-- from Lost Woods
 		SeeSeason(TarmRuinsSeason, TarmRuinsSeasonHidden),
 		Custom(function()
-			Tracker:FindObjectForCode("@Tarm Ruins/Lost Woods Sequence/Shield the Scrub").AvailableChestCount = 0
+			Tracker:FindObjectForCode("@Lost Woods/Lost Woods Sequence/Shield the Scrub").AvailableChestCount = 0
 		end)
 	},
 	[0x000] = {
@@ -949,7 +949,7 @@ DungeonSetVars = {
 	{"d0 entrance selector", D0EntranceSelector, "@Western Coast/Enter D0/Hero's Cave"},
 	{"lc entrance selector", LCEntranceSelector, "@Western Coast/Enter D0 (Linked)/Hero's Cave (Linked)"},
 	{"d1 entrance selector", D1EntranceSelector, "@North Horon/Enter D1/Gnarled Root Dungeon"},
-	{"d2 entrance selector", D2EntranceSelector, "@Eastern Suburbs/Enter D2/Snake's Remains"},
+	{"d2 entrance selector", D2EntranceSelector, "@Woods of Winter/Enter D2/Snake's Remains"},
 	{"d3 entrance selector", D3EntranceSelector, "@Spool Swamp/Enter D3/Poison Moth's Lair"},
 	{"d4 entrance selector", D4EntranceSelector, "@Mount Cucco/Enter D4/Dancing Dragon Dungeon"},
 	{"d5 entrance selector", D5EntranceSelector, "@North Horon/Enter D5/Unicorn's Cave"},

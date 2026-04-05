@@ -145,11 +145,12 @@ ExplorersCrypt:connect_one_way_entrance(Graveyard, function()
 		WesternCoastSummer
 	)
 end)
-ExplorersCrypt:connect_one_way_entrance(GraveyardAutumn, function()
-	return Has(WesternCoastAutumn)
-end)
+ExplorersCrypt:connect_one_way_entrance(GraveyardAutumn, function() return Has(WesternCoastAutumn) end)
 ExplorersCrypt:connect_one_way_entrance(GraveyardWinter, function()
-	return Has(WesternCoastWinter)
+	return All(
+		WesternCoastWinter,
+		Shovel
+	)
 end)
 ExplorersCrypt:connect_one_way_entrance(CryptFoyer, function()
 	return Any(

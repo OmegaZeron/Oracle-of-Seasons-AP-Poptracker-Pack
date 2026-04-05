@@ -29,7 +29,7 @@ SnakeAltEntrance:connect_one_way(SnakeBombPuzzle, function()
 	return All(
 		CanDestroyBush,
 		Any(
-			Bombs,
+			HasBombsForTiles,
 			All(
 				HasBombchusForTiles,
 				Satchel,

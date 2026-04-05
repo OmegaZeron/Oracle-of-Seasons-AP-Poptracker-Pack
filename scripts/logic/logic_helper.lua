@@ -110,7 +110,7 @@ function CanBombWall()
 		return CachedValues["CanBombWall"]
 	end
 	local val = Any(
-		Bombs,
+		HasBombsForTiles,
 		All(
 			HasBombchusForTiles,
 			MediumLogic
@@ -558,7 +558,7 @@ function CanHitFarSwitch()
 	return Any(
 		CanShootSeeds,
 		Boomerang,
-		Bombs,
+		HasBombsForTiles,
 		HasSwordBeams,
 		SwitchHook
 	)

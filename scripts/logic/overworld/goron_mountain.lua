@@ -33,7 +33,7 @@ WestGoronMountain:connect_one_way(GoronLavaChest, function()
 	return All(
 		JumpLiquid3,
 		Any(
-			Bombs,
+			HasBombsForTiles,
 			All(
 				HasBombchusForTiles,
 				Satchel,

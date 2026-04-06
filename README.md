@@ -25,13 +25,13 @@ Colors:
 
 Shapes:
 - Square - Check
-- Diamond - Information
+- Diamond - Information, or progress towards a check
 - Trapezoid - Randomized entrance
 
-Make sure to reach the Diamonds and Trapezoids and mark down the information they give you, these affect logic
+Make sure to reach the Diamonds and Trapezoids and mark down the information they give you, these affect logic!
 
 ## Connecting to Archipelago
-Click the AP button in the top left of the window. Enter your server:port (most likely archipelago.gg:PORT_NUMBER), then enter your slot name (the name in your YAML file), then the server password (empty if there isn't one). Afterward, the AP button should turn green, which means you're now auto-tracking.
+Click the AP button in the top left of the window. Enter your server:port (most likely archipelago.gg:PORT_NUMBER), then enter your slot name (the name in your YAML file), then the server password (empty if there isn't one). Afterward, the AP button should turn green, which means you're now auto-tracking
 
 ## Archipelago Compatibility Chart
 | apworld Version |   Pack Version  |
@@ -46,3 +46,7 @@ Click the AP button in the top left of the window. Enter your server:port (most 
 [Seto](https://github.com/seto10987) for her work on the original tracker, and pointers for getting this version set up<br/>
 [StripesOO7](https://github.com/stripesoo7) for his help with optimization, and references for setting this up<br/>
 [Ishigh](https://github.com/Ishigh1) for the initial code framework, and work on the apworld
+
+## Support
+I don't expect anything, but financial contributions are greatly appreciated and help me continue development in the future</br>
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/omegazeron)

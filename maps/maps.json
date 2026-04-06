@@ -37,8 +37,8 @@
 	},
 	{
 		"name": "gnarled_root_dungeon",
-		"location_size": 16,
-		"location_border_thickness": 1,
+		"location_size": 32,
+		"location_border_thickness": 2,
 		"img": "images/maps/Gnarled_root_dungeon.png"
 	},
 	{

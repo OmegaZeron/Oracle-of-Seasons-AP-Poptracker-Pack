@@ -43,14 +43,14 @@
 	},
 	{
 		"name": "snakes_remains1",
-		"location_size": 16,
-		"location_border_thickness": 1,
+		"location_size": 24,
+		"location_border_thickness": 2,
 		"img": "images/maps/snakes_remains_front.png"
 	},
 	{
 		"name": "snakes_remains2",
-		"location_size": 16,
-		"location_border_thickness": 1,
+		"location_size": 24,
+		"location_border_thickness": 2,
 		"img": "images/maps/snakes_remains_back.png"
 	},
 	{

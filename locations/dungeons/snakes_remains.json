@@ -13,8 +13,8 @@
 				"map_locations": [
 					{
 						"map": "snakes_remains1",
-						"x": 400,
-						"y": 448,
+						"x": 600,
+						"y": 686,
 						"shape": "trapezoid"
 					}
 				]
@@ -29,8 +29,8 @@
 				"map_locations": [
 					{
 						"map": "snakes_remains1",
-						"x": 186,
-						"y": 401
+						"x": 280,
+						"y": 600
 					}
 				]
 			},
@@ -44,8 +44,8 @@
 				"map_locations": [
 					{
 						"map": "snakes_remains1",
-						"x": 239,
-						"y": 295
+						"x": 360,
+						"y": 440
 					}
 				]
 			},
@@ -59,8 +59,8 @@
 				"map_locations": [
 					{
 						"map": "snakes_remains1",
-						"x": 560,
-						"y": 294
+						"x": 840,
+						"y": 440
 					}
 				]
 			},
@@ -75,8 +75,8 @@
 				"map_locations": [
 					{
 						"map": "snakes_remains1",
-						"x": 239,
-						"y": 175,
+						"x": 356,
+						"y": 264,
 						"shape": "diamond"
 					}
 				]
@@ -91,8 +91,8 @@
 				"map_locations": [
 					{
 						"map": "snakes_remains1",
-						"x": 399,
-						"y": 28
+						"x": 600,
+						"y": 40
 					}
 				]
 			},
@@ -106,8 +106,8 @@
 				"map_locations": [
 					{
 						"map": "snakes_remains1",
-						"x": 282,
-						"y": 60
+						"x": 424,
+						"y": 88
 					}
 				]
 			},
@@ -122,13 +122,13 @@
 				"map_locations": [
 					{
 						"map": "snakes_remains1",
-						"x": 300,
-						"y": 98
+						"x": 456,
+						"y": 24
 					},
 					{
 						"map": "snakes_remains1",
-						"x": 300,
-						"y": 20
+						"x": 456,
+						"y": 152
 					}
 				]
 			},
@@ -142,8 +142,8 @@
 				"map_locations": [
 					{
 						"map": "snakes_remains1",
-						"x": 688,
-						"y": 166
+						"x": 1032,
+						"y": 248
 					}
 				]
 			},
@@ -158,8 +158,8 @@
 				"map_locations": [
 					{
 						"map": "snakes_remains1",
-						"x": 15,
-						"y": 270
+						"x": 24,
+						"y": 408
 					}
 				]
 			},
@@ -173,8 +173,8 @@
 				"map_locations": [
 					{
 						"map": "snakes_remains1",
-						"x": 80,
-						"y": 176
+						"x": 120,
+						"y": 264
 					}
 				]
 			},
@@ -188,8 +188,8 @@
 				"map_locations": [
 					{
 						"map": "snakes_remains2",
-						"x": 144,
-						"y": 80
+						"x": 184,
+						"y": 120
 					}
 				]
 			},
@@ -204,23 +204,23 @@
 				"map_locations": [
 					{
 						"map": "snakes_remains2",
-						"x": 475,
-						"y": 250
+						"x": 520,
+						"y": 376
 					},
 					{
 						"map": "snakes_remains2",
-						"x": 368,
-						"y": 250
+						"x": 680,
+						"y": 376
 					},
 					{
 						"map": "snakes_remains2",
-						"x": 368,
-						"y": 335
+						"x": 520,
+						"y": 504
 					},
 					{
 						"map": "snakes_remains2",
-						"x": 475,
-						"y": 335
+						"x": 680,
+						"y": 504
 					}
 				]
 			},
@@ -234,8 +234,8 @@
 				"map_locations": [
 					{
 						"map": "snakes_remains2",
-						"x": 805,
-						"y": 186
+						"x": 1176,
+						"y": 280
 					}
 				]
 			},
@@ -250,8 +250,8 @@
 				"map_locations": [
 					{
 						"map": "snakes_remains2",
-						"x": 741,
-						"y": 410
+						"x": 1080,
+						"y": 664
 					}
 				]
 			},
@@ -266,8 +266,8 @@
 				"map_locations": [
 					{
 						"map": "snakes_remains2",
-						"x": 731,
-						"y": 511
+						"x": 1064,
+						"y": 726
 					}
 				]
 			}

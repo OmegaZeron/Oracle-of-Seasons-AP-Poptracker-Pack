@@ -974,6 +974,33 @@ PortalSetVars = {
 	{"d8 entrance portal", D8PortalSelector, "@Subrosia/D8 Portal/"}
 }
 
+DungeonNumberWatch = {
+	"dungeon_number_setting",
+	"d0_ent_selector",
+	"d11_ent_selector",
+	"d1_ent_selector",
+	"d2_ent_selector",
+	"d3_ent_selector",
+	"d4_ent_selector",
+	"d5_ent_selector",
+	"d6_ent_selector",
+	"d7_ent_selector",
+	"d8_ent_selector"
+}
+DungeonImageDict = {
+	[0] = {"images/labels/DX_Unknown.png", "images/labels/DX_Unknown.png"},
+	[1] = {"images/labels/d0_entrance.png", "images/labels/d0_entrance_alt.png"},
+	[2] = {"images/labels/LC_entrance.png", "images/labels/LC_entrance_alt.png"},
+	[3] = {"images/labels/D1_entrance.png", "images/labels/D1_entrance_alt.png"},
+	[4] = {"images/labels/D2_entrance.png", "images/labels/D2_entrance_alt.png"},
+	[5] = {"images/labels/D3_entrance.png", "images/labels/D3_entrance_alt.png"},
+	[6] = {"images/labels/D4_entrance.png", "images/labels/D4_entrance_alt.png"},
+	[7] = {"images/labels/D5_entrance.png", "images/labels/D5_entrance_alt.png"},
+	[8] = {"images/labels/D6_entrance.png", "images/labels/D6_entrance_alt.png"},
+	[9] = {"images/labels/D7_entrance.png", "images/labels/D7_entrance_alt.png"},
+	[10] = {"images/labels/D8_entrance.png", "images/labels/D8_entrance_alt.png"}
+}
+
 if Highlight then
 	PriorityToHighlight = {
 		[0] = Highlight.Unspecified,

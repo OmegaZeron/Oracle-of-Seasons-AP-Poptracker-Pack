@@ -787,6 +787,25 @@
 			}
 		]
 	},
+	{
+		"name": "Show Dungeon Numbers",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 0,
+		"stages": [
+			{
+				"img": "images/labels/off.png",
+				"codes": "dungeon_number_setting, d_numbers_off",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/on.png",
+				"codes": "dungeon_number_setting, d_numbers_on",
+				"inherit_codes": false
+			}
+		]
+	},
 	// misc settings/items
 	{
 		"name": "Natzu animal",

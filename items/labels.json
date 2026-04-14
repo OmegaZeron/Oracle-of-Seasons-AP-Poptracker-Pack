@@ -181,6 +181,12 @@
 		"codes": "autotab_label"
 	},
 	{
+		"name": "Dungeon Numbers Label",
+		"type": "static",
+		"img": "images/labels/dungeon_numbers_label.png",
+		"codes": "dungeon_number_label"
+	},
+	{
 		"name": "Natzu label",
 		"type": "static",
 		"img": "images/labels/natzu_animal_label.png",

@@ -1656,6 +1656,19 @@ local function DisplayPedestal()
 	end
 end
 
+-- Dungeon number display setting
+function OnChangeDungeonImages()
+	local setting = Tracker:FindObjectForCode("dungeon_number_setting")
+	---@cast setting JsonItem
+	for i = 0, 9 do
+		if i == 9 then
+			i = 11
+		end
+		local dungeon = Tracker:FindObjectForCode("d"..i.."_ent_selector") ---@cast dungeon JsonItem
+		dungeon.Icon = ImageReference:FromPackRelativePath(setting.CurrentStage == 0 and DungeonImageDict[dungeon.CurrentStage][1] or DungeonImageDict[dungeon.CurrentStage][2])
+	end
+end
+
 local function OnFrameHandler()
 	ScriptHost:RemoveOnFrameHandler("load handler")
 	LOADED = true
@@ -1709,4 +1722,8 @@ for i = 1, #PortalSetVars do
 			location.AvailableChestCount = 0
 		end
 	end)
+end
+
+for _, val in ipairs(DungeonNumberWatch) do
+	ScriptHost:AddWatchForCode("dungeon numbers "..val, val, OnChangeDungeonImages)
 end

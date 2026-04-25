@@ -21,5 +21,6 @@ Tracker:AddLayouts("layouts/broadcast.json")
 require("scripts.autotracking.manual_override")
 CreateLuaManualLocationStorage(ManualStorageCode)
 ScriptHost:AddOnLocationSectionChangedHandler("manual location handler", ManualLocationHandler)
+ScriptHost:AddWatchForCode("manual item handler", "*", ManualItemHandler)
 
 StateChange()

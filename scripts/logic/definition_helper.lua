@@ -185,6 +185,8 @@ VersionMismatch = "version_mismatch"
 HiddenSetting = "hidden_setting"
 LocationRefresh = "location_refresh"
 ManualStorageCode = "manual_location_storage"
+ManualLocationCode = "locations"
+ManualItemCode = "items"
 
 -- Shop Prices
 HoronShopPrice = "horonShop"

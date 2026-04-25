@@ -26,3 +26,14 @@ function TableContains(table, value)
 	end
 	return false
 end
+
+function SplitStr(input, seperator)
+	if seperator == nil then
+		seperator = "%s"
+	end
+	local t = {}
+	for str in string.gmatch(input, "([^"..seperator.."]+)") do
+		table.insert(t, str)
+	end
+	return t
+end

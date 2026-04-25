@@ -32,7 +32,10 @@ function CreateLuaManualLocationStorage(name)
 	self.Icon = ImageReference:FromPackRelativePath("/images/labels/chest.png")
 	self.ItemState = {
 		ManualLocations = {
-			["default"] = {}
+			["default"] = {
+				[ManualLocationCode] = {},
+				[ManualItemCode] = {}
+			}
 		},
 		ManualLocationsOrder = {}
 	}

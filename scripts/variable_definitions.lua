@@ -1001,6 +1001,59 @@ DungeonImageDict = {
 	[10] = {"images/labels/D8_entrance.png", "images/labels/D8_entrance_alt.png"}
 }
 
+ManualItemFilter = {
+	-- dungeons
+	["d0_ent_selector"] = {["type"] = "progressive"},
+	["d11_ent_selector"] = {["type"] = "progressive"},
+	["d1_ent_selector"] = {["type"] = "progressive"},
+	["d2_ent_selector"] = {["type"] = "progressive"},
+	["d3_ent_selector"] = {["type"] = "progressive"},
+	["d4_ent_selector"] = {["type"] = "progressive"},
+	["d5_ent_selector"] = {["type"] = "progressive"},
+	["d6_ent_selector"] = {["type"] = "progressive"},
+	["d7_ent_selector"] = {["type"] = "progressive"},
+	["d8_ent_selector"] = {["type"] = "progressive"},
+	-- portals
+	[EasternSuburbsPortalSelector] = {["type"] = "progressive"},
+	[SpoolSwampPortalSelector] = {["type"] = "progressive"},
+	[EyeglassLakePortalSelector] = {["type"] = "progressive"},
+	[MtCuccoPortalSelector] = {["type"] = "progressive"},
+	[HoronVillagePortalSelector] = {["type"] = "progressive"},
+	[LowerRemainsPortalSelector] = {["type"] = "progressive"},
+	[UpperRemainsPortalSelector] = {["type"] = "progressive"},
+	[MountainPortalSelector] = {["type"] = "progressive"},
+	[MarketPortalSelector] = {["type"] = "progressive"},
+	[FurnacePortalSelector] = {["type"] = "progressive"},
+	[SubrosiaVillagePortalSelector] = {["type"] = "progressive"},
+	[PiratesPortalSelector] = {["type"] = "progressive"},
+	[VolcanoPortalSelector] = {["type"] = "progressive"},
+	[D8PortalSelector] = {["type"] = "progressive"},
+	-- seasons
+	["horon_village_season"] = {["type"] = "progressive"},
+	["north_horon_season"] = {["type"] = "progressive"},
+	["suburbs_season"] = {["type"] = "progressive"},
+	["wow_season"] = {["type"] = "progressive"},
+	["plain_season"] = {["type"] = "progressive"},
+	["swamp_season"] = {["type"] = "progressive"},
+	["sunken_season"] = {["type"] = "progressive"},
+	["lost_woods_season"] = {["type"] = "progressive"},
+	["tarm_ruins_season"] = {["type"] = "progressive"},
+	["coast_season"] = {["type"] = "progressive"},
+	["remains_season"] = {["type"] = "progressive"},
+	-- events/hosted items
+	[EventSnakeRupees] = {["type"] = "toggle"},
+	[EventAncientRupees] = {["type"] = "toggle"},
+	[EventHoronOldMan] = {["type"] = "toggle"},
+	[EventNorthHoronOldMan] = {["type"] = "toggle"},
+	[EventNorthHolPlainOldMan] = {["type"] = "toggle"},
+	[EventSouthHolPlainOldMan] = {["type"] = "toggle"},
+	[EventGoronOldMan] = {["type"] = "toggle"},
+	[EventCoastOldMan] = {["type"] = "toggle"},
+	[EventSuburbsOldMan] = {["type"] = "toggle"},
+	[EventTarmOldMan] = {["type"] = "toggle"},
+	[EventFireworks] = {["type"] = "toggle"},
+}
+
 if Highlight then
 	PriorityToHighlight = {
 		[0] = Highlight.Unspecified,

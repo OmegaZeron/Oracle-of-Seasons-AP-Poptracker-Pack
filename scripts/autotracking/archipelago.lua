@@ -40,7 +40,7 @@ function PreOnClear()
 			table.remove(manualStorageItem.ManualLocationsOrder, 1)
 		end
 		if manualStorageItem.ManualLocations[ROOM_SEED] == nil then
-			manualStorageItem.ManualLocations[ROOM_SEED] = {}
+			manualStorageItem.ManualLocations[ROOM_SEED] = {[ManualLocationCode] = {}, [ManualItemCode] = {}}
 			table.insert(manualStorageItem.ManualLocationsOrder, ROOM_SEED)
 		end
 	end
@@ -60,11 +60,10 @@ function OnClear(slot_data)
 	end
 
 	IS_MANUAL_CLICK = false
-	local manualStorageItem = Tracker:FindObjectForCode(ManualStorageCode)
-	if manualStorageItem == nil then
+	if Tracker:FindObjectForCode(ManualStorageCode) == nil then
 		CreateLuaManualLocationStorage(ManualStorageCode)
 	end
-	manualStorageItem = Tracker:FindObjectForCode(ManualStorageCode).ItemState
+	local manualStorageItem = Tracker:FindObjectForCode(ManualStorageCode).ItemState
 
 	PreOnClear()
 
@@ -76,8 +75,8 @@ function OnClear(slot_data)
 			if obj then
 				if location:sub(1, 1) == "@" then
 					---@cast obj LocationSection
-					if manualStorageItem and manualStorageItem.ManualLocations[ROOM_SEED] and manualStorageItem.ManualLocations[ROOM_SEED][obj.FullID] then
-						obj.AvailableChestCount = manualStorageItem.ManualLocations[ROOM_SEED][obj.FullID]
+					if manualStorageItem and manualStorageItem.ManualLocations[ROOM_SEED] and manualStorageItem.ManualLocations[ROOM_SEED][ManualLocationCode][obj.FullID] then
+						obj.AvailableChestCount = manualStorageItem.ManualLocations[ROOM_SEED][ManualLocationCode][obj.FullID]
 						if EventTable[obj.FullID] then
 							Tracker:FindObjectForCode(EventTable[obj.FullID]).Active = true
 						end
@@ -211,6 +210,18 @@ function OnClear(slot_data)
 	if slot_data["essences_in_game"] then
 		for _, v in ipairs(slot_data["essences_in_game"]) do
 			EssencesInWorld[v] = true
+		end
+	end
+
+	-- set dungeon entrances
+	if manualStorageItem then
+		for code, data in pairs(manualStorageItem.ManualLocations[ROOM_SEED][ManualItemCode]) do
+			local item = Tracker:FindObjectForCode(code) ---@cast item JsonItem
+			if data["type"] == "progressive" then
+				item.CurrentStage = data["CurrentStage"]
+			elseif data["type"] == "toggle" then
+				item.Active = data["Active"]
+			end
 		end
 	end
 
@@ -544,15 +555,15 @@ function ManualLocationHandler(location)
 		if Archipelago.PlayerNumber == -1 and ROOM_SEED ~= DEFAULT_SEED then
 			-- seed is from previous connection
 			ROOM_SEED = DEFAULT_SEED
-			manualStorageItem.ManualLocations[ROOM_SEED] = {}
+			manualStorageItem.ManualLocations[ROOM_SEED] = {[ManualLocationCode] = {}, [ManualItemCode] = {}}
 		end
 		local fullID = location.FullID
 		if not manualStorageItem.ManualLocations[ROOM_SEED] then
-			manualStorageItem.ManualLocations[ROOM_SEED] = {}
+			manualStorageItem.ManualLocations[ROOM_SEED] = {[ManualLocationCode] = {}, [ManualItemCode] = {}}
 		end
 		if location.AvailableChestCount < location.ChestCount then
 			-- add to list
-			manualStorageItem.ManualLocations[ROOM_SEED][fullID] = location.AvailableChestCount
+			manualStorageItem.ManualLocations[ROOM_SEED][ManualLocationCode][fullID] = location.AvailableChestCount
 			if EventTable[location.FullID] then
 				Tracker:FindObjectForCode(EventTable[location.FullID]).Active = true
 			end
@@ -561,7 +572,7 @@ function ManualLocationHandler(location)
 			end
 		else
 			-- remove from list of set back to max chestcount
-			manualStorageItem.ManualLocations[ROOM_SEED][fullID] = nil
+			manualStorageItem.ManualLocations[ROOM_SEED][ManualLocationCode][fullID] = nil
 			if EventTable[location.FullID] then
 				Tracker:FindObjectForCode(EventTable[location.FullID]).Active = false
 			end
@@ -570,6 +581,22 @@ function ManualLocationHandler(location)
 				Archipelago:Get({HINTS_ID})
 			end
 		end
+	end
+end
+
+---@param codes string
+function ManualItemHandler(codes)
+	local code = SplitStr(codes, ", ")[1]
+	if not ManualItemFilter[code] then return end
+
+	local manualStorageItem = Tracker:FindObjectForCode(ManualStorageCode).ItemState
+	local item = Tracker:FindObjectForCode(code) ---@cast item JsonItem
+	if not manualStorageItem or not item then return end
+
+	if ManualItemFilter[code]["type"] == "progressive" then
+		manualStorageItem.ManualLocations[ROOM_SEED][ManualItemCode][code] = {["type"] = "progressive", ["CurrentStage"] = item.CurrentStage}
+	elseif ManualItemFilter[code]["type"] == "toggle" then
+		manualStorageItem.ManualLocations[ROOM_SEED][ManualItemCode][code] = {["type"] = "toggle", ["Active"] = item.Active}
 	end
 end
 

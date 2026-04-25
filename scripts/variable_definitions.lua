@@ -523,7 +523,7 @@ CurrentLocationMapping = {
 	[0x547] = {Autotab({"Explorer's Crypt", "Explorer's Crypt 1F, B1F"})}, -- magnet chest
 	[0x537] = {Autotab({"Explorer's Crypt", "Explorer's Crypt B2F"})}, -- magnunesu
 	[0x54C] = {Autotab({"Explorer's Crypt", "Explorer's Crypt 1F, B1F"})}, -- poe 2 water room
-	[0x543] = {Autotab({"Explorer's Crypt", "Explorer's Crypt B2F"})}, -- flying tile key block
+	[0x53C] = {Autotab({"Explorer's Crypt", "Explorer's Crypt B2F"})}, -- flying tile key block
 	[0x542] = {Autotab({"Explorer's Crypt", "Explorer's Crypt B2F"})}, -- Poe Sisters warp
 	-- D8
 	[0x587] = {

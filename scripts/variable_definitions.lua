@@ -446,10 +446,7 @@ CurrentLocationMapping = {
 		DungeonIn("d2", "@Snake's Remains/Exit the Dungeon/")
 	},
 	-- rupee room
-	[0x42E] = {Custom(function()
-		Tracker:FindObjectForCode(EventSnakeRupees).Active = true
-		Tracker:FindObjectForCode("@Snake's Remains/Reach the Rupee Room/").AvailableChestCount = 0
-	end)},
+	[0x42E] = {Custom(function() Tracker:FindObjectForCode(EventSnakeRupees).Active = true end)},
 	[0x437] = {Autotab({"Snake's Remains", "Snake's Remains Front"})}, -- alt entrance
 	[0x433] = {Autotab({"Snake's Remains", "Snake's Remains Front"})}, -- bomb maze
 	[0x432] = {Autotab({"Snake's Remains", "Snake's Remains Front"})}, -- cracked wall with ropes
@@ -499,10 +496,7 @@ CurrentLocationMapping = {
 		DungeonIn("d6")
 	},
 	-- rupee room
-	[0x4BB] = {Custom(function()
-		Tracker:FindObjectForCode(EventAncientRupees).Active = true
-		Tracker:FindObjectForCode("@Ancient Ruins/Reach the Rupee Room/1F").AvailableChestCount = 0
-	end)},
+	[0x4BB] = {Custom(function() Tracker:FindObjectForCode(EventAncientRupees).Active = true end)},
 	[0x4C2] = {Autotab({"Ancient Ruins", "Ancient Ruins 1F, 2F"})}, -- spiny beetle trampoline
 	[0x4CC] = {Autotab({"Ancient Ruins", "Ancient Ruins 3F, 4F, 5F"})}, -- darknuts
 	[0x4CF] = {Autotab({"Ancient Ruins", "Ancient Ruins 3F, 4F, 5F"})}, -- ball and chain trooper
@@ -1052,6 +1046,10 @@ ManualItemFilter = {
 	[EventSuburbsOldMan] = {["type"] = "toggle"},
 	[EventTarmOldMan] = {["type"] = "toggle"},
 	[EventFireworks] = {["type"] = "toggle"},
+	[GoldenMoblin] = {["type"] = "toggle"},
+	[GoldenOctorok] = {["type"] = "toggle"},
+	[GoldenDarknut] = {["type"] = "toggle"},
+	[GoldenLynel] = {["type"] = "toggle"}
 }
 
 if Highlight then

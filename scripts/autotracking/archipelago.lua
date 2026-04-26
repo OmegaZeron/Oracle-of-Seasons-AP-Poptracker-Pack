@@ -128,16 +128,26 @@ function OnClear(slot_data)
 		end
 	end
 
-	-- reset goal locations
-	Tracker:FindObjectForCode("onox").Active = false
-	Tracker:FindObjectForCode("ganon").Active = false
-
 	-- reset "dungeons with essence" data
 	for k, _ in pairs(EssencesInWorld) do
 		EssencesInWorld[k] = false
 	end
 	for i = 1, 8 do
 		Tracker:FindObjectForCode("d"..i.."_label").Active = false
+	end
+
+	-- reset manual items
+	for k, v in ManualItemFilter do
+		local obj = Tracker:FindObjectForCode(k)
+		if obj then
+			if v["type"] == "toggle" then
+				obj.Active = false
+			elseif v["type"] == "progressive" or v["type"] == "progressive_set" then
+				obj.CurrentStage = 0
+			elseif v["type"] == "consumable" then
+				obj.AcquiredCount = 0
+			end
+		end
 	end
 
 	if Archipelago.PlayerNumber > -1 then
@@ -219,7 +229,7 @@ function OnClear(slot_data)
 		end
 	end
 
-	-- set dungeon entrances
+	-- set manual items
 	if manualStorageItem then
 		for code, data in pairs(manualStorageItem.ManualLocations[ROOM_SEED][ManualItemCode]) do
 			local item = Tracker:FindObjectForCode(code) ---@cast item JsonItem

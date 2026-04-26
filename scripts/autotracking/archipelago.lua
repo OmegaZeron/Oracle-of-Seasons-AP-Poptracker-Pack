@@ -137,14 +137,14 @@ function OnClear(slot_data)
 	end
 
 	-- reset manual items
-	for k, v in ManualItemFilter do
-		local obj = Tracker:FindObjectForCode(k)
+	for code, itemType in ManualItemFilter do
+		local obj = Tracker:FindObjectForCode(code)
 		if obj then
-			if v["type"] == "toggle" then
+			if itemType == "toggle" then
 				obj.Active = false
-			elseif v["type"] == "progressive" or v["type"] == "progressive_set" then
+			elseif itemType == "progressive" or itemType == "progressive_set" then
 				obj.CurrentStage = 0
-			elseif v["type"] == "consumable" then
+			elseif itemType == "consumable" then
 				obj.AcquiredCount = 0
 			end
 		end
@@ -614,9 +614,9 @@ function ManualItemHandler(codes)
 	local item = Tracker:FindObjectForCode(code) ---@cast item JsonItem
 	if not manualStorageItem or not item then return end
 
-	if ManualItemFilter[code]["type"] == "progressive" then
+	if ManualItemFilter[code] == "progressive" then
 		manualStorageItem.ManualLocations[ROOM_SEED][ManualItemCode][code] = {["type"] = "progressive", ["CurrentStage"] = item.CurrentStage}
-	elseif ManualItemFilter[code]["type"] == "toggle" then
+	elseif ManualItemFilter[code] == "toggle" then
 		manualStorageItem.ManualLocations[ROOM_SEED][ManualItemCode][code] = {["type"] = "toggle", ["Active"] = item.Active}
 	end
 end

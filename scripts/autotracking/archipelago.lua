@@ -128,6 +128,10 @@ function OnClear(slot_data)
 		end
 	end
 
+	-- reset goal locations
+	Tracker:FindObjectForCode("onox").Active = false
+	Tracker:FindObjectForCode("ganon").Active = false
+
 	-- reset "dungeons with essence" data
 	for k, _ in pairs(EssencesInWorld) do
 		EssencesInWorld[k] = false
@@ -137,15 +141,17 @@ function OnClear(slot_data)
 	end
 
 	if Archipelago.PlayerNumber > -1 then
-		HINTS_ID = "_read_hints_"..TEAM_NUMBER.."_"..PLAYER_ID
-		DATA_STORAGE_ID = "OoS_"..TEAM_NUMBER.."_"..PLAYER_ID
+		local slotInfo = TEAM_NUMBER.."_"..PLAYER_ID
+		HintsID = "_read_hints_"..slotInfo
+		DataStorageID = "OoS_"..slotInfo
+		ClientStatusID = "_read_client_status_"..slotInfo
 
 		if Highlight then
-			Archipelago:SetNotify({HINTS_ID, DATA_STORAGE_ID})
-			Archipelago:Get({HINTS_ID, DATA_STORAGE_ID})
+			Archipelago:SetNotify({HintsID, DataStorageID, ClientStatusID})
+			Archipelago:Get({HintsID, DataStorageID, ClientStatusID})
 		else
-			Archipelago:SetNotify({DATA_STORAGE_ID})
-			Archipelago:Get({DATA_STORAGE_ID})
+			Archipelago:SetNotify({DataStorageID, ClientStatusID})
+			Archipelago:Get({DataStorageID, ClientStatusID})
 		end
 	end
 
@@ -397,7 +403,7 @@ function OnNotify(key, value, old_value)
 		return
 	end
 
-	if key == HINTS_ID and Highlight then
+	if key == HintsID and Highlight then
 		for _, hint in ipairs(value) do
 			if hint.finding_player == Archipelago.PlayerNumber then
 				if not hint.found then
@@ -407,7 +413,7 @@ function OnNotify(key, value, old_value)
 				end
 			end
 		end
-	elseif key == DATA_STORAGE_ID then
+	elseif key == DataStorageID then
 		for k, v in pairs(value) do
 			if (DataStorageLocationTable[k]) then
 				Tracker:FindObjectForCode(DataStorageLocationTable[k]).AvailableChestCount = v and 0 or 1
@@ -433,6 +439,11 @@ function OnNotify(key, value, old_value)
 		end
 		if PopVersion < "0.34.0" then
 			Tracker:FindObjectForCode(HiddenSetting).Active = not Tracker:FindObjectForCode(HiddenSetting).Active
+		end
+	elseif key == ClientStatusID then
+		if value == Archipelago.ClientStatus.GOAL then
+			Tracker:FindObjectForCode("onox").Active = true
+			Tracker:FindObjectForCode("ganon").Active = true
 		end
 	end
 end
@@ -578,7 +589,7 @@ function ManualLocationHandler(location)
 			end
 			if Highlight then
 				-- re-grab hints since it was cleared earlier
-				Archipelago:Get({HINTS_ID})
+				Archipelago:Get({HintsID})
 			end
 		end
 	end

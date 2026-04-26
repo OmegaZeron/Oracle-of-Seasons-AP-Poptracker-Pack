@@ -550,6 +550,9 @@ CurrentLocationMapping = {
 	[0x568] = {Autotab({"Sword and Shield Maze", "Sword and Shield Maze B1F"})}, -- lava trapped stairs
 	[0x56A] = {Autotab({"Sword and Shield Maze", "Sword and Shield Maze B1F"})}, -- SW lava flow
 	[0x567] = {Autotab({"Sword and Shield Maze", "Sword and Shield Maze B1F"})}, -- stairs below beamos
+
+	-- room of rites
+	[0x59D] = {Custom(function() Tracker:FindObjectForCode("onox").Active = true end)}
 }
 
 JewelKeys = {RoundJewel, SquareJewel, PyramidJewel, XJewel}
@@ -1049,7 +1052,9 @@ ManualItemFilter = {
 	[GoldenMoblin] = {["type"] = "toggle"},
 	[GoldenOctorok] = {["type"] = "toggle"},
 	[GoldenDarknut] = {["type"] = "toggle"},
-	[GoldenLynel] = {["type"] = "toggle"}
+	[GoldenLynel] = {["type"] = "toggle"},
+	["onox"] = {["type"] = "toggle"},
+	["ganon"] = {["type"] = "toggle"}
 }
 
 if Highlight then

@@ -137,7 +137,7 @@ function OnClear(slot_data)
 	end
 
 	-- reset manual items
-	for code, itemType in ManualItemFilter do
+	for code, itemType in pairs(ManualItemFilter) do
 		local obj = Tracker:FindObjectForCode(code)
 		if obj then
 			if itemType == "toggle" then

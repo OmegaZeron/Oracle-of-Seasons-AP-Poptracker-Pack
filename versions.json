@@ -1,6 +1,12 @@
 {
 	"versions": [
 		{
+			"package_version": "7.2.0",
+			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/7.2.0/seasons_ap.zip",
+			"sha256": "3e4855da93bd42df6ba2385ea29d7e86b3c212f87d2ef898943bd97421c0d9fa",
+			"changelog": ["Manual item tracking, D0-2 map fix, dungeon number option"]
+		},
+		{
 			"package_version": "7.1.4",
 			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/7.1.4/seasons_ap.zip",
 			"sha256": "2ee25f78336bc526009824f5362d6fb0c17aece060585cfaa45d6436bb8988ad",

@@ -1524,7 +1524,7 @@ function HasD8BossKey()
 	)
 end
 
-local function DungeonSettings()
+function DungeonSettings()
 	if (not LOADED) then
 		return
 	end
@@ -1547,7 +1547,7 @@ local function DisplayDungeons()
 	end
 end
 
-local function SeasonSettings()
+function SeasonSettings()
 	if (not LOADED) then
 		return
 	end
@@ -1581,7 +1581,7 @@ local function DisplaySeasons()
 	end
 end
 
-local function VanillaPortals()
+function VanillaPortals()
 	if (not LOADED) then
 		return
 	end

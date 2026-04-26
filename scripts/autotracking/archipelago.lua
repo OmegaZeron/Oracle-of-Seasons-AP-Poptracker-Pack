@@ -59,6 +59,25 @@ function OnClear(slot_data)
 		return
 	end
 
+	-- reset manual items
+	for code, itemData in pairs(ManualItemFilter) do
+		if itemData["reset"] then
+			local obj = Tracker:FindObjectForCode(code) ---@cast obj JsonItem
+			if obj then
+				if itemData["type"] == "toggle" then
+					obj.Active = false
+				elseif itemData["type"] == "progressive" then
+					obj.CurrentStage = 0
+				elseif itemData["type"] == "consumable" then
+					obj.AcquiredCount = 0
+				end
+			end
+		end
+	end
+	DungeonSettings()
+	SeasonSettings()
+	VanillaPortals()
+
 	IS_MANUAL_CLICK = false
 	if Tracker:FindObjectForCode(ManualStorageCode) == nil then
 		CreateLuaManualLocationStorage(ManualStorageCode)
@@ -136,19 +155,15 @@ function OnClear(slot_data)
 		Tracker:FindObjectForCode("d"..i.."_label").Active = false
 	end
 
-	-- reset manual items
-	for code, itemType in pairs(ManualItemFilter) do
-		local obj = Tracker:FindObjectForCode(code)
-		if obj then
-			if itemType == "toggle" then
-				obj.Active = false
-			elseif itemType == "progressive" or itemType == "progressive_set" then
-				obj.CurrentStage = 0
-			elseif itemType == "consumable" then
-				obj.AcquiredCount = 0
-			end
-		end
-	end
+	AutoCollectLocationTable = {
+		["AP"] = {
+			[Satchel] = {"@Horon Village/Horon Tree/Horon Village: Seed Tree", SeedMapping[slot_data["options"]["default_seed"]]},
+			[Slingshot] = {"@Horon Village/Horon Tree/Horon Village: Seed Tree", SeedMapping[slot_data["options"]["default_seed"]]},
+			[SeedShooter] = {"@Horon Village/Horon Tree/Horon Village: Seed Tree", SeedMapping[slot_data["options"]["default_seed"]]},
+			[AnyFlute] = {function() Tracker:FindObjectForCode(Companion).CurrentStage = SLOT_DATA["options"]["animal_companion"] end}
+		},
+		["Any"] = DefaultAutoCollectLocationTable
+	}
 
 	if Archipelago.PlayerNumber > -1 then
 		local slotInfo = TEAM_NUMBER.."_"..PLAYER_ID
@@ -170,16 +185,6 @@ function OnClear(slot_data)
 			Tracker:FindObjectForCode(opt).CurrentStage = val
 		end
 	end
-
-	AutoCollectLocationTable = {
-		["AP"] = {
-			[Satchel] = {"@Horon Village/Horon Tree/Horon Village: Seed Tree", SeedMapping[slot_data["options"]["default_seed"]]},
-			[Slingshot] = {"@Horon Village/Horon Tree/Horon Village: Seed Tree", SeedMapping[slot_data["options"]["default_seed"]]},
-			[SeedShooter] = {"@Horon Village/Horon Tree/Horon Village: Seed Tree", SeedMapping[slot_data["options"]["default_seed"]]},
-			[AnyFlute] = {function() Tracker:FindObjectForCode(Companion).CurrentStage = SLOT_DATA["options"]["animal_companion"] end}
-		},
-		["Any"] = DefaultAutoCollectLocationTable
-	}
 
 	Tracker:FindObjectForCode("horon_village_season_shuffle").CurrentStage = slot_data["default_seasons"]["HORON_VILLAGE"] == 255 and 0 or 1
 	for region_name, season_id in pairs(slot_data["default_seasons"]) do
@@ -614,9 +619,9 @@ function ManualItemHandler(codes)
 	local item = Tracker:FindObjectForCode(code) ---@cast item JsonItem
 	if not manualStorageItem or not item then return end
 
-	if ManualItemFilter[code] == "progressive" then
+	if ManualItemFilter[code]["type"] == "progressive" then
 		manualStorageItem.ManualLocations[ROOM_SEED][ManualItemCode][code] = {["type"] = "progressive", ["CurrentStage"] = item.CurrentStage}
-	elseif ManualItemFilter[code] == "toggle" then
+	elseif ManualItemFilter[code]["type"] == "toggle" then
 		manualStorageItem.ManualLocations[ROOM_SEED][ManualItemCode][code] = {["type"] = "toggle", ["Active"] = item.Active}
 	end
 end

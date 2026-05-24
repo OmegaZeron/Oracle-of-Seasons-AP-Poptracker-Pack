@@ -33,7 +33,7 @@
 											["bracelet", "boomerang1"],
 											["satchel", "slingshot1"],
 											["shooter", "glove"],
-											["flute_generic", "flippers"],
+											["flute_generic", "companion"],
 											["cuccodex", "lonlonegg"],
 											["fish", "megaphone"],
 											["rupees", "orechunks"]
@@ -81,7 +81,7 @@
 											"item_margin": "1, 1",
 											"h_alignment": "center",
 											"rows": [
-												["jewels", "blueredore"],
+												["flippers", "jewels"],
 												["ghastlydoll", "ironpot"],
 												["mushroom", "woodenbird"],
 												["ring_fist", "ring_heart"]
@@ -99,9 +99,9 @@
 										["floodkey", "ribbon"],
 										["dragonkey", "starore"],
 										["memberscard", "gashaseeds"],
-										["plaque", "companion"],
+										["plaque", "heart_container"],
 										["banana", "hardore"],
-										["rustybell", "polishedbell"],
+										["blueredore", "bothbell"],
 										["lavasoup", "goronvase"],
 										["enginegrease", "phonograph"],
 										["ring_energy", "ring_swimmer"]

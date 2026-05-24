@@ -48,6 +48,7 @@ end)
 MazeHardhats:connect_one_way_entrance(MazeBigBladeTrap, function()
 	return All(
 		D8KeyCount(1),
+		HasHeartsByDifficulty(6, 5, 3),
 		Any(
 			Cape,
 			All(

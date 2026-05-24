@@ -64,16 +64,17 @@ LinkedCaveF4Chest:connect_one_way(LinkedCaveF5Gauntlet, function()
 		Jump3,
 		Any(
 			All(
+				HasHeartsByDifficulty(5, 4, 3),
 				Any(
 					HasAnySword,
 					FoolsOre
 				),
-				CanKillSpinyBeetle,
 				Any(
 					AnyFlute,
 					HasBombsToFight,
 					HasBombchusToFight
-				)
+				),
+				CanKillSpinyBeetle
 			),
 			All(
 				-- Use the cane press a button at the same time Link is on the button to skip the lowest wave

@@ -103,14 +103,19 @@ AncientFoyer:connect_one_way(AncientNorthOfSpinnerChest, function()
 						Feather
 					),
 					-- fight vire for miniboss warp
-					CanSwordKill,
 					All(
-						HasBombsToFight,
-						MediumLogic
-					),
-					All(
-						ExpertsRing,
-						MediumLogic
+						HasHeartsByDifficulty(4, 3),
+						Any(
+							CanSwordKill,
+							All(
+								HasBombsToFight,
+								MediumLogic
+							),
+							All(
+								ExpertsRing,
+								MediumLogic
+							)
+						)
 					)
 				)
 			),
@@ -120,6 +125,7 @@ AncientFoyer:connect_one_way(AncientNorthOfSpinnerChest, function()
 				CanBombWall,
 				Feather,
 				-- fight vire for miniboss warp
+				HasHeartsByDifficulty(4, 3),
 				Any(
 					CanSwordKill,
 					All(
@@ -138,9 +144,8 @@ AncientFoyer:connect_one_way(AncientNorthOfSpinnerChest, function()
 end)
 AncientVireDoorstep:connect_one_way_entrance(Vire, function()
 	return All(
-		-- only 1 key here because you can't do anything special by getting here
-		-- other than opening the miniboss portal, which can get you to spinner north
-		D6KeyCount(1),
+		D6KeyCount(3, 1),
+		HasHeartsByDifficulty(4, 3),
 		Any(
 			CanSwordKill,
 			All(
@@ -156,7 +161,6 @@ AncientVireDoorstep:connect_one_way_entrance(Vire, function()
 end)
 Vire:connect_one_way_entrance(AncientBossDoor, function()
 	return All(
-		D6KeyCount(3, 1),
 		Feather,
 		Any(
 			MagnetGlove,

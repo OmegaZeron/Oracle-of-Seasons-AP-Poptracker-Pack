@@ -40,6 +40,7 @@ ITEM_MAPPING = {
 	[ItemID(0x37, 0x00)] = {OreChunkCount, "consumable", 10}, -- 50
 	[ItemID(0x37, 0x01)] = {OreChunkCount, "consumable", 5}, -- 25
 	[ItemID(0x37, 0x02)] = {OreChunkCount, "consumable", 2}, -- 10
+	[ItemID(0x2a, 0x00)] = {HeartContainer, "consumable"},
 	[ItemID(0x2e, 0x00)] = {Flippers, "toggle"},
 	[ItemID(0x30, 0x00)] = {D0SmallKey, "consumable"},
 	[ItemID(0x30, 0x01)] = {D1SmallKey, "consumable"},

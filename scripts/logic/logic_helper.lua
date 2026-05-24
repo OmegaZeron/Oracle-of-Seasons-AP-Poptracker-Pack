@@ -77,11 +77,14 @@ function HasBombsForTiles()
 	)
 end
 function HasBombsForBombJump()
-	return Any(
-		Bombs20,
-		All(
-			Bombs,
-			AccessibilityLevel.SequenceBreak
+	return All(
+		HasHearts(4),
+		Any(
+			Bombs20,
+			All(
+				Bombs,
+				AccessibilityLevel.SequenceBreak
+			)
 		)
 	)
 end
@@ -124,6 +127,39 @@ function BombPunchWall()
 	return Any(
 		Ricky,
 		CanBombWall
+	)
+end
+
+---@param hearts number
+---@param difficulty? logicLevel
+---@return accessibilityLevel
+function HasHearts(hearts, difficulty)
+	difficulty = difficulty or LogicLevel.Casual
+	if hearts <= 3 or hearts > 10 then
+		return AccessibilityLevel.Normal
+	end
+	return Any(
+		All(
+			Tracker:FindObjectForCode("logic_difficulty").CurrentStage >= difficulty,
+			Has(HeartContainer, hearts - 3)
+		),
+		hearts <= 3,
+		hearts > 10,
+		AccessibilityLevel.SequenceBreak
+	)
+end
+
+---@param hCasual? number
+---@param hMedium? number
+---@param hHard? number
+function HasHeartsByDifficulty(hCasual, hMedium, hHard)
+	hCasual = hCasual or 20
+	hMedium = hMedium or 20
+	hHard = hHard or 20
+	return Any(
+		HasHearts(hCasual, LogicLevel.Casual),
+		HasHearts(hMedium, LogicLevel.Medium),
+		HasHearts(hHard, LogicLevel.Hard)
 	)
 end
 
@@ -196,16 +232,17 @@ end
 
 function CanBeatOnox()
 	return All(
-		WoodSword,
+		HasHeartsByDifficulty(8, 6, 4),
 		Any(
 			HasBombsToFight,
 			HasBombchusToFight
 		),
-		Feather,
 		Any(
 			HasRod,
 			HardLogic
-		)
+		),
+		WoodSword,
+		Feather
 	)
 end
 

@@ -275,6 +275,14 @@
 		"decrement": 5
 	},
 	{
+		"name": "Heart Containers",
+		"type": "consumable",
+		"img": "images/items/heart_container.png",
+		"codes": "heart_container",
+		"min_quantity": 3,
+		"max_quantity": 10
+	},
+	{
 		"name": "Season's Rod",
 		"type": "toggle",
 		"img": "images/items/rod.png",
@@ -625,6 +633,15 @@
 		"img": "images/items/golden_lynel.png",
 		"codes": "golden_lynel, beasts"
 	},
+	// {
+	// 	"name": "Golden Beasts",
+	// 	"type": "consumable",
+	// 	"img": "images/items/golden_beasts.png",
+	// 	"codes": "golden_beasts",
+	// 	"max_quantity": 4,
+	// 	"overlay_background": "#66222222",
+	// 	"overlay_align": "center"
+	// },
 	{
 		"name": "Onox",
 		"type": "toggle",

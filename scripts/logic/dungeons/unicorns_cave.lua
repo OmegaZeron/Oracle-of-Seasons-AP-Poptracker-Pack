@@ -95,7 +95,12 @@ UnicornPotRoom:connect_one_way(UnicornMagnetGloveChest, function()
 	)
 end)
 UnicornPreSyger:connect_one_way_entrance(Syger, function() return D5KeyCount(5, 1) end)
-Syger:connect_one_way_entrance(UnicornPostSyger, CanArmorKill)
+Syger:connect_one_way_entrance(UnicornPostSyger, function()
+	return All(
+		CanArmorKill,
+		HasHeartsByDifficulty(5, 4, 3)
+	)
+end)
 UnicornPostSyger:connect_one_way(UnicornTreadmillBasement, function()
 	return All(
 		D5KeyCount(5, 3),
@@ -115,6 +120,7 @@ UnicornPostSyger:connect_one_way(UnicornTreadmillBasement, function()
 			),
 			All(
 				Feather,
+				HasHearts(5),
 				MediumLogic
 			)
 		),
@@ -130,13 +136,14 @@ UnicornPostSyger:connect_one_way(UnicornTreadmillBasement, function()
 end, {UnicornMinecartPushBlock})
 UnicornPostSyger:connect_one_way_entrance(Digdogger, function()
 	return All(
-		HasD5BossKey,
 		D5KeyCount(5, 2),
-		MagnetGlove,
 		Any(
 			Feather,
 			MediumLogic
-		)
+		),
+		HasD5BossKey,
+		MagnetGlove,
+		HasHeartsByDifficulty(6, 4, 3)
 	)
 end)
 Digdogger:connect_one_way(UnicornEssence)

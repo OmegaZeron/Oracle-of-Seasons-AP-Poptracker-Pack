@@ -93,6 +93,14 @@ DefaultSeasons = {
 	["horon_village_season"] = 4
 }
 
+---@enum logicLevel
+LogicLevel = {
+	Casual = 0,
+	Medium = 1,
+	Hard = 2,
+	Hell = 3
+}
+
 AutoCollectLocationTable = {["Any"] = DefaultAutoCollectLocationTable}
 
 CurrentTab = nil

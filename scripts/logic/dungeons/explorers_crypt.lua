@@ -97,7 +97,12 @@ CryptPoeTrampoline:connect_one_way_entrance(CryptPoe2, function()
 		)
 	)
 end)
-CryptPoe2:connect_one_way_entrance(CryptDarknutBridge, function() return Has(Flippers) end)
+CryptPoe2:connect_one_way_entrance(CryptDarknutBridge, function()
+	return All(
+		HasHeartsByDifficulty(5, 3),
+		Flippers
+	)
+end)
 CryptDarknutBridge:connect_one_way_entrance(CryptDarknutBridgeTrampolines, function()
 	return Any(
 		All(

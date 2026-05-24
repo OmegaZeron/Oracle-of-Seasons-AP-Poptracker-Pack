@@ -1,4 +1,5 @@
 -- Items
+HeartContainer = "heart_container"
 WoodSword = "sword"
 NobleSword = "sword2"
 BiggoronSword = "biggoron_sword"

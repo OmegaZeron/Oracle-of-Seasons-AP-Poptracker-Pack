@@ -1,5 +1,108 @@
--- Globals
+-- enums
+
+---@enum logicLevel
+LogicLevel = {
+	Casual = 0,
+	Medium = 1,
+	Hard = 2,
+	Hell = 3
+}
+---@enum roosterArea
+RoosterArea = {
+	MtCucco = "mount cucco",
+	Horon = "horon",
+	Sunken = "sunken",
+	Suburbs = "suburbs",
+	MoblinRoad = "moblin road",
+	Swamp = "swamp",
+	Tarm = "d6"
+}
+---@enum curLocType
+CurLocType = {
+	Autotab = "Autotab",
+	SeeSeason = "SeeSeason",
+	DungeonEnt = "DungeonEnt",
+	DungeonIn = "DungeonIn",
+	Portal = "Portal",
+	Natzu = "Natzu",
+	Custom = "Custom"
+}
+---@enum linkedCave
+LinkedEnum = {
+	Disabled = 0x00, -- 0b0000
+	Samasa = 0x01, -- 0b0001
+	NoAltEnt = 0x02, -- 0b0010
+	HerosCave = 0x04, -- 0b0100
+}
+
+-- classes
+
+---@class CurrentLocationData
+---@field type curLocType
+---@field tab? string[]
+---@field season? string
+---@field seasonHidden? string
+---@field dungeon? string
+---@field loc? string
+---@field portal? string
+---@field portalHidden? string
+---@field func? function
+
+-- functions
+
+--- constructor for CurrentLocationMapping data
+---@param tab string[]
+---@return CurrentLocationData
+function Autotab(tab)
+	return {type = CurLocType.Autotab, tab = tab} --[[@as CurrentLocationData]]
+end
+--- constructor for CurrentLocationMapping data
+---@param season string
+---@param seasonHidden string
+---@return CurrentLocationData
+function SeeSeason(season, seasonHidden)
+	return {type = CurLocType.SeeSeason, season = season, seasonHidden = seasonHidden} --[[@as CurrentLocationData]]
+end
+--- constructor for CurrentLocationMapping data
+---@param dungeon string
+---@param loc string
+---@return CurrentLocationData
+function DungeonEnt(dungeon, loc)
+	return {type = CurLocType.DungeonEnt, dungeon = dungeon, loc = loc} --[[@as CurrentLocationData]]
+end
+--- constructor for CurrentLocationMapping data
+---@param dungeon string
+---@param loc string?
+---@return CurrentLocationData
+function DungeonIn(dungeon, loc)
+	return {type = CurLocType.DungeonIn, dungeon = dungeon, loc = loc} --[[@as CurrentLocationData]]
+end
+--- constructor for CurrentLocationMapping data
+---@param portal string
+---@param portalHidden string
+---@return CurrentLocationData
+function Portal(portal, portalHidden)
+	return {type = CurLocType.Portal, portal = portal, portalHidden = portalHidden} --[[@as CurrentLocationData]]
+end
+--- constructor for CurrentLocationMapping data
+---@return CurrentLocationData
+function Natzu()
+	return {type = CurLocType.Natzu} --[[@as CurrentLocationData]]
+end
+--- constructor for CurrentLocationMapping data
+---@param func function
+---@return CurrentLocationData
+function Custom(func)
+	return {type = CurLocType.Custom, func = func} --[[@as CurrentLocationData]]
+end
+
+-- single vars
+
 LOADED = false
+CurrentTab = nil
+CurrentRoom = nil
+
+-- data tables
 
 EssenceKeys = {D1Essence, D2Essence, D3Essence, D4Essence, D5Essence, D6Essence, D7Essence, D8Essence}
 GashaIDToLocation = {
@@ -93,80 +196,14 @@ DefaultSeasons = {
 	["horon_village_season"] = 4
 }
 
----@enum logicLevel
-LogicLevel = {
-	Casual = 0,
-	Medium = 1,
-	Hard = 2,
-	Hell = 3
-}
-
----@enum roosterArea
-RoosterArea = {
-	MtCucco = "mount cucco",
-	Horon = "horon",
-	Sunken = "sunken",
-	Suburbs = "suburbs",
-	MoblinRoad = "moblin road",
-	Swamp = "swamp",
-	Tarm = "d6"
-}
-
 AutoCollectLocationTable = {["Any"] = DefaultAutoCollectLocationTable}
 
-CurrentTab = nil
-CurrentRoom = nil
 -- TODO fill this out when alt starting locations are added
 -- used to automatically tab and see seasons when connecting to AP
 StartLocationMapping = {
 	[StartImpa] = 0x0B6
 }
 
---- constructor for CurrentLocationMapping data
----@param tab table
----@return table
-function Autotab(tab)
-	return {["type"] = "Autotab", ["tab"] = tab}
-end
---- constructor for CurrentLocationMapping data
----@param season string
----@param seasonHidden string
----@return table
-function SeeSeason(season, seasonHidden)
-	return {["type"] = "SeeSeason", ["season"] = season, ["season_hidden"] = seasonHidden}
-end
---- constructor for CurrentLocationMapping data
----@param dungeon string
----@param loc string
----@return table
-function DungeonEnt(dungeon, loc)
-	return {["type"] = "DungeonEnt", ["dungeon"] = dungeon, ["loc"] = loc}
-end
---- constructor for CurrentLocationMapping data
----@param dungeon string
----@param loc string?
----@return table
-function DungeonIn(dungeon, loc)
-	return {["type"] = "DungeonIn", ["dungeon"] = dungeon, ["loc"] = loc}
-end
---- constructor for CurrentLocationMapping data
----@param portal string
----@param portalHidden string
----@return table
-function Portal(portal, portalHidden)
-	return {["type"] = "Portal", ["portal"] = portal, ["portal_hidden"] = portalHidden}
-end
---- constructor for CurrentLocationMapping data
----@return table
-function Natzu()
-	return {["type"] = "Natzu"}
-end
---- constructor for CurrentLocationMapping data
----@param func function
----@return table
-function Custom(func)
-	return {["type"] = "Custom", ["function"] = func}
-end
 CurrentLocationMapping = {
 	-- North Horon
 	[0x0B6] = {
@@ -572,7 +609,7 @@ CurrentLocationMapping = {
 
 	-- room of rites
 	[0x59D] = {Custom(function() Tracker:FindObjectForCode("onox").Active = true end)}
-}
+} --[[@as table<integer, CurrentLocationData[]>]]
 
 JewelKeys = {RoundJewel, SquareJewel, PyramidJewel, XJewel}
 LostWoodsDefault = {3, 2, 0, 1}
@@ -612,22 +649,7 @@ RegionToSeasonMapping = {
 	["TEMPLE_REMAINS"] = TempleRemainsSeasonHidden,
 	["HORON_VILLAGE"] = HoronVillageSeasonHidden
 }
-DefaultSeasonOptionMapping = {
-	["vanilla"] = 0,
-	["randomized"] = 1,
-	["random_singularity"] = 2,
-	["spring_singularity"] = 3,
-	["summer_singularity"] = 4,
-	["autumn_singularity"] = 5,
-	["winter_singularity"] = 6
-}
----@enum linkedCave
-LinkedEnum = {
-	Disabled = 0x00, -- 0b0000
-	Samasa = 0x01, -- 0b0001
-	NoAltEnt = 0x02, -- 0b0010
-	HerosCave = 0x04, -- 0b0100
-}
+
 -- value is the stage of the setting
 LinkedCaveMapping = {
 	[LinkedEnum.Disabled] = 0,

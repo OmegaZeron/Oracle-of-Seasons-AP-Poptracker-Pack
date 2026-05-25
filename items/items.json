@@ -1063,10 +1063,9 @@
 		"codes": "d8_compass"
 	},
 	{
-		"name": "Hidden Setting",
+		"name": "Update Item",
 		"type": "toggle",
-		"img": "images/items/compass.png",
-		"codes": "hidden_setting"
+		"codes": "update_item"
 	},
 	{
 		"name": "Location Refresh",

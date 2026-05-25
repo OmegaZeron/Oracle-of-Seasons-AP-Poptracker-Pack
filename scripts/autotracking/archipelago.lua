@@ -48,7 +48,7 @@ end
 
 function OnClear(slot_data)
 	if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
-		print(string.format("called OnClear, slot_data:\n%s", dump(slot_data)))
+		print(string.format("called OnClear, slot_data:\n%s", DumpTable(slot_data)))
 	end
 
 	SLOT_DATA = slot_data
@@ -387,25 +387,12 @@ function OnLocation(location_id, location_name)
 		-- print(location, obj)
 		if obj then
 			if location:sub(1, 1) == "@" then
+				---@cast obj LocationSection
 				obj.AvailableChestCount = obj.AvailableChestCount - 1
 			else
+				---@cast obj JsonItem
 				obj.Active = true
 			end
-			-- if (AutoCollectLocationTable["AP"][location]) then
-			-- 	for _, autoTable in ipairs(AutoCollectLocationTable["AP"][location]) do
-			-- 		local toCollect = Tracker:FindObjectForCode(autoTable)
-			-- 		if (toCollect) then
-			-- 			if autoTable:sub(1, 1) == "@" then
-			-- 				---@cast toCollect LocationSection
-			-- 				toCollect.AvailableChestCount = toCollect.AvailableChestCount - 1
-			-- 			else
-			-- 				---@cast toCollect JsonItem
-			-- 				toCollect.Active = true
-			-- 			end
-			-- 		end
-			-- 		Tracker:FindObjectForCode(location).AvailableChestCount = 0
-			-- 	end
-			-- end
 			UpdateHints(location_id, Highlight.None)
 		else
 			print(string.format("onLocation: could not find object for code %s", location))
@@ -417,7 +404,7 @@ end
 
 function OnNotify(key, value, old_value)
 	if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
-		print(string.format("called onNotify: %s, %s, %s", key, dump(value), old_value))
+		print(string.format("called onNotify: %s, %s, %s", key, DumpTable(value), old_value))
 	end
 
 	if value == nil or value == old_value then
@@ -471,7 +458,7 @@ end
 
 function OnNotifyLaunch(key, value)
 	if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
-		print(string.format("called onNotifyLaunch: %s, %s", key, dump(value)))
+		print(string.format("called onNotifyLaunch: %s, %s", key, DumpTable(value)))
 	end
 	OnNotify(key, value)
 end
@@ -484,7 +471,7 @@ function UpdateHints(locationID, status)
 		return
 	end
 	local locations = LOCATION_MAPPING[locationID]
-	-- print("Hint", dump(locations), status)
+	-- print("Hint", DumpTable(locations), status)
 	for _, location in ipairs(locations) do
 		local section = Tracker:FindObjectForCode(location) ---@cast section LocationSection
 		if section then
@@ -499,69 +486,69 @@ end
 -- called when a bounce message is received 
 function OnBounce(json)
 	if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
-		print(string.format("called onBounce: %s", dump(json)))
+		print(string.format("called onBounce: %s", DumpTable(json)))
 	end
 	if not json["data"] then
 		return
 	end
-	if json["data"]["Current Room"] then
+	if json.data["Current Room"] then
 		local prevRoom = CurrentRoom
-		CurrentRoom = json["data"]["Current Room"]
-		if prevRoom == CurrentRoom or CurrentRoom == nil then
+		CurrentRoom = json.data["Current Room"]
+		if not CurrentRoom or prevRoom == CurrentRoom then
 			return
 		end
 
 		if (CurrentLocationMapping[CurrentRoom]) then
 			for _, roomMap in ipairs(CurrentLocationMapping[CurrentRoom]) do
-				if (roomMap["type"] == "Autotab" and Tracker:FindObjectForCode("autotab").CurrentStage == 1) then
-					if CurrentTab ~= roomMap["tab"][#roomMap["tab"]] then
-						CurrentTab = roomMap["tab"][#roomMap["tab"]]
-						for _, room in ipairs(roomMap["tab"]) do
+				if roomMap.type == CurLocType.Autotab and Tracker:FindObjectForCode("autotab").CurrentStage == 1 then
+					if CurrentTab ~= roomMap.tab[#roomMap.tab] then
+						CurrentTab = roomMap.tab[#roomMap.tab]
+						for _, room in ipairs(roomMap.tab) do
 							Tracker:UiHint("ActivateTab", room)
 						end
 					end
-				elseif roomMap["type"] == "Portal" and prevRoom ~= nil then
+				elseif roomMap.type == CurLocType.Portal and prevRoom ~= nil then
 					-- make sure we came from another portal
 					if CurrentLocationMapping[prevRoom] then
 						for _, prevMap in ipairs(CurrentLocationMapping[prevRoom]) do
-							if prevMap["type"] == "Portal" then
-								Tracker:FindObjectForCode(roomMap["portal"]).CurrentStage = Tracker:FindObjectForCode(roomMap["portal_hidden"]).CurrentStage
-								Tracker:FindObjectForCode(prevMap["portal"]).CurrentStage = Tracker:FindObjectForCode(prevMap["portal_hidden"]).CurrentStage
+							if prevMap.type == CurLocType.Portal then
+								Tracker:FindObjectForCode(roomMap.portal).CurrentStage = Tracker:FindObjectForCode(roomMap.portalHidden).CurrentStage
+								Tracker:FindObjectForCode(prevMap.portal).CurrentStage = Tracker:FindObjectForCode(prevMap.portalHidden).CurrentStage
 							end
 						end
 					end
-				elseif roomMap["type"] == "DungeonEnt" and prevRoom ~= nil then
+				elseif roomMap.type == CurLocType.DungeonEnt and prevRoom ~= nil then
 					-- make sure we came from the inside
 					if CurrentLocationMapping[prevRoom] then
 						for _, prevMap in ipairs(CurrentLocationMapping[prevRoom]) do
-							if prevMap["type"] == "DungeonIn" then
-								Tracker:FindObjectForCode(prevMap["dungeon"].."_ent_selector").CurrentStage = Tracker:FindObjectForCode(prevMap["dungeon"].."_ent_selector_hidden").CurrentStage
-								Tracker:FindObjectForCode(roomMap["loc"]).AvailableChestCount = 0
-								if prevMap["loc"] then
-									Tracker:FindObjectForCode(prevMap["loc"]).AvailableChestCount = 0
+							if prevMap.type == CurLocType.DungeonIn then
+								Tracker:FindObjectForCode(prevMap.dungeon.."_ent_selector").CurrentStage = Tracker:FindObjectForCode(prevMap.dungeon.."_ent_selector_hidden").CurrentStage
+								Tracker:FindObjectForCode(roomMap.loc).AvailableChestCount = 0
+								if prevMap.loc then
+									Tracker:FindObjectForCode(prevMap.loc).AvailableChestCount = 0
 								end
 							end
 						end
 					end
-				elseif roomMap["type"] == "DungeonIn" and prevRoom ~= nil then
+				elseif roomMap.type == CurLocType.DungeonIn and prevRoom ~= nil then
 					-- make sure we came from the outside
 					if CurrentLocationMapping[prevRoom] then
 						for _, prevMap in ipairs(CurrentLocationMapping[prevRoom]) do
-							if prevMap["type"] == "DungeonEnt" then
-								Tracker:FindObjectForCode(roomMap["dungeon"].."_ent_selector").CurrentStage = Tracker:FindObjectForCode(roomMap["dungeon"].."_ent_selector_hidden").CurrentStage
-								Tracker:FindObjectForCode(prevMap["loc"]).AvailableChestCount = 0
-								if roomMap["loc"] then
-									Tracker:FindObjectForCode(roomMap["loc"]).AvailableChestCount = 0
+							if prevMap.type == CurLocType.DungeonEnt then
+								Tracker:FindObjectForCode(roomMap.dungeon.."_ent_selector").CurrentStage = Tracker:FindObjectForCode(roomMap.dungeon.."_ent_selector_hidden").CurrentStage
+								Tracker:FindObjectForCode(prevMap.loc).AvailableChestCount = 0
+								if roomMap.loc then
+									Tracker:FindObjectForCode(roomMap.loc).AvailableChestCount = 0
 								end
 							end
 						end
 					end
-				elseif roomMap["type"] == "SeeSeason" then
-					Tracker:FindObjectForCode(roomMap["season"]).CurrentStage = Tracker:FindObjectForCode(roomMap["season_hidden"]).CurrentStage
-				elseif roomMap["type"] == "Natzu" then
+				elseif roomMap.type == CurLocType.SeeSeason then
+					Tracker:FindObjectForCode(roomMap.season).CurrentStage = Tracker:FindObjectForCode(roomMap.seasonHidden).CurrentStage
+				elseif roomMap.type == CurLocType.Natzu then
 					Tracker:FindObjectForCode(Companion).CurrentStage = SLOT_DATA["options"]["animal_companion"]
-				elseif roomMap["type"] == "Custom" then
-					roomMap["function"]()
+				elseif roomMap.type == CurLocType.Custom then
+					roomMap.func()
 				end
 			end
 		end

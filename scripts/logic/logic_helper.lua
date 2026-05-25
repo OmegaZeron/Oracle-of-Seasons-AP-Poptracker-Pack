@@ -1188,9 +1188,7 @@ function HasOreChunks(count)
 		return false
 	end
 
-	local oreChunks = Tracker:FindObjectForCode(OreChunkCount).AcquiredCount
-
-	return oreChunks >= count
+	return Tracker:ProviderCountForCode(OreChunkCount) >= count
 end
 
 function CanMapleTrade()
@@ -1204,8 +1202,8 @@ function CanEnterTarm()
 	return Tracker:ProviderCountForCode(Jewels) >= Tracker:FindObjectForCode(TarmGateSetting).CurrentStage
 end
 
----@param allowDefault? boolean -- false
----@param forceDeku? boolean -- false
+---@param allowDefault? boolean Allow use of default season (coming from pedestal). Default: false
+---@param forceDeku? boolean Assume you can reach the Deku. Default: false
 ---@return boolean|accessibilityLevel
 function CanLostWoods(allowDefault, forceDeku)
 	allowDefault = allowDefault or false
@@ -1232,8 +1230,8 @@ function CanLostWoods(allowDefault, forceDeku)
 		)
 	)
 end
----@param allowDefault? boolean -- false
----@param forceDeku? boolean -- false
+---@param allowDefault? boolean Allow use of default season (coming from Tarm). Default: false
+---@param forceDeku? boolean Assume you can reach the Deku. Default: false
 ---@return boolean|accessibilityLevel
 function CanPedestal(allowDefault, forceDeku)
 	allowDefault = allowDefault or false
@@ -1262,10 +1260,10 @@ function CanPedestal(allowDefault, forceDeku)
 end
 
 ---@param area roosterArea
----@param anyAmt? integer
----@param topAmt? integer
----@param botAmt? integer
----@param visited? string[]
+---@param anyAmt? integer 0
+---@param topAmt? integer 0
+---@param botAmt? integer 0
+---@param visited? string[] { }
 ---@return accessibilityLevel
 function Roosters(area, anyAmt, topAmt, botAmt, visited)
 	if not area then return AccessibilityLevel.None end
@@ -1400,9 +1398,9 @@ function Roosters(area, anyAmt, topAmt, botAmt, visited)
 end
 
 ---@param area roosterArea
----@param anyAmt integer
----@param topAmt integer
----@param botAmt integer
+---@param anyAmt integer 0
+---@param topAmt integer 0
+---@param botAmt integer 0
 ---@return accessibilityLevel
 function GetCuccos(area, anyAmt, topAmt, botAmt)
 	local cacheStr = "GetCuccos"..area..tostring(anyAmt)..tostring(topAmt)..tostring(botAmt)

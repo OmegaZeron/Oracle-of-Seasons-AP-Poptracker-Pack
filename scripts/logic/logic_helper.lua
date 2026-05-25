@@ -1260,16 +1260,13 @@ function CanPedestal(allowDefault, forceDeku)
 end
 
 ---@param area roosterArea
----@param anyAmt? integer 0
----@param topAmt? integer 0
----@param botAmt? integer 0
+---@param anyAmt integer
+---@param topAmt integer
+---@param botAmt integer
 ---@param visited? string[] { }
 ---@return accessibilityLevel
 function Roosters(area, anyAmt, topAmt, botAmt, visited)
 	if not area then return AccessibilityLevel.None end
-	anyAmt = anyAmt or 0
-	topAmt = topAmt or 0
-	botAmt = botAmt or 0
 	visited = visited or {}
 	table.insert(visited, area)
 
@@ -1398,9 +1395,9 @@ function Roosters(area, anyAmt, topAmt, botAmt, visited)
 end
 
 ---@param area roosterArea
----@param anyAmt integer 0
----@param topAmt integer 0
----@param botAmt integer 0
+---@param anyAmt integer
+---@param topAmt integer
+---@param botAmt integer
 ---@return accessibilityLevel
 function GetCuccos(area, anyAmt, topAmt, botAmt)
 	local cacheStr = "GetCuccos"..area..tostring(anyAmt)..tostring(topAmt)..tostring(botAmt)

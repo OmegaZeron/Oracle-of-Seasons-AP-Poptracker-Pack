@@ -112,7 +112,7 @@ Pedestal:connect_one_way_entrance(TarmTree, function()
 end, {TarmPedestalScrub})
 TarmTree:connect_one_way(TarmSeedTree, function()
 	return Any(
-		CanHarvestSeeds(true),
+		CanHarvestSeeds(false),
 		AccessibilityLevel.Inspect
 	)
 end)
@@ -163,7 +163,7 @@ TarmTree:connect_one_way(TarmOldMan, function()
 			),
 			All(
 				CanReach(RoosterAdventure),
-				GetCuccos()["tarm"][2] > 0
+				GetCuccos(RoosterArea.Tarm, 1, 1, 0)
 			)
 		)
 	)
@@ -179,7 +179,7 @@ TarmTree:connect_one_way_entrance(UpperTarm, function()
 			CanBurnTrees,
 			All(
 				CanReach(RoosterAdventure),
-				GetCuccos()["tarm"][1] > 0
+				GetCuccos(RoosterArea.Tarm, 1, 0, 0)
 			)
 		)
 	)

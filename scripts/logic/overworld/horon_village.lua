@@ -15,7 +15,7 @@ HoronVillage:connect_one_way(HoronMushroomChest, function()
 end)
 HoronVillage:connect_one_way(HoronTree, function()
 	return Any(
-		CanHarvestSeeds(true),
+		CanHarvestSeeds,
 		AccessibilityLevel.Inspect
 	)
 end)

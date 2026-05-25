@@ -1,132 +1,146 @@
 local IsStale = true
 local Staleness = 0
+local NamedRegions = {}
 
-OoSLocation = {}
-OoSLocation.__index = OoSLocation
-
-local NamedLocations = {}
-
--- DelayedExits = {}
-
--- creates a lua object for the given name. it acts as a representation of a overworld reagion or indoor location and
--- tracks its connected objects via the exit-table
-function OoSLocation.New(name)
-	local self = setmetatable({}, OoSLocation)
-	if name then
-		self.name = name
-	else
-		self.name = self
-	end
-	NamedLocations[self.name] = self
-	self.exits = {}
-	self.exits_to_recheck = {}
-	self.Staleness = -1
-	self.accessibility_level = AccessibilityLevel.None
-	self.cleared = false
-	return self
-end
-
+---@return accessibilityLevel
 local function Always()
 	return AccessibilityLevel.Normal
 end
 
--- markes a 1-way connections between 2 "locations/regions" in the source "locations" exit-table with rules if provided
-function OoSLocation:connect_one_way(exit, rule, requiredExit)
-	if type(exit) == "string" then
-		exit = OoSLocation.New(exit)
+---@class (exact) ExitData
+---@field exit Region
+---@field rule fun(): accessibilityLevel
+
+---@class Region
+---@field name string
+---@field exits ExitData[]
+---@field exitsToRecheck Region[]
+---@field staleness integer
+---@field accessibilityLevel accessibilityLevel
+---@field cleared boolean
+Region = {}
+Region.__index = Region
+
+-- creates a lua object for the given name. it acts as a representation of a overworld region or indoor location and
+-- tracks its connected objects via the exit-table
+---@param name string
+---@return Region
+function Region.New(name)
+	if NamedRegions[name] then
+		print(name .. " already exists")
 	end
-	if rule == nil then
-		rule = Always
-	end
-	self.exits[#self.exits + 1] = { exit, rule }
-	if (requiredExit ~= nil) then
-		for _, recheck in pairs(requiredExit) do
-			if (not TableContains(recheck.exits_to_recheck, self)) then
-				recheck.exits_to_recheck[#recheck.exits_to_recheck + 1] = self
-			end
+	local self = setmetatable({}, Region)
+	self.name = name
+	NamedRegions[self.name] = self
+	self.exits = {}
+	self.exitsToRecheck = {}
+	self.staleness = -1
+	self.accessibilityLevel = AccessibilityLevel.None
+	self.cleared = false
+	return self
+end
+
+-- marks a 1-way connections between 2 "locations/regions" in the source "locations" exit-table with rules if provided
+---@param exit Region
+---@param rule? fun(): accessibilityLevel|boolean
+---@param requiredExit? Region[]
+function Region:connect_one_way(exit, rule, requiredExit)
+	rule = rule or Always
+	self.exits[#self.exits + 1] = {exit = exit, rule = rule}
+
+	if not requiredExit then return end
+	for _, recheck in pairs(requiredExit) do
+		if not TableContains(recheck.exitsToRecheck, self) then
+			recheck.exitsToRecheck[#recheck.exitsToRecheck + 1] = self
 		end
 	end
 end
 
--- markes a 2-way connection between 2 locations. acts as a shortcut for 2 connect_one_way-calls 
-function OoSLocation:connect_two_ways(exit, rule)
+-- marks a 2-way connection between 2 locations. acts as a shortcut for 2 connect_one_way-calls
+---@param exit Region
+---@param rule? fun(): accessibilityLevel|boolean
+function Region:connect_two_ways(exit, rule)
 	self:connect_one_way(exit, rule)
 	exit:connect_one_way(self, rule)
 end
 
 -- creates a 1-way connection from a region/location to another one via a 1-way connector like a ledge, hole,
 -- self-closing door, 1-way teleport, ...
-function OoSLocation:connect_one_way_entrance(exit, rule, requiredExit)
-	if rule == nil then
-		rule = Always
-	end
-	self.exits[#self.exits + 1] = { exit, rule }
-	if (requiredExit ~= nil) then
-		for _, recheck in pairs(requiredExit) do
-			if (not TableContains(recheck.exits_to_recheck, self)) then
-				recheck.exits_to_recheck[#recheck.exits_to_recheck + 1] = self
-			end
+---@param exit Region
+---@param rule? fun(): accessibilityLevel|boolean
+---@param requiredExit? Region[]
+function Region:connect_one_way_entrance(exit, rule, requiredExit)
+	rule = rule or Always
+	self.exits[#self.exits + 1] = {exit = exit, rule = rule}
+
+	if not requiredExit then return end
+	for _, recheck in pairs(requiredExit) do
+		if not TableContains(recheck.exitsToRecheck, self) then
+			recheck.exitsToRecheck[#recheck.exitsToRecheck + 1] = self
 		end
 	end
 end
 
 -- creates a connection between 2 locations that is traversable in both ways using the same rules both ways
 -- acts as a shortcut for 2 connect_one_way_entrance-calls
-function OoSLocation:connect_two_ways_entrance(exit, rule, requiredExit)
-	if exit == nil then -- for ER
-		return
-	end
+---@param exit Region
+---@param rule? fun(): accessibilityLevel|boolean
+---@param requiredExit? Region[]
+function Region:connect_two_ways_entrance(exit, rule, requiredExit)
 	self:connect_one_way_entrance(exit, rule, requiredExit)
 	exit:connect_one_way_entrance(self, rule, requiredExit)
 end
 
 -- creates a connection between 2 locations that is traversable in both ways but each connection follow different rules.
 -- acts as a shortcut for 2 connect_one_way_entrance-calls
-function OoSLocation:connect_two_ways_entrance_door_stuck(exit, rule1, rule2)
+function Region:connect_two_ways_entrance_door_stuck(exit, rule1, rule2)
 	self:connect_one_way_entrance(exit, rule1)
 	exit:connect_one_way_entrance(self, rule2)
 end
 
 -- checks for the accessibility of a region/location given its own exit requirements
-function OoSLocation:accessibility()
-	if self.Staleness < Staleness then
+---@return accessibilityLevel
+function Region:accessibility()
+	if self.staleness < Staleness then
 		return AccessibilityLevel.None
 	end
-	return self.accessibility_level
+	return self.accessibilityLevel
 end
 
-function OoSLocation:discover(accessibility)
+---@param accessibility accessibilityLevel
+function Region:discover(accessibility)
 	local change = false
 	if accessibility > self:accessibility() then
 		change = true
-		self.Staleness = Staleness
-		self.accessibility_level = accessibility
+		self.staleness = Staleness
+		self.accessibilityLevel = accessibility
 	end
+	if not change then return end
 
-	if change then
-		for _, recheck in ipairs(self.exits_to_recheck) do
-			for _, exit in pairs(recheck.exits) do
-				if (exit[1]:accessibility() < accessibility) then
-					local location, access = CheckAccess(recheck, exit)
-					location:discover(access)
-					-- DelayedExits[#DelayedExits+1] = {recheck, exit}
-				end
-			end
-		end
-		for _, exit in pairs(self.exits) do
-			if (exit[1]:accessibility() < accessibility) then
-				local location, access = CheckAccess(self, exit)
+	for _, recheck in ipairs(self.exitsToRecheck) do
+		for _, exitData in pairs(recheck.exits) do
+			if (exitData.exit:accessibility() < accessibility) then
+				local location, access = CheckAccess(recheck, exitData)
 				location:discover(access)
 			end
 		end
 	end
+	for _, exitData in pairs(self.exits) do
+		if (exitData.exit:accessibility() < accessibility) then
+			local location, access = CheckAccess(self, exitData)
+			location:discover(access)
+		end
+	end
 end
 
-function CheckAccess(loc, exit)
-	local location = exit[1]
-	local access = exit[2]()
+---@param loc Region
+---@param exitData ExitData
+---@return Region, accessibilityLevel
+function CheckAccess(loc, exitData)
+	local region = exitData.exit
+	local access = exitData.rule()
 	if (access == nil) then
-		print("Error in rule for", location.name)
+		print("Error in rule for", region.name)
 		access = AccessibilityLevel.None
 	end
 	if type(access) == "boolean" then
@@ -134,24 +148,23 @@ function CheckAccess(loc, exit)
 	end
 
 	-- prevents certain regions from looping back around to turn sequence break locs into normal access
-	if (loc.accessibility_level < access) then
-		access = loc.accessibility_level
+	if (loc.accessibilityLevel < access) then
+		access = loc.accessibilityLevel
 	end
-	return location, access
+	return region, access
 end
 
 function SetAsStale(code)
-	if (code ~= LocationRefresh) then
+	if code ~= LocationRefresh then
 		IsStale = true
 	end
 end
 
-
 function StateChange()
 	-- print("StateChange stated", IsStale)
 	-- fixes certain CanReach calls permanently marking locs as green, even after removing items
-	for _, location in pairs(NamedLocations) do
-		location.accessibility_level = 0
+	for _, region in pairs(NamedRegions) do
+		region.accessibilityLevel = 0
 	end
 	IsStale = false
 	Staleness = Staleness + 1
@@ -159,22 +172,22 @@ function StateChange()
 	StartLocation:discover(AccessibilityLevel.Normal)
 end
 
----comment
----@param name any
+---@param name string|Region
 ---@return accessibilityLevel
 function CanReach(name)
 	if IsStale then
 		StateChange()
 	end
 
-	local location
+	local region
 	if type(name) == "table" then
-		location = NamedLocations[name.name]
+		region = NamedRegions[name.name]
 	else
-		location = NamedLocations[name]
+		region = NamedRegions[name]
 	end
+	---@cast region Region
 
-	if location == nil then
+	if region == nil then
 		if type(name) == "table" then
 			print("Unknown location: " .. tostring(name.name))
 		else
@@ -182,16 +195,17 @@ function CanReach(name)
 		end
 		return AccessibilityLevel.None
 	end
-	return location:accessibility()
+	return region:accessibility()
 end
 
+---@param item string
+---@param amount integer|string?
+---@return boolean
 function Has(item, amount)
-	if (amount == nil) then
-		amount = 1
-	end
+	amount = amount or 1
 	local count = Tracker:ProviderCountForCode(item)
 	amount = tonumber(amount)
-	return amount and count >= amount
+	return amount ~= nil and count >= amount
 end
 
 ---@param result boolean

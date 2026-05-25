@@ -1,3 +1,4 @@
+-- cache for expensive or often-called functions
 local CachedValues = {}
 function InvalidateCache()
 	CachedValues = {}
@@ -25,9 +26,12 @@ function HellLogic()
 end
 
 -- Individual items
+
 function HasAnySword() return Has(WoodSword) or Has(BiggoronSword) end
 function CanShootSeeds() return Has(Slingshot) or Has(SeedShooter) end
 
+---@param includeDimitri? boolean -- false
+---@return accessibilityLevel
 function CanDestroyMushroom(includeDimitri)
 	includeDimitri = includeDimitri or false
 	return Any(
@@ -131,13 +135,9 @@ function BombPunchWall()
 end
 
 ---@param hearts number
----@param difficulty? logicLevel
----@return accessibilityLevel
+---@param difficulty? logicLevel LogicLevel.Casual
 function HasHearts(hearts, difficulty)
 	difficulty = difficulty or LogicLevel.Casual
-	if hearts <= 3 or hearts > 10 then
-		return AccessibilityLevel.Normal
-	end
 	return Any(
 		All(
 			Tracker:FindObjectForCode("logic_difficulty").CurrentStage >= difficulty,
@@ -149,9 +149,9 @@ function HasHearts(hearts, difficulty)
 	)
 end
 
----@param hCasual? number
----@param hMedium? number
----@param hHard? number
+---@param hCasual? number 20
+---@param hMedium? number 20
+---@param hHard? number 20
 function HasHeartsByDifficulty(hCasual, hMedium, hHard)
 	hCasual = hCasual or 20
 	hMedium = hMedium or 20
@@ -221,13 +221,13 @@ end
 
 function HasEnoughEssencesForTreehouse()
 	local required = Tracker:FindObjectForCode("treehouse_old_man_requirement").CurrentStage
-	local n = 0
-	for _, e in ipairs(EssenceKeys) do
-		if (Has(e)) then
-			n = n + 1
+	local num = 0
+	for _, essence in ipairs(EssenceKeys) do
+		if Has(essence) then
+			num = num + 1
 		end
 	end
-	return n >= required
+	return num >= required
 end
 
 function CanBeatOnox()
@@ -286,16 +286,18 @@ end
 
 function HasEnoughEssencesForGoal()
 	local required = Tracker:FindObjectForCode("required_essences").CurrentStage
-	local n = 0
-	for _, e in ipairs(EssenceKeys) do
-		if (Has(e)) then
-			n = n + 1
+	local num = 0
+	for _, essence in ipairs(EssenceKeys) do
+		if Has(essence) then
+			num = num + 1
 		end
 	end
-	return n >= required
+	return num >= required
 end
 
+---@param includeDimitri? boolean true
 function CanHarvestSeeds(includeDimitri)
+	includeDimitri = includeDimitri or true
 	return All(
 		CanUseSeeds,
 		Any(
@@ -312,14 +314,14 @@ end
 -- show possible spots to plant seeds
 function CanPlantGasha()
 	-- rules for being able to collect the nut
-	if (not CanSwordKill()) then
+	if not CanSwordKill() then
 		return false
 	end
 	-- rules for how many available spots remain
 	local ownedGashas = Tracker:ProviderCountForCode(GashaSeeds)
 	local gashasPlanted = GashasPlanted()
 	local gashaSetting = Tracker:FindObjectForCode(GashaSetting)
-	if (gashaSetting == nil or gashasPlanted >= gashaSetting.CurrentStage) then
+	if gashaSetting == nil or gashasPlanted >= gashaSetting.CurrentStage then
 		return false
 	end
 	return ownedGashas > gashasPlanted
@@ -328,21 +330,20 @@ end
 -- similar to CanPlantGasha, but for collection
 -- used to mark off mayor spots
 ---@param count integer
----@return boolean
 function CanHarvestGasha(count)
 	-- rules for being able to collect the nut
-	if (not CanSwordKill()) then
+	if not CanSwordKill() then
 		return false
 	end
 	-- rules for how many available spots remain
 	-- local ownedGashas = Tracker:ProviderCountForCode(GashaSeeds)
 	local gashasHarvested = GashasHarvested()
 	local gashasPlanted = GashasPlanted()
-	if (gashasPlanted < tonumber(count)) then
+	if gashasPlanted < tonumber(count) then
 		return false
 	end
 	local gashaSetting = Tracker:FindObjectForCode(GashaSetting)
-	if (gashaSetting == nil or gashasHarvested >= gashaSetting.CurrentStage) then
+	if gashaSetting == nil or gashasHarvested >= gashaSetting.CurrentStage then
 		return false
 	end
 	return gashasPlanted > gashasHarvested
@@ -352,7 +353,7 @@ function GashasHarvested()
 	local harvested = 0
 	for i = 1, 16 do
 		local section = Tracker:FindObjectForCode("@Horon Village/Gasha Spots/Gasha Spot #"..i)
-		if (section ~= nil) then
+		if section ~= nil then
 			harvested = harvested + section.AvailableChestCount
 		end
 	end
@@ -360,13 +361,11 @@ function GashasHarvested()
 end
 
 ---@param code string
----@return boolean
 function HasPlanted(code)
-	local section = Tracker:FindObjectForCode(code)
-	if (not CanSwordKill() or section == nil) then
+	local section = Tracker:FindObjectForCode(code) ---@cast section LocationSection
+	if not CanSwordKill() or section == nil then
 		return false
 	end
-	---@cast section LocationSection
 	return section.ChestCount - section.AvailableChestCount ~= 0
 end
 
@@ -377,13 +376,12 @@ end
 
 ---@param section LocationSection
 function OnSectionChanged(section)
-	if (GashaIDToLocation[section.FullID]) then
+	if GashaIDToLocation[section.FullID] then
 		GashaIDToLocation[section.FullID].cleared = section.AccessibilityLevel == AccessibilityLevel.Cleared
 
-		local hiddenSetting = Tracker:FindObjectForCode(HiddenSetting)
-		---@cast hiddenSetting JsonItem
-		hiddenSetting.Active = not hiddenSetting.Active
-	elseif (AutoCollectLocationTable["Any"][section.FullID] and section.AccessibilityLevel == AccessibilityLevel.Cleared) then
+		local updateItem = Tracker:FindObjectForCode(UpdateItem) ---@cast updateItem JsonItem
+		updateItem.Active = not updateItem.Active
+	elseif AutoCollectLocationTable["Any"][section.FullID] and section.AccessibilityLevel == AccessibilityLevel.Cleared then
 		for _, v in ipairs(AutoCollectLocationTable["Any"][section.FullID]) do
 			if v:sub(1, 1) == "@" then
 				Tracker:FindObjectForCode(v).AvailableChestCount = 0
@@ -397,7 +395,7 @@ end
 function GashasPlanted()
 	local n = 0
 	for _, loc in pairs(GashaIDToLocation) do
-		if (loc.cleared) then
+		if loc.cleared then
 			n = n + 1
 		end
 	end
@@ -407,9 +405,7 @@ end
 -- INTERACT RULES
 
 function CanUseSeeds()
-	return Has(Satchel) or
-	Has(Slingshot) or
-	Has(SeedShooter)
+	return Has(Satchel) or Has(Slingshot) or Has(SeedShooter)
 end
 
 function HasUpgradedSatchel()
@@ -477,6 +473,7 @@ function CanShootLongTorches()
 	)
 end
 
+---@param allowBombchus? boolean false
 function CanDestroyBush(allowBombchus)
 	allowBombchus = allowBombchus or false
 
@@ -486,11 +483,13 @@ function CanDestroyBush(allowBombchus)
 	)
 end
 
+---@param allowBombchus? boolean false
 function CanDestroyBushFlute(allowBombchus)
+	allowBombchus = allowBombchus or false
+
 	return Any(
 		CanBreakFlowers(true, allowBombchus),
-		Bracelet,
-		AnyFlute
+		Bracelet
 	)
 end
 
@@ -503,6 +502,8 @@ function CanDestroyPot()
 	)
 end
 
+---@param allowCompanion? boolean false
+---@param allowBombchus? boolean false
 function CanBreakFlowers(allowCompanion, allowBombchus)
 	allowCompanion = allowCompanion or false
 	allowBombchus = allowBombchus or false
@@ -677,8 +678,8 @@ function CountConsumableDamage()
 end
 
 function AreEnoughGoldenBeastsSlain()
-	local goldenBeastsSetting = Tracker:FindObjectForCode(GoldenBeastsSetting)
-	if (goldenBeastsSetting == nil or goldenBeastsSetting.CurrentStage > Tracker:ProviderCountForCode(GoldenBeasts)) then
+	local goldenBeastsSetting = Tracker:FindObjectForCode(GoldenBeastsSetting) ---@cast goldenBeastsSetting JsonItem
+	if goldenBeastsSetting == nil or goldenBeastsSetting.CurrentStage > Tracker:ProviderCountForCode(GoldenBeasts) then
 		return false
 	end
 	return true
@@ -690,11 +691,11 @@ function MaxJump()
 	end
 	local j = 0
 
-	if (Has(Cape) and Has(Satchel) and Has(PegasusSeeds)) then
+	if Has(Cape) and Has(Satchel) and Has(PegasusSeeds) then
 		j = 5
 	elseif Has(Cape) then
 		j = 3
-	elseif (Has(Feather) and Has(Satchel) and Has(PegasusSeeds)) then
+	elseif Has(Feather) and Has(Satchel) and Has(PegasusSeeds) then
 		j = 2
 	elseif Has(Feather) then
 		j = 1
@@ -704,8 +705,9 @@ function MaxJump()
 	return j
 end
 
+---@param allowCompanion? boolean true
 function Jump1(allowCompanion)
-	allowCompanion = allowCompanion or false
+	allowCompanion = allowCompanion or true
 	return Any(
 		Feather,
 		All(
@@ -759,8 +761,9 @@ function Jump6()
 	)
 end
 
+---@param allowCompanion boolean true
 function JumpLiquid1(allowCompanion)
-	allowCompanion = allowCompanion or false
+	allowCompanion = allowCompanion or true
 	return Any(
 		Feather,
 		All(
@@ -854,6 +857,10 @@ function CanKillWithPit()
 	)
 end
 
+---@param pitAvailable? boolean false
+---@param allowGale? boolean true
+---@param allowCane? boolean true
+---@return accessibilityLevel
 function CanNormalKill(pitAvailable, allowGale, allowCane)
 	pitAvailable = pitAvailable or false
 	allowGale = allowGale or true
@@ -887,6 +894,8 @@ function CanNormalKill(pitAvailable, allowGale, allowCane)
 	return val
 end
 
+---@param allowGale? boolean true
+---@return accessibilityLevel
 function CanNormalSatchelKill(allowGale)
 	allowGale = allowGale or true
 
@@ -921,6 +930,8 @@ function CanNormalSatchelKill(allowGale)
 	return val
 end
 
+---@param allowGale? boolean true
+---@return accessibilityLevel
 function CanNormalSlingshotKill(allowGale)
 	allowGale = allowGale or true
 
@@ -952,6 +963,9 @@ function CanNormalSlingshotKill(allowGale)
 	return val
 end
 
+---@param allowCane? boolean false
+---@param allowBombchus? boolean false
+---@return accessibilityLevel
 function CanArmorKill(allowCane, allowBombchus)
 	allowCane = allowCane or false
 	allowBombchus = allowBombchus or false
@@ -1023,6 +1037,7 @@ function CanKillSpinyBeetle()
 	)
 end
 
+---@param pitAvailable? boolean false
 function CanKillMoldorm(pitAvailable)
 	pitAvailable = pitAvailable or false
 	return Any(
@@ -1061,14 +1076,8 @@ function CanFarmRupees()
 	)
 end
 
+---@param count integer
 function HasRupees(count)
-	if (count == 0 or Has(Shovel) and HardLogic() == AccessibilityLevel.Normal) then
-		return true
-	end
-	if (CanFarmRupees() < AccessibilityLevel.SequenceBreak) then
-		return false
-	end
-
 	local rupees
 	local bonusRupees
 	local oolRupees
@@ -1078,31 +1087,39 @@ function HasRupees(count)
 		bonusRupees = CachedValues["HasRupees"][2]
 		oolRupees = CachedValues["HasRupees"][3]
 	else
-		rupees = Tracker:FindObjectForCode(RupeeCount).AcquiredCount
+		rupees = Tracker:ProviderCountForCode(RupeeCount)
 		bonusRupees = 0
 		oolRupees = 0
 
 		-- rupee rooms
 		local snakeRupeeAmount = 150
-		if (Has(EventSnakeRupees)) then
-			bonusRupees = bonusRupees + snakeRupeeAmount
+		if Has(EventSnakeRupees) then
+			if MediumLogic() == AccessibilityLevel.Normal then
+				bonusRupees = bonusRupees + snakeRupeeAmount
+			else
+				oolRupees = oolRupees + snakeRupeeAmount
+			end
 		end
 
 		local ancientRupeeAmount = 90
-		if (Has(EventAncientRupees)) then
-			bonusRupees = bonusRupees + ancientRupeeAmount
+		if Has(EventAncientRupees) then
+			if MediumLogic() == AccessibilityLevel.Normal then
+				bonusRupees = bonusRupees + ancientRupeeAmount
+			else
+				oolRupees = oolRupees + snakeRupeeAmount
+			end
 		end
 
-		if (Tracker:FindObjectForCode("shuffle_old_men").CurrentStage ~= 4) then
+		if Tracker:FindObjectForCode("shuffle_old_men").CurrentStage ~= 4 then
 			for _, val in pairs(OldMenValues) do
-				if (val[1] < 0) then
+				-- val[1] = rupee amount
+				-- val[2] = old man event item
+				if val[1] < 0 then
 					-- always subtract rupees even if you can't reach them yet
 					-- otherwise you could "lose" access to a shop if one steals from you
 					rupees = rupees + val[1]
-				else
-					if (Has(val[2])) then
-						rupees = rupees + val[1]
-					end
+				elseif Has(val[2]) then
+					rupees = rupees + val[1]
 				end
 			end
 		end
@@ -1111,22 +1128,25 @@ function HasRupees(count)
 	end
 
 
-	return Any(
-		-- already have the right amount of rupees
-		rupees >= count,
-		-- D2 and D6 rupee rooms are medium+ only
-		All(
-			rupees + bonusRupees >= count,
-			MediumLogic
-		),
-		-- shovel is infinite farm, and expected in hard
-		All(
-			Shovel,
-			HardLogic
-		),
-		All(
-			rupees + bonusRupees + oolRupees >= count,
-			AccessibilityLevel.SequenceBreak
+	return All(
+		CanFarmRupees,
+		Any(
+			-- already have the right amount of rupees
+			rupees >= count,
+			-- D2 and D6 rupee rooms are medium+ only
+			All(
+				rupees + bonusRupees >= count,
+				MediumLogic
+			),
+			-- shovel is infinite farm, and expected in hard
+			All(
+				Shovel,
+				HardLogic
+			),
+			All(
+				rupees + bonusRupees + oolRupees >= count,
+				AccessibilityLevel.SequenceBreak
+			)
 		)
 	)
 end
@@ -1158,11 +1178,13 @@ function CanFarmOreChunks()
 	)
 end
 
+---@param count integer
+---@return accessibilityLevel|boolean
 function HasOreChunks(count)
-	if (Has(ShuffleGoldOresVanilla)) then
+	if Has(ShuffleGoldOresVanilla) then
 		return CanFarmOreChunks()
 	end
-	if (CanFarmOreChunks() < AccessibilityLevel.SequenceBreak) then
+	if CanFarmOreChunks() < AccessibilityLevel.SequenceBreak then
 		return false
 	end
 
@@ -1182,6 +1204,9 @@ function CanEnterTarm()
 	return Tracker:ProviderCountForCode(Jewels) >= Tracker:FindObjectForCode(TarmGateSetting).CurrentStage
 end
 
+---@param allowDefault? boolean -- false
+---@param forceDeku? boolean -- false
+---@return boolean|accessibilityLevel
 function CanLostWoods(allowDefault, forceDeku)
 	allowDefault = allowDefault or false
 	forceDeku = forceDeku or false
@@ -1192,7 +1217,7 @@ function CanLostWoods(allowDefault, forceDeku)
 	for i=1, 4 do
 		local season = IndexToSeason[Tracker:FindObjectForCode("lost_woods_"..i).CurrentStage]
 		canDefault = allowDefault and canDefault and defaultSeason == season
-		if (not canDefault and (season == UnknownSeason or not Has(season))) then
+		if not canDefault and (season == UnknownSeason or not Has(season)) then
 			return false
 		end
 	end
@@ -1207,6 +1232,9 @@ function CanLostWoods(allowDefault, forceDeku)
 		)
 	)
 end
+---@param allowDefault? boolean -- false
+---@param forceDeku? boolean -- false
+---@return boolean|accessibilityLevel
 function CanPedestal(allowDefault, forceDeku)
 	allowDefault = allowDefault or false
 	forceDeku = forceDeku or false
@@ -1217,7 +1245,7 @@ function CanPedestal(allowDefault, forceDeku)
 	for i=1, 4 do
 		local season = IndexToSeason[Tracker:FindObjectForCode("pedestal_"..i).CurrentStage]
 		canDefault = allowDefault and canDefault and defaultSeason == season
-		if (not canDefault and (season == UnknownSeason or not Has(season))) then
+		if not canDefault and (season == UnknownSeason or not Has(season)) then
 			return false
 		end
 	end
@@ -1233,158 +1261,162 @@ function CanPedestal(allowDefault, forceDeku)
 	)
 end
 
-function GetCuccos()
-	if CachedValues["GetCuccos"] then
-		return CachedValues["GetCuccos"]
-	end
-	local availableCuccos = {
-		["mt. cucco"] = {-1, -1, -1},
-		["horon"] = {-1, -1, -1},
-		["suburbs"] = {-1, -1, -1},
-		["moblin road"] = {-1, -1, -1},
-		["sunken"] = {-1, -1, -1},
-		["swamp"] = {-1, -1, -1},
-		["tarm"] = {-1, -1, -1}
-	}
+---@param area roosterArea
+---@param anyAmt? integer
+---@param topAmt? integer
+---@param botAmt? integer
+---@param visited? string[]
+---@return accessibilityLevel
+function Roosters(area, anyAmt, topAmt, botAmt, visited)
+	if not area then return AccessibilityLevel.None end
+	anyAmt = anyAmt or 0
+	topAmt = topAmt or 0
+	botAmt = botAmt or 0
+	visited = visited or {}
+	table.insert(visited, area)
 
-	local function RegisterCucco(region, cuccos)
-		local oldCuccos = availableCuccos[region]
-		local newCuccos = {}
-		for i = 1, 3, 1 do
-			newCuccos[i] = math.max(oldCuccos[i], cuccos[i])
+	if anyAmt > topAmt + botAmt then
+		return Any(
+			Roosters(area, anyAmt, topAmt + 1, botAmt, visited),
+			Roosters(area, anyAmt, topAmt, botAmt + 1, visited)
+		)
+	elseif area == RoosterArea.MtCucco then
+		local rules = {}
+		if botAmt > 2 then
+			error("Not implemented")
 		end
-		availableCuccos[region] = newCuccos
-	end
-	local function UseAnyCucco(cuccos)
-		return {cuccos[1] - 1, cuccos[2], cuccos[3]}
-	end
-	local function UseTopCucco(cuccos)
-		return {cuccos[1] - 1, cuccos[2] - 1, cuccos[3]}
-	end
-	local function UseBottomCucco(cuccos)
-		return {cuccos[1] - 1, cuccos[2], cuccos[3] - 1}
-	end
-
-	local top, bottom = 1, 0
-
-	if (Has(Shovel)) then
-		if (Has(Boomerang)) then
-			top = 3
-		else
-			top = 2
+		if botAmt > 0 then
+			table.insert(rules, All(Any(Spring, SunkenCitySpring), Any(CanBreakFlowers, SpringBanana)))
 		end
-	elseif (Has(Boomerang) and Has(Satchel) and Has(PegasusSeeds)) then
-		top = 2
-	end
-
-	if ((Has(SunkenCitySpring) or Has(Spring)) and CanBreakFlowers() == AccessibilityLevel.Normal or Has(SpringBanana)) then
-		bottom = 2
-	end
-
-	availableCuccos["mt. cucco"] = {top + bottom, top, bottom}
-
-	if (Jump3() == AccessibilityLevel.Normal or Has(Flippers) or Dimitri()) then
-		availableCuccos["horon"] = availableCuccos["mt. cucco"]
-	end
-
-	if (Has(AnyFlute)) then
-		availableCuccos["sunken"] = availableCuccos["horon"]
-	elseif (Has(NatzuIsMoosh)) then
-		if (JumpLiquid4() == AccessibilityLevel.Normal) then
-			availableCuccos["sunken"] = availableCuccos["horon"]
-		elseif (Jump3() == AccessibilityLevel.Normal) then
-			availableCuccos["sunken"] = UseTopCucco(availableCuccos["horon"])
+		if topAmt > 3 then
+			error("Not implemented")
 		end
-	elseif (Has(NatzuIsDimitri)) then
-		if (CanBreakFlowers() == AccessibilityLevel.Normal and Has(Flippers)) then
-			availableCuccos["sunken"] = UseAnyCucco(availableCuccos["mt. cucco"])
+		if topAmt == 3 then
+			table.insert(rules, All(Shovel, Boomerang))
+		elseif topAmt == 2 then
+			table.insert(rules, Any(Shovel, All(Boomerang, PegasusSeeds, Satchel)))
 		end
-	elseif (Has(Flippers)) then
-		availableCuccos["sunken"] = availableCuccos["mt. cucco"]
-	end
-
-	availableCuccos["suburbs"] = availableCuccos["sunken"]
-
-	if (Has(Satchel) and Has(EmberSeeds)) then
-		availableCuccos["suburbs"] = availableCuccos["horon"]
-	elseif (Has(NorthHoronWinter) or Has(Winter) or ((Has(NorthHoronSpring) or Has(NorthHoronAutumn) or Has(NorthHoronWinter) or Has(Spring) or Has(Autumn) or Has(Winter)) and (Has(Flippers) or Dimitri()))) then
-		availableCuccos["suburbs"] = UseAnyCucco(availableCuccos["horon"])
-	end
-
-	if (Has(EasternSuburbsSpring) or Has(Spring)) then
-		RegisterCucco("sunken", availableCuccos["suburbs"])
-	end
-
-	if (Has(EasternSuburbsWinter) or Has(Winter)) then
-		availableCuccos["moblin road"] = availableCuccos["suburbs"]
-	else
-		availableCuccos["moblin road"] = UseTopCucco(availableCuccos["sunken"])
-	end
-
-	if (Has(HolodrumPlainSummer) or Has(Summer) or Jump4() or Ricky() or Moosh()) then
-		availableCuccos["swamp"] = availableCuccos["horon"]
-	else
-		availableCuccos["swamp"] = UseBottomCucco(availableCuccos["horon"])
-	end
-
-	if (All(
-		CanEnterTarm,
-		Any(
-			LostWoodsWinter,
-			Winter
-		),
-		Any(
-			Spring,
-			Summer,
-			Autumn
-		),
-		Any(
-			LostWoodsSummer,
-			Summer,
+		return All(table.unpack(rules))
+	elseif area == RoosterArea.Horon then
+		return All(
+			Any(Jump3, Flippers, Dimitri),
+			Roosters(RoosterArea.MtCucco, anyAmt, topAmt, botAmt)
+		)
+	elseif area == RoosterArea.Sunken then
+		local rule = Any(
 			All(
+				Roosters(RoosterArea.Horon, anyAmt, topAmt, botAmt, visited),
 				Any(
-					LostWoodsAutumn,
-					Autumn
-				),
-				MagicBoomerang
+					AnyFlute,
+					All(NatzuIsMoosh, JumpLiquid4)
+				)
+			),
+			All(
+				Roosters(RoosterArea.Horon, anyAmt + 1, topAmt + 1, botAmt, visited),
+				NatzuIsMoosh,
+				Jump3
+			),
+			All(
+				NatzuIsRicky,
+				Flippers,
+				Any(CanBreakFlowers, Roosters(RoosterArea.MtCucco, anyAmt + 1, topAmt, botAmt, visited)),
+				Roosters(RoosterArea.MtCucco, anyAmt, topAmt, botAmt, visited)
 			)
 		)
-	) >= AccessibilityLevel.SequenceBreak) then
-		local canReachDeku = All(
-			Shield,
-			Any(
-				availableCuccos["swamp"][2] > 0,
-				JumpLiquid2,
-				Flippers
+		if not TableContains(visited, RoosterArea.Suburbs) then
+			rule = Any(
+				rule,
+				All(
+					Any(Spring, EasternSuburbsSpring),
+					Roosters(RoosterArea.Suburbs, anyAmt, topAmt, botAmt, visited)
+				)
 			)
-		) == AccessibilityLevel.Normal
-		if (All(
+		end
+		return rule
+	elseif area == RoosterArea.Suburbs then
+		return Any(
+			Roosters(RoosterArea.Sunken, anyAmt, topAmt, botAmt, visited),
+			All(
+				Roosters(RoosterArea.Horon, anyAmt, topAmt, botAmt, visited),
+				CanBurnTrees
+			),
+			All(
+				Roosters(RoosterArea.Horon, anyAmt + 1, topAmt, botAmt, visited),
+				Any(Winter, NorthHoronWinter),
+				Any(NorthHoronSummer, Spring, Autumn, Winter),
+				Any(Flippers, Dimitri)
+			)
+		)
+	elseif area == RoosterArea.MoblinRoad then
+		return Any(
+			All(
+				Any(Winter, EasternSuburbsWinter),
+				Roosters(RoosterArea.Suburbs, anyAmt, topAmt, botAmt, visited)
+			),
+			Roosters(RoosterArea.Sunken, anyAmt, topAmt + 1, botAmt + 1, visited)
+		)
+	elseif area == RoosterArea.Swamp then
+		return Any(
+			All(
+				Any(
+					Summer,
+					HolodrumPlainSummer,
+					Jump4,
+					Ricky,
+					Moosh
+				),
+				Roosters(RoosterArea.Horon, anyAmt, topAmt, botAmt, visited)
+			),
+			Roosters(RoosterArea.Horon, anyAmt + 1, topAmt, botAmt + 1, visited)
+		)
+	elseif area == RoosterArea.Tarm then
+		return All(
+			CanEnterTarm,
+			Any(
+				Summer,
+				LostWoodsSummer,
+				All(
+					Any(Autumn, LostWoodsAutumn),
+					MagicBoomerang,
+					Any(Jump1(false), HardLogic),
+					MediumLogic
+				)
+			),
+			Any(Winter, LostWoodsWinter),
+			Any(Spring, Summer, Autumn),
 			Autumn,
 			CanDestroyMushroom,
 			Any(
-				CanLostWoods(false, canReachDeku),
+				CanLostWoods,
 				All(
-					CanLostWoods(true, canReachDeku),
-					CanLostWoods(false, CanBurnTrees() and Has(Phonograph))
+					CanLostWoods(true),
+					CanPedestal
 				)
 			)
-		) >= AccessibilityLevel.SequenceBreak) then
-			availableCuccos["tarm"] = availableCuccos["swamp"]
-		end
+		)
 	end
 
-	for region in pairs(availableCuccos) do
-		for i = 1, 3 do
-			if (availableCuccos[region][i] < 0) then
-				availableCuccos[region] = {-1, -1, -1}
-			end
-		end
-	end
-
-	CachedValues["GetCuccos"] = availableCuccos
-	return availableCuccos
+	error("Not implemented")
 end
 
+---@param area roosterArea
+---@param anyAmt integer
+---@param topAmt integer
+---@param botAmt integer
+---@return accessibilityLevel
+function GetCuccos(area, anyAmt, topAmt, botAmt)
+	local cacheStr = "GetCuccos"..area..tostring(anyAmt)..tostring(topAmt)..tostring(botAmt)
+	if CachedValues[cacheStr] then
+		return CachedValues[cacheStr]
+	end
+
+	local access = Roosters(area, anyAmt, topAmt, botAmt)
+
+	CachedValues[cacheStr] = access
+	return access
+end
+
+---@param needed integer
 function LCKeyCount(needed)
 	local currentKeys = Tracker:ProviderCountForCode(LCSmallKey)
 	return Any(
@@ -1393,6 +1425,8 @@ function LCKeyCount(needed)
 	)
 end
 
+---@param needed integer
+---@param ool? integer
 function D1KeyCount(needed, ool)
 	local currentKeys = Tracker:ProviderCountForCode(D1SmallKey)
 	return Any(
@@ -1414,6 +1448,8 @@ function HasD1BossKey()
 	)
 end
 
+---@param needed integer
+---@param ool? integer
 function D2KeyCount(needed, ool)
 	local currentKeys = Tracker:ProviderCountForCode(D2SmallKey)
 	return Any(
@@ -1435,6 +1471,8 @@ function HasD2BossKey()
 	)
 end
 
+---@param needed integer
+---@param ool? integer
 function D3KeyCount(needed, ool)
 	local currentKeys = Tracker:ProviderCountForCode(D3SmallKey)
 	return Any(
@@ -1456,6 +1494,8 @@ function HasD3BossKey()
 	)
 end
 
+---@param needed integer
+---@param ool? integer
 function D4KeyCount(needed, ool)
 	local currentKeys = Tracker:ProviderCountForCode(D4SmallKey)
 	return Any(
@@ -1477,6 +1517,8 @@ function HasD4BossKey()
 	)
 end
 
+---@param needed integer
+---@param ool? integer
 function D5KeyCount(needed, ool)
 	local currentKeys = Tracker:ProviderCountForCode(D5SmallKey)
 	return Any(
@@ -1498,6 +1540,8 @@ function HasD5BossKey()
 	)
 end
 
+---@param needed integer
+---@param ool? integer
 function D6KeyCount(needed, ool)
 	local currentKeys = Tracker:ProviderCountForCode(D6SmallKey)
 	return Any(
@@ -1519,6 +1563,8 @@ function HasD6BossKey()
 	)
 end
 
+---@param needed integer
+---@param ool? integer
 function D7KeyCount(needed, ool)
 	local currentKeys = Tracker:ProviderCountForCode(D7SmallKey)
 	return Any(
@@ -1540,6 +1586,8 @@ function HasD7BossKey()
 	)
 end
 
+---@param needed integer
+---@param ool? integer
 function D8KeyCount(needed, ool)
 	local currentKeys = Tracker:ProviderCountForCode(D8SmallKey)
 	return Any(
@@ -1562,7 +1610,7 @@ function HasD8BossKey()
 end
 
 function DungeonSettings()
-	if (not LOADED) then
+	if not LOADED then
 		return
 	end
 	if Tracker:FindObjectForCode("shuffle_dungeons").CurrentStage == 0 then
@@ -1585,7 +1633,7 @@ local function DisplayDungeons()
 end
 
 function SeasonSettings()
-	if (not LOADED) then
+	if not LOADED then
 		return
 	end
 	local regionList = {"north_horon_season", "suburbs_season", "wow_season", "plain_season", "swamp_season", "sunken_season", "lost_woods_season", "tarm_ruins_season", "coast_season", "remains_season"}
@@ -1619,7 +1667,7 @@ local function DisplaySeasons()
 end
 
 function VanillaPortals()
-	if (not LOADED) then
+	if not LOADED then
 		return
 	end
 	local hol_portals = {"suburbs","swamp","lake","mtcucco","horon","remains","upremains"}
@@ -1653,40 +1701,40 @@ local function DisplayPortals()
 end
 
 local function DisplayLostWoods()
-	if (not LOADED) then
+	if not LOADED then
 		return
 	end
-	if (Has(LostWoodsVanilla)) then
+	if Has(LostWoodsVanilla) then
 		for i=1, 4 do
 			Tracker:FindObjectForCode("lost_woods_"..i).CurrentStage = LostWoodsDefault[i]
-			if (i < 4) then
+			if i < 4 then
 				Tracker:FindObjectForCode("lost_woods_d_"..i).CurrentStage = i - 1
 			end
 		end
 	else
 		for i=1, 4 do
 			Tracker:FindObjectForCode("lost_woods_"..i).CurrentStage = 4
-			if (i < 4) then
+			if i < 4 then
 				Tracker:FindObjectForCode("lost_woods_d_"..i).CurrentStage = 4
 			end
 		end
 	end
 end
 local function DisplayPedestal()
-	if (not LOADED) then
+	if not LOADED then
 		return
 	end
-	if (Has(PedestalVanilla)) then
+	if Has(PedestalVanilla) then
 		for i=1, 4 do
 			Tracker:FindObjectForCode("pedestal_"..i).CurrentStage = LostWoodsDefault[i]
-			if (i < 4) then
+			if i < 4 then
 				Tracker:FindObjectForCode("pedestal_d_"..i).CurrentStage = 0
 			end
 		end
 	else
 		for i=1, 4 do
 			Tracker:FindObjectForCode("pedestal_"..i).CurrentStage = 4
-			if (i < 4) then
+			if i < 4 then
 				Tracker:FindObjectForCode("pedestal_d_"..i).CurrentStage = 4
 			end
 		end
@@ -1695,8 +1743,7 @@ end
 
 -- Dungeon number display setting
 function OnChangeDungeonImages()
-	local setting = Tracker:FindObjectForCode("dungeon_number_setting")
-	---@cast setting JsonItem
+	local setting = Tracker:FindObjectForCode("dungeon_number_setting") ---@cast setting JsonItem
 	for i = 0, 9 do
 		if i == 9 then
 			i = 11
@@ -1722,11 +1769,9 @@ ScriptHost:AddWatchForCode("pedestal handler", "randomize_lost_woods_item_sequen
 ScriptHost:AddOnLocationSectionChangedHandler("section changed handler", OnSectionChanged)
 ScriptHost:AddOnFrameHandler("load handler", OnFrameHandler)
 ScriptHost:AddWatchForCode("see companion handler", Companion, function()
-	local companion = Tracker:FindObjectForCode(Companion)
-	---@cast companion JsonItem
-	local location = Tracker:FindObjectForCode("@Natzu/See Your Companion/")
-	---@cast location LocationSection
-	if (companion.CurrentStage == 3) then
+	local companion = Tracker:FindObjectForCode(Companion) ---@cast companion JsonItem
+	local location = Tracker:FindObjectForCode("@Natzu/See Your Companion/") ---@cast location LocationSection
+	if companion.CurrentStage == 3 then
 		location.AvailableChestCount = 1
 	else
 		location.AvailableChestCount = 0
@@ -1735,11 +1780,9 @@ end)
 -- "See the Season" locations
 for i = 1, #SeeSeasonVars do
 	ScriptHost:AddWatchForCode(SeeSeasonVars[i][1], SeeSeasonVars[i][2], function()
-		local season = Tracker:FindObjectForCode(SeeSeasonVars[i][2])
-		---@cast season JsonItem
-		local location = Tracker:FindObjectForCode(SeeSeasonVars[i][3])
-		---@cast location LocationSection
-		if (season.CurrentStage == 4) then
+		local season = Tracker:FindObjectForCode(SeeSeasonVars[i][2]) ---@cast season JsonItem
+		local location = Tracker:FindObjectForCode(SeeSeasonVars[i][3]) ---@cast location LocationSection
+		if season.CurrentStage == 4 then
 			location.AvailableChestCount = 1
 		else
 			location.AvailableChestCount = 0
@@ -1749,11 +1792,9 @@ end
 -- "Enter portal" locations
 for i = 1, #PortalSetVars do
 	ScriptHost:AddWatchForCode(PortalSetVars[i][1], PortalSetVars[i][2], function()
-		local portal = Tracker:FindObjectForCode(PortalSetVars[i][2])
-		---@cast portal JsonItem
-		local location = Tracker:FindObjectForCode(PortalSetVars[i][3])
-		---@cast location LocationSection
-		if (portal.CurrentStage == PortalDictionary[PortalSetVars[i][1]]['unknown']) then
+		local portal = Tracker:FindObjectForCode(PortalSetVars[i][2]) ---@cast portal JsonItem
+		local location = Tracker:FindObjectForCode(PortalSetVars[i][3]) ---@cast location LocationSection
+		if portal.CurrentStage == PortalDictionary[PortalSetVars[i][1]]['unknown'] then
 			location.AvailableChestCount = 1
 		else
 			location.AvailableChestCount = 0

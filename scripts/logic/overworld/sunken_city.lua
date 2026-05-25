@@ -1,7 +1,7 @@
 -- items
 SunkenCity:connect_one_way(SunkenTree, function()
 	return Any(
-		CanHarvestSeeds(true),
+		CanHarvestSeeds,
 		AccessibilityLevel.Inspect
 	)
 end)

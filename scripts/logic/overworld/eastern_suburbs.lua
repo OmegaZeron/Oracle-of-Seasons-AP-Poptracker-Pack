@@ -46,7 +46,7 @@ LowerEasternSuburbs:connect_two_ways_entrance(UpperEasternSuburbs, function()
 			Autumn
 		),
 		Any(
-			JumpLiquid1(true),
+			JumpLiquid1,
 			Flippers,
 			Dimitri,
 			SwitchHook
@@ -113,7 +113,7 @@ UpperEasternSuburbs:connect_one_way_entrance(WoodsOfWinter)
 UpperEasternSuburbsWinter:connect_one_way_entrance(WoodsOfWinter, function()
 	return Any(
 		All(
-			Jump1(true),
+			Jump1,
 			AnyFlute,
 			Bracelet
 		),
@@ -186,7 +186,7 @@ WoodsOfWinter:connect_one_way_entrance(UpperEasternSuburbsWinter, function()
 		EasternSuburbsWinter,
 		Any(
 			All(
-				Jump1(true),
+				Jump1,
 				Bracelet
 			),
 			All(
@@ -200,7 +200,7 @@ WoodsOfWinter:connect_one_way_entrance(UpperEasternSuburbsWinter, function()
 end)
 WoodsOfWinter:connect_one_way(WoodsOfWinterTree, function()
 	return Any(
-		CanHarvestSeeds(true),
+		CanHarvestSeeds,
 		AccessibilityLevel.Inspect
 	)
 end)

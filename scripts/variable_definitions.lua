@@ -101,6 +101,17 @@ LogicLevel = {
 	Hell = 3
 }
 
+---@enum roosterArea
+RoosterArea = {
+	MtCucco = "mount cucco",
+	Horon = "horon",
+	Sunken = "sunken",
+	Suburbs = "suburbs",
+	MoblinRoad = "moblin road",
+	Swamp = "swamp",
+	Tarm = "d6"
+}
+
 AutoCollectLocationTable = {["Any"] = DefaultAutoCollectLocationTable}
 
 CurrentTab = nil

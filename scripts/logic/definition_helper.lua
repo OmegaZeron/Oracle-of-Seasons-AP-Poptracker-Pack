@@ -183,7 +183,7 @@ StartImpa = "start_impa"
 
 -- Helpers
 VersionMismatch = "version_mismatch"
-HiddenSetting = "hidden_setting"
+UpdateItem = "update_item"
 LocationRefresh = "location_refresh"
 ManualStorageCode = "manual_location_storage"
 ManualLocationCode = "locations"

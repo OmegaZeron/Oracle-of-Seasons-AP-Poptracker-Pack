@@ -4,7 +4,7 @@ NorthHolodrumPlain:connect_one_way(NorthHoronFindSeason)
 -- items
 NorthHolodrumPlain:connect_one_way(HolodrumPlainTree, function()
 	return Any(
-		CanHarvestSeeds(true),
+		CanHarvestSeeds,
 		AccessibilityLevel.Inspect
 	)
 end)
@@ -33,7 +33,7 @@ NorthHolodrumPlain:connect_one_way(NorthHolodrumPlainOldMan, function()
 			All(
 				Summer,
 				Any(
-					Jump1(true),
+					Jump1,
 					All(
 						CanDestroyBushFlute(true),
 						Flippers
@@ -81,7 +81,7 @@ end)
 -- exits
 NorthHolodrumPlain:connect_two_ways_entrance(SouthHolodrumPlain, function()
 	return Any(
-		Jump1(true),
+		Jump1,
 		HolodrumPlainWinter
 	)
 end)

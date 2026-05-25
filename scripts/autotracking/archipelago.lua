@@ -280,6 +280,10 @@ function OnClear(slot_data)
 end
 
 -- called when an item gets collected
+---@param index integer
+---@param item_id integer
+---@param item_name string
+---@param player_number integer
 function OnItem(index, item_id, item_name, player_number)
 	if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
 		print(string.format("called onItem: %s, %s, %s, %s, %s", index, item_id, item_name, player_number, CUR_INDEX))
@@ -364,6 +368,8 @@ function OnItem(index, item_id, item_name, player_number)
 end
 
 -- called when a location gets cleared
+---@param location_id integer
+---@param location_name string
 function OnLocation(location_id, location_name)
 	if Tracker:FindObjectForCode(VersionMismatch).Active then
 		return
@@ -453,7 +459,7 @@ function OnNotify(key, value, old_value)
 			end
 		end
 		if PopVersion < "0.34.0" then
-			Tracker:FindObjectForCode(HiddenSetting).Active = not Tracker:FindObjectForCode(HiddenSetting).Active
+			Tracker:FindObjectForCode(UpdateItem).Active = not Tracker:FindObjectForCode(UpdateItem).Active
 		end
 	elseif key == ClientStatusID then
 		if value == Archipelago.ClientStatus.GOAL then
@@ -480,9 +486,8 @@ function UpdateHints(locationID, status)
 	local locations = LOCATION_MAPPING[locationID]
 	-- print("Hint", dump(locations), status)
 	for _, location in ipairs(locations) do
-		local section = Tracker:FindObjectForCode(location)
+		local section = Tracker:FindObjectForCode(location) ---@cast section LocationSection
 		if section then
-			---@cast section LocationSection
 			IS_HIGHLIGHT_UPDATE = true
 			section.Highlight = status
 		else

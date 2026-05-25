@@ -4,7 +4,7 @@ SouthSpoolSwamp:connect_one_way(SpoolSwampFindSeason)
 -- items
 NorthSpoolSwamp:connect_one_way(SwampTree, function()
 	return Any(
-		CanHarvestSeeds(true),
+		CanHarvestSeeds,
 		AccessibilityLevel.Inspect
 	)
 end)

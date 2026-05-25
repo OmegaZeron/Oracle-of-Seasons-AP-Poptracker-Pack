@@ -78,7 +78,7 @@ UpperNorthHoron:connect_one_way_entrance(EyeglassLake, function()
 			Spring,
 			Autumn
 		),
-		Jump1(true),
+		Jump1,
 		Any(
 			Flippers,
 			All(
@@ -95,7 +95,7 @@ UpperNorthHoron:connect_one_way_entrance(FrozenEyeglassLake, function()
 			NorthHoronWinter,
 			Winter
 		),
-		Jump1(true)
+		Jump1
 	)
 end)
 UpperNorthHoron:connect_one_way_entrance(DryEyeglassLake, function()
@@ -104,7 +104,7 @@ UpperNorthHoron:connect_one_way_entrance(DryEyeglassLake, function()
 			NorthHoronSummer,
 			Summer
 		),
-		Jump1(true)
+		Jump1
 	)
 end)
 
@@ -115,7 +115,7 @@ EyeglassLake:connect_one_way_entrance(EasternNorthHoron)
 EyeglassLake:connect_one_way_entrance(EyeglassPortal)
 
 -- frozen
-FrozenEyeglassLake:connect_one_way_entrance(UpperNorthHoron, function() return Jump1(true) end)
+FrozenEyeglassLake:connect_one_way_entrance(UpperNorthHoron, Jump1)
 FrozenEyeglassLake:connect_one_way_entrance(EasternNorthHoron)
 FrozenEyeglassLake:connect_one_way_entrance(EyeglassPortal, function()
 	return Any(
@@ -128,9 +128,7 @@ end)
 -- dry
 DryEyeglassLake:connect_one_way_entrance(DryEyeglassBombCave, BombPunchWall)
 DryEyeglassBombCave:connect_one_way(DryEyeglassBombCaveChest, function() return Has(Flippers) end)
-DryEyeglassLake:connect_one_way_entrance(UpperNorthHoron, function()
-	return Jump1(true)
-end)
+DryEyeglassLake:connect_one_way_entrance(UpperNorthHoron, Jump1)
 
 -- portal
 EyeglassPortal:connect_one_way_entrance(EastFurnace, function()
@@ -220,7 +218,7 @@ end)
 -- special cases to handle default autumn
 UpperNorthHoron:connect_one_way_entrance(UnicornCave, function()
 	return All(
-		Jump1(true),
+		Jump1,
 		CanDestroyMushroom(true),
 		NorthHoronAutumn,
 		Any(
@@ -246,14 +244,14 @@ EyeglassPortal:connect_one_way_entrance(UnicornCave, function()
 end)
 UnicornCave:connect_one_way_entrance(DryEyeglassHiddenStairs, function()
 	return All(
-		Jump1(true),
+		Jump1,
 		NorthHoronSummer,
 		Bracelet
 	)
 end)
 UnicornCave:connect_one_way_entrance(EasternNorthHoron, function()
 	return Any(
-		Jump1(true),
+		Jump1,
 		All(
 			NorthHoronAutumn,
 			CanDestroyMushroom

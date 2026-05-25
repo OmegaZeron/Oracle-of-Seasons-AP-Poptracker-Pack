@@ -9,15 +9,15 @@ DragonKeyhole:connect_one_way_entrance(RoosterAdventure, function()
 		HellLogic
 	)
 end)
-RoosterAdventure:connect_one_way_entrance(LowerMtCucco, function() return GetCuccos()["mt. cucco"][1] ~= -1 end)
+RoosterAdventure:connect_one_way_entrance(LowerMtCucco, function() return GetCuccos(RoosterArea.MtCucco, 0, 0, 0) end)
 RoosterAdventure:connect_one_way_entrance(MoblinKeep, function()
 	return Any(
 		All(
-			GetCuccos()["sunken"][2] > 0,
+			GetCuccos(RoosterArea.Sunken, 1, 1, 0),
 			NatzuIsRicky
 		),
 		All(
-			GetCuccos()["horon"][2] > 0,
+			GetCuccos(RoosterArea.Horon, 1, 1, 0),
 			Any(
 				AnyFlute,
 				All(
@@ -28,35 +28,28 @@ RoosterAdventure:connect_one_way_entrance(MoblinKeep, function()
 		)
 	)
 end)
-RoosterAdventure:connect_one_way_entrance(SunkenCity, function() return GetCuccos()["sunken"][1] >= 0 end)
+RoosterAdventure:connect_one_way_entrance(SunkenCity, function() return GetCuccos(RoosterArea.Sunken, 0, 0, 0) end)
 RoosterAdventure:connect_one_way_entrance(SunkenGashaSpot, function()
 	return All(
-		GetCuccos()["sunken"][3] > 0,
-		CanPlantGasha,
+		GetCuccos(RoosterArea.Sunken, 1, 0, 1),
 		Any(
 			SunkenCityWinter,
-			All(
-				Winter,
-				Any(
-					Flippers,
-					Dimitri,
-					Bombs -- save Dimitri
-				)
-			)
-		)
+			Winter
+		),
+		CanPlantGasha
 	)
 end)
 RoosterAdventure:connect_one_way_entrance(Syrup, function()
 	return All(
-		GetCuccos()["sunken"][3] > 0,
+		GetCuccos(RoosterArea.Sunken, 1, 0, 1),
 		Mushroom
 	)
 end)
 
-RoosterAdventure:connect_one_way_entrance(LowerEasternSuburbs, function() return GetCuccos()["suburbs"][1] >= 0 end)
+RoosterAdventure:connect_one_way_entrance(LowerEasternSuburbs, function() return GetCuccos(RoosterArea.Suburbs, 0, 0, 0) end)
 RoosterAdventure:connect_one_way_entrance(SuburbsSpringCave, function()
 	return All(
-		GetCuccos()["suburbs"][3] > 0,
+		GetCuccos(RoosterArea.Suburbs, 1, 0, 1),
 		Any(
 			EasternSuburbsSpring,
 			Spring
@@ -67,36 +60,47 @@ RoosterAdventure:connect_one_way_entrance(SuburbsSpringCave, function()
 		)
 	)
 end)
-RoosterAdventure:connect_one_way_entrance(WindmillHP, function() return GetCuccos()["suburbs"][2] > 0 end)
+RoosterAdventure:connect_one_way_entrance(WindmillHP, function() return GetCuccos(RoosterArea.Suburbs, 1, 1, 0) end)
 RoosterAdventure:connect_one_way_entrance(SamasaDesertChest, function()
 	return All(
-		GetCuccos()["suburbs"][2] > 0,
+		GetCuccos(RoosterArea.Suburbs, 1, 1, 0),
 		CanReach(Pirates)
 	)
 end, {Pirates})
-RoosterAdventure:connect_one_way_entrance(MoblinRoad, function() return GetCuccos()["moblin road"][1] > 0 end)
-RoosterAdventure:connect_one_way_entrance(Holly, function() return GetCuccos()["moblin road"][2] > 0 end)
-RoosterAdventure:connect_one_way_entrance(HoronTreeHP, function() return GetCuccos()["horon"][2] > 0 end)
+RoosterAdventure:connect_one_way_entrance(MoblinRoad, function() return GetCuccos(RoosterArea.MoblinRoad, 0, 0, 0) end)
+RoosterAdventure:connect_one_way_entrance(Holly, function() return GetCuccos(RoosterArea.MoblinRoad, 1, 1, 0) end)
+RoosterAdventure:connect_one_way_entrance(HoronTreeHP, function() return GetCuccos(RoosterArea.Horon, 1, 1, 0) end)
 RoosterAdventure:connect_one_way_entrance(GraveyardHP, function()
 	return All(
-		GetCuccos()["horon"][2] > 0,
+		GetCuccos(RoosterArea.Horon, 1, 1, 0),
 		CanReach(Pirates),
 		PolishedBell,
 		WesternCoastSummer
 	)
 end, {Pirates})
-RoosterAdventure:connect_one_way_entrance(NorthSpoolSwamp, function() return GetCuccos()["swamp"][1] >= 0 end)
+RoosterAdventure:connect_one_way_entrance(NorthSpoolSwamp, function() return GetCuccos(RoosterArea.Swamp, 0, 0, 0) end)
+RoosterAdventure:connect_one_way_entrance(TarmLostWoodsScrub, function()
+	return All(
+		GetCuccos(RoosterArea.Swamp, 1, 1, 0),
+		CanEnterTarm(),
+		Any(
+			CanReach(TarmTreeStump),
+			LostWoodsSummer,
+			Summer
+		)
+	)
+end, {TarmTreeStump})
 RoosterAdventure:connect_one_way_entrance(SpoolWinterCave, function()
 	return Any(
 		All(
-			GetCuccos()["horon"][1] > 0,
+			GetCuccos(RoosterArea.Horon, 0, 0, 0),
 			Any(
 				Flippers,
 				Dimitri
 			)
 		),
 		All(
-			GetCuccos()["swamp"][1] > 0,
+			GetCuccos(RoosterArea.Swamp, 0, 0, 0),
 			FloodgateKey,
 			Any(
 				SpoolSwampSummer,
@@ -109,20 +113,9 @@ RoosterAdventure:connect_one_way_entrance(SpoolWinterCave, function()
 		)
 	)
 end)
-RoosterAdventure:connect_one_way_entrance(TarmLostWoodsScrub, function()
-	return All(
-		GetCuccos()["swamp"][2] > 0,
-		CanEnterTarm(),
-		Any(
-			CanReach(TarmTreeStump),
-			LostWoodsSummer,
-			Summer
-		)
-	)
-end, {TarmTreeStump})
 RoosterAdventure:connect_one_way_entrance(TempleRemainsStump, function()
 	return All(
-		GetCuccos()["mt. cucco"][1] > 0,
+		GetCuccos(RoosterArea.MtCucco, 0, 0, 0),
 		Jump3,
 		Any(
 			TempleRemainsSummer,
@@ -147,7 +140,7 @@ end)
 RoosterAdventure:connect_one_way_entrance(TempleRemainsUpperPortal, function()
 	return All(
 		EventFireworks,
-		GetCuccos()["mt. cucco"][2] > 0,
+		GetCuccos(RoosterArea.MtCucco, 1, 1, 0),
 		Jump3,
 		Any(
 			MagnetGlove,

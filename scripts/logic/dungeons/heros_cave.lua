@@ -21,7 +21,7 @@ LinkedCaveLedge:connect_one_way_entrance(LinkedCaveFoyer)
 LinkedCaveFoyer:connect_one_way(LinkedCaveLedge, function() return Has(LCAltRemoved) end)
 LinkedCaveFoyer:connect_one_way_entrance(LinkedCaveF1Chest, function() return Has(Bracelet) end)
 LinkedCaveF1Chest:connect_one_way_entrance(LinkedCaveF2Keydrop, Jump2)
-LinkedCaveF2Keydrop:connect_one_way_entrance(LinkedCaveF2Chest, function() return LCKeyCount(1) end)
+LinkedCaveF2Keydrop:connect_one_way_entrance(LinkedCaveF2Chest, function() return HasKeys(LCSmallKey, LCMasterKey, 1) end)
 LinkedCaveF2Chest:connect_one_way(LinkedCaveF3TorchKeyDrop, function()
 	return All(
 		Any(
@@ -40,7 +40,7 @@ LinkedCaveF2Chest:connect_one_way(LinkedCaveF3TorchKeyDrop, function()
 end)
 LinkedCaveF2Chest:connect_one_way_entrance(LinkedCaveF3FloodedRoom, function()
 	return All(
-		LCKeyCount(2),
+		HasKeys(LCSmallKey, LCMasterKey, 2),
 		Flippers,
 		CanShootSeeds,
 		CanLightTorches
@@ -54,7 +54,7 @@ LinkedCaveF3FloodedRoom:connect_one_way(LinkedCaveF3FloodedKeydrop, function()
 end)
 LinkedCaveF3FloodedRoom:connect_one_way_entrance(LinkedCaveF3Chest, function()
 	return All(
-		LCKeyCount(3),
+		HasKeys(LCSmallKey, LCMasterKey, 3),
 		CanBombWall
 	)
 end)
@@ -108,7 +108,7 @@ LinkedCaveF4Chest:connect_one_way(LinkedCaveF5Gauntlet, function()
 end)
 LinkedCaveF4Chest:connect_one_way(LinkedCaveF5BoomerangMaze, function()
 	return All(
-		LCKeyCount(4),
+		HasKeys(LCSmallKey, LCMasterKey, 4),
 		Any(
 			MagicBoomerang,
 			HasBombchusToFight,
@@ -122,7 +122,7 @@ LinkedCaveF4Chest:connect_one_way(LinkedCaveF5BoomerangMaze, function()
 end)
 LinkedCaveF4Chest:connect_one_way(LinkedCaveFinalChest, function()
 	return All(
-		LCKeyCount(5),
+		HasKeys(LCSmallKey, LCMasterKey, 5),
 		Jump3,
 		Any(
 			CanCompleteLinkedPuzzle,

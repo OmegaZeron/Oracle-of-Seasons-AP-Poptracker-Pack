@@ -47,7 +47,7 @@ end)
 -- 1 key
 MazeHardhats:connect_one_way_entrance(MazeBigBladeTrap, function()
 	return All(
-		D8KeyCount(1),
+		HasKeys(D8SmallKey, D8MasterKey, 1),
 		HasHeartsByDifficulty(6, 5, 3),
 		Any(
 			Cape,
@@ -61,7 +61,7 @@ MazeHardhats:connect_one_way_entrance(MazeBigBladeTrap, function()
 	)
 end)
 -- 2 keys
-MazeBigBladeTrap:connect_one_way_entrance(MazeSpinner, function() return D8KeyCount(2) end)
+MazeBigBladeTrap:connect_one_way_entrance(MazeSpinner, function() return HasKeys(D8SmallKey, D8MasterKey, 2) end)
 MazeSpinner:connect_one_way_entrance(MazeArmosChest, function()
 	return Any(
 		MagnetGlove,
@@ -116,7 +116,7 @@ MazeThreeEyeOwl:connect_one_way(MazeThreeEyeBombChest, function()
 	)
 end)
 -- 3 keys
-MazeThreeEyeOwl:connect_one_way_entrance(MazeFrypolarRoom, function() return D8KeyCount(3) end)
+MazeThreeEyeOwl:connect_one_way_entrance(MazeFrypolarRoom, function() return HasKeys(D8SmallKey, D8MasterKey, 3) end)
 MazeFrypolarRoom:connect_one_way(MazeWildMysteries, function()
 	return All(
 		CanHarvestRegrowingBush,
@@ -170,7 +170,7 @@ MazeIcePuzzle:connect_one_way(MazeSparkPots, function()
 	)
 end)
 -- 4 keys
-MazeIcePuzzle:connect_one_way_entrance(MazeNevermeltIce, function() return D8KeyCount(4) end)
+MazeIcePuzzle:connect_one_way_entrance(MazeNevermeltIce, function() return HasKeys(D8SmallKey, D8MasterKey, 4) end)
 MazeNevermeltIce:connect_one_way(MazeGhostArmos, CanBombWall)
 MazeNevermeltIce:connect_one_way(MazeSELavaChest, function() return Has(Bracelet) end)
 MazeNevermeltIce:connect_one_way(MazeSparkPots, function()
@@ -182,12 +182,12 @@ end)
 -- 6 keys
 MazeNevermeltIce:connect_one_way_entrance(MazeNWIceDrop, function()
 	return All(
-		D8KeyCount(6),
+		HasKeys(D8SmallKey, D8MasterKey, 6),
 		Bracelet
 	)
 end)
 -- 7 keys
-MazeNWIceDrop:connect_one_way_entrance(MazeMedusaDoorstep, function() return D8KeyCount(7) end)
+MazeNWIceDrop:connect_one_way_entrance(MazeMedusaDoorstep, function() return HasKeys(D8SmallKey, D8MasterKey, 7) end)
 MazeMedusaDoorstep:connect_one_way_entrance(MedusaHead, function()
 	return All(
 		HasD8BossKey,

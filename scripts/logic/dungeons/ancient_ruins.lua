@@ -66,7 +66,7 @@ AncientIndyJones:connect_one_way_entrance(AncientVireDoorstep, CanKillStalfos)
 -- 2 keys
 AncientFoyer:connect_one_way_entrance(AncientRopeSpinnerWest, function()
 	return All(
-		D6KeyCount(2, 1),
+		HasKeys(D6SmallKey, D6MasterKey, 2, 1),
 		Any(
 			MagnetGlove,
 			CaneOfSomaria
@@ -74,7 +74,7 @@ AncientFoyer:connect_one_way_entrance(AncientRopeSpinnerWest, function()
 	)
 end)
 -- 3 keys
-AncientFoyer:connect_one_way_entrance(AncientBeamosPlatforms, function() return D6KeyCount(3, 1) end)
+AncientFoyer:connect_one_way_entrance(AncientBeamosPlatforms, function() return HasKeys(D6SmallKey, D6MasterKey, 3, 1) end)
 AncientBeamosPlatforms:connect_one_way_entrance(Ancient2FGibdo)
 Ancient2FGibdo:connect_one_way_entrance(AncientTrappedChest, CanBombWall)
 AncientTrappedChest:connect_one_way_entrance(AncientArmosDarknutDrop, function() return Has(Feather) end)
@@ -93,9 +93,9 @@ AncientFoyer:connect_one_way(AncientNorthOfSpinnerChest, function()
 			MediumLogic -- i-frame through the spikes
 		),
 		Any(
-			D6KeyCount(3),
+			HasKeys(D6SmallKey, D6MasterKey, 3),
 			All(
-				D6KeyCount(2),
+				HasKeys(D6SmallKey, D6MasterKey, 2),
 				Any(
 					All(
 						-- beamos room
@@ -120,7 +120,7 @@ AncientFoyer:connect_one_way(AncientNorthOfSpinnerChest, function()
 				)
 			),
 			All(
-				D6KeyCount(1),
+				HasKeys(D6SmallKey, D6MasterKey, 1),
 				-- beamos room
 				CanBombWall,
 				Feather,
@@ -144,7 +144,7 @@ AncientFoyer:connect_one_way(AncientNorthOfSpinnerChest, function()
 end)
 AncientVireDoorstep:connect_one_way_entrance(Vire, function()
 	return All(
-		D6KeyCount(3, 1),
+		HasKeys(D6SmallKey, D6MasterKey, 3, 1),
 		HasHeartsByDifficulty(4, 3),
 		Any(
 			CanSwordKill,

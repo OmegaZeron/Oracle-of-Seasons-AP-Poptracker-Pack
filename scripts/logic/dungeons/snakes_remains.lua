@@ -44,7 +44,7 @@ SnakeBombBlockStairs:connect_one_way_entrance(FacadeDoorstep, function() return 
 -- 2 keys
 FacadeDoorstep:connect_one_way_entrance(Facade, function()
 	return All(
-		D2KeyCount(2, 1),
+		HasKeys(D2SmallKey, D2MasterKey, 2, 1),
 		Any(
 			HasBombsToFight,
 			HasBombchusToFight
@@ -56,7 +56,7 @@ Facade:connect_one_way_entrance(SnakeWildBombsPolsVoice, function()
 	return All(
 		Any(
 			CanBombWall,
-			D2KeyCount(3, 2)
+			HasKeys(D2SmallKey, D2MasterKey, 3, 2)
 		),
 		Any(
 			Bombs,
@@ -73,7 +73,7 @@ Facade:connect_one_way_entrance(KingDodongo, function()
 end)
 
 -- 3 keys
-SnakeMoblinRopeFight:connect_one_way_entrance(SnakeHardhats, function() return D2KeyCount(3, 1) end)
+SnakeMoblinRopeFight:connect_one_way_entrance(SnakeHardhats, function() return HasKeys(D2SmallKey, D2MasterKey, 3, 1) end)
 SnakeHardhats:connect_one_way(SnakeHardhatChest, CanDestroyPot)
 SnakeHardhats:connect_one_way_entrance(SnakeBombMoblins, function()
 	return Any(
@@ -137,4 +137,4 @@ SnakeBombMoblins:connect_one_way(SnakeBombMoblinChest, function()
 		)
 	)
 end)
-Facade:connect_one_way(SnakeTerrace, function() return D2KeyCount(3, 2) end)
+Facade:connect_one_way(SnakeTerrace, function() return HasKeys(D2SmallKey, D2MasterKey, 3, 2) end)

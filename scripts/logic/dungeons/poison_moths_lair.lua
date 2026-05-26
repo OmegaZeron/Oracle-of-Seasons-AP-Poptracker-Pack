@@ -52,13 +52,13 @@ PoisonPols:connect_one_way(PoisonBombWallChest, CanBombWall)
 -- 2 keys
 PoisonWaterRoom:connect_one_way_entrance(PoisonMimicChest, function()
 	return All(
-		D3KeyCount(2, 1),
+		HasKeys(D3SmallKey, D3MasterKey, 2, 1),
 		CanNormalKill
 	)
 end)
 PoisonOmuaiDoorstep:connect_one_way_entrance(Omuai, function()
 	return All(
-		D3KeyCount(2, 1),
+		HasKeys(D3SmallKey, D3MasterKey, 2, 1),
 		Bracelet,
 		CanArmorKill
 	)

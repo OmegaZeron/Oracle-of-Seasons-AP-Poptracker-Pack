@@ -119,14 +119,14 @@ function Region:discover(accessibility)
 
 	for _, recheck in ipairs(self.exitsToRecheck) do
 		for _, exitData in pairs(recheck.exits) do
-			if (exitData.exit:accessibility() < accessibility) then
+			if exitData.exit:accessibility() < accessibility then
 				local location, access = CheckAccess(recheck, exitData)
 				location:discover(access)
 			end
 		end
 	end
 	for _, exitData in pairs(self.exits) do
-		if (exitData.exit:accessibility() < accessibility) then
+		if exitData.exit:accessibility() < accessibility then
 			local location, access = CheckAccess(self, exitData)
 			location:discover(access)
 		end
@@ -139,7 +139,7 @@ end
 function CheckAccess(loc, exitData)
 	local region = exitData.exit
 	local access = exitData.rule()
-	if (access == nil) then
+	if access == nil then
 		print("Error in rule for", region.name)
 		access = AccessibilityLevel.None
 	end
@@ -148,7 +148,7 @@ function CheckAccess(loc, exitData)
 	end
 
 	-- prevents certain regions from looping back around to turn sequence break locs into normal access
-	if (loc.accessibilityLevel < access) then
+	if loc.accessibilityLevel < access then
 		access = loc.accessibilityLevel
 	end
 	return region, access

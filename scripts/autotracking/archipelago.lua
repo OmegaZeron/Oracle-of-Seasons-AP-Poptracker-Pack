@@ -114,13 +114,13 @@ function OnClear(slot_data)
 	end
 	for _, dsLoc in pairs(DataStorageLocationTable) do
 		local obj = Tracker:FindObjectForCode(dsLoc)
-		if (obj) then
+		if obj then
 			obj.AvailableChestCount = obj.ChestCount
 		end
 	end
 	for _, dsItem in pairs(DataStorageItemTable) do
 		local obj = Tracker:FindObjectForCode(dsItem)
-		if (obj) then
+		if obj then
 			obj.Active = false
 		end
 	end
@@ -181,14 +181,14 @@ function OnClear(slot_data)
 	end
 
 	for opt, val in pairs(slot_data["options"]) do
-		if (Tracker:ProviderCountForCode(opt) > 0) then
+		if Tracker:ProviderCountForCode(opt) > 0 then
 			Tracker:FindObjectForCode(opt).CurrentStage = val
 		end
 	end
 
 	Tracker:FindObjectForCode("horon_village_season_shuffle").CurrentStage = slot_data["default_seasons"]["HORON_VILLAGE"] == 255 and 0 or 1
 	for region_name, season_id in pairs(slot_data["default_seasons"]) do
-		if (region_name ~= "HORON_VILLAGE" or Tracker:FindObjectForCode("horon_village_season_shuffle").CurrentStage == 1) then
+		if region_name ~= "HORON_VILLAGE" or Tracker:FindObjectForCode("horon_village_season_shuffle").CurrentStage == 1 then
 			Tracker:FindObjectForCode(RegionToSeasonMapping[region_name]).CurrentStage = season_id
 		end
 	end
@@ -210,19 +210,19 @@ function OnClear(slot_data)
 	Tracker:FindObjectForCode("remove_lc_alt_entrance").CurrentStage = LinkedCaveMapping[slot_data["options"]["linked_heros_cave"] & LinkedEnum.NoAltEnt]
 
 	-- shop prices
-	if (slot_data["shop_rupee_requirements"]) then
+	if slot_data["shop_rupee_requirements"] then
 		for shop, price in pairs(slot_data["shop_rupee_requirements"]) do
-			ShopPrices[shop] = math.floor(price / 2)
+			ShopPrices[shop] = price // 2
 		end
 	end
-	if (slot_data["shop_costs"]) then
+	if slot_data["shop_costs"] then
 		for k, v in pairs(slot_data["shop_costs"]) do
-			if (k:find("^subrosia")) then
+			if k:find("^subrosia") then
 				ShopPrices[SubrosianMarketPrice] = ShopPrices[SubrosianMarketPrice] + v
 			end
 		end
 	end
-	if (slot_data["old_man_rupee_values"]) then
+	if slot_data["old_man_rupee_values"] then
 		for man, value in pairs(slot_data["old_man_rupee_values"]) do
 			OldMenValues[man][1] = value
 		end
@@ -252,7 +252,7 @@ function OnClear(slot_data)
 		end
 	end
 	-- if starting maps/compasses, auto collect
-	if (slot_data["options"]["starting_maps_compasses"] == 1) then
+	if slot_data["options"]["starting_maps_compasses"] == 1 then
 		for i = 0, 9 do
 			if i == 9 then
 				i = 11
@@ -260,7 +260,7 @@ function OnClear(slot_data)
 			Tracker:FindObjectForCode("d"..i.."_map").Active = true
 			Tracker:FindObjectForCode("d"..i.."_compass").Active = true
 			RevealDungeon(i)
-			if (slot_data["options"]["show_dungeons_with_essence"] == 1) then
+			if slot_data["options"]["show_dungeons_with_essence"] == 1 then
 				RevealEssence(i, true)
 			end
 		end
@@ -271,7 +271,7 @@ function OnClear(slot_data)
 	CurrentTab = nil
 	-- TODO get this from slot_data once it's a setting
 	local startLocation = StartImpa
-	if (Tracker:FindObjectForCode("autotab").CurrentStage == 1 and startLocation) then
+	if Tracker:FindObjectForCode("autotab").CurrentStage == 1 and startLocation then
 		CurrentRoom = nil
 		OnBounce({["data"] = {["Current Room"] = StartLocationMapping[startLocation]}})
 	end
@@ -318,13 +318,13 @@ function OnItem(index, item_id, item_name, player_number)
 			item.Active = true
 		elseif itemData[2] == "progressive" then
 			local inc = 1
-			if (itemData[3]) then
+			if itemData[3] then
 				inc = itemData[3]
 			end
 			item.CurrentStage = item.CurrentStage + inc
 		elseif itemData[2] == "consumable" then
 			local mult = 1
-			if (itemData[3]) then
+			if itemData[3] then
 				mult = itemData[3]
 			end
 			item.AcquiredCount = item.AcquiredCount + (item.Increment * mult)
@@ -335,13 +335,13 @@ function OnItem(index, item_id, item_name, player_number)
 		elseif AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
 			print(string.format("onItem: unknown item type %s for code %s", itemData[2], itemData[1]))
 		end
-		if (AutoCollectLocationTable["AP"][itemData[1]]) then
+		if AutoCollectLocationTable["AP"][itemData[1]] then
 			for _, autoCollectData in ipairs(AutoCollectLocationTable["AP"][itemData[1]]) do
-				if (type(autoCollectData) == "function") then
+				if type(autoCollectData) == "function" then
 					autoCollectData()
 				else
 					local toCollect = Tracker:FindObjectForCode(autoCollectData)
-					if (toCollect) then
+					if toCollect then
 						if autoCollectData:sub(1, 1) == "@" then
 							---@cast toCollect LocationSection
 							toCollect.AvailableChestCount = toCollect.AvailableChestCount - 1
@@ -423,21 +423,21 @@ function OnNotify(key, value, old_value)
 		end
 	elseif key == DataStorageID then
 		for k, v in pairs(value) do
-			if (DataStorageLocationTable[k]) then
+			if DataStorageLocationTable[k] then
 				Tracker:FindObjectForCode(DataStorageLocationTable[k]).AvailableChestCount = v and 0 or 1
-			elseif (DataStorageItemTable[k]) then
+			elseif DataStorageItemTable[k] then
 				Tracker:FindObjectForCode(DataStorageItemTable[k]).Active = v or false
-			elseif (k == "Learned Pedestal Sequence" and v) then
+			elseif k == "Learned Pedestal Sequence" and v then
 				for i, pair in ipairs(SLOT_DATA["lost_woods_item_sequence"]) do
-					if (i < 4) then
+					if i < 4 then
 						Tracker:FindObjectForCode("pedestal_d_"..i).CurrentStage = 3 - pair[1]
 					end
 					Tracker:FindObjectForCode("pedestal_"..i).CurrentStage = pair[2]
 				end
 				Tracker:FindObjectForCode("@Lost Woods/Pedestal Sequence/Serenade the Scrub").AvailableChestCount = 0
-			elseif (k == "Learned Lost Woods Sequence" and v) then
+			elseif k == "Learned Lost Woods Sequence" and v then
 				for i, pair in ipairs(SLOT_DATA["lost_woods_main_sequence"]) do
-					if (i < 4) then
+					if i < 4 then
 						Tracker:FindObjectForCode("lost_woods_d_"..i).CurrentStage = 3 - pair[1]
 					end
 					Tracker:FindObjectForCode("lost_woods_"..i).CurrentStage = pair[2]
@@ -445,9 +445,7 @@ function OnNotify(key, value, old_value)
 				Tracker:FindObjectForCode("@Lost Woods/Lost Woods Sequence/Shield the Scrub").AvailableChestCount = 0
 			end
 		end
-		if PopVersion < "0.34.0" then
-			Tracker:FindObjectForCode(UpdateItem).Active = not Tracker:FindObjectForCode(UpdateItem).Active
-		end
+		Tracker:FindObjectForCode(UpdateItem).Active = not Tracker:FindObjectForCode(UpdateItem).Active
 	elseif key == ClientStatusID then
 		if value == Archipelago.ClientStatus.GOAL then
 			Tracker:FindObjectForCode("onox").Active = true
@@ -498,7 +496,7 @@ function OnBounce(json)
 			return
 		end
 
-		if (CurrentLocationMapping[CurrentRoom]) then
+		if CurrentLocationMapping[CurrentRoom] then
 			for _, roomMap in ipairs(CurrentLocationMapping[CurrentRoom]) do
 				if roomMap.type == CurLocType.Autotab and Tracker:FindObjectForCode("autotab").CurrentStage == 1 then
 					if CurrentTab ~= roomMap.tab[#roomMap.tab] then
@@ -646,7 +644,7 @@ end
 
 ---@param dungeon number
 function RevealDungeon(dungeon)
-	if (SLOT_DATA["options"]["show_dungeons_with_map"] == 1) then
+	if SLOT_DATA["options"]["show_dungeons_with_map"] == 1 then
 		local hiddenStage = Tracker:FindObjectForCode("d"..dungeon.."_ent_selector_hidden").CurrentStage
 		Tracker:FindObjectForCode("d"..dungeon.."_ent_selector").CurrentStage = hiddenStage
 		-- clear the "enter dungeon" location

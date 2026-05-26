@@ -24,7 +24,7 @@ DancingAntiFairyMaze:connect_one_way(DancingDarkRoomChest, function() return Has
 -- 1 key
 DancingFoyer:connect_one_way_entrance(DancingSpikeTrap, function()
 	return All(
-		D4KeyCount(1),
+		HasKeys(D4SmallKey, D4MasterKey, 1),
 		Any(
 			Cape,
 			All(
@@ -94,7 +94,7 @@ end)
 -- 2 keys
 DancingPostWaterRollers:connect_one_way_entrance(DancingMinecartTorches, function()
 	return All(
-		D4KeyCount(2),
+		HasKeys(D4SmallKey, D4MasterKey, 2),
 		Any(
 			CanKillStalfos,
 			All(
@@ -132,10 +132,10 @@ Agunima:connect_one_way_entrance(DancingBranchingMinecart, function()
 	)
 end)
 -- 5 keys
-DancingBranchingMinecart:connect_one_way(DancingPitRace, function() return D4KeyCount(5, 3) end)
+DancingBranchingMinecart:connect_one_way(DancingPitRace, function() return HasKeys(D4SmallKey, D4MasterKey, 5, 3) end)
 DancingBranchingMinecart:connect_one_way(DancingEyeDive, function()
 	return All(
-		D4KeyCount(5, 3),
+		HasKeys(D4SmallKey, D4MasterKey, 5, 3),
 		Any(
 			CanShootSeeds,
 			MagicBoomerang
@@ -146,7 +146,7 @@ DancingBranchingMinecart:connect_one_way(DancingEyeDive, function()
 end)
 DancingBranchingMinecart:connect_one_way_entrance(DancingTorchPit, function()
 	return All(
-		D4KeyCount(5, 3),
+		HasKeys(D4SmallKey, D4MasterKey, 5, 3),
 		Any(
 			Boomerang,
 			CanShootSeeds,

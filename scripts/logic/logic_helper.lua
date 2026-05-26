@@ -141,7 +141,7 @@ function HasHearts(hearts, difficulty)
 	return Any(
 		All(
 			Tracker:FindObjectForCode("logic_difficulty").CurrentStage >= difficulty,
-			Has(HeartContainer, hearts - 3)
+			Has(HeartContainer, hearts - 3) -- -0 instead to compensate the min 3?
 		),
 		hearts <= 3,
 		hearts > 10,
@@ -1411,22 +1411,18 @@ function GetCuccos(area, anyAmt, topAmt, botAmt)
 	return access
 end
 
----@param needed integer
-function LCKeyCount(needed)
-	local currentKeys = Tracker:ProviderCountForCode(LCSmallKey)
+---@param key string String for the small key
+---@param master string String for the master key
+---@param needed integer How many keys are logically required
+---@param ool? integer How many keys can be used minimally
+function HasKeys(key, master, needed, ool)
+	local currentKeys = Tracker:ProviderCountForCode(key)
 	return Any(
-		currentKeys >= needed,
-		LCMasterKey
-	)
-end
-
----@param needed integer
----@param ool? integer
-function D1KeyCount(needed, ool)
-	local currentKeys = Tracker:ProviderCountForCode(D1SmallKey)
-	return Any(
-		currentKeys >= needed,
-		D1MasterKey,
+		All(MasterKeysOff, currentKeys >= needed),
+		All(
+			Any(MasterKeysSmall, MasterKeysBoth),
+			master
+		),
 		All(
 			ool ~= nil and currentKeys >= ool,
 			AccessibilityLevel.SequenceBreak
@@ -1442,40 +1438,12 @@ function HasD1BossKey()
 		)
 	)
 end
-
----@param needed integer
----@param ool? integer
-function D2KeyCount(needed, ool)
-	local currentKeys = Tracker:ProviderCountForCode(D2SmallKey)
-	return Any(
-		currentKeys >= needed,
-		D2MasterKey,
-		All(
-			ool ~= nil and currentKeys >= ool,
-			AccessibilityLevel.SequenceBreak
-		)
-	)
-end
 function HasD2BossKey()
 	return Any(
 		D2BossKey,
 		All(
 			MasterKeysBoth,
 			D2MasterKey
-		)
-	)
-end
-
----@param needed integer
----@param ool? integer
-function D3KeyCount(needed, ool)
-	local currentKeys = Tracker:ProviderCountForCode(D3SmallKey)
-	return Any(
-		currentKeys >= needed,
-		D3MasterKey,
-		All(
-			ool ~= nil and currentKeys >= ool,
-			AccessibilityLevel.SequenceBreak
 		)
 	)
 end
@@ -1488,40 +1456,12 @@ function HasD3BossKey()
 		)
 	)
 end
-
----@param needed integer
----@param ool? integer
-function D4KeyCount(needed, ool)
-	local currentKeys = Tracker:ProviderCountForCode(D4SmallKey)
-	return Any(
-		currentKeys >= needed,
-		D4MasterKey,
-		All(
-			ool ~= nil and currentKeys >= ool,
-			AccessibilityLevel.SequenceBreak
-		)
-	)
-end
 function HasD4BossKey()
 	return Any(
 		D4BossKey,
 		All(
 			MasterKeysBoth,
 			D4MasterKey
-		)
-	)
-end
-
----@param needed integer
----@param ool? integer
-function D5KeyCount(needed, ool)
-	local currentKeys = Tracker:ProviderCountForCode(D5SmallKey)
-	return Any(
-		currentKeys >= needed,
-		D5MasterKey,
-		All(
-			ool ~= nil and currentKeys >= ool,
-			AccessibilityLevel.SequenceBreak
 		)
 	)
 end
@@ -1534,20 +1474,6 @@ function HasD5BossKey()
 		)
 	)
 end
-
----@param needed integer
----@param ool? integer
-function D6KeyCount(needed, ool)
-	local currentKeys = Tracker:ProviderCountForCode(D6SmallKey)
-	return Any(
-		currentKeys >= needed,
-		D6MasterKey,
-		All(
-			ool ~= nil and currentKeys >= ool,
-			AccessibilityLevel.SequenceBreak
-		)
-	)
-end
 function HasD6BossKey()
 	return Any(
 		D6BossKey,
@@ -1557,40 +1483,12 @@ function HasD6BossKey()
 		)
 	)
 end
-
----@param needed integer
----@param ool? integer
-function D7KeyCount(needed, ool)
-	local currentKeys = Tracker:ProviderCountForCode(D7SmallKey)
-	return Any(
-		currentKeys >= needed,
-		D7MasterKey,
-		All(
-			ool ~= nil and currentKeys >= ool,
-			AccessibilityLevel.SequenceBreak
-		)
-	)
-end
 function HasD7BossKey()
 	return Any(
 		D7BossKey,
 		All(
 			MasterKeysBoth,
 			D7MasterKey
-		)
-	)
-end
-
----@param needed integer
----@param ool? integer
-function D8KeyCount(needed, ool)
-	local currentKeys = Tracker:ProviderCountForCode(D8SmallKey)
-	return Any(
-		currentKeys >= needed,
-		D8MasterKey,
-		All(
-			ool ~= nil and currentKeys >= ool,
-			AccessibilityLevel.SequenceBreak
 		)
 	)
 end
@@ -1665,14 +1563,14 @@ function VanillaPortals()
 	if not LOADED then
 		return
 	end
-	local hol_portals = {"suburbs","swamp","lake","mtcucco","horon","remains","upremains"}
-	local sub_portals = {"mountain","market","furnace","village","pirates","volcano","d8"}
+	local hol_portals = {"suburbs", "swamp", "lake", "mtcucco", "horon", "remains", "upremains"}
+	local sub_portals = {"mountain", "market", "furnace", "village", "pirates", "volcano", "d8"}
 	if Tracker:FindObjectForCode("shuffle_portals").CurrentStage == 0 then
 		for index, portal in pairs(hol_portals) do
 			Tracker:FindObjectForCode(portal.."_portal_selector").CurrentStage = index
 		end
 		for index, portal in pairs(sub_portals) do
-			Tracker:FindObjectForCode(portal.."_portal_selector").CurrentStage = index+6
+			Tracker:FindObjectForCode(portal.."_portal_selector").CurrentStage = index + 6
 		end
 	else
 		for _, portal in pairs(hol_portals) do
@@ -1700,14 +1598,14 @@ local function DisplayLostWoods()
 		return
 	end
 	if Has(LostWoodsVanilla) then
-		for i=1, 4 do
+		for i = 1, 4 do
 			Tracker:FindObjectForCode("lost_woods_"..i).CurrentStage = LostWoodsDefault[i]
 			if i < 4 then
 				Tracker:FindObjectForCode("lost_woods_d_"..i).CurrentStage = i - 1
 			end
 		end
 	else
-		for i=1, 4 do
+		for i = 1, 4 do
 			Tracker:FindObjectForCode("lost_woods_"..i).CurrentStage = 4
 			if i < 4 then
 				Tracker:FindObjectForCode("lost_woods_d_"..i).CurrentStage = 4
@@ -1720,14 +1618,14 @@ local function DisplayPedestal()
 		return
 	end
 	if Has(PedestalVanilla) then
-		for i=1, 4 do
+		for i = 1, 4 do
 			Tracker:FindObjectForCode("pedestal_"..i).CurrentStage = LostWoodsDefault[i]
 			if i < 4 then
 				Tracker:FindObjectForCode("pedestal_d_"..i).CurrentStage = 0
 			end
 		end
 	else
-		for i=1, 4 do
+		for i = 1, 4 do
 			Tracker:FindObjectForCode("pedestal_"..i).CurrentStage = 4
 			if i < 4 then
 				Tracker:FindObjectForCode("pedestal_d_"..i).CurrentStage = 4

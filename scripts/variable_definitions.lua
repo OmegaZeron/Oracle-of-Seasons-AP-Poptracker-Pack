@@ -27,15 +27,19 @@ CurLocType = {
 	Natzu = "Natzu",
 	Custom = "Custom"
 }
----@enum linkedCave
+---@enum linkedEnum
 LinkedEnum = {
-	Disabled = 0x00, -- 0b0000
-	Samasa = 0x01, -- 0b0001
-	NoAltEnt = 0x02, -- 0b0010
-	HerosCave = 0x04, -- 0b0100
+	Disabled = 0, -- 0b0000
+	Samasa = 1, -- 0b0001
+	NoAltEnt = 2, -- 0b0010
+	HerosCave = 4, -- 0b0100
 }
 
 -- classes
+
+---@alias toggle
+---| 0 false
+---| 1 true
 
 ---@class CurrentLocationData
 ---@field type curLocType
@@ -47,6 +51,49 @@ LinkedEnum = {
 ---@field portal? string
 ---@field portalHidden? string
 ---@field func? function
+
+---@class SlotDataOptions
+---@field goal toggle
+---@field logic_difficulty integer 0-3
+---@field starting_maps_compasses toggle
+---@field required_essences integer 0-8
+---@field shuffle_old_men integer 0-4
+---@field tarm_gate_required_jewels integer 0-4
+---@field shuffle_portals integer 0-2
+---@field shuffle_business_scrubs toggle
+---@field shuffle_golden_ore_spots toggle
+---@field deterministic_gasha_locations integer 0-16
+---@field animal_companion integer 0-2
+---@field linked_heros_cave integer LinkedEnum bit flag
+---@field shuffle_dungeons toggle
+---@field show_dungeons_with_map toggle
+---@field default_seed integer 0-4
+---@field enforce_potion_in_shop toggle
+---@field treehouse_old_man_requirement integer 0-8
+---@field golden_beasts_requirement toggle
+---@field advance_shop toggle
+---@field secret_locations toggle
+---@field remove_d0_alt_entrance toggle
+---@field randomize_lost_woods_main_sequence toggle
+---@field randomize_lost_woods_item_sequence toggle
+---@field remove_d2_alt_entrance toggle
+---@field master_keys integer 0-2
+---@field show_dungeons_with_essence toggle
+---@field default_seasons integer 0-6
+
+---@class SlotData
+---@field options SlotDataOptions
+---@field essences_in_game table
+---@field default_seasons table
+---@field shop_costs table
+---@field lost_woods_main_sequence table
+---@field lost_woods_item_sequence table
+---@field shop_rupee_requirements table
+---@field item_hints table
+---@field version string
+---@field dungeon_entrances table
+---@field subrosia_portals table
+---@field old_man_rupee_values table
 
 -- functions
 

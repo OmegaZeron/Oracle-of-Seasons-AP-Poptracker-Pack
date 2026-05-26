@@ -46,6 +46,7 @@ function PreOnClear()
 	end
 end
 
+---@param slot_data SlotData
 function OnClear(slot_data)
 	if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
 		print(string.format("called OnClear, slot_data:\n%s", DumpTable(slot_data)))
@@ -54,7 +55,7 @@ function OnClear(slot_data)
 	SLOT_DATA = slot_data
 
 	Tracker:FindObjectForCode(VersionMismatch).Active = false
-	if not IGNORE_VERSION and slot_data["version"] and not slot_data["version"]:find("^"..WORLD_VERSION) then
+	if not IGNORE_VERSION and slot_data.version and not slot_data.version:find("^"..WORLD_VERSION) then
 		Tracker:FindObjectForCode(VersionMismatch).Active = true
 		return
 	end
@@ -157,10 +158,10 @@ function OnClear(slot_data)
 
 	AutoCollectLocationTable = {
 		["AP"] = {
-			[Satchel] = {"@Horon Village/Horon Tree/Horon Village: Seed Tree", SeedMapping[slot_data["options"]["default_seed"]]},
-			[Slingshot] = {"@Horon Village/Horon Tree/Horon Village: Seed Tree", SeedMapping[slot_data["options"]["default_seed"]]},
-			[SeedShooter] = {"@Horon Village/Horon Tree/Horon Village: Seed Tree", SeedMapping[slot_data["options"]["default_seed"]]},
-			[AnyFlute] = {function() Tracker:FindObjectForCode(Companion).CurrentStage = SLOT_DATA["options"]["animal_companion"] end}
+			[Satchel] = {"@Horon Village/Horon Tree/Horon Village: Seed Tree", SeedMapping[slot_data.options.default_seed]},
+			[Slingshot] = {"@Horon Village/Horon Tree/Horon Village: Seed Tree", SeedMapping[slot_data.options.default_seed]},
+			[SeedShooter] = {"@Horon Village/Horon Tree/Horon Village: Seed Tree", SeedMapping[slot_data.options.default_seed]},
+			[AnyFlute] = {function() Tracker:FindObjectForCode(Companion).CurrentStage = SLOT_DATA.options.animal_companion end}
 		},
 		["Any"] = DefaultAutoCollectLocationTable
 	}
@@ -180,56 +181,57 @@ function OnClear(slot_data)
 		end
 	end
 
-	for opt, val in pairs(slot_data["options"]) do
+	for opt, val in pairs(slot_data.options) do
 		if Tracker:ProviderCountForCode(opt) > 0 then
 			Tracker:FindObjectForCode(opt).CurrentStage = val
 		end
 	end
 
-	Tracker:FindObjectForCode("horon_village_season_shuffle").CurrentStage = slot_data["default_seasons"]["HORON_VILLAGE"] == 255 and 0 or 1
-	for region_name, season_id in pairs(slot_data["default_seasons"]) do
+	Tracker:FindObjectForCode("horon_village_season_shuffle").CurrentStage = slot_data.default_seasons.HORON_VILLAGE == 255 and 0 or 1
+	for region_name, season_id in pairs(slot_data.default_seasons) do
 		if region_name ~= "HORON_VILLAGE" or Tracker:FindObjectForCode("horon_village_season_shuffle").CurrentStage == 1 then
 			Tracker:FindObjectForCode(RegionToSeasonMapping[region_name]).CurrentStage = season_id
 		end
 	end
 
-	for region_name, portal_name in pairs(slot_data["subrosia_portals"]) do
+	for region_name, portal_name in pairs(slot_data.subrosia_portals) do
 		Tracker:FindObjectForCode(PortalMapping[region_name]).CurrentStage = PortalDictionary[region_name][portal_name]
 		Tracker:FindObjectForCode(PortalMapping[portal_name]).CurrentStage = PortalDictionary[portal_name][region_name]
 	end
 
-	for dungeon_entrance, dungeon_interior in pairs(slot_data["dungeon_entrances"]) do
+	for dungeon_entrance, dungeon_interior in pairs(slot_data.dungeon_entrances) do
 		Tracker:FindObjectForCode(DungeonMapping[dungeon_interior]).CurrentStage = DungeonDictionary[dungeon_entrance]
 	end
 	-- special case when linked cave is at hero's cave
-	if slot_data["options"]["linked_heros_cave"] & LinkedEnum.HerosCave == LinkedEnum.HerosCave then
+	if slot_data.options.linked_heros_cave & LinkedEnum.HerosCave == LinkedEnum.HerosCave then
 		Tracker:FindObjectForCode(LCEntranceSelectorHidden).CurrentStage = Tracker:FindObjectForCode(D0EntranceSelectorHidden).CurrentStage
 	end
 
-	Tracker:FindObjectForCode("linked_cave").CurrentStage = LinkedCaveMapping[slot_data["options"]["linked_heros_cave"] & (LinkedEnum.Samasa | LinkedEnum.HerosCave)] -- OR all locations together as they get added
-	Tracker:FindObjectForCode("remove_lc_alt_entrance").CurrentStage = LinkedCaveMapping[slot_data["options"]["linked_heros_cave"] & LinkedEnum.NoAltEnt]
+	local validLCLocs = 2 ^ (TableLen(LinkedEnum) - 1) - 1 ~ LinkedEnum.NoAltEnt --[[@as integer]]
+	Tracker:FindObjectForCode("linked_cave").CurrentStage = LinkedCaveMapping[slot_data.options.linked_heros_cave & validLCLocs]
+	Tracker:FindObjectForCode("remove_lc_alt_entrance").CurrentStage = LinkedCaveMapping[slot_data.options.linked_heros_cave & LinkedEnum.NoAltEnt]
 
 	-- shop prices
-	if slot_data["shop_rupee_requirements"] then
-		for shop, price in pairs(slot_data["shop_rupee_requirements"]) do
+	if slot_data.shop_rupee_requirements then
+		for shop, price in pairs(slot_data.shop_rupee_requirements) do
 			ShopPrices[shop] = price // 2
 		end
 	end
-	if slot_data["shop_costs"] then
-		for k, v in pairs(slot_data["shop_costs"]) do
+	if slot_data.shop_costs then
+		for k, v in pairs(slot_data.shop_costs) do
 			if k:find("^subrosia") then
 				ShopPrices[SubrosianMarketPrice] = ShopPrices[SubrosianMarketPrice] + v
 			end
 		end
 	end
-	if slot_data["old_man_rupee_values"] then
-		for man, value in pairs(slot_data["old_man_rupee_values"]) do
+	if slot_data.old_man_rupee_values then
+		for man, value in pairs(slot_data.old_man_rupee_values) do
 			OldMenValues[man][1] = value
 		end
 	end
 
-	if slot_data["essences_in_game"] then
-		for _, v in ipairs(slot_data["essences_in_game"]) do
+	if slot_data.essences_in_game then
+		for _, v in ipairs(slot_data.essences_in_game) do
 			EssencesInWorld[v] = true
 		end
 	end
@@ -246,13 +248,13 @@ function OnClear(slot_data)
 		end
 	end
 
-	if slot_data["options"]["show_dungeons_with_essence"] == 2 then
+	if slot_data.options.show_dungeons_with_essence == 2 then
 		for i = 1, 8 do
 			RevealEssence(i)
 		end
 	end
 	-- if starting maps/compasses, auto collect
-	if slot_data["options"]["starting_maps_compasses"] == 1 then
+	if slot_data.options.starting_maps_compasses == 1 then
 		for i = 0, 9 do
 			if i == 9 then
 				i = 11
@@ -260,7 +262,7 @@ function OnClear(slot_data)
 			Tracker:FindObjectForCode("d"..i.."_map").Active = true
 			Tracker:FindObjectForCode("d"..i.."_compass").Active = true
 			RevealDungeon(i)
-			if slot_data["options"]["show_dungeons_with_essence"] == 1 then
+			if slot_data.options.show_dungeons_with_essence == 1 then
 				RevealEssence(i, true)
 			end
 		end
@@ -414,11 +416,7 @@ function OnNotify(key, value, old_value)
 	if key == HintsID and Highlight then
 		for _, hint in ipairs(value) do
 			if hint.finding_player == Archipelago.PlayerNumber then
-				if not hint.found then
-					UpdateHints(hint.location, PriorityToHighlight[hint.status])
-				else
-					UpdateHints(hint.location, Highlight.None)
-				end
+				UpdateHints(hint.location, PriorityToHighlight[hint.status])
 			end
 		end
 	elseif key == DataStorageID then
@@ -428,7 +426,7 @@ function OnNotify(key, value, old_value)
 			elseif DataStorageItemTable[k] then
 				Tracker:FindObjectForCode(DataStorageItemTable[k]).Active = v or false
 			elseif k == "Learned Pedestal Sequence" and v then
-				for i, pair in ipairs(SLOT_DATA["lost_woods_item_sequence"]) do
+				for i, pair in ipairs(SLOT_DATA.lost_woods_item_sequence) do
 					if i < 4 then
 						Tracker:FindObjectForCode("pedestal_d_"..i).CurrentStage = 3 - pair[1]
 					end
@@ -436,7 +434,7 @@ function OnNotify(key, value, old_value)
 				end
 				Tracker:FindObjectForCode("@Lost Woods/Pedestal Sequence/Serenade the Scrub").AvailableChestCount = 0
 			elseif k == "Learned Lost Woods Sequence" and v then
-				for i, pair in ipairs(SLOT_DATA["lost_woods_main_sequence"]) do
+				for i, pair in ipairs(SLOT_DATA.lost_woods_main_sequence) do
 					if i < 4 then
 						Tracker:FindObjectForCode("lost_woods_d_"..i).CurrentStage = 3 - pair[1]
 					end
@@ -544,7 +542,7 @@ function OnBounce(json)
 				elseif roomMap.type == CurLocType.SeeSeason then
 					Tracker:FindObjectForCode(roomMap.season).CurrentStage = Tracker:FindObjectForCode(roomMap.seasonHidden).CurrentStage
 				elseif roomMap.type == CurLocType.Natzu then
-					Tracker:FindObjectForCode(Companion).CurrentStage = SLOT_DATA["options"]["animal_companion"]
+					Tracker:FindObjectForCode(Companion).CurrentStage = SLOT_DATA.options.animal_companion
 				elseif roomMap.type == CurLocType.Custom then
 					roomMap.func()
 				end
@@ -644,7 +642,7 @@ end
 
 ---@param dungeon number
 function RevealDungeon(dungeon)
-	if SLOT_DATA["options"]["show_dungeons_with_map"] == 1 then
+	if SLOT_DATA.options.show_dungeons_with_map == 1 then
 		local hiddenStage = Tracker:FindObjectForCode("d"..dungeon.."_ent_selector_hidden").CurrentStage
 		Tracker:FindObjectForCode("d"..dungeon.."_ent_selector").CurrentStage = hiddenStage
 		-- clear the "enter dungeon" location
@@ -656,7 +654,7 @@ end
 
 ---@param dungeon number
 function RevealEssence(dungeon, skipEntrance)
-	if SLOT_DATA["options"]["shuffle_essences"] ~= 0 or SLOT_DATA["options"]["show_dungeons_with_essence"] == 0 or not EssenceTable[dungeon] then
+	if SLOT_DATA.options.shuffle_essences ~= 0 or SLOT_DATA.options.show_dungeons_with_essence == 0 or not EssenceTable[dungeon] then
 		return
 	end
 	if EssencesInWorld[EssenceTable[dungeon][1]] then

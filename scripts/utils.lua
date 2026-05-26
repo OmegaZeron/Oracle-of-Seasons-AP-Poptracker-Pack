@@ -27,6 +27,16 @@ function TableContains(table, value)
 	return false
 end
 
+---@param table table
+---@return integer
+function TableLen(table)
+	local num = 0
+	for _, _ in pairs(table) do
+		num = num + 1
+	end
+	return num
+end
+
 function SplitStr(input, seperator)
 	if seperator == nil then
 		seperator = "%s"

@@ -29,7 +29,7 @@ RoosterAdventure:connect_one_way_entrance(MoblinKeep, function()
 	)
 end)
 RoosterAdventure:connect_one_way_entrance(SunkenCity, function() return GetCuccos(RoosterArea.Sunken, 0, 0, 0) end)
-RoosterAdventure:connect_one_way_entrance(SunkenGashaSpot, function()
+RoosterAdventure:connect_one_way(SunkenGashaSpot, function()
 	return All(
 		GetCuccos(RoosterArea.Sunken, 1, 0, 1),
 		Any(
@@ -47,7 +47,7 @@ RoosterAdventure:connect_one_way_entrance(Syrup, function()
 end)
 
 RoosterAdventure:connect_one_way_entrance(LowerEasternSuburbs, function() return GetCuccos(RoosterArea.Suburbs, 0, 0, 0) end)
-RoosterAdventure:connect_one_way_entrance(SuburbsSpringCave, function()
+RoosterAdventure:connect_one_way(SuburbsSpringCave, function()
 	return All(
 		GetCuccos(RoosterArea.Suburbs, 1, 0, 1),
 		Any(
@@ -60,17 +60,17 @@ RoosterAdventure:connect_one_way_entrance(SuburbsSpringCave, function()
 		)
 	)
 end)
-RoosterAdventure:connect_one_way_entrance(WindmillHP, function() return GetCuccos(RoosterArea.Suburbs, 1, 1, 0) end)
-RoosterAdventure:connect_one_way_entrance(SamasaDesertChest, function()
+RoosterAdventure:connect_one_way(WindmillHP, function() return GetCuccos(RoosterArea.Suburbs, 1, 1, 0) end)
+RoosterAdventure:connect_one_way(SamasaDesertChest, function()
 	return All(
 		GetCuccos(RoosterArea.Suburbs, 1, 1, 0),
 		CanReach(Pirates)
 	)
 end, {Pirates})
 RoosterAdventure:connect_one_way_entrance(MoblinRoad, function() return GetCuccos(RoosterArea.MoblinRoad, 0, 0, 0) end)
-RoosterAdventure:connect_one_way_entrance(Holly, function() return GetCuccos(RoosterArea.MoblinRoad, 1, 1, 0) end)
-RoosterAdventure:connect_one_way_entrance(HoronTreeHP, function() return GetCuccos(RoosterArea.Horon, 1, 1, 0) end)
-RoosterAdventure:connect_one_way_entrance(GraveyardHP, function()
+RoosterAdventure:connect_one_way(Holly, function() return GetCuccos(RoosterArea.MoblinRoad, 1, 1, 0) end)
+RoosterAdventure:connect_one_way(HoronTreeHP, function() return GetCuccos(RoosterArea.Horon, 1, 1, 0) end)
+RoosterAdventure:connect_one_way(GraveyardHP, function()
 	return All(
 		GetCuccos(RoosterArea.Horon, 1, 1, 0),
 		CanReach(Pirates),
@@ -79,7 +79,7 @@ RoosterAdventure:connect_one_way_entrance(GraveyardHP, function()
 	)
 end, {Pirates})
 RoosterAdventure:connect_one_way_entrance(NorthSpoolSwamp, function() return GetCuccos(RoosterArea.Swamp, 0, 0, 0) end)
-RoosterAdventure:connect_one_way_entrance(TarmLostWoodsScrub, function()
+RoosterAdventure:connect_one_way(TarmLostWoodsScrub, function()
 	return All(
 		GetCuccos(RoosterArea.Swamp, 1, 1, 0),
 		CanEnterTarm(),
@@ -90,7 +90,7 @@ RoosterAdventure:connect_one_way_entrance(TarmLostWoodsScrub, function()
 		)
 	)
 end, {TarmTreeStump})
-RoosterAdventure:connect_one_way_entrance(SpoolWinterCave, function()
+RoosterAdventure:connect_one_way(SpoolWinterCave, function()
 	return Any(
 		All(
 			GetCuccos(RoosterArea.Horon, 0, 0, 0),

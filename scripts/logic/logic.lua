@@ -1,6 +1,7 @@
 local IsStale = true
 local Staleness = 0
-local NamedRegions = {} ---@cast NamedRegions table<string, Region>
+---@type table<string, Region>
+local NamedRegions = {}
 
 ---@return accessibilityLevel
 local function Always()

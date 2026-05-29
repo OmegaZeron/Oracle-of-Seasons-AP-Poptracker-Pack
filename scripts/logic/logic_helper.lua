@@ -30,7 +30,7 @@ end
 function HasAnySword() return Has(WoodSword) or Has(BiggoronSword) end
 function CanShootSeeds() return Has(Slingshot) or Has(SeedShooter) end
 
----@param includeDimitri? boolean -- false
+---@param includeDimitri? boolean false
 ---@return accessibilityLevel
 function CanDestroyMushroom(includeDimitri)
 	includeDimitri = includeDimitri or false
@@ -318,18 +318,18 @@ function CanPlantGasha()
 		return false
 	end
 	-- rules for how many available spots remain
-	local ownedGashas = Tracker:ProviderCountForCode(GashaSeeds)
 	local gashasPlanted = GashasPlanted()
-	local gashaSetting = Tracker:FindObjectForCode(GashaSetting)
+	local gashaSetting = Tracker:FindObjectForCode(GashaSetting) --[[@as JsonItem]]
 	if gashaSetting == nil or gashasPlanted >= gashaSetting.CurrentStage then
 		return false
 	end
+	local ownedGashas = Tracker:ProviderCountForCode(GashaSeeds)
 	return ownedGashas > gashasPlanted
 end
 
 -- similar to CanPlantGasha, but for collection
 -- used to mark off mayor spots
----@param count integer
+---@param count integer|string
 function CanHarvestGasha(count)
 	-- rules for being able to collect the nut
 	if not CanSwordKill() then
@@ -342,7 +342,7 @@ function CanHarvestGasha(count)
 	if gashasPlanted < tonumber(count) then
 		return false
 	end
-	local gashaSetting = Tracker:FindObjectForCode(GashaSetting)
+	local gashaSetting = Tracker:FindObjectForCode(GashaSetting) --[[@as JsonItem]]
 	if gashaSetting == nil or gashasHarvested >= gashaSetting.CurrentStage then
 		return false
 	end
@@ -352,7 +352,7 @@ end
 function GashasHarvested()
 	local harvested = 0
 	for i = 1, 16 do
-		local section = Tracker:FindObjectForCode("@Horon Village/Gasha Spots/Gasha Spot #"..i)
+		local section = Tracker:FindObjectForCode("@Horon Village/Gasha Spots/Gasha Spot #"..i) --[[@as LocationSection]]
 		if section ~= nil then
 			harvested = harvested + section.AvailableChestCount
 		end
@@ -362,44 +362,45 @@ end
 
 ---@param code string
 function HasPlanted(code)
-	local section = Tracker:FindObjectForCode(code) ---@cast section LocationSection
+	local section = Tracker:FindObjectForCode(code) --[[@as LocationSection]]
 	if not CanSwordKill() or section == nil then
 		return false
 	end
 	return section.ChestCount - section.AvailableChestCount ~= 0
 end
 
+---@param count integer
 function CanSeeGasha(count)
 	local gashaSetting = Tracker:FindObjectForCode(GashaSetting)
-	return gashaSetting ~= nil and gashaSetting.CurrentStage >= tonumber(count) and GashasHarvested() < gashaSetting.CurrentStage
+	return gashaSetting and gashaSetting.CurrentStage >= tonumber(count) and GashasHarvested() < gashaSetting.CurrentStage
 end
 
 ---@param section LocationSection
 function OnSectionChanged(section)
-	if GashaIDToLocation[section.FullID] then
-		GashaIDToLocation[section.FullID].cleared = section.AccessibilityLevel == AccessibilityLevel.Cleared
+	if GashaIDToRegion[section.FullID] then
+		GashaIDToRegion[section.FullID].cleared = section.AccessibilityLevel == AccessibilityLevel.Cleared
 
-		local updateItem = Tracker:FindObjectForCode(UpdateItem) ---@cast updateItem JsonItem
+		local updateItem = Tracker:FindObjectForCode(UpdateItem) --[[@as JsonItem]]
 		updateItem.Active = not updateItem.Active
 	elseif AutoCollectLocationTable["Any"][section.FullID] and section.AccessibilityLevel == AccessibilityLevel.Cleared then
-		for _, v in ipairs(AutoCollectLocationTable["Any"][section.FullID]) do
-			if v:sub(1, 1) == "@" then
-				Tracker:FindObjectForCode(v).AvailableChestCount = 0
+		for _, code in ipairs(AutoCollectLocationTable["Any"][section.FullID]) do
+			if code:sub(1, 1) == "@" then
+				Tracker:FindObjectForCode(code).AvailableChestCount = 0
 			else
-				Tracker:FindObjectForCode(v).Active = true
+				Tracker:FindObjectForCode(code).Active = true
 			end
 		end
 	end
 end
 
 function GashasPlanted()
-	local n = 0
-	for _, loc in pairs(GashaIDToLocation) do
+	local num = 0
+	for _, loc in pairs(GashaIDToRegion) do
 		if loc.cleared then
-			n = n + 1
+			num = num + 1
 		end
 	end
-	return n
+	return num
 end
 
 -- INTERACT RULES
@@ -504,6 +505,7 @@ end
 
 ---@param allowCompanion? boolean false
 ---@param allowBombchus? boolean false
+---@return accessibilityLevel
 function CanBreakFlowers(allowCompanion, allowBombchus)
 	allowCompanion = allowCompanion or false
 	allowBombchus = allowBombchus or false
@@ -678,11 +680,8 @@ function CountConsumableDamage()
 end
 
 function AreEnoughGoldenBeastsSlain()
-	local goldenBeastsSetting = Tracker:FindObjectForCode(GoldenBeastsSetting) ---@cast goldenBeastsSetting JsonItem
-	if goldenBeastsSetting == nil or goldenBeastsSetting.CurrentStage > Tracker:ProviderCountForCode(GoldenBeasts) then
-		return false
-	end
-	return true
+	local goldenBeastsSetting = Tracker:FindObjectForCode(GoldenBeastsSetting) --[[@as JsonItem]]
+	return goldenBeastsSetting and Tracker:ProviderCountForCode(GoldenBeasts) >= goldenBeastsSetting.CurrentStage
 end
 
 function MaxJump()
@@ -902,6 +901,7 @@ function CanNormalSatchelKill(allowGale)
 	if CachedValues["CanNormalSatchelKill"..tostring(allowGale)] then
 		return CachedValues["CanNormalSatchelKill"..tostring(allowGale)]
 	end
+
 	local val = All(
 		HasUpgradedSatchel,
 		Any(
@@ -938,6 +938,7 @@ function CanNormalSlingshotKill(allowGale)
 	if CachedValues["CanNormalSlingshotKill"..tostring(allowGale)] then
 		return CachedValues["CanNormalSlingshotKill"..tostring(allowGale)]
 	end
+
 	local val = All(
 		HasUpgradedSatchel,
 		All(
@@ -1114,11 +1115,9 @@ function HasRupees(count)
 			for _, val in pairs(OldMenValues) do
 				-- val[1] = rupee amount
 				-- val[2] = old man event item
-				if val[1] < 0 then
-					-- always subtract rupees even if you can't reach them yet
+				if val[1] < 0 or Has(val[2]) then
+					-- first case: always subtract rupees even if you can't reach them yet
 					-- otherwise you could "lose" access to a shop if one steals from you
-					rupees = rupees + val[1]
-				elseif Has(val[2]) then
 					rupees = rupees + val[1]
 				end
 			end
@@ -1179,16 +1178,15 @@ function CanFarmOreChunks()
 end
 
 ---@param count integer
----@return accessibilityLevel|boolean
+---@return accessibilityLevel
 function HasOreChunks(count)
-	if Has(ShuffleGoldOresVanilla) then
-		return CanFarmOreChunks()
-	end
-	if CanFarmOreChunks() < AccessibilityLevel.SequenceBreak then
-		return false
-	end
-
-	return Tracker:ProviderCountForCode(OreChunkCount) >= count
+	return All(
+		CanFarmOreChunks,
+		Any(
+			Tracker:ProviderCountForCode(OreChunkCount) >= count,
+			ShuffleGoldOresVanilla
+		)
+	)
 end
 
 function CanMapleTrade()
@@ -1212,7 +1210,7 @@ function CanLostWoods(allowDefault, forceDeku)
 	local defaultSeason = IndexToSeason[Tracker:FindObjectForCode("lost_woods_season").CurrentStage]
 	local canDefault = defaultSeason ~= UnknownSeason
 
-	for i=1, 4 do
+	for i = 1, 4 do
 		local season = IndexToSeason[Tracker:FindObjectForCode("lost_woods_"..i).CurrentStage]
 		canDefault = allowDefault and canDefault and defaultSeason == season
 		if not canDefault and (season == UnknownSeason or not Has(season)) then
@@ -1240,7 +1238,7 @@ function CanPedestal(allowDefault, forceDeku)
 	local defaultSeason = IndexToSeason[Tracker:FindObjectForCode("lost_woods_season").CurrentStage]
 	local canDefault = defaultSeason ~= UnknownSeason
 
-	for i=1, 4 do
+	for i = 1, 4 do
 		local season = IndexToSeason[Tracker:FindObjectForCode("pedestal_"..i).CurrentStage]
 		canDefault = allowDefault and canDefault and defaultSeason == season
 		if not canDefault and (season == UnknownSeason or not Has(season)) then
@@ -1636,12 +1634,12 @@ end
 
 -- Dungeon number display setting
 function OnChangeDungeonImages()
-	local setting = Tracker:FindObjectForCode("dungeon_number_setting") ---@cast setting JsonItem
+	local setting = Tracker:FindObjectForCode("dungeon_number_setting") --[[@as JsonItem]]
 	for i = 0, 9 do
 		if i == 9 then
 			i = 11
 		end
-		local dungeon = Tracker:FindObjectForCode("d"..i.."_ent_selector") ---@cast dungeon JsonItem
+		local dungeon = Tracker:FindObjectForCode("d"..i.."_ent_selector") --[[@as JsonItem]]
 		dungeon.Icon = ImageReference:FromPackRelativePath(setting.CurrentStage == 0 and DungeonImageDict[dungeon.CurrentStage][1] or DungeonImageDict[dungeon.CurrentStage][2])
 	end
 end
@@ -1662,8 +1660,8 @@ ScriptHost:AddWatchForCode("pedestal handler", "randomize_lost_woods_item_sequen
 ScriptHost:AddOnLocationSectionChangedHandler("section changed handler", OnSectionChanged)
 ScriptHost:AddOnFrameHandler("load handler", OnFrameHandler)
 ScriptHost:AddWatchForCode("see companion handler", Companion, function()
-	local companion = Tracker:FindObjectForCode(Companion) ---@cast companion JsonItem
-	local location = Tracker:FindObjectForCode("@Natzu/See Your Companion/") ---@cast location LocationSection
+	local companion = Tracker:FindObjectForCode(Companion) --[[@as JsonItem]]
+	local location = Tracker:FindObjectForCode("@Natzu/See Your Companion/") --[[@as LocationSection]]
 	if companion.CurrentStage == 3 then
 		location.AvailableChestCount = 1
 	else
@@ -1673,8 +1671,8 @@ end)
 -- "See the Season" locations
 for i = 1, #SeeSeasonVars do
 	ScriptHost:AddWatchForCode(SeeSeasonVars[i][1], SeeSeasonVars[i][2], function()
-		local season = Tracker:FindObjectForCode(SeeSeasonVars[i][2]) ---@cast season JsonItem
-		local location = Tracker:FindObjectForCode(SeeSeasonVars[i][3]) ---@cast location LocationSection
+		local season = Tracker:FindObjectForCode(SeeSeasonVars[i][2]) --[[@as JsonItem]]
+		local location = Tracker:FindObjectForCode(SeeSeasonVars[i][3]) --[[@as LocationSection]]
 		if season.CurrentStage == 4 then
 			location.AvailableChestCount = 1
 		else
@@ -1685,8 +1683,8 @@ end
 -- "Enter portal" locations
 for i = 1, #PortalSetVars do
 	ScriptHost:AddWatchForCode(PortalSetVars[i][1], PortalSetVars[i][2], function()
-		local portal = Tracker:FindObjectForCode(PortalSetVars[i][2]) ---@cast portal JsonItem
-		local location = Tracker:FindObjectForCode(PortalSetVars[i][3]) ---@cast location LocationSection
+		local portal = Tracker:FindObjectForCode(PortalSetVars[i][2]) --[[@as JsonItem]]
+		local location = Tracker:FindObjectForCode(PortalSetVars[i][3]) --[[@as LocationSection]]
 		if portal.CurrentStage == PortalDictionary[PortalSetVars[i][1]]['unknown'] then
 			location.AvailableChestCount = 1
 		else

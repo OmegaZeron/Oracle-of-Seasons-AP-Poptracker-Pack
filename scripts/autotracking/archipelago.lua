@@ -63,7 +63,7 @@ function OnClear(slot_data)
 	-- reset manual items
 	for code, itemData in pairs(ManualItemFilter) do
 		if itemData["reset"] then
-			local obj = Tracker:FindObjectForCode(code) ---@cast obj JsonItem
+			local obj = Tracker:FindObjectForCode(code) --[[@as JsonItem]]
 			if obj then
 				if itemData["type"] == "toggle" then
 					obj.Active = false
@@ -239,7 +239,7 @@ function OnClear(slot_data)
 	-- set manual items
 	if manualStorageItem then
 		for code, data in pairs(manualStorageItem.ManualLocations[ROOM_SEED][ManualItemCode]) do
-			local item = Tracker:FindObjectForCode(code) ---@cast item JsonItem
+			local item = Tracker:FindObjectForCode(code) --[[@as JsonItem]]
 			if data["type"] == "progressive" then
 				item.CurrentStage = data["CurrentStage"]
 			elseif data["type"] == "toggle" then
@@ -469,7 +469,7 @@ function UpdateHints(locationID, status)
 	local locations = LOCATION_MAPPING[locationID]
 	-- print("Hint", DumpTable(locations), status)
 	for _, location in ipairs(locations) do
-		local section = Tracker:FindObjectForCode(location) ---@cast section LocationSection
+		local section = Tracker:FindObjectForCode(location) --[[@as LocationSection]]
 		if section then
 			IS_HIGHLIGHT_UPDATE = true
 			section.Highlight = status
@@ -604,7 +604,7 @@ function ManualItemHandler(codes)
 	if not ManualItemFilter[code] then return end
 
 	local manualStorageItem = Tracker:FindObjectForCode(ManualStorageCode).ItemState
-	local item = Tracker:FindObjectForCode(code) ---@cast item JsonItem
+	local item = Tracker:FindObjectForCode(code) --[[@as JsonItem]]
 	if not manualStorageItem or not item then return end
 
 	if ManualItemFilter[code]["type"] == "progressive" then

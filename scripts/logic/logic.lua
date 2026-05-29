@@ -1,6 +1,6 @@
 local IsStale = true
 local Staleness = 0
-local NamedRegions = {}
+local NamedRegions = {} ---@cast NamedRegions table<string, Region>
 
 ---@return accessibilityLevel
 local function Always()
@@ -185,7 +185,6 @@ function CanReach(name)
 	else
 		region = NamedRegions[name]
 	end
-	---@cast region Region
 
 	if region == nil then
 		if type(name) == "table" then

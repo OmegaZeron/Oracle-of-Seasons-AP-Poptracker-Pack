@@ -152,7 +152,7 @@ CurrentRoom = nil
 -- data tables
 
 EssenceKeys = {D1Essence, D2Essence, D3Essence, D4Essence, D5Essence, D6Essence, D7Essence, D8Essence}
-GashaIDToLocation = {
+GashaIDToRegion = {
 	["Horon Village/Horon Village Gasha Spot/Near Mayor"] = HoronGasha,
 	["North Horon/North Horon Gasha Spot/Near Impa"] = NorthHoronGasha,
 	["North Horon/Eyeglass Lake Gasha Spot/Near D5"] = EyeglassGasha,

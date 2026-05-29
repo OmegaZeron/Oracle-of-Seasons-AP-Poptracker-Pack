@@ -283,12 +283,12 @@ end
 
 -- called when an item gets collected
 ---@param index integer
----@param item_id integer
----@param item_name string
----@param player_number integer
-function OnItem(index, item_id, item_name, player_number)
+---@param itemID integer
+---@param itemName string
+---@param playerNumber integer
+function OnItem(index, itemID, itemName, playerNumber)
 	if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
-		print(string.format("called onItem: %s, %s, %s, %s, %s", index, item_id, item_name, player_number, CUR_INDEX))
+		print(string.format("called onItem: %s, %s, %s, %s, %s", index, itemID, itemName, playerNumber, CUR_INDEX))
 	end
 	if Tracker:FindObjectForCode(VersionMismatch).Active then
 		return
@@ -300,11 +300,11 @@ function OnItem(index, item_id, item_name, player_number)
 		return
 	end
 	SetAsStale()
-	CUR_INDEX = index;
-	local itemData = ITEM_MAPPING[item_id]
+	CUR_INDEX = index
+	local itemData = ITEM_MAPPING[itemID]
 	if not itemData then
 		if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
-			print(string.format("onItem: could not find item mapping for id %s", item_id))
+			print(string.format("onItem: could not find item mapping for id %s", itemID))
 		end
 		return
 	end
@@ -370,17 +370,17 @@ function OnItem(index, item_id, item_name, player_number)
 end
 
 -- called when a location gets cleared
----@param location_id integer
----@param location_name string
-function OnLocation(location_id, location_name)
+---@param locationID integer
+---@param locationName string
+function OnLocation(locationID, locationName)
 	if Tracker:FindObjectForCode(VersionMismatch).Active then
 		return
 	end
 	IS_MANUAL_CLICK = false
 	SetAsStale()
-	local location_array = LOCATION_MAPPING[location_id]
+	local location_array = LOCATION_MAPPING[locationID]
 	if not location_array or not location_array[1] then
-		print(string.format("onLocation: could not find location mapping for id %s", location_id))
+		print(string.format("onLocation: could not find location mapping for id %s", locationID))
 		return
 	end
 
@@ -395,7 +395,7 @@ function OnLocation(location_id, location_name)
 				---@cast obj JsonItem
 				obj.Active = true
 			end
-			UpdateHints(location_id, Highlight.None)
+			UpdateHints(locationID, Highlight.None)
 		else
 			print(string.format("onLocation: could not find object for code %s", location))
 		end
@@ -460,7 +460,7 @@ function OnNotifyLaunch(key, value)
 end
 
 -- called when a location is hinted or the status of a hint is changed
----@param locationID number
+---@param locationID integer
 ---@param status highlight
 function UpdateHints(locationID, status)
 	if not Highlight then
@@ -640,7 +640,7 @@ function OnIgnoreVersionMismatch(section)
 	end
 end
 
----@param dungeon number
+---@param dungeon integer
 function RevealDungeon(dungeon)
 	if SLOT_DATA.options.show_dungeons_with_map == 1 then
 		local hiddenStage = Tracker:FindObjectForCode("d"..dungeon.."_ent_selector_hidden").CurrentStage
@@ -652,7 +652,7 @@ function RevealDungeon(dungeon)
 	end
 end
 
----@param dungeon number
+---@param dungeon integer
 function RevealEssence(dungeon, skipEntrance)
 	if SLOT_DATA.options.shuffle_essences ~= 0 or SLOT_DATA.options.show_dungeons_with_essence == 0 or not EssenceTable[dungeon] then
 		return

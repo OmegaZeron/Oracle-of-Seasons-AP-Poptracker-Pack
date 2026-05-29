@@ -1,8 +1,8 @@
----@param room number?
----@param flagByte number?
----@param bitMask number?
----@param id number?
----@return number
+---@param room integer?
+---@param flagByte integer?
+---@param bitMask integer?
+---@param id integer?
+---@return integer
 local function LocationID(room, flagByte, bitMask, id)
 	if id then
 		return id

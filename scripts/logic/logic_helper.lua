@@ -134,7 +134,7 @@ function BombPunchWall()
 	)
 end
 
----@param hearts number
+---@param hearts integer
 ---@param difficulty? logicLevel LogicLevel.Casual
 function HasHearts(hearts, difficulty)
 	difficulty = difficulty or LogicLevel.Casual
@@ -149,9 +149,9 @@ function HasHearts(hearts, difficulty)
 	)
 end
 
----@param hCasual? number 20
----@param hMedium? number 20
----@param hHard? number 20
+---@param hCasual? integer 20
+---@param hMedium? integer 20
+---@param hHard? integer 20
 function HasHeartsByDifficulty(hCasual, hMedium, hHard)
 	hCasual = hCasual or 20
 	hMedium = hMedium or 20

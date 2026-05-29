@@ -180,19 +180,11 @@ function CanReach(name)
 		StateChange()
 	end
 
-	local region
-	if type(name) == "table" then
-		region = NamedRegions[name.name]
-	else
-		region = NamedRegions[name]
-	end
+	local parsedName = type(name) == table and name.name or name --[[@as string]]
+	local region = NamedRegions[parsedName]
 
 	if region == nil then
-		if type(name) == "table" then
-			print("Unknown location: " .. tostring(name.name))
-		else
-			print("Unknown location: " .. tostring(name))
-		end
+		print("Unknown location: " .. parsedName)
 		return AccessibilityLevel.None
 	end
 	return region:accessibility()

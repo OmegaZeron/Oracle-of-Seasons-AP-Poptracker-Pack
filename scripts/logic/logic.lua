@@ -194,9 +194,8 @@ end
 ---@param amount integer|string?
 ---@return boolean
 function Has(item, amount)
-	amount = amount or 1
+	amount = amount and tonumber(amount) or 1
 	local count = Tracker:ProviderCountForCode(item)
-	amount = tonumber(amount)
 	return amount ~= nil and count >= amount
 end
 

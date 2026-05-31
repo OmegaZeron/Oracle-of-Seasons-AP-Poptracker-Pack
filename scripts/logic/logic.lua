@@ -180,7 +180,7 @@ function CanReach(name)
 		StateChange()
 	end
 
-	local parsedName = type(name) == table and name.name or name --[[@as string]]
+	local parsedName = type(name) == "table" and name.name or name --[[@as string]]
 	local region = NamedRegions[parsedName]
 
 	if region == nil then

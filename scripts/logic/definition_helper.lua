@@ -188,8 +188,6 @@ VersionMismatch = "version_mismatch"
 UpdateItem = "update_item"
 LocationRefresh = "location_refresh"
 ManualStorageCode = "manual_location_storage"
-ManualLocationCode = "locations"
-ManualItemCode = "items"
 
 -- Shop Prices
 HoronShopPrice = "horonShop"

@@ -1,3 +1,16 @@
+---@class ManualItemData
+---@field type string
+---@field Active? boolean
+---@field CurrentStage? integer
+
+---@class ManualTrackerData
+---@field locations table<string, integer>
+---@field items table<string, ManualItemData>
+
+---@class ManualTrackerState
+---@field ManualLocations table<string, ManualTrackerData>
+---@field ManualLocationsOrder string[]
+
 local function CanProvideCodeFunc(self, code)
 	return code == self.Name
 end
@@ -26,15 +39,17 @@ local function LoadManualLocationStorageFunc(self, data)
 	end
 end
 
+---@param name string
 function CreateLuaManualLocationStorage(name)
 	local self = ScriptHost:CreateLuaItem()
 	self.Name = name
 	self.Icon = ImageReference:FromPackRelativePath("/images/labels/chest.png")
+	---@type ManualTrackerState
 	self.ItemState = {
 		ManualLocations = {
 			["default"] = {
-				[ManualLocationCode] = {},
-				[ManualItemCode] = {}
+				locations = {},
+				items = {}
 			}
 		},
 		ManualLocationsOrder = {}

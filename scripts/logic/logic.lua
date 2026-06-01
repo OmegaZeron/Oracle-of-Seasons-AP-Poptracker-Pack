@@ -50,6 +50,7 @@ function Region:connect_one_way(exit, rule, requiredExit)
 	self.exits[#self.exits + 1] = {exit = exit, rule = rule}
 
 	if not requiredExit then return end
+	-- this region has a rule that requires another region to be accessible first
 	for _, recheck in pairs(requiredExit) do
 		if not TableContains(recheck.exitsToRecheck, self) then
 			recheck.exitsToRecheck[#recheck.exitsToRecheck + 1] = self
@@ -75,6 +76,7 @@ function Region:connect_one_way_entrance(exit, rule, requiredExit)
 	self.exits[#self.exits + 1] = {exit = exit, rule = rule}
 
 	if not requiredExit then return end
+	-- this region has a rule that requires another region to be accessible first
 	for _, recheck in pairs(requiredExit) do
 		if not TableContains(recheck.exitsToRecheck, self) then
 			recheck.exitsToRecheck[#recheck.exitsToRecheck + 1] = self
@@ -108,32 +110,35 @@ function Region:accessibility()
 	return self.accessibilityLevel
 end
 
+-- gain access to this region with the given accessibility level
 ---@param accessibility accessibilityLevel
 function Region:discover(accessibility)
-	local change = false
-	if accessibility > self:accessibility() then
-		change = true
-		self.staleness = Staleness
-		self.accessibilityLevel = accessibility
-	end
-	if not change then return end
-
+	-- re-check access for regions that rely on this region being reachable
 	for _, recheck in ipairs(self.exitsToRecheck) do
+		-- for all exits, check if we can reach them
 		for _, exitData in pairs(recheck.exits) do
 			if exitData.exit:accessibility() < accessibility then
 				local location, access = CheckAccess(recheck, exitData)
+				if access > location:accessibility() then
+					-- has a better access level, discover the new region
+					location:discover(access)
+				end
+			end
+		end
+	end
+	-- for all exits, check if we can reach them
+	for _, exitData in pairs(self.exits) do
+		if exitData.exit:accessibility() < accessibility then
+			local location, access = CheckAccess(self, exitData)
+			if access > location:accessibility() then
+				-- has a better access level, discover the new region
 				location:discover(access)
 			end
 		end
 	end
-	for _, exitData in pairs(self.exits) do
-		if exitData.exit:accessibility() < accessibility then
-			local location, access = CheckAccess(self, exitData)
-			location:discover(access)
-		end
-	end
 end
 
+-- consume access rules and determine reachability
 ---@param loc Region
 ---@param exitData ExitData
 ---@return Region, accessibilityLevel
@@ -142,13 +147,13 @@ function CheckAccess(loc, exitData)
 	local access = exitData.rule()
 	if access == nil then
 		print("Error in rule for", region.name)
-		access = AccessibilityLevel.None
+		access = AccessibilityLevel.None --[[@as accessibilityLevel]]
 	end
 	if type(access) == "boolean" then
 		access = BoolToAccess(access)
 	end
 
-	-- prevents certain regions from looping back around to turn sequence break locs into normal access
+	-- prevents certain regions from looping back around with two-way connections to increase access
 	if loc.accessibilityLevel < access then
 		access = loc.accessibilityLevel
 	end
@@ -215,6 +220,7 @@ function All(...)
 	local args = { ... }
 	local min = AccessibilityLevel.Normal
 	for _, access in ipairs(args) do
+		-- process rules
 		if type(access) == "function" then
 			access = access()
 		elseif type(access) == "string" then
@@ -224,10 +230,13 @@ function All(...)
 			access = BoolToAccess(access)
 		end
 
+		-- if change...
 		if access < min then
 			if access == AccessibilityLevel.None then
+				-- can't change any more, return
 				return AccessibilityLevel.None
 			else
+				-- update to new value
 				min = access
 			end
 		end
@@ -241,6 +250,7 @@ function Any(...)
 	local args = { ... }
 	local max = AccessibilityLevel.None
 	for _, access in ipairs(args) do
+		-- process rules
 		if type(access) == "function" then
 			access = access()
 		elseif type(access) == "string" then
@@ -250,10 +260,13 @@ function Any(...)
 			access = BoolToAccess(access)
 		end
 
+		-- if change...
 		if access > max then
 			if access == AccessibilityLevel.Normal then
+				-- can't change any more, return
 				return AccessibilityLevel.Normal
 			else
+				-- update to new value
 				max = access
 			end
 		end

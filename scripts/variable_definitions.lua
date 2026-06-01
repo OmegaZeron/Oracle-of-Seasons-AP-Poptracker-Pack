@@ -95,6 +95,10 @@ LinkedEnum = {
 ---@field subrosia_portals table
 ---@field old_man_rupee_values table
 
+---@class ManualItemFilter
+---@field type string
+---@field reset? boolean
+
 -- functions
 
 --- constructor for CurrentLocationMapping data
@@ -146,7 +150,9 @@ end
 -- single vars
 
 LOADED = false
+---@type string|nil
 CurrentTab = nil
+---@type integer|nil
 CurrentRoom = nil
 
 -- data tables
@@ -245,12 +251,12 @@ DefaultSeasons = {
 
 AutoCollectLocationTable = {["Any"] = DefaultAutoCollectLocationTable}
 
--- TODO fill this out when alt starting locations are added
 -- used to automatically tab and see seasons when connecting to AP
 StartLocationMapping = {
 	[StartImpa] = 0x0B6
 }
 
+---@type table<integer, CurrentLocationData[]>
 CurrentLocationMapping = {
 	-- North Horon
 	[0x0B6] = {
@@ -451,9 +457,7 @@ CurrentLocationMapping = {
 	[0x010] = {
 		-- from Lost Woods
 		SeeSeason(TarmRuinsSeason, TarmRuinsSeasonHidden),
-		Custom(function()
-			Tracker:FindObjectForCode("@Lost Woods/Lost Woods Sequence/Shield the Scrub").AvailableChestCount = 0
-		end)
+		Custom(function() Tracker:FindObjectForCode("@Lost Woods/Lost Woods Sequence/Shield the Scrub").AvailableChestCount = 0 end)
 	},
 	[0x000] = {
 		-- d6
@@ -656,7 +660,7 @@ CurrentLocationMapping = {
 
 	-- room of rites
 	[0x59D] = {Custom(function() Tracker:FindObjectForCode("onox").Active = true end)}
-} --[[@as table<integer, CurrentLocationData[]>]]
+}
 
 JewelKeys = {RoundJewel, SquareJewel, PyramidJewel, XJewel}
 LostWoodsDefault = {3, 2, 0, 1}
@@ -1086,6 +1090,7 @@ DungeonImageDict = {
 	[10] = {"images/labels/D8_entrance.png", "images/labels/D8_entrance_alt.png"}
 }
 
+---@type table<string, ManualItemFilter>
 ManualItemFilter = {
 	-- dungeons
 	["d0_ent_selector"] = {["type"] = "progressive"},

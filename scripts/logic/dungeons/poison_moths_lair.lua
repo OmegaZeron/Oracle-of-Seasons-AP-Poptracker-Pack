@@ -40,8 +40,7 @@ PoisonPols:connect_one_way_entrance(PoisonOmuaiDoorstep, function()
 		),
 		All(
 			SwitchHook,
-			CanUseSeeds,
-			PegasusSeeds,
+			CanRun,
 			MediumLogic
 		)
 	)

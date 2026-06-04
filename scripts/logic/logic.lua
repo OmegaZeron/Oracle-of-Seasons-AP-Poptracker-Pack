@@ -147,7 +147,7 @@ function CheckAccess(loc, exitData)
 	local access = exitData.rule()
 	if access == nil then
 		print("Error in rule for", region.name)
-		access = AccessibilityLevel.None --[[@as accessibilityLevel]]
+		return region, AccessibilityLevel.None
 	end
 	if type(access) == "boolean" then
 		access = BoolToAccess(access)

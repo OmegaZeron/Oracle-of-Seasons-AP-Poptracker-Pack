@@ -32,8 +32,7 @@ SnakeAltEntrance:connect_one_way(SnakeBombPuzzle, function()
 			HasBombsForTiles,
 			All(
 				HasBombchusForTiles,
-				Satchel,
-				PegasusSeeds,
+				CanRun,
 				MediumLogic
 			)
 		)

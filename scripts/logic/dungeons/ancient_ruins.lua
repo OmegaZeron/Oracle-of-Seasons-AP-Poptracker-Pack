@@ -45,8 +45,7 @@ AncientArrowTrap:connect_one_way_entrance(AncientSpinyTrampoline, function()
 			All(
 				SeedShooter,
 				WoodSword,
-				Satchel,
-				PegasusSeeds,
+				CanRun,
 				HellLogic
 			),
 			All(

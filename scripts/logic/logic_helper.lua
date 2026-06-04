@@ -408,6 +408,9 @@ end
 function CanUseSeeds()
 	return Has(Satchel) or Has(Slingshot) or Has(SeedShooter)
 end
+function CanRun()
+	return Has(Satchel) and Has(PegasusSeeds)
+end
 
 function HasUpgradedSatchel()
 	return Any(
@@ -690,11 +693,11 @@ function MaxJump()
 	end
 	local j = 0
 
-	if Has(Cape) and Has(Satchel) and Has(PegasusSeeds) then
+	if Has(Cape) and CanRun() then
 		j = 5
 	elseif Has(Cape) then
 		j = 3
-	elseif Has(Feather) and Has(Satchel) and Has(PegasusSeeds) then
+	elseif Has(Feather) and CanRun() then
 		j = 2
 	elseif Has(Feather) then
 		j = 1
@@ -1287,7 +1290,7 @@ function Roosters(area, anyAmt, topAmt, botAmt, visited)
 		if topAmt == 3 then
 			table.insert(rules, All(Shovel, Boomerang))
 		elseif topAmt == 2 then
-			table.insert(rules, Any(Shovel, All(Boomerang, PegasusSeeds, Satchel)))
+			table.insert(rules, Any(Shovel, All(Boomerang, CanRun)))
 		end
 		return All(table.unpack(rules))
 	elseif area == RoosterArea.Horon then

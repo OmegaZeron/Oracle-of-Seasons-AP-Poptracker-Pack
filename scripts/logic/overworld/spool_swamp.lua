@@ -44,10 +44,7 @@ FloodgateLever:connect_one_way_entrance(FloodgateKeyhole, function()
 				Feather,
 				MediumLogic
 			),
-			All(
-				Satchel,
-				PegasusSeeds
-			),
+			CanRun,
 			All(
 				CaneOfSomaria,
 				MediumLogic

@@ -53,8 +53,7 @@ MazeHardhats:connect_one_way_entrance(MazeBigBladeTrap, function()
 			Cape,
 			All(
 				Feather,
-				Satchel,
-				PegasusSeeds,
+				CanRun,
 				HardLogic
 			)
 		)
@@ -67,8 +66,7 @@ MazeSpinner:connect_one_way_entrance(MazeArmosChest, function()
 		MagnetGlove,
 		All(
 			CaneOfSomaria,
-			Satchel,
-			PegasusSeeds,
+			CanRun,
 			HardLogic
 		)
 	)
@@ -78,8 +76,7 @@ MazeSpinner:connect_one_way_entrance(MazeThreeEyeOwl, function()
 	return Any(
 		MagnetGlove,
 		All(
-			Satchel,
-			PegasusSeeds,
+			CanRun,
 			Cape,
 			HasBombsForBombJump,
 			HellLogic

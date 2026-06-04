@@ -13,8 +13,7 @@ Crypt1FLeftOfPoe:connect_one_way_entrance(CryptSurroundedByArmos, function()
 	return All(
 		Feather,
 		Bracelet,
-		Satchel,
-		PegasusSeeds,
+		CanRun,
 		HellLogic
 	)
 end)
@@ -89,10 +88,7 @@ CryptPoeTrampoline:connect_one_way_entrance(CryptPoe2, function()
 		CanUseSeeds,
 		EmberSeeds,
 		Any(
-			All(
-				Satchel,
-				PegasusSeeds
-			),
+			CanRun,
 			HardLogic
 		)
 	)

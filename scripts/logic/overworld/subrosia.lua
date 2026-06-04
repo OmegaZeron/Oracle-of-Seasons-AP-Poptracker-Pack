@@ -34,8 +34,7 @@ SubrosiaMountainWest:connect_one_way_entrance(StrangeBrothers, function()
 	-- H&S skip
 	return All(
 		Feather,
-		PegasusSeeds,
-		Satchel,
+		CanRun,
 		HasBombsForBombJump,
 		HellLogic
 	)

@@ -27,8 +27,7 @@ UnicornUndergroundPipesRight:connect_two_ways_entrance(UnicornPotRoom, function(
 	return Any(
 		Feather,
 		All(
-			CanUseSeeds,
-			PegasusSeeds,
+			CanRun,
 			HardLogic
 		)
 	)

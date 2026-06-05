@@ -1,3 +1,8 @@
+---@enum itemType
+local ItemType = {
+	Consumable = "consumable"
+}
+
 ---@class CustomItemState
 ---@field reset fun(item: LuaItem)
 
@@ -100,11 +105,11 @@ end
 
 ---@type table<string, fun(self: LuaItem, code: string):integer>
 local providesCodeFuncs = {
-	consumable = ProvidesConsumableFunc
+	[ItemType.Consumable] = ProvidesConsumableFunc
 }
 
 ---@param name string
----@param type string
+---@param type itemType
 ---@param img string
 ---@param state CustomItemState
 ---@param lClick? fun(self: LuaItem)
@@ -128,8 +133,8 @@ end
 
 CreateLuaItem(
 	RupeeCount,
+	ItemType.Consumable,
 	"images/items/rupee5.png",
-	"consumable",
 	{reset = ResetConsumable, count = 0, increment = IncrementConsumable, minCount = 0, maxCount = 999, mult = 5, multIndex = 2} --[[@as CustomItemStateConsumable]],
 	LeftClickConsumable,
 	RightClickConsumable,
@@ -142,6 +147,28 @@ CreateLuaItem(
 			{val = 50, img = "images/items/rupee50.png"},
 			{val = 100, img = "images/items/rupee100.png"},
 			{val = 200, img = "images/items/rupee200.png"}
+		}
+		---@type CustomItemStateConsumable
+		local itemState = self.ItemState
+		local multIndex = itemState.multIndex + 1
+		if multIndex > #values then multIndex = 1 end -- constrain to values array
+		itemState.multIndex = multIndex
+		itemState.mult = values[multIndex].val
+		self.Icon = ImageReference:FromPackRelativePath(values[multIndex].img)
+	end
+)
+CreateLuaItem(
+	OreChunkCount,
+	ItemType.Consumable,
+	"images/items/ore10.png",
+	{reset = ResetConsumable, count = 0, increment = IncrementConsumable, minCount = 0, maxCount = 999, mult = 10, multIndex = 2} --[[@as CustomItemStateConsumable]],
+	LeftClickConsumable,
+	RightClickConsumable,
+	function(self)
+		local values = {
+			{val = 1, img = "images/items/ore1.png"},
+			{val = 10, img = "images/items/ore10.png"},
+			{val = 50, img = "images/items/ore50.png"}
 		}
 		---@type CustomItemStateConsumable
 		local itemState = self.ItemState

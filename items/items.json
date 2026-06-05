@@ -266,14 +266,14 @@
 	// 	"increment": 5,
 	// 	"decrement": 5
 	// },
-	{
-		"name": "Ore Chunks",
-		"type": "consumable",
-		"img": "images/items/orechunk.png",
-		"codes": "orechunks",
-		"increment": 5,
-		"decrement": 5
-	},
+	// {
+	// 	"name": "Ore Chunks",
+	// 	"type": "consumable",
+	// 	"img": "images/items/orechunk.png",
+	// 	"codes": "orechunks",
+	// 	"increment": 5,
+	// 	"decrement": 5
+	// },
 	{
 		"name": "Heart Containers",
 		"type": "consumable",

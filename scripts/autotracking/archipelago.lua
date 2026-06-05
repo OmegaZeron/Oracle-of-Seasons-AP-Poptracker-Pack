@@ -333,18 +333,15 @@ function OnItem(index, itemID, itemName, playerNumber)
 			if item.CurrentStage < itemData[3] then
 				item.CurrentStage = itemData[3]
 			end
-		elseif itemData[2] == "custom" then
+		elseif itemData[2] == "custom_consumable" then
 			---@cast item LuaItem
-			---@type CustomItemState
+			---@type CustomItemStateConsumable
 			local itemState = item.ItemState
-			if itemState.type == "consumable" then
-				---@cast itemState CustomItemStateConsumable
-				local mult = 1
-				if itemData[3] then
-					mult = itemData[3]
-				end
-				itemState.increment(item, mult)
+			local mult = 1
+			if itemData[3] then
+				mult = itemData[3]
 			end
+			itemState.increment(item, mult)
 		elseif AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
 			print(string.format("onItem: unknown item type %s for code %s", itemData[2], itemData[1]))
 		end

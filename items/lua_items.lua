@@ -1,5 +1,4 @@
 ---@class CustomItemState
----@field type string
 ---@field reset fun(item: LuaItem)
 
 ---@class CustomItemStateConsumable: CustomItemState
@@ -105,12 +104,13 @@ local providesCodeFuncs = {
 }
 
 ---@param name string
+---@param type string
 ---@param img string
 ---@param state CustomItemState
 ---@param lClick? fun(self: LuaItem)
 ---@param rClick? fun(self: LuaItem)
 ---@param mClick? fun(self: LuaItem)
-function CreateLuaItem(name, img, state, lClick, rClick, mClick)
+function CreateLuaItem(name, type, img, state, lClick, rClick, mClick)
 	local self = ScriptHost:CreateLuaItem()
 	self.Name = name
 	self.Icon = ImageReference:FromPackRelativePath(img)
@@ -120,7 +120,7 @@ function CreateLuaItem(name, img, state, lClick, rClick, mClick)
 	self.OnLeftClickFunc = lClick --[[@as fun(self: LuaItem)]]
 	self.OnRightClickFunc = rClick --[[@as fun(self: LuaItem)]]
 	self.OnMiddleClickFunc = mClick --[[@as fun(self: LuaItem)]]
-	self.ProvidesCodeFunc = providesCodeFuncs[state.type]
+	self.ProvidesCodeFunc = providesCodeFuncs[type]
 	self.SaveFunc = SaveFunc
 	self.LoadFunc = LoadFunc
 	return self
@@ -129,7 +129,8 @@ end
 CreateLuaItem(
 	RupeeCount,
 	"images/items/rupee5.png",
-	{type = "consumable", reset = ResetConsumable, count = 0, increment = IncrementConsumable, minCount = 0, maxCount = 999, mult = 5, multIndex = 2} --[[@as CustomItemStateConsumable]],
+	"consumable",
+	{reset = ResetConsumable, count = 0, increment = IncrementConsumable, minCount = 0, maxCount = 999, mult = 5, multIndex = 2} --[[@as CustomItemStateConsumable]],
 	LeftClickConsumable,
 	RightClickConsumable,
 	function(self)

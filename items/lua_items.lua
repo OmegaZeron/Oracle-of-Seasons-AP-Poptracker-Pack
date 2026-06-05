@@ -103,7 +103,7 @@ local function LoadFunc(self, data)
 	end
 end
 
----@type table<string, fun(self: LuaItem, code: string):integer>
+---@type table<itemType, fun(self: LuaItem, code: string):integer>
 local providesCodeFuncs = {
 	[ItemType.Consumable] = ProvidesConsumableFunc
 }

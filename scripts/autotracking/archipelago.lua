@@ -128,14 +128,17 @@ function OnClear(slot_data)
 			if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
 				print(string.format("onClear: clearing item %s of type %s", itemData[1], itemData[2]))
 			end
-			local obj = Tracker:FindObjectForCode(itemData[1])
-			if obj then
+			local item = Tracker:FindObjectForCode(itemData[1])
+			if item then
 				if itemData[2] == "toggle" then
-					obj.Active = false
+					item.Active = false
 				elseif itemData[2] == "progressive" or itemData[2] == "progressive_set" then
-					obj.CurrentStage = 0
+					item.CurrentStage = 0
 				elseif itemData[2] == "consumable" then
-					obj.AcquiredCount = 0
+					item.AcquiredCount = 0
+				elseif itemData[2] == "custom" then
+					---@cast item LuaItem
+					(item.ItemState --[[@as CustomItemState]]).reset(item)
 				elseif AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
 					print(string.format("onClear: unknown item type %s for code %s", itemData[2], itemData[1]))
 				end
@@ -310,7 +313,7 @@ function OnItem(index, itemID, itemName, playerNumber)
 	if not itemData[1] then
 		return
 	end
-	local item = Tracker:FindObjectForCode(itemData[1]) --[[@as JsonItem]]
+	local item = Tracker:FindObjectForCode(itemData[1]) --[[@as JsonItem|LuaItem]]
 	if item then
 		if itemData[2] == "toggle" then
 			item.Active = true
@@ -329,6 +332,18 @@ function OnItem(index, itemID, itemName, playerNumber)
 		elseif itemData[2] == "progressive_set" then
 			if item.CurrentStage < itemData[3] then
 				item.CurrentStage = itemData[3]
+			end
+		elseif itemData[2] == "custom" then
+			---@cast item LuaItem
+			---@type CustomItemState
+			local itemState = item.ItemState
+			if itemState.type == "consumable" then
+				---@cast itemState CustomItemStateConsumable
+				local mult = 1
+				if itemData[3] then
+					mult = itemData[3]
+				end
+				itemState.increment(item, mult)
 			end
 		elseif AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
 			print(string.format("onItem: unknown item type %s for code %s", itemData[2], itemData[1]))

@@ -1,5 +1,6 @@
 require("scripts.utils")
 require("scripts.logic.definition_helper")
+require("scripts.lua_items")
 require("scripts.logic.logic")
 require("scripts.logic.location_definitions")
 require("scripts.variable_definitions")

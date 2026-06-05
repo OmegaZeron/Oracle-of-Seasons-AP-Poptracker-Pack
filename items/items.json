@@ -258,14 +258,14 @@
 		"img": "images/items/rod.png",
 		"codes": "rod, seasonsrod"
 	},
-	{
-		"name": "Rupees",
-		"type": "consumable",
-		"img": "images/items/bigrupee.png",
-		"codes": "rupees",
-		"increment": 5,
-		"decrement": 5
-	},
+	// {
+	// 	"name": "Rupees",
+	// 	"type": "consumable",
+	// 	"img": "images/items/bigrupee.png",
+	// 	"codes": "rupees",
+	// 	"increment": 5,
+	// 	"decrement": 5
+	// },
 	{
 		"name": "Ore Chunks",
 		"type": "consumable",

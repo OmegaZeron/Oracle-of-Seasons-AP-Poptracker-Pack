@@ -113,6 +113,8 @@ end
 -- gain access to this region with the given accessibility level
 ---@param accessibility accessibilityLevel
 function Region:discover(accessibility)
+	self.staleness = Staleness
+	self.accessibilityLevel = accessibility
 	-- re-check access for regions that rely on this region being reachable
 	for _, recheck in ipairs(self.exitsToRecheck) do
 		-- for all exits, check if we can reach them

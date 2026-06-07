@@ -28,7 +28,7 @@ WestGoronMountain:connect_one_way_entrance(SouthGoronMountain, function()
 		)
 	)
 end)
-SouthGoronMountain:connect_two_ways_entrance(LowerTempleRemains, function()
+SouthGoronMountain:connect_one_way_entrance(LowerTempleRemains, function()
 	return Any(
 		Jump3,
 		All(

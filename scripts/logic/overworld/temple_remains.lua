@@ -1,5 +1,6 @@
 LowerTempleRemains:connect_one_way(Maple, CanEncounterMaple)
 LowerTempleRemains:connect_one_way(TempleRemainsFindSeason)
+LowerTempleRemains:connect_one_way_entrance(SouthGoronMountain, Jump3)
 LowerTempleRemains:connect_one_way_entrance(TempleRemainsStump, function()
 	return All(
 		Feather,

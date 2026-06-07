@@ -28,7 +28,17 @@ WestGoronMountain:connect_one_way_entrance(SouthGoronMountain, function()
 		)
 	)
 end)
-SouthGoronMountain:connect_two_ways_entrance(LowerTempleRemains, Jump3)
+SouthGoronMountain:connect_two_ways_entrance(LowerTempleRemains, function()
+	return Any(
+		Jump3,
+		All(
+			Feather,
+			Bombs,
+			CanDimitriClip,
+			AccessibilityLevel.SequenceBreak
+		)
+	)
+end)
 WestGoronMountain:connect_one_way(GoronLavaChest, function()
 	return All(
 		JumpLiquid3,

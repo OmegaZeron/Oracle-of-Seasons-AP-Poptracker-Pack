@@ -89,7 +89,12 @@ DrLeftBackyard:connect_one_way(DrLeftBackyardChest, function()
 		HoronVillageWinter,
 		Flippers,
 		JumpLiquid2,
-		Winter
+		Winter,
+		All(
+			Feather,
+			Bombchus,
+			AccessibilityLevel.SequenceBreak
+		)
 	)
 end)
 

@@ -141,7 +141,7 @@ function HasHearts(hearts, difficulty)
 	return Any(
 		All(
 			Tracker:FindObjectForCode("logic_difficulty").CurrentStage >= difficulty,
-			Has(HeartContainer, hearts - 3) -- -0 instead to compensate the min 3?
+			Has(HeartContainer, hearts)
 		),
 		hearts <= 3,
 		hearts > 10,
@@ -297,7 +297,7 @@ end
 
 ---@param includeDimitri? boolean true
 function CanHarvestSeeds(includeDimitri)
-	includeDimitri = includeDimitri or true
+	if includeDimitri == nil then includeDimitri = true end
 	return All(
 		CanUseSeeds,
 		Any(
@@ -709,7 +709,7 @@ end
 
 ---@param allowCompanion? boolean true
 function Jump1(allowCompanion)
-	allowCompanion = allowCompanion or true
+	if allowCompanion == nil then allowCompanion = true end
 	return Any(
 		Feather,
 		All(
@@ -765,7 +765,7 @@ end
 
 ---@param allowCompanion boolean true
 function JumpLiquid1(allowCompanion)
-	allowCompanion = allowCompanion or true
+	if allowCompanion == nil then allowCompanion = true end
 	return Any(
 		Feather,
 		All(
@@ -865,8 +865,8 @@ end
 ---@return accessibilityLevel
 function CanNormalKill(pitAvailable, allowGale, allowCane)
 	pitAvailable = pitAvailable or false
-	allowGale = allowGale or true
-	allowCane = allowCane or true
+	if allowGale == nil then allowGale = true end
+	if allowCane == nil then allowCane = true end
 
 	if CachedValues["CanNormalKill"..tostring(pitAvailable)..tostring(allowGale)..tostring(allowCane)] then
 		return CachedValues["CanNormalKill"..tostring(pitAvailable)..tostring(allowGale)..tostring(allowCane)]
@@ -899,7 +899,7 @@ end
 ---@param allowGale? boolean true
 ---@return accessibilityLevel
 function CanNormalSatchelKill(allowGale)
-	allowGale = allowGale or true
+	if allowGale == nil then allowGale = true end
 
 	if CachedValues["CanNormalSatchelKill"..tostring(allowGale)] then
 		return CachedValues["CanNormalSatchelKill"..tostring(allowGale)]
@@ -936,7 +936,7 @@ end
 ---@param allowGale? boolean true
 ---@return accessibilityLevel
 function CanNormalSlingshotKill(allowGale)
-	allowGale = allowGale or true
+	if allowGale == nil then allowGale = true end
 
 	if CachedValues["CanNormalSlingshotKill"..tostring(allowGale)] then
 		return CachedValues["CanNormalSlingshotKill"..tostring(allowGale)]
@@ -1192,10 +1192,42 @@ function HasOreChunks(count)
 	)
 end
 
+function CanEncounterMaple()
+	return CanNormalKill(false, false)
+end
 function CanMapleTrade()
-	return All(
-		LonLonEgg,
-		CanNormalKill(false, false)
+	return Has(LonLonEgg)
+end
+---require a certain percent of progression items to soft-gate Maple logic</br>
+---just an approximation, as we can't know exactly which items are progression, esp gashas and rupees
+---@param pct integer
+function CanAnnoyMaple(pct)
+	local itemCount = 52 -- arbitrary number that relatively matches base item count
+	-- add count based on settings
+	for _, val in pairs(EssencesInWorld) do
+		if val then
+			itemCount = itemCount + 1
+		end
+	end
+	if HardLogic() > AccessibilityLevel.Normal then
+		itemCount = itemCount + 2
+	elseif Has(Medium) then
+		itemCount = itemCount + 5
+	else
+		itemCount = itemCount + 7
+	end
+	itemCount = itemCount + Tracker:FindObjectForCode(GashaSetting).CurrentStage
+	if Has(MasterKeysBoth) then
+		itemCount = itemCount + 8
+	elseif Has(MasterKeysSmall) then
+		itemCount = itemCount + 16
+	else
+		itemCount = itemCount + 35
+	end
+
+	return Any(
+		Tracker:ProviderCountForCode("progitem") / itemCount * 100 >= pct,
+		AccessibilityLevel.SequenceBreak -- items are always available
 	)
 end
 

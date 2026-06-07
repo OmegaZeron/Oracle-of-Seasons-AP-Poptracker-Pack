@@ -56,8 +56,8 @@ LonelyGoron:connect_one_way(GoronPitsItem, function() return AccessibilityLevel.
 CenterGoronMountain:connect_one_way_entrance(LowerMtCucco, function() return Has(Shovel) end)
 
 -- items
-WestGoronMountain:connect_one_way(Maple, CanMapleTrade)
-CenterGoronMountain:connect_one_way(Maple, CanMapleTrade)
+WestGoronMountain:connect_one_way(Maple, CanEncounterMaple)
+CenterGoronMountain:connect_one_way(Maple, CanEncounterMaple)
 SouthGoronMountain:connect_one_way(NatzuPlatformCave, function()
 	return Any(
 		Flippers,

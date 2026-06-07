@@ -1,4 +1,4 @@
-NorthHolodrumPlain:connect_one_way(Maple, CanMapleTrade)
+NorthHolodrumPlain:connect_one_way(Maple, CanEncounterMaple)
 NorthHolodrumPlain:connect_one_way(HolodrumPlainFindSeason)
 NorthHolodrumPlain:connect_one_way(NorthHoronFindSeason)
 -- items
@@ -54,7 +54,7 @@ NorthHolodrumPlain:connect_one_way(TreehouseOldMan, function()
 end)
 NorthHolodrumPlain:connect_one_way(UnderNatzuBridge, function() return Has(Flippers) end)
 HolodrumPlainSign:connect_one_way(HolodrumPlainFloodedCave, function() return Has(Flippers) end)
-SouthHolodrumPlain:connect_one_way(Maple, CanMapleTrade)
+SouthHolodrumPlain:connect_one_way(Maple, CanEncounterMaple)
 SouthHolodrumPlain:connect_one_way(MrsRuul, function() return Has(GhastlyDoll) end)
 SouthHolodrumPlain:connect_one_way(SouthHolodrumPlainGasha, function()
 	return All(

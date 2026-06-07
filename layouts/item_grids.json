@@ -12,7 +12,7 @@
 				"item_size": 33,
 				"rows": [
 					["sword1", "biggoron_sword", "bestweapon", "shield", "bombs", "bombchus"],
-					["strength", "boomerang1", "slingshot1", "shooter", "glove", "feather"],
+					["bracelet", "boomerang1", "slingshot1", "shooter", "magnet", "feather"],
 					["satchel1", "emberseeds", "mysteryseeds", "scentseeds", "pegasusseeds", "galeseeds"],
 					["hook", "spring", "summer", "fall", "winter", "shovel"],
 					["somaria", "ring_fist", "ring_heart", "ring_energy", "ring_swimmer", "flute_generic"]
@@ -252,7 +252,7 @@
 				"item_size": 33,
 				"rows": [
 					["sword1", "biggoron_sword", "bestweapon", "shield", "bombs", "bombchus"],
-					["strength", "boomerang1", "slingshot1", "shooter", "glove", "feather"],
+					["bracelet", "boomerang1", "slingshot1", "shooter", "magnet", "feather"],
 					["satchel1", "emberseeds", "mysteryseeds", "scentseeds", "pegasusseeds", "galeseeds"],
 					["hook", "spring", "summer", "fall", "winter", "shovel"],
 					["somaria", "ring_fist", "ring_heart", "ring_energy", "ring_swimmer", "flute_generic"]

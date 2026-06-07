@@ -1,6 +1,6 @@
 -- lower
 LowerNorthHoron:connect_one_way(NorthHoronFindSeason)
-LowerEasternSuburbs:connect_one_way(Maple, CanMapleTrade)
+LowerEasternSuburbs:connect_one_way(Maple, CanEncounterMaple)
 -- standing items
 LowerNorthHoron:connect_one_way(CatInTree, function() return Has(Fish) end)
 LowerNorthHoron:connect_one_way(EyeglassPitsChest, function()
@@ -26,7 +26,7 @@ LowerNorthHoron:connect_one_way_entrance(HoronVillage)
 
 -- upper
 UpperNorthHoron:connect_one_way(NorthHoronFindSeason)
-LowerEasternSuburbs:connect_one_way(Maple, CanMapleTrade)
+LowerEasternSuburbs:connect_one_way(Maple, CanEncounterMaple)
 -- malon
 UpperNorthHoron:connect_two_ways_entrance(MalonHouse)
 MalonHouse:connect_one_way(MalonTrade, function() return Has(Cuccodex) end)
@@ -166,7 +166,7 @@ EyeglassPortal:connect_one_way_entrance(Pedestal, function()
 end)
 
 -- eastern
-EasternNorthHoron:connect_one_way(Maple, CanMapleTrade)
+EasternNorthHoron:connect_one_way(Maple, CanEncounterMaple)
 EasternNorthHoron:connect_one_way(EyeglassGasha, function()
 	return All(
 		Shovel,

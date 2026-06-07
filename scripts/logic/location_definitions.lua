@@ -1,6 +1,11 @@
 StartLocation = Region.New("StartLocation")
 -- HOLODRUM
 Maple = Region.New("Maple")
+MapleTrade = Region.New("MapleTrade")
+Maple1 = Region.New("Maple1")
+Maple2 = Region.New("Maple2")
+Maple3 = Region.New("Maple3")
+Maple4 = Region.New("Maple4")
 -- Horon Village
 -- locations
 HoronVillage = Region.New("HoronVillage")
@@ -34,7 +39,6 @@ MakuTreeReward1 = Region.New("MakuTreeReward1")
 MakuTreeReward2 = Region.New("MakuTreeReward2")
 MakuTreeReward3 = Region.New("MakuTreeReward3")
 HoronVillageOldMan = Region.New("HoronVillageOldMan")
-MakuSeed = Region.New("MakuSeed")
 
 -- North Horon
 -- locations

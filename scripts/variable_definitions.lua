@@ -976,14 +976,14 @@ DungeonMapping = {
 	["d8"] = "d8_ent_selector_hidden"
 }
 EssencesInWorld = {
-	["Fertile Soil"] = false,
-	["Gift of Time"] = false,
-	["Bright Sun"] = false,
-	["Soothing Rain"] = false,
-	["Nurturing Warmth"] = false,
-	["Blowing Wind"] = false,
-	["Seed of Life"] = false,
-	["Changing Seasons"] = false
+	["Fertile Soil"] = true,
+	["Gift of Time"] = true,
+	["Bright Sun"] = true,
+	["Soothing Rain"] = true,
+	["Nurturing Warmth"] = true,
+	["Blowing Wind"] = true,
+	["Seed of Life"] = true,
+	["Changing Seasons"] = true
 }
 EssenceTable = {
 	{"Fertile Soil", "d1_label"},

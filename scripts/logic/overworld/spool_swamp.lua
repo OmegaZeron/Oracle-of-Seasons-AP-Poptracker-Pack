@@ -1,4 +1,4 @@
-NorthSpoolSwamp:connect_one_way(Maple, CanMapleTrade)
+NorthSpoolSwamp:connect_one_way(Maple, CanEncounterMaple)
 NorthSpoolSwamp:connect_one_way(SpoolSwampFindSeason)
 SouthSpoolSwamp:connect_one_way(SpoolSwampFindSeason)
 -- items
@@ -127,7 +127,7 @@ MiddleSpoolSwamp:connect_two_ways_entrance(SouthSpoolSwamp, function()
 		Flippers
 	)
 end)
-SouthSpoolSwamp:connect_one_way(Maple, CanMapleTrade)
+SouthSpoolSwamp:connect_one_way(Maple, CanEncounterMaple)
 
 -- make sure you can go directly from the stump to south, or default season
 -- just because you can reach the stump doesn't mean you can also get there

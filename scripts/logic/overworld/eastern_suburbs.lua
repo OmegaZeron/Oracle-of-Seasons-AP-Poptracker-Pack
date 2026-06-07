@@ -2,7 +2,7 @@
 LowerEasternSuburbs:connect_one_way(EasternSuburbsFindSeason)
 LowerEasternSuburbs:connect_one_way(HoronVillageFindSeason)
 --standing items
-LowerEasternSuburbs:connect_one_way(Maple, CanMapleTrade)
+LowerEasternSuburbs:connect_one_way(Maple, CanEncounterMaple)
 LowerEasternSuburbs:connect_one_way(WindmillHP, function()
 	return Any(
 		EasternSuburbsWinter,
@@ -91,8 +91,8 @@ end)
 
 -- upper suburbs
 UpperEasternSuburbs:connect_one_way(EasternSuburbsFindSeason)
-UpperEasternSuburbs:connect_one_way(Maple, CanMapleTrade)
-UpperEasternSuburbsWinter:connect_one_way(Maple, CanMapleTrade)
+UpperEasternSuburbs:connect_one_way(Maple, CanEncounterMaple)
+UpperEasternSuburbsWinter:connect_one_way(Maple, CanEncounterMaple)
 UpperEasternSuburbs:connect_one_way_entrance(UpperEasternSuburbsWinter, function() return Has(Winter) end)
 UpperEasternSuburbsWinter:connect_one_way(EasternSuburbsFindSeason)
 UpperEasternSuburbsWinter:connect_one_way_entrance(UpperEasternSuburbs, function()
@@ -129,7 +129,7 @@ end)
 -- woods of winter
 MoblinRoad:connect_one_way(EasternSuburbsFindSeason)
 MoblinRoad:connect_one_way(WoodsOfWinterFindSeason)
-MoblinRoad:connect_one_way(Maple, CanMapleTrade)
+MoblinRoad:connect_one_way(Maple, CanEncounterMaple)
 MoblinRoad:connect_one_way_entrance(UpperEasternSuburbsWinter, function()
 	return Any(
 		EasternSuburbsWinter,

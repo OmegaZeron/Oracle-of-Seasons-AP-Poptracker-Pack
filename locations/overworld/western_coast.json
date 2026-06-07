@@ -177,7 +177,23 @@
 				"sections": [
 					{
 						"name": "Lon Lon Egg Trade",
-						"access_rules": ["^$CanReach|Maple"]
+						"access_rules": ["^$CanReach|MapleTrade"]
+					},
+					{
+						"name": "Rare Drop #1",
+						"access_rules": ["^$CanReach|Maple1"]
+					},
+					{
+						"name": "Rare Drop #2",
+						"access_rules": ["^$CanReach|Maple2"]
+					},
+					{
+						"name": "Rare Drop #3",
+						"access_rules": ["^$CanReach|Maple3"]
+					},
+					{
+						"name": "Rare Drop #4",
+						"access_rules": ["^$CanReach|Maple4"]
 					}
 				],
 				"map_locations": [

@@ -1406,8 +1406,7 @@ function Roosters(area, anyAmt, topAmt, botAmt, visited)
 				All(
 					Any(Autumn, LostWoodsAutumn),
 					MagicBoomerang,
-					Any(Jump1(false), HardLogic),
-					MediumLogic
+					Jump1(false)
 				)
 			),
 			Any(Winter, LostWoodsWinter),

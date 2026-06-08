@@ -8,14 +8,29 @@ SubrosiaMountainEast:connect_one_way_entrance(SuburbsPortal, function()
 end)
 SubrosiaMountainEast:connect_two_ways_entrance(TempleOfSeasons)
 SubrosiaMountainEast:connect_two_ways_entrance(SubrosiaMountainWest, function() return Has(Feather) end)
-SubrosiaMountainEast:connect_two_ways_entrance(StrangeBrothers, JumpLiquid4)
+SubrosiaMountainEast:connect_two_ways_entrance(StrangeBrothers, function()
+	return Any(
+		JumpLiquid4,
+		All(
+			Cape,
+			Bombchus,
+			AccessibilityLevel.SequenceBreak
+		)
+	)
+end)
 SubrosiaMountainEast:connect_one_way(SubrosiaMountainMagnetDigSpot, function()
 	return All(
 		Feather,
 		Shovel,
 		Any(
 			MagnetGlove,
-			JumpLiquid3
+			JumpLiquid3,
+			All(
+				Feather,
+				CanRun,
+				Bombchus,
+				AccessibilityLevel.SequenceBreak
+			)
 		)
 	)
 end)
@@ -46,7 +61,15 @@ Volcano:connect_one_way_entrance(Fireworks, function() return Has(Bombs) end)
 Volcano:connect_one_way_entrance(SubrosiaMountainWest, function()
 	return All(
 		Bracelet,
-		JumpLiquid3
+		Any(
+			JumpLiquid3,
+			All(
+				Feather,
+				CanRun,
+				Bombchus,
+				AccessibilityLevel.SequenceBreak
+			)
+		)
 	)
 end)
 Volcano:connect_one_way_entrance(TempleRemainsLowerPortal, function()
@@ -108,7 +131,13 @@ SubrosiaMarket:connect_one_way(SubrosiaMarketLowerDigSpot, function() return Has
 SubrosiaMarket:connect_one_way_entrance(WestFurnace, function()
 	return Any(
 		JumpLiquid3,
-		MagnetGlove
+		MagnetGlove,
+		All(
+			Feather,
+			CanRun,
+			Bombchus,
+			AccessibilityLevel.SequenceBreak
+		)
 	)
 end)
 
@@ -202,6 +231,12 @@ WestFurnace:connect_one_way_entrance(SubrosiaMarket, function()
 		All(
 			Bracelet,
 			Jump2
+		),
+		All(
+			Feather,
+			CanRun,
+			Bombchus,
+			AccessibilityLevel.SequenceBreak
 		)
 	)
 end)

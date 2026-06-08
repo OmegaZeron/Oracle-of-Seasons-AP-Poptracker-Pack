@@ -37,7 +37,12 @@ TarmTreeStump:connect_one_way(TarmLostWoodsScrub, function()
 		CanDestroyMushroom,
 		Any(
 			Flippers,
-			JumpLiquid2
+			JumpLiquid2,
+			All(
+				Feather,
+				Bombchus,
+				AccessibilityLevel.SequenceBreak
+			)
 		)
 	)
 end)

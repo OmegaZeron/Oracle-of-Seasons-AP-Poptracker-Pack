@@ -92,7 +92,12 @@ end)
 MoblinKeepBridge:connect_two_ways_entrance(MoblinKeep, function()
 	return Any(
 		Flippers,
-		JumpLiquid4
+		JumpLiquid4,
+		All(
+			Cape,
+			Bombchus,
+			AccessibilityLevel.SequenceBreak
+		)
 	)
 end)
 MoblinKeep:connect_one_way(GreatMoblinChest, function() return Has(Bracelet) end)

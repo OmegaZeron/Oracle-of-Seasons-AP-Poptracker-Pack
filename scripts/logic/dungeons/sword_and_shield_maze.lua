@@ -68,6 +68,16 @@ MazeSpinner:connect_one_way_entrance(MazeArmosChest, function()
 			CaneOfSomaria,
 			CanRun,
 			HardLogic
+		),
+		All(
+			JumpLiquid6,
+			AccessibilityLevel.SequenceBreak
+		),
+		All(
+			CaneOfSomaria,
+			Cape,
+			Bombchus,
+			AccessibilityLevel.SequenceBreak
 		)
 	)
 end)
@@ -78,7 +88,13 @@ MazeSpinner:connect_one_way_entrance(MazeThreeEyeOwl, function()
 		All(
 			CanRun,
 			Cape,
-			HasBombsForBombJump,
+			Any(
+				HasBombsForBombJump,
+				All(
+					Bombchus,
+					AccessibilityLevel.SequenceBreak
+				)
+			),
 			HellLogic
 		)
 	)

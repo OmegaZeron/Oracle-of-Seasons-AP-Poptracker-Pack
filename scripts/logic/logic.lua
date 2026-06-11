@@ -27,6 +27,9 @@ Region.__index = Region
 ---@param name string
 ---@return Region
 function Region.New(name)
+	if name == nil then
+		error("Region name cannot be nil")
+	end
 	if NamedRegions[name] then
 		print(name .. " already exists")
 	end

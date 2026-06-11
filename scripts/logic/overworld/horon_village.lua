@@ -104,9 +104,9 @@ HoronVillage:connect_one_way(HoronVillageOldMan, CanBurnTrees)
 -- maku tree
 HoronVillage:connect_one_way_entrance(MakuTree, function() return Has(WoodSword) end)
 MakuTree:connect_one_way(MakuTreeGift)
-MakuTree:connect_one_way(MakuTreeReward1, function() return Has(Essences, 3) end)
-MakuTree:connect_one_way(MakuTreeReward2, function() return Has(Essences, 5) end)
-MakuTree:connect_one_way(MakuTreeReward3, function() return Has(Essences, 7) end)
+MakuTree:connect_one_way_entrance(MakuTreeReward1, function() return Has(Essences, 3) end)
+MakuTreeReward1:connect_one_way_entrance(MakuTreeReward2, function() return Has(Essences, 5) end)
+MakuTreeReward2:connect_one_way(MakuTreeReward3, function() return Has(Essences, 7) end)
 
 -- portal
 HoronVillage:connect_two_ways_entrance(HoronPortalStairs)

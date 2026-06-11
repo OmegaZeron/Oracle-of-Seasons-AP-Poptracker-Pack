@@ -9,11 +9,11 @@
 			},
 			{
 				"img": "images/items/sword2.png",
-				"codes": "sword2, sword"
+				"codes": "sword2"
 			},
 			{
 				"img": "images/items/sword3.png",
-				"codes": "sword3, sword"
+				"codes": "sword3"
 			}
 		]
 	},
@@ -33,11 +33,11 @@
 			},
 			{
 				"img": "images/items/shield2.png",
-				"codes": "shield2, shield"
+				"codes": "shield2"
 			},
 			{
 				"img": "images/items/shield3.png",
-				"codes": "shield3, shield"
+				"codes": "shield3"
 			}
 		]
 	},

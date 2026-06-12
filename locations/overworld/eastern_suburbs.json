@@ -103,7 +103,8 @@
 						"name": "Eastern Suburbs",
 						"access_rules": ["{^$CanReach|EasternSuburbsFindSeason}"],
 						"chest_unopened_img": "images/labels/season_icons.png",
-						"chest_opened_img": "images/labels/season_icons_disabled.png"
+						"chest_opened_img": "images/labels/season_icons_disabled.png",
+						"inspectable_sequence_break": true
 					}
 				],
 				"map_locations": [
@@ -117,6 +118,7 @@
 			},
 			{
 				"name": "Windmill",
+				"parent": "Samasa Desert",
 				"sections": [
 					{
 						"name": "Guru-Guru Trade",
@@ -207,7 +209,8 @@
 						"name": "Woods of Winter",
 						"access_rules": ["{^$CanReach|WoodsOfWinterFindSeason}"],
 						"chest_unopened_img": "images/labels/season_icons.png",
-						"chest_opened_img": "images/labels/season_icons_disabled.png"
+						"chest_opened_img": "images/labels/season_icons_disabled.png",
+						"inspectable_sequence_break": true
 					}
 				],
 				"map_locations": [

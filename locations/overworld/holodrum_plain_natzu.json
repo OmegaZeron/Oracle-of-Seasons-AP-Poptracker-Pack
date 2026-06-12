@@ -13,7 +13,8 @@
 						"name": "Holodrum Plain",
 						"access_rules": ["{^$CanReach|HolodrumPlainFindSeason}"],
 						"chest_unopened_img": "images/labels/season_icons.png",
-						"chest_opened_img": "images/labels/season_icons_disabled.png"
+						"chest_opened_img": "images/labels/season_icons_disabled.png",
+						"inspectable_sequence_break": true
 					}
 				],
 				"map_locations": [

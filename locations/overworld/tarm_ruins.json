@@ -16,7 +16,8 @@
 						"name": "Lost Woods",
 						"access_rules": ["{^$CanReach|LostWoodsFindSeason}"],
 						"chest_unopened_img": "images/labels/season_icons.png",
-						"chest_opened_img": "images/labels/season_icons_disabled.png"
+						"chest_opened_img": "images/labels/season_icons_disabled.png",
+						"inspectable_sequence_break": true
 					}
 				],
 				"map_locations": [
@@ -129,7 +130,8 @@
 						"name": "Tarm Ruins",
 						"access_rules": ["{^$CanReach|TarmRuinsFindSeason}"],
 						"chest_unopened_img": "images/labels/season_icons.png",
-						"chest_opened_img": "images/labels/season_icons_disabled.png"
+						"chest_opened_img": "images/labels/season_icons_disabled.png",
+						"inspectable_sequence_break": true
 					}
 				],
 				"map_locations": [

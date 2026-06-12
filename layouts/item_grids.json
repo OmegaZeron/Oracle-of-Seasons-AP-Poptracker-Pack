@@ -61,8 +61,8 @@
 					{
 						"type": "itemgrid",
 						"h_alignment": "center",
-						"margin": "0,-5,0,-165",
-						"item_size": 190,
+						"margin": "0,-5,0,0",
+						"item_size": "190,25",
 						"rows": [
 							["lost_woods_main"]
 						]
@@ -89,8 +89,8 @@
 					{
 						"type": "itemgrid",
 						"h_alignment": "center",
-						"margin": "0,-20,0,-165",
-						"item_size": 190,
+						"margin": "0,-21,0,-1",
+						"item_size": "190, 26",
 						"rows": [
 							["pedestal_sequence"]
 						]

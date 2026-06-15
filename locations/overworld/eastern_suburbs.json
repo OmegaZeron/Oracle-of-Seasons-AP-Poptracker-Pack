@@ -10,7 +10,9 @@
 				"sections": [
 					{
 						"name": "Rusty Bell (With Skull)",
-						"access_rules": ["^$CanReach|SamasaDesertPit"]
+						"access_rules": ["^$CanReach|SamasaDesertPit"],
+						"chest_unopened_img": "images/labels/skull_chatter.png",
+						"chest_opened_img": "images/labels/skull_chatter_gray.png"
 					},
 					{
 						"name": "Business Scrub (Without Skull)",

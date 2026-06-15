@@ -15,8 +15,8 @@
 				"map_locations": [
 					{
 						"map": "poison_moths_lair1",
-						"x": 108,
-						"y": 192
+						"x": 136,
+						"y": 200
 					}
 				]
 			},
@@ -31,8 +31,8 @@
 				"map_locations": [
 					{
 						"map": "poison_moths_lair2",
-						"x": 287,
-						"y": 70
+						"x": 360,
+						"y": 89
 					}
 				]
 			},
@@ -47,8 +47,8 @@
 				"map_locations": [
 					{
 						"map": "poison_moths_lair2",
-						"x": 697,
-						"y": 32
+						"x": 872,
+						"y": 41
 					}
 				]
 			},
@@ -63,8 +63,8 @@
 				"map_locations": [
 					{
 						"map": "poison_moths_lair1",
-						"x": 684,
-						"y": 537
+						"x": 856,
+						"y": 632
 					}
 				]
 			},
@@ -79,8 +79,8 @@
 				"map_locations": [
 					{
 						"map": "poison_moths_lair2",
-						"x": 838,
-						"y": 352
+						"x": 1048,
+						"y": 269
 					}
 				]
 			},
@@ -95,8 +95,8 @@
 				"map_locations": [
 					{
 						"map": "poison_moths_lair2",
-						"x": 825,
-						"y": 211
+						"x": 1032,
+						"y": 93
 					}
 				]
 			},
@@ -111,8 +111,8 @@
 				"map_locations": [
 					{
 						"map": "poison_moths_lair2",
-						"x": 96,
-						"y": 211
+						"x": 120,
+						"y": 93
 					}
 				]
 			},
@@ -127,8 +127,8 @@
 				"map_locations": [
 					{
 						"map": "poison_moths_lair1",
-						"x": 659,
-						"y": 282
+						"x": 824,
+						"y": 312
 					}
 				]
 			},
@@ -143,8 +143,8 @@
 				"map_locations": [
 					{
 						"map": "poison_moths_lair1",
-						"x": 108,
-						"y": 346
+						"x": 136,
+						"y": 392
 					}
 				]
 			},
@@ -159,8 +159,8 @@
 				"map_locations": [
 					{
 						"map": "poison_moths_lair2",
-						"x": 479,
-						"y": 307
+						"x": 600,
+						"y": 204
 					}
 				]
 			},
@@ -175,8 +175,8 @@
 				"map_locations": [
 					{
 						"map": "poison_moths_lair1",
-						"x": 479,
-						"y": 127
+						"x": 600,
+						"y": 37
 					}
 				]
 			}

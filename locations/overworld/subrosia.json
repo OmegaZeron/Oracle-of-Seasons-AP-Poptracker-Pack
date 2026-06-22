@@ -155,7 +155,7 @@
 				"sections": [
 					{
 						"hosted_item": "event_fireworks",
-						"access_rules": ["{^$CanReach|Volcano}"]
+						"access_rules": ["^$CanReach|Fireworks"]
 					}
 				],
 				"map_locations": [

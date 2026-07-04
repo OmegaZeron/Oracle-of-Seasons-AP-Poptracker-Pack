@@ -85,7 +85,7 @@ SamasaDesert:connect_one_way_entrance(LinkedCaveLedge, function()
 	return All(
 		LinkedCaveDesert,
 		LCAltVanilla,
-		CanDestroyBushFlute(true)
+		CanDestroyBush(true)
 	)
 end)
 

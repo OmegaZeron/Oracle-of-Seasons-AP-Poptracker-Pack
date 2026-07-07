@@ -69,14 +69,11 @@ MazeSpinner:connect_one_way_entrance(MazeArmosChest, function()
 			CanRun,
 			HardLogic
 		),
+		JumpLiquid6,
 		All(
-			JumpLiquid6,
-			AccessibilityLevel.SequenceBreak
-		),
-		All(
-			CaneOfSomaria,
 			Cape,
 			Bombchus,
+			CanRun,
 			AccessibilityLevel.SequenceBreak
 		)
 	)

@@ -552,11 +552,11 @@ function CanBreakCrystal()
 		HasBombsForTiles,
 		Bracelet,
 		All(
-			ExpertsRing,
-			MediumLogic
-		),
-		All(
-			HasBombchusForTiles,
+			Any(
+				ExpertsRing,
+				HasBombchusForTiles,
+				CanBurnTrees
+			),
 			MediumLogic
 		)
 	)

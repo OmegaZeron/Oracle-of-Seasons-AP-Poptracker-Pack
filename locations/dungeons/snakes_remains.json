@@ -22,9 +22,7 @@
 			{
 				"name": "Chest Left from Entrance",
 				"sections": [
-					{
-						"access_rules": ["^$CanReach|SnakeFoyer"]
-					}
+					{"access_rules": ["^$CanReach|SnakeFoyer"]}
 				],
 				"map_locations": [
 					{
@@ -37,9 +35,7 @@
 			{
 				"name": "Drop in Left Rope Room",
 				"sections": [
-					{
-						"access_rules": ["^$CanReach|SnakeLeftRopeDrop"]
-					}
+					{"access_rules": ["^$CanReach|SnakeLeftRopeDrop"]}
 				],
 				"map_locations": [
 					{
@@ -52,9 +48,7 @@
 			{
 				"name": "Chest in Right Rope Room",
 				"sections": [
-					{
-						"access_rules": ["^$CanReach|SnakeRightRopeChest"]
-					}
+					{"access_rules": ["^$CanReach|SnakeRightRopeChest"]}
 				],
 				"map_locations": [
 					{
@@ -84,9 +78,7 @@
 			{
 				"name": "Chest Behind Pots in Hardhat Room",
 				"sections": [
-					{
-						"access_rules": ["^$CanReach|SnakeHardhatChest"]
-					}
+					{"access_rules": ["^$CanReach|SnakeHardhatChest"]}
 				],
 				"map_locations": [
 					{
@@ -99,9 +91,7 @@
 			{
 				"name": "Chest in Distant Moblins Room",
 				"sections": [
-					{
-						"access_rules": ["^$CanReach|SnakeBombMoblinChest"]
-					}
+					{"access_rules": ["^$CanReach|SnakeBombMoblinChest"]}
 				],
 				"map_locations": [
 					{
@@ -135,9 +125,7 @@
 			{
 				"name": "Chest in Moving Blades Room",
 				"sections": [
-					{
-						"access_rules": ["^$CanReach|SnakeBladeTraps"]
-					}
+					{"access_rules": ["^$CanReach|SnakeBladeTraps"]}
 				],
 				"map_locations": [
 					{
@@ -166,9 +154,7 @@
 			{
 				"name": "Chest in Bomb Spiral Maze Room",
 				"sections": [
-					{
-						"access_rules": ["^$CanReach|SnakeBombPuzzle"]
-					}
+					{"access_rules": ["^$CanReach|SnakeBombPuzzle"]}
 				],
 				"map_locations": [
 					{
@@ -181,9 +167,7 @@
 			{
 				"name": "Chest in Rollers Section",
 				"sections": [
-					{
-						"access_rules": ["^$CanReach|FacadeDoorstep"]
-					}
+					{"access_rules": ["^$CanReach|FacadeDoorstep"]}
 				],
 				"map_locations": [
 					{
@@ -227,9 +211,7 @@
 			{
 				"name": "Chest on Terrace",
 				"sections": [
-					{
-						"access_rules": ["^$CanReach|SnakeTerrace"]
-					}
+					{"access_rules": ["^$CanReach|SnakeTerrace"]}
 				],
 				"map_locations": [
 					{

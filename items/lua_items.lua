@@ -112,8 +112,8 @@ local providesCodeFuncs = {
 ---@param type itemType
 ---@param img string
 ---@param state CustomItemState
----@param lClick? fun(self: LuaItem)
----@param rClick? fun(self: LuaItem)
+---@param lClick fun(self: LuaItem)
+---@param rClick fun(self: LuaItem)
 ---@param mClick? fun(self: LuaItem)
 function CreateLuaItem(name, type, img, state, lClick, rClick, mClick)
 	local self = ScriptHost:CreateLuaItem()
@@ -122,12 +122,18 @@ function CreateLuaItem(name, type, img, state, lClick, rClick, mClick)
 	self.ItemState = state or {}
 
 	self.CanProvideCodeFunc = CanProvideCodeFunc
-	self.OnLeftClickFunc = lClick --[[@as fun(self: LuaItem)]]
-	self.OnRightClickFunc = rClick --[[@as fun(self: LuaItem)]]
-	self.OnMiddleClickFunc = mClick --[[@as fun(self: LuaItem)]]
+	self.OnLeftClickFunc = lClick
+	self.OnRightClickFunc = rClick
+	if mClick then
+		self.OnMiddleClickFunc = mClick
+	end
 	self.ProvidesCodeFunc = providesCodeFuncs[type]
 	self.SaveFunc = SaveFunc
 	self.LoadFunc = LoadFunc
+
+	if type == "consumable" then
+		UpdateConsumableOverlay(self)
+	end
 	return self
 end
 

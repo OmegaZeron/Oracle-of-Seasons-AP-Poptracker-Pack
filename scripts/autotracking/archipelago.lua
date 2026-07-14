@@ -157,13 +157,13 @@ function OnClear(slot_data)
 	end
 
 	AutoCollectLocationTable = {
-		["AP"] = {
+		AP = {
 			[Satchel] = {"@Horon Village/Horon Tree/Horon Village: Seed Tree", SeedMapping[slot_data.options.default_seed]},
 			[Slingshot] = {"@Horon Village/Horon Tree/Horon Village: Seed Tree", SeedMapping[slot_data.options.default_seed]},
 			[SeedShooter] = {"@Horon Village/Horon Tree/Horon Village: Seed Tree", SeedMapping[slot_data.options.default_seed]},
 			[AnyFlute] = {function() Tracker:FindObjectForCode(Companion).CurrentStage = SLOT_DATA.options.animal_companion end}
 		},
-		["Any"] = DefaultAutoCollectLocationTable
+		Any = DefaultAutoCollectLocationTable
 	}
 
 	if Archipelago.PlayerNumber > -1 then
@@ -345,8 +345,8 @@ function OnItem(index, itemID, itemName, playerNumber)
 		elseif AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
 			print(string.format("onItem: unknown item type %s for code %s", itemData[2], itemData[1]))
 		end
-		if AutoCollectLocationTable["AP"][itemData[1]] then
-			for _, autoCollectData in ipairs(AutoCollectLocationTable["AP"][itemData[1]]) do
+		if AutoCollectLocationTable.AP[itemData[1]] then
+			for _, autoCollectData in ipairs(AutoCollectLocationTable.AP[itemData[1]]) do
 				if type(autoCollectData) == "function" then
 					autoCollectData()
 				else
@@ -498,7 +498,7 @@ function OnBounce(json)
 	if json.data["Current Room"] then
 		local prevRoom = CurrentRoom
 		CurrentRoom = json.data["Current Room"] --[[@as integer]]
-		if not CurrentRoom or prevRoom == CurrentRoom then
+		if prevRoom == CurrentRoom then
 			return
 		end
 

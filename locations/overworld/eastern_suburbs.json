@@ -368,7 +368,8 @@
 						"map": "holodrum",
 						"x": 2092,
 						"y": 1065,
-						"shape": "trapezoid"
+						"shape": "trapezoid",
+						// "restrict_visibility_rules": ["d2_d2"]
 					}
 				]
 			},

@@ -7,9 +7,7 @@
 			{
 				"name": "Drop in Right Stalfos Room",
 				"sections": [
-					{
-						"access_rules": ["^$CanReach|GnarledRightStalfosChest"]
-					}
+					{"access_rules": ["^$CanReach|GnarledRightStalfosChest"]}
 				],
 				"map_locations": [
 					{
@@ -22,9 +20,7 @@
 			{
 				"name": "Chest in Left Stalfos Room",
 				"sections": [
-					{
-						"access_rules": ["^$CanReach|GnarledLeftStalfosChest"]
-					}
+					{"access_rules": ["^$CanReach|GnarledLeftStalfosChest"]}
 				],
 				"map_locations": [
 					{
@@ -37,9 +33,7 @@
 			{
 				"name": "Chest in Goriya Room",
 				"sections": [
-					{
-						"access_rules": ["^$CanReach|GnarledGoriyaChest"]
-					}
+					{"access_rules": ["^$CanReach|GnarledGoriyaChest"]}
 				],
 				"map_locations": [
 					{
@@ -52,9 +46,7 @@
 			{
 				"name": "Chest in Block-pushing Room",
 				"sections": [
-					{
-						"access_rules": ["^$CanReach|GnarledPushBlocks"]
-					}
+					{"access_rules": ["^$CanReach|GnarledPushBlocks"]}
 				],
 				"map_locations": [
 					{
@@ -67,9 +59,7 @@
 			{
 				"name": "Chest Near Railway Lever",
 				"sections": [
-					{
-						"access_rules": ["^$CanReach|GnarledLeverChest"]
-					}
+					{"access_rules": ["^$CanReach|GnarledLeverChest"]}
 				],
 				"map_locations": [
 					{
@@ -82,9 +72,7 @@
 			{
 				"name": "Chest Near Railway",
 				"sections": [
-					{
-						"access_rules": ["^$CanReach|GnarledMinecartChest"]
-					}
+					{"access_rules": ["^$CanReach|GnarledMinecartChest"]}
 				],
 				"map_locations": [
 					{
@@ -97,9 +85,7 @@
 			{
 				"name": "Hidden Chest Revealed by Button",
 				"sections": [
-					{
-						"access_rules": ["^$CanReach|GnarledSpinningBladeChest"]
-					}
+					{"access_rules": ["^$CanReach|GnarledSpinningBladeChest"]}
 				],
 				"map_locations": [
 					{
@@ -112,9 +98,7 @@
 			{
 				"name": "Item in Basement",
 				"sections": [
-					{
-						"access_rules": ["^$CanReach|GnarledPostGoriyaBros"]
-					}
+					{"access_rules": ["^$CanReach|GnarledPostGoriyaBros"]}
 				],
 				"map_locations": [
 					{
@@ -127,9 +111,7 @@
 			{
 				"name": "Chest in Floormaster Room",
 				"sections": [
-					{
-						"access_rules": ["^$CanReach|GnarledFloormasterChest"]
-					}
+					{"access_rules": ["^$CanReach|GnarledFloormasterChest"]}
 				],
 				"map_locations": [
 					{

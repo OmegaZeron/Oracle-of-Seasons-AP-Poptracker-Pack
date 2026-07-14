@@ -382,8 +382,8 @@ function OnSectionChanged(section)
 
 		local updateItem = Tracker:FindObjectForCode(UpdateItem) --[[@as JsonItem]]
 		updateItem.Active = not updateItem.Active
-	elseif AutoCollectLocationTable["Any"][section.FullID] and section.AccessibilityLevel == AccessibilityLevel.Cleared then
-		for _, code in ipairs(AutoCollectLocationTable["Any"][section.FullID]) do
+	elseif AutoCollectLocationTable.Any[section.FullID] and section.AccessibilityLevel == AccessibilityLevel.Cleared then
+		for _, code in ipairs(AutoCollectLocationTable.Any[section.FullID]) do
 			if code:sub(1, 1) == "@" then
 				Tracker:FindObjectForCode(code).AvailableChestCount = 0
 			else
@@ -1669,12 +1669,24 @@ end
 -- Dungeon number display setting
 function OnChangeDungeonImages()
 	local setting = Tracker:FindObjectForCode("dungeon_number_setting") --[[@as JsonItem]]
-	for i = 0, 9 do
-		if i == 9 then
-			i = 11
+	for d = 0, 9 do
+		if d == 9 then
+			d = 11
 		end
-		local dungeon = Tracker:FindObjectForCode("d"..i.."_ent_selector") --[[@as JsonItem]]
-		dungeon.Icon = ImageReference:FromPackRelativePath(setting.CurrentStage == 0 and DungeonImageDict[dungeon.CurrentStage][1] or DungeonImageDict[dungeon.CurrentStage][2])
+		local dungeon = Tracker:FindObjectForCode("d"..d.."_ent_selector") --[[@as JsonItem]]
+		local idx = setting.CurrentStage == 0 and 1 or 2
+
+		for _, loc in ipairs(DungeonLocationDict[d]) do
+			local section = Tracker:FindObjectForCode(loc) --[[@as LocationSection]]
+			if section.AccessibilityLevel == AccessibilityLevel.Normal then
+				idx = idx + 2
+				goto continue
+			end
+		end
+
+		::continue::
+
+		dungeon.Icon = ImageReference:FromPackRelativePath(DungeonImageDict[dungeon.CurrentStage][idx])
 	end
 end
 
@@ -1692,6 +1704,8 @@ ScriptHost:AddWatchForCode("portal handler", "fill_portals", DisplayPortals)
 ScriptHost:AddWatchForCode("lost woods handler", "randomize_lost_woods_main_sequence", DisplayLostWoods)
 ScriptHost:AddWatchForCode("pedestal handler", "randomize_lost_woods_item_sequence", DisplayPedestal)
 ScriptHost:AddOnLocationSectionChangedHandler("section changed handler", OnSectionChanged)
+ScriptHost:AddWatchForCode("dungeon overlay item handler", "*", OnChangeDungeonImages)
+ScriptHost:AddOnLocationSectionChangedHandler("dungeon overlay section handler", OnChangeDungeonImages)
 ScriptHost:AddOnFrameHandler("load handler", OnFrameHandler)
 ScriptHost:AddWatchForCode("see companion handler", Companion, function()
 	local companion = Tracker:FindObjectForCode(Companion) --[[@as JsonItem]]

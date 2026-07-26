@@ -152,14 +152,8 @@ end)
 MoblinRoadBombCave:connect_one_way(MoblinRoadBombCaveChest, CanDestroyBush)
 MoblinRoad:connect_two_ways_entrance(MoblinRoadWaterfallCaveChest, function()
 	return Any(
-		Flippers,
-		JumpLiquid3,
-		All(
-			Feather,
-			CanRun,
-			Bombchus,
-			AccessibilityLevel.SequenceBreak
-		)
+		JumpLiquid3(true),
+		Flippers
 	)
 end)
 MoblinRoad:connect_one_way_entrance(Holly, function()

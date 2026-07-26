@@ -111,6 +111,18 @@ function HasBombchusForTiles()
 		)
 	)
 end
+function HasBombchusForBombJump()
+	return All(
+		HasHearts(4),
+		Any(
+			Bombchus20,
+			All(
+				Bombchus,
+				AccessibilityLevel.SequenceBreak
+			)
+		)
+	)
+end
 
 function CanBombWall()
 	if CachedValues["CanBombWall"] then
@@ -774,35 +786,63 @@ function JumpLiquid1(allowCompanion)
 		)
 	)
 end
-function JumpLiquid2()
+---@param allowBombchus boolean false
+function JumpLiquid2(allowBombchus)
+	allowBombchus = allowBombchus or false
 	return Any(
 		MaxJump() >= 2,
 		All(
 			MaxJump() >= 1,
-			HasBombsForBombJump,
-			HardLogic
+			Any(
+				All(
+					HasBombsForBombJump,
+					HardLogic
+				),
+				All(
+					HasBombchusForBombJump,
+					HellLogic
+				)
+			)
 		)
 	)
 end
-
-function JumpLiquid3()
+---@param allowBombchus boolean false
+function JumpLiquid3(allowBombchus)
+	allowBombchus = allowBombchus or false
 	return Any(
 		MaxJump() >= 3,
 		All(
 			MaxJump() >= 2,
-			HasBombsForBombJump,
-			HardLogic
+			Any(
+				All(
+					HasBombsForBombJump,
+					HardLogic
+				),
+				All(
+					HasBombchusForBombJump,
+					HellLogic
+				)
+			)
 		)
 	)
 end
-
-function JumpLiquid4()
+---@param allowBombchus boolean false
+function JumpLiquid4(allowBombchus)
+	allowBombchus = allowBombchus or false
 	return Any(
 		MaxJump() >= 4,
 		All(
 			MaxJump() >= 3,
-			HasBombsForBombJump,
-			HardLogic
+			Any(
+				All(
+					HasBombsForBombJump,
+					HardLogic
+				),
+				All(
+					HasBombchusForBombJump,
+					HellLogic
+				)
+			)
 		)
 	)
 end
@@ -810,12 +850,22 @@ end
 function JumpLiquid5()
 	return MaxJump() >= 5
 end
-
-function JumpLiquid6()
+---@param allowBombchus boolean false
+function JumpLiquid6(allowBombchus)
+	allowBombchus = allowBombchus or false
 	return All(
 		MaxJump() >= 5,
-		HasBombsForBombJump,
-		HardLogic
+		Any(
+			All(
+				HasBombsForBombJump,
+				HardLogic
+			),
+			All(
+				allowBombchus,
+				HasBombchusForBombJump,
+				HellLogic
+			)
+		)
 	)
 end
 

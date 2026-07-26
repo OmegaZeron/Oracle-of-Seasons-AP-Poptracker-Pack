@@ -6,7 +6,18 @@
 		"color": "#00ff08",
 		"children": [
 			{
-				"name": "Ignore One Time",
+				"name": "Go to GitHub",
+				"sections": [{}],
+				"map_locations": [
+					{
+						"map": "version_mismatch",
+						"x": 11,
+						"y": 133
+					}
+				]
+			},
+			{
+				"name": "Ignore This Session",
 				"sections": [{}],
 				"map_locations": [
 					{

@@ -69,13 +69,7 @@ MazeSpinner:connect_one_way_entrance(MazeArmosChest, function()
 			CanRun,
 			HardLogic
 		),
-		JumpLiquid6,
-		All(
-			Cape,
-			Bombchus,
-			CanRun,
-			AccessibilityLevel.SequenceBreak
-		)
+		JumpLiquid6(true)
 	)
 end)
 MazeArmosChest:connect_one_way(MazeSpinnerChest, function() return Has(MagnetGlove) end)
@@ -87,10 +81,7 @@ MazeSpinner:connect_one_way_entrance(MazeThreeEyeOwl, function()
 			Cape,
 			Any(
 				HasBombsForBombJump,
-				All(
-					Bombchus,
-					AccessibilityLevel.SequenceBreak
-				)
+				HasBombchusForBombJump
 			),
 			HellLogic
 		)

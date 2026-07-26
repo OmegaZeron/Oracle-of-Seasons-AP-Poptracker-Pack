@@ -29,7 +29,7 @@ function PreOnClear()
 	end
 
 	local manualStorageItem = Tracker:FindObjectForCode(ManualStorageCode).ItemState --[[@as ManualTrackerState]]
-	local seedBase = (Archipelago.Seed or #ALL_LOCATIONS).."_"..Archipelago.TeamNumber.."_"..Archipelago.PlayerNumber
+	local seedBase = Archipelago.Seed.."_"..Archipelago.TeamNumber.."_"..Archipelago.PlayerNumber
 	if manualStorageItem and (ROOM_SEED == DEFAULT_SEED or ROOM_SEED ~= seedBase) then
 		ROOM_SEED = seedBase
 		if #manualStorageItem.ManualLocations > 10 then
@@ -172,13 +172,8 @@ function OnClear(slot_data)
 		DataStorageID = "OoS_"..slotInfo
 		ClientStatusID = "_read_client_status_"..slotInfo
 
-		if Highlight then
-			Archipelago:SetNotify({HintsID, DataStorageID, ClientStatusID})
-			Archipelago:Get({HintsID, DataStorageID, ClientStatusID})
-		else
-			Archipelago:SetNotify({DataStorageID, ClientStatusID})
-			Archipelago:Get({DataStorageID, ClientStatusID})
-		end
+		Archipelago:SetNotify({HintsID, DataStorageID, ClientStatusID})
+		Archipelago:Get({HintsID, DataStorageID, ClientStatusID})
 	end
 
 	for opt, val in pairs(slot_data.options) do
@@ -477,12 +472,14 @@ function UpdateHints(locationID, status)
 	local locations = LOCATION_MAPPING[locationID]
 	-- print("Hint", DumpTable(locations), status)
 	for _, location in ipairs(locations) do
-		local section = Tracker:FindObjectForCode(location) --[[@as LocationSection]]
-		if section then
-			IsHighlightUpdate = true
-			section.Highlight = status
-		else
-			print(string.format("No object found for code: %s", location))
+		if location:sub(1, 1) == "@" then
+			local section = Tracker:FindObjectForCode(location) --[[@as LocationSection]]
+			if section then
+				IsHighlightUpdate = true
+				section.Highlight = status
+			else
+				print(string.format("No object found for code: %s", location))
+			end
 		end
 	end
 end
@@ -583,19 +580,15 @@ function ManualLocationHandler(location)
 			if EventTable[location.FullID] then
 				Tracker:FindObjectForCode(EventTable[location.FullID]).Active = true
 			end
-			if Highlight then
-				location.Highlight = Highlight.None
-			end
+			location.Highlight = Highlight.None
 		else
 			-- remove from list of set back to max chest count
 			manualStorageItem.ManualLocations[ROOM_SEED].locations[fullID] = nil
 			if EventTable[location.FullID] then
 				Tracker:FindObjectForCode(EventTable[location.FullID]).Active = false
 			end
-			if Highlight then
-				-- re-grab hints since it was cleared earlier
-				Archipelago:Get({HintsID})
-			end
+			-- re-grab hints since it was cleared earlier
+			Archipelago:Get({HintsID})
 		end
 	end
 end
@@ -621,7 +614,7 @@ function OnVersionCheckChanged(code)
 		return
 	end
 	if Tracker:FindObjectForCode(VersionMismatch).Active then
-		ScriptHost:AddOnLocationSectionChangedHandler("version mismatch ignore handler", OnIgnoreVersionMismatch)
+		ScriptHost:AddOnLocationSectionChangedHandler("version mismatch handler", OnVersionMismatchChange)
 		Tracker:AddLayouts("layouts/version_mismatch.json")
 	else
 		Tracker:AddLayouts("layouts/tracker_layouts.json")
@@ -632,13 +625,15 @@ function OnVersionCheckChanged(code)
 end
 
 ---@param section LocationSection
-function OnIgnoreVersionMismatch(section)
-	if section.FullID == "Version Mismatch/Ignore One Time/" then
-		Tracker:FindObjectForCode("@Version Mismatch/Ignore One Time/").AvailableChestCount = 1
+function OnVersionMismatchChange(section)
+	if section.FullID == "Version Mismatch/Ignore This Session/" then
+		Tracker:FindObjectForCode("@Version Mismatch/Ignore This Session/").AvailableChestCount = 1
 		IGNORE_VERSION = true
 		Tracker:FindObjectForCode(VersionMismatch).Active = false
-		-- deprecated, change this to RemoveOnLocationSectionChangedHandler eventually
-		ScriptHost:RemoveOnLocationSectionHandler("version mismatch ignore handler")
+		ScriptHost:RemoveOnLocationSectionChangedHandler("version mismatch handler")
+	elseif section.FullID == "Version Mismatch/Go to GitHub/" and section.AccessibilityLevel == AccessibilityLevel.Cleared then
+		Tracker:FindObjectForCode("@Version Mismatch/Go to GitHub/").AvailableChestCount = 1
+		Tracker:OpenLink("https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack#archipelago-compatibility-chart", "Version compatibility chart on GitHub")
 	end
 end
 

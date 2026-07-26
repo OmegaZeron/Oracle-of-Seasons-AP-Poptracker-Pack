@@ -59,14 +59,13 @@ DancingSpikeTrap:connect_one_way_entrance(DancingPostWaterRollers, function()
 		Any(
 			Flippers,
 			All(
-				JumpLiquid6,
-				HellLogic
-			),
-			All(
-				-- Cape too, but it's already required to enter the dungeon without flippers
+				Cape,
 				CanRun,
-				Bombchus,
-				AccessibilityLevel.SequenceBreak
+				Any(
+					HasBombsForBombJump,
+					HasBombchusForBombJump
+				),
+				HellLogic
 			)
 		)
 	)

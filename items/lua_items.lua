@@ -35,7 +35,7 @@ end
 ---@param self LuaItem
 ---@param code string
 local function ProvidesConsumableFunc(self, code)
-	return CanProvideCodeFunc(self, code) and self.ItemState.count or 0
+	return TableContains(self.PotentialCodes, code) and self.ItemState.count or 0
 end
 
 ---@param item LuaItem
@@ -99,6 +99,10 @@ local function LoadFunc(self, data)
 	if data ~= nil and self.Name == data.Name then
 		self.Icon = ImageReference:FromPackRelativePath(data.Icon)
 		self.ItemState = data.ItemState
+		if self.ItemState.type == ItemType.Consumable then
+			self.ItemState.reset = ResetConsumable
+			self.ItemState.increment = IncrementConsumable
+		end
 		UpdateConsumableOverlay(self)
 	end
 end
@@ -109,19 +113,20 @@ local providesCodeFuncs = {
 }
 
 ---@param name string
+---@param codes string[]
 ---@param type itemType
 ---@param img string
 ---@param state CustomItemState
 ---@param lClick fun(self: LuaItem)
 ---@param rClick fun(self: LuaItem)
 ---@param mClick? fun(self: LuaItem)
-function CreateLuaItem(name, type, img, state, lClick, rClick, mClick)
+function CreateLuaItem(name, codes, type, img, state, lClick, rClick, mClick)
 	local self = ScriptHost:CreateLuaItem()
 	self.Name = name
 	self.Icon = ImageReference:FromPackRelativePath(img)
 	self.ItemState = state or {}
-
-	self.CanProvideCodeFunc = CanProvideCodeFunc
+	self.ItemState.type = type
+	self.PotentialCodes = codes
 	self.OnLeftClickFunc = lClick
 	self.OnRightClickFunc = rClick
 	if mClick then
@@ -138,7 +143,8 @@ function CreateLuaItem(name, type, img, state, lClick, rClick, mClick)
 end
 
 CreateLuaItem(
-	RupeeCount,
+	"Rupees",
+	{RupeeCount},
 	ItemType.Consumable,
 	"images/items/rupee5.png",
 	{reset = ResetConsumable, count = 0, increment = IncrementConsumable, minCount = 0, maxCount = 999, mult = 5, multIndex = 2} --[[@as CustomItemStateConsumable]],
@@ -164,7 +170,8 @@ CreateLuaItem(
 	end
 )
 CreateLuaItem(
-	OreChunkCount,
+	"Ore Chunks",
+	{OreChunkCount},
 	ItemType.Consumable,
 	"images/items/ore10.png",
 	{reset = ResetConsumable, count = 0, increment = IncrementConsumable, minCount = 0, maxCount = 999, mult = 10, multIndex = 2} --[[@as CustomItemStateConsumable]],

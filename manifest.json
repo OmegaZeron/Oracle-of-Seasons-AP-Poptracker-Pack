@@ -5,7 +5,7 @@
 	"package_uid": "seasons_ap",
 	"platform": "gbc",
 	"author": "OmegaZeron",
-	"min_poptracker_version": "0.32.0",
+	"min_poptracker_version": "0.35.4",
 	"variants": {
 		"standard": {
 			"display_name": "AP Autotracker v7.2.0 - Vertical",

@@ -21,7 +21,7 @@ end)
 LowerNorthHoron:connect_one_way(NorthHoronGasha, CanPlantGasha)
 
 -- exits
-LowerNorthHoron:connect_two_ways_entrance(UpperNorthHoron, CanDestroyBushFlute)
+LowerNorthHoron:connect_two_ways_entrance(UpperNorthHoron, function() return CanDestroyBushFlute(true) end)
 LowerNorthHoron:connect_one_way_entrance(HoronVillage)
 
 -- upper

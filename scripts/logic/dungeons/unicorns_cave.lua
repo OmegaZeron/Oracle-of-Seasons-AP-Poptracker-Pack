@@ -19,12 +19,7 @@ UnicornFoyer:connect_one_way_entrance(UnicornTerrace, function() return Has(Magn
 UnicornFoyer:connect_one_way_entrance(UnicornMinecarts, function()
 	return Any(
 		Flippers,
-		JumpLiquid2,
-		All(
-			Feather,
-			Bombchus,
-			AccessibilityLevel.SequenceBreak
-		)
+		JumpLiquid2(true)
 	)
 end)
 UnicornMinecarts:connect_one_way_entrance(UnicornUndergroundPipesRight)
@@ -32,10 +27,13 @@ UnicornUndergroundPipesRight:connect_two_ways_entrance(UnicornPotRoom, function(
 	return Any(
 		Feather,
 		All(
-			CanRun,
+			Any(
+				CanRun,
+				HasBombsForBombJump -- damage boost off the bombs without jumping
+			),
 			HardLogic
 		),
-		AccessibilityLevel.SequenceBreak -- damage boost off the fire. Alternatively bomb/bombchu boost
+		HellLogic -- damage boost off the fire
 	)
 end)
 UnicornPotRoom:connect_one_way(UnicornGibdoZolChest, CanNormalKill)

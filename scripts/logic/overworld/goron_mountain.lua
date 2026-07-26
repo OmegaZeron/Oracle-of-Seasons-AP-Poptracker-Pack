@@ -14,27 +14,17 @@ end)
 SouthGoronMountain:connect_one_way_entrance(WestGoronMountain, function()
 	return Any(
 		Flippers,
-		JumpLiquid4,
-		TightSwitchHook,
-		All(
-			Cape,
-			Bombchus,
-			AccessibilityLevel.SequenceBreak
-		)
+		JumpLiquid4(true),
+		TightSwitchHook
 	)
 end)
 WestGoronMountain:connect_one_way_entrance(SouthGoronMountain, function()
 	return Any(
 		Flippers,
-		JumpLiquid4,
+		JumpLiquid4(true),
 		All(
 			SwitchHook,
 			MediumLogic
-		),
-		All(
-			Cape,
-			Bombchus,
-			AccessibilityLevel.SequenceBreak
 		)
 	)
 end)
@@ -42,10 +32,8 @@ SouthGoronMountain:connect_one_way_entrance(LowerTempleRemains, function()
 	return Any(
 		Jump3,
 		All(
-			Feather,
-			Bombs,
-			CanDimitriClip,
-			AccessibilityLevel.SequenceBreak
+			JumpLiquid2,
+			CanDimitriClip
 		)
 	)
 end)
@@ -56,11 +44,13 @@ WestGoronMountain:connect_one_way(GoronLavaChest, function()
 			HasBombsForTiles,
 			All(
 				HasBombchusForTiles,
-				Any(
-					CanRun,
-					AccessibilityLevel.SequenceBreak
-				),
+				CanRun,
 				HardLogic
+			),
+			All(
+				HasBombchusForTiles,
+				HasBombchusForBombJump,
+				HellLogic
 			)
 		)
 	)

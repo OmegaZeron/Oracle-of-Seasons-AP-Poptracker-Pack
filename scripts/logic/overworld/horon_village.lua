@@ -87,14 +87,9 @@ DrLeftBackyard:connect_one_way(DrLeftBackyardChest, function()
 	return Any(
 		HoronChaoticSeasons,
 		HoronVillageWinter,
+		JumpLiquid2(true),
 		Flippers,
-		JumpLiquid2,
-		Winter,
-		All(
-			Feather,
-			Bombchus,
-			AccessibilityLevel.SequenceBreak
-		)
+		Winter
 	)
 end)
 

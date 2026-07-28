@@ -32,8 +32,12 @@ SouthGoronMountain:connect_one_way_entrance(LowerTempleRemains, function()
 	return Any(
 		Jump3,
 		All(
-			JumpLiquid2,
-			CanDimitriClip
+			Jump2,
+			CanDimitriClip,
+			Any(
+				HasBombsForBombJump,
+				HasBombchusForBombJump
+			)
 		)
 	)
 end)

@@ -1,4 +1,4 @@
-![Oracle of Seasons](https://raw.githubusercontent.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/refs/heads/main/OracleOfSeasons_Header.jpg)
+![Oracle of Seasons](./OracleOfSeasons_Header.jpg)
 # The Legend of Zelda: Oracle of Seasons Archipelago PopTracker Pack
 Tracker pack for [PopTracker](https://poptracker.github.io)</br>
 <b>PopTracker v0.33.0 or higher is recommended.</b>

@@ -31,7 +31,7 @@ Shapes:
 Make sure to reach the Diamonds and Trapezoids and mark down the information they give you, these affect logic!
 
 ## Connecting to Archipelago
-Click the AP button in the top left of the window. Enter your server:port (most likely archipelago.gg:PORT_NUMBER), then enter your slot name (the name in your YAML file), then the server password (empty if there isn't one). Afterward, the AP button should turn green, which means you're now auto-tracking
+Click the AP button in the top left of the window. Enter your server:port (most likely `archipelago.gg:12345` (replacing with your 5 numbers) if hosting on the website, or `localhost:38281` if hosting locally), then enter your slot name (the name in your YAML file), then the server password (empty if there isn't one). Afterward, the AP button should turn green, which means you're now auto-tracking
 
 ## Archipelago Compatibility Chart
 | apworld Version |   Pack Version  |

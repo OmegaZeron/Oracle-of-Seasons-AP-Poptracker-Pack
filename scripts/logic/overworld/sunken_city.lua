@@ -1,4 +1,5 @@
 -- items
+SunkenCity:connect_one_way(SunkenCityFindSeason)
 SunkenCity:connect_one_way(SunkenTree, function()
 	return Any(
 		CanHarvestSeeds,
@@ -66,6 +67,7 @@ SunkenCity:connect_one_way_entrance(SunkenDimitri, function()
 		Bombs
 	)
 end)
+SunkenDimitri:connect_one_way_entrance(SunkenDoorstep)
 SunkenCity:connect_one_way_entrance(Syrup, function()
 	return All(
 		Mushroom,

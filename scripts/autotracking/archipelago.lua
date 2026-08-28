@@ -265,8 +265,7 @@ function OnClear(slot_data)
 
 	-- auto tab and set the season for the starting location
 	CurrentTab = nil
-	-- TODO get this from slot_data once it's a setting
-	local startLocation = StartImpa
+	local startLocation = slot_data.options.start_position
 	if Tracker:FindObjectForCode("autotab").CurrentStage == 1 and startLocation then
 		CurrentRoom = nil
 		OnBounce({["data"] = {["Current Room"] = StartLocationMapping[startLocation]}})
@@ -470,6 +469,8 @@ function UpdateHints(locationID, status)
 		return
 	end
 	local locations = LOCATION_MAPPING[locationID]
+	if not locations then return end
+
 	-- print("Hint", DumpTable(locations), status)
 	for _, location in ipairs(locations) do
 		if location:sub(1, 1) == "@" then

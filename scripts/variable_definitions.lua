@@ -80,6 +80,7 @@ LinkedEnum = {
 ---@field master_keys integer 0-2
 ---@field show_dungeons_with_essence toggle
 ---@field default_seasons integer 0-6
+---@field start_position integer 0-1
 
 ---@class SlotData
 ---@field options SlotDataOptions
@@ -253,7 +254,8 @@ AutoCollectLocationTable = {Any = DefaultAutoCollectLocationTable}
 
 -- used to automatically tab and see seasons when connecting to AP
 StartLocationMapping = {
-	[StartImpa] = 0x0B6
+	[0] = 0x0B6, -- impa
+	[1] = 0x05D, -- sunken
 }
 
 ---@type table<integer, CurrentLocationData[]>

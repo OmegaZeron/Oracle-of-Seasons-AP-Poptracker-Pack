@@ -24,7 +24,7 @@ Colors:
 - Green - Can reach
 
 Shapes:
-- Square - Check
+- Square - Checkable location
 - Diamond - Information, or progress towards a check
 - Trapezoid - Randomized entrance
 

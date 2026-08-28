@@ -34,13 +34,14 @@ Make sure to reach the Diamonds and Trapezoids and mark down the information the
 Click the AP button in the top left of the window. Enter your server:port (most likely `archipelago.gg:12345` (replacing with your 5 numbers) if hosting on the website, or `localhost:38281` if hosting locally), then enter your slot name (the name in your YAML file), then the server password (empty if there isn't one). Afterward, the AP button should turn green, which means you're now auto-tracking
 
 ## Archipelago Compatibility Chart
-| apworld Version |   Pack Version  |
-|:---------------:|:---------------:|
-|     20.0.2+     |     7.1.0+      |
-| 17.0.0 - 17.0.5 |  6.0.5 - 6.0.10 |
-| 13.6.0 - 13.7.4 |     5.0.0       |
-|   12.0 - 12.4   |     4.0.0       |
-|   10.0 - 10.2   |  2.3.0 - 3.0.1  |
+| apworld Version  |   Pack Version   |
+|:----------------:|:----------------:|
+|     22.0.0+      |     8.0.0+       |
+| 20.0.2 - 20.1.13 |  7.1.0 - 7.2.0   |
+| 17.0.0 - 17.0.5  |  6.0.5 - 6.0.10  |
+| 13.6.0 - 13.7.4  |     5.0.0        |
+|   12.0 - 12.4    |     4.0.0        |
+|   10.0 - 10.2    |  2.3.0 - 3.0.1   |
 
 ## Special Thanks
 [Seto](https://github.com/seto10987) for her work on the original tracker, and pointers for getting this version set up<br/>

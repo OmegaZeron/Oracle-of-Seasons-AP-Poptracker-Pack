@@ -78,7 +78,7 @@ LinkedEnum = {
 ---@field randomize_lost_woods_item_sequence toggle
 ---@field remove_d2_alt_entrance toggle
 ---@field master_keys integer 0-2
----@field show_dungeons_with_essence toggle
+---@field show_dungeons_with_essence integer 0-2
 ---@field default_seasons integer 0-6
 ---@field start_position integer 0-1
 

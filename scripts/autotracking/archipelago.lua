@@ -243,7 +243,7 @@ function OnClear(slot_data)
 		end
 	end
 
-	if slot_data.options.show_dungeons_with_essence == 2 then
+	if slot_data.options.show_dungeons_with_essence == 2 and slot_data.options.shuffle_dungeons == 0 then
 		for i = 1, 8 do
 			RevealEssence(i)
 		end
@@ -362,7 +362,7 @@ function OnItem(index, itemID, itemName, playerNumber)
 		if mDungeon then
 			RevealDungeon(mDungeon)
 		elseif cDungeon then
-			RevealEssence(cDungeon)
+			RevealEssence(cDungeon, SLOT_DATA.options.show_dungeons_with_map == 0 or not Has("d"..cDungeon.."_map"))
 		elseif EssenceMapping[itemData[1]] then
 			RevealEssence(EssenceMapping[itemData[1]])
 		end
@@ -639,26 +639,26 @@ function OnVersionMismatchChange(section)
 end
 
 ---@param dungeon integer
-function RevealDungeon(dungeon)
-	if SLOT_DATA.options.show_dungeons_with_map == 1 then
-		local hiddenStage = Tracker:FindObjectForCode("d"..dungeon.."_ent_selector_hidden").CurrentStage
-		Tracker:FindObjectForCode("d"..dungeon.."_ent_selector").CurrentStage = hiddenStage
-		-- clear the "enter dungeon" location
-		if DungeonSetVars[hiddenStage] then
-			Tracker:FindObjectForCode(DungeonSetVars[hiddenStage][3]).AvailableChestCount = 0
-		end
+---@param force boolean?
+function RevealDungeon(dungeon, force)
+	if SLOT_DATA.options.show_dungeons_with_map ~= 1 and not force then return end
+
+	local hiddenStage = Tracker:FindObjectForCode("d"..dungeon.."_ent_selector_hidden").CurrentStage
+	Tracker:FindObjectForCode("d"..dungeon.."_ent_selector").CurrentStage = hiddenStage
+	-- clear the "enter dungeon" location
+	if DungeonSetVars[hiddenStage] then
+		Tracker:FindObjectForCode(DungeonSetVars[hiddenStage][3]).AvailableChestCount = 0
 	end
 end
 
 ---@param dungeon integer
 function RevealEssence(dungeon, skipEntrance)
-	if SLOT_DATA.options.shuffle_essences ~= 0 or SLOT_DATA.options.show_dungeons_with_essence == 0 or not EssenceTable[dungeon] then
-		return
-	end
+	if SLOT_DATA.options.shuffle_essences ~= 0 or SLOT_DATA.options.show_dungeons_with_essence == 0 or not EssenceTable[dungeon] then return end
+
 	if EssencesInWorld[EssenceTable[dungeon][1]] then
 		Tracker:FindObjectForCode(EssenceTable[dungeon][2]).Active = true
 		if not skipEntrance then
-			RevealDungeon(dungeon)
+			RevealDungeon(dungeon, true)
 		end
 	end
 end

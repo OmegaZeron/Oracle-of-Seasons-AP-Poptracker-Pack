@@ -18,7 +18,12 @@ end)
 
 -- linked
 LinkedCaveLedge:connect_one_way_entrance(LinkedCaveFoyer)
-LinkedCaveFoyer:connect_one_way(LinkedCaveLedge, function() return Has(LCAltRemoved) end)
+LinkedCaveFoyer:connect_one_way(LinkedCaveLedge, function()
+	return Any(
+		LCAltRemoved,
+		LinkedCaveHero
+	)
+end)
 LinkedCaveFoyer:connect_one_way_entrance(LinkedCaveF1Chest, function() return Has(Bracelet) end)
 LinkedCaveF1Chest:connect_one_way_entrance(LinkedCaveF2Keydrop, Jump2)
 LinkedCaveF2Keydrop:connect_one_way_entrance(LinkedCaveF2Chest, function() return HasKeys(LCSmallKey, LCMasterKey, 1) end)

@@ -83,10 +83,18 @@
 		"children": [
 			{
 				"name": "Exit the Dungeon",
-				"visibility_rules": ["shuffledungeonon, lc_alt_entrance_vanilla"],
+				"visibility_rules": ["shuffledungeonon"],
 				"chest_unopened_img": "images/labels/dungeon_eye.png",
 				"chest_opened_img": "images/labels/dungeon_eye_disabled.png",
-				"sections": [{"access_rules": ["{^$CanReach|LinkedCaveFoyer}"]}],
+				"sections": [
+					{
+						"access_rules": ["{^$CanReach|LinkedCaveFoyer}"],
+						"visibility_rules": [
+							"linked_cave_desert, lc_alt_entrance_vanilla",
+							"linked_cave_hero, d0_alt_entrance_vanilla"
+						]
+					}
+				],
 				"map_locations": [
 					{
 						"map": "linked_cave",

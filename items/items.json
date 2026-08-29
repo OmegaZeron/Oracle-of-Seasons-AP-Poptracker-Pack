@@ -1072,5 +1072,30 @@
 		"type": "toggle",
 		"img": "images/items/compass.png",
 		"codes": "location_refresh"
+	},
+	{
+		"name": "Recent Item 1",
+		"type": "static",
+		"codes": "recent_item_1"
+	},
+	{
+		"name": "Recent Item 2",
+		"type": "static",
+		"codes": "recent_item_2"
+	},
+	{
+		"name": "Recent Item 3",
+		"type": "static",
+		"codes": "recent_item_3"
+	},
+	{
+		"name": "Recent Item 4",
+		"type": "static",
+		"codes": "recent_item_4"
+	},
+	{
+		"name": "Recent Item 5",
+		"type": "static",
+		"codes": "recent_item_5"
 	}
 ]

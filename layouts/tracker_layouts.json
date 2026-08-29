@@ -12,13 +12,28 @@
 					"v_alignment": "stretch",
 					"content": [
 						{
-							"type": "group",
-							"header": "Items",
+							"type": "dock",
 							"dock": "top",
-							"content": {
-								"type": "layout",
-								"key": "v_item_grid"
-							}
+							"content": [
+								{
+									"type": "group",
+									"header": "Items",
+									"dock": "left",
+									"content": {
+										"type": "layout",
+										"key": "v_item_grid"
+									}
+								},
+								{
+									"type": "group",
+									"header": "Last",
+									"dock": "left",
+									"content": {
+										"type": "layout",
+										"key": "v_recent_item_grid"
+									}
+								}
+							]
 						},
 						{
 							"type": "group",

@@ -7,8 +7,8 @@
 			{
 				"type": "itemgrid",
 				"h_alignment": "left",
-				"margin": "5, 1, 5, 1",
-				"item_margin": "2,1",
+				"margin": "-5, 1, 1, 1",
+				"item_margin": "0, 1",
 				"item_size": 33,
 				"rows": [
 					["sword1", "biggoron_sword", "bestweapon", "shield", "bombs", "bombchus"],
@@ -21,8 +21,8 @@
 			{
 				"type": "itemgrid",
 				"h_alignment": "left",
-				"margin": "5, 1, -10, 1",
-				"item_margin": "2,1",
+				"margin": "2, 1, 0, 1",
+				"item_margin": "0, 1",
 				"item_size": 33,
 				"rows": [
 					["heart_container", "gnarledkey", "floodkey", "dragonkey", "memberscard", "plaque", "banana"],
@@ -32,6 +32,15 @@
 					["flippers", "rupees", "orechunks", "golden_darknut", "golden_octorok", "golden_moblin", "golden_lynel"]
 				]
 			}
+		]
+	},
+	"v_recent_item_grid": {
+		"type": "itemgrid",
+		"margin": "0, 1, 0, 1",
+		"item_margin": "1,1",
+		"item_size": 33,
+		"rows": [
+			["recent_item_1"], ["recent_item_2"], ["recent_item_3"], ["recent_item_4"], ["recent_item_5"]
 		]
 	},
 	"v_dungeon_grid": {

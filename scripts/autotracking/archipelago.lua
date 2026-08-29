@@ -10,6 +10,10 @@ local IS_MANUAL_CLICK = true
 local DEFAULT_SEED <const> = "default"
 local ROOM_SEED = DEFAULT_SEED
 local IsHighlightUpdate = false
+local recentItems = {}
+local recentItemMax <const> = 5
+---@type string?
+local recentFrameHandler
 
 function PreOnClear()
 	PLAYER_ID = Archipelago.PlayerNumber or -1
@@ -75,6 +79,7 @@ function OnClear(slot_data)
 	DungeonSettings()
 	SeasonSettings()
 	VanillaPortals()
+	ClearRecentItems()
 
 	IS_MANUAL_CLICK = false
 	if Tracker:FindObjectForCode(ManualStorageCode) == nil then
@@ -339,6 +344,15 @@ function OnItem(index, itemID, itemName, playerNumber)
 		elseif AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
 			print(string.format("onItem: unknown item type %s for code %s", itemData[2], itemData[1]))
 		end
+
+		table.insert(recentItems, 1, item.Icon)
+		if #recentItems > recentItemMax then
+			table.remove(recentItems, recentItemMax + 1)
+		end
+		if recentFrameHandler == nil then
+			recentFrameHandler = ScriptHost:AddOnFrameHandler("recent item handler", DisplayRecentItems)
+		end
+
 		if AutoCollectLocationTable.AP[itemData[1]] then
 			for _, autoCollectData in ipairs(AutoCollectLocationTable.AP[itemData[1]]) do
 				if type(autoCollectData) == "function" then
@@ -661,6 +675,19 @@ function RevealEssence(dungeon, skipEntrance)
 			RevealDungeon(dungeon, true)
 		end
 	end
+end
+
+function DisplayRecentItems()
+	recentFrameHandler = nil
+	for i, image in ipairs(recentItems) do
+		Tracker:FindObjectForCode("recent_item_"..i).Icon = ImageReference:FromPackRelativePath(image:split(":")[1])
+	end
+end
+function ClearRecentItems()
+	for i = 1, recentItemMax do
+		Tracker:FindObjectForCode("recent_item_"..i).Icon = ImageReference:FromPackRelativePath("")
+	end
+	recentItems = {}
 end
 
 Archipelago:AddClearHandler("clear handler", OnClear)

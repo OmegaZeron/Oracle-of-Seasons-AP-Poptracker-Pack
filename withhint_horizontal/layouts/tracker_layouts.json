@@ -239,25 +239,48 @@
 					"dock": "bottom",
 					"content": [
 						{
-							"type": "group",
-							"header": "Items",
+							"type": "dock",
 							"dock": "left",
-							"content": {
-								"type": "layout",
-								"key": "h_item_grid_2"
-							}
+							"content": [
+								{
+									"type": "dock",
+									"dock": "top",
+									"content": [
+										{
+											"type": "group",
+											"header": "Items",
+											"dock": "left",
+											"content": {
+												"type": "layout",
+												"key": "h_item_grid"
+											}
+										},
+										{
+											"type": "group",
+											"header": "Last",
+											"dock": "left",
+											"content": {
+												"type": "layout",
+												"key": "recent_item_grid"
+											}
+										}
+									]
+								},
+								{
+									"type": "group",
+									"dock": "top",
+									"header": "Portals",
+									"content": {
+										"type": "layout",
+										"key": "h_portal_grid"
+									}
+								}
+							]
 						},
 						{
 							"type": "group",
 							"dock": "left",
-							"content": {
-								"type": "layout",
-								"key": "h_item_grid_3"
-							}
-						},
-						{
-							"type": "group",
-							"dock": "left",
+							"header": "Seasons",
 							"content": {
 								"type": "layout",
 								"key": "h_season_grid"

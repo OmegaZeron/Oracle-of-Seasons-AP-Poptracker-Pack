@@ -38,7 +38,7 @@
 													"dock": "left",
 													"content": {
 														"type": "layout",
-														"key": "v_recent_item_grid"
+														"key": "recent_item_grid"
 													}
 												}
 											]

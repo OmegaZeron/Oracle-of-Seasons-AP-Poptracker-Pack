@@ -34,7 +34,7 @@
 			}
 		]
 	},
-	"v_recent_item_grid": {
+	"recent_item_grid": {
 		"type": "itemgrid",
 		"margin": "0, 1, 0, 1",
 		"item_margin": "1,1",
@@ -249,15 +249,15 @@
 	},
 
 	// horizontal
-	"h_item_grid_2": {
+	"h_item_grid": {
 		"type": "array",
-		"orientation": "vertical",
+		"orientation": "horizontal",
 		"content": [
 			{
 				"type": "itemgrid",
 				"h_alignment": "left",
 				"margin": "-2,6,0,0",
-				"item_margin": "0,0",
+				"item_margin": "-1,1",
 				"item_size": 33,
 				"rows": [
 					["sword1", "biggoron_sword", "bestweapon", "shield", "bombs", "bombchus"],
@@ -269,30 +269,9 @@
 			},
 			{
 				"type": "itemgrid",
-				"h_alignment": "center",
-				"margin": "0,0,0,0",
-				"item_size": 50,
-				"item_margin": "1,-12",
-				"rows": [
-					[""],
-					["entrance_label2", "", "fill_portals", ""],
-					["suburbs_label_sub", "suburbs_portal", "horon_label_sub", "horon_portal"],
-					["swamp_label_sub", "swamp_portal", "remains_label_sub", "remains_portal"],
-					["lake_label_sub", "lake_portal", "upremains_label_sub", "upremains_portal"],
-					["mtcucco_label_sub", "mtcucco_portal", "", ""]
-				]
-			}
-		]
-	},
-	"h_item_grid_3": {
-		"type": "array",
-		"orientation": "vertical",
-		"content": [		 
-			{
-				"type": "itemgrid",
 				"h_alignment": "left",
 				"margin": "-5,6,0,0",
-				"item_margin": "0,0",
+				"item_margin": "-1,1",
 				"item_size": 33,
 				"rows": [
 					["heart_container", "gnarledkey", "floodkey", "dragonkey", "memberscard", "plaque", "banana"],
@@ -301,20 +280,40 @@
 					["fish", "megaphone", "mushroom", "woodenbird", "enginegrease", "phonograph", "jewels"],
 					["flippers", "rupees", "orechunks", "golden_darknut", "golden_octorok", "golden_moblin", "golden_lynel"]
 				]
-			},
+			}
+		]
+	},
+	"h_portal_grid": {
+		"type": "array",
+		"orientation": "horizontal",
+		"content": [		 
+			
 			{
 				"type": "itemgrid",
 				"h_alignment": "center",
-				"margin": "0,2,0,-15",
+				"margin": "0,-15,0,-15",
 				"item_size": 50,
 				"item_margin": "1,-12",
 				"rows": [
-					[],
 					[],
 					["mountain_label_sub", "mountain_portal", "pirates_label_sub", "pirates_portal"],
 					["market_label_sub", "market_portal", "volcano_label_sub", "volcano_portal"],
 					["furnace_label_sub", "furnace_portal", "d8_label_sub", "d8_portal"],
 					["village_label_sub", "village_portal", "", ""]
+				]
+			},
+			{
+				"type": "itemgrid",
+				"h_alignment": "center",
+				"margin": "0,-15,0,-15",
+				"item_size": 50,
+				"item_margin": "1,-12",
+				"rows": [
+					["entrance_label2", "", "fill_portals", ""],
+					["suburbs_label_sub", "suburbs_portal", "horon_label_sub", "horon_portal"],
+					["swamp_label_sub", "swamp_portal", "remains_label_sub", "remains_portal"],
+					["lake_label_sub", "lake_portal", "upremains_label_sub", "upremains_portal"],
+					["mtcucco_label_sub", "mtcucco_portal", "", ""]
 				]
 			}
 		]
@@ -469,7 +468,7 @@
 			{
 				"type": "array",
 				"orientation": "vertical",
-				"margin": "-5, 0, -15, 5",
+				"margin": "-5, -5, -15, 5",
 				"content": [
 					{
 						"type": "itemgrid",

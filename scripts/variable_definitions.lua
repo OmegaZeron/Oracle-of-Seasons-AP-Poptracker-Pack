@@ -256,6 +256,9 @@ AutoCollectLocationTable = {Any = DefaultAutoCollectLocationTable}
 StartLocationMapping = {
 	[0] = 0x0B6, -- impa
 	[1] = 0x05D, -- sunken
+	[2] = 0x105, -- temple
+	[3] = 0x0EE, -- desert
+	[4] = 0x083, -- tarm
 }
 
 ---@type table<integer, CurrentLocationData[]>

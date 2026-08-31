@@ -79,7 +79,7 @@
 		"codes": "horon_shop_potion_label"
 	},
 	{
-		"name": "Starting Location Label",
+		"name": "Starting Position Label",
 		"type": "static",
 		"img": "images/labels/start_location_label.png",
 		"codes": "start_location_label"

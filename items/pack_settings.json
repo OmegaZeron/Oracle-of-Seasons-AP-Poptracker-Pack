@@ -151,7 +151,7 @@
 		]
 	},
 	{
-		"name": "Start Location",
+		"name": "Starting Position",
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
@@ -164,6 +164,21 @@
 			{
 				"img": "images/labels/start_sunken.png",
 				"codes": "start_position, start_sunken",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/start_temple.png",
+				"codes": "start_position, start_temple",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/start_desert.png",
+				"codes": "start_position, start_desert",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/start_tarm.png",
+				"codes": "start_position, start_tarm",
 				"inherit_codes": false
 			}
 		]

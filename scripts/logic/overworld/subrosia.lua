@@ -147,6 +147,7 @@ end)
 
 -- pirates
 Pirates:connect_one_way(PirateSecret, function() return Has(PolishedBell) end)
+Pirates:connect_one_way_entrance(WestWesternCoast, function() return Has(PolishedBell) end)
 
 -- furnace
 EastFurnace:connect_one_way_entrance(EyeglassPortal, function()

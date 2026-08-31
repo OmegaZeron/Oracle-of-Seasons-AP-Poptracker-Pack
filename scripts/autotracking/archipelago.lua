@@ -3,7 +3,7 @@ require("scripts.autotracking.location_mapping")
 
 local CUR_INDEX = -1
 local SLOT_DATA = {}
-local WORLD_VERSION <const> = "22"
+local WORLD_VERSION <const> = "23"
 local IGNORE_VERSION = false
 local ALL_LOCATIONS = {}
 local IS_MANUAL_CLICK = true
@@ -332,20 +332,26 @@ function OnItem(index, itemID, itemName, playerNumber)
 			if item.CurrentStage < itemData[3] then
 				item.CurrentStage = itemData[3]
 			end
+		elseif itemData[2] == "progressive_min" then
+			if item.CurrentStage < itemData[3] then
+				item.CurrentStage = itemData[3]
+			else
+				item.CurrentStage = item.CurrentStage + 1
+			end
 		elseif itemData[2] == "custom_consumable" then
 			---@cast item LuaItem
 			---@type CustomItemStateConsumable
 			local itemState = item.ItemState
 			local mult = 1
 			if itemData[3] then
-				mult = itemData[3]
+				mult = itemData[3] --[[@as integer]]
 			end
 			itemState.increment(item, mult)
 		elseif AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
 			print(string.format("onItem: unknown item type %s for code %s", itemData[2], itemData[1]))
 		end
 
-		table.insert(recentItems, 1, item.Icon)
+		table.insert(recentItems, 1, itemData[4] and itemData[4] or item.Icon)
 		if #recentItems > recentItemMax then
 			table.remove(recentItems, recentItemMax + 1)
 		end

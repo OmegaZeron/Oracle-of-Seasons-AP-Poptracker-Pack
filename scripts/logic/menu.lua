@@ -1,2 +1,5 @@
 StartLocation:connect_one_way_entrance(LowerNorthHoron, function() return Has(StartImpa) end)
 StartLocation:connect_one_way_entrance(SunkenCity, function() return Has(StartSunken) end)
+StartLocation:connect_one_way_entrance(SubrosiaMountainEast, function() return Has(StartTemple) end)
+StartLocation:connect_one_way_entrance(SamasaDesert, function() return Has(StartDesert) end)
+StartLocation:connect_one_way_entrance(NorthSpoolSwamp, function() return Has(StartTarm) end)

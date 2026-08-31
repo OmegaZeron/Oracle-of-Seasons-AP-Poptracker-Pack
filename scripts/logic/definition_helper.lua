@@ -183,6 +183,9 @@ ShuffleGoldOresShuffled = "gold_ores_shuffled"
 -- Start Locations
 StartImpa = "start_impa"
 StartSunken = "start_sunken"
+StartTemple = "start_temple"
+StartDesert = "start_desert"
+StartTarm = "start_tarm"
 
 -- Helpers
 VersionMismatch = "version_mismatch"

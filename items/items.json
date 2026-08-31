@@ -146,32 +146,8 @@
 				"codes": "bombs20"
 			},
 			{
-				"img": "images/items/bomb30.png",
-				"codes": "bombs30"
-			},
-			{
-				"img": "images/items/bomb40.png",
-				"codes": "bombs40"
-			},
-			{
 				"img": "images/items/bomb50.png",
 				"codes": "bombs50"
-			},
-			{
-				"img": "images/items/bomb60.png",
-				"codes": "bombs60"
-			},
-			{
-				"img": "images/items/bomb70.png",
-				"codes": "bombs70"
-			},
-			{
-				"img": "images/items/bomb80.png",
-				"codes": "bombs80"
-			},
-			{
-				"img": "images/items/bomb90.png",
-				"codes": "bombs90"
 			},
 			{
 				"img": "images/items/bomb99.png",
@@ -193,32 +169,8 @@
 				"codes": "bombchus20"
 			},
 			{
-				"img": "images/items/bombchu30.png",
-				"codes": "bombchus30"
-			},
-			{
-				"img": "images/items/bombchu40.png",
-				"codes": "bombchus40"
-			},
-			{
 				"img": "images/items/bombchu50.png",
 				"codes": "bombchus50"
-			},
-			{
-				"img": "images/items/bombchu60.png",
-				"codes": "bombchus60"
-			},
-			{
-				"img": "images/items/bombchu70.png",
-				"codes": "bombchus70"
-			},
-			{
-				"img": "images/items/bombchu80.png",
-				"codes": "bombchus80"
-			},
-			{
-				"img": "images/items/bombchu90.png",
-				"codes": "bombchus90"
 			},
 			{
 				"img": "images/items/bombchu99.png",

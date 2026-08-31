@@ -23,6 +23,7 @@ end)
 
 -- exits
 NorthSpoolSwamp:connect_one_way(LostWoodsFindSeason)
+NorthSpoolSwamp:connect_one_way_entrance(SouthHolodrumPlain)
 NorthSpoolSwamp:connect_one_way_entrance(TarmEntrance, CanEnterTarm)
 NorthSpoolSwamp:connect_one_way_entrance(FloodgateKeeper)
 FloodgateKeeper:connect_one_way_entrance(FloodgateLever, function()

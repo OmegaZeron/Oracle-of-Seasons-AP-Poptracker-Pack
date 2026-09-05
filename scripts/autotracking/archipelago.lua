@@ -691,7 +691,7 @@ function DisplayRecentItems()
 end
 function ClearRecentItems()
 	for i = 1, recentItemMax do
-		Tracker:FindObjectForCode("recent_item_"..i).Icon = ImageReference:FromPackRelativePath("")
+		Tracker:FindObjectForCode("recent_item_"..i).Icon = ImageReference:FromPackRelativePath("images/blank.png")
 	end
 	recentItems = {}
 end

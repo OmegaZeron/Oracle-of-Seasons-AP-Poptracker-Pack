@@ -54,7 +54,7 @@
 					"content": {
 						"type": "tabbed",
 						"dock": "top",
-						"tabs": [ 
+						"tabs": [
 							{
 								"title": "Holodrum",
 								"icon": "images/items/sword1.png",

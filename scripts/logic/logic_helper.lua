@@ -64,7 +64,7 @@ end
 
 function HasBombsToFight()
 	return Any(
-		Bombs40,
+		Bombs50,
 		All(
 			Bombs,
 			AccessibilityLevel.SequenceBreak
@@ -104,7 +104,7 @@ function HasBombchusToFight()
 end
 function HasBombchusForTiles()
 	return Any(
-		Bombchus40,
+		Bombchus50,
 		All(
 			Bombchus,
 			AccessibilityLevel.SequenceBreak

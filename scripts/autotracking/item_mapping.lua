@@ -108,10 +108,10 @@ ITEM_MAPPING = {
 	[ItemID(0x4a, 0x00)] = {RustyBell, "toggle"},
 	[ItemID(0x25, 0x00)] = {PolishedBell, "toggle"},
 	-- [ItemID(0x4b, 0x00)] = {"treasuremap", "toggle"},
-	[ItemID(0x4c, 0x00)] = {Jewels, "consumable", nil, "images/items/jewelround.png"}, -- roundjewel
-	[ItemID(0x4d, 0x00)] = {Jewels, "consumable", nil, "images/items/jewelpyramid.png"}, -- pyramidjewel
-	[ItemID(0x4e, 0x00)] = {Jewels, "consumable", nil, "images/items/jewelsquare.png"}, -- squarejewel
-	[ItemID(0x4f, 0x00)] = {Jewels, "consumable", nil, "images/items/jewelx.png"}, -- xjewel
+	[ItemID(0x4c, 0x00)] = {Jewels, "consumable", nil, "images/items/jewelround.png"},
+	[ItemID(0x4d, 0x00)] = {Jewels, "consumable", nil, "images/items/jewelpyramid.png"},
+	[ItemID(0x4e, 0x00)] = {Jewels, "consumable", nil, "images/items/jewelsquare.png"},
+	[ItemID(0x4f, 0x00)] = {Jewels, "consumable", nil, "images/items/jewelx.png"},
 	[ItemID(0x50, 0x00)] = {RedOre, "toggle"},
 	[ItemID(0x51, 0x00)] = {BlueOre, "toggle"},
 	[ItemID(0x52, 0x00)] = {HardOre, "toggle"},
@@ -136,5 +136,5 @@ ITEM_MAPPING = {
 
 	[ItemID(0x04, 0x00)] = {CaneOfSomaria, "toggle"},
 	[ItemID(0x0a, 0x00)] = {SwitchHook, "progressive"},
-	[ItemID(0x0f, 0x00)] = {SeedShooter, "toggle"}
+	[ItemID(0x0f, 0x00)] = {SeedShooter, "toggle"},
 }

@@ -182,44 +182,4 @@ DancingTorchPit:connect_one_way_entrance(DancingPotHeaven, function()
 		)
 	)
 end)
-DancingPotHeaven:connect_one_way_entrance(Gohma, function()
-	return Any(
-		All(
-			-- don't break claw
-			MediumLogic,
-			Any(
-				CanShootSeeds,
-				HardLogic
-			),
-			All(
-				CanUseSeeds,
-				Any(
-					EmberSeeds,
-					ScentSeeds
-				)
-			)
-		),
-		All(
-			-- sword beams
-			Any(
-				NobleSword,
-				HasSwordBeams
-			),
-			MediumLogic
-		),
-		All(
-			-- break claw
-			CanSwordKill,
-			CanUseSeeds,
-			Any(
-				EmberSeeds,
-				ScentSeeds,
-				All(
-					HasUpgradedSatchel,
-					MysterySeeds,
-					MediumLogic
-				)
-			)
-		)
-	)
-end)
+DancingPotHeaven:connect_one_way_entrance(DancingBoss, function() return BossLogic[4] end)

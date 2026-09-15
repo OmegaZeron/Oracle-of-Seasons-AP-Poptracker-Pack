@@ -63,11 +63,14 @@ Facade:connect_one_way_entrance(SnakeWildBombsPolsVoice, function()
 		)
 	)
 end)
-Facade:connect_one_way_entrance(KingDodongo, function()
+Facade:connect_one_way_entrance(SnakeBoss, function()
 	return All(
-		HasD2BossKey,
-		Bracelet,
-		Bombs
+		Any(
+			HasKeys(D2SmallKey, D2MasterKey, 3, 2),
+			CanBombWall
+		),
+		BossLogic[2],
+		HasD2BossKey
 	)
 end)
 

@@ -189,9 +189,9 @@ MazeNevermeltIce:connect_one_way_entrance(MazeNWIceDrop, function()
 end)
 -- 7 keys
 MazeNWIceDrop:connect_one_way_entrance(MazeMedusaDoorstep, function() return HasKeys(D8SmallKey, D8MasterKey, 7) end)
-MazeMedusaDoorstep:connect_one_way_entrance(MedusaHead, function()
+MazeMedusaDoorstep:connect_one_way_entrance(MazeBoss, function()
 	return All(
 		HasD8BossKey,
-		CanSwordKill
+		BossLogic[8]
 	)
 end)

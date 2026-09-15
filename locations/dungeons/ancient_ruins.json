@@ -202,7 +202,7 @@
 				"sections": [
 					{
 						"name": "Manhandla",
-						"access_rules": ["^$CanReach|Manhandla"]
+						"access_rules": ["^$CanReach|AncientBoss"]
 					}
 				],
 				"map_locations": [
@@ -218,7 +218,7 @@
 				"sections": [
 					{
 						"name": "Essence",
-						"access_rules": ["^$CanReach|Manhandla"]
+						"access_rules": ["^$CanReach|AncientBoss"]
 					}
 				],
 				"map_locations": [

@@ -226,7 +226,7 @@
 				"sections": [
 					{
 						"name": "King Dodongo",
-						"access_rules": ["^$CanReach|KingDodongo"]
+						"access_rules": ["^$CanReach|SnakeBoss"]
 					}
 				],
 				"map_locations": [
@@ -242,7 +242,7 @@
 				"sections": [
 					{
 						"name": "Essence",
-						"access_rules": ["^$CanReach|KingDodongo"]
+						"access_rules": ["^$CanReach|SnakeBoss"]
 					}
 				],
 				"map_locations": [

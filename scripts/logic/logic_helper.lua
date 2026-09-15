@@ -1110,6 +1110,138 @@ function CanKillMoldorm(pitAvailable)
 	)
 end
 
+function CanBeatAquamentus()
+	return CanArmorKill()
+end
+
+---@param dungeon integer
+function CanBeatDodongo(dungeon)
+	return All(
+		Any(
+			All(
+				dungeon == 2,
+				Bombs
+			),
+			HasBombsToFight
+		),
+		Bracelet
+	)
+end
+
+function CanBeatMothula()
+	return All(
+		HasHeartsByDifficulty(4, 3, 3),
+		CanArmorKill
+	)
+end
+
+function CanBeatGohma()
+	return All(
+		Any(
+			All(
+				-- don't break claw
+				MediumLogic,
+				Any(
+					CanShootSeeds,
+					HardLogic
+				),
+				All(
+					CanUseSeeds,
+					Any(
+						EmberSeeds,
+						ScentSeeds
+					)
+				)
+			),
+			All(
+				-- sword beams
+				Any(
+					NobleSword,
+					HasSwordBeams
+				),
+				MediumLogic
+			),
+			All(
+				-- break claw
+				CanSwordKill,
+				CanUseSeeds,
+				Any(
+					EmberSeeds,
+					ScentSeeds,
+					All(
+						HasUpgradedSatchel,
+						MysterySeeds,
+						MediumLogic
+					)
+				)
+			)
+		),
+		HasHeartsByDifficulty(4, 3, 3)
+	)
+end
+
+function CanBeatDigdogger()
+	return All(
+		HasHeartsByDifficulty(6, 4, 3),
+		MagnetGlove
+	)
+end
+
+function CanBeatManhandla()
+	return All(
+		HasHeartsByDifficulty(6, 4, 3),
+		Any(
+			CanSwordKill,
+			CanShootSeeds
+		),
+		MagicBoomerang
+	)
+end
+
+---@param dungeon integer
+function CanBeatGleeok(dungeon)
+	return All(
+		HasHeartsByDifficulty(8, 5, 3),
+		Any(
+			All(
+				dungeon == 1,
+				MediumLogic
+			),
+			Feather
+		),
+		CanSwordKill
+	)
+end
+
+function CanBeatMedusaHead()
+	return All(
+		HasHeartsByDifficulty(8, 5, 3),
+		Feather,
+		CanSwordKill
+	)
+end
+
+---@type table<integer, fun(): accessibilityLevel>
+local bossLogicMap = {
+	[0] = function() return AccessibilityLevel.None end,
+	CanBeatAquamentus,
+	CanBeatDodongo,
+	CanBeatMothula,
+	CanBeatGohma,
+	CanBeatDigdogger,
+	CanBeatManhandla,
+	CanBeatGleeok,
+	CanBeatMedusaHead
+}
+
+function SetupBossLogic()
+	BossLogic = {} --[=[@as accessibilityLevel[]]=]
+	for i = 1, 8 do
+		local boss = Tracker:FindObjectForCode("d"..i.."_boss").CurrentStage
+		BossLogic[i] = bossLogicMap[boss](i)
+	end
+end
+
 function CanCompleteLinkedPuzzle()
 	if Has(ShuffleDungeonOff) then
 		return true
@@ -1793,4 +1925,8 @@ end
 
 for _, val in ipairs(DungeonNumberWatch) do
 	ScriptHost:AddWatchForCode("dungeon numbers "..val, val, OnChangeDungeonImages)
+end
+
+for i = 1, 8 do
+	ScriptHost:AddWatchForCode("dungeon boss logic d"..i, "d"..i.."_boss", SetupBossLogic)
 end

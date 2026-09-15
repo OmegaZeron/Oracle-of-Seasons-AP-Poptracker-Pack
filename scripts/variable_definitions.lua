@@ -1026,6 +1026,9 @@ IndexToSeason = {
 	[4] = UnknownSeason
 }
 
+---@type accessibilityLevel[]
+BossLogic = {}
+
 SeeSeasonVars = {
 	{"see horon village", HoronVillageSeason, "@Horon Village/See the Season/Horon Village"},
 	{"see north horon", NorthHoronSeason, "@North Horon/See the Season/North Horon"},

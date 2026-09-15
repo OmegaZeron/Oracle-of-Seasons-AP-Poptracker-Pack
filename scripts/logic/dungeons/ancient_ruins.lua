@@ -177,13 +177,9 @@ Vire:connect_one_way_entrance(AncientBossDoor, function()
 		)
 	)
 end)
-AncientBossDoor:connect_one_way_entrance(Manhandla, function()
+AncientBossDoor:connect_one_way_entrance(AncientBoss, function()
 	return All(
 		HasD6BossKey,
-		MagicBoomerang,
-		Any(
-			CanSwordKill,
-			CanShootSeeds -- any seed works?
-		)
+		BossLogic[6]
 	)
 end)

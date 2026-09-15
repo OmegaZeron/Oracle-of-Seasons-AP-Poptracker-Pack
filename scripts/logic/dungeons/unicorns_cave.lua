@@ -137,16 +137,27 @@ UnicornPostSyger:connect_one_way(UnicornTreadmillBasement, function()
 		)
 	)
 end, {UnicornMinecartPushBlock})
-UnicornPostSyger:connect_one_way_entrance(Digdogger, function()
+UnicornPostSyger:connect_one_way_entrance(UnicornBoss, function()
 	return All(
 		HasKeys(D5SmallKey, D5MasterKey, 5, 2),
+		Any(
+			All(
+				Jump5,
+				HellLogic
+			),
+			MagnetGlove
+		),
 		Any(
 			Feather,
 			MediumLogic
 		),
-		HasD5BossKey,
-		MagnetGlove,
-		HasHeartsByDifficulty(6, 4, 3)
+		Any(
+			Jump2,
+			CanDestroyPot,
+			MediumLogic
+		),
+		BossLogic[5],
+		HasD5BossKey
 	)
 end)
-Digdogger:connect_one_way(UnicornEssence)
+UnicornBoss:connect_one_way(UnicornEssence)

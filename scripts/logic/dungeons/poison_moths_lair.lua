@@ -69,10 +69,14 @@ Omuai:connect_one_way(PoisonBladeTrapChest, function()
 		HardLogic
 	)
 end)
-Omuai:connect_one_way_entrance(Mothula, function()
+Omuai:connect_one_way_entrance(PoisonBoss, function()
 	return All(
 		HasD3BossKey,
-		CanNormalKill
+		BossLogic[3],
+		Any(
+			Feather,
+			MediumLogic
+		)
 	)
 end)
-Mothula:connect_one_way(PoisonEssence)
+PoisonBoss:connect_one_way(PoisonEssence)

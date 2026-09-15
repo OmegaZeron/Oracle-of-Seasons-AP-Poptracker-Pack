@@ -249,7 +249,7 @@
 				"sections": [
 					{
 						"name": "Medusa Head",
-						"access_rules": ["^$CanReach|MedusaHead"]
+						"access_rules": ["^$CanReach|MazeBoss"]
 					}
 				],
 				"map_locations": [
@@ -265,7 +265,7 @@
 				"sections": [
 					{
 						"name": "Essence",
-						"access_rules": ["^$CanReach|MedusaHead"]
+						"access_rules": ["^$CanReach|MazeBoss"]
 					}
 				],
 				"map_locations": [

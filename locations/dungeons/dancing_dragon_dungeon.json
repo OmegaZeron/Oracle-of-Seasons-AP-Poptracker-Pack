@@ -218,7 +218,7 @@
 				"sections": [
 					{
 						"name": "Gohma",
-						"access_rules": ["^$CanReach|Gohma"]
+						"access_rules": ["^$CanReach|DancingBoss"]
 					}
 				],
 				"map_locations": [
@@ -234,7 +234,7 @@
 				"sections": [
 					{
 						"name": "Essence",
-						"access_rules": ["^$CanReach|Gohma"]
+						"access_rules": ["^$CanReach|DancingBoss"]
 					}
 				],
 				"map_locations": [

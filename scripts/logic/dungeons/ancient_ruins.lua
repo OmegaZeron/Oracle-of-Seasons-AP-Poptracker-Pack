@@ -192,6 +192,6 @@ end)
 AncientBossDoor:connect_one_way_entrance(AncientBoss, function()
 	return All(
 		HasD6BossKey,
-		BossLogic[6]
+		BossLogic[6](6)
 	)
 end)

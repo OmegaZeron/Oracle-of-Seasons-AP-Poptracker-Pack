@@ -247,7 +247,8 @@
 			{
 				"type": "itemgrid",
 				"v_alignment": "top",
-				"margin": "-13,0,-7,0",
+				"h_alignment": "left",
+				"margin": "-13,0,0,0",
 				"item_size": 29,
 				"item_margin": "-1,0",
 				"rows": [
@@ -255,22 +256,22 @@
 					["d0_master_key", "d0sk"],
 					["", ""],
 					["lc_master_key", "lcsk"],
-					["d1_map", "d1_compass"],
-					["d1_master_key", "d1sk"],
-					["d2_map", "d2_compass"],
-					["d2_master_key", "d2sk"],
-					["d3_map", "d3_compass"],
-					["d3_master_key", "d3sk"],
-					["d4_map", "d4_compass"],
-					["d4_master_key", "d4sk"],
-					["d5_map", "d5_compass"],
-					["d5_master_key", "d5sk"],
-					["d6_map", "d6_compass"],
-					["d6_master_key", "d6sk"],
-					["d7_map", "d7_compass"],
-					["d7_master_key", "d7sk"],
-					["d8_map", "d8_compass"],
-					["d8_master_key", "d8sk"]
+					["d1_map", "d1_compass", "d1"],
+					["d1_master_key", "d1sk", "d1bk"],
+					["d2_map", "d2_compass", "d2"],
+					["d2_master_key", "d2sk", "d2bk"],
+					["d3_map", "d3_compass", "d3"],
+					["d3_master_key", "d3sk", "d3bk"],
+					["d4_map", "d4_compass", "d4"],
+					["d4_master_key", "d4sk", "d4bk"],
+					["d5_map", "d5_compass", "d5"],
+					["d5_master_key", "d5sk", "d5bk"],
+					["d6_map", "d6_compass", "d6"],
+					["d6_master_key", "d6sk", "d6bk"],
+					["d7_map", "d7_compass", "d7"],
+					["d7_master_key", "d7sk", "d7bk"],
+					["d8_map", "d8_compass", "d8"],
+					["d8_master_key", "d8sk", "d8bk"]
 				]
 			},
 			{
@@ -280,20 +281,20 @@
 					{
 						"type": "itemgrid",
 						"h_alignment": "left",
-						"margin": "2, 2, -3, 0",
-						"item_size": 32,
-						"item_margin": "0,13",
+						"margin": "3, 0, -3, 0",
+						"item_size": 44,
+						"item_margin": "0, 7",
 						"rows": [
 							[""],
 							[""],
-							["d1bk", "d1"],
-							["d2bk", "d2"],
-							["d3bk", "d3"],
-							["d4bk", "d4"],
-							["d5bk", "d5"],
-							["d6bk", "d6"],
-							["d7bk", "d7"],
-							["d8bk", "d8"]
+							["d1_boss"],
+							["d2_boss"],
+							["d3_boss"],
+							["d4_boss"],
+							["d5_boss"],
+							["d6_boss"],
+							["d7_boss"],
+							["d8_boss"]
 						]
 					}
 				]
@@ -508,8 +509,9 @@
 	},
 	"h_essence_grid": {
 		"type": "itemgrid",
-		"margin": "-5, 5",
-		"item_margin": "5, 3",
+		"margin": "-8, 5",
+		"item_margin": "5, 0",
+		"item_size": 38,
 		"rows": [
 			["d1"],
 			["d2"],
@@ -523,8 +525,9 @@
 	},
 	"h_boss_grid": {
 		"type": "itemgrid",
-		"margin": "-5, 5",
-		"item_margin": "5, 3",
+		"margin": "-8, 5",
+		"item_margin": "5, 0",
+		"item_size": 38,
 		"rows": [
 			["d1_boss"],
 			["d2_boss"],

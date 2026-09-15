@@ -79,22 +79,17 @@ SnakeMoblinRopeFight:connect_one_way_entrance(SnakeHardhats, function() return H
 SnakeHardhats:connect_one_way(SnakeHardhatChest, CanDestroyPot)
 SnakeHardhats:connect_one_way_entrance(SnakeBombMoblins, function()
 	return Any(
-		CanSwordKill,
-		Boomerang,
-		CanKillWithPit,
-		SwitchHook,
 		All(
 			Any(
 				All(
+					Any(
+						ScentSeeds,
+						MysterySeeds
+					),
 					HasUpgradedSatchel,
 					Any(
 						CanShootSeeds,
 						HardLogic
-					),
-					Any(
-						ScentSeeds,
-						GaleSeeds,
-						MysterySeeds
 					)
 				),
 				-- bomb them into the pit
@@ -102,7 +97,12 @@ SnakeHardhats:connect_one_way_entrance(SnakeBombMoblins, function()
 				HasBombsToFight
 			),
 			MediumLogic
-		)
+		),
+		Boomerang,
+		SwitchHook,
+		CanSwordKill,
+		CanKillWithPit,
+		CanGaleKill
 	)
 end)
 SnakeBombMoblins:connect_one_way(SnakeWildBombsHardhat, function()

@@ -886,9 +886,11 @@ function CanGaleKill()
 	return All(
 		Any(
 			GaleSeeds,
-			MysterySeeds
+			All(
+				MysterySeeds,
+				HasUpgradedSatchel
+			)
 		),
-		HasUpgradedSatchel,
 		Any(
 			CanShootSeeds,
 			Feather,

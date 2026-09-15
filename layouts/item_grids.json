@@ -5,19 +5,72 @@
 		"orientation": "horizontal",
 		"content": [
 			{
-				"type": "itemgrid",
-				"h_alignment": "left",
-				"margin": "-5, 1, 1, 1",
-				"item_margin": "0, 1",
-				"item_size": 33,
-				"rows": [
-					["sword1", "biggoron_sword", "bestweapon", "shield", "bombs", "bombchus"],
-					["bracelet", "boomerang1", "slingshot1", "shooter", "magnet", "feather"],
-					["satchel1", "emberseeds", "mysteryseeds", "scentseeds", "pegasusseeds", "galeseeds"],
-					["hook", "spring", "summer", "fall", "winter", "shovel"],
-					["somaria", "ring_fist", "ring_heart", "ring_energy", "ring_swimmer", "flute_generic"]
+				"type": "array",
+				"orientation": "vertical",
+				"content": [
+					{
+						"type": "itemgrid",
+						"h_alignment": "left",
+						"margin": "-5, 1, 1, 1",
+						"item_margin": "0, 1",
+						"item_size": 33,
+						"rows": [
+							["sword1", "biggoron_sword", "bestweapon", "shield", "bombs", "bombchus"],
+							["bracelet", "boomerang1", "slingshot1", "shooter", "magnet", "feather"]
+						]
+					},
+					{
+						"type": "array",
+						"orientation": "horizontal",
+						"content": [
+							{
+								"type": "itemgrid",
+								"h_alignment": "left",
+								"margin": "-5, -1, 1, 1",
+								"item_margin": "0, 1",
+								"item_size": 33,
+								"rows": [
+									["satchel1"],
+									["hook"]
+								]
+							},
+							{
+								"type": "itemgrid",
+								"item_size": 33,
+								"margin": "-5, 0, 1, 1",
+								"item_margin": "2, -6",
+								"h_alignment": "center",
+								"rows": [
+									["emberseeds", "mysteryseeds"],
+									["scentseeds"],
+									["pegasusseeds", "galeseeds"]
+								]
+							},
+							{
+								"type": "itemgrid",
+								"item_size": 33,
+								"margin": "-5, -4, 1, 1",
+								"item_margin": "0, 2",
+								"h_alignment": "left",
+								"rows": [
+									["summer", "fall", "flute_generic"],
+									["spring", "winter", "shovel"]
+								]
+							}
+						]
+					},
+					{
+						"type": "itemgrid",
+						"h_alignment": "left",
+						"margin": "-5, -2, 1, 1",
+						"item_margin": "0, 1",
+						"item_size": 33,
+						"rows": [
+							["somaria", "ring_fist", "ring_heart", "ring_energy", "ring_swimmer", "ring_toss"]
+						]
+					}
 				]
-			},		 
+			},
 			{
 				"type": "itemgrid",
 				"h_alignment": "left",
@@ -254,23 +307,76 @@
 		"orientation": "horizontal",
 		"content": [
 			{
-				"type": "itemgrid",
-				"h_alignment": "left",
-				"margin": "-2,6,0,0",
-				"item_margin": "-1,1",
-				"item_size": 33,
-				"rows": [
-					["sword1", "biggoron_sword", "bestweapon", "shield", "bombs", "bombchus"],
-					["bracelet", "boomerang1", "slingshot1", "shooter", "magnet", "feather"],
-					["satchel1", "emberseeds", "mysteryseeds", "scentseeds", "pegasusseeds", "galeseeds"],
-					["hook", "spring", "summer", "fall", "winter", "shovel"],
-					["somaria", "ring_fist", "ring_heart", "ring_energy", "ring_swimmer", "flute_generic"]
+				"type": "array",
+				"orientation": "vertical",
+				"content": [
+					{
+						"type": "itemgrid",
+						"h_alignment": "left",
+						"margin": "-4, 6, 1, 1",
+						"item_margin": "-1, 1",
+						"item_size": 33,
+						"rows": [
+							["sword1", "biggoron_sword", "bestweapon", "shield", "bombs", "bombchus"],
+							["bracelet", "boomerang1", "slingshot1", "shooter", "magnet", "feather"]
+						]
+					},
+					{
+						"type": "array",
+						"orientation": "horizontal",
+						"content": [
+							{
+								"type": "itemgrid",
+								"h_alignment": "left",
+								"margin": "-5, -1, 1, 1",
+								"item_margin": "0, 1",
+								"item_size": 33,
+								"rows": [
+									["satchel1"],
+									["hook"]
+								]
+							},
+							{
+								"type": "itemgrid",
+								"item_size": 33,
+								"margin": "-5, -1, 1, 1",
+								"item_margin": "0, -5",
+								"h_alignment": "center",
+								"rows": [
+									["emberseeds", "mysteryseeds"],
+									["scentseeds"],
+									["pegasusseeds", "galeseeds"]
+								]
+							},
+							{
+								"type": "itemgrid",
+								"item_size": 33,
+								"margin": "-2, -4, 1, 1",
+								"item_margin": "-1, 2",
+								"h_alignment": "left",
+								"rows": [
+									["summer", "fall", "flute_generic"],
+									["spring", "winter", "shovel"]
+								]
+							}
+						]
+					},
+					{
+						"type": "itemgrid",
+						"h_alignment": "left",
+						"margin": "-4, -2, 1, 1",
+						"item_margin": "-1, 1",
+						"item_size": 33,
+						"rows": [
+							["somaria", "ring_fist", "ring_heart", "ring_energy", "ring_swimmer", "ring_toss"]
+						]
+					}
 				]
 			},
 			{
 				"type": "itemgrid",
 				"h_alignment": "left",
-				"margin": "-5,6,0,0",
+				"margin": "3,6,0,0",
 				"item_margin": "-1,1",
 				"item_size": 33,
 				"rows": [
@@ -286,8 +392,7 @@
 	"h_portal_grid": {
 		"type": "array",
 		"orientation": "horizontal",
-		"content": [		 
-			
+		"content": [
 			{
 				"type": "itemgrid",
 				"h_alignment": "center",
@@ -414,6 +519,21 @@
 			["d6"],
 			["d7"],
 			["d8"]
+		]
+	},
+	"h_boss_grid": {
+		"type": "itemgrid",
+		"margin": "-5, 5",
+		"item_margin": "5, 3",
+		"rows": [
+			["d1_boss"],
+			["d2_boss"],
+			["d3_boss"],
+			["d4_boss"],
+			["d5_boss"],
+			["d6_boss"],
+			["d7_boss"],
+			["d8_boss"]
 		]
 	},
 	"h_dungeon_grid": {

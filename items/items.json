@@ -817,22 +817,10 @@
 		"codes": "ring_swimmer, progitem"
 	},
 	{
-		"name": "Red Ring",
+		"name": "Toss Ring",
 		"type": "toggle",
-		"img": "images/items/ring_red.png",
-		"codes": "ring_red"
-	},
-	{
-		"name": "Blue Ring",
-		"type": "toggle",
-		"img": "images/items/ring_blue.png",
-		"codes": "ring_blue"
-	},
-	{
-		"name": "Pegasus Ring",
-		"type": "toggle",
-		"img": "images/items/ring_pegasus.png",
-		"codes": "ring_pegasus"
+		"img": "images/items/ring_toss.png",
+		"codes": "ring_toss, progitem"
 	},
 	{
 		"name": "D0 Master Key",

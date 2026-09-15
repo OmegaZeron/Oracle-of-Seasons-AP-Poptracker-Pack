@@ -296,6 +296,14 @@
 						},
 						{
 							"type": "group",
+							"dock": "left",
+							"content": {
+								"type": "layout",
+								"key": "h_boss_grid"
+							}
+						},
+						{
+							"type": "group",
 							"header": "Dungeon Entrances",
 							"dock": "left",
 							"content": {

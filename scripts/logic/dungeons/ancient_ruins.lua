@@ -160,7 +160,6 @@ AncientVireDoorstep:connect_one_way_entrance(Vire, function()
 end)
 Vire:connect_one_way_entrance(AncientBossDoor, function()
 	return All(
-		Feather,
 		Any(
 			MagnetGlove,
 			All(
@@ -174,7 +173,20 @@ Vire:connect_one_way_entrance(AncientBossDoor, function()
 				),
 				MediumLogic
 			)
-		)
+		),
+		Any(
+			All(
+				TossRing,
+				HasAnySword,
+				HasBombsForTiles,
+				HardLogic
+			),
+			Boomerang,
+			SwitchHook,
+			CanShootSeeds,
+			HasBombchusForTiles
+		),
+		Feather
 	)
 end)
 AncientBossDoor:connect_one_way_entrance(AncientBoss, function()

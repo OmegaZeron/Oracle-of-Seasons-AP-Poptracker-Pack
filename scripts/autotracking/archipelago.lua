@@ -211,6 +211,12 @@ function OnClear(slot_data)
 	Tracker:FindObjectForCode("linked_cave").CurrentStage = LinkedCaveMapping[slot_data.options.linked_heros_cave & validLCLocs]
 	Tracker:FindObjectForCode("remove_lc_alt_entrance").CurrentStage = LinkedCaveMapping[slot_data.options.linked_heros_cave & LinkedEnum.NoAltEnt]
 
+	if slot_data.boss_mapping then
+		for i, v in pairs(slot_data.boss_mapping) do
+			Tracker:FindObjectForCode("d"..i.."_boss_hidden").CurrentStage = v
+		end
+	end
+
 	-- shop prices
 	if slot_data.shop_rupee_requirements then
 		for shop, price in pairs(slot_data.shop_rupee_requirements) do
@@ -565,6 +571,8 @@ function OnBounce(json)
 							end
 						end
 					end
+				elseif roomMap.type == CurLocType.Boss then
+					Tracker:FindObjectForCode(roomMap.dungeon.."_boss").CurrentStage = Tracker:FindObjectForCode(roomMap.dungeon.."_boss_hidden").CurrentStage
 				elseif roomMap.type == CurLocType.SeeSeason then
 					Tracker:FindObjectForCode(roomMap.season).CurrentStage = Tracker:FindObjectForCode(roomMap.seasonHidden).CurrentStage
 				elseif roomMap.type == CurLocType.Natzu then

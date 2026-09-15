@@ -74,6 +74,25 @@
 		]
 	},
 	{
+		"name": "Boss Shuffle",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 0,
+		"stages": [
+			{
+				"img": "images/labels/vanilla_label.png",
+				"codes": "shuffle_bosses, shufflebossoff",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/shuffled_label.png",
+				"codes": "shuffle_bosses, shufflebosson",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
 		"name": "Portal Shuffle selector",
 		"type": "progressive",
 		"allow_disabled": false,
@@ -4392,6 +4411,27 @@
 		]
 	},
 	{
+		"name": "D1 Boss Hidden",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 1,
+		"stages": [
+			{
+				"name": "Unknown Boss",
+				"codes": "d1_boss_hidden"
+			},
+			{"name": "Aquamentus"},
+			{"name": "Dodongo"},
+			{"name": "Mothula"},
+			{"name": "Gohma"},
+			{"name": "Digdogger"},
+			{"name": "Manhandla"},
+			{"name": "Gleeok"},
+			{"name": "Medusa Head"}
+		]
+	},
+	{
 		"name": "D2 Boss",
 		"type": "progressive",
 		"allow_disabled": false,
@@ -4435,6 +4475,27 @@
 				"name": "Medusa Head",
 				"img": "images/labels/medusa.png"
 			}
+		]
+	},
+	{
+		"name": "D2 Boss Hidden",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 2,
+		"stages": [
+			{
+				"name": "Unknown Boss",
+				"codes": "d2_boss_hidden"
+			},
+			{"name": "Aquamentus"},
+			{"name": "Dodongo"},
+			{"name": "Mothula"},
+			{"name": "Gohma"},
+			{"name": "Digdogger"},
+			{"name": "Manhandla"},
+			{"name": "Gleeok"},
+			{"name": "Medusa Head"}
 		]
 	},
 	{
@@ -4484,6 +4545,27 @@
 		]
 	},
 	{
+		"name": "D3 Boss Hidden",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 3,
+		"stages": [
+			{
+				"name": "Unknown Boss",
+				"codes": "d3_boss_hidden"
+			},
+			{"name": "Aquamentus"},
+			{"name": "Dodongo"},
+			{"name": "Mothula"},
+			{"name": "Gohma"},
+			{"name": "Digdogger"},
+			{"name": "Manhandla"},
+			{"name": "Gleeok"},
+			{"name": "Medusa Head"}
+		]
+	},
+	{
 		"name": "D4 Boss",
 		"type": "progressive",
 		"allow_disabled": false,
@@ -4527,6 +4609,27 @@
 				"name": "Medusa Head",
 				"img": "images/labels/medusa.png"
 			}
+		]
+	},
+	{
+		"name": "D4 Boss Hidden",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 4,
+		"stages": [
+			{
+				"name": "Unknown Boss",
+				"codes": "d4_boss_hidden"
+			},
+			{"name": "Aquamentus"},
+			{"name": "Dodongo"},
+			{"name": "Mothula"},
+			{"name": "Gohma"},
+			{"name": "Digdogger"},
+			{"name": "Manhandla"},
+			{"name": "Gleeok"},
+			{"name": "Medusa Head"}
 		]
 	},
 	{
@@ -4576,6 +4679,27 @@
 		]
 	},
 	{
+		"name": "D5 Boss Hidden",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 5,
+		"stages": [
+			{
+				"name": "Unknown Boss",
+				"codes": "d5_boss_hidden"
+			},
+			{"name": "Aquamentus"},
+			{"name": "Dodongo"},
+			{"name": "Mothula"},
+			{"name": "Gohma"},
+			{"name": "Digdogger"},
+			{"name": "Manhandla"},
+			{"name": "Gleeok"},
+			{"name": "Medusa Head"}
+		]
+	},
+	{
 		"name": "D6 Boss",
 		"type": "progressive",
 		"allow_disabled": false,
@@ -4619,6 +4743,27 @@
 				"name": "Medusa Head",
 				"img": "images/labels/medusa.png"
 			}
+		]
+	},
+	{
+		"name": "D6 Boss Hidden",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 6,
+		"stages": [
+			{
+				"name": "Unknown Boss",
+				"codes": "d6_boss_hidden"
+			},
+			{"name": "Aquamentus"},
+			{"name": "Dodongo"},
+			{"name": "Mothula"},
+			{"name": "Gohma"},
+			{"name": "Digdogger"},
+			{"name": "Manhandla"},
+			{"name": "Gleeok"},
+			{"name": "Medusa Head"}
 		]
 	},
 	{
@@ -4668,6 +4813,27 @@
 		]
 	},
 	{
+		"name": "D7 Boss Hidden",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 7,
+		"stages": [
+			{
+				"name": "Unknown Boss",
+				"codes": "d7_boss_hidden"
+			},
+			{"name": "Aquamentus"},
+			{"name": "Dodongo"},
+			{"name": "Mothula"},
+			{"name": "Gohma"},
+			{"name": "Digdogger"},
+			{"name": "Manhandla"},
+			{"name": "Gleeok"},
+			{"name": "Medusa Head"}
+		]
+	},
+	{
 		"name": "D8 Boss",
 		"type": "progressive",
 		"allow_disabled": false,
@@ -4714,6 +4880,27 @@
 		]
 	},
 	{
+		"name": "D8 Boss Hidden",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 8,
+		"stages": [
+			{
+				"name": "Unknown Boss",
+				"codes": "d8_boss_hidden"
+			},
+			{"name": "Aquamentus"},
+			{"name": "Dodongo"},
+			{"name": "Mothula"},
+			{"name": "Gohma"},
+			{"name": "Digdogger"},
+			{"name": "Manhandla"},
+			{"name": "Gleeok"},
+			{"name": "Medusa Head"}
+		]
+	},
+	{
 		"name": "Randomized Dungeons Fill Selector",
 		"type": "progressive",
 		"allow_disabled": false,
@@ -4727,6 +4914,24 @@
 			{
 				"img": "images/labels/filled2.png",
 				"codes": "fill_dungeons, fill_dungeons_on",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Boss Shuffle Fill Selector",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"stages": [
+			{
+				"img": "images/labels/fill2.png",
+				"codes": "fill_bosses, fill_bosses_off",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/filled2.png",
+				"codes": "fill_bosses, fill_bosses_on",
 				"inherit_codes": false
 			}
 		]

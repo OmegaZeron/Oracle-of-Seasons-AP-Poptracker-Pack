@@ -276,17 +276,23 @@
 			},
 			{
 				"type": "array",
+				"orientation": "vertical",
 				"h_alignment": "left",
 				"content": [
 					{
+						"type": "item",
+						"item": "fill_bosses",
+						"max_width": 16,
+						"max_height": 16,
+						"margin": "16, 96, 0, 0"
+					},
+					{
 						"type": "itemgrid",
 						"h_alignment": "left",
-						"margin": "3, 0, -3, 0",
+						"margin": "3, 4, -3, 0",
 						"item_size": 44,
 						"item_margin": "0, 7",
 						"rows": [
-							[""],
-							[""],
 							["d1_boss"],
 							["d2_boss"],
 							["d3_boss"],
@@ -524,19 +530,31 @@
 		]
 	},
 	"h_boss_grid": {
-		"type": "itemgrid",
-		"margin": "-8, 5",
-		"item_margin": "5, 0",
-		"item_size": 38,
-		"rows": [
-			["d1_boss"],
-			["d2_boss"],
-			["d3_boss"],
-			["d4_boss"],
-			["d5_boss"],
-			["d6_boss"],
-			["d7_boss"],
-			["d8_boss"]
+		"type": "array",
+		"content": [
+			{
+				"type": "item",
+				"item": "fill_bosses",
+				"max_width": 16,
+				"max_height": 16,
+				"margin": "0, -22, 0, 0"
+			},
+			{
+				"type": "itemgrid",
+				"margin": "-8, 10, -8, 5",
+				"item_margin": "5, 0",
+				"item_size": 38,
+				"rows": [
+					["d1_boss"],
+					["d2_boss"],
+					["d3_boss"],
+					["d4_boss"],
+					["d5_boss"],
+					["d6_boss"],
+					["d7_boss"],
+					["d8_boss"]
+				]
+			}
 		]
 	},
 	"h_dungeon_grid": {
@@ -573,7 +591,7 @@
 						"item_size": 32,
 						"item_margin": "-3,10",
 						"rows": [
-							["fill_dungeons", "", "", "d1_map", "d1_compass", "", "d3_map", "d3_compass", "", "d5_map", "d5_compass", "", "d7_map", "d7_compass", ""]
+							["", "fill_dungeons", "", "d1_map", "d1_compass", "", "d3_map", "d3_compass", "", "d5_map", "d5_compass", "", "d7_map", "d7_compass", ""]
 						]
 					},
 					{
@@ -648,13 +666,14 @@
 				"item_size": 90,
 				"item_margin": "-4,-18",
 				"rows": [
-					["logic_label", "logic_difficulty", "goal_label", "goal", "dungeon_shuffle_label", "shuffle_dungeons", "portal_shuffle_label", "shuffle_portals"],
-					["onox_essences_label", "required_essences", "old_man_essences_label", "treehouse_old_man_requirement", "signs_required_label", "sign_guy_requirement", "golden_beasts_label", "golden_beasts_requirement"],
-					["gasha_seeds_label", "deterministic_gasha_locations", "tarm_jewels_label", "tarm_gate_required_jewels", "start_location_label", "start_position", "secret_locations_label", "secret_locations"],
-					["horon_shop_potion_label", "enforce_potion_in_shop", "advance_shop_label", "advance_shop", "shuffle_old_men_label", "shuffle_old_men", "gold_ore_label", "shuffle_golden_ore_spots"],
-					["default_seasons_label", "default_seasons", "horon_village_season_label", "horon_village_season_shuffle", "d0_alt_entrance_label", "remove_d0_alt_entrance", "d2_alt_entrance_label", "remove_d2_alt_entrance"],
-					["lost_woods_label", "randomize_lost_woods_main_sequence", "pedestal_label", "randomize_lost_woods_item_sequence", "shuffle_scrub_label", "shuffle_business_scrubs", "master_keys_label", "master_keys"],
-					["linked_cave_label", "linked_cave", "lc_alt_entrance_label", "remove_lc_alt_entrance", "autotab_label", "autotab", "dungeon_number_label", "dungeon_number_setting"]
+					["logic_label", "logic_difficulty", "goal_label", "goal", "onox_essences_label", "required_essences", "start_location_label", "start_position"],
+					["dungeon_shuffle_label", "shuffle_dungeons", "boss_shuffle_label", "shuffle_bosses", "portal_shuffle_label", "shuffle_portals", "master_keys_label", "master_keys"],
+					["d0_alt_entrance_label", "remove_d0_alt_entrance", "d2_alt_entrance_label", "remove_d2_alt_entrance", "linked_cave_label", "linked_cave", "lc_alt_entrance_label", "remove_lc_alt_entrance"],
+					["default_seasons_label", "default_seasons", "horon_village_season_label", "horon_village_season_shuffle", "lost_woods_label", "randomize_lost_woods_main_sequence", "pedestal_label", "randomize_lost_woods_item_sequence"],
+					["secret_locations_label", "secret_locations", "advance_shop_label", "advance_shop", "shuffle_old_men_label", "shuffle_old_men", "shuffle_scrub_label", "shuffle_business_scrubs"],
+					["gold_ore_label", "shuffle_golden_ore_spots", "horon_shop_potion_label", "enforce_potion_in_shop", "old_man_essences_label", "treehouse_old_man_requirement", "gasha_seeds_label", "deterministic_gasha_locations"],
+					["golden_beasts_label", "golden_beasts_requirement", "signs_required_label", "sign_guy_requirement", "tarm_jewels_label", "tarm_gate_required_jewels", "", ""],
+					["autotab_label", "autotab", "dungeon_number_label", "dungeon_number_setting"]
 				]
 			}
 		]

@@ -31,6 +31,12 @@
 		"codes": "dungeon_shuffle_label"
 	},
 	{
+		"name": "Boss Shuffle Label",
+		"type": "static",
+		"img": "images/labels/boss_shuffle_label.png",
+		"codes": "boss_shuffle_label"
+	},
+	{
 		"name": "Default Seasons Label",
 		"type": "static",
 		"img": "images/labels/default_seasons_label.png",

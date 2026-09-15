@@ -25,7 +25,8 @@ CurLocType = {
 	DungeonIn = "DungeonIn",
 	Portal = "Portal",
 	Natzu = "Natzu",
-	Custom = "Custom"
+	Boss = "Boss",
+	Custom = "Custom",
 }
 ---@enum linkedEnum
 LinkedEnum = {
@@ -93,6 +94,7 @@ LinkedEnum = {
 ---@field item_hints table
 ---@field version string
 ---@field dungeon_entrances table
+---@field boss_mapping table
 ---@field subrosia_portals table
 ---@field old_man_rupee_values table
 
@@ -105,46 +107,52 @@ LinkedEnum = {
 --- constructor for CurrentLocationMapping data
 ---@param tab string[]
 ---@return CurrentLocationData
-function Autotab(tab)
+local function Autotab(tab)
 	return {type = CurLocType.Autotab, tab = tab} --[[@as CurrentLocationData]]
 end
 --- constructor for CurrentLocationMapping data
 ---@param season string
 ---@param seasonHidden string
 ---@return CurrentLocationData
-function SeeSeason(season, seasonHidden)
+local function SeeSeason(season, seasonHidden)
 	return {type = CurLocType.SeeSeason, season = season, seasonHidden = seasonHidden} --[[@as CurrentLocationData]]
 end
 --- constructor for CurrentLocationMapping data
 ---@param dungeon string
 ---@param loc string
 ---@return CurrentLocationData
-function DungeonEnt(dungeon, loc)
+local function DungeonEnt(dungeon, loc)
 	return {type = CurLocType.DungeonEnt, dungeon = dungeon, loc = loc} --[[@as CurrentLocationData]]
 end
 --- constructor for CurrentLocationMapping data
 ---@param dungeon string
 ---@param loc string?
 ---@return CurrentLocationData
-function DungeonIn(dungeon, loc)
+local function DungeonIn(dungeon, loc)
 	return {type = CurLocType.DungeonIn, dungeon = dungeon, loc = loc} --[[@as CurrentLocationData]]
 end
 --- constructor for CurrentLocationMapping data
 ---@param portal string
 ---@param portalHidden string
 ---@return CurrentLocationData
-function Portal(portal, portalHidden)
+local function Portal(portal, portalHidden)
 	return {type = CurLocType.Portal, portal = portal, portalHidden = portalHidden} --[[@as CurrentLocationData]]
 end
 --- constructor for CurrentLocationMapping data
 ---@return CurrentLocationData
-function Natzu()
+local function Natzu()
 	return {type = CurLocType.Natzu} --[[@as CurrentLocationData]]
+end
+--- constructor for CurrentLocationMapping data
+---@param dungeon string
+---@return CurrentLocationData
+local function Boss(dungeon)
+	return {type = CurLocType.Boss, dungeon = dungeon}
 end
 --- constructor for CurrentLocationMapping data
 ---@param func function
 ---@return CurrentLocationData
-function Custom(func)
+local function Custom(func)
 	return {type = CurLocType.Custom, func = func} --[[@as CurrentLocationData]]
 end
 
@@ -551,6 +559,7 @@ CurrentLocationMapping = {
 		Autotab({"Gnarled Root Dungeon"}),
 		DungeonIn("d1")
 	},
+	[0x412] = {Boss("d1")},
 	-- D2
 	[0x439] = {
 		-- main entrance
@@ -564,6 +573,7 @@ CurrentLocationMapping = {
 	[0x432] = {Autotab({"Snake's Remains", "Snake's Remains Front"})}, -- cracked wall with ropes
 	[0x421] = {Autotab({"Snake's Remains", "Snake's Remains Back"})}, -- Facade warp
 	[0x61E] = {Autotab({"Snake's Remains", "Snake's Remains Back"})}, -- 2D section
+	[0x429] = {Boss("d2")}, -- 2D section
 	[0x42C] = {DungeonIn("d2", "@Snake's Remains/Exit the Dungeon/")}, -- essence
 	-- D3
 	[0x44B] = {
@@ -581,7 +591,10 @@ CurrentLocationMapping = {
 	[0x459] = {Autotab({"Poison Moth's Lair", "Poison Moth's Lair 1F"})}, -- pol's voice room
 	[0x448] = {Autotab({"Poison Moth's Lair", "Poison Moth's Lair B1F"})}, -- omuai
 	[0x457] = {Autotab({"Poison Moth's Lair", "Poison Moth's Lair 1F"})}, -- peahat after omuai
-	[0x453] = {Autotab({"Poison Moth's Lair", "Poison Moth's Lair 1F"})}, -- mothula
+	[0x453] = {
+		Boss("d3"),
+		Autotab({"Poison Moth's Lair", "Poison Moth's Lair 1F"}) -- mothula
+	},
 	[0x443] = {Autotab({"Poison Moth's Lair", "Poison Moth's Lair B1F"})}, -- essence
 	-- D4
 	[0x481] = {
@@ -596,6 +609,7 @@ CurrentLocationMapping = {
 	[0x46A] = {Autotab({"Dancing Dragon Dungeon", "Dancing Dragon Dungeon 1F"})}, -- Agunima warp
 	[0x469] = {Autotab({"Dancing Dragon Dungeon", "Dancing Dragon Dungeon 1F"})}, -- beamos
 	[0x461] = {Autotab({"Dancing Dragon Dungeon", "Dancing Dragon Dungeon 2F"})}, -- pre-gohma
+	[0x45F] = {Boss("d4")},
 	-- D5
 	[0x4A7] = {
 		Autotab({"Unicorn's Cave"}),
@@ -607,6 +621,7 @@ CurrentLocationMapping = {
 		Autotab({"Ancient Ruins", "Ancient Ruins 1F, 2F"}),
 		DungeonIn("d6")
 	},
+	[0x48C] = {Boss("d5")},
 	-- rupee room
 	[0x4BB] = {Custom(function() Tracker:FindObjectForCode(EventAncientRupees).Active = true end)},
 	[0x4C2] = {Autotab({"Ancient Ruins", "Ancient Ruins 1F, 2F"})}, -- spiny beetle trampoline
@@ -618,6 +633,7 @@ CurrentLocationMapping = {
 	[0x4CB] = {Autotab({"Ancient Ruins", "Ancient Ruins 3F, 4F, 5F"})}, -- before Vire
 	[0x4C8] = {Autotab({"Ancient Ruins", "Ancient Ruins 3F, 4F, 5F"})}, -- Vire warp
 	[0x4C1] = {Autotab({"Ancient Ruins", "Ancient Ruins 1F, 2F"})}, -- below Vire
+	[0x4D5] = {Boss("d6")},
 	-- D7
 	[0x55B] = {
 		-- main entrance
@@ -631,6 +647,7 @@ CurrentLocationMapping = {
 	[0x54C] = {Autotab({"Explorer's Crypt", "Explorer's Crypt 1F, B1F"})}, -- poe 2 water room
 	[0x53C] = {Autotab({"Explorer's Crypt", "Explorer's Crypt B2F"})}, -- flying tile key block
 	[0x542] = {Autotab({"Explorer's Crypt", "Explorer's Crypt B2F"})}, -- Poe Sisters warp
+	[0x550] = {Boss("d7")},
 	-- D8
 	[0x587] = {
 		-- main entrance
@@ -662,6 +679,7 @@ CurrentLocationMapping = {
 	[0x568] = {Autotab({"Sword and Shield Maze", "Sword and Shield Maze B1F"})}, -- lava trapped stairs
 	[0x56A] = {Autotab({"Sword and Shield Maze", "Sword and Shield Maze B1F"})}, -- SW lava flow
 	[0x567] = {Autotab({"Sword and Shield Maze", "Sword and Shield Maze B1F"})}, -- stairs below beamos
+	[0x564] = {Boss("d8")},
 
 	-- room of rites
 	[0x59D] = {Custom(function() Tracker:FindObjectForCode("onox").Active = true end)}

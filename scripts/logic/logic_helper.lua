@@ -1740,6 +1740,29 @@ local function DisplayDungeons()
 	end
 end
 
+function BossSettings()
+	if not LOADED then
+		return
+	end
+	if Tracker:ProviderCountForCode(ShuffleBossOn) == 0 then
+		for i = 1, 8 do
+			Tracker:FindObjectForCode("d"..i.."_boss").CurrentStage = i
+		end
+	else
+		for i = 1, 8 do
+			Tracker:FindObjectForCode("d"..i.."_boss").CurrentStage = 0
+		end
+	end
+end
+
+local function DisplayBosses()
+	if Tracker:ProviderCountForCode(ShuffleBossOn) > 0 and Tracker:FindObjectForCode("fill_bosses").CurrentStage == 1 then
+		for i = 1, 8 do
+			Tracker:FindObjectForCode("d"..i.."_boss").CurrentStage = Tracker:FindObjectForCode("d"..i.."_boss_hidden").CurrentStage
+		end
+	end
+end
+
 function SeasonSettings()
 	if not LOADED then
 		return
@@ -1880,6 +1903,8 @@ end
 
 ScriptHost:AddWatchForCode("dungeon settings handler", "shuffle_dungeons", DungeonSettings)
 ScriptHost:AddWatchForCode("dungeons handler", "fill_dungeons", DisplayDungeons)
+ScriptHost:AddWatchForCode("boss shuffle handler", "shuffle_bosses", BossSettings)
+ScriptHost:AddWatchForCode("dungeons handler", "fill_bosses", DisplayBosses)
 ScriptHost:AddWatchForCode("seasons settings handler", "default_seasons", SeasonSettings)
 ScriptHost:AddWatchForCode("seasons handler", "fill_seasons", DisplaySeasons)
 ScriptHost:AddWatchForCode("portal settings handler", "shuffle_portals", VanillaPortals)

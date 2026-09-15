@@ -1026,7 +1026,7 @@ IndexToSeason = {
 	[4] = UnknownSeason
 }
 
----@type accessibilityLevel[]
+---@type (fun(dungeon: integer): accessibilityLevel)[]
 BossLogic = {}
 
 SeeSeasonVars = {

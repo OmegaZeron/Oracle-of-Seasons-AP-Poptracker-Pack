@@ -71,8 +71,8 @@ Omuai:connect_one_way(PoisonBladeTrapChest, function()
 end)
 Omuai:connect_one_way_entrance(PoisonBoss, function()
 	return All(
+		BossLogic[3](3),
 		HasD3BossKey,
-		BossLogic[3],
 		Any(
 			Feather,
 			MediumLogic

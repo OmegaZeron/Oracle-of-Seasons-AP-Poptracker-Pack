@@ -24,4 +24,5 @@ CreateLuaManualLocationStorage(ManualStorageCode)
 ScriptHost:AddOnLocationSectionChangedHandler("manual location handler", ManualLocationHandler)
 ScriptHost:AddWatchForCode("manual item handler", "*", ManualItemHandler)
 
+SetupBossLogic()
 StateChange()

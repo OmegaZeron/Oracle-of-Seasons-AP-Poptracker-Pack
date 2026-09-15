@@ -191,7 +191,7 @@ end)
 MazeNWIceDrop:connect_one_way_entrance(MazeMedusaDoorstep, function() return HasKeys(D8SmallKey, D8MasterKey, 7) end)
 MazeMedusaDoorstep:connect_one_way_entrance(MazeBoss, function()
 	return All(
-		HasD8BossKey,
-		BossLogic[8]
+		BossLogic[8](8),
+		HasD8BossKey
 	)
 end)

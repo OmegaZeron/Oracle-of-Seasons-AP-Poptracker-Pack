@@ -1221,7 +1221,7 @@ function CanBeatMedusaHead()
 	)
 end
 
----@type table<integer, fun(): accessibilityLevel>
+---@type table<integer, fun(dungeon: integer): accessibilityLevel>
 local bossLogicMap = {
 	[0] = function() return AccessibilityLevel.None end,
 	CanBeatAquamentus,
@@ -1235,11 +1235,12 @@ local bossLogicMap = {
 }
 
 function SetupBossLogic()
-	BossLogic = {} --[=[@as accessibilityLevel[]]=]
+	BossLogic = {} --[=[@as (fun(dungeon:integer): accessibilityLevel)[]]=]
 	for i = 1, 8 do
 		local boss = Tracker:FindObjectForCode("d"..i.."_boss").CurrentStage
-		BossLogic[i] = bossLogicMap[boss](i)
+		BossLogic[i] = bossLogicMap[boss]
 	end
+	Tracker:FindObjectForCode(UpdateItem).Active = not Tracker:FindObjectForCode(UpdateItem).Active
 end
 
 function CanCompleteLinkedPuzzle()

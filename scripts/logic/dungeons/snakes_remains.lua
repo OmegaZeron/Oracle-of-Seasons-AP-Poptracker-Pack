@@ -69,7 +69,7 @@ Facade:connect_one_way_entrance(SnakeBoss, function()
 			HasKeys(D2SmallKey, D2MasterKey, 3, 2),
 			CanBombWall
 		),
-		BossLogic[2],
+		BossLogic[2](2),
 		HasD2BossKey
 	)
 end)

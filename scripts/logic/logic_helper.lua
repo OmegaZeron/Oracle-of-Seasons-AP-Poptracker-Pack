@@ -1211,7 +1211,21 @@ function CanBeatGleeok(dungeon)
 			),
 			Feather
 		),
-		CanSwordKill
+		Any(
+			CanSwordKill,
+			All(
+				CanPunch,
+				HasHeartsByDifficulty(20, 7, 5)
+			),
+			All(
+				Bombs99,
+				HardLogic
+			),
+			All(
+				HasBombsToFight,
+				HellLogic
+			)
+		)
 	)
 end
 

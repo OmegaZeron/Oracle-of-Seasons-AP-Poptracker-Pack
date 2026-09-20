@@ -226,7 +226,7 @@ function TightSwitchHook()
 		LongHook,
 		All(
 			SwitchHook,
-			MediumLogic
+			HardLogic
 		)
 	)
 end

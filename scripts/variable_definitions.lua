@@ -81,7 +81,7 @@ LinkedEnum = {
 ---@field master_keys integer 0-2
 ---@field show_dungeons_with_essence integer 0-2
 ---@field default_seasons integer 0-6
----@field start_position integer 0-1
+---@field start_position integer 0-4
 
 ---@class SlotData
 ---@field options SlotDataOptions
@@ -262,24 +262,22 @@ AutoCollectLocationTable = {Any = DefaultAutoCollectLocationTable}
 
 -- used to automatically tab and see seasons when connecting to AP
 StartLocationMapping = {
-	[0] = 0x0B6, -- impa
-	[1] = 0x05D, -- sunken
-	[2] = 0x105, -- temple
-	[3] = 0x0EE, -- desert
-	[4] = 0x083, -- tarm
+	[0] = {0x0B6, "@Horon Village/Horon Tree/Horon Village: Seed Tree"}, -- impa
+	[1] = {0x05D, "@Sunken City/Sunken City Tree/Sunken City: Seed Tree"}, -- sunken
+	[2] = {0x105}, -- temple
+	[3] = {0x0EE}, -- desert
+	[4] = {0x083, "@Tarm Ruins/Tarm Ruins Tree/Tarm Ruins: Seed Tree"}, -- tarm
 }
+
+-- room IDs for Natzu. used to help auto-tab
+NatzuIDs = {0x46, 0x47, 0x48, 0x49, 0x4A, 0x4B, 0x4C, 0x56, 0x57, 0x58, 0x59, 0x5A, 0x69, 0x6A, 0x79, 0x7A}
 
 ---@type table<integer, CurrentLocationData[]>
 CurrentLocationMapping = {
 	-- North Horon
-	[0x0B6] = {
-		-- from HV
-		Autotab({"Holodrum"}),
-		SeeSeason(NorthHoronSeason, NorthHoronSeasonHidden)
-	},
+	[0x0B6] = {SeeSeason(NorthHoronSeason, NorthHoronSeasonHidden)}, -- from HV
 	[0x096] = {
 		-- D1
-		Autotab({"Holodrum"}),
 		DungeonEnt("d1", "@North Horon/Enter D1/Gnarled Root Dungeon"),
 		SeeSeason(NorthHoronSeason, NorthHoronSeasonHidden)
 	},
@@ -287,19 +285,16 @@ CurrentLocationMapping = {
 	[0x0A6] = {SeeSeason(NorthHoronSeason, NorthHoronSeasonHidden)}, -- red ring old man
 	[0x08A] = {
 		-- D5
-		Autotab({"Holodrum"}),
 		DungeonEnt("d5", "@North Horon/Enter D5/Unicorn's Cave"),
 		SeeSeason(NorthHoronSeason, NorthHoronSeasonHidden)
 	},
 	[0x0B9] = {
 		-- lake portal
-		Autotab({"Holodrum"}),
 		Portal(EyeglassLakePortalSelector, EyeglassLakePortalSelectorHidden),
 		SeeSeason(NorthHoronSeason, NorthHoronSeasonHidden)
 	},
 	[0x09A] = {
 		-- suburbs portal
-		Autotab({"Holodrum"}),
 		Portal(EasternSuburbsPortalSelector, EasternSuburbsPortalSelectorHidden),
 		SeeSeason(NorthHoronSeason, NorthHoronSeasonHidden)
 	},
@@ -309,63 +304,40 @@ CurrentLocationMapping = {
 	[0x0C5] = {SeeSeason(HoronVillageSeason, HoronVillageSeasonHidden)}, -- from WC
 	[0x0F7] = {SeeSeason(HoronVillageSeason, HoronVillageSeasonHidden)}, -- Subrosia portal
 	[0x0E9] = {SeeSeason(HoronVillageSeason, HoronVillageSeasonHidden)}, -- from ES
-	[0x3AB] = {
-		-- Subrosia lever
-		Autotab({"Holodrum"}),
-		Portal(HoronVillagePortalSelector, HoronVillagePortalSelectorHidden)
-	},
+	[0x3AB] = {Portal(HoronVillagePortalSelector, HoronVillagePortalSelectorHidden)}, -- Subrosia lever
 
 	-- Western Coast
 	[0x0C4] = {SeeSeason(WesternCoastSeason, WesternCoastSeasonHidden)}, -- from HV
 	[0x0D4] = {
 		-- D0
-		Autotab({"Holodrum"}),
 		DungeonEnt("d0", "@Western Coast/Enter D0/Hero's Cave"),
 		SeeSeason(WesternCoastSeason, WesternCoastSeasonHidden)
 	},
 	[0x0D0] = {
 		-- D7
-		Autotab({"Holodrum"}),
 		DungeonEnt("d7", "@Western Coast/Enter D7/Explorer's Crypt"),
 		SeeSeason(WesternCoastSeason, WesternCoastSeasonHidden)
 	},
-	[0x0E2] = {
-		-- warp from turning in the pirate bell
-		Autotab({"Holodrum"}),
-		SeeSeason(WesternCoastSeason, WesternCoastSeasonHidden)
-	},
+	[0x0E2] = {SeeSeason(WesternCoastSeason, WesternCoastSeasonHidden)}, -- warp from turning in the pirate bell
 
 	-- Eastern Suburbs
 	[0x0EA] = {SeeSeason(EasternSuburbsSeason, EasternSuburbsSeasonHidden)}, -- from HV
 	[0x09B] = {SeeSeason(EasternSuburbsSeason, EasternSuburbsSeasonHidden)}, -- from Suburbs portal
-	[0x07C] = {
-		-- from Sunken/Moblin Road
-		SeeSeason(EasternSuburbsSeason, EasternSuburbsSeasonHidden),
-		Autotab({"Holodrum"})
-	},
+	[0x07C] = {SeeSeason(EasternSuburbsSeason, EasternSuburbsSeasonHidden)}, -- from Sunken/Moblin Road
 	[0x08C] = {SeeSeason(EasternSuburbsSeason, EasternSuburbsSeasonHidden)}, -- from D2
 	[0x09D] = {SeeSeason(EasternSuburbsSeason, EasternSuburbsSeasonHidden)}, -- from WoW tree
 	[0x08F] = {SeeSeason(EasternSuburbsSeason, EasternSuburbsSeasonHidden)}, -- from Holly
 
-	[0x0CF] = {
-		-- Samasa Desert entrance to Linked Cave
-		Autotab({"Holodrum"}),
-		DungeonEnt("lc", "@Western Coast/Enter D0 (Linked)/Hero's Cave (Linked)")
-	},
+	[0x0CF] = {DungeonEnt("lc", "@Western Coast/Enter D0 (Linked)/Hero's Cave (Linked)")}, -- Samasa Desert entrance to Linked Cave
 
 	-- Woods of Winter
 	[0x09E] = {SeeSeason(WoodsOfWinterSeason, WoodsOfWinterSeasonHidden)}, -- tree
 	[0x08D] = {
 		-- D2
-		Autotab({"Holodrum"}),
 		DungeonEnt("d2", "@Woods of Winter/Enter D2/Snake's Remains"),
 		SeeSeason(WoodsOfWinterSeason, WoodsOfWinterSeasonHidden)
 	},
-	[0x08E] = {
-		-- D2 alt
-		Autotab({"Holodrum"}),
-		SeeSeason(WoodsOfWinterSeason, WoodsOfWinterSeasonHidden)
-	},
+	[0x08E] = {SeeSeason(WoodsOfWinterSeason, WoodsOfWinterSeasonHidden)}, -- D2 alt
 	[0x07D] = {SeeSeason(WoodsOfWinterSeason, WoodsOfWinterSeasonHidden)}, -- bomb cave
 	[0x07E] = {SeeSeason(WoodsOfWinterSeason, WoodsOfWinterSeasonHidden)}, -- from Sunken
 	[0x07F] = {SeeSeason(WoodsOfWinterSeason, WoodsOfWinterSeasonHidden)}, -- Holly
@@ -378,85 +350,44 @@ CurrentLocationMapping = {
 	[0x0B3] = {SeeSeason(HolodrumPlainSeason, HolodrumPlainSeasonHidden)}, -- from lower SS
 	[0x093] = {SeeSeason(HolodrumPlainSeason, HolodrumPlainSeasonHidden)}, -- from upper SS
 	[0x045] = {SeeSeason(HolodrumPlainSeason, HolodrumPlainSeasonHidden)}, -- from Onox
-	[0x055] = {
-		-- from natzu W
-		SeeSeason(HolodrumPlainSeason, HolodrumPlainSeasonHidden),
-		Autotab({"Holodrum"})
-	},
-	[0x066] = {
-		-- from natzu SW
-		SeeSeason(HolodrumPlainSeason, HolodrumPlainSeasonHidden),
-		Autotab({"Holodrum"})
-	},
-	[0x068] = {
-		-- from natzu SE
-		SeeSeason(HolodrumPlainSeason, HolodrumPlainSeasonHidden),
-		Autotab({"Holodrum"})
-	},
+	[0x055] = {SeeSeason(HolodrumPlainSeason, HolodrumPlainSeasonHidden)}, -- from natzu W
+	[0x066] = {SeeSeason(HolodrumPlainSeason, HolodrumPlainSeasonHidden)}, -- from natzu SW
+	[0x068] = {SeeSeason(HolodrumPlainSeason, HolodrumPlainSeasonHidden)}, -- from natzu SE
 
 	-- Spool Swamp
-	[0x083] = {SeeSeason(SpoolSwampSeason, SpoolSwampSeasonHidden)}, -- from upper HP
+	[0x083] = {
+		SeeSeason(SpoolSwampSeason, SpoolSwampSeasonHidden) -- from upper HP
+	},
 	[0x073] = {SeeSeason(SpoolSwampSeason, SpoolSwampSeasonHidden)}, -- from tarm
 	[0x0B2] = {SeeSeason(SpoolSwampSeason, SpoolSwampSeasonHidden)}, -- from lower HP
 	[0x060] = {
 		-- d3
-		Autotab({"Holodrum"}),
 		DungeonEnt("d3", "@Spool Swamp/Enter D3/Poison Moth's Lair")
 	},
 	[0x0B0] = {
 		-- portal
-		Autotab({"Holodrum"}),
 		Portal(SpoolSwampPortalSelector, SpoolSwampPortalSelectorHidden),
 		SeeSeason(SpoolSwampSeason, SpoolSwampSeasonHidden)
 	},
 
 	-- Natzu
-	[0x048] = {
-		-- from Goron Mountain
-		Autotab({"Holodrum", "Natzu"}),
-		Natzu()
-	},
-	[0x04C] = {
-		-- from Sunken
-		Autotab({"Holodrum", "Natzu"}),
-		Natzu()
-	},
-	[0x056] = {
-		-- from Holodrum Plain West
-		Autotab({"Holodrum", "Natzu"}),
-		Natzu()
-	},
-	[0x058] = {
-		-- from Holodrum Plain East
-		Autotab({"Holodrum", "Natzu"}),
-		Natzu()
-	},
-	[0x07A] = {
-		-- from Moblin Keep
-		Autotab({"Holodrum", "Natzu"}),
-		Natzu()
-	},
-
-	-- Goron Mountain
-	[0x038] = {Autotab({"Holodrum"})}, -- from Natzu
+	[0x048] = {Natzu()}, -- from Goron Mountain
+	[0x04C] = {Natzu()}, -- from Sunken
+	[0x056] = {Natzu()}, -- from Holodrum Plain West
+	[0x058] = {Natzu()}, -- from Holodrum Plain East
+	[0x07A] = {Natzu()}, -- from Moblin Keep
 
 	-- Sunken City/Mt. Cucco
-	[0x05D] = {
-		-- from natzu
-		SeeSeason(SunkenCitySeason, SunkenCitySeasonHidden),
-		Autotab({"Holodrum"})
-	},
+	[0x05D] = {SeeSeason(SunkenCitySeason, SunkenCitySeasonHidden)}, -- from natzu
 	[0x02B] = {SeeSeason(SunkenCitySeason, SunkenCitySeasonHidden)}, -- from Goron Mountain
 	[0x03B] = {SeeSeason(SunkenCitySeason, SunkenCitySeasonHidden)}, -- lower gasha spot
 	[0x01D] = {
 		-- d4
-		Autotab({"Holodrum"}),
 		DungeonEnt("d4", "@Mount Cucco/Enter D4/Dancing Dragon Dungeon"),
 		SeeSeason(SunkenCitySeason, SunkenCitySeasonHidden)
 	},
 	[0x01E] = {
 		-- portal
-		Autotab({"Holodrum"}),
 		Portal(MtCuccoPortalSelector, MtCuccoPortalSelectorHidden),
 		SeeSeason(SunkenCitySeason, SunkenCitySeasonHidden)
 	},
@@ -474,7 +405,6 @@ CurrentLocationMapping = {
 	},
 	[0x000] = {
 		-- d6
-		Autotab({"Holodrum"}),
 		DungeonEnt("d6", "@Tarm Ruins/Enter D6/Ancient Ruins"),
 		SeeSeason(TarmRuinsSeason, TarmRuinsSeasonHidden)
 	},
@@ -484,59 +414,21 @@ CurrentLocationMapping = {
 	[0x037] = {SeeSeason(TempleRemainsSeason, TempleRemainsSeasonHidden)}, -- from Goron Mountain
 	[0x025] = {
 		-- lower portal
-		Autotab({"Holodrum"}),
 		Portal(LowerRemainsPortalSelector, LowerRemainsPortalSelectorHidden),
 		SeeSeason(TempleRemainsSeason, TempleRemainsSeasonHidden)
 	},
 	[0x004] = {SeeSeason(TempleRemainsSeason, TempleRemainsSeasonHidden)}, -- upper remains
-	[0x3A8] = {
-		-- upper portal
-		Autotab({"Holodrum"}),
-		Portal(UpperRemainsPortalSelector, UpperRemainsPortalSelectorHidden),
-	},
+	[0x3A8] = {Portal(UpperRemainsPortalSelector, UpperRemainsPortalSelectorHidden)}, -- upper portal
 
 	-- Subrosia
-	[0x105] = {
-		-- mountain
-		Autotab({"Subrosia"}),
-		Portal(MountainPortalSelector, MountainPortalSelectorHidden)
-	},
-	[0x157] = {
-		-- market
-		Autotab({"Subrosia"}),
-		Portal(MarketPortalSelector, MarketPortalSelectorHidden)
-	},
-	[0x153] = {
-		-- village
-		Autotab({"Subrosia"}),
-		Portal(SubrosiaVillagePortalSelector, SubrosiaVillagePortalSelectorHidden)
-	},
-	[0x172] = {
-		-- pirates
-		Autotab({"Subrosia"}),
-		Portal(PiratesPortalSelector, PiratesPortalSelectorHidden)
-	},
-	[0x174] = {Autotab({"Subrosia"})}, -- from pirate ship
-	[0x14A] = {
-		-- furnace
-		Autotab({"Subrosia"}),
-		Portal(FurnacePortalSelector, FurnacePortalSelectorHidden)
-	},
-	[0x113] = {
-		-- volcano
-		Autotab({"Subrosia"}),
-		Portal(VolcanoPortalSelector, VolcanoPortalSelectorHidden)
-	},
-	[0x120] = {
-		-- d8 portal
-		Autotab({"Subrosia"}),
-		Portal(D8PortalSelector, D8PortalSelectorHidden)
-	},
-	[0x100] = {
-		-- d8
-		Autotab({"Subrosia"}),
-		DungeonEnt("d8", "@Subrosia/Enter D8/Sword and Shield Maze")
-	},
+	[0x105] = {Portal(MountainPortalSelector, MountainPortalSelectorHidden)}, -- mountain
+	[0x157] = {Portal(MarketPortalSelector, MarketPortalSelectorHidden)}, -- market
+	[0x153] = {Portal(SubrosiaVillagePortalSelector, SubrosiaVillagePortalSelectorHidden)}, -- village
+	[0x172] = {Portal(PiratesPortalSelector, PiratesPortalSelectorHidden)}, -- pirates
+	[0x14A] = {Portal(FurnacePortalSelector, FurnacePortalSelectorHidden)}, -- furnace
+	[0x113] = {Portal(VolcanoPortalSelector, VolcanoPortalSelectorHidden)}, -- volcano
+	[0x120] = {Portal(D8PortalSelector, D8PortalSelectorHidden)}, -- d8 portal
+	[0x100] = {DungeonEnt("d8", "@Subrosia/Enter D8/Sword and Shield Maze")}, -- d8
 
 	-- D0
 	[0x404] = {

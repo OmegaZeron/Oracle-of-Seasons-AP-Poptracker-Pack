@@ -161,11 +161,17 @@ function OnClear(slot_data)
 		Tracker:FindObjectForCode("d"..i.."_label").Active = false
 	end
 
+	local function onInitialSeedItem()
+		local homeTree = slot_data.options.start_position and StartLocationMapping[slot_data.options.start_position][2] or "@Horon Village/Horon Tree/Horon Village: Seed Tree"
+		if homeTree then
+			Tracker:FindObjectForCode(homeTree).AvailableChestCount = 0
+		end
+	end
 	AutoCollectLocationTable = {
 		AP = {
-			[Satchel] = {"@Horon Village/Horon Tree/Horon Village: Seed Tree", SeedMapping[slot_data.options.default_seed]},
-			[Slingshot] = {"@Horon Village/Horon Tree/Horon Village: Seed Tree", SeedMapping[slot_data.options.default_seed]},
-			[SeedShooter] = {"@Horon Village/Horon Tree/Horon Village: Seed Tree", SeedMapping[slot_data.options.default_seed]},
+			[Satchel] = {onInitialSeedItem, SeedMapping[slot_data.options.default_seed]},
+			[Slingshot] = {onInitialSeedItem, SeedMapping[slot_data.options.default_seed]},
+			[SeedShooter] = {onInitialSeedItem, SeedMapping[slot_data.options.default_seed]},
 			[AnyFlute] = {function() Tracker:FindObjectForCode(Companion).CurrentStage = SLOT_DATA.options.animal_companion end}
 		},
 		Any = DefaultAutoCollectLocationTable
@@ -275,11 +281,12 @@ function OnClear(slot_data)
 	end
 
 	-- auto tab and set the season for the starting location
+
 	CurrentTab = nil
 	local startLocation = slot_data.options.start_position
 	if Tracker:FindObjectForCode("autotab").CurrentStage == 1 and startLocation then
 		CurrentRoom = nil
-		OnBounce({["data"] = {["Current Room"] = StartLocationMapping[startLocation]}})
+		OnBounce({["data"] = {["Current Room"] = StartLocationMapping[startLocation][1]}})
 	end
 
 	IS_MANUAL_CLICK = true
@@ -511,6 +518,13 @@ function UpdateHints(locationID, status)
 	end
 end
 
+-- wrapper that also changes CurrentTab
+---@param tab string
+function ActivateTab(tab)
+	Tracker:UiHint("ActivateTab", tab)
+	CurrentTab = tab
+end
+
 -- called when a bounce message is received 
 function OnBounce(json)
 	if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
@@ -526,13 +540,29 @@ function OnBounce(json)
 			return
 		end
 
+		local prevTab = CurrentTab
+		local autoTabEnabled = Tracker:FindObjectForCode("autotab").CurrentStage == 1
+
+		if autoTabEnabled then
+			-- auto-tab generically between holodrum, natzu, and subrosia
+			if CurrentRoom < 0x100 then
+				if TableContains(NatzuIDs, CurrentRoom) and prevTab ~= "Natzu" then
+					Tracker:UiHint("ActivateTab", "Holodrum")
+					ActivateTab("Natzu")
+				elseif prevTab ~= "Holodrum" then
+					ActivateTab("Holodrum")
+				end
+			elseif CurrentRoom < 0x200 and prevTab ~= "Subrosia" then
+				ActivateTab("Subrosia")
+			end
+		end
 		if CurrentLocationMapping[CurrentRoom] then
 			for _, roomMap in ipairs(CurrentLocationMapping[CurrentRoom]) do
-				if roomMap.type == CurLocType.Autotab and Tracker:FindObjectForCode("autotab").CurrentStage == 1 then
-					if CurrentTab ~= roomMap.tab[#roomMap.tab] then
-						CurrentTab = roomMap.tab[#roomMap.tab]
+				if roomMap.type == CurLocType.Autotab and autoTabEnabled then
+					-- more specific/dungeon auto-tab
+					if prevTab ~= roomMap.tab[#roomMap.tab] then
 						for _, room in ipairs(roomMap.tab) do
-							Tracker:UiHint("ActivateTab", room)
+							ActivateTab(room)
 						end
 					end
 				elseif roomMap.type == CurLocType.Portal and prevRoom ~= nil then

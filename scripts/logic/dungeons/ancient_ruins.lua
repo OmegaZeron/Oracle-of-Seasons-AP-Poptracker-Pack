@@ -101,21 +101,7 @@ AncientFoyer:connect_one_way(AncientNorthOfSpinnerChest, function()
 						CanBombWall,
 						Feather
 					),
-					-- fight vire for miniboss warp
-					All(
-						HasHeartsByDifficulty(4, 3),
-						Any(
-							CanSwordKill,
-							All(
-								HasBombsToFight,
-								MediumLogic
-							),
-							All(
-								ExpertsRing,
-								MediumLogic
-							)
-						)
-					)
+					CanBeatVire -- for miniboss warp
 				)
 			),
 			All(
@@ -123,20 +109,7 @@ AncientFoyer:connect_one_way(AncientNorthOfSpinnerChest, function()
 				-- beamos room
 				CanBombWall,
 				Feather,
-				-- fight vire for miniboss warp
-				HasHeartsByDifficulty(4, 3),
-				Any(
-					CanSwordKill,
-					All(
-						HasBombsToFight,
-						MediumLogic
-					),
-					All(
-						ExpertsRing,
-						MediumLogic
-					),
-					AccessibilityLevel.SequenceBreak
-				)
+				CanBeatVire -- for miniboss warp
 			)
 		)
 	)
@@ -144,18 +117,7 @@ end)
 AncientVireDoorstep:connect_one_way_entrance(Vire, function()
 	return All(
 		HasKeys(D6SmallKey, D6MasterKey, 3, 1),
-		HasHeartsByDifficulty(4, 3),
-		Any(
-			CanSwordKill,
-			All(
-				HasBombsToFight,
-				MediumLogic
-			),
-			All(
-				ExpertsRing,
-				MediumLogic
-			)
-		)
+		CanBeatVire
 	)
 end)
 Vire:connect_one_way_entrance(AncientBossDoor, function()

@@ -1189,6 +1189,27 @@ function CanBeatDigdogger()
 	)
 end
 
+function CanBeatVire()
+	return All(
+		HasHeartsByDifficulty(4, 3),
+		Any(
+			CanSwordKill,
+			All(
+				HasBombsToFight,
+				MediumLogic
+			),
+			All(
+				ExpertsRing,
+				MediumLogic
+			),
+			All(
+				Bombchus,
+				AccessibilityLevel.SequenceBreak
+			)
+		)
+	)
+end
+
 function CanBeatManhandla()
 	return All(
 		HasHeartsByDifficulty(6, 4, 3),

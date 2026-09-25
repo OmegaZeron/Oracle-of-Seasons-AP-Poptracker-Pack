@@ -156,18 +156,18 @@ function HasHearts(hearts, difficulty)
 			Has(HeartContainer, hearts)
 		),
 		hearts <= 3,
-		hearts > 10,
+		HasHeartRing,
 		AccessibilityLevel.SequenceBreak
 	)
 end
 
----@param hCasual? integer 20
----@param hMedium? integer 20
----@param hHard? integer 20
+---@param hCasual? integer -1
+---@param hMedium? integer -1
+---@param hHard? integer -1
 function HasHeartsByDifficulty(hCasual, hMedium, hHard)
-	hCasual = hCasual or 20
-	hMedium = hMedium or 20
-	hHard = hHard or 20
+	hCasual = hCasual or -1
+	hMedium = hMedium or -1
+	hHard = hHard or -1
 	return Any(
 		HasHearts(hCasual, LogicLevel.Casual),
 		HasHearts(hMedium, LogicLevel.Medium),
@@ -628,14 +628,20 @@ function HasSwordBeams()
 		),
 		All(
 			NobleSword,
-			Any(
-				HeartRing2,
-				All(
-					HeartRing1,
-					HardLogic
-				)
-			),
+			HasHeartRing
+		)
+	)
+end
+
+function HasHeartRing()
+	return Any(
+		All(
+			HeartRing2,
 			MediumLogic
+		),
+		All(
+			HeartRing1,
+			HardLogic
 		)
 	)
 end
@@ -1203,8 +1209,9 @@ function CanBeatVire()
 				MediumLogic
 			),
 			All(
-				Bombchus,
-				AccessibilityLevel.SequenceBreak
+				HasHearts(4),
+				HasBombchusForTiles, -- timing is a little tricky, so require more
+				HardLogic
 			)
 		)
 	)

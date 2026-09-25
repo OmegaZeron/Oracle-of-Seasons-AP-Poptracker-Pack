@@ -56,7 +56,7 @@ UnicornTerrace:connect_one_way(UnicornArmosPuzzle, function()
 		CanNormalKill
 	)
 end)
-UnicornArmosPuzzle:connect_one_way(UnicornArmosPuzzleEmbers, MediumLogic)
+UnicornArmosPuzzle:connect_one_way(UnicornArmosPuzzleEmbersBombs, MediumLogic)
 UnicornMinecarts:connect_one_way(UnicornMiddleMinecartChest, CanHitLeverFromMinecart)
 UnicornMinecarts:connect_one_way(UnicornSpinnerChest, function()
 	return Any(

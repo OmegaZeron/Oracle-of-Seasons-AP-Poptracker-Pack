@@ -109,6 +109,7 @@ SouthHolodrumPlain:connect_one_way_entrance(NorthSpoolSwamp, function()
 	return Any(
 		HolodrumPlainSummer,
 		Summer,
+		RickyGloves,
 		Jump4,
 		Ricky,
 		Moosh

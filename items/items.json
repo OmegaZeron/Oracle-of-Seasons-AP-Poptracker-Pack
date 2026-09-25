@@ -232,7 +232,7 @@
 		"img": "images/items/heart_container.png",
 		"codes": "heart_container, progitem",
 		"min_quantity": 3,
-		"max_quantity": 10
+		"max_quantity": 11
 	},
 	// {
 	// 	"name": "Season's Rod",
@@ -246,12 +246,6 @@
 		"img": "images/items/keygnarled.png",
 		"codes": "gnarledkey, progitem"
 	},
-	// {
-	// 	"name": "Ricky's Glove",
-	// 	"type": "toggle",
-	// 	"img": "images/items/rickygloves.png",
-	// 	"codes": "rickygloves"
-	// },
 	{
 		"name": "Star Ore",
 		"type": "toggle",
@@ -283,10 +277,46 @@
 		"codes": "plaque, progitem"
 	},
 	{
-		"name": "Banana",
+		"name": "Bananas",
 		"type": "toggle",
 		"img": "images/items/banana.png",
 		"codes": "banana, progitem"
+	},
+	{
+		"name": "Ricky's Gloves",
+		"type": "toggle",
+		"img": "images/items/rickygloves.png",
+		"codes": "rickygloves, progitem"
+	},
+	{
+		"name": "Bananas/Ricky's Gloves",
+		"type": "composite_toggle",
+		"codes": "banana_gloves",
+		"item_left": "banana",
+		"item_right": "rickygloves",
+		"images": [
+			{
+				"left": false,
+				"right": false,
+				"img": "images/items/banana_glove.png",
+				"img_mods": "@disabled"
+			},
+			{
+				"left": true,
+				"right": false,
+				"img": "images/items/banana.png"
+			},
+			{
+				"left": false,
+				"right": true,
+				"img": "images/items/rickygloves.png"
+			},
+			{
+				"left": true,
+				"right": true,
+				"img": "images/items/banana_glove.png"
+			}
+		]
 	},
 	{
 		"name": "Dragon Key",
@@ -433,38 +463,38 @@
 		"img": "images/items/seedgale.png",
 		"codes": "galeseeds, progitem"
 	},
+	// {
+	// 	"name": "All Jewels",
+	// 	"type": "consumable",
+	// 	"img": "images/items/jewelall.png",
+	// 	"codes": "jewels, progitem",
+	// 	"max_quantity": 4,
+	// 	"overlay_font_size": 12
+	// },
 	{
-		"name": "All Jewels",
-		"type": "consumable",
-		"img": "images/items/jewelall.png",
-		"codes": "jewels, progitem",
-		"max_quantity": 4,
-		"overlay_font_size": 12
+		"name": "Round Jewel",
+		"type": "toggle",
+		"img": "images/items/jewelround.png",
+		"codes": "roundjewel, progitem"
 	},
-	// {
-	// 	"name": "Round Jewel",
-	// 	"type": "toggle",
-	// 	"img": "images/items/jewelround.png",
-	// 	"codes": "roundjewel, progitem"
-	// },
-	// {
-	// 	"name": "Pyramid Jewel",
-	// 	"type": "toggle",
-	// 	"img": "images/items/jeweltriangle.png",
-	// 	"codes": "pyramidjewel, progitem"
-	// },
-	// {
-	// 	"name": "Square Jewel",
-	// 	"type": "toggle",
-	// 	"img": "images/items/jewelsquare.png",
-	// 	"codes": "squarejewel, progitem"
-	// },
-	// {
-	// 	"name": "X Jewel",
-	// 	"type": "toggle",
-	// 	"img": "images/items/jewelx.png",
-	// 	"codes": "xjewel, progitem"
-	// },
+	{
+		"name": "Pyramid Jewel",
+		"type": "toggle",
+		"img": "images/items/jeweltriangle.png",
+		"codes": "pyramidjewel, progitem"
+	},
+	{
+		"name": "Square Jewel",
+		"type": "toggle",
+		"img": "images/items/jewelsquare.png",
+		"codes": "squarejewel, progitem"
+	},
+	{
+		"name": "X Jewel",
+		"type": "toggle",
+		"img": "images/items/jewelx.png",
+		"codes": "xjewel, progitem"
+	},
 	{
 		"name": "Spring",
 		"type": "toggle",

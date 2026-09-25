@@ -92,6 +92,7 @@ SnakeHardhats:connect_one_way_entrance(SnakeBombMoblins, function()
 						HardLogic
 					)
 				),
+				CaneOfSomaria,
 				-- bomb them into the pit
 				HasBombchusToFight,
 				HasBombsToFight

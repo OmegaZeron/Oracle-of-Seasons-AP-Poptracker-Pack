@@ -75,13 +75,40 @@
 											]
 										},
 										{
+											"type": "array",
+											"orientation": "horizontal",
+											"margin": "2, -4, 0, 0",
+											"content": [
+												{
+													"type": "itemgrid",
+													"item_size": 32,
+													"rows": [["flippers"]]
+												},
+												{
+													"type": "array",
+													"orientation": "vertical",
+													"content": [
+														{
+															"type": "itemgrid",
+															"margin": "-8, 10, 0, 0",
+															"item_margin": "-1, 0",
+															"item_size": 16,
+															"rows": [
+																["roundjewel", "squarejewel"],
+																["pyramidjewel", "xjewel"]
+															]
+														}
+													]
+												}
+											]
+										},
+										{
 											"type": "itemgrid",
 											"item_size": 32,
-											"margin": "10,5,0,0",
+											"margin": "10, -12, 0, 0",
 											"item_margin": "1, 1",
 											"h_alignment": "center",
 											"rows": [
-												["flippers", "jewels"],
 												["ghastlydoll", "ironpot"],
 												["mushroom", "woodenbird"],
 												["ring_fist", "ring_heart"]

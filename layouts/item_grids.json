@@ -16,7 +16,7 @@
 						"item_size": 33,
 						"rows": [
 							["sword1", "biggoron_sword", "bestweapon", "shield", "bombs", "bombchus"],
-							["bracelet", "boomerang1", "slingshot1", "shooter", "magnet", "feather"]
+							["bracelet", "boomerang1", "shovel", "flute_generic", "magnet", "feather"]
 						]
 					},
 					{
@@ -30,8 +30,8 @@
 								"item_margin": "0, 1",
 								"item_size": 33,
 								"rows": [
-									["satchel1"],
-									["hook"]
+									["hook", "satchel"],
+									["shooter", "slingshot1"]
 								]
 							},
 							{
@@ -53,8 +53,8 @@
 								"item_margin": "0, 2",
 								"h_alignment": "left",
 								"rows": [
-									["summer", "fall", "flute_generic"],
-									["spring", "winter", "shovel"]
+									["summer", "fall"],
+									["spring", "winter"]
 								]
 							}
 						]
@@ -72,17 +72,60 @@
 				]
 			},
 			{
-				"type": "itemgrid",
-				"h_alignment": "left",
-				"margin": "2, 1, 0, 1",
-				"item_margin": "0, 1",
-				"item_size": 33,
-				"rows": [
-					["heart_container", "gnarledkey", "floodkey", "dragonkey", "memberscard", "plaque", "banana"],
-					["starore", "ribbon", "bombflower", "gashaseeds", "blueredore", "hardore", "bothbell"],
-					["cuccodex", "lonlonegg", "ghastlydoll", "ironpot", "lavasoup", "goronvase", "companion"],
-					["fish", "megaphone", "mushroom", "woodenbird", "enginegrease", "phonograph", "jewels"],
-					["flippers", "rupees", "orechunks", "golden_darknut", "golden_octorok", "golden_moblin", "golden_lynel"]
+				"type": "array",
+				"orientation": "vertical",
+				"content": [
+					{
+						"type": "itemgrid",
+						"h_alignment": "left",
+						"margin": "2, 1, 0, 1",
+						"item_margin": "0, 1",
+						"item_size": 33,
+						"rows": [
+							["heart_container", "gnarledkey", "floodkey", "dragonkey", "memberscard", "plaque", "banana_gloves"],
+							["starore", "ribbon", "bombflower", "gashaseeds", "blueredore", "hardore", "bothbell"],
+							["cuccodex", "lonlonegg", "ghastlydoll", "ironpot", "lavasoup", "goronvase", "companion"]
+						]
+					},
+					{
+						"type": "array",
+						"orientation": "horizontal",
+						"content": [
+							{
+								"type": "itemgrid",
+								"h_alignment": "left",
+								"margin": "2, 1, 0, 1",
+								"item_margin": "0, 1",
+								"item_size": 33,
+								"rows": [
+									["fish", "megaphone", "mushroom", "woodenbird", "enginegrease", "phonograph"],
+									["flippers", "rupees", "orechunks", "golden_darknut", "golden_octorok", "golden_moblin"]
+								]
+							},
+							{
+								"type": "array",
+								"orientation": "vertical",
+								"content": [
+									{
+										"type": "itemgrid",
+										"margin": "0, 0, 0, 0",
+										"item_size": 16,
+										"item_margin": "0, 1",
+										"rows": [
+											["roundjewel", "squarejewel"],
+											["pyramidjewel", "xjewel"]
+										]
+									},
+									{
+										"type": "itemgrid",
+										"margin": "-4, -4, 0, 0",
+										"item_size": 33,
+										"rows": [["golden_lynel"]]
+									}
+								]
+							}
+						]
+					}
 				]
 			}
 		]
@@ -381,17 +424,61 @@
 				]
 			},
 			{
-				"type": "itemgrid",
-				"h_alignment": "left",
-				"margin": "3,6,0,0",
-				"item_margin": "-1,1",
-				"item_size": 33,
-				"rows": [
-					["heart_container", "gnarledkey", "floodkey", "dragonkey", "memberscard", "plaque", "banana"],
-					["starore", "ribbon", "bombflower", "gashaseeds", "blueredore", "hardore", "bothbell"],
-					["cuccodex", "lonlonegg", "ghastlydoll", "ironpot", "lavasoup", "goronvase", "companion"],
-					["fish", "megaphone", "mushroom", "woodenbird", "enginegrease", "phonograph", "jewels"],
-					["flippers", "rupees", "orechunks", "golden_darknut", "golden_octorok", "golden_moblin", "golden_lynel"]
+				"type": "array",
+				"margin": "-3, 0, 0, 0",
+				"orientation": "vertical",
+				"content": [
+					{
+						"type": "itemgrid",
+						"h_alignment": "left",
+						"item_margin": "-1, 1",
+						"item_size": 33,
+						"rows": [
+							["heart_container", "gnarledkey", "floodkey", "dragonkey", "memberscard", "plaque", "banana_gloves"],
+							["starore", "ribbon", "bombflower", "gashaseeds", "blueredore", "hardore", "bothbell"],
+							["cuccodex", "lonlonegg", "ghastlydoll", "ironpot", "lavasoup", "goronvase", "companion"]
+						]
+					},
+					{
+						"type": "array",
+						"orientation": "horizontal",
+						"margin": "0, -9, 0, 0",
+						"content": [
+							{
+								"type": "itemgrid",
+								"h_alignment": "left",
+								"item_margin": "-1, 1",
+								"item_size": 33,
+								"rows": [
+									["fish", "megaphone", "mushroom", "woodenbird", "enginegrease", "phonograph"],
+									["flippers", "rupees", "orechunks", "golden_darknut", "golden_octorok", "golden_moblin"]
+								]
+							},
+							{
+								"type": "array",
+								"orientation": "vertical",
+								"margin": "-4, 4, 0, 0",
+								"content": [
+									{
+										"type": "itemgrid",
+										"margin": "0, 0, 0, 0",
+										"item_size": 16,
+										"item_margin": "-1, 1",
+										"rows": [
+											["roundjewel", "squarejewel"],
+											["pyramidjewel", "xjewel"]
+										]
+									},
+									{
+										"type": "itemgrid",
+										"margin": "-4, -4, 0, 0",
+										"item_size": 33,
+										"rows": [["golden_lynel"]]
+									}
+								]
+							}
+						]
+					}
 				]
 			}
 		]

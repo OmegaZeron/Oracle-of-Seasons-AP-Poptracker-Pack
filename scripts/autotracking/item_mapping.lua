@@ -40,6 +40,7 @@ ITEM_MAPPING = {
 	[ItemID(0x37, 0x00)] = {OreChunkCount, "custom_consumable", 50, "images/items/ore50.png"},
 	[ItemID(0x37, 0x01)] = {OreChunkCount, "custom_consumable", 25, "images/items/ore10.png"},
 	[ItemID(0x37, 0x02)] = {OreChunkCount, "custom_consumable", 10, "images/items/ore1.png"},
+	[ItemID(0x37, 0x03)] = {OreChunkCount, "custom_consumable", 100, "images/items/ore10.png"},
 	[ItemID(0x2a, 0x00)] = {HeartContainer, "consumable"},
 	[ItemID(0x2e, 0x00)] = {Flippers, "toggle"},
 	[ItemID(0x30, 0x00)] = {D0SmallKey, "consumable", nil, "images/items/keyH.png"},

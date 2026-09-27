@@ -113,8 +113,7 @@ UpperEasternSuburbs:connect_one_way_entrance(WoodsOfWinter)
 UpperEasternSuburbsWinter:connect_one_way_entrance(WoodsOfWinter, function()
 	return Any(
 		All(
-			Jump1,
-			AnyFlute,
+			Feather,
 			Bracelet
 		),
 		All(
@@ -122,7 +121,8 @@ UpperEasternSuburbsWinter:connect_one_way_entrance(WoodsOfWinter, function()
 			Bracelet,
 			MediumLogic
 		),
-		Shovel
+		Shovel,
+		AnyFlute
 	)
 end)
 

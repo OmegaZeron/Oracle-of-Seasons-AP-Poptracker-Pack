@@ -164,22 +164,25 @@ DancingBranchingMinecart:connect_one_way_entrance(DancingTorchPit, function()
 		)
 	)
 end)
-DancingTorchPit:connect_one_way_entrance(DancingPotHeaven, function()
+DancingTorchPit:connect_one_way_entrance(DancingBoss, function()
 	return All(
 		HasD4BossKey,
 		Any(
-			All(
-				CanShootSeeds,
-				EmberSeeds
-			),
+			CanShootLongTorches,
 			Jump3,
 			All(
 				Feather,
 				CanUseSeeds,
-				EmberSeeds,
+				Any(
+					EmberSeeds,
+					All(
+						MysterySeeds, -- with only 1/4 chance of working, losing 1/2 heart every time sucks
+						AccessibilityLevel.SequenceBreak
+					)
+				),
 				HardLogic
 			)
 		)
 	)
 end)
-DancingPotHeaven:connect_one_way_entrance(DancingBoss, function() return BossLogic[4](4) end)
+DancingBoss:connect_one_way_entrance(DancingEssence, function() return BossLogic[4](4) end)

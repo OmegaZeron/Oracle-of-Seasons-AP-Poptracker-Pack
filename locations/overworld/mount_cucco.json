@@ -162,55 +162,59 @@
 				"name": "Dancing Dragon Dungeon",
 				"sections": [
 					{
-						"name": "Dancing Dragon Dungeon (2F): Chest North of Entrance",
+						"name": "Chest North of Entrance (2F)",
 						"ref": "Dancing Dragon Dungeon/Chest North of Entrance/2F"
 					},
 					{
-						"name": "Dancing Dragon Dungeon (2F): Pots on Buttons Puzzle Drop",
+						"name": "Pots on Buttons Puzzle Drop (2F)",
 						"ref": "Dancing Dragon Dungeon/Pots on Buttons Puzzle Drop/2F"
 					},
 					{
-						"name": "Dancing Dragon Dungeon (1F): Chest in Southwest Quadrant of Beamos Room",
+						"name": "Chest in Southwest Quadrant of Beamos Room (1F)",
 						"ref": "Dancing Dragon Dungeon/Chest in Southwest Quadrant of Beamos Room/1F"
 					},
 					{
-						"name": "Dancing Dragon Dungeon (1F): Dark Room Chest",
+						"name": "Dark Room Chest (1F)",
 						"ref": "Dancing Dragon Dungeon/Dark Room Chest/1F"
 					},
 					{
-						"name": "Dancing Dragon Dungeon (2F): Chest in Water Donut Room",
+						"name": "Chest in Water Donut Room (2F)",
 						"ref": "Dancing Dragon Dungeon/Chest in Water Donut Room/2F"
 					},
 					{
-						"name": "Dancing Dragon Dungeon (2F): Pool Drop",
+						"name": "Pool Drop (2F)",
 						"ref": "Dancing Dragon Dungeon/Pool Drop/2F"
 					},
 					{
-						"name": "Dancing Dragon Dungeon (1F): Chest on Small Terrace",
+						"name": "Chest on Small Terrace (1F)",
 						"ref": "Dancing Dragon Dungeon/Chest on Small Terrace/1F"
 					},
 					{
-						"name": "Dancing Dragon Dungeon (1F): Business Scrub",
+						"name": "Business Scrub (1F)",
 						"ref": "Dancing Dragon Dungeon/Business Scrub/1F"
 					},
 					{
-						"name": "Dancing Dragon Dungeon (1F): Chest Revealed by Minecart Torches",
+						"name": "Chest Revealed by Minecart Torches (1F)",
 						"ref": "Dancing Dragon Dungeon/Chest Revealed by Minecart Torches/1F"
 					},
 					{
-						"name": "Dancing Dragon Dungeon (1F): Wild Ember Seeds",
+						"name": "Wild Ember Seeds (1F)",
 						"ref": "Dancing Dragon Dungeon/Wild Ember Seeds/1F"
 					},
 					{
-						"name": "Dancing Dragon Dungeon (1F): Crumbling Room Chest",
+						"name": "Crumbling Room Chest (1F)",
 						"ref": "Dancing Dragon Dungeon/Crumbling Room Chest/1F"
 					},
 					{
-						"name": "Dancing Dragon Dungeon (1F): Eye Diving Spot Item",
+						"name": "Eye Diving Spot Item (1F)",
 						"ref": "Dancing Dragon Dungeon/Eye Diving Spot Item/1F"
 					},
 					{
-						"name": "Dancing Dragon Dungeon (B1F): Boss Reward",
+						"name": "See the Boss",
+						"ref": "Dancing Dragon Dungeon/See the Boss/"
+					},
+					{
+						"name": "Boss Reward",
 						"ref": "Dancing Dragon Dungeon/Boss Reward/Gohma"
 					},
 					{

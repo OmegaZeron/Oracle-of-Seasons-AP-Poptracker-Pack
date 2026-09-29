@@ -151,9 +151,5 @@ Vire:connect_one_way_entrance(AncientBossDoor, function()
 		Feather
 	)
 end)
-AncientBossDoor:connect_one_way_entrance(AncientBoss, function()
-	return All(
-		HasD6BossKey,
-		BossLogic[6](6)
-	)
-end)
+AncientBossDoor:connect_one_way_entrance(AncientBoss, HasD6BossKey)
+AncientBoss:connect_one_way(AncientEssence, function() return BossLogic[6](6) end)

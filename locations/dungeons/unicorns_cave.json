@@ -153,6 +153,26 @@
 				]
 			},
 			{
+				"name": "See the Boss",
+				"visibility_rules": ["shufflebosson"],
+				"sections": [
+					{
+						"access_rules": ["{^$CanReach|UnicornBoss}"],
+						"chest_unopened_img": "images/labels/dungeon_eye.png",
+						"chest_opened_img": "images/labels/dungeon_eye_disabled.png",
+						"inspectable_sequence_break": true
+					}
+				],
+				"map_locations": [
+					{
+						"map": "unicorns_cave",
+						"x": 1080,
+						"y": 328,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
 				"name": "Boss Reward",
 				"sections": [
 					{
@@ -163,8 +183,8 @@
 				"map_locations": [
 					{
 						"map": "unicorns_cave",
-						"x": 1079,
-						"y": 296
+						"x": 1080,
+						"y": 264
 					}
 				]
 			},
@@ -179,7 +199,7 @@
 				"map_locations": [
 					{
 						"map": "unicorns_cave",
-						"x": 1079,
+						"x": 1080,
 						"y": 62
 					}
 				]

@@ -245,51 +245,55 @@
 				"access_rules": ["^$CanReach|AncientFoyer"],
 				"sections": [
 					{
-						"name": "Ancient Ruins (1F): Crumbling Ground Room Chest",
+						"name": "Crumbling Ground Room Chest (1F)",
 						"ref": "Ancient Ruins/Crumbling Ground Room Chest/1F"
 					},
 					{
-						"name": "Ancient Ruins (1F): Magnet Ball Puzzle Drop",
+						"name": "Magnet Ball Puzzle Drop (1F)",
 						"ref": "Ancient Ruins/Magnet Ball Puzzle Drop/1F"
 					},
 					{
-						"name": "Ancient Ruins (1F): Chest in Beamos Room",
+						"name": "Chest in Beamos Room (1F)",
 						"ref": "Ancient Ruins/Chest in Beamos Room/1F"
 					},
 					{
-						"name": "Ancient Ruins (2F): Chest in Gibdo Room",
+						"name": "Chest in Gibdo Room (2F)",
 						"ref": "Ancient Ruins/Chest in Gibdo Room/2F"
 					},
 					{
-						"name": "Ancient Ruins (2F): Chest Between 4 Armos",
+						"name": "Chest Between 4 Armos (2F)",
 						"ref": "Ancient Ruins/Chest Between 4 Armos/2F"
 					},
 					{
-						"name": "Ancient Ruins (3F): Armos Hall Chest",
+						"name": "Armos Hall Chest (3F)",
 						"ref": "Ancient Ruins/Armos Hall Chest/3F"
 					},
 					{
-						"name": "Ancient Ruins (2F): Chest North of Main Spinner",
+						"name": "Chest North of Main Spinner (2F)",
 						"ref": "Ancient Ruins/Chest North of Main Spinner/2F"
 					},
 					{
-						"name": "Ancient Ruins (1F): Chest on Terrace Left of Entrance",
+						"name": "Chest on Terrace Left of Entrance (1F)",
 						"ref": "Ancient Ruins/Chest on Terrace Left of Entrance/1F"
 					},
 					{
-						"name": "Ancient Ruins (1F): Crystal Maze Room Chest",
+						"name": "Crystal Maze Room Chest (1F)",
 						"ref": "Ancient Ruins/Crystal Maze Room Chest/1F"
 					},
 					{
-						"name": "Ancient Ruins (2F): Chest After Time Trial",
+						"name": "Chest After Time Trial (2F)",
 						"ref": "Ancient Ruins/Chest After Time Trial/2F"
 					},
 					{
-						"name": "Ancient Ruins (2F): Chest on Red Terrace Before Vire",
+						"name": "Chest on Red Terrace Before Vire (2F)",
 						"ref": "Ancient Ruins/Chest on Red Terrace Before Vire/2F"
 					},
 					{
-						"name": "Ancient Ruins (5F): Boss Reward",
+						"name": "Ancient Ruins: See the Boss",
+						"ref": "Ancient Ruins/See the Boss/"
+					},
+					{
+						"name": "Boss Reward",
 						"ref": "Ancient Ruins/Boss Reward/Manhandla"
 					},
 					{

@@ -706,63 +706,67 @@
 				"color": "#ff3c00",
 				"sections": [
 					{
-						"name": "Sword & Shield Dungeon (1F): Eye Drop Near Entrance",
+						"name": "Eye Drop Near Entrance (1F)",
 						"ref": "Sword and Shield Maze/Eye Drop Near Entrance/1F"
 					},
 					{
-						"name": "Sword & Shield Dungeon (1F): Three Eyes Chest",
+						"name": "Three Eyes Chest (1F)",
 						"ref": "Sword and Shield Maze/Three Eyes Chest/1F"
 					},
 					{
-						"name": "Sword & Shield Dungeon (1F): Drop in Hardhat & Magnet Ball Room",
+						"name": "Drop in Hardhat & Magnet Ball Room (1F)",
 						"ref": "Sword and Shield Maze/Drop in Hardhat & Magnet Ball Room/1F"
 					},
 					{
-						"name": "Sword & Shield Dungeon (1F): U-shaped Spiky Freezer Chest",
+						"name": "U-shaped Spiky Freezer Chest (1F)",
 						"ref": "Sword and Shield Maze/U-shaped Spiky Freezer Chest/1F"
 					},
 					{
-						"name": "Sword & Shield Dungeon (1F): Bottom Chest in Lava Bridge Room",
+						"name": "Bottom Chest in Lava Bridge Room (1F)",
 						"ref": "Sword and Shield Maze/Bottom Chest in Lava Bridge Room/1F"
 					},
 					{
-						"name": "Sword & Shield Dungeon (1F): Top Chest in Lava Bridge Room",
+						"name": "Top Chest in Lava Bridge Room (1F)",
 						"ref": "Sword and Shield Maze/Top Chest in Lava Bridge Room/1F"
 					},
 					{
-						"name": "Sword & Shield Dungeon (B1F): Chest Right of Spinner",
+						"name": "Chest Right of Spinner (B1F)",
 						"ref": "Sword and Shield Maze/Chest Right of Spinner/B1F"
 					},
 					{
-						"name": "Sword & Shield Dungeon (B1F): Wild Mystery Seeds",
+						"name": "Wild Mystery Seeds (B1F)",
 						"ref": "Sword and Shield Maze/Wild Mystery Seeds/B1F"
 					},
 					{
-						"name": "Sword & Shield Dungeon (1F): Chest in Bombable Blocks Room",
+						"name": "Chest in Bombable Blocks Room (1F)",
 						"ref": "Sword and Shield Maze/Chest in Bombable Blocks Room/1F"
 					},
 					{
-						"name": "Sword & Shield Dungeon (1F): Chest on Terrace After Pols Voice Room",
+						"name": "Chest on Terrace After Pols Voice Room (1F)",
 						"ref": "Sword and Shield Maze/Chest on Terrace After Pols Voice Room/1F"
 					},
 					{
-						"name": "Sword & Shield Dungeon (1F): Ghost Armos Puzzle Drop",
+						"name": "Ghost Armos Puzzle Drop (1F)",
 						"ref": "Sword and Shield Maze/Ghost Armos Puzzle Drop/1F"
 					},
 					{
-						"name": "Sword & Shield Dungeon (B1F): Southeast Lava Chest",
+						"name": "Southeast Lava Chest (B1F)",
 						"ref": "Sword and Shield Maze/Southeast Lava Chest/B1F"
 					},
 					{
-						"name": "Sword & Shield Dungeon (1F): Chest in Sparks & Pots Room",
+						"name": "Chest in Sparks & Pots Room (1F)",
 						"ref": "Sword and Shield Maze/Chest in Sparks & Pots Room/1F"
 					},
 					{
-						"name": "Sword & Shield Dungeon (B1F): Southwest Lava Chest",
+						"name": "Southwest Lava Chest (B1F)",
 						"ref": "Sword and Shield Maze/Southwest Lava Chest/B1F"
 					},
 					{
-						"name": "Sword & Shield Dungeon (B1F): Boss Reward",
+						"name": "See the Boss",
+						"ref": "Sword and Shield Maze/See the Boss/"
+					},
+					{
+						"name": "Boss Reward",
 						"ref": "Sword and Shield Maze/Boss Reward/Medusa Head"
 					},
 					{

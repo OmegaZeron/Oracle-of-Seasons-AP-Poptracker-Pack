@@ -245,11 +245,31 @@
 				]
 			},
 			{
+				"name": "See the Boss",
+				"visibility_rules": ["shufflebosson"],
+				"sections": [
+					{
+						"access_rules": ["{^$CanReach|MazeBoss}"],
+						"chest_unopened_img": "images/labels/dungeon_eye.png",
+						"chest_opened_img": "images/labels/dungeon_eye_disabled.png",
+						"inspectable_sequence_break": true
+					}
+				],
+				"map_locations": [
+					{
+						"map": "sword_and_shield_maze2",
+						"x": 518,
+						"y": 218,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
 				"name": "Boss Reward",
 				"sections": [
 					{
 						"name": "Medusa Head",
-						"access_rules": ["^$CanReach|MazeBoss"]
+						"access_rules": ["^$CanReach|MazeEssence"]
 					}
 				],
 				"map_locations": [
@@ -265,7 +285,7 @@
 				"sections": [
 					{
 						"name": "Essence",
-						"access_rules": ["^$CanReach|MazeBoss"]
+						"access_rules": ["^$CanReach|MazeEssence"]
 					}
 				],
 				"map_locations": [

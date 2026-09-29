@@ -198,18 +198,38 @@
 				]
 			},
 			{
-				"name": "Boss Reward",
+				"name": "See the Boss",
+				"visibility_rules": ["shufflebosson"],
 				"sections": [
 					{
-						"name": "Manhandla",
-						"access_rules": ["^$CanReach|AncientBoss"]
+						"access_rules": ["{^$CanReach|AncientBoss}"],
+						"chest_unopened_img": "images/labels/dungeon_eye.png",
+						"chest_opened_img": "images/labels/dungeon_eye_disabled.png",
+						"inspectable_sequence_break": true
 					}
 				],
 				"map_locations": [
 					{
 						"map": "ancient_ruins2",
-						"x": 91,
-						"y": 206
+						"x": 96,
+						"y": 226,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Boss Reward",
+				"sections": [
+					{
+						"name": "Manhandla",
+						"access_rules": ["^$CanReach|AncientEssence"]
+					}
+				],
+				"map_locations": [
+					{
+						"map": "ancient_ruins2",
+						"x": 96,
+						"y": 174
 					}
 				]
 			},
@@ -218,7 +238,7 @@
 				"sections": [
 					{
 						"name": "Essence",
-						"access_rules": ["^$CanReach|AncientBoss"]
+						"access_rules": ["^$CanReach|AncientEssence"]
 					}
 				],
 				"map_locations": [

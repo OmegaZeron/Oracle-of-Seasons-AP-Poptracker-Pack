@@ -214,11 +214,31 @@
 				]
 			},
 			{
+				"name": "See the Boss",
+				"visibility_rules": ["shufflebosson"],
+				"sections": [
+					{
+						"access_rules": ["{^$CanReach|DancingBoss}"],
+						"chest_unopened_img": "images/labels/dungeon_eye.png",
+						"chest_opened_img": "images/labels/dungeon_eye_disabled.png",
+						"inspectable_sequence_break": true
+					}
+				],
+				"map_locations": [
+					{
+						"map": "dancing_dragon_dungeon1",
+						"x": 336,
+						"y": 26,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
 				"name": "Boss Reward",
 				"sections": [
 					{
 						"name": "Gohma",
-						"access_rules": ["^$CanReach|DancingBoss"]
+						"access_rules": ["^$CanReach|DancingEssence"]
 					}
 				],
 				"map_locations": [
@@ -234,7 +254,7 @@
 				"sections": [
 					{
 						"name": "Essence",
-						"access_rules": ["^$CanReach|DancingBoss"]
+						"access_rules": ["^$CanReach|DancingEssence"]
 					}
 				],
 				"map_locations": [

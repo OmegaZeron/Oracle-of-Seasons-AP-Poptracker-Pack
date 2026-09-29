@@ -198,6 +198,26 @@
 				]
 			},
 			{
+				"name": "See the Boss",
+				"visibility_rules": ["shufflebosson"],
+				"sections": [
+					{
+						"access_rules": ["{^$CanReach|CryptBoss}"],
+						"chest_unopened_img": "images/labels/dungeon_eye.png",
+						"chest_opened_img": "images/labels/dungeon_eye_disabled.png",
+						"inspectable_sequence_break": true
+					}
+				],
+				"map_locations": [
+					{
+						"map": "explorers_crypt2",
+						"x": 554,
+						"y": 940,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
 				"name": "Boss Reward",
 				"sections": [
 					{

@@ -439,7 +439,6 @@ DancingBranchingMinecart = Region.New("DancingBranchingMinecart")
 DancingWizzrobes = Region.New("DancingWizzrobes")
 DancingBeamos = Region.New("DancingBeamos")
 DancingTorchPit = Region.New("DancingTorchPit")
-DancingPotHeaven = Region.New("DancingPotHeaven")
 DancingBoss = Region.New("DancingBoss")
 -- items
 DancingPotPush = Region.New("DancingPotPush")

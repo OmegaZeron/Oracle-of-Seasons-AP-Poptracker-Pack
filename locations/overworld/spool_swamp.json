@@ -244,43 +244,47 @@
 				"name": "Poison Moth's Lair",
 				"sections": [
 					{
-						"name": "Poison Moth's Lair (B1F): Chest in Roller Room",
+						"name": "Chest in Roller Room (B1F)",
 						"ref": "Poison Moth's Lair/Chest in Roller Room/B1F"
 					},
 					{
-						"name": "Poison Moth's Lair (1F): Chest in Moldorm Room",
+						"name": "Chest in Moldorm Room (1F)",
 						"ref": "Poison Moth's Lair/Chest in Moldorm Room/1F"
 					},
 					{
-						"name": "Poison Moth's Lair (1F): Chest in Room Behind Hidden Cracked Wall",
+						"name": "Chest in Room Behind Hidden Cracked Wall (1F)",
 						"ref": "Poison Moth's Lair/Chest in Room Behind Hidden Cracked Wall/1F"
 					},
 					{
-						"name": "Poison Moth's Lair (1F): Chest in Mimics Room",
+						"name": "Chest in Mimics Room (1F)",
 						"ref": "Poison Moth's Lair/Chest in Mimics Room/1F"
 					},
 					{
-						"name": "Poison Moth's Lair (B1F): Chest in Watery Room",
+						"name": "Chest in Watery Room (B1F)",
 						"ref": "Poison Moth's Lair/Chest in Watery Room/B1F"
 					},
 					{
-						"name": "Poison Moth's Lair (1F): Chest Above West Trampoline & Owl",
+						"name": "Chest Above West Trampoline & Owl (1F)",
 						"ref": "Poison Moth's Lair/Chest Above West Trampoline & Owl/1F"
 					},
 					{
-						"name": "Poison Moth's Lair (1F): Chest Above East Trampoline",
+						"name": "Chest Above East Trampoline (1F)",
 						"ref": "Poison Moth's Lair/Chest Above East Trampoline/1F"
 					},
 					{
-						"name": "Poison Moth's Lair (B1F): Chest on Quicksand Terrace",
+						"name": "Chest on Quicksand Terrace (B1F)",
 						"ref": "Poison Moth's Lair/Chest on Quicksand Terrace/B1F"
 					},
 					{
-						"name": "Poison Moth's Lair (B1F): Chest in Moving Blade Room",
+						"name": "Chest in Moving Blade Room (B1F)",
 						"ref": "Poison Moth's Lair/Chest in Moving Blade Room/B1F"
 					},
 					{
-						"name": "Poison Moth's Lair (1F): Boss Reward",
+						"name": "See the Boss",
+						"ref": "Poison Moth's Lair/See the Boss/"
+					},
+					{
+						"name": "Boss Reward",
 						"ref": "Poison Moth's Lair/Boss Reward/Mothula"
 					},
 					{

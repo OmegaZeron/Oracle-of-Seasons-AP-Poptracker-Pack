@@ -147,7 +147,6 @@ UnicornPostSyger:connect_one_way_entrance(UnicornBoss, function()
 			),
 			MagnetGlove
 		),
-		BossLogic[5](5),
 		HasD5BossKey,
 		Any(
 			Feather,
@@ -160,4 +159,4 @@ UnicornPostSyger:connect_one_way_entrance(UnicornBoss, function()
 		)
 	)
 end)
-UnicornBoss:connect_one_way(UnicornEssence)
+UnicornBoss:connect_one_way(UnicornEssence, function() return BossLogic[5](5) end)

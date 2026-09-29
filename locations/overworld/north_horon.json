@@ -262,43 +262,47 @@
 				"name": "Gnarled Root Dungeon",
 				"sections": [
 					{
-						"name": "Gnarled Root Dungeon: Drop in Right Stalfos Room",
+						"name": "Drop in Right Stalfos Room",
 						"ref": "Gnarled Root Dungeon/Drop in Right Stalfos Room/"
 					},
 					{
-						"name": "Gnarled Root Dungeon: Chest in Left Stalfos Room",
+						"name": "Chest in Left Stalfos Room",
 						"ref": "Gnarled Root Dungeon/Chest in Left Stalfos Room/"
 					},
 					{
-						"name": "Gnarled Root Dungeon: Chest in Goriya Room",
+						"name": "Chest in Goriya Room",
 						"ref": "Gnarled Root Dungeon/Chest in Goriya Room/"
 					},
 					{
-						"name": "Gnarled Root Dungeon: Chest in Block-pushing Room",
+						"name": "Chest in Block-pushing Room",
 						"ref": "Gnarled Root Dungeon/Chest in Block-pushing Room/"
 					},
 					{
-						"name": "Gnarled Root Dungeon: Chest Near Railway Lever",
+						"name": "Chest Near Railway Lever",
 						"ref": "Gnarled Root Dungeon/Chest Near Railway Lever/"
 					},
 					{
-						"name": "Gnarled Root Dungeon: Chest Near Railway",
+						"name": "Chest Near Railway",
 						"ref": "Gnarled Root Dungeon/Chest Near Railway/"
 					},
 					{
-						"name": "Gnarled Root Dungeon: Hidden Chest Revealed by Button",
+						"name": "Hidden Chest Revealed by Button",
 						"ref": "Gnarled Root Dungeon/Hidden Chest Revealed by Button/"
 					},
 					{
-						"name": "Gnarled Root Dungeon: Item in Basement",
+						"name": "Item in Basement",
 						"ref": "Gnarled Root Dungeon/Item in Basement/"
 					},
 					{
-						"name": "Gnarled Root Dungeon: Chest in Floormaster Room",
+						"name": "Chest in Floormaster Room",
 						"ref": "Gnarled Root Dungeon/Chest in Floormaster Room/"
 					},
 					{
-						"name": "Gnarled Root Dungeon: Boss Reward",
+						"name": "See the Boss",
+						"ref": "Gnarled Root Dungeon/See the Boss/"
+					},
+					{
+						"name": "Boss Reward",
 						"ref": "Gnarled Root Dungeon/Boss Reward/Aquamentus"
 					},
 					{
@@ -319,55 +323,59 @@
 				"access_rules": ["^$CanReach|UnicornFoyer"],
 				"sections": [
 					{
-						"name": "Unicorn's Cave: Right Cart Chest",
+						"name": "Right Cart Chest",
 						"ref": "Unicorn's Cave/Right Cart Chest/"
 					},
 					{
-						"name": "Unicorn's Cave: Gibdo Room Chest",
+						"name": "Gibdo Room Chest",
 						"ref": "Unicorn's Cave/Gibdo Room Chest/"
 					},
 					{
-						"name": "Unicorn's Cave: Magnet Gloves Chest",
+						"name": "Magnet Gloves Chest",
 						"ref": "Unicorn's Cave/Magnet Gloves Chest/"
 					},
 					{
-						"name": "Unicorn's Cave: Chest Left from Entrance",
+						"name": "Chest Left from Entrance",
 						"ref": "Unicorn's Cave/Chest Left from Entrance/"
 					},
 					{
-						"name": "Unicorn's Cave: Quicksand Spiral Chest",
+						"name": "Quicksand Spiral Chest",
 						"ref": "Unicorn's Cave/Quicksand Spiral Chest/"
 					},
 					{
-						"name": "Unicorn's Cave: Terrace Chest",
+						"name": "Terrace Chest",
 						"ref": "Unicorn's Cave/Terrace Chest/"
 					},
 					{
-						"name": "Unicorn's Cave: Armos Puzzle Room Item",
+						"name": "Armos Puzzle Room Item",
 						"ref": "Unicorn's Cave/Armos Puzzle Room/Item"
 					},
 					{
-						"name": "Unicorn's Cave: Armos Puzzle Room Ember Seeds",
+						"name": "Armos Puzzle Room Ember Seeds",
 						"ref": "Unicorn's Cave/Armos Puzzle Room/Ember Seeds"
 					},
 					{
-						"name": "Unicorn's Cave: Armos Puzzle Room Bombs",
+						"name": "Armos Puzzle Room Bombs",
 						"ref": "Unicorn's Cave/Armos Puzzle Room/Bombs"
 					},
 					{
-						"name": "Unicorn's Cave: Magnet Spinner Chest",
+						"name": "Magnet Spinner Chest",
 						"ref": "Unicorn's Cave/Magnet Spinner Chest/"
 					},
 					{
-						"name": "Unicorn's Cave: Chest in Right Half of Minecart Bay Room",
+						"name": "Chest in Right Half of Minecart Bay Room",
 						"ref": "Unicorn's Cave/Chest in Right Half of Minecart Bay Room/"
 					},
 					{
-						"name": "Unicorn's Cave: Treadmills Basement Item",
+						"name": "Treadmills Basement Item",
 						"ref": "Unicorn's Cave/Treadmills Basement Item/"
 					},
 					{
-						"name": "Unicorn's Cave: Boss Reward",
+						"name": "See the Boss",
+						"ref": "Unicorn's Cave/See the Boss/"
+					},
+					{
+						"name": "Boss Reward",
 						"ref": "Unicorn's Cave/Boss Reward/Digdogger"
 					},
 					{

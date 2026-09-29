@@ -222,11 +222,31 @@
 				]
 			},
 			{
+				"name": "See the Boss",
+				"visibility_rules": ["shufflebosson"],
+				"sections": [
+					{
+						"access_rules": ["{^$CanReach|SnakeBoss}"],
+						"chest_unopened_img": "images/labels/dungeon_eye.png",
+						"chest_opened_img": "images/labels/dungeon_eye_disabled.png",
+						"inspectable_sequence_break": true
+					}
+				],
+				"map_locations": [
+					{
+						"map": "snakes_remains2",
+						"x": 984,
+						"y": 648,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
 				"name": "Boss Reward",
 				"sections": [
 					{
 						"name": "King Dodongo",
-						"access_rules": ["^$CanReach|SnakeBoss"]
+						"access_rules": ["^$CanReach|SnakeEssence"]
 					}
 				],
 				"map_locations": [
@@ -242,7 +262,7 @@
 				"sections": [
 					{
 						"name": "Essence",
-						"access_rules": ["^$CanReach|SnakeBoss"]
+						"access_rules": ["^$CanReach|SnakeEssence"]
 					}
 				],
 				"map_locations": [

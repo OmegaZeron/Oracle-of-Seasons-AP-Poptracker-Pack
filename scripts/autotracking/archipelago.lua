@@ -603,6 +603,7 @@ function OnBounce(json)
 					end
 				elseif roomMap.type == CurLocType.Boss then
 					Tracker:FindObjectForCode(roomMap.dungeon.."_boss").CurrentStage = Tracker:FindObjectForCode(roomMap.dungeon.."_boss_hidden").CurrentStage
+					Tracker:FindObjectForCode(roomMap.loc).AvailableChestCount = 0
 				elseif roomMap.type == CurLocType.SeeSeason then
 					Tracker:FindObjectForCode(roomMap.season).CurrentStage = Tracker:FindObjectForCode(roomMap.seasonHidden).CurrentStage
 				elseif roomMap.type == CurLocType.Natzu then

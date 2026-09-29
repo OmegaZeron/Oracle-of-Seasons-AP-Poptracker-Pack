@@ -751,7 +751,7 @@
 				"h_alignment": "left",
 				"margin": "5, 15, 0, -35",
 				"item_size": 90,
-				"item_margin": "-4,-18",
+				"item_margin": "0, -18",
 				"rows": [
 					["logic_label", "logic_difficulty", "goal_label", "goal", "onox_essences_label", "required_essences", "start_location_label", "start_position"],
 					["dungeon_shuffle_label", "shuffle_dungeons", "boss_shuffle_label", "shuffle_bosses", "portal_shuffle_label", "shuffle_portals", "master_keys_label", "master_keys"],

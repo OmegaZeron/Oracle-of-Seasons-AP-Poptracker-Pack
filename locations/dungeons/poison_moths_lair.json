@@ -149,11 +149,31 @@
 				]
 			},
 			{
+				"name": "See the Boss",
+				"visibility_rules": ["shufflebosson"],
+				"sections": [
+					{
+						"access_rules": ["{^$CanReach|PoisonBoss}"],
+						"chest_unopened_img": "images/labels/dungeon_eye.png",
+						"chest_opened_img": "images/labels/dungeon_eye_disabled.png",
+						"inspectable_sequence_break": true
+					}
+				],
+				"map_locations": [
+					{
+						"map": "poison_moths_lair2",
+						"x": 600,
+						"y": 332,
+						"shape": "diamond"
+					}
+				]
+			},
+			{
 				"name": "Boss Reward",
 				"sections": [
 					{
 						"name": "Mothula",
-						"access_rules": ["^$CanReach|PoisonBoss"]
+						"access_rules": ["^$CanReach|PoisonEssence"]
 					}
 				],
 				"map_locations": [

@@ -69,10 +69,10 @@ Facade:connect_one_way_entrance(SnakeBoss, function()
 			HasKeys(D2SmallKey, D2MasterKey, 3, 2),
 			CanBombWall
 		),
-		BossLogic[2](2),
 		HasD2BossKey
 	)
 end)
+SnakeBoss:connect_one_way(SnakeEssence, function() return BossLogic[2](2) end)
 
 -- 3 keys
 SnakeMoblinRopeFight:connect_one_way_entrance(SnakeHardhats, function() return HasKeys(D2SmallKey, D2MasterKey, 3, 1) end)

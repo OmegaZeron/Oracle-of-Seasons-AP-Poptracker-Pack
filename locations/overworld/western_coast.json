@@ -400,7 +400,11 @@
 						"ref": "Explorer's Crypt/Jumping Stalfos Room Chest/B1F"
 					},
 					{
-						"name": "Boss Reward (B1F)",
+						"name": "See the Boss",
+						"ref": "Explorer's Crypt/See the Boss/"
+					},
+					{
+						"name": "Boss Reward",
 						"ref": "Explorer's Crypt/Boss Reward/Gleeok"
 					},
 					{

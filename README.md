@@ -5,8 +5,8 @@ Tracker pack for [PopTracker](https://poptracker.github.io)</br>
 
 [Archipelago Setup Guide](https://archipelago.gg/tutorial/Archipelago/setup/en)
 
-[Seasons Archipelago Randomizer Setup Guide](https://github.com/Dinopony/ArchipelagoOoS/blob/oos/worlds/tloz_oos/docs/oos_setup_en.md)<br/>
-[Randomizer FAQ and Logic Info](https://github.com/Dinopony/ArchipelagoOoS/blob/oos/worlds/tloz_oos/docs/en_The%20Legend%20of%20Zelda%20-%20Oracle%20of%20Seasons.md)
+[Seasons Archipelago Randomizer Setup Guide](https://github.com/Ishigh1/Oracle-of-Seasons-apworld/docs/oos_setup_en.md)<br/>
+[Randomizer FAQ and Logic Info](https://github.com/Ishigh1/Oracle-of-Seasons-apworld/docs/en_The%20Legend%20of%20Zelda%20-%20Oracle%20of%20Seasons.md)
 
 ## Installation
 Get the [latest pack](https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/latest) from the releases page. Then drag and drop the .zip file onto the open PopTracker window, or move it into the /poptracker/packs folder.
@@ -36,7 +36,7 @@ Click the AP button in the top left of the window. Enter your server:port (most 
 ## Archipelago Compatibility Chart
 | apworld Version  |   Pack Version   |
 |:----------------:|:----------------:|
-|      23.0.0+     |      9.0.0+      |
+|      24.0.0+     |      9.0.0+      |
 | 20.0.2 - 20.1.13 |  7.1.0 - 7.2.0   |
 | 17.0.0 - 17.0.5  |  6.0.5 - 6.0.10  |
 | 13.6.0 - 13.7.4  |     5.0.0        |

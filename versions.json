@@ -1,6 +1,12 @@
 {
 	"versions": [
 		{
+			"package_version": "9.0.1",
+			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/9.0.1/seasons_ap.zip",
+			"sha256": "da7aab04fcbf6da1755cd588be386cca22f4cf7c6c44c89ac122086a1584f8eb",
+			"changelog": ["Boss shuffle, recent item display, dungeon indicator, new items, and many more"]
+		},
+		{
 			"package_version": "7.2.0",
 			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/7.2.0/seasons_ap.zip",
 			"sha256": "3e4855da93bd42df6ba2385ea29d7e86b3c212f87d2ef898943bd97421c0d9fa",

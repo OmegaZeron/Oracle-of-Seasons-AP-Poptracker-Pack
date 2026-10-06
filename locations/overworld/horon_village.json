@@ -121,82 +121,82 @@
 				"sections": [
 					{
 						"name": "Gasha Spot #1",
-						"visibility_rules": ["^$CanSeeGasha|1"],
+						"visibility_rules": ["^$CanSeeGasha|1|true"],
 						"access_rules": ["^$CanHarvestGasha|1"]
 					},
 					{
 						"name": "Gasha Spot #2",
-						"visibility_rules": ["^$CanSeeGasha|2"],
+						"visibility_rules": ["^$CanSeeGasha|2|true"],
 						"access_rules": ["^$CanHarvestGasha|2"]
 					},
 					{
 						"name": "Gasha Spot #3",
-						"visibility_rules": ["^$CanSeeGasha|3"],
+						"visibility_rules": ["^$CanSeeGasha|3|true"],
 						"access_rules": ["^$CanHarvestGasha|3"]
 					},
 					{
 						"name": "Gasha Spot #4",
-						"visibility_rules": ["^$CanSeeGasha|4"],
+						"visibility_rules": ["^$CanSeeGasha|4|true"],
 						"access_rules": ["^$CanHarvestGasha|4"]
 					},
 					{
 						"name": "Gasha Spot #5",
-						"visibility_rules": ["^$CanSeeGasha|5"],
+						"visibility_rules": ["^$CanSeeGasha|5|true"],
 						"access_rules": ["^$CanHarvestGasha|5"]
 					},
 					{
 						"name": "Gasha Spot #6",
-						"visibility_rules": ["^$CanSeeGasha|6"],
+						"visibility_rules": ["^$CanSeeGasha|6|true"],
 						"access_rules": ["^$CanHarvestGasha|6"]
 					},
 					{
 						"name": "Gasha Spot #7",
-						"visibility_rules": ["^$CanSeeGasha|7"],
+						"visibility_rules": ["^$CanSeeGasha|7|true"],
 						"access_rules": ["^$CanHarvestGasha|7"]
 					},
 					{
 						"name": "Gasha Spot #8",
-						"visibility_rules": ["^$CanSeeGasha|8"],
+						"visibility_rules": ["^$CanSeeGasha|8|true"],
 						"access_rules": ["^$CanHarvestGasha|8"]
 					},
 					{
 						"name": "Gasha Spot #9",
-						"visibility_rules": ["^$CanSeeGasha|9"],
+						"visibility_rules": ["^$CanSeeGasha|9|true"],
 						"access_rules": ["^$CanHarvestGasha|9"]
 					},
 					{
 						"name": "Gasha Spot #10",
-						"visibility_rules": ["^$CanSeeGasha|10"],
+						"visibility_rules": ["^$CanSeeGasha|10|true"],
 						"access_rules": ["^$CanHarvestGasha|10"]
 					},
 					{
 						"name": "Gasha Spot #11",
-						"visibility_rules": ["^$CanSeeGasha|11"],
+						"visibility_rules": ["^$CanSeeGasha|11|true"],
 						"access_rules": ["^$CanHarvestGasha|11"]
 					},
 					{
 						"name": "Gasha Spot #12",
-						"visibility_rules": ["^$CanSeeGasha|12"],
+						"visibility_rules": ["^$CanSeeGasha|12|true"],
 						"access_rules": ["^$CanHarvestGasha|12"]
 					},
 					{
 						"name": "Gasha Spot #13",
-						"visibility_rules": ["^$CanSeeGasha|13"],
+						"visibility_rules": ["^$CanSeeGasha|13|true"],
 						"access_rules": ["^$CanHarvestGasha|13"]
 					},
 					{
 						"name": "Gasha Spot #14",
-						"visibility_rules": ["^$CanSeeGasha|14"],
+						"visibility_rules": ["^$CanSeeGasha|14|true"],
 						"access_rules": ["^$CanHarvestGasha|14"]
 					},
 					{
 						"name": "Gasha Spot #15",
-						"visibility_rules": ["^$CanSeeGasha|15"],
+						"visibility_rules": ["^$CanSeeGasha|15|true"],
 						"access_rules": ["^$CanHarvestGasha|15"]
 					},
 					{
 						"name": "Gasha Spot #16",
-						"visibility_rules": ["^$CanSeeGasha|16"],
+						"visibility_rules": ["^$CanSeeGasha|16|true"],
 						"access_rules": ["^$CanHarvestGasha|16"]
 					}
 				],

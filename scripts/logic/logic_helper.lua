@@ -382,9 +382,11 @@ function HasPlanted(code)
 end
 
 ---@param count integer
-function CanSeeGasha(count)
+---@param force boolean false
+function CanSeeGasha(count, force)
+	force = force == "true" and true or false
 	local gashaSetting = Tracker:FindObjectForCode(GashaSetting)
-	return gashaSetting and gashaSetting.CurrentStage >= tonumber(count) and GashasHarvested() < gashaSetting.CurrentStage
+	return gashaSetting and gashaSetting.CurrentStage >= tonumber(count) and (force or GashasHarvested() < gashaSetting.CurrentStage)
 end
 
 ---@param section LocationSection
@@ -671,19 +673,22 @@ function CountConsumableDamage()
 		[2] = 50,
 		[3] = 99
 	}
+	local bombCountMapping = {
+		[0] = 0,
+		[1] = 10,
+		[2] = 20,
+		[3] = 50,
+		[4] = 99,
+	}
+
 	local hasSeeds = Tracker:ProviderCountForCode(Satchel) > 0 or Tracker:ProviderCountForCode(Slingshot) > 0 or Tracker:ProviderCountForCode(SeedShooter) > 0
 	local seedCount = seedCountMapping[Tracker:FindObjectForCode(Satchel).CurrentStage]
 	if seedCount == 0 then
 		seedCount = hasSeeds and 20 or 0
 	end
-	local bombCount = Tracker:FindObjectForCode(Bombs).CurrentStage * 10
-	if bombCount == 100 then
-		bombCount = 99
-	end
-	local bombchuCount = Tracker:FindObjectForCode(Bombchus).CurrentStage * 10
-	if bombchuCount == 100 then
-		bombchuCount = 99
-	end
+
+	local bombCount = bombCountMapping[Tracker:FindObjectForCode(Bombs).CurrentStage]
+	local bombchuCount = bombCountMapping[Tracker:FindObjectForCode(Bombchus).CurrentStage]
 
 	local emberDamage = 1
 	local scentDamage = 2

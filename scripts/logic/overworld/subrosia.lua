@@ -107,8 +107,12 @@ SubrosiaMarket:connect_one_way(SubrosiaMarketUpperDigSpot, function() return Has
 SubrosiaMarket:connect_one_way(SubrosiaMarketLowerDigSpot, function() return Has(Shovel) end)
 SubrosiaMarket:connect_one_way_entrance(WestFurnace, function()
 	return Any(
-		JumpLiquid3(true),
-		MagnetGlove
+		MagnetGlove,
+		JumpLiquid3,
+		All(
+			Jump2,
+			HardLogic
+		)
 	)
 end)
 

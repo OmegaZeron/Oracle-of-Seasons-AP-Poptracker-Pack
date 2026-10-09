@@ -810,6 +810,7 @@ function JumpLiquid2(allowBombchus)
 					HardLogic
 				),
 				All(
+					allowBombchus,
 					HasBombchusForBombJump,
 					HellLogic
 				)
@@ -830,6 +831,7 @@ function JumpLiquid3(allowBombchus)
 					HardLogic
 				),
 				All(
+					allowBombchus,
 					HasBombchusForBombJump,
 					HellLogic
 				)
@@ -850,6 +852,7 @@ function JumpLiquid4(allowBombchus)
 					HardLogic
 				),
 				All(
+					allowBombchus,
 					HasBombchusForBombJump,
 					HellLogic
 				)

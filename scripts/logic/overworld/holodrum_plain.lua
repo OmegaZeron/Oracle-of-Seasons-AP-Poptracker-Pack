@@ -59,7 +59,7 @@ SouthHolodrumPlain:connect_one_way(MrsRuul, function() return Has(GhastlyDoll) e
 SouthHolodrumPlain:connect_one_way(SouthHolodrumPlainGasha, function()
 	return All(
 		CanPlantGasha,
-		CanDestroyBush,
+		CanDestroyBushFlute,
 		Shovel
 	)
 end)

@@ -97,7 +97,15 @@ NorthHolodrumPlain:connect_two_ways_entrance(SouthGoronMountain, function()
 		Dimitri
 	)
 end)
-SouthHolodrumPlain:connect_one_way_entrance(HolodrumPlainSign, CanDestroyBushFlute)
+SouthHolodrumPlain:connect_one_way_entrance(HolodrumPlainSign, function()
+	return Any(
+		CanDestroyBushFlute,
+		All(
+			Bombchus,
+			AccessibilityLevel.SequenceBreak
+		)
+	)
+end)
 HolodrumPlainSign:connect_one_way_entrance(SouthHolodrumPlain, function()
 	return Any(
 		CanDestroyBush,

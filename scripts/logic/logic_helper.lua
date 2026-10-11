@@ -1317,6 +1317,8 @@ end
 
 ---@param count integer
 function HasRupees(count)
+	if count == 0 then return true end
+
 	local rupees
 	local bonusRupees
 	local oolRupees

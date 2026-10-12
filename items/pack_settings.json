@@ -606,6 +606,44 @@
 		]
 	},
 	{
+		"name": "Shuffle Freestanding Items",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 1,
+		"stages": [
+			{
+				"img": "images/labels/off.png",
+				"codes": "shuffle_freestanding, freestanding_off",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/shuffled_label.png",
+				"codes": "shuffle_freestanding, freestanding_shuffled",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
+		"name": "Include Trade Sequence",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 1,
+		"stages": [
+			{
+				"img": "images/labels/vanilla_label.png",
+				"codes": "include_trade, trade_sequence_vanilla",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/shuffled_label.png",
+				"codes": "include_trade, trade_sequence_shuffled",
+				"inherit_codes": false
+			}
+		]
+	},
+	{
 		"name": "Default Seasons",
 		"type": "progressive",
 		"allow_disabled": false,

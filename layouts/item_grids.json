@@ -758,9 +758,9 @@
 					["d0_alt_entrance_label", "remove_d0_alt_entrance", "d2_alt_entrance_label", "remove_d2_alt_entrance", "linked_cave_label", "linked_cave", "lc_alt_entrance_label", "remove_lc_alt_entrance"],
 					["default_seasons_label", "default_seasons", "horon_village_season_label", "horon_village_season_shuffle", "lost_woods_label", "randomize_lost_woods_main_sequence", "pedestal_label", "randomize_lost_woods_item_sequence"],
 					["secret_locations_label", "secret_locations", "advance_shop_label", "advance_shop", "shuffle_old_men_label", "shuffle_old_men", "shuffle_scrub_label", "shuffle_business_scrubs"],
-					["gold_ore_label", "shuffle_golden_ore_spots", "horon_shop_potion_label", "enforce_potion_in_shop", "old_man_essences_label", "treehouse_old_man_requirement", "gasha_seeds_label", "deterministic_gasha_locations"],
-					["golden_beasts_label", "golden_beasts_requirement", "signs_required_label", "sign_guy_requirement", "tarm_jewels_label", "tarm_gate_required_jewels", "", ""],
-					["autotab_label", "autotab", "dungeon_number_label", "dungeon_number_setting"]
+					["gold_ore_label", "shuffle_golden_ore_spots", "shuffle_freestanding_label", "shuffle_freestanding", "include_trade_label", "include_trade", "horon_shop_potion_label", "enforce_potion_in_shop"],
+					["golden_beasts_label", "golden_beasts_requirement", "signs_required_label", "sign_guy_requirement", "tarm_jewels_label", "tarm_gate_required_jewels", "old_man_essences_label", "treehouse_old_man_requirement"],
+					["gasha_seeds_label", "deterministic_gasha_locations", "autotab_label", "autotab", "dungeon_number_label", "dungeon_number_setting"]
 				]
 			}
 		]

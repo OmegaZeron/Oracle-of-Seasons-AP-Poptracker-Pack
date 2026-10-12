@@ -79,6 +79,18 @@
 		"codes": "boss_keysanity_label"
 	},
 	{
+		"name": "Shuffle Freestanding Items Label",
+		"type": "static",
+		"img": "images/labels/shuffle_freestanding_label.png",
+		"codes": "shuffle_freestanding_label"
+	},
+	{
+		"name": "Include Trade Sequence Label",
+		"type": "static",
+		"img": "images/labels/include_trade_label.png",
+		"codes": "include_trade_label"
+	},
+	{
 		"name": "Horon Shop Potion Label",
 		"type": "static",
 		"img": "images/labels/horon_shop_potion_label.png",

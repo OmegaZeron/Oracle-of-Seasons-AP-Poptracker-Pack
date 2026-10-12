@@ -10,7 +10,6 @@
 		"name": "Logic Level",
 		"type": "progressive",
 		"allow_disabled": false,
-		"initial_stage_idx": 1,
 		"loop": true,
 		"stages": [
 			{

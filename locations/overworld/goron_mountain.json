@@ -123,10 +123,10 @@
 			},
 			{
 				"name": "Biggoron",
+				"visibility_rules": ["trade_sequence_shuffled"],
 				"sections": [
 					{
 						"name": "Biggoron Trade",
-						"visibility_rules": ["trade_sequence_shuffled"],
 						"access_rules": ["^$CanReach|Biggoron"]
 					},
 					{

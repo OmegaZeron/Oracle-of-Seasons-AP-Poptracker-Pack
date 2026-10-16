@@ -192,7 +192,6 @@ UpperTarm:connect_one_way(TarmOldMan, function()
 			TarmRuinsSpring,
 			Spring
 		),
-		CanBreakFlowers,
 		CanBurnTrees
 	)
 end)
@@ -202,14 +201,14 @@ UpperTarm:connect_one_way_entrance(AncientRuins, function()
 			TarmRuinsSpring,
 			Spring
 		),
-		CanBreakFlowers
+		CanBreakFlowers(false, true)
 	)
 end)
 AncientRuins:connect_one_way(TarmRuinsFindSeason)
 AncientRuins:connect_one_way_entrance(UpperTarm, function()
 	return All(
 		TarmRuinsSpring,
-		CanBreakFlowers
+		CanBreakFlowers(false, true)
 	)
 end)
 AncientRuins:connect_two_ways_entrance(AncientFoyer, function()

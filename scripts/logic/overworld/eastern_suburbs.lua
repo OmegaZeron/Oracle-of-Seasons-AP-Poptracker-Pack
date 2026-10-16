@@ -59,7 +59,7 @@ LowerEasternSuburbs:connect_two_ways_entrance(UpperEasternSuburbsWinter, functio
 		Winter
 	)
 end)
-LowerEasternSuburbs:connect_one_way_entrance(SuburbsPortal, CanDestroyBushFlute)
+LowerEasternSuburbs:connect_one_way_entrance(SuburbsPortal, function() return CanDestroyBushFlute(true) end)
 SuburbsPortal:connect_two_ways_entrance(SubrosiaMountainEast, function()
 	return Any(
 		ShufflePortalsOff,

@@ -4,7 +4,7 @@ NatzuWest:connect_one_way(HolodrumPlainFindSeason)
 NatzuWest:connect_two_ways_entrance(NatzuRickyWest, function() return Has(NatzuIsRicky) end)
 NatzuRickyWest:connect_two_ways_entrance(NatzuRickyEast, Ricky)
 NatzuRickyEast:connect_one_way_entrance(MoblinKeepBridge)
-NatzuRickyEast:connect_one_way(NatzuScrub, function() return CanDestroyBush(true) end)
+NatzuRickyEast:connect_one_way(NatzuScrub, function() return CanDestroyBushFlute(true) end)
 NatzuRickyEast:connect_two_ways_entrance(SunkenDoorstep, function() return Has(NatzuIsRicky) end)
 -- dimitri
 NatzuWest:connect_two_ways_entrance(NatzuDimitriWest, function() return Has(NatzuIsDimitri) end)
@@ -44,7 +44,7 @@ NatzuMooshWest:connect_two_ways_entrance(NatzuMooshEast, function()
 	return Any(
 		Moosh,
 		All(
-			CanDestroyBush,
+			CanDestroyBush(true),
 			Jump3,
 			MediumLogic
 		)
@@ -64,7 +64,7 @@ NatzuMooshEast:connect_one_way_entrance(MoblinKeepBridge, function()
 	return Any(
 		Moosh,
 		All(
-			CanDestroyBush,
+			CanDestroyBush(true),
 			Jump3
 		)
 	)

@@ -7,7 +7,7 @@ LowerTempleRemains:connect_one_way_entrance(TempleRemainsStump, function()
 		Any(
 			EventFireworks,
 			All(
-				CanDestroyBush,
+				CanDestroyBush(true),
 				Any(
 					All(
 						-- spring
@@ -15,7 +15,7 @@ LowerTempleRemains:connect_one_way_entrance(TempleRemainsStump, function()
 							TempleRemainsSpring,
 							Spring
 						),
-						CanBreakFlowers,
+						CanBreakFlowers(true),
 						Jump6
 					),
 					All(
@@ -58,8 +58,7 @@ TempleRemainsStump:connect_one_way_entrance(LowerTempleRemains, function()
 					TempleRemainsSpring,
 					Spring
 				),
-				CanBreakFlowers,
-				CanDestroyBush,
+				CanBreakFlowers(false, true),
 				Jump6
 			),
 			All(
@@ -68,7 +67,7 @@ TempleRemainsStump:connect_one_way_entrance(LowerTempleRemains, function()
 					TempleRemainsSummer,
 					Summer
 				),
-				CanDestroyBush,
+				CanDestroyBush(true),
 				Jump6
 			),
 			All(
@@ -77,7 +76,7 @@ TempleRemainsStump:connect_one_way_entrance(LowerTempleRemains, function()
 					TempleRemainsAutumn,
 					Autumn
 				),
-				CanDestroyBush
+				CanDestroyBush(true)
 			),
 			Any(
 				-- winter

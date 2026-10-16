@@ -39,8 +39,8 @@ GnarledRootDoorstep:connect_one_way_entrance(RedRingOldMan, function()
 	return Any(
 		NorthHoronSummer,
 		All(
-			Summer,
-			CanDestroyBushFlute
+			CanDestroyBushFlute(true),
+			Summer
 		)
 	)
 end)

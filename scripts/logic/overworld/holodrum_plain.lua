@@ -36,7 +36,10 @@ NorthHolodrumPlain:connect_one_way(NorthHolodrumPlainOldMan, function()
 					Jump1,
 					All(
 						CanDestroyBushFlute(true),
-						Flippers
+						Any(
+							Flippers,
+							Dimitri
+						)
 					)
 				)
 			)
@@ -97,15 +100,7 @@ NorthHolodrumPlain:connect_two_ways_entrance(SouthGoronMountain, function()
 		Dimitri
 	)
 end)
-SouthHolodrumPlain:connect_one_way_entrance(HolodrumPlainSign, function()
-	return Any(
-		CanDestroyBushFlute,
-		All(
-			Bombchus,
-			AccessibilityLevel.SequenceBreak
-		)
-	)
-end)
+SouthHolodrumPlain:connect_one_way_entrance(HolodrumPlainSign, function() return CanDestroyBushFlute(true) end)
 HolodrumPlainSign:connect_one_way_entrance(SouthHolodrumPlain, function()
 	return Any(
 		CanDestroyBush,

@@ -221,7 +221,7 @@ SpringSpoolSwamp:connect_one_way_entrance(SouthSpoolSwamp)
 SummerSpoolSwamp:connect_one_way_entrance(SouthSpoolSwamp)
 AutumnSpoolSwamp:connect_one_way_entrance(SouthSpoolSwamp)
 WinterSpoolSwamp:connect_one_way_entrance(SouthSpoolSwamp)
-SpringSpoolSwamp:connect_one_way_entrance(SwampSouthGashaArea, function() return CanBreakFlowers(true) end)
+SpringSpoolSwamp:connect_one_way_entrance(SwampSouthGashaArea, function() return CanBreakFlowers(true, true) end)
 SummerSpoolSwamp:connect_one_way_entrance(SwampSouthGashaArea)
 AutumnSpoolSwamp:connect_one_way_entrance(SwampSouthGashaArea)
 WinterSpoolSwamp:connect_one_way_entrance(SwampSouthGashaArea, CanRemoveSnow)
@@ -233,7 +233,7 @@ SwampSouthGashaArea:connect_one_way(SwampSouthGashaSpot, function()
 end)
 SwampSouthGashaArea:connect_one_way_entrance(SpringSpoolSwamp, function()
 	return All(
-		CanBreakFlowers(true),
+		CanBreakFlowers(true, true),
 		SpoolSwampSpring
 	)
 end)

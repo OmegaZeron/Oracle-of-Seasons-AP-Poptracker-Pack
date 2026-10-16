@@ -110,7 +110,7 @@ SubrosiaMarket:connect_one_way_entrance(WestFurnace, function()
 		MagnetGlove,
 		JumpLiquid3,
 		All(
-			Jump2,
+			Jump3,
 			HardLogic
 		)
 	)

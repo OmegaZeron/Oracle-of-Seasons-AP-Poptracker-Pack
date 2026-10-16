@@ -19,8 +19,8 @@ LowerMtCucco:connect_one_way_entrance(CuccoRightMountain, function()
 					Spring
 				),
 				Any(
-					SpringBanana,
-					CanBreakFlowers
+					CanBreakFlowers(true, true),
+					SpringBanana
 				)
 			),
 			HardLogic -- cucco clip

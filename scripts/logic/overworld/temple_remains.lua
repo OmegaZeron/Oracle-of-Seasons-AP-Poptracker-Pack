@@ -97,7 +97,15 @@ TempleRemainsStump:connect_one_way_entrance(TempleRemainsLowerPortal, function()
 		Feather,
 		Any(
 			EventFireworks,
-			Winter
+			Winter,
+			All(
+				-- default winter requires the zipper jump
+				-- so make sure that rule was followed
+				TempleRemainsWinter,
+				CanDestroyBush(true),
+				Shovel,
+				Jump6
+			)
 		)
 	)
 end)

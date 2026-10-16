@@ -9,7 +9,7 @@
 				"visibility_rules": ["shuffledungeonon, d2_alt_entrance_vanilla"],
 				"chest_unopened_img": "images/labels/dungeon_eye.png",
 				"chest_opened_img": "images/labels/dungeon_eye_disabled.png",
-				"sections": [{"access_rules": ["{^$CanReach|SnakeFoyer}"]}],
+				"sections": [{"access_rules": ["{^$CanReach|SnakeFoyer}"], "inspectable_sequence_break": true}],
 				"map_locations": [
 					{
 						"map": "snakes_remains1",
@@ -72,6 +72,25 @@
 						"x": 356,
 						"y": 264,
 						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Keydoor to Hardhats Unlock",
+				"visibility_rules": ["key_type_unlock"],
+				"sections": [
+					{
+						"hosted_item": "D2KeyHardhats",
+						"access_rules": ["{^$CanReach|SnakeMoblinRopeFight}"],
+						"inspectable_sequence_break": true
+					}
+				],
+				"map_locations": [
+					{
+						"map": "snakes_remains1",
+						"x": 600,
+						"y": 184,
+						"shape": "concave_kite"
 					}
 				]
 			},
@@ -167,13 +186,33 @@
 			{
 				"name": "Chest in Rollers Section",
 				"sections": [
-					{"access_rules": ["^$CanReach|FacadeDoorstep"]}
+					{"access_rules": ["^$CanReach|SnakeFacadeDoorstep"]}
 				],
 				"map_locations": [
 					{
 						"map": "snakes_remains2",
 						"x": 184,
 						"y": 120
+					}
+				]
+			},
+			{
+				"name": "Miniboss Keydoor Unlock",
+				"visibility_rules": ["key_type_unlock"],
+				"sections": [
+					{
+						"hosted_item": "D2KeyMiniboss",
+						"access_rules": ["{^$CanReach|SnakeFacadeDoorstep}"],
+						"inspectable_sequence_break": true
+					}
+				],
+				"map_locations": [
+					{
+						"map": "snakes_remains2",
+						"x": 440,
+						"y": 168,
+						"shape": "concave_kite",
+						"orientation": "south"
 					}
 				]
 			},
@@ -205,6 +244,26 @@
 						"map": "snakes_remains2",
 						"x": 680,
 						"y": 504
+					}
+				]
+			},
+			{
+				"name": "Spinner Keyblock Unlock",
+				"visibility_rules": ["key_type_unlock"],
+				"sections": [
+					{
+						"hosted_item": "D2KeySpinner",
+						"access_rules": ["{^$CanReach|Facade}"],
+						"inspectable_sequence_break": true
+					}
+				],
+				"map_locations": [
+					{
+						"map": "snakes_remains2",
+						"x": 760,
+						"y": 264,
+						"shape": "concave_kite",
+						"orientation": "east"
 					}
 				]
 			},

@@ -3,7 +3,26 @@
 		"name": "Ancient Ruins",
 		"chest_unopened_img": "images/labels/chest.png",
 		"chest_opened_img": "images/labels/chestopen.png",
-		"children": [	
+		"children": [
+			{
+				"name": "Right Path Keydoor Unlock",
+				"visibility_rules": ["key_type_unlock"],
+				"sections": [
+					{
+						"hosted_item": "D6KeyRightPath",
+						"access_rules": ["{^$CanReach|AncientFoyer}"],
+						"inspectable_sequence_break": true
+					}
+				],
+				"map_locations": [
+					{
+						"map": "ancient_ruins1",
+						"x": 672,
+						"y": 599,
+						"shape": "concave_kite"
+					}
+				]
+			},
 			{
 				"name": "Crumbling Ground Room Chest",
 				"sections": [
@@ -34,6 +53,26 @@
 						"x": 867,
 						"y": 940,
 						"shape": "diamond"
+					}
+				]
+			},
+			{
+				"name": "Entrance Keyblock Unlock",
+				"visibility_rules": ["key_type_unlock"],
+				"sections": [
+					{
+						"hosted_item": "D6KeyEntranceBlock",
+						"access_rules": ["{^$CanReach|AncientFoyer}"],
+						"inspectable_sequence_break": true
+					}
+				],
+				"map_locations": [
+					{
+						"map": "ancient_ruins1",
+						"x": 454,
+						"y": 816,
+						"shape": "concave_kite",
+						"orientation": "west"
 					}
 				]
 			},
@@ -194,6 +233,25 @@
 						"map": "ancient_ruins1",
 						"x": 340,
 						"y": 236
+					}
+				]
+			},
+			{
+				"name": "Miniboss Keydoor Unlock",
+				"visibility_rules": ["key_type_unlock"],
+				"sections": [
+					{
+						"hosted_item": "D6KeyMiniboss",
+						"access_rules": ["{^$CanReach|AncientVireDoorstep}"],
+						"inspectable_sequence_break": true
+					}
+				],
+				"map_locations": [
+					{
+						"map": "ancient_ruins2",
+						"x": 34,
+						"y": 534,
+						"shape": "concave_kite"
 					}
 				]
 			},

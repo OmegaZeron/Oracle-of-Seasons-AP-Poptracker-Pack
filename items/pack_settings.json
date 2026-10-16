@@ -39,7 +39,6 @@
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
-		"initial_stage_idx": 0,
 		"stages": [
 			{
 				"img": "images/items/onox_setting.png",
@@ -58,7 +57,6 @@
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
-		"initial_stage_idx": 0,
 		"stages": [
 			{
 				"img": "images/labels/vanilla_label.png",
@@ -77,7 +75,6 @@
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
-		"initial_stage_idx": 0,
 		"stages": [
 			{
 				"img": "images/labels/vanilla_label.png",
@@ -96,7 +93,6 @@
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
-		"initial_stage_idx": 0,
 		"stages": [
 			{
 				"img": "images/labels/off.png",
@@ -310,7 +306,6 @@
 		"name": "Gasha Seed Requirement",
 		"type": "progressive",
 		"allow_disabled": false,
-		"initial_stage_idx": 0,
 		"stages": [
 			{
 				"img": "images/labels/0gasha.png",
@@ -437,7 +432,6 @@
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
-		"initial_stage_idx": 0,
 		"stages": [
 			{
 				"img": "images/labels/off.png",
@@ -456,7 +450,6 @@
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
-		"initial_stage_idx": 0,
 		"stages": [
 			{
 				"img": "images/labels/off.png",
@@ -471,25 +464,29 @@
 		]
 	},
 	{
-		"name": "Master Keys selector",
+		"name": "Dungeon Key Type selector",
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
-		"initial_stage_idx": 0,
 		"stages": [
 			{
-				"img": "images/labels/off.png",
-				"codes": "master_keys, master_keys_off",
+				"img": "images/labels/vanilla_label.png",
+				"codes": "key_type, key_type_vanilla",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/labels/key_unlock_label.png",
+				"codes": "key_type, key_type_unlock",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/small_keys_label.png",
-				"codes": "master_keys, master_keys_small",
+				"codes": "key_type, key_type_small",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/both_keys_label.png",
-				"codes": "master_keys, master_keys_both",
+				"codes": "key_type, key_type_both",
 				"inherit_codes": false
 			}
 		]
@@ -499,7 +496,6 @@
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
-		"initial_stage_idx": 0,
 		"stages": [
 			{
 				"img": "images/labels/off.png",
@@ -518,7 +514,6 @@
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
-		"initial_stage_idx": 0,
 		"stages": [
 			{
 				"img": "images/labels/off.png",
@@ -537,7 +532,6 @@
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
-		"initial_stage_idx": 0,
 		"stages": [
 			{
 				"img": "images/labels/off.png",
@@ -556,7 +550,6 @@
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
-		"initial_stage_idx": 0,
 		"stages": [
 			{
 				"img": "images/labels/vanilla_label.png",
@@ -590,7 +583,6 @@
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
-		"initial_stage_idx": 0,
 		"stages": [
 			{
 				"img": "images/labels/vanilla_label.png",
@@ -647,7 +639,6 @@
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
-		"initial_stage_idx": 0,
 		"stages": [
 			{
 				"img": "images/labels/vanilla_label.png",
@@ -691,7 +682,6 @@
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
-		"initial_stage_idx": 0,
 		"stages": [
 			{
 				"img": "images/labels/chaotic_label.png",
@@ -710,7 +700,6 @@
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
-		"initial_stage_idx": 0,
 		"stages": [
 			{
 				"img": "images/labels/vanilla_label.png",
@@ -729,7 +718,6 @@
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
-		"initial_stage_idx": 0,
 		"stages": [
 			{
 				"img": "images/labels/off.png",
@@ -753,7 +741,6 @@
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
-		"initial_stage_idx": 0,
 		"stages": [
 			{
 				"img": "images/labels/vanilla_label.png",
@@ -772,7 +759,6 @@
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
-		"initial_stage_idx": 0,
 		"stages": [
 			{
 				"img": "images/labels/vanilla_label.png",
@@ -791,7 +777,6 @@
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
-		"initial_stage_idx": 0,
 		"stages": [
 			{
 				"img": "images/labels/vanilla_label.png",
@@ -810,7 +795,6 @@
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
-		"initial_stage_idx": 0,
 		"stages": [
 			{
 				"img": "images/labels/vanilla_label.png",
@@ -829,7 +813,6 @@
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
-		"initial_stage_idx": 0,
 		"stages": [
 			{
 				"img": "images/labels/off.png",
@@ -867,7 +850,6 @@
 		"type": "progressive",
 		"allow_disabled": false,
 		"loop": true,
-		"initial_stage_idx": 0,
 		"stages": [
 			{
 				"img": "images/labels/off.png",
@@ -1224,7 +1206,6 @@
 		"name": "Holodrum Plain Season",
 		"type": "progressive",
 		"allow_disabled": false,
-		"initial_stage_idx": 0,
 		"loop": true,
 		"stages": [
 			{
@@ -1292,7 +1273,6 @@
 		"name": "Tarm Ruins Season",
 		"type": "progressive",
 		"allow_disabled": false,
-		"initial_stage_idx": 0,
 		"loop": true,
 		"stages": [
 			{
@@ -1700,7 +1680,6 @@
 		"name": "Lost Woods Main Direction 1",
 		"type": "progressive",
 		"allow_disabled": false,
-		"initial_stage_idx": 0,
 		"loop": true,
 		"stages": [
 			{
@@ -1876,7 +1855,6 @@
 		"name": "Lost Woods Main Sequence 3",
 		"type": "progressive",
 		"allow_disabled": false,
-		"initial_stage_idx": 0,
 		"loop": true,
 		"stages": [
 			{
@@ -1944,7 +1922,6 @@
 		"name": "Pedestal Direction 1",
 		"type": "progressive",
 		"allow_disabled": false,
-		"initial_stage_idx": 0,
 		"loop": true,
 		"stages": [
 			{
@@ -1978,7 +1955,6 @@
 		"name": "Pedestal Direction 2",
 		"type": "progressive",
 		"allow_disabled": false,
-		"initial_stage_idx": 0,
 		"loop": true,
 		"stages": [
 			{
@@ -2012,7 +1988,6 @@
 		"name": "Pedestal Direction 3",
 		"type": "progressive",
 		"allow_disabled": false,
-		"initial_stage_idx": 0,
 		"loop": true,
 		"stages": [
 			{
@@ -2120,7 +2095,6 @@
 		"name": "Pedestal Sequence 3",
 		"type": "progressive",
 		"allow_disabled": false,
-		"initial_stage_idx": 0,
 		"loop": true,
 		"stages": [
 			{

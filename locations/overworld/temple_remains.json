@@ -34,6 +34,7 @@
 				"sections": [
 					{
 						"name": "After Blowing Up Volcano",
+						"visibility_rules": ["freestanding_shuffled"],
 						"access_rules": ["^$CanReach|TempleRemainsBombCave"]
 					}
 				],

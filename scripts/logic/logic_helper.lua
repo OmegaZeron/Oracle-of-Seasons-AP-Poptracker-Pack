@@ -1454,12 +1454,12 @@ function CanAnnoyMaple(pct)
 		itemCount = itemCount + 7
 	end
 	itemCount = itemCount + Tracker:FindObjectForCode(GashaSetting).CurrentStage
-	if Has(MasterKeysBoth) then
+	if Has(KeyTypeMasterBoth) then
 		itemCount = itemCount + 8
-	elseif Has(MasterKeysSmall) then
+	elseif Has(KeyTypeMasterSmall) then
 		itemCount = itemCount + 16
 	else
-		itemCount = itemCount + 35
+		itemCount = itemCount + 46
 	end
 
 	return Any(
@@ -1680,29 +1680,44 @@ function GetCuccos(area, anyAmt, topAmt, botAmt)
 	return access
 end
 
----@param key string String for the small key
----@param master string String for the master key
+---@param key string Code for the small key
+---@param master string Code for the master key
+---@param unlock string|nil Code for the unlock item
 ---@param needed integer How many keys are logically required
 ---@param ool? integer How many keys can be used minimally
-function HasKeys(key, master, needed, ool)
+function HasKeys(key, master, unlock, needed, ool)
 	local currentKeys = Tracker:ProviderCountForCode(key)
 	return Any(
-		All(MasterKeysOff, currentKeys >= needed),
 		All(
-			Any(MasterKeysSmall, MasterKeysBoth),
+			KeyTypeMasterSmall,
 			master
 		),
+		KeyUnlock(unlock),
 		All(
-			ool ~= nil and currentKeys >= ool,
-			AccessibilityLevel.SequenceBreak
+			KeyTypeVanilla,
+			Any(
+				currentKeys >= needed,
+				All(
+					ool ~= nil and currentKeys >= ool,
+					AccessibilityLevel.SequenceBreak
+				)
+			)
 		)
+	)
+end
+---@param unlock string|nil Code for the unlock item
+function KeyUnlock(unlock)
+	return All(
+		KeyTypeUnlock,
+		unlock ~= nil,
+		unlock
 	)
 end
 function HasD1BossKey()
 	return Any(
 		D1BossKey,
 		All(
-			MasterKeysBoth,
+			KeyTypeMasterBoth,
 			D1MasterKey
 		)
 	)
@@ -1711,7 +1726,7 @@ function HasD2BossKey()
 	return Any(
 		D2BossKey,
 		All(
-			MasterKeysBoth,
+			KeyTypeMasterBoth,
 			D2MasterKey
 		)
 	)
@@ -1720,7 +1735,7 @@ function HasD3BossKey()
 	return Any(
 		D3BossKey,
 		All(
-			MasterKeysBoth,
+			KeyTypeMasterBoth,
 			D3MasterKey
 		)
 	)
@@ -1729,7 +1744,7 @@ function HasD4BossKey()
 	return Any(
 		D4BossKey,
 		All(
-			MasterKeysBoth,
+			KeyTypeMasterBoth,
 			D4MasterKey
 		)
 	)
@@ -1738,7 +1753,7 @@ function HasD5BossKey()
 	return Any(
 		D5BossKey,
 		All(
-			MasterKeysBoth,
+			KeyTypeMasterBoth,
 			D5MasterKey
 		)
 	)
@@ -1747,7 +1762,7 @@ function HasD6BossKey()
 	return Any(
 		D6BossKey,
 		All(
-			MasterKeysBoth,
+			KeyTypeMasterBoth,
 			D6MasterKey
 		)
 	)
@@ -1756,7 +1771,7 @@ function HasD7BossKey()
 	return Any(
 		D7BossKey,
 		All(
-			MasterKeysBoth,
+			KeyTypeMasterBoth,
 			D7MasterKey
 		)
 	)
@@ -1765,7 +1780,7 @@ function HasD8BossKey()
 	return Any(
 		D8BossKey,
 		All(
-			MasterKeysBoth,
+			KeyTypeMasterBoth,
 			D8MasterKey
 		)
 	)

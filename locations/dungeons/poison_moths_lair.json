@@ -101,6 +101,25 @@
 				]
 			},
 			{
+				"name": "Keydoor to Mimics Unlock",
+				"visibility_rules": ["key_type_unlock"],
+				"sections": [
+					{
+						"hosted_item": "D3KeyMimics",
+						"access_rules": ["{^$CanReach|PoisonWaterRoom}"],
+						"inspectable_sequence_break": true
+					}
+				],
+				"map_locations": [
+					{
+						"map": "poison_moths_lair2",
+						"x": 120,
+						"y": 188,
+						"shape": "concave_kite"
+					}
+				]
+			},
+			{
 				"name": "Chest in Mimics Room",
 				"sections": [
 					{
@@ -129,6 +148,26 @@
 						"map": "poison_moths_lair1",
 						"x": 824,
 						"y": 312
+					}
+				]
+			},
+			{
+				"name": "Miniboss Keydoor Unlock",
+				"visibility_rules": ["key_type_unlock"],
+				"sections": [
+					{
+						"hosted_item": "D3KeyMiniboss",
+						"access_rules": ["{^$CanReach|PoisonOmuaiDoorstep}"],
+						"inspectable_sequence_break": true
+					}
+				],
+				"map_locations": [
+					{
+						"map": "poison_moths_lair1",
+						"x": 728,
+						"y": 456,
+						"shape": "concave_kite",
+						"orientation": "west"
 					}
 				]
 			},

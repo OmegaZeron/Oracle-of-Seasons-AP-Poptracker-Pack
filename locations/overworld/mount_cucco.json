@@ -87,6 +87,7 @@
 			},
 			{
 				"name": "Talon's Cave",
+				"visibility_rules": ["trade_sequence_shuffled"],
 				"sections": [
 					{
 						"name": "Mt. Cucco: Talon Trade",
@@ -126,6 +127,7 @@
 				"sections": [
 					{
 						"name": "Mt. Cucco: Item on Ledge",
+						"visibility_rules": ["freestanding_shuffled"],
 						"access_rules": ["^$CanReach|MtCuccoLedge"]
 					}
 				],

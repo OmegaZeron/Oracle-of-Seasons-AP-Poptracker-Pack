@@ -126,6 +126,7 @@
 				"sections": [
 					{
 						"name": "Biggoron Trade",
+						"visibility_rules": ["trade_sequence_shuffled"],
 						"access_rules": ["^$CanReach|Biggoron"]
 					},
 					{

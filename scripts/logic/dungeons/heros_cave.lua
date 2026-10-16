@@ -10,10 +10,7 @@ HerosCaveFoyer:connect_one_way_entrance(HerosCaveUnderground, function()
 	)
 end)
 HerosCaveFoyer:connect_one_way_entrance(HerosCavePostKey, function()
-	return Any(
-		D0SmallKey,
-		D0MasterKey
-	)
+	return HasKeys(D0SmallKey, D0MasterKey, D0KeyDoor, 1)
 end)
 
 -- linked
@@ -26,8 +23,8 @@ LinkedCaveFoyer:connect_one_way(LinkedCaveLedge, function()
 end)
 LinkedCaveFoyer:connect_one_way_entrance(LinkedCaveF1Chest, function() return Has(Bracelet) end)
 LinkedCaveF1Chest:connect_one_way_entrance(LinkedCaveF2Keydrop, Jump2)
-LinkedCaveF2Keydrop:connect_one_way_entrance(LinkedCaveF2Chest, function() return HasKeys(LCSmallKey, LCMasterKey, 1) end)
-LinkedCaveF2Chest:connect_one_way(LinkedCaveF3TorchKeyDrop, function()
+LinkedCaveF2Keydrop:connect_one_way_entrance(LinkedCaveF2Chest, function() return HasKeys(LCSmallKey, LCMasterKey, LCKeyF2Door, 1) end)
+LinkedCaveF2Chest:connect_one_way(LinkedCaveF3TorchChest, function()
 	return All(
 		Any(
 			Flippers,
@@ -43,10 +40,10 @@ LinkedCaveF2Chest:connect_one_way(LinkedCaveF3TorchKeyDrop, function()
 		CanLightTorches
 	)
 end)
-LinkedCaveF2Chest:connect_one_way_entrance(LinkedCaveF3FloodedRoom, function()
+LinkedCaveF2Chest:connect_one_way_entrance(LinkedCaveF3WaterTorchRoom, function() return Has(Flippers) end)
+LinkedCaveF3WaterTorchRoom:connect_one_way(LinkedCaveF3FloodedRoom, function()
 	return All(
-		HasKeys(LCSmallKey, LCMasterKey, 2),
-		Flippers,
+		HasKeys(LCSmallKey, LCMasterKey, LCKeyF3Block, 2),
 		CanShootSeeds,
 		CanLightTorches
 	)
@@ -59,75 +56,67 @@ LinkedCaveF3FloodedRoom:connect_one_way(LinkedCaveF3FloodedKeydrop, function()
 end)
 LinkedCaveF3FloodedRoom:connect_one_way_entrance(LinkedCaveF3Chest, function()
 	return All(
-		HasKeys(LCSmallKey, LCMasterKey, 3),
+		HasKeys(LCSmallKey, LCMasterKey, LCKeyF3Door, 3),
 		CanBombWall
 	)
 end)
 LinkedCaveF3Chest:connect_one_way_entrance(LinkedCaveF4Chest, function() return Has(MagnetGlove) end)
-LinkedCaveF4Chest:connect_one_way(LinkedCaveF5Gauntlet, function()
-	return All(
-		Jump3,
-		Any(
-			All(
-				HasHeartsByDifficulty(5, 4, 3),
-				Any(
-					HasAnySword,
-					FoolsOre
-				),
-				Any(
-					AnyFlute,
-					HasBombsToFight,
-					HasBombchusToFight
-				),
-				CanKillSpinyBeetle
+LinkedCaveF4Chest:connect_one_way_entrance(LinkedCaveF5GauntletRoom, Jump3)
+LinkedCaveF5GauntletRoom:connect_one_way(LinkedCaveF5GauntletReward, function()
+	return Any(
+		All(
+			HasHeartsByDifficulty(5, 4, 3),
+			Any(
+				AnyFlute,
+				HasBombsToFight,
+				HasBombchusToFight
 			),
-			All(
-				-- Use the cane press a button at the same time Link is on the button to skip the lowest wave
-				-- Counting starts at the top and goes clockwise, waves are:
-				-- 0- Spiked Beetle
-				-- 1- Gibdo
-				-- 2- Arrow Darknut
-				-- 3- Magunesu
-				-- 4- Lynel
-				-- 5- Iron Mask
-				-- 6- Pol's Voice
-				-- 7- Stalfos
-				-- We need to fight at least 5 of these 8 waves, minimal requirement is oos_can_kill_normal_enemy_no_cane
-				-- Waves 1, 5 and 7 can be beaten by it
-				-- oos_can_kill_armored_enemy can clear waves 2 and 4, skipping 0, 3 and 6
-				-- Otherwise, since we know we have embers already, we can also beat 4, but we need more seeds
-				-- (only the seeds aren't in oos_can_kill_armored_enemy)
-				-- Skip waves 0, 3 and 6 while finishing the waves 1, 5 and 7 with embers
-				-- Now there are two waves left, 4 and 2, which can be beaten by cane
-				-- A route can be wave 4 -> wave 5 (skip 3) -> wave 7 (skip 6) -> wave 1 (skip 0) -> wave 2
-				-- (With enough bombs left, it's probably easier to switch wave 6 and wave 4 as lynels hurt a lot)
-				CaneOfSomaria,
-				Any(
-					CanArmorKill(false, true),
-					HasUpgradedSatchel
-				),
-				HardLogic
-			)
+			CanSwordKill,
+			CanKillSpinyBeetle
+		),
+		All(
+			-- Use the cane press a button at the same time Link is on the button to skip the lowest wave
+			-- Counting starts at the top and goes clockwise, waves are:
+			-- 0- Spiked Beetle
+			-- 1- Gibdo
+			-- 2- Arrow Darknut
+			-- 3- Magunesu
+			-- 4- Lynel
+			-- 5- Iron Mask
+			-- 6- Pol's Voice
+			-- 7- Stalfos
+			-- We need to fight at least 5 of these 8 waves, minimal requirement is oos_can_kill_normal_enemy_no_cane
+			-- Waves 1, 5 and 7 can be beaten by it
+			-- oos_can_kill_armored_enemy can clear waves 2 and 4, skipping 0, 3 and 6
+			-- Otherwise, since we know we have embers already, we can also beat 4, but we need more seeds
+			-- (only the seeds aren't in oos_can_kill_armored_enemy)
+			-- Skip waves 0, 3 and 6 while finishing the waves 1, 5 and 7 with embers
+			-- Now there are two waves left, 4 and 2, which can be beaten by cane
+			-- A route can be wave 4 -> wave 5 (skip 3) -> wave 7 (skip 6) -> wave 1 (skip 0) -> wave 2
+			-- (With enough bombs left, it's probably easier to switch wave 6 and wave 4 as lynels hurt a lot)
+			CaneOfSomaria,
+			Any(
+				CanArmorKill(false, true),
+				HasUpgradedSatchel
+			),
+			HardLogic
 		)
 	)
 end)
-LinkedCaveF4Chest:connect_one_way(LinkedCaveF5BoomerangMaze, function()
-	return All(
-		HasKeys(LCSmallKey, LCMasterKey, 4),
-		Any(
-			MagicBoomerang,
-			HasBombchusToFight,
-			All(
-				HasAnySword,
-				MediumLogic
-			)
-		),
-		Jump3
+LinkedCaveF5GauntletRoom:connect_one_way(LinkedCaveF5BoomerangMazeRoom, function() return HasKeys(LCSmallKey, LCMasterKey, LCKeyBoomerangMaze, 4) end)
+LinkedCaveF5BoomerangMazeRoom:connect_one_way(LinkedCaveF5BoomerangMazeReward, function()
+	return Any(
+		MagicBoomerang,
+		HasBombchusToFight,
+		All(
+			HasAnySword,
+			MediumLogic
+		)
 	)
 end)
 LinkedCaveF4Chest:connect_one_way(LinkedCaveFinalChest, function()
 	return All(
-		HasKeys(LCSmallKey, LCMasterKey, 5),
+		HasKeys(LCSmallKey, LCMasterKey, LCKeyFinalChallenge, 5),
 		Jump3,
 		Any(
 			CanCompleteLinkedPuzzle,

@@ -85,28 +85,26 @@ UnicornMinecarts:connect_one_way_entrance(UnicornMinecartPushBlock, function()
 	)
 end)
 -- 5 keys
-UnicornPotRoom:connect_one_way(UnicornMagnetGloveChest, function()
-	return All(
-		HasKeys(D5SmallKey, D5MasterKey, 5, 1),
-		Any(
-			Flippers,
-			All(
-				Jump4, -- is liquid, but diagonal makes this effectively a 4 pit for rules
-				MediumLogic -- force medium for lower path
-			)
+UnicornPotRoom:connect_one_way_entrance(UnicornPotPool, function()
+	return Any(
+		Flippers,
+		All(
+			Jump4, -- is liquid, but diagonal makes this effectively a 4 pit for rules
+			MediumLogic -- force medium for lower path
 		)
 	)
 end)
-UnicornPreSyger:connect_one_way_entrance(Syger, function() return HasKeys(D5SmallKey, D5MasterKey, 5, 1) end)
+UnicornPotPool:connect_one_way(UnicornMagnetGloveChest, function() return HasKeys(D5SmallKey, D5MasterKey, D5KeyGlovesDoor, 5, 1) end)
+UnicornPreSyger:connect_one_way_entrance(Syger, function() return HasKeys(D5SmallKey, D5MasterKey, D5KeyMiniboss, 2, 1) end)
 Syger:connect_one_way_entrance(UnicornPostSyger, function()
 	return All(
-		CanArmorKill,
-		HasHeartsByDifficulty(5, 4, 3)
+		HasHeartsByDifficulty(5, 4, 3),
+		CanArmorKill
 	)
 end)
-UnicornPostSyger:connect_one_way(UnicornTreadmillBasement, function()
+UnicornPostSyger:connect_one_way_entrance(UnicornPreFirewall, function() return HasKeys(D5SmallKey, D5MasterKey, D5KeyFireWall, 5, 3) end)
+UnicornPreFirewall:connect_one_way_entrance(UnicornPostFirewall, function()
 	return All(
-		HasKeys(D5SmallKey, D5MasterKey, 5, 3),
 		-- button
 		Any(
 			All(
@@ -126,8 +124,12 @@ UnicornPostSyger:connect_one_way(UnicornTreadmillBasement, function()
 				HasHearts(5),
 				MediumLogic
 			)
-		),
-		-- basement
+		)
+	)
+end, {UnicornMinecartPushBlock})
+UnicornPostFirewall:connect_one_way(UnicornTreadmillBasement, function()
+	return All(
+		HasKeys(D5SmallKey, D5MasterKey, D5KeyBasement, 5, 3),
 		Any(
 			All(
 				CaneOfSomaria,
@@ -136,10 +138,10 @@ UnicornPostSyger:connect_one_way(UnicornTreadmillBasement, function()
 			MagnetGlove
 		)
 	)
-end, {UnicornMinecartPushBlock})
+end)
 UnicornPostSyger:connect_one_way_entrance(UnicornBoss, function()
 	return All(
-		HasKeys(D5SmallKey, D5MasterKey, 5, 2),
+		HasKeys(D5SmallKey, D5MasterKey, D5KeyBossBlock, 5, 2),
 		Any(
 			All(
 				Jump5,

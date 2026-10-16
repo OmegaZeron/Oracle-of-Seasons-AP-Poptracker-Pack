@@ -1,4 +1,5 @@
 -- Items
+
 HeartContainer = "heart_container"
 WoodSword = "sword"
 NobleSword = "sword2"
@@ -134,7 +135,47 @@ D8BossKey = "d8bk"
 D8Essence = "d8"
 Essences = "essences"
 
+D0KeyDoor = "D0KeyDoor"
+D1KeyEntrance = "D1KeyEntrance"
+D1KeyMiniboss = "D1KeyMiniboss"
+D2KeyHardhats = "D2KeyHardhats"
+D2KeyMiniboss = "D2KeyMiniboss"
+D2KeySpinner = "D2KeySpinner"
+D3KeyMimics = "D3KeyMimics"
+D3KeyMiniboss = "D3KeyMiniboss"
+D4KeyEntrance = "D4KeyEntrance"
+D4KeyMinecartBlock = "D4KeyMinecartBlock"
+D4KeyCrumbleFloor = "D4KeyCrumbleFloor"
+D4KeyPoolBlock = "D4KeyPoolBlock"
+D4KeyBossBlock = "D4KeyBossBlock"
+D5KeyGlovesDoor = "D5KeyGlovesDoor"
+D5KeyMiniboss = "D5KeyMiniboss"
+D5KeyFireWall = "D5KeyFireWall"
+D5KeyBasement = "D5KeyBasement"
+D5KeyBossBlock = "D5KeyBossBlock"
+D6KeyEntranceBlock = "D6KeyEntranceBlock"
+D6KeyRightPath = "D6KeyRightPath"
+D6KeyMiniboss = "D6KeyMiniboss"
+D7KeyEntrance = "D7KeyEntrance"
+D7KeyTrampoline = "D7KeyTrampoline"
+D7KeyPoe2 = "D7KeyPoe2"
+D7KeyFlyingTile = "D7KeyFlyingTile"
+D7KeyBluePuzzle = "D7KeyBluePuzzle"
+D8KeyEntranceBlock = "D8KeyEntranceBlock"
+D8KeySpinner = "D8KeySpinner"
+D8KeyMiniboss = "D8KeyMiniboss"
+D8KeyIceCrystals = "D8KeyIceCrystals"
+D8KeyLavaHole = "D8KeyLavaHole"
+D8KeyBeamos = "D8KeyBeamos"
+D8KeyBossBlock = "D8KeyBossBlock"
+LCKeyF2Door = "LCKeyF2Door"
+LCKeyF3Block = "LCKeyF3Block"
+LCKeyF3Door = "LCKeyF3Door"
+LCKeyBoomerangMaze = "LCKeyBoomerangMaze"
+LCKeyFinalChallenge = "LCKeyFinalChallenge"
+
 -- Events
+
 EventSnakeRupees = "event_snake_rupee"
 EventAncientRupees = "event_ancient_rupee"
 EventHoronOldMan = "event_horon_oldman"
@@ -148,6 +189,7 @@ EventTarmOldMan = "event_tarm_oldman"
 EventFireworks = "event_fireworks"
 
 -- Settings
+
 Casual = "casual"
 Medium = "medium"
 Hard = "hard"
@@ -156,9 +198,10 @@ ShuffleDungeonOn = "shuffledungeonon"
 ShuffleDungeonOff = "shuffledungeonoff"
 ShuffleBossOn = "shufflebosson"
 ShuffleBossOff = "shufflebossoff"
-MasterKeysOff = "master_keys_off"
-MasterKeysSmall = "master_keys_small"
-MasterKeysBoth = "master_keys_both"
+KeyTypeVanilla = "key_type_vanilla"
+KeyTypeUnlock = "key_type_unlock"
+KeyTypeMasterSmall = "key_type_small"
+KeyTypeMasterBoth = "key_type_both"
 D0AltVanilla = "d0_alt_entrance_vanilla"
 D0AltRemoved = "d0_alt_entrance_removed"
 LinkedCaveEnabled = "linked_cave_on"
@@ -192,6 +235,7 @@ ShuffleGoldOresVanilla = "gold_ores_vanilla"
 ShuffleGoldOresShuffled = "gold_ores_shuffled"
 
 -- Start Locations
+
 StartImpa = "start_impa"
 StartSunken = "start_sunken"
 StartTemple = "start_temple"
@@ -199,12 +243,14 @@ StartDesert = "start_desert"
 StartTarm = "start_tarm"
 
 -- Helpers
+
 VersionMismatch = "version_mismatch"
 UpdateItem = "update_item"
 LocationRefresh = "location_refresh"
 ManualStorageCode = "manual_location_storage"
 
 -- Shop Prices
+
 HoronShopPrice = "horonShop"
 AdvanceShopPrice = "advanceShop"
 MemberShopPrice = "memberShop"
@@ -216,6 +262,7 @@ D4ScrubPrice = "d4Scrub"
 SubrosianMarketPrice = "subrosianMarket"
 
 -- Old Men Values
+
 OldManHoron = "old man in horon"
 OldManD1 = "old man near d1"
 OldManHolly = "old man near holly's house"
@@ -226,6 +273,7 @@ OldManD6 = "old man near d6"
 OldManWestCoast = "old man near western coast house"
 
 -- Seasons
+
 HoronChaoticSeasons = "horon_seasons_chaotic"
 HoronVillageSeason = "horon_village_season"
 HoronVillageSeasonHidden = "horon_village_season_hidden"
@@ -305,6 +353,7 @@ TempleRemainsAutumn = "temple_fall"
 TempleRemainsWinter = "temple_winter"
 
 --Dungeon shuffle
+
 D0EntranceSelector = "d0_ent_selector"
 D0EntranceSelectorHidden = "d0_ent_selector_hidden"
 D0LeadsToD0 = "d0_d0"
@@ -436,6 +485,7 @@ D7LeadsToD8 = "d7_d8"
 D8LeadsToD8 = "d8_d8"
 
 -- Portal shuffle
+
 EasternSuburbsPortalSelector = "suburbs_portal_selector"
 EasternSuburbsPortalSelectorHidden = "suburbs_portal_selector_hidden"
 SuburbsLeadsToMountain = "suburbs_mountain"

@@ -54,6 +54,26 @@
 				]
 			},
 			{
+				"name": "Entrance Keydoor Unlock",
+				"visibility_rules": ["key_type_unlock"],
+				"sections": [
+					{
+						"hosted_item": "D7KeyEntrance",
+						"access_rules": ["{^$CanReach|CryptFoyer}"],
+						"inspectable_sequence_break": true
+					}
+				],
+				"map_locations": [
+					{
+						"map": "explorers_crypt1",
+						"x": 378,
+						"y": 799,
+						"shape": "concave_kite",
+						"orientation": "east"
+					}
+				]
+			},
+			{
 				"name": "Chest Right of Entrance",
 				"sections": [
 					{
@@ -118,6 +138,26 @@
 				]
 			},
 			{
+				"name": "Keydoor to Enclosed Trampoline Unlock",
+				"visibility_rules": ["key_type_unlock"],
+				"sections": [
+					{
+						"hosted_item": "D7KeyTrampoline",
+						"access_rules": ["{^$CanReach|CryptSurroundedByArmos}"],
+						"inspectable_sequence_break": true
+					}
+				],
+				"map_locations": [
+					{
+						"map": "explorers_crypt1",
+						"x": 287,
+						"y": 275,
+						"shape": "concave_kite",
+						"orientation": "south"
+					}
+				]
+			},
+			{
 				"name": "Quicksand Chest Near Second Poe",
 				"sections": [
 					{
@@ -134,6 +174,26 @@
 				]
 			},
 			{
+				"name": "Margret's Keydoor Unlock",
+				"visibility_rules": ["key_type_unlock"],
+				"sections": [
+					{
+						"hosted_item": "D7KeyPoe2",
+						"access_rules": ["{^$CanReach|CryptPoeTrampoline}"],
+						"inspectable_sequence_break": true
+					}
+				],
+				"map_locations": [
+					{
+						"map": "explorers_crypt1",
+						"x": 377,
+						"y": 351,
+						"shape": "concave_kite",
+						"orientation": "east"
+					}
+				]
+			},
+			{
 				"name": "Fast Moving Platform Chest",
 				"sections": [
 					{
@@ -146,6 +206,26 @@
 						"map": "explorers_crypt2",
 						"x": 94,
 						"y": 56
+					}
+				]
+			},
+			{
+				"name": "Flying Tile Keyblock Unlock",
+				"visibility_rules": ["key_type_unlock"],
+				"sections": [
+					{
+						"hosted_item": "D7KeyFlyingTile",
+						"access_rules": ["{^$CanReach|CryptDarknutBridge}"],
+						"inspectable_sequence_break": true
+					}
+				],
+				"map_locations": [
+					{
+						"map": "explorers_crypt2",
+						"x": 260,
+						"y": 464,
+						"shape": "concave_kite",
+						"orientation": "east"
 					}
 				]
 			},
@@ -178,6 +258,26 @@
 						"map": "explorers_crypt2",
 						"x": 669,
 						"y": 504
+					}
+				]
+			},
+			{
+				"name": "Shining Blue Puzzle Keydoor Unlock",
+				"visibility_rules": ["key_type_unlock"],
+				"sections": [
+					{
+						"hosted_item": "D7KeyBluePuzzle",
+						"access_rules": ["{^$CanReach|CryptStairMaze}"],
+						"inspectable_sequence_break": true
+					}
+				],
+				"map_locations": [
+					{
+						"map": "explorers_crypt2",
+						"x": 760,
+						"y": 516,
+						"shape": "concave_kite",
+						"orientation": "east"
 					}
 				]
 			},

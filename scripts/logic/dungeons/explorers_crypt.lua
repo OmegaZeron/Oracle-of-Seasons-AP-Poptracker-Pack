@@ -21,7 +21,7 @@ end)
 -- foyer directly to poe because of possible poe skip messing up keys
 CryptFoyer:connect_one_way_entrance(CryptFirstPoe, function()
 	return All(
-		HasKeys(D7SmallKey, D7MasterKey, 1),
+		HasKeys(D7SmallKey, D7MasterKey, D7KeyEntrance, 1),
 		CanShootLongTorches
 	)
 end)
@@ -70,7 +70,7 @@ CryptMagunesu:connect_one_way(CryptMagunesuReward, function()
 	)
 end)
 -- 2 keys
-CryptSurroundedByArmos:connect_one_way_entrance(CryptPoeTrampoline, function() return HasKeys(D7SmallKey, D7MasterKey, 2, 1) end)
+CryptSurroundedByArmos:connect_one_way_entrance(CryptPoeTrampoline, function() return HasKeys(D7SmallKey, D7MasterKey, D7KeyTrampoline, 2, 1) end)
 CryptPoeTrampoline:connect_one_way(CryptQuicksandChest, function() return Has(Feather) end)
 CryptPoeTrampoline:connect_one_way_entrance(CryptDarknutBridge, function()
 	-- poe 2 skip
@@ -84,7 +84,7 @@ end)
 -- 3 keys
 CryptPoeTrampoline:connect_one_way_entrance(CryptPoe2, function()
 	return All(
-		HasKeys(D7SmallKey, D7MasterKey, 3, 2),
+		HasKeys(D7SmallKey, D7MasterKey, D7KeyPoe2, 3, 2),
 		CanUseSeeds,
 		EmberSeeds,
 		Any(
@@ -155,7 +155,7 @@ CryptFastPlatform:connect_one_way(CryptFastPlatformChest, function() return Has(
 -- 4 keys
 CryptDarknutBridge:connect_one_way_entrance(PoeSisters, function()
 	return All(
-		HasKeys(D7SmallKey, D7MasterKey, 4, 3),
+		HasKeys(D7SmallKey, D7MasterKey, D7KeyFlyingTile, 4, 3),
 		Jump3,
 		Any(
 			All(
@@ -207,11 +207,11 @@ CryptStairMaze:connect_one_way_entrance(CryptWizzrobeStalfosRoom, function()
 end)
 CryptWizzrobeStalfosRoom:connect_one_way(CryptWizzrobeStalfosChest) -- no rules since you already require everything by this point
 -- 5 keys
-CryptFoyer:connect_one_way_entrance(Crypt1FKeyRoom, function() return HasKeys(D7SmallKey, D7MasterKey, 5, 1) end)
+CryptFoyer:connect_one_way_entrance(Crypt1FKeyRoom, function() return HasKeys(D7SmallKey, D7MasterKey, D7KeyEntrance, 5, 1) end)
 Crypt1FKeyRoom:connect_one_way(Crypt1FKeyRoomChest, CanNormalKill)
 CryptStairMaze:connect_one_way_entrance(CryptJumpingStalfos, function()
 	return All(
-		HasKeys(D7SmallKey, D7MasterKey, 5, 4),
+		HasKeys(D7SmallKey, D7MasterKey, D7KeyBluePuzzle, 5, 4),
 		Any(
 			Jump5,
 			All(

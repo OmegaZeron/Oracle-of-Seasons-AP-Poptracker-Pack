@@ -39,11 +39,11 @@ SnakeAltEntrance:connect_one_way(SnakeBombPuzzle, function()
 	)
 end)
 SnakeBladeTraps:connect_one_way_entrance(SnakeBombBlockStairs, CanBombWall)
-SnakeBombBlockStairs:connect_one_way_entrance(FacadeDoorstep, function() return Has(Bracelet) end)
+SnakeBombBlockStairs:connect_one_way_entrance(SnakeFacadeDoorstep, function() return Has(Bracelet) end)
 -- 2 keys
-FacadeDoorstep:connect_one_way_entrance(Facade, function()
+SnakeFacadeDoorstep:connect_one_way_entrance(Facade, function()
 	return All(
-		HasKeys(D2SmallKey, D2MasterKey, 2, 1),
+		HasKeys(D2SmallKey, D2MasterKey, D2KeyMiniboss, 2, 1),
 		Any(
 			HasBombsToFight,
 			HasBombchusToFight
@@ -55,7 +55,7 @@ Facade:connect_one_way_entrance(SnakeWildBombsPolsVoice, function()
 	return All(
 		Any(
 			CanBombWall,
-			HasKeys(D2SmallKey, D2MasterKey, 3, 2)
+			HasKeys(D2SmallKey, D2MasterKey, D2KeySpinner, 3, 2)
 		),
 		Any(
 			Bombs,
@@ -66,7 +66,7 @@ end)
 Facade:connect_one_way_entrance(SnakeBoss, function()
 	return All(
 		Any(
-			HasKeys(D2SmallKey, D2MasterKey, 3, 2),
+			HasKeys(D2SmallKey, D2MasterKey, D2KeySpinner, 3, 2),
 			CanBombWall
 		),
 		HasD2BossKey
@@ -75,7 +75,7 @@ end)
 SnakeBoss:connect_one_way(SnakeEssence, function() return BossLogic[2](2) end)
 
 -- 3 keys
-SnakeMoblinRopeFight:connect_one_way_entrance(SnakeHardhats, function() return HasKeys(D2SmallKey, D2MasterKey, 3, 1) end)
+SnakeMoblinRopeFight:connect_one_way_entrance(SnakeHardhats, function() return HasKeys(D2SmallKey, D2MasterKey, D2KeyHardhats, 3, 1) end)
 SnakeHardhats:connect_one_way(SnakeHardhatChest, CanDestroyPot)
 SnakeHardhats:connect_one_way_entrance(SnakeBombMoblins, function()
 	return Any(
@@ -140,4 +140,4 @@ SnakeBombMoblins:connect_one_way(SnakeBombMoblinChest, function()
 		)
 	)
 end)
-Facade:connect_one_way(SnakeTerrace, function() return HasKeys(D2SmallKey, D2MasterKey, 3, 2) end)
+Facade:connect_one_way(SnakeTerrace, function() return HasKeys(D2SmallKey, D2MasterKey, D2KeySpinner, 3, 2) end)

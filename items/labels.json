@@ -103,10 +103,10 @@
 		"codes": "start_location_label"
 	},
 	{
-		"name": "Master Keys Label",
+		"name": "Dungeon Key Type Label",
 		"type": "static",
-		"img": "images/labels/master_keys_label.png",
-		"codes": "master_keys_label"
+		"img": "images/labels/key_type_label.png",
+		"codes": "key_type_label"
 	},
 	{
 		"name": "D0 Alt Entrance Label",

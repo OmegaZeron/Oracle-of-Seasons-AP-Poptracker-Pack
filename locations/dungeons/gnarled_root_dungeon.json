@@ -18,6 +18,26 @@
 				]
 			},
 			{
+				"name": "Entrance Keydoor Unlock",
+				"visibility_rules": ["key_type_unlock"],
+				"sections": [
+					{
+						"hosted_item": "D1KeyEntrance",
+						"access_rules": ["{^$CanReach|GnarledFoyer}"],
+						"inspectable_sequence_break": true
+					}
+				],
+				"map_locations": [
+					{
+						"map": "gnarled_root_dungeon",
+						"x": 728,
+						"y": 792,
+						"shape": "concave_kite",
+						"orientation": "west"
+					}
+				]
+			},
+			{
 				"name": "Chest in Left Stalfos Room",
 				"sections": [
 					{"access_rules": ["^$CanReach|GnarledLeftStalfosChest"]}
@@ -92,6 +112,25 @@
 						"map": "gnarled_root_dungeon",
 						"x": 1160,
 						"y": 392
+					}
+				]
+			},
+			{
+				"name": "Miniboss Keydoor Unlock",
+				"visibility_rules": ["key_type_unlock"],
+				"sections": [
+					{
+						"hosted_item": "D1KeyMiniboss",
+						"access_rules": ["{^$CanReach|GnarledFoyer}"],
+						"inspectable_sequence_break": true
+					}
+				],
+				"map_locations": [
+					{
+						"map": "gnarled_root_dungeon",
+						"x": 840,
+						"y": 184,
+						"shape": "concave_kite"
 					}
 				]
 			},

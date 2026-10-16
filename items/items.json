@@ -803,6 +803,234 @@
 		"max_quantity": 7
 	},
 	{
+		"name": "D0 Keydoor Unlock",
+		"type": "toggle",
+		"img": "images/items/key.png",
+		"codes": "D0KeyDoor, progitem"
+	},
+	{
+		"name": "D1 Keydoor Left of Entrance Unlock",
+		"type": "toggle",
+		"img": "images/items/key.png",
+		"codes": "D1KeyEntrance, progitem"
+	},
+	{
+		"name": "D1 Miniboss Keydoor Unlock",
+		"type": "toggle",
+		"img": "images/items/key.png",
+		"codes": "D1KeyMiniboss, progitem"
+	},
+	{
+		"name": "D2 Keydoor to Hardhats Unlock",
+		"type": "toggle",
+		"img": "images/items/key.png",
+		"codes": "D2KeyHardhats, progitem"
+	},
+	{
+		"name": "D2 Miniboss Keydoor Unlock",
+		"type": "toggle",
+		"img": "images/items/key.png",
+		"codes": "D2KeyMiniboss, progitem"
+	},
+	{
+		"name": "D2 Spinner Keyblock Unlock",
+		"type": "toggle",
+		"img": "images/items/key.png",
+		"codes": "D2KeySpinner, progitem"
+	},
+	{
+		"name": "D3 Keydoor to Mimics Unlock",
+		"type": "toggle",
+		"img": "images/items/key.png",
+		"codes": "D3KeyMimics, progitem"
+	},
+	{
+		"name": "D3 Miniboss Keydoor Unlock",
+		"type": "toggle",
+		"img": "images/items/key.png",
+		"codes": "D3KeyMiniboss, progitem"
+	},
+	{
+		"name": "D4 Entrance Keydoor Unlock",
+		"type": "toggle",
+		"img": "images/items/key.png",
+		"codes": "D4KeyEntrance, progitem"
+	},
+	{
+		"name": "D4 Minecart Keyblock Unlock",
+		"type": "toggle",
+		"img": "images/items/key.png",
+		"codes": "D4KeyMinecartBlock, progitem"
+	},
+	{
+		"name": "D4 Crumbling Floor Keydoor Unlock",
+		"type": "toggle",
+		"img": "images/items/key.png",
+		"codes": "D4KeyCrumbleFloor, progitem"
+	},
+	{
+		"name": "D4 Pool Keyblock Unlock",
+		"type": "toggle",
+		"img": "images/items/key.png",
+		"codes": "D4KeyPoolBlock, progitem"
+	},
+	{
+		"name": "D4 Boss Keyblock Unlock",
+		"type": "toggle",
+		"img": "images/items/key.png",
+		"codes": "D4KeyBossBlock, progitem"
+	},
+	{
+		"name": "D5 Magnet Gloves Keydoor Unlock",
+		"type": "toggle",
+		"img": "images/items/key.png",
+		"codes": "D5KeyGlovesDoor, progitem"
+	},
+	{
+		"name": "D5 Miniboss Keydoor Unlock",
+		"type": "toggle",
+		"img": "images/items/key.png",
+		"codes": "D5KeyMiniboss, progitem"
+	},
+	{
+		"name": "D5 Wall of Flames Keydoor Unlock",
+		"type": "toggle",
+		"img": "images/items/key.png",
+		"codes": "D5KeyFireWall, progitem"
+	},
+	{
+		"name": "D5 Basement Keydoor Unlock",
+		"type": "toggle",
+		"img": "images/items/key.png",
+		"codes": "D5KeyBasement, progitem"
+	},
+	{
+		"name": "D5 Boss Keyblock Unlock",
+		"type": "toggle",
+		"img": "images/items/key.png",
+		"codes": "D5KeyBossBlock, progitem"
+	},
+	{
+		"name": "D6 Entrance Keyblock Unlock",
+		"type": "toggle",
+		"img": "images/items/key.png",
+		"codes": "D6KeyEntranceBlock, progitem"
+	},
+	{
+		"name": "D6 Right Path Keydoor Unlock",
+		"type": "toggle",
+		"img": "images/items/key.png",
+		"codes": "D6KeyRightPath, progitem"
+	},
+	{
+		"name": "D6 Miniboss Keydoor Unlock",
+		"type": "toggle",
+		"img": "images/items/key.png",
+		"codes": "D6KeyMiniboss, progitem"
+	},
+	{
+		"name": "D7 Entrance Keydoor Unlock",
+		"type": "toggle",
+		"img": "images/items/key.png",
+		"codes": "D7KeyEntrance, progitem"
+	},
+	{
+		"name": "D7 Keydoor to Enclosed Trampoline Unlock",
+		"type": "toggle",
+		"img": "images/items/key.png",
+		"codes": "D7KeyTrampoline, progitem"
+	},
+	{
+		"name": "D7 Margret's Keydoor Unlock",
+		"type": "toggle",
+		"img": "images/items/key.png",
+		"codes": "D7KeyPoe2, progitem"
+	},
+	{
+		"name": "D7 Flying Tile Keyblock Unlock",
+		"type": "toggle",
+		"img": "images/items/key.png",
+		"codes": "D7KeyFlyingTile, progitem"
+	},
+	{
+		"name": "D7 Shining Blue Puzzle Keydoor Unlock",
+		"type": "toggle",
+		"img": "images/items/key.png",
+		"codes": "D7KeyBluePuzzle, progitem"
+	},
+	{
+		"name": "D8 Entrance Keyblock Unlock",
+		"type": "toggle",
+		"img": "images/items/key.png",
+		"codes": "D8KeyEntranceBlock, progitem"
+	},
+	{
+		"name": "D8 Spinner Keydoor Unlock",
+		"type": "toggle",
+		"img": "images/items/key.png",
+		"codes": "D8KeySpinner, progitem"
+	},
+	{
+		"name": "D8 Miniboss Keydoor Unlock",
+		"type": "toggle",
+		"img": "images/items/key.png",
+		"codes": "D8KeyMiniboss, progitem"
+	},
+	{
+		"name": "D8 Ice Crystals Keydoor Unlock",
+		"type": "toggle",
+		"img": "images/items/key.png",
+		"codes": "D8KeyIceCrystals, progitem"
+	},
+	{
+		"name": "D8 Lava Hole Keyblock Unlock",
+		"type": "toggle",
+		"img": "images/items/key.png",
+		"codes": "D8KeyLavaHole, progitem"
+	},
+	{
+		"name": "D8 Beamos Keydoor Unlock",
+		"type": "toggle",
+		"img": "images/items/key.png",
+		"codes": "D8KeyBeamos, progitem"
+	},
+	{
+		"name": "D8 Boss Keyblock Unlock",
+		"type": "toggle",
+		"img": "images/items/key.png",
+		"codes": "D8KeyBossBlock, progitem"
+	},
+	{
+		"name": "LC Floor 2 Keydoor Unlock",
+		"type": "toggle",
+		"img": "images/items/key.png",
+		"codes": "LCKeyF2Door, progitem"
+	},
+	{
+		"name": "LC Floor 3 Keyblock Unlock",
+		"type": "toggle",
+		"img": "images/items/key.png",
+		"codes": "LCKeyF3Block, progitem"
+	},
+	{
+		"name": "LC Floor 3 Keydoor Unlock",
+		"type": "toggle",
+		"img": "images/items/key.png",
+		"codes": "LCKeyF3Door, progitem"
+	},
+	{
+		"name": "LC Boomerang Maze Keydoor Unlock",
+		"type": "toggle",
+		"img": "images/items/key.png",
+		"codes": "LCKeyBoomerangMaze, progitem"
+	},
+	{
+		"name": "LC Final Challenge Keydoor Unlock",
+		"type": "toggle",
+		"img": "images/items/key.png",
+		"codes": "LCKeyFinalChallenge, progitem"
+	},
+	{
 		"name": "Punch Rings",
 		"type": "progressive",
 		"stages": [

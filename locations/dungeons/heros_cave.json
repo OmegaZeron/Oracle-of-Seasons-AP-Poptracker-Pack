@@ -10,7 +10,7 @@
 				"visibility_rules": ["shuffledungeonon, d0_alt_entrance_vanilla"],
 				"chest_unopened_img": "images/labels/dungeon_eye.png",
 				"chest_opened_img": "images/labels/dungeon_eye_disabled.png",
-				"sections": [{"access_rules": ["{^$CanReach|HerosCaveFoyer}"]}],
+				"sections": [{"access_rules": ["{^$CanReach|HerosCaveFoyer}"], "inspectable_sequence_break": true}],
 				"map_locations": [
 					{
 						"map": "heros_cave",
@@ -43,6 +43,26 @@
 						"map": "heros_cave",
 						"x": 135,
 						"y": 75
+					}
+				]
+			},
+			{
+				"name": "Keydoor Unlock",
+				"visibility_rules": ["key_type_unlock"],
+				"sections": [
+					{
+						"hosted_item": "D0KeyDoor",
+						"access_rules": ["{^$CanReach|HerosCaveFoyer}"],
+						"inspectable_sequence_break": true
+					}
+				],
+				"map_locations": [
+					{
+						"map": "heros_cave",
+						"x": 472,
+						"y": 440,
+						"shape": "concave_kite",
+						"orientation": "east"
 					}
 				]
 			},
@@ -89,6 +109,7 @@
 				"sections": [
 					{
 						"access_rules": ["{^$CanReach|LinkedCaveFoyer}"],
+						"inspectable_sequence_break": true,
 						"visibility_rules": [
 							"linked_cave_desert, lc_alt_entrance_vanilla",
 							"linked_cave_hero, d0_alt_entrance_vanilla"
@@ -151,6 +172,25 @@
 				]
 			},
 			{
+				"name": "Floor 2 Keydoor Unlock",
+				"visibility_rules": ["key_type_unlock"],
+				"sections": [
+					{
+						"hosted_item": "LCKeyF2Door",
+						"access_rules": ["{^$CanReach|LinkedCaveF2Keydrop}"],
+						"inspectable_sequence_break": true
+					}
+				],
+				"map_locations": [
+					{
+						"map": "linked_cave",
+						"x": 608,
+						"y": 904,
+						"shape": "concave_kite"
+					}
+				]
+			},
+			{
 				"name": "Second Reward",
 				"sections": [
 					{
@@ -171,7 +211,7 @@
 				"sections": [
 					{
 						"name": "3F",
-						"access_rules": ["^$CanReach|LinkedCaveF3TorchKeyDrop"]
+						"access_rules": ["^$CanReach|LinkedCaveF3TorchChest"]
 					}
 				],
 				"map_locations": [
@@ -179,6 +219,26 @@
 						"map": "linked_cave",
 						"x": 279,
 						"y": 464
+					}
+				]
+			},
+			{
+				"name": "Floor 3 Keyblock Unlock",
+				"visibility_rules": ["key_type_unlock"],
+				"sections": [
+					{
+						"hosted_item": "LCKeyF3Block",
+						"access_rules": ["{^$CanReach|LinkedCaveF3WaterTorchRoom}"],
+						"inspectable_sequence_break": true
+					}
+				],
+				"map_locations": [
+					{
+						"map": "linked_cave",
+						"x": 440,
+						"y": 668,
+						"shape": "concave_kite",
+						"orientation": "south"
 					}
 				]
 			},
@@ -195,6 +255,25 @@
 						"map": "linked_cave",
 						"x": 121,
 						"y": 624
+					}
+				]
+			},
+			{
+				"name": "Floor 3 Keydoor Unlock",
+				"visibility_rules": ["key_type_unlock"],
+				"sections": [
+					{
+						"hosted_item": "LCKeyF3Door",
+						"access_rules": ["{^$CanReach|LinkedCaveF3FloodedRoom}"],
+						"inspectable_sequence_break": true
+					}
+				],
+				"map_locations": [
+					{
+						"map": "linked_cave",
+						"x": 120,
+						"y": 544,
+						"shape": "concave_kite"
 					}
 				]
 			},
@@ -235,7 +314,7 @@
 				"sections": [
 					{
 						"name": "5F",
-						"access_rules": ["^$CanReach|LinkedCaveF5Gauntlet"]
+						"access_rules": ["^$CanReach|LinkedCaveF5GauntletReward"]
 					}
 				],
 				"map_locations": [
@@ -247,11 +326,31 @@
 				]
 			},
 			{
+				"name": "Boomerang Maze Keydoor Unlock",
+				"visibility_rules": ["key_type_unlock"],
+				"sections": [
+					{
+						"hosted_item": "LCKeyBoomerangMaze",
+						"access_rules": ["{^$CanReach|LinkedCaveF5GauntletRoom}"],
+						"inspectable_sequence_break": true
+					}
+				],
+				"map_locations": [
+					{
+						"map": "linked_cave",
+						"x": 720,
+						"y": 88,
+						"shape": "concave_kite",
+						"orientation": "east"
+					}
+				]
+			},
+			{
 				"name": "Boomerang Maze",
 				"sections": [
 					{
 						"name": "5F",
-						"access_rules": ["^$CanReach|LinkedCaveF5BoomerangMaze"]
+						"access_rules": ["^$CanReach|LinkedCaveF5BoomerangMazeReward"]
 					}
 				],
 				"map_locations": [
@@ -259,6 +358,26 @@
 						"map": "linked_cave",
 						"x": 832,
 						"y": 136
+					}
+				]
+			},
+			{
+				"name": "Final Challenge Keydoor Unlock",
+				"visibility_rules": ["key_type_unlock"],
+				"sections": [
+					{
+						"hosted_item": "LCKeyFinalChallenge",
+						"access_rules": ["{^$CanReach|LinkedCaveF5BoomerangMazeRoom}"],
+						"inspectable_sequence_break": true
+					}
+				],
+				"map_locations": [
+					{
+						"map": "linked_cave",
+						"x": 848,
+						"y": 168,
+						"shape": "concave_kite",
+						"orientation": "south"
 					}
 				]
 			},

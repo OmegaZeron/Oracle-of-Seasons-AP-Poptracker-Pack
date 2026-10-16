@@ -1,9 +1,9 @@
 EastWesternCoast:connect_one_way_entrance(Maple, CanEncounterMaple)
 Maple:connect_one_way(MapleTrade, CanMapleTrade)
-Maple:connect_one_way(Maple1, function() return CanAnnoyMaple(15) end)
-Maple:connect_one_way(Maple2, function() return CanAnnoyMaple(30) end)
-Maple:connect_one_way(Maple3, function() return CanAnnoyMaple(45) end)
-Maple:connect_one_way(Maple4, function() return CanAnnoyMaple(60) end)
+-- Maple:connect_one_way_entrance(Maple1, function() return CanAnnoyMaple(15) end)
+-- Maple1:connect_one_way_entrance(Maple2, function() return CanAnnoyMaple(30) end)
+-- Maple2:connect_one_way_entrance(Maple3, function() return CanAnnoyMaple(45) end)
+-- Maple3:connect_one_way(Maple4, function() return CanAnnoyMaple(60) end)
 EastWesternCoast:connect_one_way(WesternCoastFindSeason)
 EastWesternCoast:connect_one_way(BlackBeast, function()
 	return All(

@@ -31,6 +31,26 @@
 				]
 			},
 			{
+				"name": "Magnet Gloves Keydoor Unlock",
+				"visibility_rules": ["key_type_unlock"],
+				"sections": [
+					{
+						"hosted_item": "D5KeyGlovesDoor",
+						"access_rules": ["{^$CanReach|UnicornPotPool}"],
+						"inspectable_sequence_break": true
+					}
+				],
+				"map_locations": [
+					{
+						"map": "unicorns_cave",
+						"x": 248,
+						"y": 296,
+						"shape": "concave_kite",
+						"orientation": "west"
+					}
+				]
+			},
+			{
 				"name": "Magnet Gloves Chest",
 				"sections": [
 					{"access_rules": ["^$CanReach|UnicornMagnetGloveChest"]}
@@ -135,6 +155,65 @@
 				]
 			},
 			{
+				"name": "Miniboss Keydoor Unlock",
+				"visibility_rules": ["key_type_unlock"],
+				"sections": [
+					{
+						"hosted_item": "D5KeyMiniboss",
+						"access_rules": ["{^$CanReach|UnicornPreSyger}"],
+						"inspectable_sequence_break": true
+					}
+				],
+				"map_locations": [
+					{
+						"map": "unicorns_cave",
+						"x": 1192,
+						"y": 968,
+						"shape": "concave_kite",
+						"orientation": "east"
+					}
+				]
+			},
+			{
+				"name": "Wall of Flames Keydoor Unlock",
+				"visibility_rules": ["key_type_unlock"],
+				"sections": [
+					{
+						"hosted_item": "D5KeyFireWall",
+						"access_rules": ["{^$CanReach|UnicornPostSyger}"],
+						"inspectable_sequence_break": true
+					}
+				],
+				"map_locations": [
+					{
+						"map": "unicorns_cave",
+						"x": 1208,
+						"y": 760,
+						"shape": "concave_kite",
+						"orientation": "west"
+					}
+				]
+			},
+			{
+				"name": "Basement Keydoor Unlock",
+				"visibility_rules": ["key_type_unlock"],
+				"sections": [
+					{
+						"hosted_item": "D5KeyBasement",
+						"access_rules": ["{^$CanReach|UnicornPostFirewall}"],
+						"inspectable_sequence_break": true
+					}
+				],
+				"map_locations": [
+					{
+						"map": "unicorns_cave",
+						"x": 1112,
+						"y": 536,
+						"shape": "concave_kite"
+					}
+				]
+			},
+			{
 				"name": "Treadmills Basement Item",
 				"sections": [
 					{"access_rules": ["^$CanReach|UnicornTreadmillBasement"]}
@@ -149,6 +228,25 @@
 						"map": "unicorns_cave",
 						"x": 1176,
 						"y": 503
+					}
+				]
+			},
+			{
+				"name": "Boss Keyblock Unlock",
+				"visibility_rules": ["key_type_unlock"],
+				"sections": [
+					{
+						"hosted_item": "D5KeyBossBlock",
+						"access_rules": ["{^$CanReach|UnicornPostSyger}"],
+						"inspectable_sequence_break": true
+					}
+				],
+				"map_locations": [
+					{
+						"map": "unicorns_cave",
+						"x": 1384,
+						"y": 776,
+						"shape": "concave_kite"
 					}
 				]
 			},

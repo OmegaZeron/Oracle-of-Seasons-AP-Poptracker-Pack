@@ -24,7 +24,7 @@ DancingAntiFairyMaze:connect_one_way(DancingDarkRoomChest, function() return Has
 -- 1 key
 DancingFoyer:connect_one_way_entrance(DancingSpikeTrap, function()
 	return All(
-		HasKeys(D4SmallKey, D4MasterKey, 1),
+		HasKeys(D4SmallKey, D4MasterKey, D4KeyEntrance, 1),
 		Any(
 			Cape,
 			All(
@@ -99,7 +99,7 @@ end)
 -- 2 keys
 DancingPostWaterRollers:connect_one_way_entrance(DancingMinecartTorches, function()
 	return All(
-		HasKeys(D4SmallKey, D4MasterKey, 2),
+		HasKeys(D4SmallKey, D4MasterKey, D4KeyMinecartBlock, 2),
 		Any(
 			CanKillStalfos,
 			All(
@@ -137,33 +137,33 @@ Agunima:connect_one_way_entrance(DancingBranchingMinecart, function()
 	)
 end)
 -- 5 keys
-DancingBranchingMinecart:connect_one_way(DancingPitRace, function() return HasKeys(D4SmallKey, D4MasterKey, 5, 3) end)
-DancingBranchingMinecart:connect_one_way(DancingEyeDive, function()
+DancingBranchingMinecart:connect_one_way(DancingPitRace, function() return HasKeys(D4SmallKey, D4MasterKey, D4KeyCrumbleFloor, 5, 3) end)
+DancingBranchingMinecart:connect_one_way_entrance(DancingMinecartToPits, function()
+	return Any(
+		CanShootSeeds,
+		MagicBoomerang
+	)
+end)
+DancingMinecartToPits:connect_one_way(DancingEyeDive, function()
 	return All(
-		HasKeys(D4SmallKey, D4MasterKey, 5, 3),
-		Any(
-			CanShootSeeds,
-			MagicBoomerang
-		),
+		HasKeys(D4SmallKey, D4MasterKey, D4KeyPoolBlock, 5, 3),
 		Jump2,
 		Flippers
 	)
 end)
-DancingBranchingMinecart:connect_one_way_entrance(DancingTorchPit, function()
-	return All(
-		HasKeys(D4SmallKey, D4MasterKey, 5, 3),
-		Any(
-			Boomerang,
-			CanShootSeeds,
-			SwitchHook,
-			All(
-				-- jump slash the lever
-				Feather,
-				HardLogic
-			)
+DancingBranchingMinecart:connect_one_way_entrance(DancingWizzrobes, function()
+	return Any(
+		Boomerang,
+		CanShootSeeds,
+		SwitchHook,
+		All(
+			-- jump slash the lever
+			Feather,
+			HardLogic
 		)
 	)
 end)
+DancingWizzrobes:connect_one_way_entrance(DancingTorchPit, function() return HasKeys(D4SmallKey, D4MasterKey, D4KeyBossBlock, 5, 3) end)
 DancingTorchPit:connect_one_way_entrance(DancingBoss, function()
 	return All(
 		HasD4BossKey,

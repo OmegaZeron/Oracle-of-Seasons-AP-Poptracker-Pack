@@ -754,7 +754,7 @@
 				"item_margin": "0, -18",
 				"rows": [
 					["logic_label", "logic_difficulty", "goal_label", "goal", "onox_essences_label", "required_essences", "start_location_label", "start_position"],
-					["dungeon_shuffle_label", "shuffle_dungeons", "boss_shuffle_label", "shuffle_bosses", "portal_shuffle_label", "shuffle_portals", "master_keys_label", "master_keys"],
+					["dungeon_shuffle_label", "shuffle_dungeons", "boss_shuffle_label", "shuffle_bosses", "portal_shuffle_label", "shuffle_portals", "key_type_label", "key_type"],
 					["d0_alt_entrance_label", "remove_d0_alt_entrance", "d2_alt_entrance_label", "remove_d2_alt_entrance", "linked_cave_label", "linked_cave", "lc_alt_entrance_label", "remove_lc_alt_entrance"],
 					["default_seasons_label", "default_seasons", "horon_village_season_label", "horon_village_season_shuffle", "lost_woods_label", "randomize_lost_woods_main_sequence", "pedestal_label", "randomize_lost_woods_item_sequence"],
 					["secret_locations_label", "secret_locations", "advance_shop_label", "advance_shop", "shuffle_old_men_label", "shuffle_old_men", "shuffle_scrub_label", "shuffle_business_scrubs"],

@@ -27,6 +27,10 @@ Shapes:
 - Square - Checkable location
 - Diamond - Information, or progress towards a check
 - Trapezoid - Randomized entrance
+- Concave Kite (arrow) - Locked door
+  - Used when selected key type is Unlock
+  - Marking off the key inside will collect it and allow progress
+  - Points to expected direction you will be walking through
 
 Make sure to reach the Diamonds and Trapezoids and mark down the information they give you, these affect logic!
 
@@ -36,11 +40,12 @@ Click the AP button in the top left of the window. Enter your server:port (most 
 ## Archipelago Compatibility Chart
 | apworld Version  |   Pack Version   |
 |:----------------:|:----------------:|
-|      24.0.0+     |      9.0.0+      |
+|      25.0.1+     |     10.0.0+      |
+|  24.0.0 - 24.2.4 |   9.0.0 - 9.0.1  |
 | 20.0.2 - 20.1.13 |  7.1.0 - 7.2.0   |
 | 17.0.0 - 17.0.5  |  6.0.5 - 6.0.10  |
-| 13.6.0 - 13.7.4  |     5.0.0        |
-|   12.0 - 12.4    |     4.0.0        |
+| 13.6.0 - 13.7.4  |      5.0.0       |
+|   12.0 - 12.4    |      4.0.0       |
 |   10.0 - 10.2    |  2.3.0 - 3.0.1   |
 
 ## Special Thanks

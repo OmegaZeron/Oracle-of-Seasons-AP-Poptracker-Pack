@@ -75,6 +75,7 @@
 				"sections": [
 					{
 						"name": "Sunken City: Vase Trade",
+						"visibility_rules": ["trade_sequence_shuffled"],
 						"access_rules": ["^$CanReach|SunkenVaseTrade"]
 					}
 				],
@@ -88,6 +89,7 @@
 			},
 			{
 				"name": "Syrup's Hut",
+				"visibility_rules": ["trade_sequence_shuffled"],
 				"sections": [
 					{
 						"name": "Sunken City: Syrup Trade",

@@ -72,14 +72,17 @@
 					},
 					{
 						"name": "Item Inside Maku Tree (3+ Essences)",
+						"visibility_rules": ["freestanding_shuffled"],
 						"access_rules": ["^$CanReach|MakuTreeReward1"]
 					},
 					{
 						"name": "Item Inside Maku Tree (5+ Essences)",
+						"visibility_rules": ["freestanding_shuffled"],
 						"access_rules": ["^$CanReach|MakuTreeReward2"]
 					},
 					{
 						"name": "Item Inside Maku Tree (7+ Essences)",
+						"visibility_rules": ["freestanding_shuffled"],
 						"access_rules": ["^$CanReach|MakuTreeReward3"]
 					}
 				],
@@ -100,6 +103,7 @@
 					},
 					{
 						"name": "Item Behind Cracked Wall in Mayor's House",
+						"visibility_rules": ["freestanding_shuffled"],
 						"access_rules": ["^$CanReach|MayorBombWall"]
 					},
 					{
@@ -254,6 +258,7 @@
 				"sections": [
 					{
 						"name": "Horon Village: Item Behind Small Tree",
+						"visibility_rules": ["freestanding_shuffled"],
 						"access_rules": ["^$CanReach|HoronTreeHP"]
 					}
 				],
@@ -267,7 +272,12 @@
 			},
 			{
 				"name": "Dr. Left Reward",
-				"sections": [{"access_rules": ["^$CanReach|DrLeftReward"]}],
+				"sections": [
+					{
+						"visibility_rules": ["trade_sequence_shuffled"],
+						"access_rules": ["^$CanReach|DrLeftReward"]
+					}
+				],
 				"map_locations": [
 					{
 						"map": "holodrum",
@@ -372,6 +382,7 @@
 				"sections": [
 					{
 						"name": "Horon Village: Tick Tock Trade",
+						"visibility_rules": ["trade_sequence_shuffled"],
 						"access_rules": ["^$CanReach|ClockShopTrade"]
 					}
 				],

@@ -178,6 +178,7 @@
 				"sections": [
 					{
 						"name": "Lon Lon Egg Trade",
+						"visibility_rules": ["trade_sequence_shuffled"],
 						"access_rules": ["^$CanReach|MapleTrade"]
 					}
 					// {
@@ -318,7 +319,7 @@
 			},
 			{
 				"name": "Graveyard Mushroom Item",
-				"sections": [{"access_rules": ["^$CanReach|GraveyardHP"]}],
+				"sections": [{"visibility_rules": ["freestanding_shuffled"], "access_rules": ["^$CanReach|GraveyardHP"]}],
 				"map_locations": [
 					{
 						"map": "holodrum",

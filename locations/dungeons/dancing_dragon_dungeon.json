@@ -69,6 +69,26 @@
 				]
 			},
 			{
+				"name": "Entrance Keydoor Unlock",
+				"visibility_rules": ["key_type_unlock"],
+				"sections": [
+					{
+						"hosted_item": "D4KeyEntrance",
+						"access_rules": ["flippers, {^$CanReach|DancingFoyer}"],
+						"inspectable_sequence_break": true
+					}
+				],
+				"map_locations": [
+					{
+						"map": "dancing_dragon_dungeon1",
+						"x": 475,
+						"y": 645,
+						"shape": "concave_kite",
+						"orientation": "east"
+					}
+				]
+			},
+			{
 				"name": "Chest in Water Donut Room",
 				"sections": [
 					{
@@ -97,6 +117,26 @@
 						"map": "dancing_dragon_dungeon1",
 						"x": 389,
 						"y": 293
+					}
+				]
+			},
+			{
+				"name": "Minecart Keyblock Unlock",
+				"visibility_rules": ["key_type_unlock"],
+				"sections": [
+					{
+						"hosted_item": "D4KeyMinecartBlock",
+						"access_rules": ["{^$CanReach|DancingPostWaterRollers}"],
+						"inspectable_sequence_break": true
+					}
+				],
+				"map_locations": [
+					{
+						"map": "dancing_dragon_dungeon1",
+						"x": 773,
+						"y": 314,
+						"shape": "concave_kite",
+						"orientation": "east"
 					}
 				]
 			},
@@ -182,6 +222,26 @@
 				]
 			},
 			{
+				"name": "Crumbling Floor Keydoor Unlock",
+				"visibility_rules": ["key_type_unlock"],
+				"sections": [
+					{
+						"hosted_item": "D4KeyCrumbleFloor",
+						"access_rules": ["{^$CanReach|DancingBranchingMinecart}"],
+						"inspectable_sequence_break": true
+					}
+				],
+				"map_locations": [
+					{
+						"map": "dancing_dragon_dungeon2",
+						"x": 485,
+						"y": 652,
+						"shape": "concave_kite",
+						"orientation": "west"
+					}
+				]
+			},
+			{
 				"name": "Crumbling Room Chest",
 				"sections": [
 					{
@@ -198,6 +258,25 @@
 				]
 			},
 			{
+				"name": "Pool Keyblock Unlock",
+				"visibility_rules": ["key_type_unlock"],
+				"sections": [
+					{
+						"hosted_item": "D4KeyPoolBlock",
+						"access_rules": ["{^$CanReach|DancingMinecartToPits}"],
+						"inspectable_sequence_break": true
+					}
+				],
+				"map_locations": [
+					{
+						"map": "dancing_dragon_dungeon2",
+						"x": 677,
+						"y": 375,
+						"shape": "concave_kite"
+					}
+				]
+			},
+			{
 				"name": "Eye Diving Spot Item",
 				"sections": [
 					{
@@ -210,6 +289,26 @@
 						"map": "dancing_dragon_dungeon2",
 						"x": 730,
 						"y": 290
+					}
+				]
+			},
+			{
+				"name": "Boss Keyblock Unlock",
+				"visibility_rules": ["key_type_unlock"],
+				"sections": [
+					{
+						"hosted_item": "D4KeyBossBlock",
+						"access_rules": ["{^$CanReach|DancingWizzrobes}"],
+						"inspectable_sequence_break": true
+					}
+				],
+				"map_locations": [
+					{
+						"map": "dancing_dragon_dungeon2",
+						"x": 218,
+						"y": 257,
+						"shape": "concave_kite",
+						"orientation": "west"
 					}
 				]
 			},

@@ -5,7 +5,7 @@ GnarledFloormasters:connect_one_way(GnarledFloormasterChest)
 GnarledFloormasters:connect_one_way_entrance(GnarledBoss, HasD1BossKey)
 GnarledBoss:connect_one_way(GnarledEssence, function() return BossLogic[1](1) end)
 -- 1 key
-GnarledFoyer:connect_one_way_entrance(GnarledLeftStalfos, function() return HasKeys(D1SmallKey, D1MasterKey, 1) end)
+GnarledFoyer:connect_one_way_entrance(GnarledLeftStalfos, function() return HasKeys(D1SmallKey, D1MasterKey, D1KeyEntrance, 1) end)
 GnarledLeftStalfos:connect_one_way(GnarledLeftStalfosChest, CanKillStalfos)
 GnarledLeftStalfos:connect_one_way_entrance(GnarledZolRoom, CanKillStalfos)
 GnarledZolRoom:connect_one_way_entrance(GnarledGoriyaRoom, CanLightTorches)
@@ -33,7 +33,7 @@ GnarledMinecartChest:connect_one_way(GnarledSpinningBladeChest)
 -- 2 keys
 GnarledMinecartChest:connect_one_way_entrance(GoriyaBros, function()
 	return All(
-		HasKeys(D1SmallKey, D1MasterKey, 2),
+		HasKeys(D1SmallKey, D1MasterKey, D1KeyMiniboss, 2),
 		CanBombWall
 	)
 end)

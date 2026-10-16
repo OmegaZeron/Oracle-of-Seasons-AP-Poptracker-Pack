@@ -34,6 +34,7 @@
 				"sections": [
 					{
 						"name": "North Horon: Yelling Old Man Trade",
+						"visibility_rules": ["trade_sequence_shuffled"],
 						"access_rules": ["^$CanReach|CatInTree"]
 					}
 				],
@@ -91,6 +92,7 @@
 				"sections": [
 					{
 						"name": "North Horon: Malon Trade",
+						"visibility_rules": ["trade_sequence_shuffled"],
 						"access_rules": ["^$CanReach|MalonTrade"]
 					}
 				],

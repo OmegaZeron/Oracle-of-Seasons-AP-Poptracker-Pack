@@ -53,6 +53,26 @@
 				]
 			},
 			{
+				"name": "Entrance Keyblock Unlock",
+				"visibility_rules": ["key_type_unlock"],
+				"sections": [
+					{
+						"hosted_item": "D8KeyEntranceBlock",
+						"access_rules": ["{^$CanReach|MazeHardhats}"],
+						"inspectable_sequence_break": true
+					}
+				],
+				"map_locations": [
+					{
+						"map": "sword_and_shield_maze1",
+						"x": 421,
+						"y": 37,
+						"shape": "concave_kite",
+						"orientation": "east"
+					}
+				]
+			},
+			{
 				"name": "U-shaped Spiky Freezer Chest",
 				"sections": [
 					{
@@ -65,6 +85,26 @@
 						"map": "sword_and_shield_maze1",
 						"x": 282,
 						"y": 624
+					}
+				]
+			},
+			{
+				"name": "Spinner Keydoor Unlock",
+				"visibility_rules": ["key_type_unlock"],
+				"sections": [
+					{
+						"hosted_item": "D8KeySpinner",
+						"access_rules": ["{^$CanReach|MazeBigBladeTrap}"],
+						"inspectable_sequence_break": true
+					}
+				],
+				"map_locations": [
+					{
+						"map": "sword_and_shield_maze2",
+						"x": 314,
+						"y": 656,
+						"shape": "concave_kite",
+						"orientation": "east"
 					}
 				]
 			},
@@ -133,6 +173,26 @@
 				]
 			},
 			{
+				"name": "Miniboss Keydoor Unlock",
+				"visibility_rules": ["key_type_unlock"],
+				"sections": [
+					{
+						"hosted_item": "D8KeyMiniboss",
+						"access_rules": ["{^$CanReach|MazeThreeEyeOwl}"],
+						"inspectable_sequence_break": true
+					}
+				],
+				"map_locations": [
+					{
+						"map": "sword_and_shield_maze2",
+						"x": 794,
+						"y": 677,
+						"shape": "concave_kite",
+						"orientation": "east"
+					}
+				]
+			},
+			{
 				"name": "Wild Mystery Seeds",
 				"sections": [
 					{
@@ -177,6 +237,26 @@
 						"map": "sword_and_shield_maze1",
 						"x": 837,
 						"y": 281
+					}
+				]
+			},
+			{
+				"name": "Ice Crystals Keydoor Unlock",
+				"visibility_rules": ["key_type_unlock"],
+				"sections": [
+					{
+						"hosted_item": "D8KeyIceCrystals",
+						"access_rules": ["{^$CanReach|MazeIcePuzzle}"],
+						"inspectable_sequence_break": true
+					}
+				],
+				"map_locations": [
+					{
+						"map": "sword_and_shield_maze1",
+						"x": 805,
+						"y": 399,
+						"shape": "concave_kite",
+						"orientation": "west"
 					}
 				]
 			},
@@ -241,6 +321,65 @@
 						"map": "sword_and_shield_maze2",
 						"x": 378,
 						"y": 548
+					}
+				]
+			},
+			{
+				"name": "Lava Hole Keyblock Unlock",
+				"visibility_rules": ["key_type_unlock"],
+				"sections": [
+					{
+						"hosted_item": "D8KeyLavaHole",
+						"access_rules": ["{^$CanReach|MazeNevermeltIce}"],
+						"inspectable_sequence_break": true
+					}
+				],
+				"map_locations": [
+					{
+						"map": "sword_and_shield_maze1",
+						"x": 368,
+						"y": 282,
+						"shape": "concave_kite"
+					}
+				]
+			},
+			{
+				"name": "Beamos Keydoor Unlock",
+				"visibility_rules": ["key_type_unlock"],
+				"sections": [
+					{
+						"hosted_item": "D8KeyBeamos",
+						"access_rules": ["{^$CanReach|MazeNevermeltIce}"],
+						"inspectable_sequence_break": true
+					}
+				],
+				"map_locations": [
+					{
+						"map": "sword_and_shield_maze1",
+						"x": 378,
+						"y": 346,
+						"shape": "concave_kite",
+						"orientation": "south"
+					}
+				]
+			},
+			{
+				"name": "Boss Keyblock Unlock",
+				"visibility_rules": ["key_type_unlock"],
+				"sections": [
+					{
+						"hosted_item": "D8KeyBossBlock",
+						"access_rules": ["{^$CanReach|MazeMedusaDoorstep}"],
+						"inspectable_sequence_break": true
+					}
+				],
+				"map_locations": [
+					{
+						"map": "sword_and_shield_maze2",
+						"x": 421,
+						"y": 261,
+						"shape": "concave_kite",
+						"orientation": "east"
 					}
 				]
 			},

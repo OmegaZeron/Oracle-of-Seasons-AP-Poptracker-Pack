@@ -123,10 +123,12 @@
 				"sections": [
 					{
 						"name": "Guru-Guru Trade",
+						"visibility_rules": ["trade_sequence_shuffled"],
 						"access_rules": ["^$CanReach|WindmillTrade"]
 					},
 					{
 						"name": "Winter Side Entrance",
+						"visibility_rules": ["freestanding_shuffled"],
 						"access_rules": ["^$CanReach|WindmillHP"]
 					}
 				],
@@ -298,7 +300,7 @@
 			},
 			{
 				"name": "Woods of Winter Heart Piece",
-				"sections": [{"access_rules": ["^$CanReach|SuburbsHP"]}],
+				"sections": [{"visibility_rules": ["freestanding_shuffled"], "access_rules": ["^$CanReach|SuburbsHP"]}],
 				"map_locations": [
 					{
 						"map": "holodrum",

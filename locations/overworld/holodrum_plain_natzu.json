@@ -94,6 +94,7 @@
 				"sections": [
 					{
 						"name": "Holodrum Plain: Underwater Item Below Natzu Bridge",
+						"visibility_rules": ["freestanding_shuffled"],
 						"access_rules": ["^$CanReach|UnderNatzuBridge"]
 					}
 				],
@@ -142,6 +143,7 @@
 				"sections": [
 					{
 						"name": "Holodrum Plain: Mrs. Ruul Trade",
+						"visibility_rules": ["trade_sequence_shuffled"],
 						"access_rules": ["^$CanReach|MrsRuul"]
 					}
 				],

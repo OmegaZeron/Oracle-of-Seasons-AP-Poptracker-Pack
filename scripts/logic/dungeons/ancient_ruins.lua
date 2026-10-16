@@ -65,7 +65,11 @@ AncientIndyJones:connect_one_way_entrance(AncientVireDoorstep, CanKillStalfos)
 -- 2 keys
 AncientFoyer:connect_one_way_entrance(AncientRopeSpinnerWest, function()
 	return All(
-		HasKeys(D6SmallKey, D6MasterKey, 2, 1),
+		Any(
+			HasKeys(D6SmallKey, D6MasterKey, nil, 2, 1),
+			KeyUnlock(D6KeyEntranceBlock),
+			KeyUnlock(D6KeyRightPath)
+		),
 		Any(
 			MagnetGlove,
 			CaneOfSomaria
@@ -73,7 +77,7 @@ AncientFoyer:connect_one_way_entrance(AncientRopeSpinnerWest, function()
 	)
 end)
 -- 3 keys
-AncientFoyer:connect_one_way_entrance(AncientBeamosPlatforms, function() return HasKeys(D6SmallKey, D6MasterKey, 3, 1) end)
+AncientFoyer:connect_one_way_entrance(AncientBeamosPlatforms, function() return HasKeys(D6SmallKey, D6MasterKey, D6KeyRightPath, 3, 1) end)
 AncientBeamosPlatforms:connect_one_way_entrance(Ancient2FGibdo)
 Ancient2FGibdo:connect_one_way_entrance(AncientTrappedChest, CanBombWall)
 AncientTrappedChest:connect_one_way_entrance(AncientArmosDarknutDrop, function() return Has(Feather) end)
@@ -92,9 +96,9 @@ AncientFoyer:connect_one_way(AncientNorthOfSpinnerChest, function()
 			MediumLogic -- i-frame through the spikes
 		),
 		Any(
-			HasKeys(D6SmallKey, D6MasterKey, 3),
+			HasKeys(D6SmallKey, D6MasterKey, D6KeyEntranceBlock, 3),
 			All(
-				HasKeys(D6SmallKey, D6MasterKey, 2),
+				HasKeys(D6SmallKey, D6MasterKey, nil, 2),
 				Any(
 					All(
 						-- beamos room
@@ -105,18 +109,27 @@ AncientFoyer:connect_one_way(AncientNorthOfSpinnerChest, function()
 				)
 			),
 			All(
-				HasKeys(D6SmallKey, D6MasterKey, 1),
+				HasKeys(D6SmallKey, D6MasterKey, nil, 1),
 				-- beamos room
 				CanBombWall,
 				Feather,
 				CanBeatVire -- for miniboss warp
+			),
+			All(
+				KeyUnlock(D6KeyMiniboss),
+				CanBeatVire
+			),
+			All(
+				KeyUnlock(D6KeyRightPath),
+				Feather,
+				CanBombWall
 			)
 		)
 	)
 end)
 AncientVireDoorstep:connect_one_way_entrance(Vire, function()
 	return All(
-		HasKeys(D6SmallKey, D6MasterKey, 3, 1),
+		HasKeys(D6SmallKey, D6MasterKey, D6KeyMiniboss, 3, 1),
 		CanBeatVire
 	)
 end)

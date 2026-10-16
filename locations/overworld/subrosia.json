@@ -302,6 +302,7 @@
 				"sections": [
 					{
 						"name": "Subrosia: Subrosian Chef Trade",
+						"visibility_rules": ["trade_sequence_shuffled"],
 						"access_rules": ["^$CanReach|SubrosiaChef"]
 					}
 				],
@@ -434,6 +435,7 @@
 				"sections": [
 					{
 						"name": "Subrosia: Item in House Above Strange Brothers Portal",
+						"visibility_rules": ["freestanding_shuffled"],
 						"access_rules": ["^$CanReach|VillagerGasha"]
 					}
 				],
@@ -450,6 +452,7 @@
 				"sections": [
 					{
 					"name": "Subrosia: Item in Basement to Tower of Spring",
+					"visibility_rules": ["freestanding_shuffled"],
 					"access_rules": ["^$CanReach|TempleSpringFairy"]
 					}
 				],

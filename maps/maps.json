@@ -67,14 +67,14 @@
 	},
 	{
 		"name": "dancing_dragon_dungeon1",
-		"location_size": 16,
-		"location_border_thickness": 1,
+		"location_size": 28,
+		"location_border_thickness": 2,
 		"img": "images/maps/dancing_dragon_dungeon_2f.png"
 	},
 	{
 		"name": "dancing_dragon_dungeon2",
-		"location_size": 16,
-		"location_border_thickness": 1,
+		"location_size": 28,
+		"location_border_thickness": 2,
 		"img": "images/maps/dancing_dragon_dungeon_1f.png"
 	},
 	{

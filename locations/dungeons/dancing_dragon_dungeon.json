@@ -162,7 +162,7 @@
 					{
 						"name": "1F",
 						"visibility_rules": ["shufflescrubson"],
-						"access_rules": ["^$CanReach|DancingScrub"]
+						"access_rules": ["shufflescrubson, ^$CanReach|DancingScrub"]
 					}
 				],
 				"map_locations": [

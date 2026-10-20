@@ -159,7 +159,7 @@
 				"sections": [
 					{
 						"visibility_rules": ["shufflescrubson"],
-						"access_rules": ["^$CanReach|SnakeScrub"]
+						"access_rules": ["shufflescrubson, ^$CanReach|SnakeScrub"]
 					}
 				],
 				"map_locations": [

@@ -1,7 +1,7 @@
 ![Oracle of Seasons](./OracleOfSeasons_Header.jpg)
 # The Legend of Zelda: Oracle of Seasons Archipelago PopTracker Pack
 Tracker pack for [PopTracker](https://poptracker.github.io)</br>
-<b>PopTracker v0.33.0 or higher is recommended.</b>
+<b>PopTracker version 0.35.4 or higher is required.</b>
 
 [Archipelago Setup Guide](https://archipelago.gg/tutorial/Archipelago/setup/en)
 
@@ -31,6 +31,7 @@ Shapes:
   - Used when selected key type is Unlock
   - Marking off the key inside will collect it and allow progress
   - Points to expected direction you will be walking through
+  - Requires PopTracker version 0.36.0+
 
 Make sure to reach the Diamonds and Trapezoids and mark down the information they give you, these affect logic!
 
@@ -40,7 +41,8 @@ Click the AP button in the top left of the window. Enter your server:port (most 
 ## Archipelago Compatibility Chart
 | apworld Version  |   Pack Version   |
 |:----------------:|:----------------:|
-|      25.0.1+     |     10.0.0+      |
+|     26.0.0+      |      10.1.0+     |
+|  25.0.1 - 25.0.7 |      10.0.0      |
 |  24.0.0 - 24.2.4 |   9.0.0 - 9.0.1  |
 | 20.0.2 - 20.1.13 |  7.1.0 - 7.2.0   |
 | 17.0.0 - 17.0.5  |  6.0.5 - 6.0.10  |

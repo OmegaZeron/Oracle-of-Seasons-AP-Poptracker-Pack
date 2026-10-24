@@ -307,6 +307,17 @@ function HasEnoughEssencesForGoal()
 	return num >= required
 end
 
+-- count of all progression items collected so far
+-- used as a logic soft-gate so things don't need to be farmed early
+---@param amount integer
+---@return accessibilityLevel
+function HasProgItem(amount)
+	return Any(
+		Tracker:ProviderCountForCode(ProgItem) - 3 >= amount, -- -3 default heart containers
+		AccessibilityLevel.SequenceBreak
+	)
+end
+
 ---@param includeDimitri? boolean true
 function CanHarvestSeeds(includeDimitri)
 	if includeDimitri == nil then includeDimitri = true end
@@ -327,16 +338,20 @@ end
 function CanPlantGasha()
 	-- rules for being able to collect the nut
 	if not CanSwordKill() then
-		return false
+		return AccessibilityLevel.None
 	end
 	-- rules for how many available spots remain
 	local gashasPlanted = GashasPlanted()
 	local gashaSetting = Tracker:FindObjectForCode(GashaSetting) --[[@as JsonItem]]
 	if gashaSetting == nil or gashasPlanted >= gashaSetting.CurrentStage then
-		return false
+		return AccessibilityLevel.None
 	end
 	local ownedGashas = Tracker:ProviderCountForCode(GashaSeeds)
-	return ownedGashas > gashasPlanted
+
+	return All(
+		ownedGashas > gashasPlanted,
+		HasProgItem(gashasPlanted * 5)
+	)
 end
 
 -- similar to CanPlantGasha, but for collection
@@ -1386,34 +1401,38 @@ function HasRupees(count)
 				rupees + bonusRupees + oolRupees >= count,
 				AccessibilityLevel.SequenceBreak
 			)
-		)
+		),
+		HasProgItem(10)
 	)
 end
 
 function CanFarmOreChunks()
-	return Any(
-		Shovel,
-		All(
-			Any(
-				CanReach(SubrosiaMountainEast),
-				Bracelet,
-				SwitchHook
+	return All(
+		Any(
+			Shovel,
+			All(
+				Any(
+					CanReach(SubrosiaMountainEast),
+					Bracelet,
+					SwitchHook
+				),
+				HardLogic
 			),
-			HardLogic
-		),
-		All(
-			Any(
-				HasAnySword,
-				MagicBoomerang
+			All(
+				Any(
+					HasAnySword,
+					MagicBoomerang
+				),
+				MediumLogic
 			),
-			MediumLogic
+			All(
+				-- burn the sign next to the market
+				-- not in logic because it sucks
+				CanBurnTrees,
+				AccessibilityLevel.SequenceBreak
+			)
 		),
-		All(
-			-- burn the sign next to the market
-			-- not in logic because it sucks
-			CanBurnTrees,
-			AccessibilityLevel.SequenceBreak
-		)
+		HasProgItem(10)
 	)
 end
 
@@ -1446,7 +1465,7 @@ function CanAnnoyMaple(pct)
 			itemCount = itemCount + 1
 		end
 	end
-	if HardLogic() > AccessibilityLevel.Normal then
+	if HardLogic() == AccessibilityLevel.Normal then
 		itemCount = itemCount + 2
 	elseif Has(Medium) then
 		itemCount = itemCount + 5
@@ -1463,7 +1482,7 @@ function CanAnnoyMaple(pct)
 	end
 
 	return Any(
-		Tracker:ProviderCountForCode("progitem") / itemCount * 100 >= pct,
+		(Tracker:ProviderCountForCode(ProgItem) - 3) / itemCount * 100 >= pct,
 		AccessibilityLevel.SequenceBreak -- items are always available
 	)
 end

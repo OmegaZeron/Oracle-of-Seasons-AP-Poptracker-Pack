@@ -137,6 +137,7 @@ function CreateLuaItem(name, codes, type, img, state, lClick, rClick, mClick)
 	self.LoadFunc = LoadFunc
 
 	if type == "consumable" then
+		self:SetOverlayFontSize(10)
 		UpdateConsumableOverlay(self)
 	end
 	return self
@@ -147,7 +148,7 @@ CreateLuaItem(
 	{RupeeCount},
 	ItemType.Consumable,
 	"images/items/rupee5.png",
-	{reset = ResetConsumable, count = 0, increment = IncrementConsumable, minCount = 0, maxCount = 999, mult = 5, multIndex = 2} --[[@as CustomItemStateConsumable]],
+	{reset = ResetConsumable, count = 0, increment = IncrementConsumable, minCount = 0, maxCount = 9999, mult = 5, multIndex = 2} --[[@as CustomItemStateConsumable]],
 	LeftClickConsumable,
 	RightClickConsumable,
 	function(self)
@@ -174,7 +175,7 @@ CreateLuaItem(
 	{OreChunkCount},
 	ItemType.Consumable,
 	"images/items/ore10.png",
-	{reset = ResetConsumable, count = 0, increment = IncrementConsumable, minCount = 0, maxCount = 999, mult = 10, multIndex = 2} --[[@as CustomItemStateConsumable]],
+	{reset = ResetConsumable, count = 0, increment = IncrementConsumable, minCount = 0, maxCount = 9999, mult = 10, multIndex = 2} --[[@as CustomItemStateConsumable]],
 	LeftClickConsumable,
 	RightClickConsumable,
 	function(self)

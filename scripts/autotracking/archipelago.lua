@@ -141,9 +141,9 @@ function OnClear(slot_data)
 					item.CurrentStage = 0
 				elseif itemData[2] == "consumable" then
 					item.AcquiredCount = 0
-				elseif itemData[2] == "custom" then
+				elseif itemData[2] == "custom_consumable" then
 					---@cast item LuaItem
-					(item.ItemState --[[@as CustomItemState]]).reset(item)
+					(item.ItemState --[[@as CustomItemStateConsumable]]).reset(item)
 				elseif AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
 					print(string.format("onClear: unknown item type %s for code %s", itemData[2], itemData[1]))
 				end
@@ -283,11 +283,11 @@ function OnClear(slot_data)
 	-- auto tab and set the season for the starting location
 
 	CurrentTab = nil
-	local startLocation = slot_data.options.start_position
-	if Tracker:FindObjectForCode("autotab").CurrentStage == 1 and startLocation then
-		CurrentRoom = nil
-		OnBounce({["data"] = {["Current Room"] = StartLocationMapping[startLocation][1]}})
-	end
+	CurrentRoom = nil
+	-- local startLocation = slot_data.options.start_position
+	-- if Tracker:FindObjectForCode("autotab").CurrentStage == 1 and startLocation then
+	-- 	OnBounce({["data"] = {["Current Room"] = StartLocationMapping[startLocation][1]}})
+	-- end
 
 	IS_MANUAL_CLICK = true
 end

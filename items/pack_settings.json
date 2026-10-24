@@ -471,22 +471,22 @@
 		"stages": [
 			{
 				"img": "images/labels/vanilla_label.png",
-				"codes": "key_type, key_type_vanilla",
+				"codes": "dungeon_key_type, key_type_vanilla",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/key_unlock_label.png",
-				"codes": "key_type, key_type_unlock",
+				"codes": "dungeon_key_type, key_type_unlock",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/small_keys_label.png",
-				"codes": "key_type, key_type_small",
+				"codes": "dungeon_key_type, key_type_small",
 				"inherit_codes": false
 			},
 			{
 				"img": "images/labels/both_keys_label.png",
-				"codes": "key_type, key_type_both",
+				"codes": "dungeon_key_type, key_type_both",
 				"inherit_codes": false
 			}
 		]

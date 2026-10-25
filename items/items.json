@@ -475,25 +475,25 @@
 		"name": "Round Jewel",
 		"type": "toggle",
 		"img": "images/items/jewelround.png",
-		"codes": "roundjewel, progitem"
+		"codes": "roundjewel, jewels, progitem"
 	},
 	{
 		"name": "Pyramid Jewel",
 		"type": "toggle",
 		"img": "images/items/jeweltriangle.png",
-		"codes": "pyramidjewel, progitem"
+		"codes": "pyramidjewel, jewels, progitem"
 	},
 	{
 		"name": "Square Jewel",
 		"type": "toggle",
 		"img": "images/items/jewelsquare.png",
-		"codes": "squarejewel, progitem"
+		"codes": "squarejewel, jewels, progitem"
 	},
 	{
 		"name": "X Jewel",
 		"type": "toggle",
 		"img": "images/items/jewelx.png",
-		"codes": "xjewel, progitem"
+		"codes": "xjewel, jewels, progitem"
 	},
 	{
 		"name": "Spring",

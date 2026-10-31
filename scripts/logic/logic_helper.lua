@@ -1992,7 +1992,7 @@ end
 ScriptHost:AddWatchForCode("dungeon settings handler", "shuffle_dungeons", DungeonSettings)
 ScriptHost:AddWatchForCode("dungeons handler", "fill_dungeons", DisplayDungeons)
 ScriptHost:AddWatchForCode("boss shuffle handler", "shuffle_bosses", BossSettings)
-ScriptHost:AddWatchForCode("dungeons handler", "fill_bosses", DisplayBosses)
+ScriptHost:AddWatchForCode("dungeon boss handler", "fill_bosses", DisplayBosses)
 ScriptHost:AddWatchForCode("seasons settings handler", "default_seasons", SeasonSettings)
 ScriptHost:AddWatchForCode("seasons handler", "fill_seasons", DisplaySeasons)
 ScriptHost:AddWatchForCode("portal settings handler", "shuffle_portals", VanillaPortals)

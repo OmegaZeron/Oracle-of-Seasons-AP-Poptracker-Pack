@@ -35,7 +35,7 @@ LowerEasternSuburbs:connect_one_way_entrance(HoronVillage, function()
 	)
 end)
 LowerEasternSuburbs:connect_one_way_entrance(SamasaDesert, function() return CanReach(Pirates) end, {Pirates})
-LowerEasternSuburbs:connect_two_ways_entrance(UpperEasternSuburbs, function()
+LowerEasternSuburbs:connect_one_way_entrance(UpperEasternSuburbs, function()
 	return All(
 		Any(
 			EasternSuburbsSpring,
@@ -91,6 +91,27 @@ end)
 
 -- upper suburbs
 UpperEasternSuburbs:connect_one_way(EasternSuburbsFindSeason)
+UpperEasternSuburbs:connect_one_way_entrance(LowerEasternSuburbs, function()
+	return All(
+		Any(
+			EasternSuburbsSpring,
+			EasternSuburbsSummer,
+			EasternSuburbsAutumn,
+			Spring,
+			Summer,
+			Autumn
+		),
+		Any(
+			JumpLiquid1,
+			Flippers,
+			Dimitri,
+			All(
+				SwitchHook,
+				MediumLogic
+			)
+		)
+	)
+end)
 UpperEasternSuburbs:connect_one_way(Maple, CanEncounterMaple)
 UpperEasternSuburbsWinter:connect_one_way(Maple, CanEncounterMaple)
 UpperEasternSuburbs:connect_one_way_entrance(UpperEasternSuburbsWinter, function() return Has(Winter) end)

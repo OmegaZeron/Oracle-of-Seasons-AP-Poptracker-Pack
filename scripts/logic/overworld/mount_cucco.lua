@@ -1,4 +1,10 @@
 LowerMtCucco:connect_one_way(SunkenCityFindSeason)
+LowerMtCucco:connect_one_way(Maple, function()
+	return Any(
+		SpringBanana,
+		CanEncounterMaple
+	)
+end)
 LowerMtCucco:connect_two_ways_entrance(SubrosiaVillagePortal, function()
 	return Any(
 		ShufflePortalsOff,

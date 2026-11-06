@@ -1,4 +1,5 @@
 HoronVillage:connect_one_way(HoronVillageFindSeason)
+HoronVillage:connect_one_way_entrance(ReachSign)
 -- standing items
 HoronVillage:connect_one_way(HoronMushroomChest, function()
 	return Any(

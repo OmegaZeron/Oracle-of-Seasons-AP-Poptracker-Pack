@@ -1,4 +1,5 @@
 LowerMtCucco:connect_one_way(SunkenCityFindSeason)
+LowerMtCucco:connect_one_way_entrance(ReachSign)
 LowerMtCucco:connect_one_way(Maple, function()
 	return Any(
 		SpringBanana,

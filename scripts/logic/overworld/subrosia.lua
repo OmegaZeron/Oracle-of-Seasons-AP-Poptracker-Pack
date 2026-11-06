@@ -1,4 +1,5 @@
 -- mountain
+SubrosiaMountainEast:connect_one_way_entrance(ReachSign)
 SubrosiaMountainEast:connect_one_way_entrance(SuburbsPortal, function()
 	return Any(
 		ShufflePortalsOff,
@@ -76,6 +77,7 @@ TempleAutumnEntrance:connect_one_way(TempleAutumnFairy, function() return Has(Fe
 TempleOfSeasons:connect_two_ways_entrance(SubrosiaMarket, function() return Has(Feather) end)
 
 -- market
+SubrosiaMarket:connect_one_way_entrance(ReachSign)
 SubrosiaMarket:connect_one_way_entrance(SubrosiaMountainEast, function() return Has(Ribbon) end)
 SubrosiaMarket:connect_one_way_entrance(SpoolPortal, function()
 	return Any(
@@ -154,6 +156,13 @@ Pirates:connect_one_way(PirateSecret, function() return Has(PolishedBell) end)
 Pirates:connect_one_way_entrance(WestWesternCoast, function() return Has(PolishedBell) end)
 
 -- furnace
+EastFurnace:connect_one_way_entrance(BreakSign, function()
+	return All(
+		EmberSeeds,
+		CanShootSeeds,
+		MediumLogic
+	)
+end)
 EastFurnace:connect_one_way_entrance(EyeglassPortal, function()
 	return Any(
 		ShufflePortalsOff,
@@ -168,12 +177,13 @@ EastFurnace:connect_one_way(GreatFurnace, function()
 		BlueOre
 	)
 end, {TempleAutumnEntrance})
+ReachSign:connect_one_way_entrance(BreakSign, CanBreakSign)
 EastFurnace:connect_one_way(SignGuy, function()
 	return Any(
 		SignGuyNone,
-		DestroySigns
+		CanReach(BreakSign)
 	)
-end)
+end, {BreakSign})
 EastFurnace:connect_one_way(BombFlowerPickup, function()
 	return All(
 		Feather,
@@ -189,6 +199,7 @@ EastFurnace:connect_one_way_entrance(WestFurnace, function()
 		)
 	)
 end)
+WestFurnace:connect_one_way_entrance(ReachSign)
 WestFurnace:connect_one_way_entrance(EastFurnace, function() return Has(Feather) end)
 WestFurnace:connect_one_way(FurnaceTerrace, function()
 	return Any(

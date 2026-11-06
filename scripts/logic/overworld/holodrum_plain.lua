@@ -1,6 +1,7 @@
 NorthHolodrumPlain:connect_one_way(Maple, CanEncounterMaple)
 NorthHolodrumPlain:connect_one_way(HolodrumPlainFindSeason)
 NorthHolodrumPlain:connect_one_way(NorthHoronFindSeason)
+NorthHolodrumPlain:connect_one_way_entrance(ReachSign)
 -- items
 NorthHolodrumPlain:connect_one_way(HolodrumPlainTree, function()
 	return Any(
@@ -101,6 +102,7 @@ NorthHolodrumPlain:connect_two_ways_entrance(SouthGoronMountain, function()
 	)
 end)
 SouthHolodrumPlain:connect_one_way_entrance(HolodrumPlainSign, function() return CanDestroyBushFlute(true) end)
+HolodrumPlainSign:connect_one_way_entrance(ReachSign)
 HolodrumPlainSign:connect_one_way_entrance(SouthHolodrumPlain, function()
 	return Any(
 		CanDestroyBush,

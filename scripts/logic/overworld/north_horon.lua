@@ -131,6 +131,7 @@ DryEyeglassBombCave:connect_one_way(DryEyeglassBombCaveChest, function() return 
 DryEyeglassLake:connect_one_way_entrance(UpperNorthHoron, Jump1)
 
 -- portal
+EyeglassPortal:connect_one_way_entrance(ReachSign)
 EyeglassPortal:connect_one_way_entrance(EastFurnace, function()
 	return Any(
 		ShufflePortalsOff,

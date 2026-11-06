@@ -49,7 +49,7 @@ function CanDestroyMushroom(includeDimitri)
 	)
 end
 
-function DestroySigns()
+function CanBreakSign()
 	return Any(
 		CanDestroyPot,
 		CanBurnTrees,

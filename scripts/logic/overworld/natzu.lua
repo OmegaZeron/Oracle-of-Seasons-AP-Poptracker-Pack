@@ -89,6 +89,7 @@ NatzuScrub:connect_one_way(DekuSecret, function()
 	)
 end)
 -- moblin keep
+MoblinKeepBridge:connect_one_way_entrance(ReachSign)
 MoblinKeepBridge:connect_two_ways_entrance(MoblinKeep, function()
 	return Any(
 		JumpLiquid4(true),

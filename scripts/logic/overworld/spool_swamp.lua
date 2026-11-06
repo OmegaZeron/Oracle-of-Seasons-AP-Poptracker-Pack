@@ -1,5 +1,6 @@
 NorthSpoolSwamp:connect_one_way(Maple, CanEncounterMaple)
 NorthSpoolSwamp:connect_one_way(SpoolSwampFindSeason)
+NorthSpoolSwamp:connect_one_way_entrance(ReachSign)
 SouthSpoolSwamp:connect_one_way(SpoolSwampFindSeason)
 -- items
 NorthSpoolSwamp:connect_one_way(SwampTree, function()

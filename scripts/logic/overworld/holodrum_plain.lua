@@ -83,10 +83,11 @@ NorthHolodrumPlain:connect_one_way(HolodrumPlainIsland, function()
 end)
 
 -- exits
-NorthHolodrumPlain:connect_two_ways_entrance(SouthHolodrumPlain, function()
+NorthHolodrumPlain:connect_one_way_entrance(SouthHolodrumPlain, function()
 	return Any(
-		Jump1,
-		HolodrumPlainWinter
+		HolodrumPlainWinter,
+		RickyGloves,
+		Jump1
 	)
 end)
 NorthHolodrumPlain:connect_two_ways_entrance(HolodrumPlainSign, function()
@@ -99,6 +100,14 @@ NorthHolodrumPlain:connect_two_ways_entrance(SouthGoronMountain, function()
 	return Any(
 		Flippers,
 		Dimitri
+	)
+end)
+NorthHolodrumPlain:connect_one_way_entrance(NorthSpoolSwamp, function() return Has(RickyGloves) end)
+SouthHolodrumPlain:connect_one_way_entrance(NorthHolodrumPlain, function()
+	return Any(
+		HolodrumPlainWinter,
+		Winter,
+		Jump1
 	)
 end)
 SouthHolodrumPlain:connect_one_way_entrance(HolodrumPlainSign, function() return CanDestroyBushFlute(true) end)
@@ -114,7 +123,6 @@ SouthHolodrumPlain:connect_one_way_entrance(NorthSpoolSwamp, function()
 	return Any(
 		HolodrumPlainSummer,
 		Summer,
-		RickyGloves,
 		Jump4,
 		Ricky,
 		Moosh

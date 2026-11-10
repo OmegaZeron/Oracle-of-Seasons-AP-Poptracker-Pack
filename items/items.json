@@ -1081,6 +1081,12 @@
 		"codes": "ring_toss, progitem"
 	},
 	{
+		"name": "Roc's Ring",
+		"type": "toggle",
+		"img": "images/items/ring_rocs.png",
+		"codes": "ring_rocs, progitem"
+	},
+	{
 		"name": "D0 Master Key",
 		"type": "toggle",
 		"img": "images/items/master_key.png",

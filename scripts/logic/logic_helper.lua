@@ -583,8 +583,7 @@ function CanBreakCrystal()
 		All(
 			Any(
 				ExpertsRing,
-				HasBombchusForTiles,
-				CanBurnTrees
+				HasBombchusForTiles
 			),
 			MediumLogic
 		)

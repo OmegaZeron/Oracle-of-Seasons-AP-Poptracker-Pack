@@ -2,10 +2,19 @@
 AncientFoyer:connect_one_way_entrance(AncientRightOfSpinner, function()
 	return Any(
 		Feather,
-		HasAnySword,
+		WoodSword,
 		HasBombsForTiles,
 		All(
 			ExpertsRing,
+			MediumLogic
+		),
+		All(
+			BiggoronSword,
+			MediumLogic
+		),
+		All(
+			RocsRing,
+			Bracelet,
 			MediumLogic
 		),
 		HardLogic

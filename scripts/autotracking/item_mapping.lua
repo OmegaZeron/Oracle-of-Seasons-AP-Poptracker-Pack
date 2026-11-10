@@ -128,6 +128,7 @@ ITEM_MAPPING = {
 	[ItemID(0x2d, 0x17)] = {HeartRing1, "progressive_set", 1, "images/items/ring_heart1.png"},
 	[ItemID(0x2d, 0x18)] = {HeartRing2, "progressive_set", 2},
 	[ItemID(0x2d, 0x19)] = {SwimmersRing, "toggle"},
+	[ItemID(0x2d, 0x26)] = {RocsRing, "toggle"},
 	[ItemID(0x2d, 0x35)] = {EnergyRing, "toggle"},
 	[ItemID(0x2d, 0x41)] = {FistRing, "progressive_set", 1, "images/items/ring_fist.png"},
 	-- [ItemID(0x36, 0x00)] = {MakuSeed, "toggle"},

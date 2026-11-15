@@ -546,9 +546,11 @@ function OnBounce(json)
 		if autoTabEnabled then
 			-- auto-tab generically between holodrum, natzu, and subrosia
 			if CurrentRoom < 0x100 then
-				if TableContains(NatzuIDs, CurrentRoom) and prevTab ~= "Natzu" then
-					Tracker:UiHint("ActivateTab", "Holodrum")
-					ActivateTab("Natzu")
+				if TableContains(NatzuIDs, CurrentRoom) then
+					if prevTab ~= "Natzu" then
+						Tracker:UiHint("ActivateTab", "Holodrum")
+						ActivateTab("Natzu")
+					end
 				elseif prevTab ~= "Holodrum" then
 					ActivateTab("Holodrum")
 				end

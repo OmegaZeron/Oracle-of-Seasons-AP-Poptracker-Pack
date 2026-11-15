@@ -1,4 +1,4 @@
-TarmEntrance:connect_one_way_entrance(NorthSpoolSwamp, function() return Tracker:FindObjectForCode(TarmGateSetting).CurrentStage == 0 end)
+TarmEntrance:connect_one_way_entrance(NorthSpoolSwamp)
 TarmEntrance:connect_one_way_entrance(TarmTreeStump, function()
 	return All(
 		Any(
@@ -64,7 +64,8 @@ LostWoods:connect_one_way_entrance(TarmEntrance, function()
 			LostWoodsAutumn,
 			Autumn
 		),
-		CanDestroyMushroom,
+		CanDestroyMushroom(false),
+		Tracker:FindObjectForCode(TarmGateSetting).CurrentStage == 0,
 		Winter
 	)
 end)

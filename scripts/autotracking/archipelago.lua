@@ -193,6 +193,10 @@ function OnClear(slot_data)
 		end
 	end
 
+	-- check if locations exist in the multi for these settings
+	Tracker:FindObjectForCode(ShuffleFreestanding).CurrentStage = TableContains(ALL_LOCATIONS, LocationID(0x00d8)) and 1 or 0
+	Tracker:FindObjectForCode(IncludeTradeSetting).CurrentStage = TableContains(ALL_LOCATIONS, LocationID(0x03a4)) and 1 or 0
+
 	Tracker:FindObjectForCode("horon_village_season_shuffle").CurrentStage = slot_data.default_seasons.HORON_VILLAGE == 255 and 0 or 1
 	for region_name, season_id in pairs(slot_data.default_seasons) do
 		if region_name ~= "HORON_VILLAGE" or Tracker:FindObjectForCode("horon_village_season_shuffle").CurrentStage == 1 then

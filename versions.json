@@ -4,7 +4,7 @@
 			"package_version": "10.2.0",
 			"download_url": "https://github.com/OmegaZeron/Oracle-of-Seasons-AP-Poptracker-Pack/releases/download/10.2.0/seasons_ap.zip",
 			"sha256": "2a18da1c122d015aa4128a106ab21ed0f5f925972b565829697111c42eb6901d",
-			"changelog": ["Key unlocks, shuffle freestanding/trade sequence, default to casual, Tarm jewel logic fix"]
+			"changelog": ["Key \"unlocks\", shuffle freestanding/trade sequence, default to casual, Tarm jewel logic fix"]
 		},
 		{
 			"package_version": "9.0.1",

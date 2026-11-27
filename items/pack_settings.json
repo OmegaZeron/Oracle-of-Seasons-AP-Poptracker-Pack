@@ -486,7 +486,7 @@
 			},
 			{
 				"img": "images/labels/both_keys_label.png",
-				"codes": "dungeon_key_type, key_type_both",
+				"codes": "dungeon_key_type, key_type_small, key_type_both",
 				"inherit_codes": false
 			}
 		]
